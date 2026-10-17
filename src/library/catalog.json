@@ -7,10 +7,10 @@
       "slug": "agent-inbox",
       "style": "classic",
       "title": "Agent Inbox",
-      "description": "All your background agent tasks in one calm list – live clocks and status tags, filter tabs with rolling counts, rows that unfold to the last steps with Approve, Reject, Retry or Open, and glide to their new place",
+      "description": "All your background agent tasks in one calm list \u2013 live clocks and status tags, filter tabs with rolling counts, rows that unfold to the last steps with Approve, Reject, Retry or Open, and glide to their new place",
       "registryItem": "agent-inbox",
       "registryPath": "/r/agent-inbox.json",
-      "entryPoint": "src/library/agent-inbox.jsx",
+      "entryPoint": "src/components/plico/agent-inbox.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -22,10 +22,10 @@
       "slug": "agent-inbox",
       "style": "clean",
       "title": "Agent Inbox",
-      "description": "All your background agent tasks in one calm list – live clocks and status tags, filter tabs with rolling counts, rows that unfold to the last steps with Approve, Reject, Retry or Open, and glide to their new place",
+      "description": "All your background agent tasks in one calm list \u2013 live clocks and status tags, filter tabs with rolling counts, rows that unfold to the last steps with Approve, Reject, Retry or Open, and glide to their new place",
       "registryItem": "agent-inbox-clean",
       "registryPath": "/r/agent-inbox-clean.json",
-      "entryPoint": "src/library/agent-inbox-clean.jsx",
+      "entryPoint": "src/components/plico/agent-inbox-clean.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -37,10 +37,10 @@
       "slug": "agent-lanes",
       "style": "classic",
       "title": "Agent Lanes",
-      "description": "Where every agent is right now – a live timeline with a lane per agent, tasks growing into “now”, hand-offs drawn between agents and approvals right on the block",
+      "description": "Where every agent is right now \u2013 a live timeline with a lane per agent, tasks growing into \u201cnow\u201d, hand-offs drawn between agents and approvals right on the block",
       "registryItem": "agent-lanes",
       "registryPath": "/r/agent-lanes.json",
-      "entryPoint": "src/library/agent-lanes.jsx",
+      "entryPoint": "src/components/plico/agent-lanes.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -52,10 +52,10 @@
       "slug": "agent-lanes",
       "style": "clean",
       "title": "Agent Lanes",
-      "description": "Where every agent is right now – a live timeline with a lane per agent, tasks growing into “now”, hand-offs drawn between agents and approvals right on the block",
+      "description": "Where every agent is right now \u2013 a live timeline with a lane per agent, tasks growing into \u201cnow\u201d, hand-offs drawn between agents and approvals right on the block",
       "registryItem": "agent-lanes-clean",
       "registryPath": "/r/agent-lanes-clean.json",
-      "entryPoint": "src/library/agent-lanes-clean.jsx",
+      "entryPoint": "src/components/plico/agent-lanes-clean.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -67,10 +67,10 @@
       "slug": "agent-plan",
       "style": "classic",
       "title": "Agent Plan",
-      "description": "An agent's step-by-step plan to review before it runs – rename, drag to reorder, remove or add steps, then watch each one run with live timers and retry from a failed step",
+      "description": "An agent's step-by-step plan to review before it runs \u2013 rename, drag to reorder, remove or add steps, then watch each one run with live timers and retry from a failed step",
       "registryItem": "agent-plan",
       "registryPath": "/r/agent-plan.json",
-      "entryPoint": "src/library/agent-plan.jsx",
+      "entryPoint": "src/components/plico/agent-plan.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -82,10 +82,10 @@
       "slug": "agent-plan",
       "style": "clean",
       "title": "Agent Plan",
-      "description": "An agent's step-by-step plan to review before it runs – rename, drag to reorder, remove or add steps, then watch each one run with live timers and retry from a failed step",
+      "description": "An agent's step-by-step plan to review before it runs \u2013 rename, drag to reorder, remove or add steps, then watch each one run with live timers and retry from a failed step",
       "registryItem": "agent-plan-clean",
       "registryPath": "/r/agent-plan-clean.json",
-      "entryPoint": "src/library/agent-plan-clean.jsx",
+      "entryPoint": "src/components/plico/agent-plan-clean.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -97,10 +97,10 @@
       "slug": "agent-steering",
       "style": "classic",
       "title": "Agent Steering",
-      "description": "Steer an agent while it works – queue a note for the next step and watch it glide into the plan when the agent picks it up, or interrupt right away",
+      "description": "Steer an agent while it works \u2013 queue a note for the next step and watch it glide into the plan when the agent picks it up, or interrupt right away",
       "registryItem": "agent-steering",
       "registryPath": "/r/agent-steering.json",
-      "entryPoint": "src/library/agent-steering.jsx",
+      "entryPoint": "src/components/plico/agent-steering.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -112,10 +112,10 @@
       "slug": "agent-steering",
       "style": "clean",
       "title": "Agent Steering",
-      "description": "Steer an agent while it works – queue a note for the next step and watch it glide into the plan when the agent picks it up, or interrupt right away",
+      "description": "Steer an agent while it works \u2013 queue a note for the next step and watch it glide into the plan when the agent picks it up, or interrupt right away",
       "registryItem": "agent-steering-clean",
       "registryPath": "/r/agent-steering-clean.json",
-      "entryPoint": "src/library/agent-steering-clean.jsx",
+      "entryPoint": "src/components/plico/agent-steering-clean.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -130,7 +130,7 @@
       "description": "Streamed answer with source cards, citation chips that preview their source, copy, regenerate, feedback and follow-ups",
       "registryItem": "ai-answer",
       "registryPath": "/r/ai-answer.json",
-      "entryPoint": "src/library/ai-answer.jsx",
+      "entryPoint": "src/components/plico/ai-answer.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -145,7 +145,7 @@
       "description": "Streamed answer with source cards, citation chips that preview their source, copy, regenerate, feedback and follow-ups",
       "registryItem": "ai-answer-clean",
       "registryPath": "/r/ai-answer-clean.json",
-      "entryPoint": "src/library/ai-answer-clean.jsx",
+      "entryPoint": "src/components/plico/ai-answer-clean.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -157,10 +157,10 @@
       "slug": "approval-card",
       "style": "classic",
       "title": "Approval Card",
-      "description": "An agent asks before it acts – risk badge, preview, Approve and Deny with shortcuts, a pausing countdown, and a smooth morph into a resolved row",
+      "description": "An agent asks before it acts \u2013 risk badge, preview, Approve and Deny with shortcuts, a pausing countdown, and a smooth morph into a resolved row",
       "registryItem": "approval-card",
       "registryPath": "/r/approval-card.json",
-      "entryPoint": "src/library/approval-card.jsx",
+      "entryPoint": "src/components/plico/approval-card.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -172,10 +172,10 @@
       "slug": "approval-card",
       "style": "clean",
       "title": "Approval Card",
-      "description": "An agent asks before it acts – risk badge, preview, Approve and Deny with shortcuts, a pausing countdown, and a smooth morph into a resolved row",
+      "description": "An agent asks before it acts \u2013 risk badge, preview, Approve and Deny with shortcuts, a pausing countdown, and a smooth morph into a resolved row",
       "registryItem": "approval-card-clean",
       "registryPath": "/r/approval-card-clean.json",
-      "entryPoint": "src/library/approval-card-clean.jsx",
+      "entryPoint": "src/components/plico/approval-card-clean.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -187,10 +187,10 @@
       "slug": "autonomy-dial",
       "style": "classic",
       "title": "Autonomy Dial",
-      "description": "How much an agent may do on its own – a three-stop dial, and its real actions gliding between “Runs on its own” and “Asks you first”, with a lock for what always asks",
+      "description": "How much an agent may do on its own \u2013 a three-stop dial, and its real actions gliding between \u201cRuns on its own\u201d and \u201cAsks you first\u201d, with a lock for what always asks",
       "registryItem": "autonomy-dial",
       "registryPath": "/r/autonomy-dial.json",
-      "entryPoint": "src/library/autonomy-dial.jsx",
+      "entryPoint": "src/components/plico/autonomy-dial.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -202,10 +202,10 @@
       "slug": "autonomy-dial",
       "style": "clean",
       "title": "Autonomy Dial",
-      "description": "How much an agent may do on its own – a three-stop dial, and its real actions gliding between “Runs on its own” and “Asks you first”, with a lock for what always asks",
+      "description": "How much an agent may do on its own \u2013 a three-stop dial, and its real actions gliding between \u201cRuns on its own\u201d and \u201cAsks you first\u201d, with a lock for what always asks",
       "registryItem": "autonomy-dial-clean",
       "registryPath": "/r/autonomy-dial-clean.json",
-      "entryPoint": "src/library/autonomy-dial-clean.jsx",
+      "entryPoint": "src/components/plico/autonomy-dial-clean.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -217,10 +217,10 @@
       "slug": "billing-schedule",
       "style": "classic",
       "title": "Billing Schedule",
-      "description": "Build a billing phase – start date, duration, products with repeats and timing, discount, minimum and live totals",
+      "description": "Build a billing phase \u2013 start date, duration, products with repeats and timing, discount, minimum and live totals",
       "registryItem": "billing-schedule",
       "registryPath": "/r/billing-schedule.json",
-      "entryPoint": "src/library/billing-schedule.jsx",
+      "entryPoint": "src/components/plico/billing-schedule.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -232,10 +232,10 @@
       "slug": "billing-schedule",
       "style": "clean",
       "title": "Billing Schedule",
-      "description": "Build a billing phase – start date, duration, products with repeats and timing, discount, minimum and live totals",
+      "description": "Build a billing phase \u2013 start date, duration, products with repeats and timing, discount, minimum and live totals",
       "registryItem": "billing-schedule-clean",
       "registryPath": "/r/billing-schedule-clean.json",
-      "entryPoint": "src/library/billing-schedule-clean.jsx",
+      "entryPoint": "src/components/plico/billing-schedule-clean.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -250,7 +250,7 @@
       "description": "Stacked bar chart with measure, slice and segment pickers, a hover breakdown and a linked table",
       "registryItem": "breakdown-chart",
       "registryPath": "/r/breakdown-chart.json",
-      "entryPoint": "src/library/breakdown-chart.jsx",
+      "entryPoint": "src/components/plico/breakdown-chart.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -265,7 +265,7 @@
       "description": "Stacked bar chart with measure, slice and segment pickers, a hover breakdown and a linked table",
       "registryItem": "breakdown-chart-clean",
       "registryPath": "/r/breakdown-chart-clean.json",
-      "entryPoint": "src/library/breakdown-chart-clean.jsx",
+      "entryPoint": "src/components/plico/breakdown-chart-clean.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -280,7 +280,7 @@
       "description": "Primary, secondary, ghost and destructive buttons with icons, sizes and a shimmering loading state",
       "registryItem": "button",
       "registryPath": "/r/button.json",
-      "entryPoint": "src/library/button.jsx",
+      "entryPoint": "src/components/plico/button.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -295,7 +295,7 @@
       "description": "Primary, secondary, ghost and destructive buttons with icons, sizes and a shimmering loading state",
       "registryItem": "button-clean",
       "registryPath": "/r/button-clean.json",
-      "entryPoint": "src/library/button-clean.jsx",
+      "entryPoint": "src/components/plico/button-clean.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -307,10 +307,10 @@
       "slug": "change-summary",
       "style": "classic",
       "title": "Change Summary",
-      "description": "What moved since last time – one metric per row with a colored trend",
+      "description": "What moved since last time \u2013 one metric per row with a colored trend",
       "registryItem": "change-summary",
       "registryPath": "/r/change-summary.json",
-      "entryPoint": "src/library/change-summary.jsx",
+      "entryPoint": "src/components/plico/change-summary.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -322,10 +322,10 @@
       "slug": "change-summary",
       "style": "clean",
       "title": "Change Summary",
-      "description": "What moved since last time – one metric per row with a colored trend",
+      "description": "What moved since last time \u2013 one metric per row with a colored trend",
       "registryItem": "change-summary-clean",
       "registryPath": "/r/change-summary-clean.json",
-      "entryPoint": "src/library/change-summary-clean.jsx",
+      "entryPoint": "src/components/plico/change-summary-clean.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -340,7 +340,7 @@
       "description": "Prompt composer with model picker, voice input, app connections and approval request",
       "registryItem": "chat-composer",
       "registryPath": "/r/chat-composer.json",
-      "entryPoint": "src/library/chat-composer.jsx",
+      "entryPoint": "src/components/plico/chat-composer.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -355,7 +355,7 @@
       "description": "Prompt composer with model picker, voice input, app connections and approval request",
       "registryItem": "chat-composer-clean",
       "registryPath": "/r/chat-composer-clean.json",
-      "entryPoint": "src/library/chat-composer-clean.jsx",
+      "entryPoint": "src/components/plico/chat-composer-clean.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -367,10 +367,10 @@
       "slug": "cited-answer",
       "style": "classic",
       "title": "Cited Answer",
-      "description": "An AI answer wired to its sources – point at a citation to light up its sentence and source, click to unfold the quoted passage with the matching words marked",
+      "description": "An AI answer wired to its sources \u2013 point at a citation to light up its sentence and source, click to unfold the quoted passage with the matching words marked",
       "registryItem": "cited-answer",
       "registryPath": "/r/cited-answer.json",
-      "entryPoint": "src/library/cited-answer.jsx",
+      "entryPoint": "src/components/plico/cited-answer.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -382,10 +382,10 @@
       "slug": "cited-answer",
       "style": "clean",
       "title": "Cited Answer",
-      "description": "An AI answer wired to its sources – point at a citation to light up its sentence and source, click to unfold the quoted passage with the matching words marked",
+      "description": "An AI answer wired to its sources \u2013 point at a citation to light up its sentence and source, click to unfold the quoted passage with the matching words marked",
       "registryItem": "cited-answer-clean",
       "registryPath": "/r/cited-answer-clean.json",
-      "entryPoint": "src/library/cited-answer-clean.jsx",
+      "entryPoint": "src/components/plico/cited-answer-clean.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -397,10 +397,10 @@
       "slug": "combobox",
       "style": "classic",
       "title": "Combobox",
-      "description": "Pick one or many from a searchable, grouped list – chips with avatars, highlighted matches, create-on-the-fly and full keyboard support",
+      "description": "Pick one or many from a searchable, grouped list \u2013 chips with avatars, highlighted matches, create-on-the-fly and full keyboard support",
       "registryItem": "combobox",
       "registryPath": "/r/combobox.json",
-      "entryPoint": "src/library/combobox.jsx",
+      "entryPoint": "src/components/plico/combobox.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -412,10 +412,10 @@
       "slug": "combobox",
       "style": "clean",
       "title": "Combobox",
-      "description": "Pick one or many from a searchable, grouped list – chips with avatars, highlighted matches, create-on-the-fly and full keyboard support",
+      "description": "Pick one or many from a searchable, grouped list \u2013 chips with avatars, highlighted matches, create-on-the-fly and full keyboard support",
       "registryItem": "combobox-clean",
       "registryPath": "/r/combobox-clean.json",
-      "entryPoint": "src/library/combobox-clean.jsx",
+      "entryPoint": "src/components/plico/combobox-clean.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -427,10 +427,10 @@
       "slug": "command-menu",
       "style": "classic",
       "title": "Command Menu",
-      "description": "Search and run anything from one field – tool actions with logos and ⌘1–⌘5, everyday commands with icons",
+      "description": "Search and run anything from one field \u2013 tool actions with logos and \u23181\u2013\u23185, everyday commands with icons",
       "registryItem": "command-menu",
       "registryPath": "/r/command-menu.json",
-      "entryPoint": "src/library/command-menu.jsx",
+      "entryPoint": "src/components/plico/command-menu.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -442,10 +442,10 @@
       "slug": "command-menu",
       "style": "clean",
       "title": "Command Menu",
-      "description": "Search and run anything from one field – tool actions with logos and ⌘1–⌘5, everyday commands with icons",
+      "description": "Search and run anything from one field \u2013 tool actions with logos and \u23181\u2013\u23185, everyday commands with icons",
       "registryItem": "command-menu-clean",
       "registryPath": "/r/command-menu-clean.json",
-      "entryPoint": "src/library/command-menu-clean.jsx",
+      "entryPoint": "src/components/plico/command-menu-clean.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -457,10 +457,10 @@
       "slug": "comment-thread",
       "style": "classic",
       "title": "Comment Thread",
-      "description": "One comment with replies – an assistant reports what it did, folds open details and answers @mentions",
+      "description": "One comment with replies \u2013 an assistant reports what it did, folds open details and answers @mentions",
       "registryItem": "comment-thread",
       "registryPath": "/r/comment-thread.json",
-      "entryPoint": "src/library/comment-thread.jsx",
+      "entryPoint": "src/components/plico/comment-thread.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -472,10 +472,10 @@
       "slug": "comment-thread",
       "style": "clean",
       "title": "Comment Thread",
-      "description": "One comment with replies – an assistant reports what it did, folds open details and answers @mentions",
+      "description": "One comment with replies \u2013 an assistant reports what it did, folds open details and answers @mentions",
       "registryItem": "comment-thread-clean",
       "registryPath": "/r/comment-thread-clean.json",
-      "entryPoint": "src/library/comment-thread-clean.jsx",
+      "entryPoint": "src/components/plico/comment-thread-clean.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -490,7 +490,7 @@
       "description": "Comment feed with filters, runnable /edit commands, resolve and a composer",
       "registryItem": "comments-panel",
       "registryPath": "/r/comments-panel.json",
-      "entryPoint": "src/library/comments-panel.jsx",
+      "entryPoint": "src/components/plico/comments-panel.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -505,7 +505,7 @@
       "description": "Comment feed with filters, runnable /edit commands, resolve and a composer",
       "registryItem": "comments-panel-clean",
       "registryPath": "/r/comments-panel-clean.json",
-      "entryPoint": "src/library/comments-panel-clean.jsx",
+      "entryPoint": "src/components/plico/comments-panel-clean.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -517,10 +517,10 @@
       "slug": "compact-breakdown",
       "style": "classic",
       "title": "Compact Breakdown",
-      "description": "A total split into its parts in one small card – numbers roll, the bar glides and the ranked rows trade places when the period changes",
+      "description": "A total split into its parts in one small card \u2013 numbers roll, the bar glides and the ranked rows trade places when the period changes",
       "registryItem": "compact-breakdown",
       "registryPath": "/r/compact-breakdown.json",
-      "entryPoint": "src/library/compact-breakdown.jsx",
+      "entryPoint": "src/components/plico/compact-breakdown.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -532,10 +532,10 @@
       "slug": "compact-breakdown",
       "style": "clean",
       "title": "Compact Breakdown",
-      "description": "A total split into its parts in one small card – numbers roll, the bar glides and the ranked rows trade places when the period changes",
+      "description": "A total split into its parts in one small card \u2013 numbers roll, the bar glides and the ranked rows trade places when the period changes",
       "registryItem": "compact-breakdown-clean",
       "registryPath": "/r/compact-breakdown-clean.json",
-      "entryPoint": "src/library/compact-breakdown-clean.jsx",
+      "entryPoint": "src/components/plico/compact-breakdown-clean.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -547,10 +547,10 @@
       "slug": "context-window",
       "style": "classic",
       "title": "Context Window",
-      "description": "What fills the model's context, as a field of cells – hover a part to light it up, remove files, and compact the conversation while its cells shimmer and clear",
+      "description": "What fills the model's context, as a field of cells \u2013 hover a part to light it up, remove files, and compact the conversation while its cells shimmer and clear",
       "registryItem": "context-window",
       "registryPath": "/r/context-window.json",
-      "entryPoint": "src/library/context-window.jsx",
+      "entryPoint": "src/components/plico/context-window.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -562,10 +562,10 @@
       "slug": "context-window",
       "style": "clean",
       "title": "Context Window",
-      "description": "What fills the model's context, as a field of cells – hover a part to light it up, remove files, and compact the conversation while its cells shimmer and clear",
+      "description": "What fills the model's context, as a field of cells \u2013 hover a part to light it up, remove files, and compact the conversation while its cells shimmer and clear",
       "registryItem": "context-window-clean",
       "registryPath": "/r/context-window-clean.json",
-      "entryPoint": "src/library/context-window-clean.jsx",
+      "entryPoint": "src/components/plico/context-window-clean.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -580,7 +580,7 @@
       "description": "Spreadsheet-style table: select cells and ranges, edit in place, copy and paste, undo and sort",
       "registryItem": "data-table",
       "registryPath": "/r/data-table.json",
-      "entryPoint": "src/library/data-table.jsx",
+      "entryPoint": "src/components/plico/data-table.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -595,7 +595,7 @@
       "description": "Spreadsheet-style table: select cells and ranges, edit in place, copy and paste, undo and sort",
       "registryItem": "data-table-clean",
       "registryPath": "/r/data-table-clean.json",
-      "entryPoint": "src/library/data-table-clean.jsx",
+      "entryPoint": "src/components/plico/data-table-clean.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -610,7 +610,7 @@
       "description": "Presets and two calendars with a hover preview, comparison with the previous period or year, full keyboard control",
       "registryItem": "date-range-picker",
       "registryPath": "/r/date-range-picker.json",
-      "entryPoint": "src/library/date-range-picker.jsx",
+      "entryPoint": "src/components/plico/date-range-picker.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -625,7 +625,7 @@
       "description": "Presets and two calendars with a hover preview, comparison with the previous period or year, full keyboard control",
       "registryItem": "date-range-picker-clean",
       "registryPath": "/r/date-range-picker-clean.json",
-      "entryPoint": "src/library/date-range-picker-clean.jsx",
+      "entryPoint": "src/components/plico/date-range-picker-clean.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -637,10 +637,10 @@
       "slug": "decision-inbox",
       "style": "classic",
       "title": "Decision Inbox",
-      "description": "Open decisions with two quick answers each – answered ones confirm and fold away",
+      "description": "Open decisions with two quick answers each \u2013 answered ones confirm and fold away",
       "registryItem": "decision-inbox",
       "registryPath": "/r/decision-inbox.json",
-      "entryPoint": "src/library/decision-inbox.jsx",
+      "entryPoint": "src/components/plico/decision-inbox.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -652,10 +652,10 @@
       "slug": "decision-inbox",
       "style": "clean",
       "title": "Decision Inbox",
-      "description": "Open decisions with two quick answers each – answered ones confirm and fold away",
+      "description": "Open decisions with two quick answers each \u2013 answered ones confirm and fold away",
       "registryItem": "decision-inbox-clean",
       "registryPath": "/r/decision-inbox-clean.json",
-      "entryPoint": "src/library/decision-inbox-clean.jsx",
+      "entryPoint": "src/components/plico/decision-inbox-clean.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -667,10 +667,10 @@
       "slug": "dropzone",
       "style": "classic",
       "title": "Dropzone",
-      "description": "Drag files in and watch them upload – fanning documents, colored type badges, progress with time left, errors with retry",
+      "description": "Drag files in and watch them upload \u2013 fanning documents, colored type badges, progress with time left, errors with retry",
       "registryItem": "dropzone",
       "registryPath": "/r/dropzone.json",
-      "entryPoint": "src/library/dropzone.jsx",
+      "entryPoint": "src/components/plico/dropzone.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -682,10 +682,10 @@
       "slug": "dropzone",
       "style": "clean",
       "title": "Dropzone",
-      "description": "Drag files in and watch them upload – fanning documents, colored type badges, progress with time left, errors with retry",
+      "description": "Drag files in and watch them upload \u2013 fanning documents, colored type badges, progress with time left, errors with retry",
       "registryItem": "dropzone-clean",
       "registryPath": "/r/dropzone-clean.json",
-      "entryPoint": "src/library/dropzone-clean.jsx",
+      "entryPoint": "src/components/plico/dropzone-clean.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -697,10 +697,10 @@
       "slug": "email-draft",
       "style": "classic",
       "title": "Email Draft",
-      "description": "Agent-written email for review – switch recipient and tone, edit inline, remove the attachment, send or discard with undo",
+      "description": "Agent-written email for review \u2013 switch recipient and tone, edit inline, remove the attachment, send or discard with undo",
       "registryItem": "email-draft",
       "registryPath": "/r/email-draft.json",
-      "entryPoint": "src/library/email-draft.jsx",
+      "entryPoint": "src/components/plico/email-draft.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -712,10 +712,10 @@
       "slug": "email-draft",
       "style": "clean",
       "title": "Email Draft",
-      "description": "Agent-written email for review – switch recipient and tone, edit inline, remove the attachment, send or discard with undo",
+      "description": "Agent-written email for review \u2013 switch recipient and tone, edit inline, remove the attachment, send or discard with undo",
       "registryItem": "email-draft-clean",
       "registryPath": "/r/email-draft-clean.json",
-      "entryPoint": "src/library/email-draft-clean.jsx",
+      "entryPoint": "src/components/plico/email-draft-clean.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -727,10 +727,10 @@
       "slug": "experiment-card",
       "style": "classic",
       "title": "Experiment Card",
-      "description": "An A/B test in two lines that quietly unfolds on hover – variants linked to a tiny chart, a metric switch with rolling numbers, and a winner you pick with a click",
+      "description": "An A/B test in two lines that quietly unfolds on hover \u2013 variants linked to a tiny chart, a metric switch with rolling numbers, and a winner you pick with a click",
       "registryItem": "experiment-card",
       "registryPath": "/r/experiment-card.json",
-      "entryPoint": "src/library/experiment-card.jsx",
+      "entryPoint": "src/components/plico/experiment-card.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -742,10 +742,10 @@
       "slug": "experiment-card",
       "style": "clean",
       "title": "Experiment Card",
-      "description": "An A/B test in two lines that quietly unfolds on hover – variants linked to a tiny chart, a metric switch with rolling numbers, and a winner you pick with a click",
+      "description": "An A/B test in two lines that quietly unfolds on hover \u2013 variants linked to a tiny chart, a metric switch with rolling numbers, and a winner you pick with a click",
       "registryItem": "experiment-card-clean",
       "registryPath": "/r/experiment-card-clean.json",
-      "entryPoint": "src/library/experiment-card-clean.jsx",
+      "entryPoint": "src/components/plico/experiment-card-clean.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -760,7 +760,7 @@
       "description": "Grouped filters with removable chips, collapsible checkbox groups, Clear all and full keyboard control",
       "registryItem": "filter-menu",
       "registryPath": "/r/filter-menu.json",
-      "entryPoint": "src/library/filter-menu.jsx",
+      "entryPoint": "src/components/plico/filter-menu.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -775,7 +775,7 @@
       "description": "Grouped filters with removable chips, collapsible checkbox groups, Clear all and full keyboard control",
       "registryItem": "filter-menu-clean",
       "registryPath": "/r/filter-menu-clean.json",
-      "entryPoint": "src/library/filter-menu-clean.jsx",
+      "entryPoint": "src/components/plico/filter-menu-clean.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -787,10 +787,10 @@
       "slug": "inline-diff",
       "style": "classic",
       "title": "Inline Diff",
-      "description": "AI edits to prose shown inline – struck and added words you accept or reject one by one, with keys, a popover and undo",
+      "description": "AI edits to prose shown inline \u2013 struck and added words you accept or reject one by one, with keys, a popover and undo",
       "registryItem": "inline-diff",
       "registryPath": "/r/inline-diff.json",
-      "entryPoint": "src/library/inline-diff.jsx",
+      "entryPoint": "src/components/plico/inline-diff.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -802,10 +802,10 @@
       "slug": "inline-diff",
       "style": "clean",
       "title": "Inline Diff",
-      "description": "AI edits to prose shown inline – struck and added words you accept or reject one by one, with keys, a popover and undo",
+      "description": "AI edits to prose shown inline \u2013 struck and added words you accept or reject one by one, with keys, a popover and undo",
       "registryItem": "inline-diff-clean",
       "registryPath": "/r/inline-diff-clean.json",
-      "entryPoint": "src/library/inline-diff-clean.jsx",
+      "entryPoint": "src/components/plico/inline-diff-clean.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -817,10 +817,10 @@
       "slug": "integration-picker",
       "style": "classic",
       "title": "Integration Picker",
-      "description": "Integrations page of a command menu – search, a list of services and the picked one with its connection on two tiles",
+      "description": "Integrations page of a command menu \u2013 search, a list of services and the picked one with its connection on two tiles",
       "registryItem": "integration-picker",
       "registryPath": "/r/integration-picker.json",
-      "entryPoint": "src/library/integration-picker.jsx",
+      "entryPoint": "src/components/plico/integration-picker.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -832,10 +832,10 @@
       "slug": "integration-picker",
       "style": "clean",
       "title": "Integration Picker",
-      "description": "Integrations page of a command menu – search, a list of services and the picked one with its connection on two tiles",
+      "description": "Integrations page of a command menu \u2013 search, a list of services and the picked one with its connection on two tiles",
       "registryItem": "integration-picker-clean",
       "registryPath": "/r/integration-picker-clean.json",
-      "entryPoint": "src/library/integration-picker-clean.jsx",
+      "entryPoint": "src/components/plico/integration-picker-clean.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -847,10 +847,10 @@
       "slug": "integration-settings",
       "style": "classic",
       "title": "Integration Settings",
-      "description": "Settings card for a connected service – on/off switch, API key, validated site address, time zone and a save bar",
+      "description": "Settings card for a connected service \u2013 on/off switch, API key, validated site address, time zone and a save bar",
       "registryItem": "integration-settings",
       "registryPath": "/r/integration-settings.json",
-      "entryPoint": "src/library/integration-settings.jsx",
+      "entryPoint": "src/components/plico/integration-settings.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -862,10 +862,10 @@
       "slug": "integration-settings",
       "style": "clean",
       "title": "Integration Settings",
-      "description": "Settings card for a connected service – on/off switch, API key, validated site address, time zone and a save bar",
+      "description": "Settings card for a connected service \u2013 on/off switch, API key, validated site address, time zone and a save bar",
       "registryItem": "integration-settings-clean",
       "registryPath": "/r/integration-settings-clean.json",
-      "entryPoint": "src/library/integration-settings-clean.jsx",
+      "entryPoint": "src/components/plico/integration-settings-clean.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -880,7 +880,7 @@
       "description": "Metric card with a multi-line chart and a tooltip that follows the pointer",
       "registryItem": "kpi-chart",
       "registryPath": "/r/kpi-chart.json",
-      "entryPoint": "src/library/kpi-chart.jsx",
+      "entryPoint": "src/components/plico/kpi-chart.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -895,7 +895,7 @@
       "description": "Metric card with a multi-line chart and a tooltip that follows the pointer",
       "registryItem": "kpi-chart-clean",
       "registryPath": "/r/kpi-chart-clean.json",
-      "entryPoint": "src/library/kpi-chart-clean.jsx",
+      "entryPoint": "src/components/plico/kpi-chart-clean.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -907,10 +907,10 @@
       "slug": "memory-panel",
       "style": "classic",
       "title": "Memory Panel",
-      "description": "What the assistant remembers about you, grouped and editable – a master switch, category filters, and on every memory edit in place, pause or forget with Undo on the tray",
+      "description": "What the assistant remembers about you, grouped and editable \u2013 a master switch, category filters, and on every memory edit in place, pause or forget with Undo on the tray",
       "registryItem": "memory-panel",
       "registryPath": "/r/memory-panel.json",
-      "entryPoint": "src/library/memory-panel.jsx",
+      "entryPoint": "src/components/plico/memory-panel.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -922,10 +922,10 @@
       "slug": "memory-panel",
       "style": "clean",
       "title": "Memory Panel",
-      "description": "What the assistant remembers about you, grouped and editable – a master switch, category filters, and on every memory edit in place, pause or forget with Undo on the tray",
+      "description": "What the assistant remembers about you, grouped and editable \u2013 a master switch, category filters, and on every memory edit in place, pause or forget with Undo on the tray",
       "registryItem": "memory-panel-clean",
       "registryPath": "/r/memory-panel-clean.json",
-      "entryPoint": "src/library/memory-panel-clean.jsx",
+      "entryPoint": "src/components/plico/memory-panel-clean.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -937,10 +937,10 @@
       "slug": "message-actions",
       "style": "classic",
       "title": "Message Actions",
-      "description": "The quiet bar under an AI message – copy turns into a check, regenerate spins and unfolds a version switcher, thumbs pop and ask why, read aloud becomes a tiny equalizer",
+      "description": "The quiet bar under an AI message \u2013 copy turns into a check, regenerate spins and unfolds a version switcher, thumbs pop and ask why, read aloud becomes a tiny equalizer",
       "registryItem": "message-actions",
       "registryPath": "/r/message-actions.json",
-      "entryPoint": "src/library/message-actions.jsx",
+      "entryPoint": "src/components/plico/message-actions.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -952,10 +952,10 @@
       "slug": "message-actions",
       "style": "clean",
       "title": "Message Actions",
-      "description": "The quiet bar under an AI message – copy turns into a check, regenerate spins and unfolds a version switcher, thumbs pop and ask why, read aloud becomes a tiny equalizer",
+      "description": "The quiet bar under an AI message \u2013 copy turns into a check, regenerate spins and unfolds a version switcher, thumbs pop and ask why, read aloud becomes a tiny equalizer",
       "registryItem": "message-actions-clean",
       "registryPath": "/r/message-actions-clean.json",
-      "entryPoint": "src/library/message-actions-clean.jsx",
+      "entryPoint": "src/components/plico/message-actions-clean.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -967,10 +967,10 @@
       "slug": "model-picker",
       "style": "classic",
       "title": "Model Picker",
-      "description": "The model menu of an AI chat – point at a model and its speed, quality and cost bars fill, switch on extended thinking and its effort unfolds, while the tray rolls the first-token time and price",
+      "description": "The model menu of an AI chat \u2013 point at a model and its speed, quality and cost bars fill, switch on extended thinking and its effort unfolds, while the tray rolls the first-token time and price",
       "registryItem": "model-picker",
       "registryPath": "/r/model-picker.json",
-      "entryPoint": "src/library/model-picker.jsx",
+      "entryPoint": "src/components/plico/model-picker.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -982,10 +982,10 @@
       "slug": "model-picker",
       "style": "clean",
       "title": "Model Picker",
-      "description": "The model menu of an AI chat – point at a model and its speed, quality and cost bars fill, switch on extended thinking and its effort unfolds, while the tray rolls the first-token time and price",
+      "description": "The model menu of an AI chat \u2013 point at a model and its speed, quality and cost bars fill, switch on extended thinking and its effort unfolds, while the tray rolls the first-token time and price",
       "registryItem": "model-picker-clean",
       "registryPath": "/r/model-picker-clean.json",
-      "entryPoint": "src/library/model-picker-clean.jsx",
+      "entryPoint": "src/components/plico/model-picker-clean.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -997,10 +997,10 @@
       "slug": "notification-stack",
       "style": "classic",
       "title": "Notification Stack",
-      "description": "Notice cards stacked behind each other – dismiss the front one to reveal the next",
+      "description": "Notice cards stacked behind each other \u2013 dismiss the front one to reveal the next",
       "registryItem": "notification-stack",
       "registryPath": "/r/notification-stack.json",
-      "entryPoint": "src/library/notification-stack.jsx",
+      "entryPoint": "src/components/plico/notification-stack.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1012,10 +1012,10 @@
       "slug": "notification-stack",
       "style": "clean",
       "title": "Notification Stack",
-      "description": "Notice cards stacked behind each other – dismiss the front one to reveal the next",
+      "description": "Notice cards stacked behind each other \u2013 dismiss the front one to reveal the next",
       "registryItem": "notification-stack-clean",
       "registryPath": "/r/notification-stack-clean.json",
-      "entryPoint": "src/library/notification-stack-clean.jsx",
+      "entryPoint": "src/components/plico/notification-stack-clean.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1027,10 +1027,10 @@
       "slug": "otp-input",
       "style": "classic",
       "title": "OTP Input",
-      "description": "The verification code field done right – a gliding focus ring, paste and SMS autofill, a calm shake on errors and a morph into Verified",
+      "description": "The verification code field done right \u2013 a gliding focus ring, paste and SMS autofill, a calm shake on errors and a morph into Verified",
       "registryItem": "otp-input",
       "registryPath": "/r/otp-input.json",
-      "entryPoint": "src/library/otp-input.jsx",
+      "entryPoint": "src/components/plico/otp-input.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1042,10 +1042,10 @@
       "slug": "otp-input",
       "style": "clean",
       "title": "OTP Input",
-      "description": "The verification code field done right – a gliding focus ring, paste and SMS autofill, a calm shake on errors and a morph into Verified",
+      "description": "The verification code field done right \u2013 a gliding focus ring, paste and SMS autofill, a calm shake on errors and a morph into Verified",
       "registryItem": "otp-input-clean",
       "registryPath": "/r/otp-input-clean.json",
-      "entryPoint": "src/library/otp-input-clean.jsx",
+      "entryPoint": "src/components/plico/otp-input-clean.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1060,7 +1060,7 @@
       "description": "Account card with the signed-in user, menu actions and profile setup progress",
       "registryItem": "profile-menu",
       "registryPath": "/r/profile-menu.json",
-      "entryPoint": "src/library/profile-menu.jsx",
+      "entryPoint": "src/components/plico/profile-menu.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1075,7 +1075,7 @@
       "description": "Account card with the signed-in user, menu actions and profile setup progress",
       "registryItem": "profile-menu-clean",
       "registryPath": "/r/profile-menu-clean.json",
-      "entryPoint": "src/library/profile-menu-clean.jsx",
+      "entryPoint": "src/components/plico/profile-menu-clean.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1090,7 +1090,7 @@
       "description": "Onboarding checklist with an animated progress bar, ticks that draw themselves and auto play",
       "registryItem": "progress-tracker",
       "registryPath": "/r/progress-tracker.json",
-      "entryPoint": "src/library/progress-tracker.jsx",
+      "entryPoint": "src/components/plico/progress-tracker.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1105,7 +1105,7 @@
       "description": "Onboarding checklist with an animated progress bar, ticks that draw themselves and auto play",
       "registryItem": "progress-tracker-clean",
       "registryPath": "/r/progress-tracker-clean.json",
-      "entryPoint": "src/library/progress-tracker-clean.jsx",
+      "entryPoint": "src/components/plico/progress-tracker-clean.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1117,10 +1117,10 @@
       "slug": "project-card",
       "style": "classic",
       "title": "Project Card",
-      "description": "A two-line project summary that quietly unfolds on hover – a progress ring with one segment per subtask, a people filter and a status picker, all linked by hover",
+      "description": "A two-line project summary that quietly unfolds on hover \u2013 a progress ring with one segment per subtask, a people filter and a status picker, all linked by hover",
       "registryItem": "project-card",
       "registryPath": "/r/project-card.json",
-      "entryPoint": "src/library/project-card.jsx",
+      "entryPoint": "src/components/plico/project-card.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1132,10 +1132,10 @@
       "slug": "project-card",
       "style": "clean",
       "title": "Project Card",
-      "description": "A two-line project summary that quietly unfolds on hover – a progress ring with one segment per subtask, a people filter and a status picker, all linked by hover",
+      "description": "A two-line project summary that quietly unfolds on hover \u2013 a progress ring with one segment per subtask, a people filter and a status picker, all linked by hover",
       "registryItem": "project-card-clean",
       "registryPath": "/r/project-card-clean.json",
-      "entryPoint": "src/library/project-card-clean.jsx",
+      "entryPoint": "src/components/plico/project-card-clean.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1147,10 +1147,10 @@
       "slug": "prompt-library",
       "style": "classic",
       "title": "Prompt Library",
-      "description": "Saved prompt templates with variables – type straight into the sentence, watch the finished prompt assemble below, and use it once every variable is filled",
+      "description": "Saved prompt templates with variables \u2013 type straight into the sentence, watch the finished prompt assemble below, and use it once every variable is filled",
       "registryItem": "prompt-library",
       "registryPath": "/r/prompt-library.json",
-      "entryPoint": "src/library/prompt-library.jsx",
+      "entryPoint": "src/components/plico/prompt-library.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1162,10 +1162,10 @@
       "slug": "prompt-library",
       "style": "clean",
       "title": "Prompt Library",
-      "description": "Saved prompt templates with variables – type straight into the sentence, watch the finished prompt assemble below, and use it once every variable is filled",
+      "description": "Saved prompt templates with variables \u2013 type straight into the sentence, watch the finished prompt assemble below, and use it once every variable is filled",
       "registryItem": "prompt-library-clean",
       "registryPath": "/r/prompt-library-clean.json",
-      "entryPoint": "src/library/prompt-library-clean.jsx",
+      "entryPoint": "src/components/plico/prompt-library-clean.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1177,10 +1177,10 @@
       "slug": "reaction-bar",
       "style": "classic",
       "title": "Reaction Bar",
-      "description": "Like, comment, repost and share in one pill – icons pop and fill, counts roll in digit by digit",
+      "description": "Like, comment, repost and share in one pill \u2013 icons pop and fill, counts roll in digit by digit",
       "registryItem": "reaction-bar",
       "registryPath": "/r/reaction-bar.json",
-      "entryPoint": "src/library/reaction-bar.jsx",
+      "entryPoint": "src/components/plico/reaction-bar.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1192,10 +1192,10 @@
       "slug": "reaction-bar",
       "style": "clean",
       "title": "Reaction Bar",
-      "description": "Like, comment, repost and share in one pill – icons pop and fill, counts roll in digit by digit",
+      "description": "Like, comment, repost and share in one pill \u2013 icons pop and fill, counts roll in digit by digit",
       "registryItem": "reaction-bar-clean",
       "registryPath": "/r/reaction-bar-clean.json",
-      "entryPoint": "src/library/reaction-bar-clean.jsx",
+      "entryPoint": "src/components/plico/reaction-bar-clean.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1207,10 +1207,10 @@
       "slug": "segmented-control",
       "style": "classic",
       "title": "Segmented Control",
-      "description": "Switch between two to six options – a raised pill or underline that glides, stretches a little and can be dragged across, with icons, counts and badges",
+      "description": "Switch between two to six options \u2013 a raised pill or underline that glides, stretches a little and can be dragged across, with icons, counts and badges",
       "registryItem": "segmented-control",
       "registryPath": "/r/segmented-control.json",
-      "entryPoint": "src/library/segmented-control.jsx",
+      "entryPoint": "src/components/plico/segmented-control.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1222,10 +1222,10 @@
       "slug": "segmented-control",
       "style": "clean",
       "title": "Segmented Control",
-      "description": "Switch between two to six options – a raised pill or underline that glides, stretches a little and can be dragged across, with icons, counts and badges",
+      "description": "Switch between two to six options \u2013 a raised pill or underline that glides, stretches a little and can be dragged across, with icons, counts and badges",
       "registryItem": "segmented-control-clean",
       "registryPath": "/r/segmented-control-clean.json",
-      "entryPoint": "src/library/segmented-control-clean.jsx",
+      "entryPoint": "src/components/plico/segmented-control-clean.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1240,7 +1240,7 @@
       "description": "Onboarding panel with a progress bar and collapsible task groups that strike through when done",
       "registryItem": "setup-guide",
       "registryPath": "/r/setup-guide.json",
-      "entryPoint": "src/library/setup-guide.jsx",
+      "entryPoint": "src/components/plico/setup-guide.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1255,7 +1255,7 @@
       "description": "Onboarding panel with a progress bar and collapsible task groups that strike through when done",
       "registryItem": "setup-guide-clean",
       "registryPath": "/r/setup-guide-clean.json",
-      "entryPoint": "src/library/setup-guide-clean.jsx",
+      "entryPoint": "src/components/plico/setup-guide-clean.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1270,7 +1270,7 @@
       "description": "Suggestion card with a confidence signal, alternatives to switch to and accept with undo",
       "registryItem": "smart-recommendation",
       "registryPath": "/r/smart-recommendation.json",
-      "entryPoint": "src/library/smart-recommendation.jsx",
+      "entryPoint": "src/components/plico/smart-recommendation.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1285,7 +1285,7 @@
       "description": "Suggestion card with a confidence signal, alternatives to switch to and accept with undo",
       "registryItem": "smart-recommendation-clean",
       "registryPath": "/r/smart-recommendation-clean.json",
-      "entryPoint": "src/library/smart-recommendation-clean.jsx",
+      "entryPoint": "src/components/plico/smart-recommendation-clean.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1297,10 +1297,10 @@
       "slug": "stepper-form",
       "style": "classic",
       "title": "Stepper Form",
-      "description": "A multi-step flow for onboarding and setup – steps that fill and check off, sliding steps, a card that morphs to each step, inline validation and a success state",
+      "description": "A multi-step flow for onboarding and setup \u2013 steps that fill and check off, sliding steps, a card that morphs to each step, inline validation and a success state",
       "registryItem": "stepper-form",
       "registryPath": "/r/stepper-form.json",
-      "entryPoint": "src/library/stepper-form.jsx",
+      "entryPoint": "src/components/plico/stepper-form.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1312,10 +1312,10 @@
       "slug": "stepper-form",
       "style": "clean",
       "title": "Stepper Form",
-      "description": "A multi-step flow for onboarding and setup – steps that fill and check off, sliding steps, a card that morphs to each step, inline validation and a success state",
+      "description": "A multi-step flow for onboarding and setup \u2013 steps that fill and check off, sliding steps, a card that morphs to each step, inline validation and a success state",
       "registryItem": "stepper-form-clean",
       "registryPath": "/r/stepper-form-clean.json",
-      "entryPoint": "src/library/stepper-form-clean.jsx",
+      "entryPoint": "src/components/plico/stepper-form-clean.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1327,10 +1327,10 @@
       "slug": "thinking-loader",
       "style": "classic",
       "title": "Thinking Loader",
-      "description": "A small working pill for AI replies – an eight-ray spinner and a shimmering label that rolls through phases and settles on a check",
+      "description": "A small working pill for AI replies \u2013 an eight-ray spinner and a shimmering label that rolls through phases and settles on a check",
       "registryItem": "thinking-loader",
       "registryPath": "/r/thinking-loader.json",
-      "entryPoint": "src/library/thinking-loader.jsx",
+      "entryPoint": "src/components/plico/thinking-loader.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1342,10 +1342,10 @@
       "slug": "thinking-loader",
       "style": "clean",
       "title": "Thinking Loader",
-      "description": "A small working pill for AI replies – an eight-ray spinner and a shimmering label that rolls through phases and settles on a check",
+      "description": "A small working pill for AI replies \u2013 an eight-ray spinner and a shimmering label that rolls through phases and settles on a check",
       "registryItem": "thinking-loader-clean",
       "registryPath": "/r/thinking-loader-clean.json",
-      "entryPoint": "src/library/thinking-loader-clean.jsx",
+      "entryPoint": "src/components/plico/thinking-loader-clean.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1360,7 +1360,7 @@
       "description": "AI working panel with a live timer, searched sources and thinking steps that appear one by one",
       "registryItem": "thinking-state",
       "registryPath": "/r/thinking-state.json",
-      "entryPoint": "src/library/thinking-state.jsx",
+      "entryPoint": "src/components/plico/thinking-state.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1375,7 +1375,7 @@
       "description": "AI working panel with a live timer, searched sources and thinking steps that appear one by one",
       "registryItem": "thinking-state-clean",
       "registryPath": "/r/thinking-state-clean.json",
-      "entryPoint": "src/library/thinking-state-clean.jsx",
+      "entryPoint": "src/components/plico/thinking-state-clean.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1387,10 +1387,10 @@
       "slug": "tips-panel",
       "style": "classic",
       "title": "Tips Panel",
-      "description": "Grid of short tips with one action each – taken tips turn into a done state",
+      "description": "Grid of short tips with one action each \u2013 taken tips turn into a done state",
       "registryItem": "tips-panel",
       "registryPath": "/r/tips-panel.json",
-      "entryPoint": "src/library/tips-panel.jsx",
+      "entryPoint": "src/components/plico/tips-panel.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1402,10 +1402,10 @@
       "slug": "tips-panel",
       "style": "clean",
       "title": "Tips Panel",
-      "description": "Grid of short tips with one action each – taken tips turn into a done state",
+      "description": "Grid of short tips with one action each \u2013 taken tips turn into a done state",
       "registryItem": "tips-panel-clean",
       "registryPath": "/r/tips-panel-clean.json",
-      "entryPoint": "src/library/tips-panel-clean.jsx",
+      "entryPoint": "src/components/plico/tips-panel-clean.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1417,10 +1417,10 @@
       "slug": "toaster",
       "style": "classic",
       "title": "Toaster",
-      "description": "Calm toasts from anywhere – a stack that fans out on hover, promise toasts that morph from spinner to check, swipe to dismiss",
+      "description": "Calm toasts from anywhere \u2013 a stack that fans out on hover, promise toasts that morph from spinner to check, swipe to dismiss",
       "registryItem": "toaster",
       "registryPath": "/r/toaster.json",
-      "entryPoint": "src/library/toaster.jsx",
+      "entryPoint": "src/components/plico/toaster.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1432,10 +1432,10 @@
       "slug": "toaster",
       "style": "clean",
       "title": "Toaster",
-      "description": "Calm toasts from anywhere – a stack that fans out on hover, promise toasts that morph from spinner to check, swipe to dismiss",
+      "description": "Calm toasts from anywhere \u2013 a stack that fans out on hover, promise toasts that morph from spinner to check, swipe to dismiss",
       "registryItem": "toaster-clean",
       "registryPath": "/r/toaster-clean.json",
-      "entryPoint": "src/library/toaster-clean.jsx",
+      "entryPoint": "src/components/plico/toaster-clean.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1447,10 +1447,10 @@
       "slug": "tool-call-card",
       "style": "classic",
       "title": "Tool Call Card",
-      "description": "An agent's tool call in one line – live timer, status and summary, folds open to highlighted arguments and result with copy, retry on errors and a group that sums them up",
+      "description": "An agent's tool call in one line \u2013 live timer, status and summary, folds open to highlighted arguments and result with copy, retry on errors and a group that sums them up",
       "registryItem": "tool-call-card",
       "registryPath": "/r/tool-call-card.json",
-      "entryPoint": "src/library/tool-call-card.jsx",
+      "entryPoint": "src/components/plico/tool-call-card.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1462,10 +1462,10 @@
       "slug": "tool-call-card",
       "style": "clean",
       "title": "Tool Call Card",
-      "description": "An agent's tool call in one line – live timer, status and summary, folds open to highlighted arguments and result with copy, retry on errors and a group that sums them up",
+      "description": "An agent's tool call in one line \u2013 live timer, status and summary, folds open to highlighted arguments and result with copy, retry on errors and a group that sums them up",
       "registryItem": "tool-call-card-clean",
       "registryPath": "/r/tool-call-card-clean.json",
-      "entryPoint": "src/library/tool-call-card-clean.jsx",
+      "entryPoint": "src/components/plico/tool-call-card-clean.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1477,10 +1477,10 @@
       "slug": "usage-meter",
       "style": "classic",
       "title": "Usage Meter",
-      "description": "Plan usage and AI credits – a stacked credits meter by category, daily sparkline, limits and a button that speaks up near the limit",
+      "description": "Plan usage and AI credits \u2013 a stacked credits meter by category, daily sparkline, limits and a button that speaks up near the limit",
       "registryItem": "usage-meter",
       "registryPath": "/r/usage-meter.json",
-      "entryPoint": "src/library/usage-meter.jsx",
+      "entryPoint": "src/components/plico/usage-meter.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1492,10 +1492,10 @@
       "slug": "usage-meter",
       "style": "clean",
       "title": "Usage Meter",
-      "description": "Plan usage and AI credits – a stacked credits meter by category, daily sparkline, limits and a button that speaks up near the limit",
+      "description": "Plan usage and AI credits \u2013 a stacked credits meter by category, daily sparkline, limits and a button that speaks up near the limit",
       "registryItem": "usage-meter-clean",
       "registryPath": "/r/usage-meter-clean.json",
-      "entryPoint": "src/library/usage-meter-clean.jsx",
+      "entryPoint": "src/components/plico/usage-meter-clean.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1510,7 +1510,7 @@
       "description": "AI chat card with a soft gradient glow, suggestions, streaming replies and live voice dictation",
       "registryItem": "writing-assistant",
       "registryPath": "/r/writing-assistant.json",
-      "entryPoint": "src/library/writing-assistant.jsx",
+      "entryPoint": "src/components/plico/writing-assistant.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1525,7 +1525,7 @@
       "description": "AI chat card with a soft gradient glow, suggestions, streaming replies and live voice dictation",
       "registryItem": "writing-assistant-clean",
       "registryPath": "/r/writing-assistant-clean.json",
-      "entryPoint": "src/library/writing-assistant-clean.jsx",
+      "entryPoint": "src/components/plico/writing-assistant-clean.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1537,10 +1537,10 @@
       "slug": "agent-gallery",
       "style": "default",
       "title": "Agent Gallery",
-      "description": "Slim gradient panels with one open product screen in the middle – pick a panel and it glides open",
+      "description": "Slim gradient panels with one open product screen in the middle \u2013 pick a panel and it glides open",
       "registryItem": "agent-gallery",
       "registryPath": "/r/agent-gallery.json",
-      "entryPoint": "src/library/agent-gallery.jsx",
+      "entryPoint": "src/components/plico/agent-gallery.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1552,10 +1552,10 @@
       "slug": "ai-workspace",
       "style": "default",
       "title": "AI Workspace",
-      "description": "Complete assistant app – sidebar, welcome, streaming chat and projects, built on the Chat Composer",
+      "description": "Complete assistant app \u2013 sidebar, welcome, streaming chat and projects, built on the Chat Composer",
       "registryItem": "ai-workspace",
       "registryPath": "/r/ai-workspace.json",
-      "entryPoint": "src/library/ai-workspace.jsx",
+      "entryPoint": "src/components/plico/ai-workspace.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1567,10 +1567,10 @@
       "slug": "app-directory",
       "style": "default",
       "title": "App Directory",
-      "description": "Browse, search and connect integrations – categories, filters and app cards with a connect flow",
+      "description": "Browse, search and connect integrations \u2013 categories, filters and app cards with a connect flow",
       "registryItem": "app-directory",
       "registryPath": "/r/app-directory.json",
-      "entryPoint": "src/library/app-directory.jsx",
+      "entryPoint": "src/components/plico/app-directory.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1582,10 +1582,10 @@
       "slug": "client-context",
       "style": "default",
       "title": "Client Context",
-      "description": "A client workspace with live numbers and a shared context timeline – switch clients, search, filter and add notes or files",
+      "description": "A client workspace with live numbers and a shared context timeline \u2013 switch clients, search, filter and add notes or files",
       "registryItem": "client-context",
       "registryPath": "/r/client-context.json",
-      "entryPoint": "src/library/client-context.jsx",
+      "entryPoint": "src/components/plico/client-context.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1597,10 +1597,10 @@
       "slug": "invoice-credit",
       "style": "default",
       "title": "Invoice & Credit Note",
-      "description": "An invoice and its credit note stacked like paper – switch between them, pick lines to credit, adjust amounts and issue",
+      "description": "An invoice and its credit note stacked like paper \u2013 switch between them, pick lines to credit, adjust amounts and issue",
       "registryItem": "invoice-credit",
       "registryPath": "/r/invoice-credit.json",
-      "entryPoint": "src/library/invoice-credit.jsx",
+      "entryPoint": "src/components/plico/invoice-credit.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1612,10 +1612,10 @@
       "slug": "kpi-board",
       "style": "default",
       "title": "KPI Board",
-      "description": "The top of a dashboard – three trend cards, an overview chart that compares this period with the last, and a focus card; hover shows any day's value and every number rolls when the range changes",
+      "description": "The top of a dashboard \u2013 three trend cards, an overview chart that compares this period with the last, and a focus card; hover shows any day's value and every number rolls when the range changes",
       "registryItem": "kpi-board",
       "registryPath": "/r/kpi-board.json",
-      "entryPoint": "src/library/kpi-board.jsx",
+      "entryPoint": "src/components/plico/kpi-board.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1627,10 +1627,10 @@
       "slug": "logo-marquee",
       "style": "default",
       "title": "Logo Marquee",
-      "description": "The endless “Trusted by” strip – a seamless loop that eases to a stop on hover, scrubs with inertia and lifts the hovered logo to colour",
+      "description": "The endless \u201cTrusted by\u201d strip \u2013 a seamless loop that eases to a stop on hover, scrubs with inertia and lifts the hovered logo to colour",
       "registryItem": "logo-marquee",
       "registryPath": "/r/logo-marquee.json",
-      "entryPoint": "src/library/logo-marquee.jsx",
+      "entryPoint": "src/components/plico/logo-marquee.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1642,10 +1642,10 @@
       "slug": "metrics-dashboard",
       "style": "default",
       "title": "Metrics Dashboard",
-      "description": "Sales overview – KPI cards pick the metric, one chart switches between dotted line and bars, with top products and channels",
+      "description": "Sales overview \u2013 KPI cards pick the metric, one chart switches between dotted line and bars, with top products and channels",
       "registryItem": "metrics-dashboard",
       "registryPath": "/r/metrics-dashboard.json",
-      "entryPoint": "src/library/metrics-dashboard.jsx",
+      "entryPoint": "src/components/plico/metrics-dashboard.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1660,7 +1660,7 @@
       "description": "Pricing section with a monthly / yearly switch, three plan cards and collapsible details",
       "registryItem": "pricing-plans",
       "registryPath": "/r/pricing-plans.json",
-      "entryPoint": "src/library/pricing-plans.jsx",
+      "entryPoint": "src/components/plico/pricing-plans.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1675,7 +1675,7 @@
       "description": "Kanban board with drag and drop, quick add, a detail panel, search, label filters and a compact view",
       "registryItem": "task-board",
       "registryPath": "/r/task-board.json",
-      "entryPoint": "src/library/task-board.jsx",
+      "entryPoint": "src/components/plico/task-board.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1687,10 +1687,10 @@
       "slug": "testimonial-wall",
       "style": "default",
       "title": "Testimonial Wall",
-      "description": "The landing-page wall of quotes – columns that scroll endlessly in opposite directions, ease to a stop on hover and scrub with inertia",
+      "description": "The landing-page wall of quotes \u2013 columns that scroll endlessly in opposite directions, ease to a stop on hover and scrub with inertia",
       "registryItem": "testimonial-wall",
       "registryPath": "/r/testimonial-wall.json",
-      "entryPoint": "src/library/testimonial-wall.jsx",
+      "entryPoint": "src/components/plico/testimonial-wall.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1705,7 +1705,7 @@
       "description": "A prompt types itself and branches out into three agents, each with a role and overlapping tool logos",
       "registryItem": "agent-team",
       "registryPath": "/r/agent-team.json",
-      "entryPoint": "src/library/agent-team.jsx",
+      "entryPoint": "src/components/plico/agent-team.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1717,10 +1717,10 @@
       "slug": "cover-flow",
       "style": "default",
       "title": "Cover Flow",
-      "description": "Browse covers in 3D – drag, flick or scrub the row, it springs to the nearest cover; images drift in their frames over a soft reflection",
+      "description": "Browse covers in 3D \u2013 drag, flick or scrub the row, it springs to the nearest cover; images drift in their frames over a soft reflection",
       "registryItem": "cover-flow",
       "registryPath": "/r/cover-flow.json",
-      "entryPoint": "src/library/cover-flow.jsx",
+      "entryPoint": "src/components/plico/cover-flow.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1735,7 +1735,7 @@
       "description": "Stack of calendar cards marked empty, fanning out on hover",
       "registryItem": "empty-calendar",
       "registryPath": "/r/empty-calendar.json",
-      "entryPoint": "src/library/empty-calendar.jsx",
+      "entryPoint": "src/components/plico/empty-calendar.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1750,7 +1750,7 @@
       "description": "Grok tile inside two rings with comets and data nodes orbiting around it",
       "registryItem": "enrichment-orbit",
       "registryPath": "/r/enrichment-orbit.json",
-      "entryPoint": "src/library/enrichment-orbit.jsx",
+      "entryPoint": "src/components/plico/enrichment-orbit.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1762,10 +1762,10 @@
       "slug": "frost-cloud",
       "style": "default",
       "title": "Frost Cloud",
-      "description": "A frosted white cloud with eyes cut out of it, on a red-orange or blue sky – it floats, turns to look around, blinks, follows the pointer and bounces with a wink when clicked",
+      "description": "A frosted white cloud with eyes cut out of it, on a red-orange or blue sky \u2013 it floats, turns to look around, blinks, follows the pointer and bounces with a wink when clicked",
       "registryItem": "frost-cloud",
       "registryPath": "/r/frost-cloud.json",
-      "entryPoint": "src/library/frost-cloud.jsx",
+      "entryPoint": "src/components/plico/frost-cloud.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1780,7 +1780,7 @@
       "description": "Unanswered chat messages marked as read, with a thumbs-down reply on hover",
       "registryItem": "ghosted-chat",
       "registryPath": "/r/ghosted-chat.json",
-      "entryPoint": "src/library/ghosted-chat.jsx",
+      "entryPoint": "src/components/plico/ghosted-chat.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1795,7 +1795,7 @@
       "description": "Glassy blue folder with documents behind a frosted pocket that tips open on hover",
       "registryItem": "glass-folder",
       "registryPath": "/r/glass-folder.json",
-      "entryPoint": "src/library/glass-folder.jsx",
+      "entryPoint": "src/components/plico/glass-folder.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1807,10 +1807,10 @@
       "slug": "glow-cloud",
       "style": "default",
       "title": "Glow Cloud",
-      "description": "A glowing cloud with eyes in blue or red-orange – it floats, turns to look around, blinks, follows the pointer and bounces with a wink when clicked",
+      "description": "A glowing cloud with eyes in blue or red-orange \u2013 it floats, turns to look around, blinks, follows the pointer and bounces with a wink when clicked",
       "registryItem": "glow-cloud",
       "registryPath": "/r/glow-cloud.json",
-      "entryPoint": "src/library/glow-cloud.jsx",
+      "entryPoint": "src/components/plico/glow-cloud.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1822,10 +1822,10 @@
       "slug": "glow-keyboard",
       "style": "default",
       "title": "Glow Keyboard",
-      "description": "AI chat input that types itself over a glass keyboard – every key press sends a wave up the gradient floor",
+      "description": "AI chat input that types itself over a glass keyboard \u2013 every key press sends a wave up the gradient floor",
       "registryItem": "glow-keyboard",
       "registryPath": "/r/glow-keyboard.json",
-      "entryPoint": "src/library/glow-keyboard.jsx",
+      "entryPoint": "src/components/plico/glow-keyboard.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1837,10 +1837,10 @@
       "slug": "integration-beam",
       "style": "default",
       "title": "Integration Beam",
-      "description": "Your product between the tools it connects – light pulses flow along curved beams, hover to focus a tool, click to pause it",
+      "description": "Your product between the tools it connects \u2013 light pulses flow along curved beams, hover to focus a tool, click to pause it",
       "registryItem": "integration-beam",
       "registryPath": "/r/integration-beam.json",
-      "entryPoint": "src/library/integration-beam.jsx",
+      "entryPoint": "src/components/plico/integration-beam.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1855,7 +1855,7 @@
       "description": "Integration pills rotating along a dashed arc, each beaming its data into a central analysis hub",
       "registryItem": "integration-flow",
       "registryPath": "/r/integration-flow.json",
-      "entryPoint": "src/library/integration-flow.jsx",
+      "entryPoint": "src/components/plico/integration-flow.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1870,7 +1870,7 @@
       "description": "Honeycomb-like wall of integration logos around a bright centre tile with your product mark, fading out toward the edges",
       "registryItem": "integration-grid",
       "registryPath": "/r/integration-grid.json",
-      "entryPoint": "src/library/integration-grid.jsx",
+      "entryPoint": "src/components/plico/integration-grid.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1882,10 +1882,10 @@
       "slug": "layer-stack",
       "style": "default",
       "title": "Layer Stack",
-      "description": "Isometric stack of five layers with a list beside it – the chosen entry lifts its layer out in color",
+      "description": "Isometric stack of five layers with a list beside it \u2013 the chosen entry lifts its layer out in color",
       "registryItem": "layer-stack",
       "registryPath": "/r/layer-stack.json",
-      "entryPoint": "src/library/layer-stack.jsx",
+      "entryPoint": "src/components/plico/layer-stack.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1900,7 +1900,7 @@
       "description": "ChatGPT tile linked to Gmail and Grok, with a shine running along the connection",
       "registryItem": "lead-sourcing",
       "registryPath": "/r/lead-sourcing.json",
-      "entryPoint": "src/library/lead-sourcing.jsx",
+      "entryPoint": "src/components/plico/lead-sourcing.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1912,10 +1912,10 @@
       "slug": "logo-cluster",
       "style": "default",
       "title": "Logo Cluster",
-      "description": "Your mark on a white disc in the middle – company logos bounce out of it and settle around it",
+      "description": "Your mark on a white disc in the middle \u2013 company logos bounce out of it and settle around it",
       "registryItem": "logo-cluster",
       "registryPath": "/r/logo-cluster.json",
-      "entryPoint": "src/library/logo-cluster.jsx",
+      "entryPoint": "src/components/plico/logo-cluster.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1927,10 +1927,10 @@
       "slug": "model-wheel",
       "style": "default",
       "title": "Model Wheel",
-      "description": "AI model names on a turning drum – the rows bend away at the edges and each model lands on a soft gray fill",
+      "description": "AI model names on a turning drum \u2013 the rows bend away at the edges and each model lands on a soft gray fill",
       "registryItem": "model-wheel",
       "registryPath": "/r/model-wheel.json",
-      "entryPoint": "src/library/model-wheel.jsx",
+      "entryPoint": "src/components/plico/model-wheel.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1945,7 +1945,7 @@
       "description": "Lines branching out to Gmail, Slack and Notion with colored pulses flowing down",
       "registryItem": "outreach-branches",
       "registryPath": "/r/outreach-branches.json",
-      "entryPoint": "src/library/outreach-branches.jsx",
+      "entryPoint": "src/components/plico/outreach-branches.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1960,7 +1960,7 @@
       "description": "Animated scene of a client task branching into subtasks, notes and assigned roles",
       "registryItem": "project-flow",
       "registryPath": "/r/project-flow.json",
-      "entryPoint": "src/library/project-flow.jsx",
+      "entryPoint": "src/components/plico/project-flow.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1975,7 +1975,7 @@
       "description": "DACH map with fading neighbours and a pastel band along the border, switchable to the US, China, India, Brazil or Japan",
       "registryItem": "region-dach",
       "registryPath": "/r/region-dach.json",
-      "entryPoint": "src/library/region-dach.jsx",
+      "entryPoint": "src/components/plico/region-dach.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -1990,7 +1990,7 @@
       "description": "Glassy blue folder on its side, documents sliding out to the right as the pocket swings open on hover",
       "registryItem": "side-folder",
       "registryPath": "/r/side-folder.json",
-      "entryPoint": "src/library/side-folder.jsx",
+      "entryPoint": "src/components/plico/side-folder.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -2005,7 +2005,7 @@
       "description": "Overlapping browser windows where the highlight follows the hovered tab",
       "registryItem": "tab-overload",
       "registryPath": "/r/tab-overload.json",
-      "entryPoint": "src/library/tab-overload.jsx",
+      "entryPoint": "src/components/plico/tab-overload.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -2017,10 +2017,10 @@
       "slug": "team-invite",
       "style": "default",
       "title": "Team Invite",
-      "description": "Connected teammates – a cursor drags a new one into the empty slot, the line turns solid and they go online",
+      "description": "Connected teammates \u2013 a cursor drags a new one into the empty slot, the line turns solid and they go online",
       "registryItem": "team-invite",
       "registryPath": "/r/team-invite.json",
-      "entryPoint": "src/library/team-invite.jsx",
+      "entryPoint": "src/components/plico/team-invite.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -2032,10 +2032,10 @@
       "slug": "voice-orb",
       "style": "default",
       "title": "Voice Orb",
-      "description": "The face of a voice assistant – a sphere of dots that breathes, catches sound, collapses into a spinning ring while thinking and ripples when it speaks",
+      "description": "The face of a voice assistant \u2013 a sphere of dots that breathes, catches sound, collapses into a spinning ring while thinking and ripples when it speaks",
       "registryItem": "voice-orb",
       "registryPath": "/r/voice-orb.json",
-      "entryPoint": "src/library/voice-orb.jsx",
+      "entryPoint": "src/components/plico/voice-orb.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -2050,7 +2050,7 @@
       "description": "World map with one highlighted continent and a pastel band along its coastline, switchable between all six",
       "registryItem": "world-map",
       "registryPath": "/r/world-map.json",
-      "entryPoint": "src/library/world-map.jsx",
+      "entryPoint": "src/components/plico/world-map.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -2065,7 +2065,7 @@
       "description": "Chat with an orchestrating agent, the agents at work, and a brief to fill in beside it",
       "registryItem": "agent-chat",
       "registryPath": "/r/agent-chat.json",
-      "entryPoint": "src/library/agent-chat.jsx",
+      "entryPoint": "src/components/plico/agent-chat.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo",
@@ -2081,7 +2081,7 @@
       "description": "One autonomous agent run: the plan ticking through its steps, the tool calls, an approval it waits on and the draft it wrote",
       "registryItem": "agent-run",
       "registryPath": "/r/agent-run.json",
-      "entryPoint": "src/library/agent-run.jsx",
+      "entryPoint": "src/components/plico/agent-run.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo",
@@ -2097,7 +2097,7 @@
       "description": "Revenue dashboard: key figures, revenue by channel, breakdown, top products and weekly trends",
       "registryItem": "analytics",
       "registryPath": "/r/analytics.json",
-      "entryPoint": "src/library/analytics.jsx",
+      "entryPoint": "src/components/plico/analytics.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo",
@@ -2110,10 +2110,10 @@
       "slug": "app-shell",
       "style": "default",
       "title": "App Shell",
-      "description": "Collapsible sidebar with workspace, menu, projects and account – the frame every screen sits in",
+      "description": "Collapsible sidebar with workspace, menu, projects and account \u2013 the frame every screen sits in",
       "registryItem": "app-shell",
       "registryPath": "/r/app-shell.json",
-      "entryPoint": "src/library/app-shell.jsx",
+      "entryPoint": "src/components/plico/app-shell.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo",
@@ -2129,7 +2129,7 @@
       "description": "AI assistant start page: greeting, prompt box with tools, connected apps and suggestions",
       "registryItem": "assistant-home",
       "registryPath": "/r/assistant-home.json",
-      "entryPoint": "src/library/assistant-home.jsx",
+      "entryPoint": "src/components/plico/assistant-home.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo",
@@ -2145,7 +2145,7 @@
       "description": "Company list with pipelines, open views as tabs and an editable data table",
       "registryItem": "crm",
       "registryPath": "/r/crm.json",
-      "entryPoint": "src/library/crm.jsx",
+      "entryPoint": "src/components/plico/crm.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo",
@@ -2161,7 +2161,7 @@
       "description": "Prompt evaluation dashboard: pass rate by version, reviewable prompt changes and test cases you can re-run",
       "registryItem": "evals",
       "registryPath": "/r/evals.json",
-      "entryPoint": "src/library/evals.jsx",
+      "entryPoint": "src/components/plico/evals.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo",
@@ -2177,7 +2177,7 @@
       "description": "Folder overview with tabs, search, sort, grid/list toggle and file templates",
       "registryItem": "files",
       "registryPath": "/r/files.json",
-      "entryPoint": "src/library/files.jsx",
+      "entryPoint": "src/components/plico/files.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo",
@@ -2193,7 +2193,7 @@
       "description": "Inside one folder: breadcrumbs, file cards with previews, and an empty state",
       "registryItem": "folder",
       "registryPath": "/r/folder.json",
-      "entryPoint": "src/library/folder.jsx",
+      "entryPoint": "src/components/plico/folder.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo",
@@ -2209,7 +2209,7 @@
       "description": "App directory with a sticky header, categories, search and connect states",
       "registryItem": "integrations",
       "registryPath": "/r/integrations.json",
-      "entryPoint": "src/library/integrations.jsx",
+      "entryPoint": "src/components/plico/integrations.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo",
@@ -2225,7 +2225,7 @@
       "description": "First-run flow of an AI workspace: workspace setup, tool connections, team invites and a first agent, with a getting-started checklist",
       "registryItem": "onboarding",
       "registryPath": "/r/onboarding.json",
-      "entryPoint": "src/library/onboarding.jsx",
+      "entryPoint": "src/components/plico/onboarding.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo",
@@ -2241,7 +2241,7 @@
       "description": "Settings page with tabs: workspace, members, API keys and billing with plan, usage, payment method, plan comparison and invoices",
       "registryItem": "settings-billing",
       "registryPath": "/r/settings-billing.json",
-      "entryPoint": "src/library/settings-billing.jsx",
+      "entryPoint": "src/components/plico/settings-billing.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo",
@@ -2257,7 +2257,7 @@
       "description": "Swaps content with a soft blur while the box glides smoothly to the size of what comes next",
       "registryItem": "blur-crossfade",
       "registryPath": "/r/blur-crossfade.json",
-      "entryPoint": "src/library/blur-crossfade.jsx",
+      "entryPoint": "src/components/plico/blur-crossfade.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -2269,10 +2269,10 @@
       "slug": "gradient-floor",
       "style": "default",
       "title": "Gradient Floor",
-      "description": "A blurred colour gradient that glows up from the bottom edge – two layers that drift and morph",
+      "description": "A blurred colour gradient that glows up from the bottom edge \u2013 two layers that drift and morph",
       "registryItem": "gradient-floor",
       "registryPath": "/r/gradient-floor.json",
-      "entryPoint": "src/library/gradient-floor.jsx",
+      "entryPoint": "src/components/plico/gradient-floor.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -2284,10 +2284,10 @@
       "slug": "gradient-text",
       "style": "default",
       "title": "Gradient Text",
-      "description": "Letters cut from a liquid, ever-flowing gradient – the color sweeps across the word the first time it's seen",
+      "description": "Letters cut from a liquid, ever-flowing gradient \u2013 the color sweeps across the word the first time it's seen",
       "registryItem": "gradient-text",
       "registryPath": "/r/gradient-text.json",
-      "entryPoint": "src/library/gradient-text.jsx",
+      "entryPoint": "src/components/plico/gradient-text.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -2302,7 +2302,7 @@
       "description": "A fine line grid that drifts slowly behind your content and fades out towards the edges",
       "registryItem": "grid-background",
       "registryPath": "/r/grid-background.json",
-      "entryPoint": "src/library/grid-background.jsx",
+      "entryPoint": "src/components/plico/grid-background.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -2314,10 +2314,10 @@
       "slug": "number-ticker",
       "style": "default",
       "title": "Number Ticker",
-      "description": "Odometer-style numbers – every digit rolls to its new value and counts in from zero when it scrolls into view",
+      "description": "Odometer-style numbers \u2013 every digit rolls to its new value and counts in from zero when it scrolls into view",
       "registryItem": "number-ticker",
       "registryPath": "/r/number-ticker.json",
-      "entryPoint": "src/library/number-ticker.jsx",
+      "entryPoint": "src/components/plico/number-ticker.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -2329,10 +2329,10 @@
       "slug": "shimmer-loader",
       "style": "default",
       "title": "Shimmer Loader",
-      "description": "Skeleton blocks that share one soft light sweep, plus shimmering text for “Thinking…” states",
+      "description": "Skeleton blocks that share one soft light sweep, plus shimmering text for \u201cThinking\u2026\u201d states",
       "registryItem": "shimmer-loader",
       "registryPath": "/r/shimmer-loader.json",
-      "entryPoint": "src/library/shimmer-loader.jsx",
+      "entryPoint": "src/components/plico/shimmer-loader.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -2344,10 +2344,10 @@
       "slug": "text-reveal",
       "style": "default",
       "title": "Text Reveal",
-      "description": "Text that arrives word by word or letter by letter – each piece rises out of a soft blur as it scrolls into view",
+      "description": "Text that arrives word by word or letter by letter \u2013 each piece rises out of a soft blur as it scrolls into view",
       "registryItem": "text-reveal",
       "registryPath": "/r/text-reveal.json",
-      "entryPoint": "src/library/text-reveal.jsx",
+      "entryPoint": "src/components/plico/text-reveal.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"
@@ -2362,7 +2362,7 @@
       "description": "A card that tilts in 3D towards the pointer, with a soft glare that follows it and a smooth spring back",
       "registryItem": "tilt-card",
       "registryPath": "/r/tilt-card.json",
-      "entryPoint": "src/library/tilt-card.jsx",
+      "entryPoint": "src/components/plico/tilt-card.tsx",
       "exports": {
         "component": "Component",
         "demo": "Demo"

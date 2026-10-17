@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`A ⌘K menu that runs actions across the tools your product connects to`, `Power users who want to reach any page or action without the mouse`],
   whenNotToUse: [`The only way to reach something – keep the main navigation visible as well`, `Fewer than five actions – buttons are easier to discover`],
-  usage: "import { Component as CommandMenu } from \"@/components/plico/command-menu-clean\";\nfunction Commands({\n  onClose\n}) {\n  return <CommandMenu autoFocus onClose={onClose} onRun={(id, query) => id === \"ask\" ? askAssistant(query) : runCommand(id)} />;\n}\nexport {\n  Commands\n};",
+  usage: "import CommandMenu from \"@/components/plico/command-menu-clean\";\nfunction Commands({\n  onClose\n}) {\n  return <CommandMenu autoFocus onClose={onClose} onRun={(id, query) => id === \"ask\" ? askAssistant(query) : runCommand(id)} />;\n}\nexport { Commands };",
   props: [{
     name: `groups`,
     type: `CommandGroup[]`,

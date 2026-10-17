@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`A hero or feature section that shows your product pulling data in from the tools teams already use`, `Integration or data-platform pages where a short, self-playing loop explains the idea better than a logo wall`],
   whenNotToUse: [`A real list of connected integrations – the pills are decorative, not interactive`, `Very small spaces below ~320px wide, where the pill text gets hard to read`, `Brands that clash with the warm coral background`],
-  usage: "import { IntegrationFlow } from \"@/components/plico/integration-flow\";\nfunction IntegrationsSection() {\n  return <section style={{\n    maxWidth: 1100,\n    margin: \"0 auto\"\n  }}>\n      <IntegrationFlow />\n    </section>;\n}\nexport {\n  IntegrationsSection\n};",
+  usage: "import IntegrationFlow from \"@/components/plico/integration-flow\";\nfunction IntegrationsSection() {\n  return <section style={{\n    maxWidth: 1100,\n    margin: \"0 auto\"\n  }}>\n      <IntegrationFlow />\n    </section>;\n}\nexport { IntegrationsSection };",
   examples: [{
     title: `Your own integrations`,
     code: "<IntegrationFlow items={[{\n  name: \"GitHub\",\n  mono: true,\n  icon: <GitHubIcon />\n}, {\n  name: \"Notion\",\n  mono: true,\n  icon: <NotionIcon />\n}, {\n  name: \"HubSpot\",\n  icon: <HubSpotIcon />\n}, {\n  name: \"Stripe\",\n  icon: <StripeIcon />\n}, {\n  name: \"Linear\",\n  icon: <LinearIcon />,\n  title: \"Webhook\"\n}]} />;"

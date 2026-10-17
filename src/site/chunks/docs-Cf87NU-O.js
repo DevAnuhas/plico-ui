@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`A problem card about context switching, research in too many tabs or manual busywork`, `Bento grids and feature cards that need a small illustration above the text`],
   whenNotToUse: [`Showing real browser content – the windows only contain placeholder blocks`, `Places where the right and bottom edge must stay sharp – the scene fades out there by design`],
-  usage: "import { TabOverload } from \"@/components/plico/tab-overload\";\nexport function FeatureCard() {\n  return <article style={{\n    maxWidth: 360\n  }}>\n      <TabOverload />\n      <h3>Card title</h3>\n      <p>Short description of the problem or step.</p>\n    </article>;\n}",
+  usage: "import TabOverload from \"@/components/plico/tab-overload\";\nexport function FeatureCard() {\n  return <article style={{\n    maxWidth: 360\n  }}>\n      <TabOverload />\n      <h3>Card title</h3>\n      <p>Short description of the problem or step.</p>\n    </article>;\n}",
   props: [{
     name: `label`,
     type: `string`,

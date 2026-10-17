@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`An integrations or marketplace page in a SaaS product`, `Settings screens where people connect and disconnect third-party tools`],
   whenNotToUse: [`Two or three integrations – a short list in settings is enough`, `Hundreds of apps – add server-side search and paging`],
-  usage: "import { AppDirectory } from \"@/components/plico/app-directory\";\nfunction Integrations() {\n  return <AppDirectory apps={apps} onToggle={(app, connected) => save(app.id, connected)} />;\n}\nexport {\n  Integrations\n};",
+  usage: "import AppDirectory from \"@/components/plico/app-directory\";\nfunction Integrations() {\n  return <AppDirectory apps={apps} onToggle={(app, connected) => save(app.id, connected)} />;\n}\nexport { Integrations };",
   props: [{
     name: `apps`,
     type: `App[]`,

@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "entries": [
     {
-      "publicEntry": "src/library/agent-inbox.jsx",
+      "publicEntry": "src/components/plico/agent-inbox.tsx",
       "section": "components",
       "slug": "agent-inbox",
       "sourceSlug": "agent-inbox",
       "variant": "classic",
       "title": "Agent Inbox",
-      "entry": "src/library/items/agent-inbox/index.jsx",
-      "primaryEntry": "src/library/modules/demo-D8lqmxyw.jsx",
+      "entry": "src/components/plico/agent-inbox.tsx",
+      "primaryEntry": "src/components/plico/agent-inbox.tsx",
       "exports": [
         "AgentInbox",
         "AgentInboxDemo",
@@ -17,17 +17,18 @@
         "Demo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/agent-inbox-clean.jsx",
+      "publicEntry": "src/components/plico/agent-inbox-clean.tsx",
       "section": "components",
       "slug": "agent-inbox",
       "sourceSlug": "agent-inbox-clean",
       "variant": "clean",
       "title": "Agent Inbox",
-      "entry": "src/library/items/agent-inbox-clean/index.jsx",
-      "primaryEntry": "src/library/modules/demo.clean-BBgUsqmk.jsx",
+      "entry": "src/components/plico/agent-inbox-clean.tsx",
+      "primaryEntry": "src/components/plico/agent-inbox-clean.tsx",
       "exports": [
         "AgentInboxClean",
         "AgentInboxCleanDemo",
@@ -35,17 +36,18 @@
         "Demo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/agent-lanes.jsx",
+      "publicEntry": "src/components/plico/agent-lanes.tsx",
       "section": "components",
       "slug": "agent-lanes",
       "sourceSlug": "agent-lanes",
       "variant": "classic",
       "title": "Agent Lanes",
-      "entry": "src/library/items/agent-lanes/index.jsx",
-      "primaryEntry": "src/library/modules/demo-DjN2XUBS.jsx",
+      "entry": "src/components/plico/agent-lanes.tsx",
+      "primaryEntry": "src/components/plico/agent-lanes.tsx",
       "exports": [
         "AgentLanes",
         "AgentLanesDemo",
@@ -53,17 +55,18 @@
         "Demo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/agent-lanes-clean.jsx",
+      "publicEntry": "src/components/plico/agent-lanes-clean.tsx",
       "section": "components",
       "slug": "agent-lanes",
       "sourceSlug": "agent-lanes-clean",
       "variant": "clean",
       "title": "Agent Lanes",
-      "entry": "src/library/items/agent-lanes-clean/index.jsx",
-      "primaryEntry": "src/library/modules/demo.clean-1HqvmQFW.jsx",
+      "entry": "src/components/plico/agent-lanes-clean.tsx",
+      "primaryEntry": "src/components/plico/agent-lanes-clean.tsx",
       "exports": [
         "AgentLanesClean",
         "AgentLanesCleanDemo",
@@ -71,17 +74,18 @@
         "Demo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/agent-plan.jsx",
+      "publicEntry": "src/components/plico/agent-plan.tsx",
       "section": "components",
       "slug": "agent-plan",
       "sourceSlug": "agent-plan",
       "variant": "classic",
       "title": "Agent Plan",
-      "entry": "src/library/items/agent-plan/index.jsx",
-      "primaryEntry": "src/library/modules/component-XY52GlKn.jsx",
+      "entry": "src/components/plico/agent-plan.tsx",
+      "primaryEntry": "src/components/plico/agent-plan.tsx",
       "exports": [
         "AgentPlan",
         "AgentPlanDemo",
@@ -89,17 +93,22 @@
         "Demo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [
+        "AgentPlanProps",
+        "PlanDragState",
+        "PlanStep"
+      ],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/agent-plan-clean.jsx",
+      "publicEntry": "src/components/plico/agent-plan-clean.tsx",
       "section": "components",
       "slug": "agent-plan",
       "sourceSlug": "agent-plan-clean",
       "variant": "clean",
       "title": "Agent Plan",
-      "entry": "src/library/items/agent-plan-clean/index.jsx",
-      "primaryEntry": "src/library/modules/demo.clean-DhEwvoWY.jsx",
+      "entry": "src/components/plico/agent-plan-clean.tsx",
+      "primaryEntry": "src/components/plico/agent-plan-clean.tsx",
       "exports": [
         "AgentPlanClean",
         "AgentPlanCleanDemo",
@@ -107,17 +116,22 @@
         "Demo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [
+        "AgentPlanCleanProps",
+        "PlanDragState",
+        "PlanStep"
+      ],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/agent-steering.jsx",
+      "publicEntry": "src/components/plico/agent-steering.tsx",
       "section": "components",
       "slug": "agent-steering",
       "sourceSlug": "agent-steering",
       "variant": "classic",
       "title": "Agent Steering",
-      "entry": "src/library/items/agent-steering/index.jsx",
-      "primaryEntry": "src/library/modules/demo-BIClVWrb.jsx",
+      "entry": "src/components/plico/agent-steering.tsx",
+      "primaryEntry": "src/components/plico/agent-steering.tsx",
       "exports": [
         "AgentSteering",
         "AgentSteeringDemo",
@@ -125,17 +139,18 @@
         "Demo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/agent-steering-clean.jsx",
+      "publicEntry": "src/components/plico/agent-steering-clean.tsx",
       "section": "components",
       "slug": "agent-steering",
       "sourceSlug": "agent-steering-clean",
       "variant": "clean",
       "title": "Agent Steering",
-      "entry": "src/library/items/agent-steering-clean/index.jsx",
-      "primaryEntry": "src/library/modules/demo.clean-BdEtaf2R.jsx",
+      "entry": "src/components/plico/agent-steering-clean.tsx",
+      "primaryEntry": "src/components/plico/agent-steering-clean.tsx",
       "exports": [
         "AgentSteeringClean",
         "AgentSteeringCleanDemo",
@@ -143,17 +158,18 @@
         "Demo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/ai-answer.jsx",
+      "publicEntry": "src/components/plico/ai-answer.tsx",
       "section": "components",
       "slug": "ai-answer",
       "sourceSlug": "ai-answer",
       "variant": "classic",
       "title": "AI Answer",
-      "entry": "src/library/items/ai-answer/index.jsx",
-      "primaryEntry": "src/library/modules/demo-DRZinwQJ.jsx",
+      "entry": "src/components/plico/ai-answer.tsx",
+      "primaryEntry": "src/components/plico/ai-answer.tsx",
       "exports": [
         "AiAnswer",
         "AiAnswerDemo",
@@ -161,17 +177,23 @@
         "Demo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [
+        "AiAnswerProps",
+        "AnswerBlock",
+        "AnswerSource",
+        "AnswerToken"
+      ],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/ai-answer-clean.jsx",
+      "publicEntry": "src/components/plico/ai-answer-clean.tsx",
       "section": "components",
       "slug": "ai-answer",
       "sourceSlug": "ai-answer-clean",
       "variant": "clean",
       "title": "AI Answer",
-      "entry": "src/library/items/ai-answer-clean/index.jsx",
-      "primaryEntry": "src/library/modules/demo.clean-DRkQ7w4o.jsx",
+      "entry": "src/components/plico/ai-answer-clean.tsx",
+      "primaryEntry": "src/components/plico/ai-answer-clean.tsx",
       "exports": [
         "AiAnswerClean",
         "AiAnswerCleanDemo",
@@ -179,17 +201,23 @@
         "Demo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [
+        "AiAnswerCleanProps",
+        "AnswerBlock",
+        "AnswerSource",
+        "AnswerToken"
+      ],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/approval-card.jsx",
+      "publicEntry": "src/components/plico/approval-card.tsx",
       "section": "components",
       "slug": "approval-card",
       "sourceSlug": "approval-card",
       "variant": "classic",
       "title": "Approval Card",
-      "entry": "src/library/items/approval-card/index.jsx",
-      "primaryEntry": "src/library/modules/component-SU9mzBXM.jsx",
+      "entry": "src/components/plico/approval-card.tsx",
+      "primaryEntry": "src/components/plico/approval-card.tsx",
       "exports": [
         "ApprovalCard",
         "ApprovalCardDemo",
@@ -197,17 +225,20 @@
         "Demo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [
+        "ApprovalCardProps"
+      ],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/approval-card-clean.jsx",
+      "publicEntry": "src/components/plico/approval-card-clean.tsx",
       "section": "components",
       "slug": "approval-card",
       "sourceSlug": "approval-card-clean",
       "variant": "clean",
       "title": "Approval Card",
-      "entry": "src/library/items/approval-card-clean/index.jsx",
-      "primaryEntry": "src/library/modules/demo.clean-WOdGIyW9.jsx",
+      "entry": "src/components/plico/approval-card-clean.tsx",
+      "primaryEntry": "src/components/plico/approval-card-clean.tsx",
       "exports": [
         "ApprovalCardClean",
         "ApprovalCardCleanDemo",
@@ -215,17 +246,20 @@
         "Demo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [
+        "ApprovalCardCleanProps"
+      ],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/autonomy-dial.jsx",
+      "publicEntry": "src/components/plico/autonomy-dial.tsx",
       "section": "components",
       "slug": "autonomy-dial",
       "sourceSlug": "autonomy-dial",
       "variant": "classic",
       "title": "Autonomy Dial",
-      "entry": "src/library/items/autonomy-dial/index.jsx",
-      "primaryEntry": "src/library/modules/demo-Dzn4_UqA.jsx",
+      "entry": "src/components/plico/autonomy-dial.tsx",
+      "primaryEntry": "src/components/plico/autonomy-dial.tsx",
       "exports": [
         "AutonomyDial",
         "AutonomyDialDemo",
@@ -234,17 +268,22 @@
         "asksFirst",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [
+        "AgentAction",
+        "AutonomyDialProps",
+        "AutonomyLevel"
+      ],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/autonomy-dial-clean.jsx",
+      "publicEntry": "src/components/plico/autonomy-dial-clean.tsx",
       "section": "components",
       "slug": "autonomy-dial",
       "sourceSlug": "autonomy-dial-clean",
       "variant": "clean",
       "title": "Autonomy Dial",
-      "entry": "src/library/items/autonomy-dial-clean/index.jsx",
-      "primaryEntry": "src/library/modules/demo.clean-tD99wK4F.jsx",
+      "entry": "src/components/plico/autonomy-dial-clean.tsx",
+      "primaryEntry": "src/components/plico/autonomy-dial-clean.tsx",
       "exports": [
         "AutonomyDialClean",
         "AutonomyDialCleanDemo",
@@ -253,17 +292,22 @@
         "asksFirst",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [
+        "AgentAction",
+        "AutonomyDialCleanProps",
+        "AutonomyLevel"
+      ],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/billing-schedule.jsx",
+      "publicEntry": "src/components/plico/billing-schedule.tsx",
       "section": "components",
       "slug": "billing-schedule",
       "sourceSlug": "billing-schedule",
       "variant": "classic",
       "title": "Billing Schedule",
-      "entry": "src/library/items/billing-schedule/index.jsx",
-      "primaryEntry": "src/library/modules/demo-nVEvL_e8.jsx",
+      "entry": "src/components/plico/billing-schedule.tsx",
+      "primaryEntry": "src/components/plico/billing-schedule.tsx",
       "exports": [
         "BillingSchedule",
         "BillingScheduleDemo",
@@ -271,17 +315,20 @@
         "Demo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [
+        "ScheduleLine"
+      ],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/billing-schedule-clean.jsx",
+      "publicEntry": "src/components/plico/billing-schedule-clean.tsx",
       "section": "components",
       "slug": "billing-schedule",
       "sourceSlug": "billing-schedule-clean",
       "variant": "clean",
       "title": "Billing Schedule",
-      "entry": "src/library/items/billing-schedule-clean/index.jsx",
-      "primaryEntry": "src/library/modules/demo.clean-C4OVVYU0.jsx",
+      "entry": "src/components/plico/billing-schedule-clean.tsx",
+      "primaryEntry": "src/components/plico/billing-schedule-clean.tsx",
       "exports": [
         "BillingScheduleClean",
         "BillingScheduleCleanDemo",
@@ -289,17 +336,20 @@
         "Demo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [
+        "ScheduleLine"
+      ],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/breakdown-chart.jsx",
+      "publicEntry": "src/components/plico/breakdown-chart.tsx",
       "section": "components",
       "slug": "breakdown-chart",
       "sourceSlug": "breakdown-chart",
       "variant": "classic",
       "title": "Breakdown Chart",
-      "entry": "src/library/items/breakdown-chart/index.jsx",
-      "primaryEntry": "src/library/modules/component-C_OhOiCe.jsx",
+      "entry": "src/components/plico/breakdown-chart.tsx",
+      "primaryEntry": "src/components/plico/breakdown-chart.tsx",
       "exports": [
         "BreakdownChart",
         "BreakdownChartDemo",
@@ -307,17 +357,23 @@
         "Demo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [
+        "BreakdownChartProps",
+        "BreakdownRecord",
+        "Dimension",
+        "Measure"
+      ],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/breakdown-chart-clean.jsx",
+      "publicEntry": "src/components/plico/breakdown-chart-clean.tsx",
       "section": "components",
       "slug": "breakdown-chart",
       "sourceSlug": "breakdown-chart-clean",
       "variant": "clean",
       "title": "Breakdown Chart",
-      "entry": "src/library/items/breakdown-chart-clean/index.jsx",
-      "primaryEntry": "src/library/modules/demo.clean-C0Kuxzg7.jsx",
+      "entry": "src/components/plico/breakdown-chart-clean.tsx",
+      "primaryEntry": "src/components/plico/breakdown-chart-clean.tsx",
       "exports": [
         "BreakdownChartClean",
         "BreakdownChartCleanDemo",
@@ -325,18 +381,24 @@
         "Demo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [
+        "BreakdownChartCleanProps",
+        "BreakdownRecord",
+        "Dimension",
+        "Measure"
+      ],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/button.jsx",
+      "publicEntry": "src/components/plico/button.tsx",
       "section": "components",
       "slug": "button",
       "sourceSlug": "button",
       "variant": "classic",
       "title": "Button",
-      "entry": "src/library/items/button/index.jsx",
+      "entry": "src/components/plico/button.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/button/Component.tsx",
+      "primaryEntry": "src/components/plico/button.tsx",
       "exports": [
         "Button",
         "ButtonDemo",
@@ -349,15 +411,15 @@
       ]
     },
     {
-      "publicEntry": "src/library/button-clean.jsx",
+      "publicEntry": "src/components/plico/button-clean.tsx",
       "section": "components",
       "slug": "button",
       "sourceSlug": "button-clean",
       "variant": "clean",
       "title": "Button",
-      "entry": "src/library/items/button-clean/index.jsx",
+      "entry": "src/components/plico/button-clean.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/button-clean/Component.tsx",
+      "primaryEntry": "src/components/plico/button-clean.tsx",
       "exports": [
         "Button",
         "ButtonClean",
@@ -371,15 +433,15 @@
       ]
     },
     {
-      "publicEntry": "src/library/change-summary.jsx",
+      "publicEntry": "src/components/plico/change-summary.tsx",
       "section": "components",
       "slug": "change-summary",
       "sourceSlug": "change-summary",
       "variant": "classic",
       "title": "Change Summary",
-      "entry": "src/library/items/change-summary/index.jsx",
+      "entry": "src/components/plico/change-summary.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/change-summary/Component.tsx",
+      "primaryEntry": "src/components/plico/change-summary.tsx",
       "exports": [
         "ChangeSummary",
         "ChangeSummaryDemo",
@@ -393,15 +455,15 @@
       ]
     },
     {
-      "publicEntry": "src/library/change-summary-clean.jsx",
+      "publicEntry": "src/components/plico/change-summary-clean.tsx",
       "section": "components",
       "slug": "change-summary",
       "sourceSlug": "change-summary-clean",
       "variant": "clean",
       "title": "Change Summary",
-      "entry": "src/library/items/change-summary-clean/index.jsx",
+      "entry": "src/components/plico/change-summary-clean.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/change-summary-clean/Component.tsx",
+      "primaryEntry": "src/components/plico/change-summary-clean.tsx",
       "exports": [
         "ChangeSummary",
         "ChangeSummaryClean",
@@ -416,14 +478,14 @@
       ]
     },
     {
-      "publicEntry": "src/library/chat-composer.jsx",
+      "publicEntry": "src/components/plico/chat-composer.tsx",
       "section": "components",
       "slug": "chat-composer",
       "sourceSlug": "chat-composer",
       "variant": "classic",
       "title": "Chat Composer",
-      "entry": "src/library/items/chat-composer/index.jsx",
-      "primaryEntry": "src/library/modules/component-DwKackPh.jsx",
+      "entry": "src/components/plico/chat-composer.tsx",
+      "primaryEntry": "src/components/plico/chat-composer.tsx",
       "exports": [
         "ChatComposer",
         "ChatComposerDemo",
@@ -431,17 +493,18 @@
         "Demo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/chat-composer-clean.jsx",
+      "publicEntry": "src/components/plico/chat-composer-clean.tsx",
       "section": "components",
       "slug": "chat-composer",
       "sourceSlug": "chat-composer-clean",
       "variant": "clean",
       "title": "Chat Composer",
-      "entry": "src/library/items/chat-composer-clean/index.jsx",
-      "primaryEntry": "src/library/modules/demo.clean-CA_ipDzE.jsx",
+      "entry": "src/components/plico/chat-composer-clean.tsx",
+      "primaryEntry": "src/components/plico/chat-composer-clean.tsx",
       "exports": [
         "ChatComposerClean",
         "ChatComposerCleanDemo",
@@ -449,17 +512,18 @@
         "Demo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/cited-answer.jsx",
+      "publicEntry": "src/components/plico/cited-answer.tsx",
       "section": "components",
       "slug": "cited-answer",
       "sourceSlug": "cited-answer",
       "variant": "classic",
       "title": "Cited Answer",
-      "entry": "src/library/items/cited-answer/index.jsx",
-      "primaryEntry": "src/library/modules/demo-fp335z0j.jsx",
+      "entry": "src/components/plico/cited-answer.tsx",
+      "primaryEntry": "src/components/plico/cited-answer.tsx",
       "exports": [
         "CitedAnswer",
         "CitedAnswerDemo",
@@ -467,17 +531,18 @@
         "Demo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/cited-answer-clean.jsx",
+      "publicEntry": "src/components/plico/cited-answer-clean.tsx",
       "section": "components",
       "slug": "cited-answer",
       "sourceSlug": "cited-answer-clean",
       "variant": "clean",
       "title": "Cited Answer",
-      "entry": "src/library/items/cited-answer-clean/index.jsx",
-      "primaryEntry": "src/library/modules/demo.clean-Do8sBWBG.jsx",
+      "entry": "src/components/plico/cited-answer-clean.tsx",
+      "primaryEntry": "src/components/plico/cited-answer-clean.tsx",
       "exports": [
         "CitedAnswerClean",
         "CitedAnswerCleanDemo",
@@ -485,17 +550,18 @@
         "Demo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/combobox.jsx",
+      "publicEntry": "src/components/plico/combobox.tsx",
       "section": "components",
       "slug": "combobox",
       "sourceSlug": "combobox",
       "variant": "classic",
       "title": "Combobox",
-      "entry": "src/library/items/combobox/index.jsx",
-      "primaryEntry": "src/library/modules/demo-Dh1VwBQQ.jsx",
+      "entry": "src/components/plico/combobox.tsx",
+      "primaryEntry": "src/components/plico/combobox.tsx",
       "exports": [
         "Combobox",
         "ComboboxDemo",
@@ -503,17 +569,18 @@
         "Demo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/combobox-clean.jsx",
+      "publicEntry": "src/components/plico/combobox-clean.tsx",
       "section": "components",
       "slug": "combobox",
       "sourceSlug": "combobox-clean",
       "variant": "clean",
       "title": "Combobox",
-      "entry": "src/library/items/combobox-clean/index.jsx",
-      "primaryEntry": "src/library/modules/demo.clean-BeAF0VV4.jsx",
+      "entry": "src/components/plico/combobox-clean.tsx",
+      "primaryEntry": "src/components/plico/combobox-clean.tsx",
       "exports": [
         "ComboboxClean",
         "ComboboxCleanDemo",
@@ -521,17 +588,18 @@
         "Demo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/command-menu.jsx",
+      "publicEntry": "src/components/plico/command-menu.tsx",
       "section": "components",
       "slug": "command-menu",
       "sourceSlug": "command-menu",
       "variant": "classic",
       "title": "Command Menu",
-      "entry": "src/library/items/command-menu/index.jsx",
-      "primaryEntry": "src/library/modules/demo-ZZIguRMl.jsx",
+      "entry": "src/components/plico/command-menu.tsx",
+      "primaryEntry": "src/components/plico/command-menu.tsx",
       "exports": [
         "CommandMenu",
         "CommandMenuDemo",
@@ -539,17 +607,22 @@
         "Demo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [
+        "CommandGroup",
+        "CommandItem",
+        "CommandMenuProps"
+      ],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/command-menu-clean.jsx",
+      "publicEntry": "src/components/plico/command-menu-clean.tsx",
       "section": "components",
       "slug": "command-menu",
       "sourceSlug": "command-menu-clean",
       "variant": "clean",
       "title": "Command Menu",
-      "entry": "src/library/items/command-menu-clean/index.jsx",
-      "primaryEntry": "src/library/modules/demo.clean-CfccVVbn.jsx",
+      "entry": "src/components/plico/command-menu-clean.tsx",
+      "primaryEntry": "src/components/plico/command-menu-clean.tsx",
       "exports": [
         "CommandMenuClean",
         "CommandMenuCleanDemo",
@@ -557,18 +630,23 @@
         "Demo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [
+        "CommandGroup",
+        "CommandItem",
+        "CommandMenuCleanProps"
+      ],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/comment-thread.jsx",
+      "publicEntry": "src/components/plico/comment-thread.tsx",
       "section": "components",
       "slug": "comment-thread",
       "sourceSlug": "comment-thread",
       "variant": "classic",
       "title": "Comment Thread",
-      "entry": "src/library/items/comment-thread/index.jsx",
+      "entry": "src/components/plico/comment-thread.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/comment-thread/Component.tsx",
+      "primaryEntry": "src/components/plico/comment-thread.tsx",
       "exports": [
         "AssistantMark",
         "CommentThread",
@@ -584,15 +662,15 @@
       ]
     },
     {
-      "publicEntry": "src/library/comment-thread-clean.jsx",
+      "publicEntry": "src/components/plico/comment-thread-clean.tsx",
       "section": "components",
       "slug": "comment-thread",
       "sourceSlug": "comment-thread-clean",
       "variant": "clean",
       "title": "Comment Thread",
-      "entry": "src/library/items/comment-thread-clean/index.jsx",
+      "entry": "src/components/plico/comment-thread-clean.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/comment-thread-clean/Component.tsx",
+      "primaryEntry": "src/components/plico/comment-thread-clean.tsx",
       "exports": [
         "AssistantMark",
         "CommentThread",
@@ -609,14 +687,14 @@
       ]
     },
     {
-      "publicEntry": "src/library/comments-panel.jsx",
+      "publicEntry": "src/components/plico/comments-panel.tsx",
       "section": "components",
       "slug": "comments-panel",
       "sourceSlug": "comments-panel",
       "variant": "classic",
       "title": "Comments Panel",
-      "entry": "src/library/items/comments-panel/index.jsx",
-      "primaryEntry": "src/library/modules/demo-CPh6u-dx.jsx",
+      "entry": "src/components/plico/comments-panel.tsx",
+      "primaryEntry": "src/components/plico/comments-panel.tsx",
       "exports": [
         "CommentsPanel",
         "CommentsPanelDemo",
@@ -624,17 +702,22 @@
         "Demo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [
+        "CommentAuthor",
+        "CommentsPanelProps",
+        "PanelComment"
+      ],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/comments-panel-clean.jsx",
+      "publicEntry": "src/components/plico/comments-panel-clean.tsx",
       "section": "components",
       "slug": "comments-panel",
       "sourceSlug": "comments-panel-clean",
       "variant": "clean",
       "title": "Comments Panel",
-      "entry": "src/library/items/comments-panel-clean/index.jsx",
-      "primaryEntry": "src/library/modules/demo.clean-kKXDAKEK.jsx",
+      "entry": "src/components/plico/comments-panel-clean.tsx",
+      "primaryEntry": "src/components/plico/comments-panel-clean.tsx",
       "exports": [
         "CommentsPanelClean",
         "CommentsPanelCleanDemo",
@@ -642,17 +725,22 @@
         "Demo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [
+        "CommentAuthor",
+        "CommentsPanelCleanProps",
+        "PanelComment"
+      ],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/compact-breakdown.jsx",
+      "publicEntry": "src/components/plico/compact-breakdown.tsx",
       "section": "components",
       "slug": "compact-breakdown",
       "sourceSlug": "compact-breakdown",
       "variant": "classic",
       "title": "Compact Breakdown",
-      "entry": "src/library/items/compact-breakdown/index.jsx",
-      "primaryEntry": "src/library/modules/demo-BOiMGMeM.jsx",
+      "entry": "src/components/plico/compact-breakdown.tsx",
+      "primaryEntry": "src/components/plico/compact-breakdown.tsx",
       "exports": [
         "CompactBreakdown",
         "CompactBreakdownDemo",
@@ -660,17 +748,21 @@
         "Demo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [
+        "BreakdownItem",
+        "CompactBreakdownProps"
+      ],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/compact-breakdown-clean.jsx",
+      "publicEntry": "src/components/plico/compact-breakdown-clean.tsx",
       "section": "components",
       "slug": "compact-breakdown",
       "sourceSlug": "compact-breakdown-clean",
       "variant": "clean",
       "title": "Compact Breakdown",
-      "entry": "src/library/items/compact-breakdown-clean/index.jsx",
-      "primaryEntry": "src/library/modules/demo.clean-CSd5ZCWu.jsx",
+      "entry": "src/components/plico/compact-breakdown-clean.tsx",
+      "primaryEntry": "src/components/plico/compact-breakdown-clean.tsx",
       "exports": [
         "CompactBreakdownClean",
         "CompactBreakdownCleanDemo",
@@ -678,17 +770,21 @@
         "Demo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [
+        "BreakdownItem",
+        "CompactBreakdownCleanProps"
+      ],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/context-window.jsx",
+      "publicEntry": "src/components/plico/context-window.tsx",
       "section": "components",
       "slug": "context-window",
       "sourceSlug": "context-window",
       "variant": "classic",
       "title": "Context Window",
-      "entry": "src/library/items/context-window/index.jsx",
-      "primaryEntry": "src/library/modules/demo-jxSKfjMs.jsx",
+      "entry": "src/components/plico/context-window.tsx",
+      "primaryEntry": "src/components/plico/context-window.tsx",
       "exports": [
         "Component",
         "ContextWindow",
@@ -696,17 +792,18 @@
         "Demo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/context-window-clean.jsx",
+      "publicEntry": "src/components/plico/context-window-clean.tsx",
       "section": "components",
       "slug": "context-window",
       "sourceSlug": "context-window-clean",
       "variant": "clean",
       "title": "Context Window",
-      "entry": "src/library/items/context-window-clean/index.jsx",
-      "primaryEntry": "src/library/modules/demo.clean-BVM0xTTl.jsx",
+      "entry": "src/components/plico/context-window-clean.tsx",
+      "primaryEntry": "src/components/plico/context-window-clean.tsx",
       "exports": [
         "Component",
         "ContextWindowClean",
@@ -714,17 +811,18 @@
         "Demo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/data-table.jsx",
+      "publicEntry": "src/components/plico/data-table.tsx",
       "section": "components",
       "slug": "data-table",
       "sourceSlug": "data-table",
       "variant": "classic",
       "title": "Data Table",
-      "entry": "src/library/items/data-table/index.jsx",
-      "primaryEntry": "src/library/modules/component-OCVPe01Z.jsx",
+      "entry": "src/components/plico/data-table.tsx",
+      "primaryEntry": "src/components/plico/data-table.tsx",
       "exports": [
         "Component",
         "DataTable",
@@ -734,17 +832,18 @@
         "TextColumnIcon",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/data-table-clean.jsx",
+      "publicEntry": "src/components/plico/data-table-clean.tsx",
       "section": "components",
       "slug": "data-table",
       "sourceSlug": "data-table-clean",
       "variant": "clean",
       "title": "Data Table",
-      "entry": "src/library/items/data-table-clean/index.jsx",
-      "primaryEntry": "src/library/modules/demo.clean-DJWKIoS0.jsx",
+      "entry": "src/components/plico/data-table-clean.tsx",
+      "primaryEntry": "src/components/plico/data-table-clean.tsx",
       "exports": [
         "Component",
         "DataTableClean",
@@ -754,17 +853,18 @@
         "TextColumnIcon",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/date-range-picker.jsx",
+      "publicEntry": "src/components/plico/date-range-picker.tsx",
       "section": "components",
       "slug": "date-range-picker",
       "sourceSlug": "date-range-picker",
       "variant": "classic",
       "title": "Date Range Picker",
-      "entry": "src/library/items/date-range-picker/index.jsx",
-      "primaryEntry": "src/library/modules/demo-sfbKzZ34.jsx",
+      "entry": "src/components/plico/date-range-picker.tsx",
+      "primaryEntry": "src/components/plico/date-range-picker.tsx",
       "exports": [
         "Component",
         "DateRangePicker",
@@ -773,17 +873,18 @@
         "default",
         "defaultPresets"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/date-range-picker-clean.jsx",
+      "publicEntry": "src/components/plico/date-range-picker-clean.tsx",
       "section": "components",
       "slug": "date-range-picker",
       "sourceSlug": "date-range-picker-clean",
       "variant": "clean",
       "title": "Date Range Picker",
-      "entry": "src/library/items/date-range-picker-clean/index.jsx",
-      "primaryEntry": "src/library/modules/demo.clean-CFbJ9noA.jsx",
+      "entry": "src/components/plico/date-range-picker-clean.tsx",
+      "primaryEntry": "src/components/plico/date-range-picker-clean.tsx",
       "exports": [
         "Component",
         "DateRangePickerClean",
@@ -792,18 +893,19 @@
         "default",
         "defaultPresets"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/decision-inbox.jsx",
+      "publicEntry": "src/components/plico/decision-inbox.tsx",
       "section": "components",
       "slug": "decision-inbox",
       "sourceSlug": "decision-inbox",
       "variant": "classic",
       "title": "Decision Inbox",
-      "entry": "src/library/items/decision-inbox/index.jsx",
+      "entry": "src/components/plico/decision-inbox.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/decision-inbox/Component.tsx",
+      "primaryEntry": "src/components/plico/decision-inbox.tsx",
       "exports": [
         "Component",
         "DecisionInbox",
@@ -817,15 +919,15 @@
       ]
     },
     {
-      "publicEntry": "src/library/decision-inbox-clean.jsx",
+      "publicEntry": "src/components/plico/decision-inbox-clean.tsx",
       "section": "components",
       "slug": "decision-inbox",
       "sourceSlug": "decision-inbox-clean",
       "variant": "clean",
       "title": "Decision Inbox",
-      "entry": "src/library/items/decision-inbox-clean/index.jsx",
+      "entry": "src/components/plico/decision-inbox-clean.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/decision-inbox-clean/Component.tsx",
+      "primaryEntry": "src/components/plico/decision-inbox-clean.tsx",
       "exports": [
         "Component",
         "DecisionInbox",
@@ -840,14 +942,14 @@
       ]
     },
     {
-      "publicEntry": "src/library/dropzone.jsx",
+      "publicEntry": "src/components/plico/dropzone.tsx",
       "section": "components",
       "slug": "dropzone",
       "sourceSlug": "dropzone",
       "variant": "classic",
       "title": "Dropzone",
-      "entry": "src/library/items/dropzone/index.jsx",
-      "primaryEntry": "src/library/modules/demo-CQyRPKqn.jsx",
+      "entry": "src/components/plico/dropzone.tsx",
+      "primaryEntry": "src/components/plico/dropzone.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -855,17 +957,18 @@
         "DropzoneDemo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/dropzone-clean.jsx",
+      "publicEntry": "src/components/plico/dropzone-clean.tsx",
       "section": "components",
       "slug": "dropzone",
       "sourceSlug": "dropzone-clean",
       "variant": "clean",
       "title": "Dropzone",
-      "entry": "src/library/items/dropzone-clean/index.jsx",
-      "primaryEntry": "src/library/modules/demo.clean-DN2ioSob.jsx",
+      "entry": "src/components/plico/dropzone-clean.tsx",
+      "primaryEntry": "src/components/plico/dropzone-clean.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -873,18 +976,19 @@
         "DropzoneCleanDemo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/email-draft.jsx",
+      "publicEntry": "src/components/plico/email-draft.tsx",
       "section": "components",
       "slug": "email-draft",
       "sourceSlug": "email-draft",
       "variant": "classic",
       "title": "Email Draft",
-      "entry": "src/library/items/email-draft/index.jsx",
+      "entry": "src/components/plico/email-draft.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/email-draft/Component.tsx",
+      "primaryEntry": "src/components/plico/email-draft.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -899,15 +1003,15 @@
       ]
     },
     {
-      "publicEntry": "src/library/email-draft-clean.jsx",
+      "publicEntry": "src/components/plico/email-draft-clean.tsx",
       "section": "components",
       "slug": "email-draft",
       "sourceSlug": "email-draft-clean",
       "variant": "clean",
       "title": "Email Draft",
-      "entry": "src/library/items/email-draft-clean/index.jsx",
+      "entry": "src/components/plico/email-draft-clean.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/email-draft-clean/Component.tsx",
+      "primaryEntry": "src/components/plico/email-draft-clean.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -923,14 +1027,14 @@
       ]
     },
     {
-      "publicEntry": "src/library/experiment-card.jsx",
+      "publicEntry": "src/components/plico/experiment-card.tsx",
       "section": "components",
       "slug": "experiment-card",
       "sourceSlug": "experiment-card",
       "variant": "classic",
       "title": "Experiment Card",
-      "entry": "src/library/items/experiment-card/index.jsx",
-      "primaryEntry": "src/library/modules/demo-CbW_KPTI.jsx",
+      "entry": "src/components/plico/experiment-card.tsx",
+      "primaryEntry": "src/components/plico/experiment-card.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -938,17 +1042,18 @@
         "ExperimentCardDemo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/experiment-card-clean.jsx",
+      "publicEntry": "src/components/plico/experiment-card-clean.tsx",
       "section": "components",
       "slug": "experiment-card",
       "sourceSlug": "experiment-card-clean",
       "variant": "clean",
       "title": "Experiment Card",
-      "entry": "src/library/items/experiment-card-clean/index.jsx",
-      "primaryEntry": "src/library/modules/demo.clean-BWn0UMw5.jsx",
+      "entry": "src/components/plico/experiment-card-clean.tsx",
+      "primaryEntry": "src/components/plico/experiment-card-clean.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -956,18 +1061,19 @@
         "ExperimentCardCleanDemo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/filter-menu.jsx",
+      "publicEntry": "src/components/plico/filter-menu.tsx",
       "section": "components",
       "slug": "filter-menu",
       "sourceSlug": "filter-menu",
       "variant": "classic",
       "title": "Filter Menu",
-      "entry": "src/library/items/filter-menu/index.jsx",
+      "entry": "src/components/plico/filter-menu.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/filter-menu/Component.tsx",
+      "primaryEntry": "src/components/plico/filter-menu.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -983,15 +1089,15 @@
       ]
     },
     {
-      "publicEntry": "src/library/filter-menu-clean.jsx",
+      "publicEntry": "src/components/plico/filter-menu-clean.tsx",
       "section": "components",
       "slug": "filter-menu",
       "sourceSlug": "filter-menu-clean",
       "variant": "clean",
       "title": "Filter Menu",
-      "entry": "src/library/items/filter-menu-clean/index.jsx",
+      "entry": "src/components/plico/filter-menu-clean.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/filter-menu-clean/Component.tsx",
+      "primaryEntry": "src/components/plico/filter-menu-clean.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -1008,14 +1114,14 @@
       ]
     },
     {
-      "publicEntry": "src/library/inline-diff.jsx",
+      "publicEntry": "src/components/plico/inline-diff.tsx",
       "section": "components",
       "slug": "inline-diff",
       "sourceSlug": "inline-diff",
       "variant": "classic",
       "title": "Inline Diff",
-      "entry": "src/library/items/inline-diff/index.jsx",
-      "primaryEntry": "src/library/modules/component-CADGuG8q.jsx",
+      "entry": "src/components/plico/inline-diff.tsx",
+      "primaryEntry": "src/components/plico/inline-diff.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -1024,17 +1130,25 @@
         "default",
         "diffWords"
       ],
-      "typeExports": []
+      "typeExports": [
+        "DiffChange",
+        "DiffChangeEntry",
+        "DiffDecision",
+        "DiffSegment",
+        "InlineDiffHandle",
+        "InlineDiffProps"
+      ],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/inline-diff-clean.jsx",
+      "publicEntry": "src/components/plico/inline-diff-clean.tsx",
       "section": "components",
       "slug": "inline-diff",
       "sourceSlug": "inline-diff-clean",
       "variant": "clean",
       "title": "Inline Diff",
-      "entry": "src/library/items/inline-diff-clean/index.jsx",
-      "primaryEntry": "src/library/modules/demo.clean--VSPSi3o.jsx",
+      "entry": "src/components/plico/inline-diff-clean.tsx",
+      "primaryEntry": "src/components/plico/inline-diff-clean.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -1043,17 +1157,25 @@
         "default",
         "diffWords"
       ],
-      "typeExports": []
+      "typeExports": [
+        "DiffChange",
+        "DiffChangeEntry",
+        "DiffDecision",
+        "DiffSegment",
+        "InlineDiffCleanProps",
+        "InlineDiffHandle"
+      ],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/integration-picker.jsx",
+      "publicEntry": "src/components/plico/integration-picker.tsx",
       "section": "components",
       "slug": "integration-picker",
       "sourceSlug": "integration-picker",
       "variant": "classic",
       "title": "Integration Picker",
-      "entry": "src/library/items/integration-picker/index.jsx",
-      "primaryEntry": "src/library/modules/demo-CGtzgHa8.jsx",
+      "entry": "src/components/plico/integration-picker.tsx",
+      "primaryEntry": "src/components/plico/integration-picker.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -1061,17 +1183,21 @@
         "IntegrationPickerDemo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [
+        "Integration",
+        "IntegrationPickerProps"
+      ],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/integration-picker-clean.jsx",
+      "publicEntry": "src/components/plico/integration-picker-clean.tsx",
       "section": "components",
       "slug": "integration-picker",
       "sourceSlug": "integration-picker-clean",
       "variant": "clean",
       "title": "Integration Picker",
-      "entry": "src/library/items/integration-picker-clean/index.jsx",
-      "primaryEntry": "src/library/modules/demo.clean-Cz5lRox3.jsx",
+      "entry": "src/components/plico/integration-picker-clean.tsx",
+      "primaryEntry": "src/components/plico/integration-picker-clean.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -1079,17 +1205,21 @@
         "IntegrationPickerCleanDemo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [
+        "Integration",
+        "IntegrationPickerCleanProps"
+      ],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/integration-settings.jsx",
+      "publicEntry": "src/components/plico/integration-settings.tsx",
       "section": "components",
       "slug": "integration-settings",
       "sourceSlug": "integration-settings",
       "variant": "classic",
       "title": "Integration Settings",
-      "entry": "src/library/items/integration-settings/index.jsx",
-      "primaryEntry": "src/library/modules/demo-gOEEj_G8.jsx",
+      "entry": "src/components/plico/integration-settings.tsx",
+      "primaryEntry": "src/components/plico/integration-settings.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -1097,17 +1227,21 @@
         "IntegrationSettingsDemo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [
+        "IntegrationSettingsProps",
+        "IntegrationValues"
+      ],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/integration-settings-clean.jsx",
+      "publicEntry": "src/components/plico/integration-settings-clean.tsx",
       "section": "components",
       "slug": "integration-settings",
       "sourceSlug": "integration-settings-clean",
       "variant": "clean",
       "title": "Integration Settings",
-      "entry": "src/library/items/integration-settings-clean/index.jsx",
-      "primaryEntry": "src/library/modules/demo.clean-BMo3zBgx.jsx",
+      "entry": "src/components/plico/integration-settings-clean.tsx",
+      "primaryEntry": "src/components/plico/integration-settings-clean.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -1115,17 +1249,21 @@
         "IntegrationSettingsCleanDemo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [
+        "IntegrationSettingsCleanProps",
+        "IntegrationValues"
+      ],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/kpi-chart.jsx",
+      "publicEntry": "src/components/plico/kpi-chart.tsx",
       "section": "components",
       "slug": "kpi-chart",
       "sourceSlug": "kpi-chart",
       "variant": "classic",
       "title": "KPI Chart",
-      "entry": "src/library/items/kpi-chart/index.jsx",
-      "primaryEntry": "src/library/modules/component-cuEFw_I6.jsx",
+      "entry": "src/components/plico/kpi-chart.tsx",
+      "primaryEntry": "src/components/plico/kpi-chart.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -1133,17 +1271,21 @@
         "KpiChartDemo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [
+        "KpiChartProps",
+        "KpiSeries"
+      ],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/kpi-chart-clean.jsx",
+      "publicEntry": "src/components/plico/kpi-chart-clean.tsx",
       "section": "components",
       "slug": "kpi-chart",
       "sourceSlug": "kpi-chart-clean",
       "variant": "clean",
       "title": "KPI Chart",
-      "entry": "src/library/items/kpi-chart-clean/index.jsx",
-      "primaryEntry": "src/library/modules/demo.clean-BdfQ2LZR.jsx",
+      "entry": "src/components/plico/kpi-chart-clean.tsx",
+      "primaryEntry": "src/components/plico/kpi-chart-clean.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -1151,17 +1293,21 @@
         "KpiChartCleanDemo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [
+        "KpiChartCleanProps",
+        "KpiSeries"
+      ],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/memory-panel.jsx",
+      "publicEntry": "src/components/plico/memory-panel.tsx",
       "section": "components",
       "slug": "memory-panel",
       "sourceSlug": "memory-panel",
       "variant": "classic",
       "title": "Memory Panel",
-      "entry": "src/library/items/memory-panel/index.jsx",
-      "primaryEntry": "src/library/modules/demo-DZle1gG8.jsx",
+      "entry": "src/components/plico/memory-panel.tsx",
+      "primaryEntry": "src/components/plico/memory-panel.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -1169,17 +1315,18 @@
         "MemoryPanelDemo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/memory-panel-clean.jsx",
+      "publicEntry": "src/components/plico/memory-panel-clean.tsx",
       "section": "components",
       "slug": "memory-panel",
       "sourceSlug": "memory-panel-clean",
       "variant": "clean",
       "title": "Memory Panel",
-      "entry": "src/library/items/memory-panel-clean/index.jsx",
-      "primaryEntry": "src/library/modules/demo.clean-2HwVU5pS.jsx",
+      "entry": "src/components/plico/memory-panel-clean.tsx",
+      "primaryEntry": "src/components/plico/memory-panel-clean.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -1187,18 +1334,19 @@
         "MemoryPanelCleanDemo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/message-actions.jsx",
+      "publicEntry": "src/components/plico/message-actions.tsx",
       "section": "components",
       "slug": "message-actions",
       "sourceSlug": "message-actions",
       "variant": "classic",
       "title": "Message Actions",
-      "entry": "src/library/items/message-actions/index.jsx",
+      "entry": "src/components/plico/message-actions.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/message-actions/Component.tsx",
+      "primaryEntry": "src/components/plico/message-actions.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -1214,15 +1362,15 @@
       ]
     },
     {
-      "publicEntry": "src/library/message-actions-clean.jsx",
+      "publicEntry": "src/components/plico/message-actions-clean.tsx",
       "section": "components",
       "slug": "message-actions",
       "sourceSlug": "message-actions-clean",
       "variant": "clean",
       "title": "Message Actions",
-      "entry": "src/library/items/message-actions-clean/index.jsx",
+      "entry": "src/components/plico/message-actions-clean.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/message-actions-clean/Component.tsx",
+      "primaryEntry": "src/components/plico/message-actions-clean.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -1239,14 +1387,14 @@
       ]
     },
     {
-      "publicEntry": "src/library/model-picker.jsx",
+      "publicEntry": "src/components/plico/model-picker.tsx",
       "section": "components",
       "slug": "model-picker",
       "sourceSlug": "model-picker",
       "variant": "classic",
       "title": "Model Picker",
-      "entry": "src/library/items/model-picker/index.jsx",
-      "primaryEntry": "src/library/modules/demo-D9-q9LWy.jsx",
+      "entry": "src/components/plico/model-picker.tsx",
+      "primaryEntry": "src/components/plico/model-picker.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -1254,17 +1402,18 @@
         "ModelPickerDemo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/model-picker-clean.jsx",
+      "publicEntry": "src/components/plico/model-picker-clean.tsx",
       "section": "components",
       "slug": "model-picker",
       "sourceSlug": "model-picker-clean",
       "variant": "clean",
       "title": "Model Picker",
-      "entry": "src/library/items/model-picker-clean/index.jsx",
-      "primaryEntry": "src/library/modules/demo.clean-CoifhOe5.jsx",
+      "entry": "src/components/plico/model-picker-clean.tsx",
+      "primaryEntry": "src/components/plico/model-picker-clean.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -1272,18 +1421,19 @@
         "ModelPickerCleanDemo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/notification-stack.jsx",
+      "publicEntry": "src/components/plico/notification-stack.tsx",
       "section": "components",
       "slug": "notification-stack",
       "sourceSlug": "notification-stack",
       "variant": "classic",
       "title": "Notification Stack",
-      "entry": "src/library/items/notification-stack/index.jsx",
+      "entry": "src/components/plico/notification-stack.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/notification-stack/Component.tsx",
+      "primaryEntry": "src/components/plico/notification-stack.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -1298,15 +1448,15 @@
       ]
     },
     {
-      "publicEntry": "src/library/notification-stack-clean.jsx",
+      "publicEntry": "src/components/plico/notification-stack-clean.tsx",
       "section": "components",
       "slug": "notification-stack",
       "sourceSlug": "notification-stack-clean",
       "variant": "clean",
       "title": "Notification Stack",
-      "entry": "src/library/items/notification-stack-clean/index.jsx",
+      "entry": "src/components/plico/notification-stack-clean.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/notification-stack-clean/Component.tsx",
+      "primaryEntry": "src/components/plico/notification-stack-clean.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -1322,15 +1472,15 @@
       ]
     },
     {
-      "publicEntry": "src/library/otp-input.jsx",
+      "publicEntry": "src/components/plico/otp-input.tsx",
       "section": "components",
       "slug": "otp-input",
       "sourceSlug": "otp-input",
       "variant": "classic",
       "title": "OTP Input",
-      "entry": "src/library/items/otp-input/index.jsx",
+      "entry": "src/components/plico/otp-input.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/otp-input/Component.tsx",
+      "primaryEntry": "src/components/plico/otp-input.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -1344,15 +1494,15 @@
       ]
     },
     {
-      "publicEntry": "src/library/otp-input-clean.jsx",
+      "publicEntry": "src/components/plico/otp-input-clean.tsx",
       "section": "components",
       "slug": "otp-input",
       "sourceSlug": "otp-input-clean",
       "variant": "clean",
       "title": "OTP Input",
-      "entry": "src/library/items/otp-input-clean/index.jsx",
+      "entry": "src/components/plico/otp-input-clean.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/otp-input-clean/Component.tsx",
+      "primaryEntry": "src/components/plico/otp-input-clean.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -1367,15 +1517,15 @@
       ]
     },
     {
-      "publicEntry": "src/library/profile-menu.jsx",
+      "publicEntry": "src/components/plico/profile-menu.tsx",
       "section": "components",
       "slug": "profile-menu",
       "sourceSlug": "profile-menu",
       "variant": "classic",
       "title": "Profile Menu",
-      "entry": "src/library/items/profile-menu/index.jsx",
+      "entry": "src/components/plico/profile-menu.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/profile-menu/Component.tsx",
+      "primaryEntry": "src/components/plico/profile-menu.tsx",
       "exports": [
         "AppsIcon",
         "Component",
@@ -1395,15 +1545,15 @@
       ]
     },
     {
-      "publicEntry": "src/library/profile-menu-clean.jsx",
+      "publicEntry": "src/components/plico/profile-menu-clean.tsx",
       "section": "components",
       "slug": "profile-menu",
       "sourceSlug": "profile-menu-clean",
       "variant": "clean",
       "title": "Profile Menu",
-      "entry": "src/library/items/profile-menu-clean/index.jsx",
+      "entry": "src/components/plico/profile-menu-clean.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/profile-menu-clean/Component.tsx",
+      "primaryEntry": "src/components/plico/profile-menu-clean.tsx",
       "exports": [
         "AppsIcon",
         "Component",
@@ -1424,15 +1574,15 @@
       ]
     },
     {
-      "publicEntry": "src/library/progress-tracker.jsx",
+      "publicEntry": "src/components/plico/progress-tracker.tsx",
       "section": "components",
       "slug": "progress-tracker",
       "sourceSlug": "progress-tracker",
       "variant": "classic",
       "title": "Progress Tracker",
-      "entry": "src/library/items/progress-tracker/index.jsx",
+      "entry": "src/components/plico/progress-tracker.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/progress-tracker/Component.tsx",
+      "primaryEntry": "src/components/plico/progress-tracker.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -1446,15 +1596,15 @@
       ]
     },
     {
-      "publicEntry": "src/library/progress-tracker-clean.jsx",
+      "publicEntry": "src/components/plico/progress-tracker-clean.tsx",
       "section": "components",
       "slug": "progress-tracker",
       "sourceSlug": "progress-tracker-clean",
       "variant": "clean",
       "title": "Progress Tracker",
-      "entry": "src/library/items/progress-tracker-clean/index.jsx",
+      "entry": "src/components/plico/progress-tracker-clean.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/progress-tracker-clean/Component.tsx",
+      "primaryEntry": "src/components/plico/progress-tracker-clean.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -1469,14 +1619,14 @@
       ]
     },
     {
-      "publicEntry": "src/library/project-card.jsx",
+      "publicEntry": "src/components/plico/project-card.tsx",
       "section": "components",
       "slug": "project-card",
       "sourceSlug": "project-card",
       "variant": "classic",
       "title": "Project Card",
-      "entry": "src/library/items/project-card/index.jsx",
-      "primaryEntry": "src/library/modules/demo-D4OBH9QL.jsx",
+      "entry": "src/components/plico/project-card.tsx",
+      "primaryEntry": "src/components/plico/project-card.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -1484,17 +1634,18 @@
         "ProjectCardDemo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/project-card-clean.jsx",
+      "publicEntry": "src/components/plico/project-card-clean.tsx",
       "section": "components",
       "slug": "project-card",
       "sourceSlug": "project-card-clean",
       "variant": "clean",
       "title": "Project Card",
-      "entry": "src/library/items/project-card-clean/index.jsx",
-      "primaryEntry": "src/library/modules/demo.clean-WHeg8d8a.jsx",
+      "entry": "src/components/plico/project-card-clean.tsx",
+      "primaryEntry": "src/components/plico/project-card-clean.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -1502,17 +1653,18 @@
         "ProjectCardCleanDemo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/prompt-library.jsx",
+      "publicEntry": "src/components/plico/prompt-library.tsx",
       "section": "components",
       "slug": "prompt-library",
       "sourceSlug": "prompt-library",
       "variant": "classic",
       "title": "Prompt Library",
-      "entry": "src/library/items/prompt-library/index.jsx",
-      "primaryEntry": "src/library/modules/demo-B8j58gGW.jsx",
+      "entry": "src/components/plico/prompt-library.tsx",
+      "primaryEntry": "src/components/plico/prompt-library.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -1520,17 +1672,20 @@
         "PromptLibraryDemo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [
+        "PromptTemplate"
+      ],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/prompt-library-clean.jsx",
+      "publicEntry": "src/components/plico/prompt-library-clean.tsx",
       "section": "components",
       "slug": "prompt-library",
       "sourceSlug": "prompt-library-clean",
       "variant": "clean",
       "title": "Prompt Library",
-      "entry": "src/library/items/prompt-library-clean/index.jsx",
-      "primaryEntry": "src/library/modules/demo.clean-DF4dB9bw.jsx",
+      "entry": "src/components/plico/prompt-library-clean.tsx",
+      "primaryEntry": "src/components/plico/prompt-library-clean.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -1538,18 +1693,21 @@
         "PromptLibraryCleanDemo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [
+        "PromptTemplate"
+      ],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/reaction-bar.jsx",
+      "publicEntry": "src/components/plico/reaction-bar.tsx",
       "section": "components",
       "slug": "reaction-bar",
       "sourceSlug": "reaction-bar",
       "variant": "classic",
       "title": "Reaction Bar",
-      "entry": "src/library/items/reaction-bar/index.jsx",
+      "entry": "src/components/plico/reaction-bar.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/reaction-bar/Component.tsx",
+      "primaryEntry": "src/components/plico/reaction-bar.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -1564,15 +1722,15 @@
       ]
     },
     {
-      "publicEntry": "src/library/reaction-bar-clean.jsx",
+      "publicEntry": "src/components/plico/reaction-bar-clean.tsx",
       "section": "components",
       "slug": "reaction-bar",
       "sourceSlug": "reaction-bar-clean",
       "variant": "clean",
       "title": "Reaction Bar",
-      "entry": "src/library/items/reaction-bar-clean/index.jsx",
+      "entry": "src/components/plico/reaction-bar-clean.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/reaction-bar-clean/Component.tsx",
+      "primaryEntry": "src/components/plico/reaction-bar-clean.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -1588,15 +1746,15 @@
       ]
     },
     {
-      "publicEntry": "src/library/segmented-control.jsx",
+      "publicEntry": "src/components/plico/segmented-control.tsx",
       "section": "components",
       "slug": "segmented-control",
       "sourceSlug": "segmented-control",
       "variant": "classic",
       "title": "Segmented Control",
-      "entry": "src/library/items/segmented-control/index.jsx",
+      "entry": "src/components/plico/segmented-control.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/segmented-control/Component.tsx",
+      "primaryEntry": "src/components/plico/segmented-control.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -1610,15 +1768,15 @@
       ]
     },
     {
-      "publicEntry": "src/library/segmented-control-clean.jsx",
+      "publicEntry": "src/components/plico/segmented-control-clean.tsx",
       "section": "components",
       "slug": "segmented-control",
       "sourceSlug": "segmented-control-clean",
       "variant": "clean",
       "title": "Segmented Control",
-      "entry": "src/library/items/segmented-control-clean/index.jsx",
+      "entry": "src/components/plico/segmented-control-clean.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/segmented-control-clean/Component.tsx",
+      "primaryEntry": "src/components/plico/segmented-control-clean.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -1633,14 +1791,14 @@
       ]
     },
     {
-      "publicEntry": "src/library/setup-guide.jsx",
+      "publicEntry": "src/components/plico/setup-guide.tsx",
       "section": "components",
       "slug": "setup-guide",
       "sourceSlug": "setup-guide",
       "variant": "classic",
       "title": "Setup Guide",
-      "entry": "src/library/items/setup-guide/index.jsx",
-      "primaryEntry": "src/library/modules/component-Dd3X9r8k.jsx",
+      "entry": "src/components/plico/setup-guide.tsx",
+      "primaryEntry": "src/components/plico/setup-guide.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -1648,17 +1806,22 @@
         "SetupGuideDemo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [
+        "SetupGroup",
+        "SetupGuideProps",
+        "SetupTask"
+      ],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/setup-guide-clean.jsx",
+      "publicEntry": "src/components/plico/setup-guide-clean.tsx",
       "section": "components",
       "slug": "setup-guide",
       "sourceSlug": "setup-guide-clean",
       "variant": "clean",
       "title": "Setup Guide",
-      "entry": "src/library/items/setup-guide-clean/index.jsx",
-      "primaryEntry": "src/library/modules/demo.clean-Ca5XH5pf.jsx",
+      "entry": "src/components/plico/setup-guide-clean.tsx",
+      "primaryEntry": "src/components/plico/setup-guide-clean.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -1666,18 +1829,23 @@
         "SetupGuideCleanDemo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [
+        "SetupGroup",
+        "SetupGuideCleanProps",
+        "SetupTask"
+      ],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/smart-recommendation.jsx",
+      "publicEntry": "src/components/plico/smart-recommendation.tsx",
       "section": "components",
       "slug": "smart-recommendation",
       "sourceSlug": "smart-recommendation",
       "variant": "classic",
       "title": "Smart Recommendation",
-      "entry": "src/library/items/smart-recommendation/index.jsx",
+      "entry": "src/components/plico/smart-recommendation.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/smart-recommendation/Component.tsx",
+      "primaryEntry": "src/components/plico/smart-recommendation.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -1691,15 +1859,15 @@
       ]
     },
     {
-      "publicEntry": "src/library/smart-recommendation-clean.jsx",
+      "publicEntry": "src/components/plico/smart-recommendation-clean.tsx",
       "section": "components",
       "slug": "smart-recommendation",
       "sourceSlug": "smart-recommendation-clean",
       "variant": "clean",
       "title": "Smart Recommendation",
-      "entry": "src/library/items/smart-recommendation-clean/index.jsx",
+      "entry": "src/components/plico/smart-recommendation-clean.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/smart-recommendation-clean/Component.tsx",
+      "primaryEntry": "src/components/plico/smart-recommendation-clean.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -1714,14 +1882,14 @@
       ]
     },
     {
-      "publicEntry": "src/library/stepper-form.jsx",
+      "publicEntry": "src/components/plico/stepper-form.tsx",
       "section": "components",
       "slug": "stepper-form",
       "sourceSlug": "stepper-form",
       "variant": "classic",
       "title": "Stepper Form",
-      "entry": "src/library/items/stepper-form/index.jsx",
-      "primaryEntry": "src/library/modules/demo-BI6YmM8v.jsx",
+      "entry": "src/components/plico/stepper-form.tsx",
+      "primaryEntry": "src/components/plico/stepper-form.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -1734,17 +1902,24 @@
         "StepperTags",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [
+        "FormErrors",
+        "FormValues",
+        "Step",
+        "StepContext",
+        "StepperFormProps"
+      ],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/stepper-form-clean.jsx",
+      "publicEntry": "src/components/plico/stepper-form-clean.tsx",
       "section": "components",
       "slug": "stepper-form",
       "sourceSlug": "stepper-form-clean",
       "variant": "clean",
       "title": "Stepper Form",
-      "entry": "src/library/items/stepper-form-clean/index.jsx",
-      "primaryEntry": "src/library/modules/demo.clean-7tCw9u4A.jsx",
+      "entry": "src/components/plico/stepper-form-clean.tsx",
+      "primaryEntry": "src/components/plico/stepper-form-clean.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -1757,18 +1932,25 @@
         "StepperTags",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [
+        "FormErrors",
+        "FormValues",
+        "Step",
+        "StepContext",
+        "StepperFormCleanProps"
+      ],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/thinking-loader.jsx",
+      "publicEntry": "src/components/plico/thinking-loader.tsx",
       "section": "components",
       "slug": "thinking-loader",
       "sourceSlug": "thinking-loader",
       "variant": "classic",
       "title": "Thinking Loader",
-      "entry": "src/library/items/thinking-loader/index.jsx",
+      "entry": "src/components/plico/thinking-loader.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/thinking-loader/Component.tsx",
+      "primaryEntry": "src/components/plico/thinking-loader.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -1781,15 +1963,15 @@
       ]
     },
     {
-      "publicEntry": "src/library/thinking-loader-clean.jsx",
+      "publicEntry": "src/components/plico/thinking-loader-clean.tsx",
       "section": "components",
       "slug": "thinking-loader",
       "sourceSlug": "thinking-loader-clean",
       "variant": "clean",
       "title": "Thinking Loader",
-      "entry": "src/library/items/thinking-loader-clean/index.jsx",
+      "entry": "src/components/plico/thinking-loader-clean.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/thinking-loader-clean/Component.tsx",
+      "primaryEntry": "src/components/plico/thinking-loader-clean.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -1803,14 +1985,14 @@
       ]
     },
     {
-      "publicEntry": "src/library/thinking-state.jsx",
+      "publicEntry": "src/components/plico/thinking-state.tsx",
       "section": "components",
       "slug": "thinking-state",
       "sourceSlug": "thinking-state",
       "variant": "classic",
       "title": "Thinking State",
-      "entry": "src/library/items/thinking-state/index.jsx",
-      "primaryEntry": "src/library/modules/component-DWcBqJQY.jsx",
+      "entry": "src/components/plico/thinking-state.tsx",
+      "primaryEntry": "src/components/plico/thinking-state.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -1818,17 +2000,18 @@
         "ThinkingStateDemo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/thinking-state-clean.jsx",
+      "publicEntry": "src/components/plico/thinking-state-clean.tsx",
       "section": "components",
       "slug": "thinking-state",
       "sourceSlug": "thinking-state-clean",
       "variant": "clean",
       "title": "Thinking State",
-      "entry": "src/library/items/thinking-state-clean/index.jsx",
-      "primaryEntry": "src/library/modules/demo.clean-D9vXyDyZ.jsx",
+      "entry": "src/components/plico/thinking-state-clean.tsx",
+      "primaryEntry": "src/components/plico/thinking-state-clean.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -1836,18 +2019,19 @@
         "ThinkingStateCleanDemo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/tips-panel.jsx",
+      "publicEntry": "src/components/plico/tips-panel.tsx",
       "section": "components",
       "slug": "tips-panel",
       "sourceSlug": "tips-panel",
       "variant": "classic",
       "title": "Tips Panel",
-      "entry": "src/library/items/tips-panel/index.jsx",
+      "entry": "src/components/plico/tips-panel.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/tips-panel/Component.tsx",
+      "primaryEntry": "src/components/plico/tips-panel.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -1862,15 +2046,15 @@
       ]
     },
     {
-      "publicEntry": "src/library/tips-panel-clean.jsx",
+      "publicEntry": "src/components/plico/tips-panel-clean.tsx",
       "section": "components",
       "slug": "tips-panel",
       "sourceSlug": "tips-panel-clean",
       "variant": "clean",
       "title": "Tips Panel",
-      "entry": "src/library/items/tips-panel-clean/index.jsx",
+      "entry": "src/components/plico/tips-panel-clean.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/tips-panel-clean/Component.tsx",
+      "primaryEntry": "src/components/plico/tips-panel-clean.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -1886,14 +2070,14 @@
       ]
     },
     {
-      "publicEntry": "src/library/toaster.jsx",
+      "publicEntry": "src/components/plico/toaster.tsx",
       "section": "components",
       "slug": "toaster",
       "sourceSlug": "toaster",
       "variant": "classic",
       "title": "Toaster",
-      "entry": "src/library/items/toaster/index.jsx",
-      "primaryEntry": "src/library/modules/index-CA7yMmEL.jsx",
+      "entry": "src/components/plico/toaster.tsx",
+      "primaryEntry": "src/components/plico/toaster.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -1902,17 +2086,22 @@
         "default",
         "toast"
       ],
-      "typeExports": []
+      "typeExports": [
+        "ToastId",
+        "ToastOptions",
+        "ToasterProps"
+      ],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/toaster-clean.jsx",
+      "publicEntry": "src/components/plico/toaster-clean.tsx",
       "section": "components",
       "slug": "toaster",
       "sourceSlug": "toaster-clean",
       "variant": "clean",
       "title": "Toaster",
-      "entry": "src/library/items/toaster-clean/index.jsx",
-      "primaryEntry": "src/library/modules/demo.clean-CWpzS1qi.jsx",
+      "entry": "src/components/plico/toaster-clean.tsx",
+      "primaryEntry": "src/components/plico/toaster-clean.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -1921,18 +2110,23 @@
         "default",
         "toast"
       ],
-      "typeExports": []
+      "typeExports": [
+        "ToastId",
+        "ToastOptions",
+        "ToasterCleanProps"
+      ],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/tool-call-card.jsx",
+      "publicEntry": "src/components/plico/tool-call-card.tsx",
       "section": "components",
       "slug": "tool-call-card",
       "sourceSlug": "tool-call-card",
       "variant": "classic",
       "title": "Tool Call Card",
-      "entry": "src/library/items/tool-call-card/index.jsx",
+      "entry": "src/components/plico/tool-call-card.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/tool-call-card/Component.tsx",
+      "primaryEntry": "src/components/plico/tool-call-card.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -1948,15 +2142,15 @@
       ]
     },
     {
-      "publicEntry": "src/library/tool-call-card-clean.jsx",
+      "publicEntry": "src/components/plico/tool-call-card-clean.tsx",
       "section": "components",
       "slug": "tool-call-card",
       "sourceSlug": "tool-call-card-clean",
       "variant": "clean",
       "title": "Tool Call Card",
-      "entry": "src/library/items/tool-call-card-clean/index.jsx",
+      "entry": "src/components/plico/tool-call-card-clean.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/tool-call-card-clean/Component.tsx",
+      "primaryEntry": "src/components/plico/tool-call-card-clean.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -1973,14 +2167,14 @@
       ]
     },
     {
-      "publicEntry": "src/library/usage-meter.jsx",
+      "publicEntry": "src/components/plico/usage-meter.tsx",
       "section": "components",
       "slug": "usage-meter",
       "sourceSlug": "usage-meter",
       "variant": "classic",
       "title": "Usage Meter",
-      "entry": "src/library/items/usage-meter/index.jsx",
-      "primaryEntry": "src/library/modules/component-gYCRsgrh.jsx",
+      "entry": "src/components/plico/usage-meter.tsx",
+      "primaryEntry": "src/components/plico/usage-meter.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -1988,17 +2182,23 @@
         "UsageMeterDemo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [
+        "UsageDemoData",
+        "UsageLimit",
+        "UsageMeterProps",
+        "UsageRow"
+      ],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/usage-meter-clean.jsx",
+      "publicEntry": "src/components/plico/usage-meter-clean.tsx",
       "section": "components",
       "slug": "usage-meter",
       "sourceSlug": "usage-meter-clean",
       "variant": "clean",
       "title": "Usage Meter",
-      "entry": "src/library/items/usage-meter-clean/index.jsx",
-      "primaryEntry": "src/library/modules/demo.clean-Cuu_AdnG.jsx",
+      "entry": "src/components/plico/usage-meter-clean.tsx",
+      "primaryEntry": "src/components/plico/usage-meter-clean.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -2006,17 +2206,23 @@
         "UsageMeterCleanDemo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [
+        "UsageDemoData",
+        "UsageLimit",
+        "UsageMeterCleanProps",
+        "UsageRow"
+      ],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/writing-assistant.jsx",
+      "publicEntry": "src/components/plico/writing-assistant.tsx",
       "section": "components",
       "slug": "writing-assistant",
       "sourceSlug": "writing-assistant",
       "variant": "classic",
       "title": "Writing Assistant",
-      "entry": "src/library/items/writing-assistant/index.jsx",
-      "primaryEntry": "src/library/modules/demo-DmFQrpJF.jsx",
+      "entry": "src/components/plico/writing-assistant.tsx",
+      "primaryEntry": "src/components/plico/writing-assistant.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -2024,17 +2230,23 @@
         "WritingAssistantDemo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [
+        "SpeechRecognitionLike",
+        "SpeechRecognitionWindow",
+        "WritingAssistantProps",
+        "WritingMessage"
+      ],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/writing-assistant-clean.jsx",
+      "publicEntry": "src/components/plico/writing-assistant-clean.tsx",
       "section": "components",
       "slug": "writing-assistant",
       "sourceSlug": "writing-assistant-clean",
       "variant": "clean",
       "title": "Writing Assistant",
-      "entry": "src/library/items/writing-assistant-clean/index.jsx",
-      "primaryEntry": "src/library/modules/demo.clean-DoHFMx8x.jsx",
+      "entry": "src/components/plico/writing-assistant-clean.tsx",
+      "primaryEntry": "src/components/plico/writing-assistant-clean.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -2042,17 +2254,23 @@
         "WritingAssistantCleanDemo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [
+        "SpeechRecognitionLike",
+        "SpeechRecognitionWindow",
+        "WritingAssistantCleanProps",
+        "WritingMessage"
+      ],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/agent-gallery.jsx",
+      "publicEntry": "src/components/plico/agent-gallery.tsx",
       "section": "blocks",
       "slug": "agent-gallery",
       "sourceSlug": "agent-gallery",
       "variant": "default",
       "title": "Agent Gallery",
-      "entry": "src/library/items/agent-gallery/index.jsx",
-      "primaryEntry": "src/library/modules/demo-qWgXlPG0.jsx",
+      "entry": "src/components/plico/agent-gallery.tsx",
+      "primaryEntry": "src/components/plico/agent-gallery.tsx",
       "exports": [
         "AgentGallery",
         "AgentGalleryDemo",
@@ -2060,17 +2278,20 @@
         "Demo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [
+        "GalleryItem"
+      ],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/ai-workspace.jsx",
+      "publicEntry": "src/components/plico/ai-workspace.tsx",
       "section": "blocks",
       "slug": "ai-workspace",
       "sourceSlug": "ai-workspace",
       "variant": "default",
       "title": "AI Workspace",
-      "entry": "src/library/items/ai-workspace/index.jsx",
-      "primaryEntry": "src/library/modules/demo-158Rlrkj.jsx",
+      "entry": "src/components/plico/ai-workspace.tsx",
+      "primaryEntry": "src/components/plico/ai-workspace.tsx",
       "exports": [
         "AiWorkspace",
         "AiWorkspaceDemo",
@@ -2078,17 +2299,22 @@
         "Demo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [
+        "Conversation",
+        "Project",
+        "WorkspaceMessage"
+      ],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/app-directory.jsx",
+      "publicEntry": "src/components/plico/app-directory.tsx",
       "section": "blocks",
       "slug": "app-directory",
       "sourceSlug": "app-directory",
       "variant": "default",
       "title": "App Directory",
-      "entry": "src/library/items/app-directory/index.jsx",
-      "primaryEntry": "src/library/modules/demo-CdNvbDAu.jsx",
+      "entry": "src/components/plico/app-directory.tsx",
+      "primaryEntry": "src/components/plico/app-directory.tsx",
       "exports": [
         "AppDirectory",
         "AppDirectoryDemo",
@@ -2096,17 +2322,18 @@
         "Demo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/client-context.jsx",
+      "publicEntry": "src/components/plico/client-context.tsx",
       "section": "blocks",
       "slug": "client-context",
       "sourceSlug": "client-context",
       "variant": "default",
       "title": "Client Context",
-      "entry": "src/library/items/client-context/index.jsx",
-      "primaryEntry": "src/library/modules/demo-D9Vw9aDF.jsx",
+      "entry": "src/components/plico/client-context.tsx",
+      "primaryEntry": "src/components/plico/client-context.tsx",
       "exports": [
         "ClientContext",
         "ClientContextDemo",
@@ -2114,17 +2341,23 @@
         "Demo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [
+        "ContextAttachment",
+        "ContextClient",
+        "ContextEntry",
+        "ContextPerson"
+      ],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/invoice-credit.jsx",
+      "publicEntry": "src/components/plico/invoice-credit.tsx",
       "section": "blocks",
       "slug": "invoice-credit",
       "sourceSlug": "invoice-credit",
       "variant": "default",
       "title": "Invoice & Credit Note",
-      "entry": "src/library/items/invoice-credit/index.jsx",
-      "primaryEntry": "src/library/modules/demo-BRSx7pv5.jsx",
+      "entry": "src/components/plico/invoice-credit.tsx",
+      "primaryEntry": "src/components/plico/invoice-credit.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -2132,17 +2365,20 @@
         "InvoiceCreditDemo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [
+        "InvoiceLine"
+      ],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/kpi-board.jsx",
+      "publicEntry": "src/components/plico/kpi-board.tsx",
       "section": "blocks",
       "slug": "kpi-board",
       "sourceSlug": "kpi-board",
       "variant": "default",
       "title": "KPI Board",
-      "entry": "src/library/items/kpi-board/index.jsx",
-      "primaryEntry": "src/library/modules/demo-CawsKXt1.jsx",
+      "entry": "src/components/plico/kpi-board.tsx",
+      "primaryEntry": "src/components/plico/kpi-board.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -2150,18 +2386,21 @@
         "KpiBoardDemo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [
+        "KpiBoardData"
+      ],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/logo-marquee.jsx",
+      "publicEntry": "src/components/plico/logo-marquee.tsx",
       "section": "blocks",
       "slug": "logo-marquee",
       "sourceSlug": "logo-marquee",
       "variant": "default",
       "title": "Logo Marquee",
-      "entry": "src/library/items/logo-marquee/index.jsx",
+      "entry": "src/components/plico/logo-marquee.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/logo-marquee/Component.tsx",
+      "primaryEntry": "src/components/plico/logo-marquee.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -2175,14 +2414,14 @@
       ]
     },
     {
-      "publicEntry": "src/library/metrics-dashboard.jsx",
+      "publicEntry": "src/components/plico/metrics-dashboard.tsx",
       "section": "blocks",
       "slug": "metrics-dashboard",
       "sourceSlug": "metrics-dashboard",
       "variant": "default",
       "title": "Metrics Dashboard",
-      "entry": "src/library/items/metrics-dashboard/index.jsx",
-      "primaryEntry": "src/library/modules/demo-2EA4yYHc.jsx",
+      "entry": "src/components/plico/metrics-dashboard.tsx",
+      "primaryEntry": "src/components/plico/metrics-dashboard.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -2190,17 +2429,18 @@
         "MetricsDashboardDemo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/pricing-plans.jsx",
+      "publicEntry": "src/components/plico/pricing-plans.tsx",
       "section": "blocks",
       "slug": "pricing-plans",
       "sourceSlug": "pricing-plans",
       "variant": "default",
       "title": "Pricing Plans",
-      "entry": "src/library/items/pricing-plans/index.jsx",
-      "primaryEntry": "src/library/modules/demo-D7hRHGEh.jsx",
+      "entry": "src/components/plico/pricing-plans.tsx",
+      "primaryEntry": "src/components/plico/pricing-plans.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -2208,17 +2448,20 @@
         "PricingPlansDemo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [
+        "Plan"
+      ],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/task-board.jsx",
+      "publicEntry": "src/components/plico/task-board.tsx",
       "section": "blocks",
       "slug": "task-board",
       "sourceSlug": "task-board",
       "variant": "default",
       "title": "Task Board",
-      "entry": "src/library/items/task-board/index.jsx",
-      "primaryEntry": "src/library/modules/demo-BfsFftdy.jsx",
+      "entry": "src/components/plico/task-board.tsx",
+      "primaryEntry": "src/components/plico/task-board.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -2226,18 +2469,21 @@
         "TaskBoardDemo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [
+        "Task"
+      ],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/testimonial-wall.jsx",
+      "publicEntry": "src/components/plico/testimonial-wall.tsx",
       "section": "blocks",
       "slug": "testimonial-wall",
       "sourceSlug": "testimonial-wall",
       "variant": "default",
       "title": "Testimonial Wall",
-      "entry": "src/library/items/testimonial-wall/index.jsx",
+      "entry": "src/components/plico/testimonial-wall.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/testimonial-wall/Component.tsx",
+      "primaryEntry": "src/components/plico/testimonial-wall.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -2251,15 +2497,15 @@
       ]
     },
     {
-      "publicEntry": "src/library/agent-team.jsx",
+      "publicEntry": "src/components/plico/agent-team.tsx",
       "section": "illustrations",
       "slug": "agent-team",
       "sourceSlug": "agent-team",
       "variant": "default",
       "title": "Agent Team",
-      "entry": "src/library/items/agent-team/index.jsx",
+      "entry": "src/components/plico/agent-team.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/agent-team/Component.tsx",
+      "primaryEntry": "src/components/plico/agent-team.tsx",
       "exports": [
         "AgentTeam",
         "AgentTeamDemo",
@@ -2274,15 +2520,15 @@
       ]
     },
     {
-      "publicEntry": "src/library/cover-flow.jsx",
+      "publicEntry": "src/components/plico/cover-flow.tsx",
       "section": "illustrations",
       "slug": "cover-flow",
       "sourceSlug": "cover-flow",
       "variant": "default",
       "title": "Cover Flow",
-      "entry": "src/library/items/cover-flow/index.jsx",
+      "entry": "src/components/plico/cover-flow.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/cover-flow/Component.tsx",
+      "primaryEntry": "src/components/plico/cover-flow.tsx",
       "exports": [
         "Component",
         "CoverFlow",
@@ -2296,15 +2542,15 @@
       ]
     },
     {
-      "publicEntry": "src/library/empty-calendar.jsx",
+      "publicEntry": "src/components/plico/empty-calendar.tsx",
       "section": "illustrations",
       "slug": "empty-calendar",
       "sourceSlug": "empty-calendar",
       "variant": "default",
       "title": "Empty Calendar",
-      "entry": "src/library/items/empty-calendar/index.jsx",
+      "entry": "src/components/plico/empty-calendar.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/empty-calendar/Component.tsx",
+      "primaryEntry": "src/components/plico/empty-calendar.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -2317,15 +2563,15 @@
       ]
     },
     {
-      "publicEntry": "src/library/enrichment-orbit.jsx",
+      "publicEntry": "src/components/plico/enrichment-orbit.tsx",
       "section": "illustrations",
       "slug": "enrichment-orbit",
       "sourceSlug": "enrichment-orbit",
       "variant": "default",
       "title": "Enrichment Orbit",
-      "entry": "src/library/items/enrichment-orbit/index.jsx",
+      "entry": "src/components/plico/enrichment-orbit.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/enrichment-orbit/Component.tsx",
+      "primaryEntry": "src/components/plico/enrichment-orbit.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -2338,15 +2584,15 @@
       ]
     },
     {
-      "publicEntry": "src/library/frost-cloud.jsx",
+      "publicEntry": "src/components/plico/frost-cloud.tsx",
       "section": "illustrations",
       "slug": "frost-cloud",
       "sourceSlug": "frost-cloud",
       "variant": "default",
       "title": "Frost Cloud",
-      "entry": "src/library/items/frost-cloud/index.jsx",
+      "entry": "src/components/plico/frost-cloud.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/frost-cloud/Component.tsx",
+      "primaryEntry": "src/components/plico/frost-cloud.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -2359,15 +2605,15 @@
       ]
     },
     {
-      "publicEntry": "src/library/ghosted-chat.jsx",
+      "publicEntry": "src/components/plico/ghosted-chat.tsx",
       "section": "illustrations",
       "slug": "ghosted-chat",
       "sourceSlug": "ghosted-chat",
       "variant": "default",
       "title": "Ghosted Chat",
-      "entry": "src/library/items/ghosted-chat/index.jsx",
+      "entry": "src/components/plico/ghosted-chat.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/ghosted-chat/Component.tsx",
+      "primaryEntry": "src/components/plico/ghosted-chat.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -2380,14 +2626,14 @@
       ]
     },
     {
-      "publicEntry": "src/library/glass-folder.jsx",
+      "publicEntry": "src/components/plico/glass-folder.tsx",
       "section": "illustrations",
       "slug": "glass-folder",
       "sourceSlug": "glass-folder",
       "variant": "default",
       "title": "Glass Folder",
-      "entry": "src/library/items/glass-folder/index.jsx",
-      "primaryEntry": "src/library/modules/index-CA7yMmEL.jsx",
+      "entry": "src/components/plico/glass-folder.tsx",
+      "primaryEntry": "src/components/plico/glass-folder.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -2395,18 +2641,19 @@
         "GlassFolderDemo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/glow-cloud.jsx",
+      "publicEntry": "src/components/plico/glow-cloud.tsx",
       "section": "illustrations",
       "slug": "glow-cloud",
       "sourceSlug": "glow-cloud",
       "variant": "default",
       "title": "Glow Cloud",
-      "entry": "src/library/items/glow-cloud/index.jsx",
+      "entry": "src/components/plico/glow-cloud.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/glow-cloud/Component.tsx",
+      "primaryEntry": "src/components/plico/glow-cloud.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -2419,14 +2666,14 @@
       ]
     },
     {
-      "publicEntry": "src/library/glow-keyboard.jsx",
+      "publicEntry": "src/components/plico/glow-keyboard.tsx",
       "section": "illustrations",
       "slug": "glow-keyboard",
       "sourceSlug": "glow-keyboard",
       "variant": "default",
       "title": "Glow Keyboard",
-      "entry": "src/library/items/glow-keyboard/index.jsx",
-      "primaryEntry": "src/library/modules/demo-BrYW73Cf.jsx",
+      "entry": "src/components/plico/glow-keyboard.tsx",
+      "primaryEntry": "src/components/plico/glow-keyboard.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -2434,18 +2681,19 @@
         "GlowKeyboardDemo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/integration-beam.jsx",
+      "publicEntry": "src/components/plico/integration-beam.tsx",
       "section": "illustrations",
       "slug": "integration-beam",
       "sourceSlug": "integration-beam",
       "variant": "default",
       "title": "Integration Beam",
-      "entry": "src/library/items/integration-beam/index.jsx",
+      "entry": "src/components/plico/integration-beam.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/integration-beam/Component.tsx",
+      "primaryEntry": "src/components/plico/integration-beam.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -2460,14 +2708,14 @@
       ]
     },
     {
-      "publicEntry": "src/library/integration-flow.jsx",
+      "publicEntry": "src/components/plico/integration-flow.tsx",
       "section": "illustrations",
       "slug": "integration-flow",
       "sourceSlug": "integration-flow",
       "variant": "default",
       "title": "Integration Flow",
-      "entry": "src/library/items/integration-flow/index.jsx",
-      "primaryEntry": "src/library/modules/demo-CBQvHgq1.jsx",
+      "entry": "src/components/plico/integration-flow.tsx",
+      "primaryEntry": "src/components/plico/integration-flow.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -2475,18 +2723,19 @@
         "IntegrationFlowDemo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/integration-grid.jsx",
+      "publicEntry": "src/components/plico/integration-grid.tsx",
       "section": "illustrations",
       "slug": "integration-grid",
       "sourceSlug": "integration-grid",
       "variant": "default",
       "title": "Integration Grid",
-      "entry": "src/library/items/integration-grid/index.jsx",
+      "entry": "src/components/plico/integration-grid.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/integration-grid/Component.tsx",
+      "primaryEntry": "src/components/plico/integration-grid.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -2500,15 +2749,15 @@
       ]
     },
     {
-      "publicEntry": "src/library/layer-stack.jsx",
+      "publicEntry": "src/components/plico/layer-stack.tsx",
       "section": "illustrations",
       "slug": "layer-stack",
       "sourceSlug": "layer-stack",
       "variant": "default",
       "title": "Layer Stack",
-      "entry": "src/library/items/layer-stack/index.jsx",
+      "entry": "src/components/plico/layer-stack.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/layer-stack/Component.tsx",
+      "primaryEntry": "src/components/plico/layer-stack.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -2523,15 +2772,15 @@
       ]
     },
     {
-      "publicEntry": "src/library/lead-sourcing.jsx",
+      "publicEntry": "src/components/plico/lead-sourcing.tsx",
       "section": "illustrations",
       "slug": "lead-sourcing",
       "sourceSlug": "lead-sourcing",
       "variant": "default",
       "title": "Lead Sourcing",
-      "entry": "src/library/items/lead-sourcing/index.jsx",
+      "entry": "src/components/plico/lead-sourcing.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/lead-sourcing/Component.tsx",
+      "primaryEntry": "src/components/plico/lead-sourcing.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -2544,15 +2793,15 @@
       ]
     },
     {
-      "publicEntry": "src/library/logo-cluster.jsx",
+      "publicEntry": "src/components/plico/logo-cluster.tsx",
       "section": "illustrations",
       "slug": "logo-cluster",
       "sourceSlug": "logo-cluster",
       "variant": "default",
       "title": "Logo Cluster",
-      "entry": "src/library/items/logo-cluster/index.jsx",
+      "entry": "src/components/plico/logo-cluster.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/logo-cluster/Component.tsx",
+      "primaryEntry": "src/components/plico/logo-cluster.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -2566,15 +2815,15 @@
       ]
     },
     {
-      "publicEntry": "src/library/model-wheel.jsx",
+      "publicEntry": "src/components/plico/model-wheel.tsx",
       "section": "illustrations",
       "slug": "model-wheel",
       "sourceSlug": "model-wheel",
       "variant": "default",
       "title": "Model Wheel",
-      "entry": "src/library/items/model-wheel/index.jsx",
+      "entry": "src/components/plico/model-wheel.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/model-wheel/Component.tsx",
+      "primaryEntry": "src/components/plico/model-wheel.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -2589,14 +2838,14 @@
       ]
     },
     {
-      "publicEntry": "src/library/outreach-branches.jsx",
+      "publicEntry": "src/components/plico/outreach-branches.tsx",
       "section": "illustrations",
       "slug": "outreach-branches",
       "sourceSlug": "outreach-branches",
       "variant": "default",
       "title": "Outreach Branches",
-      "entry": "src/library/items/outreach-branches/index.jsx",
-      "primaryEntry": "src/library/modules/demo-DE0jF2h1.jsx",
+      "entry": "src/components/plico/outreach-branches.tsx",
+      "primaryEntry": "src/components/plico/outreach-branches.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -2604,17 +2853,18 @@
         "OutreachBranchesDemo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/project-flow.jsx",
+      "publicEntry": "src/components/plico/project-flow.tsx",
       "section": "illustrations",
       "slug": "project-flow",
       "sourceSlug": "project-flow",
       "variant": "default",
       "title": "Project Flow",
-      "entry": "src/library/items/project-flow/index.jsx",
-      "primaryEntry": "src/library/modules/demo-D34v7Pjy.jsx",
+      "entry": "src/components/plico/project-flow.tsx",
+      "primaryEntry": "src/components/plico/project-flow.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -2622,18 +2872,19 @@
         "ProjectFlowDemo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/region-dach.jsx",
+      "publicEntry": "src/components/plico/region-dach.tsx",
       "section": "illustrations",
       "slug": "region-dach",
       "sourceSlug": "region-dach",
       "variant": "default",
       "title": "DACH Region",
-      "entry": "src/library/items/region-dach/index.jsx",
+      "entry": "src/components/plico/region-dach.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/region-dach/Component.tsx",
+      "primaryEntry": "src/components/plico/region-dach.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -2647,15 +2898,15 @@
       ]
     },
     {
-      "publicEntry": "src/library/side-folder.jsx",
+      "publicEntry": "src/components/plico/side-folder.tsx",
       "section": "illustrations",
       "slug": "side-folder",
       "sourceSlug": "side-folder",
       "variant": "default",
       "title": "Side Folder",
-      "entry": "src/library/items/side-folder/index.jsx",
+      "entry": "src/components/plico/side-folder.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/side-folder/Component.tsx",
+      "primaryEntry": "src/components/plico/side-folder.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -2668,15 +2919,15 @@
       ]
     },
     {
-      "publicEntry": "src/library/tab-overload.jsx",
+      "publicEntry": "src/components/plico/tab-overload.tsx",
       "section": "illustrations",
       "slug": "tab-overload",
       "sourceSlug": "tab-overload",
       "variant": "default",
       "title": "Tab Overload",
-      "entry": "src/library/items/tab-overload/index.jsx",
+      "entry": "src/components/plico/tab-overload.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/tab-overload/Component.tsx",
+      "primaryEntry": "src/components/plico/tab-overload.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -2689,15 +2940,15 @@
       ]
     },
     {
-      "publicEntry": "src/library/team-invite.jsx",
+      "publicEntry": "src/components/plico/team-invite.tsx",
       "section": "illustrations",
       "slug": "team-invite",
       "sourceSlug": "team-invite",
       "variant": "default",
       "title": "Team Invite",
-      "entry": "src/library/items/team-invite/index.jsx",
+      "entry": "src/components/plico/team-invite.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/team-invite/Component.tsx",
+      "primaryEntry": "src/components/plico/team-invite.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -2711,14 +2962,14 @@
       ]
     },
     {
-      "publicEntry": "src/library/voice-orb.jsx",
+      "publicEntry": "src/components/plico/voice-orb.tsx",
       "section": "illustrations",
       "slug": "voice-orb",
       "sourceSlug": "voice-orb",
       "variant": "default",
       "title": "Voice Orb",
-      "entry": "src/library/items/voice-orb/index.jsx",
-      "primaryEntry": "src/library/modules/demo-C5SE4pL3.jsx",
+      "entry": "src/components/plico/voice-orb.tsx",
+      "primaryEntry": "src/components/plico/voice-orb.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -2726,17 +2977,18 @@
         "VoiceOrbDemo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/world-map.jsx",
+      "publicEntry": "src/components/plico/world-map.tsx",
       "section": "illustrations",
       "slug": "world-map",
       "sourceSlug": "world-map",
       "variant": "default",
       "title": "World Map Continental",
-      "entry": "src/library/items/world-map/index.jsx",
-      "primaryEntry": "src/library/modules/demo-DOm8gFae.jsx",
+      "entry": "src/components/plico/world-map.tsx",
+      "primaryEntry": "src/components/plico/world-map.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -2744,17 +2996,18 @@
         "WorldMapDemo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/agent-chat.jsx",
+      "publicEntry": "src/components/plico/agent-chat.tsx",
       "section": "screens",
       "slug": "agent-chat",
       "sourceSlug": "agent-chat",
       "variant": "default",
       "title": "Agent Chat",
-      "entry": "src/library/items/agent-chat/index.jsx",
-      "primaryEntry": "src/library/modules/demo-CeLmzXST.jsx",
+      "entry": "src/components/plico/agent-chat.tsx",
+      "primaryEntry": "src/components/plico/agent-chat.tsx",
       "exports": [
         "AgentChat",
         "AgentChatDemo",
@@ -2763,17 +3016,18 @@
         "FullScreen",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/agent-run.jsx",
+      "publicEntry": "src/components/plico/agent-run.tsx",
       "section": "screens",
       "slug": "agent-run",
       "sourceSlug": "agent-run",
       "variant": "default",
       "title": "Agent Run",
-      "entry": "src/library/items/agent-run/index.jsx",
-      "primaryEntry": "src/library/modules/demo-DhakOwR1.jsx",
+      "entry": "src/components/plico/agent-run.tsx",
+      "primaryEntry": "src/components/plico/agent-run.tsx",
       "exports": [
         "AgentRun",
         "AgentRunDemo",
@@ -2782,17 +3036,18 @@
         "FullScreen",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/analytics.jsx",
+      "publicEntry": "src/components/plico/analytics.tsx",
       "section": "screens",
       "slug": "analytics",
       "sourceSlug": "analytics",
       "variant": "default",
       "title": "Analytics",
-      "entry": "src/library/items/analytics/index.jsx",
-      "primaryEntry": "src/library/modules/demo-BpIKiAtr.jsx",
+      "entry": "src/components/plico/analytics.tsx",
+      "primaryEntry": "src/components/plico/analytics.tsx",
       "exports": [
         "Analytics",
         "AnalyticsDemo",
@@ -2801,17 +3056,18 @@
         "FullScreen",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/app-shell.jsx",
+      "publicEntry": "src/components/plico/app-shell.tsx",
       "section": "screens",
       "slug": "app-shell",
       "sourceSlug": "app-shell",
       "variant": "default",
       "title": "App Shell",
-      "entry": "src/library/items/app-shell/index.jsx",
-      "primaryEntry": "src/library/modules/component-B0ZYbJEt.jsx",
+      "entry": "src/components/plico/app-shell.tsx",
+      "primaryEntry": "src/components/plico/app-shell.tsx",
       "exports": [
         "AppShell",
         "AppShellDemo",
@@ -2820,17 +3076,20 @@
         "FullScreen",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [
+        "AppShellProps"
+      ],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/assistant-home.jsx",
+      "publicEntry": "src/components/plico/assistant-home.tsx",
       "section": "screens",
       "slug": "assistant-home",
       "sourceSlug": "assistant-home",
       "variant": "default",
       "title": "Assistant Home",
-      "entry": "src/library/items/assistant-home/index.jsx",
-      "primaryEntry": "src/library/modules/component-BtHQvHKg.jsx",
+      "entry": "src/components/plico/assistant-home.tsx",
+      "primaryEntry": "src/components/plico/assistant-home.tsx",
       "exports": [
         "AssistantHome",
         "AssistantHomeDemo",
@@ -2839,17 +3098,18 @@
         "FullScreen",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/crm.jsx",
+      "publicEntry": "src/components/plico/crm.tsx",
       "section": "screens",
       "slug": "crm",
       "sourceSlug": "crm",
       "variant": "default",
       "title": "CRM",
-      "entry": "src/library/items/crm/index.jsx",
-      "primaryEntry": "src/library/modules/demo-vftwgdm_.jsx",
+      "entry": "src/components/plico/crm.tsx",
+      "primaryEntry": "src/components/plico/crm.tsx",
       "exports": [
         "Component",
         "Crm",
@@ -2858,17 +3118,18 @@
         "FullScreen",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/evals.jsx",
+      "publicEntry": "src/components/plico/evals.tsx",
       "section": "screens",
       "slug": "evals",
       "sourceSlug": "evals",
       "variant": "default",
       "title": "Evals",
-      "entry": "src/library/items/evals/index.jsx",
-      "primaryEntry": "src/library/modules/demo-9TUmGUMi.jsx",
+      "entry": "src/components/plico/evals.tsx",
+      "primaryEntry": "src/components/plico/evals.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -2877,17 +3138,18 @@
         "FullScreen",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/files.jsx",
+      "publicEntry": "src/components/plico/files.tsx",
       "section": "screens",
       "slug": "files",
       "sourceSlug": "files",
       "variant": "default",
       "title": "Folders",
-      "entry": "src/library/items/files/index.jsx",
-      "primaryEntry": "src/library/modules/demo-DXkqoFJb.jsx",
+      "entry": "src/components/plico/files.tsx",
+      "primaryEntry": "src/components/plico/files.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -2896,17 +3158,18 @@
         "FullScreen",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/folder.jsx",
+      "publicEntry": "src/components/plico/folder.tsx",
       "section": "screens",
       "slug": "folder",
       "sourceSlug": "folder",
       "variant": "default",
       "title": "Folder",
-      "entry": "src/library/items/folder/index.jsx",
-      "primaryEntry": "src/library/modules/demo-DM_UqYSi.jsx",
+      "entry": "src/components/plico/folder.tsx",
+      "primaryEntry": "src/components/plico/folder.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -2915,17 +3178,18 @@
         "FullScreen",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/integrations.jsx",
+      "publicEntry": "src/components/plico/integrations.tsx",
       "section": "screens",
       "slug": "integrations",
       "sourceSlug": "integrations",
       "variant": "default",
       "title": "Integrations",
-      "entry": "src/library/items/integrations/index.jsx",
-      "primaryEntry": "src/library/modules/demo-HbaZwPph.jsx",
+      "entry": "src/components/plico/integrations.tsx",
+      "primaryEntry": "src/components/plico/integrations.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -2934,17 +3198,18 @@
         "IntegrationsDemo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/onboarding.jsx",
+      "publicEntry": "src/components/plico/onboarding.tsx",
       "section": "screens",
       "slug": "onboarding",
       "sourceSlug": "onboarding",
       "variant": "default",
       "title": "Onboarding",
-      "entry": "src/library/items/onboarding/index.jsx",
-      "primaryEntry": "src/library/modules/demo-BgLxDeeC.jsx",
+      "entry": "src/components/plico/onboarding.tsx",
+      "primaryEntry": "src/components/plico/onboarding.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -2953,17 +3218,18 @@
         "OnboardingDemo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/settings-billing.jsx",
+      "publicEntry": "src/components/plico/settings-billing.tsx",
       "section": "screens",
       "slug": "settings-billing",
       "sourceSlug": "settings-billing",
       "variant": "default",
       "title": "Settings & Billing",
-      "entry": "src/library/items/settings-billing/index.jsx",
-      "primaryEntry": "src/library/modules/demo-BGahYM4K.jsx",
+      "entry": "src/components/plico/settings-billing.tsx",
+      "primaryEntry": "src/components/plico/settings-billing.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -2972,17 +3238,18 @@
         "SettingsBillingDemo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/blur-crossfade.jsx",
+      "publicEntry": "src/components/plico/blur-crossfade.tsx",
       "section": "motion",
       "slug": "blur-crossfade",
       "sourceSlug": "blur-crossfade",
       "variant": "default",
       "title": "Blur Crossfade",
-      "entry": "src/library/items/blur-crossfade/index.jsx",
-      "primaryEntry": "src/library/modules/demo-b0-CVBH2.jsx",
+      "entry": "src/components/plico/blur-crossfade.tsx",
+      "primaryEntry": "src/components/plico/blur-crossfade.tsx",
       "exports": [
         "BlurCrossfade",
         "BlurCrossfadeDemo",
@@ -2990,17 +3257,18 @@
         "Demo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/gradient-floor.jsx",
+      "publicEntry": "src/components/plico/gradient-floor.tsx",
       "section": "motion",
       "slug": "gradient-floor",
       "sourceSlug": "gradient-floor",
       "variant": "default",
       "title": "Gradient Floor",
-      "entry": "src/library/items/gradient-floor/index.jsx",
-      "primaryEntry": "src/library/modules/demo-CROkL7VF.jsx",
+      "entry": "src/components/plico/gradient-floor.tsx",
+      "primaryEntry": "src/components/plico/gradient-floor.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -3008,17 +3276,18 @@
         "GradientFloorDemo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/gradient-text.jsx",
+      "publicEntry": "src/components/plico/gradient-text.tsx",
       "section": "motion",
       "slug": "gradient-text",
       "sourceSlug": "gradient-text",
       "variant": "default",
       "title": "Gradient Text",
-      "entry": "src/library/items/gradient-text/index.jsx",
-      "primaryEntry": "src/library/modules/demo-BZms21rB.jsx",
+      "entry": "src/components/plico/gradient-text.tsx",
+      "primaryEntry": "src/components/plico/gradient-text.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -3026,18 +3295,19 @@
         "GradientTextDemo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     },
     {
-      "publicEntry": "src/library/grid-background.jsx",
+      "publicEntry": "src/components/plico/grid-background.tsx",
       "section": "motion",
       "slug": "grid-background",
       "sourceSlug": "grid-background",
       "variant": "default",
       "title": "Grid Background",
-      "entry": "src/library/items/grid-background/index.jsx",
+      "entry": "src/components/plico/grid-background.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/grid-background/Component.tsx",
+      "primaryEntry": "src/components/plico/grid-background.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -3051,15 +3321,15 @@
       ]
     },
     {
-      "publicEntry": "src/library/number-ticker.jsx",
+      "publicEntry": "src/components/plico/number-ticker.tsx",
       "section": "motion",
       "slug": "number-ticker",
       "sourceSlug": "number-ticker",
       "variant": "default",
       "title": "Number Ticker",
-      "entry": "src/library/items/number-ticker/index.jsx",
+      "entry": "src/components/plico/number-ticker.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/number-ticker/Component.tsx",
+      "primaryEntry": "src/components/plico/number-ticker.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -3072,15 +3342,15 @@
       ]
     },
     {
-      "publicEntry": "src/library/shimmer-loader.jsx",
+      "publicEntry": "src/components/plico/shimmer-loader.tsx",
       "section": "motion",
       "slug": "shimmer-loader",
       "sourceSlug": "shimmer-loader",
       "variant": "default",
       "title": "Shimmer Loader",
-      "entry": "src/library/items/shimmer-loader/index.jsx",
+      "entry": "src/components/plico/shimmer-loader.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/shimmer-loader/Component.tsx",
+      "primaryEntry": "src/components/plico/shimmer-loader.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -3096,15 +3366,15 @@
       ]
     },
     {
-      "publicEntry": "src/library/text-reveal.jsx",
+      "publicEntry": "src/components/plico/text-reveal.tsx",
       "section": "motion",
       "slug": "text-reveal",
       "sourceSlug": "text-reveal",
       "variant": "default",
       "title": "Text Reveal",
-      "entry": "src/library/items/text-reveal/index.jsx",
+      "entry": "src/components/plico/text-reveal.tsx",
       "license": "MIT",
-      "primaryEntry": "src/library/items/text-reveal/Component.tsx",
+      "primaryEntry": "src/components/plico/text-reveal.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -3117,14 +3387,14 @@
       ]
     },
     {
-      "publicEntry": "src/library/tilt-card.jsx",
+      "publicEntry": "src/components/plico/tilt-card.tsx",
       "section": "motion",
       "slug": "tilt-card",
       "sourceSlug": "tilt-card",
       "variant": "default",
       "title": "Tilt Card",
-      "entry": "src/library/items/tilt-card/index.jsx",
-      "primaryEntry": "src/library/modules/demo-DC242hdM.jsx",
+      "entry": "src/components/plico/tilt-card.tsx",
+      "primaryEntry": "src/components/plico/tilt-card.tsx",
       "exports": [
         "Component",
         "Demo",
@@ -3132,7 +3402,8 @@
         "TiltCardDemo",
         "default"
       ],
-      "typeExports": []
+      "typeExports": [],
+      "license": "MIT"
     }
   ]
 }

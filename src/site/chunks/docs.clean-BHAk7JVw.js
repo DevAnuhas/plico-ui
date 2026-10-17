@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`Filtering a list, table or board by a few groups of options – stage, owner, region and the like`, `Side panels or popovers where people pick several filters and want to see them all at a glance`],
   whenNotToUse: [`A single choice from a short list – use a select or segmented control`, `Free-text search or numeric ranges with a slider – this menu works with predefined options`],
-  usage: "import { Component as FilterMenu } from \"@/components/plico/filter-menu-clean\";\nconst groups = [{\n  id: \"stage\",\n  label: \"Stage\",\n  options: [{\n    id: \"new\",\n    label: \"New lead\"\n  }, {\n    id: \"won\",\n    label: \"Won\"\n  }]\n}, {\n  id: \"size\",\n  label: \"Deal size\",\n  chipPrefix: \"Deal: \",\n  options: [{\n    id: \"s\",\n    label: \"Under $5k\"\n  }, {\n    id: \"l\",\n    label: \"Over $50k\"\n  }]\n}];\nexport function DealFilters() {\n  const [filters, setFilters] = useState({});\n  return <FilterMenu groups={groups} value={filters} onChange={setFilters} />;\n}",
+  usage: "import FilterMenu from \"@/components/plico/filter-menu-clean\";\nconst groups = [{\n  id: \"stage\",\n  label: \"Stage\",\n  options: [{\n    id: \"new\",\n    label: \"New lead\"\n  }, {\n    id: \"won\",\n    label: \"Won\"\n  }]\n}, {\n  id: \"size\",\n  label: \"Deal size\",\n  chipPrefix: \"Deal: \",\n  options: [{\n    id: \"s\",\n    label: \"Under $5k\"\n  }, {\n    id: \"l\",\n    label: \"Over $50k\"\n  }]\n}];\nexport function DealFilters() {\n  const [filters, setFilters] = useState({});\n  return <FilterMenu groups={groups} value={filters} onChange={setFilters} />;\n}",
   props: [{
     name: `groups`,
     type: `FilterGroup[]`,

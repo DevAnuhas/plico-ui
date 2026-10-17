@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`Feature cards about inviting teammates, collaboration, sharing or multiplayer`, `Onboarding steps like “Invite your team” where a friendly, moving scene helps`],
   whenNotToUse: [`Showing your real team list – the scene is decorative and loops on its own`, `Places that need to stay completely still – use prefers-reduced-motion or a static image`],
-  usage: "import { TeamInvite } from \"@/components/plico/team-invite\";\nexport function FeatureCard() {\n  return <article style={{\n    maxWidth: 420\n  }}>\n      <TeamInvite avatars={[{\n      src: \"/team/maya.png\",\n      name: \"Maya\"\n    }, {\n      src: \"/team/finn.png\",\n      name: \"Finn\"\n    }, {\n      src: \"/team/lea.png\",\n      name: \"Lea\"\n    }]} />\n      <h3>Invite your team</h3>\n      <p>Bring everyone into the same workspace in seconds.</p>\n    </article>;\n}",
+  usage: "import TeamInvite from \"@/components/plico/team-invite\";\nexport function FeatureCard() {\n  return <article style={{\n    maxWidth: 420\n  }}>\n      <TeamInvite avatars={[{\n      src: \"/team/maya.png\",\n      name: \"Maya\"\n    }, {\n      src: \"/team/finn.png\",\n      name: \"Finn\"\n    }, {\n      src: \"/team/lea.png\",\n      name: \"Lea\"\n    }]} />\n      <h3>Invite your team</h3>\n      <p>Bring everyone into the same workspace in seconds.</p>\n    </article>;\n}",
   props: [{
     name: `avatars`,
     type: `[TeamInviteAvatar, TeamInviteAvatar, TeamInviteAvatar]`,

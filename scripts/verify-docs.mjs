@@ -63,7 +63,7 @@ for (const [index, snippet] of snippets.entries()) {
 // TypeScript follows real re-exports, including type declarations through export *.
 // Only import declarations enter this virtual program; example app/API placeholders
 // do not get mistaken for library type failures. Every complete snippet is parsed above.
-const options = { allowJs: true, checkJs: false, noEmit: true, skipLibCheck: true, strict: false, jsx: ts.JsxEmit.ReactJSX, target: ts.ScriptTarget.ES2022, module: ts.ModuleKind.ESNext, moduleResolution: ts.ModuleResolutionKind.Bundler, esModuleInterop: true };
+const options = { allowJs: false, noEmit: true, skipLibCheck: true, strict: true, jsx: ts.JsxEmit.ReactJSX, target: ts.ScriptTarget.ES2022, module: ts.ModuleKind.ESNext, moduleResolution: ts.ModuleResolutionKind.Bundler, esModuleInterop: true };
 const host = ts.createCompilerHost(options);
 const baseGetSourceFile = host.getSourceFile.bind(host);
 const baseFileExists = host.fileExists.bind(host);
@@ -101,7 +101,7 @@ for (const [filename, { snippet }] of virtualFiles) {
         if (!available.has(name)) missing.push({ name, typeOnly: node.importClause.isTypeOnly || specifier.isTypeOnly });
       }
     }
-    if (missing.length) issues.push({ file: snippet.file, line: snippet.line, module: node.moduleSpecifier.text.replace(/^.*\/src\/library\//, "@/components/plico/").replace(/\.jsx$/, ""), missing, available: [...available.keys()] });
+    if (missing.length) issues.push({ file: snippet.file, line: snippet.line, module: node.moduleSpecifier.text.replace(/^.*\/src\/library\//, "@/components/plico/").replace(/\.tsx$/, ""), missing, available: [...available.keys()] });
   }
 }
 

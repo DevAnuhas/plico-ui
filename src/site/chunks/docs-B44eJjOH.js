@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`A step or feature card about enriching, scoring or syncing data around a central record`, `Bento grids that need a calm, continuously moving illustration`],
   whenNotToUse: [`Places where constant motion would distract from nearby content`],
-  usage: "import { EnrichmentOrbit } from \"@/components/plico/enrichment-orbit\";\nexport function FeatureCard() {\n  return <article style={{\n    maxWidth: 360\n  }}>\n      <EnrichmentOrbit />\n      <h3>Card title</h3>\n      <p>Short description of the problem or step.</p>\n    </article>;\n}",
+  usage: "import EnrichmentOrbit from \"@/components/plico/enrichment-orbit\";\nexport function FeatureCard() {\n  return <article style={{\n    maxWidth: 360\n  }}>\n      <EnrichmentOrbit />\n      <h3>Card title</h3>\n      <p>Short description of the problem or step.</p>\n    </article>;\n}",
   props: [{
     name: `label`,
     type: `string`,

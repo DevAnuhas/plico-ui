@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`Showcase cards: membership or pricing cards, product shots, featured items`, `A single hero object that should feel tangible on hover`],
   whenNotToUse: [`Grids of many cards – the motion becomes noise when every card tilts`, `Cards full of controls or text to read – the moving surface makes them harder to use`],
-  usage: "import { TiltCard } from \"@/components/plico/tilt-card\";\nfunction MembershipCard() {\n  return <TiltCard maxTilt={10} scale={1.02}>\n      <div className=\"membership\">\n        <span>Plico UI Pro</span>\n        <span>•••• 4821</span>\n      </div>\n    </TiltCard>;\n}\nexport {\n  MembershipCard\n};",
+  usage: "import TiltCard from \"@/components/plico/tilt-card\";\nfunction MembershipCard() {\n  return <TiltCard maxTilt={10} scale={1.02}>\n      <div className=\"membership\">\n        <span>Plico UI Pro</span>\n        <span>•••• 4821</span>\n      </div>\n    </TiltCard>;\n}\nexport { MembershipCard };",
   props: [{
     name: `children`,
     type: `ReactNode`,

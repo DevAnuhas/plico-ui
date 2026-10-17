@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`Hero sections for AI assistants, chat or writing tools – the prompt types itself and invites people to try`, `Landing pages that want an interactive scene instead of a video`],
   whenNotToUse: [`As your real chat input – it is a showcase; use Chat Composer for a working input`, `Small cards on mobile – the keyboard legends get tiny below ~360px width`],
-  usage: "import { GlowKeyboard } from \"@/components/plico/glow-keyboard\";\nfunction Hero() {\n  return <section style={{\n    maxWidth: 1100,\n    margin: \"0 auto\"\n  }}>\n      <GlowKeyboard />\n    </section>;\n}\nexport {\n  Hero\n};",
+  usage: "import GlowKeyboard from \"@/components/plico/glow-keyboard\";\nfunction Hero() {\n  return <section style={{\n    maxWidth: 1100,\n    margin: \"0 auto\"\n  }}>\n      <GlowKeyboard />\n    </section>;\n}\nexport { Hero };",
   examples: [{
     title: `Own prompts`,
     code: "<GlowKeyboard prompts={[\"Summarize this week's sales\", \"Draft a reply to Anna\"]} onSubmit={(text) => console.log(text)} />;"

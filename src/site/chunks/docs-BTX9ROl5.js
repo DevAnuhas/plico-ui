@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`, `App Shell (installed with it)`],
   whenToUse: [`Detail view of a project, folder or collection`, `Pairs with the Folders screen`],
   whenNotToUse: [`Nested trees deeper than one level`],
-  usage: "import { Component as FolderScreen } from \"@/components/plico/folder\";\nfunction Page() {\n  return <FolderScreen folder=\"Q3 Campaign\" workspace=\"Acme\" user={{\n    name: \"Alex Morgan\"\n  }} onNavigate={(label) => router.push(routes[label])} />;\n}\nexport {\n  Page as default\n};",
+  usage: "import FolderScreen from \"@/components/plico/folder\";\nfunction Page() {\n  return <FolderScreen folder=\"Q3 Campaign\" workspace=\"Acme\" user={{\n    name: \"Alex Morgan\"\n  }} onNavigate={label => router.push(routes[label])} />;\n}\nexport { Page as default };",
   props: [{
     name: `folder`,
     type: `string`,

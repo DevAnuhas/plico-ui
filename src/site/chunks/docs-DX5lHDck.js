@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`Headlines and short intros on landing pages that should arrive as you scroll`, `A key sentence you want read in order, like a mission statement or a quote`],
   whenNotToUse: [`Long paragraphs or anything people need to read right away – waiting for words gets tiring`, `Text that changes often, like live data – the reveal plays only when it enters the view`],
-  usage: "import { TextReveal } from \"@/components/plico/text-reveal\";\nexport function Intro() {\n  return <TextReveal as=\"h2\" text=\"Words that arrive one at a time.\" />;\n}",
+  usage: "import TextReveal from \"@/components/plico/text-reveal\";\nexport function Intro() {\n  return <TextReveal as=\"h2\" text=\"Words that arrive one at a time.\" />;\n}",
   props: [{
     name: `text`,
     type: `string`,

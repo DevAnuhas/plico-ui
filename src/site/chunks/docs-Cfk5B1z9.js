@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`The base of an AI assistant, internal tool or SaaS dashboard`, `Building your own screens on the same frame as the other Plico UI screens`],
   whenNotToUse: [`Marketing pages – use a block or a plain layout`, `Apps with deep, multi-level navigation trees`],
-  usage: "import { AppShell } from \"@/components/plico/app-shell\";\nfunction Layout({\n  children\n}) {\n  return <AppShell active=\"New chat\" workspace=\"Acme\" user={{\n    name: \"Alex Morgan\"\n  }} onNavigate={(label) => router.push(routes[label])}>\n      <div className=\"ui-as-page\">{children}</div>\n    </AppShell>;\n}\nexport {\n  Layout\n};",
+  usage: "import AppShell from \"@/components/plico/app-shell\";\nfunction Layout({\n  children\n}) {\n  return <AppShell active=\"New chat\" workspace=\"Acme\" user={{\n    name: \"Alex Morgan\"\n  }} onNavigate={label => router.push(routes[label])}>\n      <div className=\"ui-as-page\">{children}</div>\n    </AppShell>;\n}\nexport { Layout };",
   props: [{
     name: `children`,
     type: `ReactNode`,

@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`A feature section that shows how tasks, clients and roles connect in your product`, `Landing pages where a short, self-playing scene explains a workflow better than text`],
   whenNotToUse: [`Interactive product UI – the scene is a decorative illustration, not working components`, `Very small spaces below ~320px wide, where the card text gets hard to read`],
-  usage: "import { ProjectFlow } from \"@/components/plico/project-flow\";\nfunction FeatureSection() {\n  return <section style={{\n    maxWidth: 960,\n    margin: \"0 auto\"\n  }}>\n      <ProjectFlow />\n    </section>;\n}\nexport {\n  FeatureSection\n};",
+  usage: "import ProjectFlow from \"@/components/plico/project-flow\";\nfunction FeatureSection() {\n  return <section style={{\n    maxWidth: 960,\n    margin: \"0 auto\"\n  }}>\n      <ProjectFlow />\n    </section>;\n}\nexport { FeatureSection };",
   examples: [{
     title: `Dark mode and your page color`,
     code: `<ProjectFlow theme="dark" className="hero-scene" />

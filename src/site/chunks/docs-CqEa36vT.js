@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`The wait between sending a prompt and the first streamed token – one line that says what the model is doing`, `Agent and pipeline steps with real labels: searching, reading, running a tool, writing`, `Inline in a chat bubble or next to a button where a full panel would be too much`],
   whenNotToUse: [`When people should see the sources and every step – use Thinking State`, `Page or data loading with no phases – a skeleton or a plain spinner reads calmer`, `Waits under half a second – the loader would only flash`],
-  usage: "import { ThinkingLoader } from \"@/components/plico/thinking-loader\";\nexport function AssistantPending({\n  streaming\n}: {\n  streaming: boolean;\n}) {\n  return <ThinkingLoader phases={[\"Thinking\", \"Searching the web\", \"Reading sources\", \"Writing response\"]} interval={2200} done={streaming} />;\n}",
+  usage: "import ThinkingLoader from \"@/components/plico/thinking-loader\";\nexport function AssistantPending({\n  streaming\n}: {\n  streaming: boolean;\n}) {\n  return <ThinkingLoader phases={[\"Thinking\", \"Searching the web\", \"Reading sources\", \"Writing response\"]} interval={2200} done={streaming} />;\n}",
   examples: [{
     title: `Phases from your stream events`,
     code: "const PHASES = [\"Thinking\", \"Searching the web\", \"Reading sources\", \"Writing response\"];\n\n// e.g. 0 on send, 1 on the first tool call, 2 when results arrive, 3 on the first token\n<ThinkingLoader phases={PHASES} phase={stage} done={finished} />;"

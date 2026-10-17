@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`Integration sections and feature cards like “Works with the tools you already use”`, `Landing pages that show your product at the centre of an ecosystem`],
   whenNotToUse: [`A real, clickable list of integrations – the tiles are decorative and not links`, `More than 22 logos – the grid has 22 outer tiles, extra logos are left out`],
-  usage: "import { IntegrationGrid } from \"@/components/plico/integration-grid\";\nexport function IntegrationsSection() {\n  return <section style={{\n    maxWidth: 760\n  }}>\n      <IntegrationGrid mark={<img src=\"/logo.svg\" alt=\"\" width={40} height={40} />} />\n      <h3>Plays well with your stack</h3>\n      <p>Connect the tools your team already relies on.</p>\n    </section>;\n}",
+  usage: "import IntegrationGrid from \"@/components/plico/integration-grid\";\nexport function IntegrationsSection() {\n  return <section style={{\n    maxWidth: 760\n  }}>\n      <IntegrationGrid mark={<img src=\"/logo.svg\" alt=\"\" width={40} height={40} />} />\n      <h3>Plays well with your stack</h3>\n      <p>Connect the tools your team already relies on.</p>\n    </section>;\n}",
   props: [{
     name: `logos`,
     type: `IntegrationGridLogo[]`,

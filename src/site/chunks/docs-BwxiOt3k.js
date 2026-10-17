@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`A problem or pain-point card about an empty pipeline or no booked meetings`, `Bento grids and feature cards that need a small, friendly illustration above the text`],
   whenNotToUse: [`Showing a real calendar – the cards are decorative and contain placeholder lines only`],
-  usage: "import { EmptyCalendar } from \"@/components/plico/empty-calendar\";\nexport function FeatureCard() {\n  return <article style={{\n    maxWidth: 360\n  }}>\n      <EmptyCalendar />\n      <h3>Card title</h3>\n      <p>Short description of the problem or step.</p>\n    </article>;\n}",
+  usage: "import EmptyCalendar from \"@/components/plico/empty-calendar\";\nexport function FeatureCard() {\n  return <article style={{\n    maxWidth: 360\n  }}>\n      <EmptyCalendar />\n      <h3>Card title</h3>\n      <p>Short description of the problem or step.</p>\n    </article>;\n}",
   props: [{
     name: `label`,
     type: `string`,

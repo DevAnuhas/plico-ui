@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`, `App Shell (installed with it)`],
   whenToUse: [`File, knowledge or document areas in an app`, `Overviews of projects or workspaces as cards`],
   whenNotToUse: [`Thousands of files – use a virtualised table`],
-  usage: "import { Component as FilesScreen } from \"@/components/plico/files\";\nfunction Page() {\n  return <FilesScreen workspace=\"Acme\" user={{\n    name: \"Alex Morgan\"\n  }} onNavigate={(label) => router.push(routes[label])} />;\n}\nexport {\n  Page as default\n};",
+  usage: "import FilesScreen from \"@/components/plico/files\";\nfunction Page() {\n  return <FilesScreen workspace=\"Acme\" user={{\n    name: \"Alex Morgan\"\n  }} onNavigate={label => router.push(routes[label])} />;\n}\nexport { Page as default };",
   props: [{
     name: `onNavigate`,
     type: `(label: string) => void`,

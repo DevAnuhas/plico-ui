@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`Human-in-the-loop flows where an agent drafts an email and someone approves it – renewals, reminders, follow-ups`, `Inboxes or task lists of pending outreach, one card per record`],
   whenNotToUse: [`Writing long emails from scratch – use a full editor`, `Messages that go out without review – then a simple activity row is enough`],
-  usage: "import { Component as EmailDraft } from \"@/components/plico/email-draft-clean\";\nexport function RenewalReview() {\n  return <EmailDraft reference=\"SUB-1182\" account=\"Northwind Logistics\" amount=\"$8,900\" status=\"Renews in 5 days\" agent=\"Renewal agent\" contacts={[{\n    name: \"Jonas Weber\",\n    email: \"jonas@northwind.io\"\n  }]} attachment=\"Renewal-quote.pdf\" link={{\n    label: \"Review quote\",\n    href: \"/quotes/1182\"\n  }} onSend={email => api.send(email)} />;\n}",
+  usage: "import EmailDraft from \"@/components/plico/email-draft-clean\";\nexport function RenewalReview() {\n  return <EmailDraft reference=\"SUB-1182\" account=\"Northwind Logistics\" amount=\"$8,900\" status=\"Renews in 5 days\" agent=\"Renewal agent\" contacts={[{\n    name: \"Jonas Weber\",\n    email: \"jonas@northwind.io\"\n  }]} attachment=\"Renewal-quote.pdf\" link={{\n    label: \"Review quote\",\n    href: \"/quotes/1182\"\n  }} onSend={email => api.send(email)} />;\n}",
   props: [{
     name: `reference`,
     type: `string`,

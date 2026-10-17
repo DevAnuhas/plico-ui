@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`The settings of one connected service – a store, an ad account, a data source`, `Forms that should only save when someone confirms, with a clear way to discard`],
   whenNotToUse: [`Long settings pages with many sections – split them into separate cards or pages`],
-  usage: "import { Component as IntegrationSettings } from \"@/components/plico/integration-settings-clean\";\nfunction Store() {\n  return <IntegrationSettings name=\"Shopify store\" logo={<ShopifyLogo />} count={128} meta=\"Connected on March 4, 2026\" defaultValues={{\n    siteUrl: \"lumen-studio.com\",\n    timeZone: \"(GMT +01:00) Berlin\"\n  }} onGenerateKey={() => api.createKey()} onSave={(values) => api.saveSettings(values)} />;\n}\nexport {\n  Store\n};",
+  usage: "import IntegrationSettings from \"@/components/plico/integration-settings-clean\";\nfunction Store() {\n  return <IntegrationSettings name=\"Shopify store\" logo={<ShopifyLogo />} count={128} meta=\"Connected on March 4, 2026\" defaultValues={{\n    siteUrl: \"lumen-studio.com\",\n    timeZone: \"(GMT +01:00) Berlin\"\n  }} onGenerateKey={() => api.createKey()} onSave={values => api.saveSettings(values)} />;\n}\nexport { Store };",
   props: [{
     name: `name`,
     type: `string`,

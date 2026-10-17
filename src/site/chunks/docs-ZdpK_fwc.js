@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`A compact sales or business overview with a handful of headline metrics`, `Dashboards where one chart, picked by KPI cards and shown as a line or as bars, says more than a grid of small charts`],
   whenNotToUse: [`Large data sets or drill-downs – the chart shows up to 30 points per period`, `A single number – use a KPI card instead`],
-  usage: "import { MetricsDashboard } from \"@/components/plico/metrics-dashboard\";\nfunction Overview() {\n  return <MetricsDashboard title=\"Sales\" site=\"Northwind Store\" defaultRange=\"30d\" onExport={(range, metric) => console.log(\"export\", range, metric)} />;\n}\nexport {\n  Overview\n};",
+  usage: "import MetricsDashboard from \"@/components/plico/metrics-dashboard\";\nfunction Overview() {\n  return <MetricsDashboard title=\"Sales\" site=\"Northwind Store\" defaultRange=\"30d\" onExport={(range, metric) => console.log(\"export\", range, metric)} />;\n}\nexport { Overview };",
   props: [{
     name: `title`,
     type: `string`,

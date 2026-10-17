@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`, `App Shell, Usage Meter, Segmented Control and Button (installed with it)`],
   whenToUse: [`The settings area of a SaaS or AI product – workspace, team, billing and API access in one place`, `A billing page that shows plan, usage, payment method and invoices together`],
   whenNotToUse: [`A public pricing page – use a dedicated pricing layout`, `Checkout or entering card details – hand that off to your payment provider`],
-  usage: "import { Component as SettingsBillingScreen } from \"@/components/plico/settings-billing\";\nfunction Page() {\n  return <SettingsBillingScreen defaultTab=\"Billing\" workspace=\"Acme\" user={{\n    name: \"Alex Morgan\"\n  }} onNavigate={(label) => router.push(routes[label])} />;\n}\nexport {\n  Page as default\n};",
+  usage: "import SettingsBillingScreen from \"@/components/plico/settings-billing\";\nfunction Page() {\n  return <SettingsBillingScreen defaultTab=\"Billing\" workspace=\"Acme\" user={{\n    name: \"Alex Morgan\"\n  }} onNavigate={label => router.push(routes[label])} />;\n}\nexport { Page as default };",
   props: [{
     name: `defaultTab`,
     type: `"General" | "Members" | "Billing" | "API keys"`,

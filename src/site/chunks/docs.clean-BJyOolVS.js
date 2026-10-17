@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`A short recap at the top of a dashboard or a weekly report`, `Explaining in words what changed, next to the charts that show it`],
   whenNotToUse: [`Exact values people compare over time – use the KPI Chart or a table`, `More than about six metrics – the recap stops being a quick read`],
-  usage: "import { Component as ChangeSummary } from \"@/components/plico/change-summary-clean\";\nconst changes = [{\n  label: \"Active users\",\n  change: \"Up 6.1% to 18.2K\",\n  tone: \"good\"\n}, {\n  label: \"Churn\",\n  change: \"Down to 2.1% from 2.6%\",\n  tone: \"good\",\n  direction: \"down\"\n}, {\n  label: \"Support tickets\",\n  change: \"Up 14% to 312\",\n  tone: \"bad\",\n  direction: \"up\"\n}];\nexport function Recap() {\n  return <ChangeSummary period=\"This week\" changes={changes} />;\n}",
+  usage: "import ChangeSummary from \"@/components/plico/change-summary-clean\";\nconst changes = [{\n  label: \"Active users\",\n  change: \"Up 6.1% to 18.2K\",\n  tone: \"good\"\n}, {\n  label: \"Churn\",\n  change: \"Down to 2.1% from 2.6%\",\n  tone: \"good\",\n  direction: \"down\"\n}, {\n  label: \"Support tickets\",\n  change: \"Up 14% to 312\",\n  tone: \"bad\",\n  direction: \"up\"\n}];\nexport function Recap() {\n  return <ChangeSummary period=\"This week\" changes={changes} />;\n}",
   props: [{
     name: `changes`,
     type: `MetricChange[]`,

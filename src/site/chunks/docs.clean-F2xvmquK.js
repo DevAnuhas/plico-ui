@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`Dashboards or agents that need a quick yes / no from a person before they continue`, `Approvals, renewals and alerts that can be answered with one click`],
   whenNotToUse: [`Decisions that need a form or a longer explanation – link to a page instead`, `Plain notifications without an answer – use a toast or an activity list`],
-  usage: "import { Component as DecisionInbox } from \"@/components/plico/decision-inbox-clean\";\nconst decisions = [{\n  id: \"renewal\",\n  title: \"Renew Figma for the design team?\",\n  detail: \"12 seats · $1,800 per year · renews in 5 days\",\n  primary: \"Renew\",\n  secondary: \"Change seats\"\n}];\nexport function Inbox() {\n  return <DecisionInbox decisions={decisions} onDecide={(d, answer) => save(d.id, answer)} />;\n}",
+  usage: "import DecisionInbox from \"@/components/plico/decision-inbox-clean\";\nconst decisions = [{\n  id: \"renewal\",\n  title: \"Renew Figma for the design team?\",\n  detail: \"12 seats · $1,800 per year · renews in 5 days\",\n  primary: \"Renew\",\n  secondary: \"Change seats\"\n}];\nexport function Inbox() {\n  return <DecisionInbox decisions={decisions} onDecide={(d, answer) => save(d.id, answer)} />;\n}",
   props: [{
     name: `decisions`,
     type: `Decision[]`,

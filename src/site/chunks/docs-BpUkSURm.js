@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`Showing several agents, workflows or product areas on a landing page, one at a time with a real-looking screen`, `Feature sections that should feel explorable rather than a static grid`],
   whenNotToUse: [`Two or three items – a simple tab switch reads faster`, `Content people need to compare side by side`],
-  usage: "import { AgentGallery } from \"@/components/plico/agent-gallery\";\nfunction AgentsSection() {\n  return <AgentGallery title=\"Agents that run your playbook\" />;\n}\nexport {\n  AgentsSection\n};",
+  usage: "import AgentGallery from \"@/components/plico/agent-gallery\";\nfunction AgentsSection() {\n  return <AgentGallery title=\"Agents that run your playbook\" />;\n}\nexport { AgentsSection };",
   props: [{
     name: `title`,
     type: `string`,

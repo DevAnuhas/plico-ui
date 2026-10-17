@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`A small AI helper inside an editor, CRM or sidebar – rewrite, shorten, translate or draft`, `Landing pages that should show an assistant you can actually try, including voice input`],
   whenNotToUse: [`Long conversations with files, tools and model settings – use the Chat Composer or the AI Workspace block`, `When you can't send voice to the browser's speech service – set speech="simulate" or hide the mic`],
-  usage: "import { WritingAssistant } from \"@/components/plico/writing-assistant\";\nfunction Helper() {\n  return <WritingAssistant name=\"Quill\" tagline=\"Your writing companion.\" respond={async (message) => {\n    const res = await fetch(\"/api/write\", {\n      method: \"POST\",\n      body: JSON.stringify({\n        message\n      })\n    });\n    return (await res.json()).text;\n  }} />;\n}\nexport {\n  Helper\n};",
+  usage: "import WritingAssistant from \"@/components/plico/writing-assistant\";\nfunction Helper() {\n  return <WritingAssistant name=\"Quill\" tagline=\"Your writing companion.\" respond={async message => {\n    const res = await fetch(\"/api/write\", {\n      method: \"POST\",\n      body: JSON.stringify({\n        message\n      })\n    });\n    return (await res.json()).text;\n  }} />;\n}\nexport { Helper };",
   props: [{
     name: `name`,
     type: `string`,

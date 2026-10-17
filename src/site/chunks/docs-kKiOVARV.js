@@ -4,7 +4,7 @@ var e = {
   whenToUse: [`The main input of an AI assistant or agent that can act on connected tools`, `Flows where the user has to grant extra permissions before a run`],
   whenNotToUse: [`Plain chat between people – a simple text field with a send button is enough`, `Very narrow spaces below ~280px, where the toolbar labels get too small`],
   requirements: [`React 19`],
-  usage: "import { ChatComposer } from \"@/components/plico/chat-composer\";\nfunction Assistant() {\n  return <ChatComposer onSend={(message) => console.log(message)} />;\n}\nexport {\n  Assistant\n};",
+  usage: "import ChatComposer from \"@/components/plico/chat-composer\";\nfunction Assistant() {\n  return <ChatComposer onSend={message => console.log(message)} />;\n}\nexport { Assistant };",
   examples: [{
     title: `Your own models`,
     code: "<ChatComposer models={[{\n  id: \"fast\",\n  name: \"Fast\",\n  description: \"Short answers in seconds\"\n}, {\n  id: \"deep\",\n  name: \"Deep\",\n  description: \"Takes its time to reason\"\n}]} onModelChange={(model) => setModel(model.id)} onSend={send} />;"

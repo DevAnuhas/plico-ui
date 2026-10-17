@@ -124,7 +124,7 @@ export async function POST(request) {
         ? message.params.protocolVersion
         : versions[0],
       capabilities: { tools: { listChanged: false } },
-      serverInfo: { name: "plico-ui", version: "0.1.0" },
+      serverInfo: { name: "plico-ui", version: "0.2.0" },
       instructions:
         "Read library metadata and source with the provided tools. Install selected items using the shadcn CLI registry URL.",
     });

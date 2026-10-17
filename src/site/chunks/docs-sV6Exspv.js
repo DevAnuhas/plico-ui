@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`, `App Shell and Data Table (installed with it)`],
   whenToUse: [`Sales, customer or partner lists in an internal tool`, `Any record list people edit like a spreadsheet`],
   whenNotToUse: [`Read-only reports – use a static table or the Analytics screen`],
-  usage: "import { Component as CrmScreen } from \"@/components/plico/crm\";\nfunction Page() {\n  return <CrmScreen workspace=\"Acme\" user={{\n    name: \"Alex Morgan\"\n  }} onNavigate={(label) => router.push(routes[label])} />;\n}\nexport {\n  Page as default\n};",
+  usage: "import CrmScreen from \"@/components/plico/crm\";\nfunction Page() {\n  return <CrmScreen workspace=\"Acme\" user={{\n    name: \"Alex Morgan\"\n  }} onNavigate={label => router.push(routes[label])} />;\n}\nexport { Page as default };",
   props: [{
     name: `onNavigate`,
     type: `(label: string) => void`,

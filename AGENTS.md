@@ -16,7 +16,7 @@ Keep the project private. Do not publish packages, create public repositories, d
 
 ## Library changes
 
-Treat `src/library/catalog.json` as the installable inventory. Preserve stable registry names and facade exports. Run the registry build and verifier after editing library sources; run the real consumer smoke test for installation, alias, asset, or license changes. Retain all required third-party notices and installed LICENSE files.
+Treat `src/library/catalog.json` as the installable inventory and `src/components/plico/*.tsx` as the component sources. Preserve stable registry names, named helpers, and the default reusable-component export. Each item must install one standalone TypeScript component with a semantic filename. Keep notice files outside the components directory. Run registry build, structural/type checks, and the real consumer smoke test for installation, alias, asset, or notice changes.
 
 Do not edit generated `public/r/` files directly. Keep browser preview behavior aligned with the installable component. Verify visible behavior in the production app after changing presentation or interactions.
 

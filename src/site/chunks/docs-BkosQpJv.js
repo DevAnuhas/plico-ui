@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`A friendly face for an assistant, an AI feature or a cloud product – as an app icon, an empty state or a feature card`, `Landing pages that want a calm, living mascot instead of a static logo`],
   whenNotToUse: [`Tiny sizes below ~48px – the glow and the eyes get lost`, `Brands far from blue or orange – the colors are part of the look`],
-  usage: "import { FrostCloud } from \"@/components/plico/frost-cloud\";\nexport function AssistantCard() {\n  return <article style={{\n    maxWidth: 320\n  }}>\n      <FrostCloud color=\"blue\" />\n      <h3>Meet your assistant</h3>\n    </article>;\n}",
+  usage: "import FrostCloud from \"@/components/plico/frost-cloud\";\nexport function AssistantCard() {\n  return <article style={{\n    maxWidth: 320\n  }}>\n      <FrostCloud color=\"blue\" />\n      <h3>Meet your assistant</h3>\n    </article>;\n}",
   props: [{
     name: `color`,
     type: `"blue" | "orange"`,

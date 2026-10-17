@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`A few announcements or notices in a corner of an app – releases, maintenance, invites`, `Toast-style messages that stay until someone dismisses them`],
   whenNotToUse: [`Messages that need an answer before people continue – use a dialog`, `Many notifications at once – past three or four, use an inbox or activity list`],
-  usage: "import { Component as NotificationStack } from \"@/components/plico/notification-stack-clean\";\nconst notices = [{\n  id: \"maintenance\",\n  badge: \"Notice\",\n  title: \"Scheduled maintenance\",\n  text: \"We'll be offline on Sunday from 02:00 to 03:00 UTC.\",\n  action: {\n    label: \"View status\",\n    href: \"/status\",\n    external: true\n  },\n  pattern: \"grid\"\n}];\nexport function Notices() {\n  return <NotificationStack notices={notices} onDismiss={n => markRead(n.id)} />;\n}",
+  usage: "import NotificationStack from \"@/components/plico/notification-stack-clean\";\nconst notices = [{\n  id: \"maintenance\",\n  badge: \"Notice\",\n  title: \"Scheduled maintenance\",\n  text: \"We'll be offline on Sunday from 02:00 to 03:00 UTC.\",\n  action: {\n    label: \"View status\",\n    href: \"/status\",\n    external: true\n  },\n  pattern: \"grid\"\n}];\nexport function Notices() {\n  return <NotificationStack notices={notices} onDismiss={n => markRead(n.id)} />;\n}",
   props: [{
     name: `notices`,
     type: `Notice[]`,

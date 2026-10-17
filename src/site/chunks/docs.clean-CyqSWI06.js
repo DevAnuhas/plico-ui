@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`Onboarding checklists that guide new users through their first steps`, `Any short list of tasks where progress should feel rewarding`],
   whenNotToUse: [`Long task lists – past roughly eight steps the card gets hard to scan`, `Long step labels – each step stays on one line and cuts off with an ellipsis`, `Steps that must happen in a fixed order – use a stepper that locks the next step`],
-  usage: "import { Component as ProgressTracker } from \"@/components/plico/progress-tracker-clean\";\nconst steps = [{\n  id: \"tools\",\n  label: \"Connect your imported tools\"\n}, {\n  id: \"notify\",\n  label: \"Turn on notifications\"\n}, {\n  id: \"project\",\n  label: \"Create a project\",\n  done: true\n}];\nexport function Onboarding() {\n  return <ProgressTracker title=\"Getting started\" steps={steps} onChange={save} />;\n}",
+  usage: "import ProgressTracker from \"@/components/plico/progress-tracker-clean\";\nconst steps = [{\n  id: \"tools\",\n  label: \"Connect your imported tools\"\n}, {\n  id: \"notify\",\n  label: \"Turn on notifications\"\n}, {\n  id: \"project\",\n  label: \"Create a project\",\n  done: true\n}];\nexport function Onboarding() {\n  return <ProgressTracker title=\"Getting started\" steps={steps} onChange={save} />;\n}",
   examples: [{
     title: `Plays by itself`,
     code: "<ProgressTracker steps={steps} autoPlay interval={2500} />;"

@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`A hero or integrations section that shows your product sitting between the tools a team already uses`, `Landing pages where a calm, self-playing data flow explains “we connect to X and Y” faster than a logo wall`],
   whenNotToUse: [`A real integration settings page – pausing a tool here is only part of the scene, nothing is saved`, `More than four tools per side – the beams get crowded; use Integration Grid or Logo Cluster for long lists`],
-  usage: "import { IntegrationBeam } from \"@/components/plico/integration-beam\";\nexport function IntegrationsSection() {\n  return <section style={{\n    maxWidth: 640,\n    margin: \"0 auto\"\n  }}>\n      <IntegrationBeam />\n    </section>;\n}",
+  usage: "import IntegrationBeam from \"@/components/plico/integration-beam\";\nexport function IntegrationsSection() {\n  return <section style={{\n    maxWidth: 640,\n    margin: \"0 auto\"\n  }}>\n      <IntegrationBeam />\n    </section>;\n}",
   examples: [{
     title: `Your own product and tools`,
     code: "<IntegrationBeam center={{\n  name: \"Relay\",\n  logo: <RelayMark />\n}} left={[{\n  name: \"Stripe\",\n  logo: <StripeIcon />\n}, {\n  name: \"Shopify\",\n  logo: <ShopifyIcon />\n}, {\n  name: \"Intercom\",\n  logo: <IntercomIcon />\n}]} right={[{\n  name: \"Snowflake\",\n  logo: <SnowflakeIcon />\n}, {\n  name: \"Slack\",\n  logo: <SlackIcon />\n}, {\n  name: \"Notion\",\n  logo: <NotionIcon />\n}]} />;"

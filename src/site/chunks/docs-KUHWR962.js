@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`A pricing page or section with up to three plans and a monthly / yearly choice`, `Plans that differ in a few limits plus a longer list of features`],
   whenNotToUse: [`One-time purchases – drop the billing switch or use a simpler card`, `More than three or four plans – use a comparison table instead`],
-  usage: "import { PricingPlans } from \"@/components/plico/pricing-plans\";\nfunction Pricing() {\n  return <PricingPlans plans={plans} defaultBilling=\"yearly\" />;\n}\nexport {\n  Pricing\n};",
+  usage: "import PricingPlans from \"@/components/plico/pricing-plans\";\nfunction Pricing() {\n  return <PricingPlans plans={plans} defaultBilling=\"yearly\" />;\n}\nexport { Pricing };",
   props: [{
     name: `plans`,
     type: `Plan[]`,

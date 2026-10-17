@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`Pointing new users to features they haven't tried yet`, `A “What's new” or getting-started panel in a dashboard or a dialog`],
   whenNotToUse: [`Steps that build on each other – use the Setup Guide`, `A single announcement – a banner or toast is lighter`],
-  usage: "import { Kbd, Component as TipsPanel } from \"@/components/plico/tips-panel-clean\";\nconst tips = [{\n  id: \"search\",\n  title: \"Quick search\",\n  description: <>Press <Kbd>⌘K</Kbd> to jump anywhere.</>,\n  action: \"Try it\"\n}, {\n  id: \"pro\",\n  title: \"Ready for Pro?\",\n  description: \"Unlimited projects and priority support.\",\n  action: \"See plans\",\n  primary: true\n}];\nexport function Tips() {\n  return <TipsPanel tips={tips} onClose={() => setOpen(false)} />;\n}",
+  usage: "import { Kbd, TipsPanel } from \"@/components/plico/tips-panel-clean\";\nconst tips = [{\n  id: \"search\",\n  title: \"Quick search\",\n  description: <>Press <Kbd>⌘K</Kbd> to jump anywhere.</>,\n  action: \"Try it\"\n}, {\n  id: \"pro\",\n  title: \"Ready for Pro?\",\n  description: \"Unlimited projects and priority support.\",\n  action: \"See plans\",\n  primary: true\n}];\nexport function Tips() {\n  return <TipsPanel tips={tips} onClose={() => setOpen(false)} />;\n}",
   props: [{
     name: `tips`,
     type: `Tip[]`,

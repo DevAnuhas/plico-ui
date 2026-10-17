@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`Hero sections and feature headers that need a quiet, technical backdrop`, `Empty states or panels that feel too flat on a plain background`],
   whenNotToUse: [`Behind dense text or data tables – the lines compete with the content`, `Several moving backgrounds on one screen – keep it to one per view`],
-  usage: "import { GridBackground } from \"@/components/plico/grid-background\";\nexport function Hero() {\n  return <GridBackground size={48} direction=\"diagonal\">\n      <section style={{\n      display: \"grid\",\n      placeItems: \"center\",\n      minHeight: 480\n    }}>\n        <h1>Build on a steady grid</h1>\n      </section>\n    </GridBackground>;\n}",
+  usage: "import GridBackground from \"@/components/plico/grid-background\";\nexport function Hero() {\n  return <GridBackground size={48} direction=\"diagonal\">\n      <section style={{\n      display: \"grid\",\n      placeItems: \"center\",\n      minHeight: 480\n    }}>\n        <h1>Build on a steady grid</h1>\n      </section>\n    </GridBackground>;\n}",
   props: [{
     name: `children`,
     type: `ReactNode`,

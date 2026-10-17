@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`Onboarding with several areas, each made of a few steps that build on each other`, `A floating guide in a dashboard corner that people can fold away and come back to`],
   whenNotToUse: [`A single short list of steps – the Progress Tracker is lighter`, `Steps that can be done in any order – here each task unlocks the next`],
-  usage: "import { Component as SetupGuide } from \"@/components/plico/setup-guide-clean\";\nconst groups = [{\n  id: \"workspace\",\n  title: \"Set up your workspace\",\n  tasks: [{\n    id: \"name\",\n    label: \"Choose a workspace name\"\n  }, {\n    id: \"invite\",\n    label: \"Invite your teammates\"\n  }]\n}, {\n  id: \"verify\",\n  title: \"Verify your account\",\n  tasks: [{\n    id: \"email\",\n    label: \"Confirm your email\",\n    done: true\n  }]\n}];\nfunction Onboarding() {\n  return <SetupGuide groups={groups} onChange={save} onClose={hideGuide} />;\n}\nexport {\n  Onboarding\n};",
+  usage: "import SetupGuide from \"@/components/plico/setup-guide-clean\";\nconst groups = [{\n  id: \"workspace\",\n  title: \"Set up your workspace\",\n  tasks: [{\n    id: \"name\",\n    label: \"Choose a workspace name\"\n  }, {\n    id: \"invite\",\n    label: \"Invite your teammates\"\n  }]\n}, {\n  id: \"verify\",\n  title: \"Verify your account\",\n  tasks: [{\n    id: \"email\",\n    label: \"Confirm your email\",\n    done: true\n  }]\n}];\nfunction Onboarding() {\n  return <SetupGuide groups={groups} onChange={save} onClose={hideGuide} />;\n}\nexport { Onboarding };",
   props: [{
     name: `groups`,
     type: `SetupGroup[]`,

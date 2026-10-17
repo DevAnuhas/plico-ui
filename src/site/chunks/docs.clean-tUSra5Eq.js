@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`The integrations step of a command menu or settings dialog`, `Letting people find a service quickly and switch it on without leaving what they're doing`],
   whenNotToUse: [`A full marketplace with categories and many details per app – use a page instead`, `Two or three integrations – a simple list with switches is enough`],
-  usage: "import { Component as IntegrationPicker } from \"@/components/plico/integration-picker-clean\";\nfunction Integrations() {\n  return <IntegrationPicker appName=\"Plico UI\" onToggle={(id, connected) => saveIntegration(id, connected)} onExplore={(id) => router.push(`/integrations/${id}`)} onBack={() => setPage(\"root\")} onClose={closeMenu} />;\n}\nexport {\n  Integrations\n};",
+  usage: "import IntegrationPicker from \"@/components/plico/integration-picker-clean\";\nfunction Integrations() {\n  return <IntegrationPicker appName=\"Plico UI\" onToggle={(id, connected) => saveIntegration(id, connected)} onExplore={id => router.push(`/integrations/${id}`)} onBack={() => setPage(\"root\")} onClose={closeMenu} />;\n}\nexport { Integrations };",
   props: [{
     name: `integrations`,
     type: `Integration[]`,

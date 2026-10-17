@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`A step or feature card about collecting leads or data from several sources`, `Integration sections that show your product connecting a few well-known apps`],
   whenNotToUse: [`Communicating real integrations you don't offer – swap the logos for your own sources`],
-  usage: "import { LeadSourcing } from \"@/components/plico/lead-sourcing\";\nexport function FeatureCard() {\n  return <article style={{\n    maxWidth: 360\n  }}>\n      <LeadSourcing />\n      <h3>Card title</h3>\n      <p>Short description of the problem or step.</p>\n    </article>;\n}",
+  usage: "import LeadSourcing from \"@/components/plico/lead-sourcing\";\nexport function FeatureCard() {\n  return <article style={{\n    maxWidth: 360\n  }}>\n      <LeadSourcing />\n      <h3>Card title</h3>\n      <p>Short description of the problem or step.</p>\n    </article>;\n}",
   props: [{
     name: `label`,
     type: `string`,

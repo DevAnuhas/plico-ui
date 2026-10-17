@@ -4,13 +4,13 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`An AI rewrote a piece of prose – an email, a paragraph, a product description – and people should approve each edit`, `"Make it shorter", "fix the tone", "fix grammar" actions where most edits are small and scattered through the text`, `Review steps in an agent flow where the result should only change with an explicit yes`],
   whenNotToUse: [`Code or line-based text – use a line diff with gutters instead`, `Full rewrites where almost every word changes – show the new version next to the old one`, `Live typing suggestions inside an editor – this reviews a finished suggestion, it isn't a text field`],
-  usage: "import { InlineDiff } from \"@/components/plico/inline-diff\";\nfunction ReviewRewrite({\n  draft,\n  rewrite\n}) {\n  return <InlineDiff label=\"Suggested by AI · Make it shorter\" original={draft} suggested={rewrite} onChange={(text) => saveDraft(text)} onDone={(text) => setFinal(text)} />;\n}\nexport {\n  ReviewRewrite\n};",
+  usage: "import InlineDiff from \"@/components/plico/inline-diff\";\nfunction ReviewRewrite({\n  draft,\n  rewrite\n}) {\n  return <InlineDiff label=\"Suggested by AI · Make it shorter\" original={draft} suggested={rewrite} onChange={text => saveDraft(text)} onDone={text => setFinal(text)} />;\n}\nexport { ReviewRewrite };",
   examples: [{
     title: `Pre-computed changes from your model`,
-    code: "import { InlineDiff } from \"@/components/plico/inline-diff\";\nconst changes = [{\n  type: \"equal\",\n  text: \"Our plan is \"\n}, {\n  type: \"change\",\n  remove: \"very \",\n  insert: \"\"\n}, {\n  type: \"equal\",\n  text: \"flexible and \"\n}, {\n  type: \"change\",\n  remove: \"cheap\",\n  insert: \"affordable\"\n}, {\n  type: \"equal\",\n  text: \".\"\n}];\n<InlineDiff changes={changes} onDone={(text) => apply(text)} />;"
+    code: "import InlineDiff from \"@/components/plico/inline-diff\";\nconst changes = [{\n  type: \"equal\",\n  text: \"Our plan is \"\n}, {\n  type: \"change\",\n  remove: \"very \",\n  insert: \"\"\n}, {\n  type: \"equal\",\n  text: \"flexible and \"\n}, {\n  type: \"change\",\n  remove: \"cheap\",\n  insert: \"affordable\"\n}, {\n  type: \"equal\",\n  text: \".\"\n}];\n<InlineDiff changes={changes} onDone={text => apply(text)} />;"
   }, {
     title: `Your own buttons and the diff helper`,
-    code: "import { useRef } from \"react\";\nimport { InlineDiff, diffWords } from \"@/components/plico/inline-diff\";\nconst diff = useRef(null);\nconst edits = diffWords(original, suggested).filter((s) => s.type === \"change\").length;\n<>\n<InlineDiff ref={diff} original={original} suggested={suggested} />\n<button onClick={() => diff.current?.acceptAll()}>Apply all {edits} edits</button>\n<button onClick={() => diff.current?.undo()}>Undo</button>\n</>;"
+    code: "import { useRef } from \"react\";\nimport InlineDiff, { diffWords } from \"@/components/plico/inline-diff\";\nconst diff = useRef(null);\nconst edits = diffWords(original, suggested).filter(s => s.type === \"change\").length;\n<>\n<InlineDiff ref={diff} original={original} suggested={suggested} />\n<button onClick={() => diff.current?.acceptAll()}>Apply all {edits} edits</button>\n<button onClick={() => diff.current?.undo()}>Undo</button>\n</>;"
   }],
   props: [{
     name: `original`,

@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`Sprint and project boards in a product, with tasks moving through a few statuses`, `Internal tools where people sort work by dragging it`],
   whenNotToUse: [`Hundreds of tasks per column – add virtualisation and server-side filters`, `Touch-first apps – native drag and drop needs a mouse; offer the detail panel's status buttons instead`],
-  usage: "import { TaskBoard } from \"@/components/plico/task-board\";\nfunction Sprint({\n  tasks\n}) {\n  return <TaskBoard tasks={tasks} statuses={statuses} labels={labels} people={people} path={[\"Northwind\", \"Launch\", \"Sprint 12\"]} onChange={save} />;\n}\nexport {\n  Sprint\n};",
+  usage: "import TaskBoard from \"@/components/plico/task-board\";\nfunction Sprint({\n  tasks\n}) {\n  return <TaskBoard tasks={tasks} statuses={statuses} labels={labels} people={people} path={[\"Northwind\", \"Launch\", \"Sprint 12\"]} onChange={save} />;\n}\nexport { Sprint };",
   props: [{
     name: `tasks`,
     type: `Task[]`,

@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`A step or feature card about sending messages across several channels`, `Integration sections that show one action fanning out to a few apps`],
   whenNotToUse: [`Communicating real integrations you don't offer – swap the logos for your own channels`],
-  usage: "import { OutreachBranches } from \"@/components/plico/outreach-branches\";\nfunction FeatureCard() {\n  return <article style={{\n    maxWidth: 360\n  }}>\n      <OutreachBranches />\n      <h3>Card title</h3>\n      <p>Short description of the problem or step.</p>\n    </article>;\n}\nexport {\n  FeatureCard\n};",
+  usage: "import OutreachBranches from \"@/components/plico/outreach-branches\";\nfunction FeatureCard() {\n  return <article style={{\n    maxWidth: 360\n  }}>\n      <OutreachBranches />\n      <h3>Card title</h3>\n      <p>Short description of the problem or step.</p>\n    </article>;\n}\nexport { FeatureCard };",
   props: [{
     name: `label`,
     type: `string`,

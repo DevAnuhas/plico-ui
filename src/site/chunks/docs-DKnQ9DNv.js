@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`, `App Shell, Segmented Control and Button (installed with it)`],
   whenToUse: [`The first minutes after sign-up in a workspace or AI product`, `Guided setup that people can skip and pick up again later`],
   whenNotToUse: [`Long forms with many required fields – use the Stepper Form`, `A single setting – show it inline instead of a whole flow`],
-  usage: "import { Component as OnboardingScreen } from \"@/components/plico/onboarding\";\nfunction Page() {\n  return <OnboardingScreen workspace=\"Acme\" user={{\n    name: \"Alex Morgan\"\n  }} defaultStep={1} onComplete={(values) => api.finishOnboarding(values)} onNavigate={(label) => router.push(routes[label])} />;\n}\nexport {\n  Page as default\n};",
+  usage: "import OnboardingScreen from \"@/components/plico/onboarding\";\nfunction Page() {\n  return <OnboardingScreen workspace=\"Acme\" user={{\n    name: \"Alex Morgan\"\n  }} defaultStep={1} onComplete={values => api.finishOnboarding(values)} onNavigate={label => router.push(routes[label])} />;\n}\nexport { Page as default };",
   props: [{
     name: `defaultStep`,
     type: `1 | 2 | 3 | 4`,

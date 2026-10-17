@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`, `App Shell, Assistant Home (for its composer) and Button (installed with it)`],
   whenToUse: [`The main view of an AI agent or copilot product`, `Chats that end in a concrete task – a brief, a draft, a report`],
   whenNotToUse: [`Plain support chat – a lighter chat layout is enough`],
-  usage: "import { Component as AgentChatScreen } from \"@/components/plico/agent-chat\";\nfunction Page() {\n  return <AgentChatScreen workspace=\"Acme\" user={{\n    name: \"Alex Morgan\"\n  }} onNavigate={(label) => router.push(routes[label])} />;\n}\nexport {\n  Page as default\n};",
+  usage: "import AgentChatScreen from \"@/components/plico/agent-chat\";\nfunction Page() {\n  return <AgentChatScreen workspace=\"Acme\" user={{\n    name: \"Alex Morgan\"\n  }} onNavigate={label => router.push(routes[label])} />;\n}\nexport { Page as default };",
   props: [{
     name: `onNavigate`,
     type: `(label: string) => void`,

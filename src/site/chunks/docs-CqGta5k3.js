@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`, `App Shell (installed with it)`],
   whenToUse: [`Settings or marketplace pages that list apps to connect`, `Showing which tools are connected at a glance`],
   whenNotToUse: [`Fewer than six apps – a simple list is enough`],
-  usage: "import { Component as IntegrationsScreen } from \"@/components/plico/integrations\";\nfunction Page() {\n  return <IntegrationsScreen workspace=\"Acme\" user={{\n    name: \"Alex Morgan\"\n  }} onNavigate={(label) => router.push(routes[label])} />;\n}\nexport {\n  Page as default\n};",
+  usage: "import IntegrationsScreen from \"@/components/plico/integrations\";\nfunction Page() {\n  return <IntegrationsScreen workspace=\"Acme\" user={{\n    name: \"Alex Morgan\"\n  }} onNavigate={label => router.push(routes[label])} />;\n}\nexport { Page as default };",
   props: [{
     name: `onNavigate`,
     type: `(label: string) => void`,

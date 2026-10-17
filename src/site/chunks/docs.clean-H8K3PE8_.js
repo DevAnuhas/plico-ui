@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`The dropdown behind the avatar in an app header`, `Nudging people to finish their profile, right next to the account actions`],
   whenNotToUse: [`Long menus with nested levels – use a full dropdown menu with submenus`, `Long onboarding flows with many steps – use a checklist like the Setup Guide instead`],
-  usage: "import { Component as ProfileMenu, SettingsIcon, LogoutIcon } from \"@/components/plico/profile-menu-clean\";\nexport function Account() {\n  return <ProfileMenu name=\"Lena Hartmann\" email=\"lena.hartmann@fastmail.com\" items={[{\n    id: \"settings\",\n    label: \"Settings\",\n    icon: <SettingsIcon />,\n    onSelect: openSettings\n  }, {\n    id: \"logout\",\n    label: \"Logout\",\n    icon: <LogoutIcon />,\n    onSelect: signOut\n  }]} setup={{\n    done: 3,\n    total: 5,\n    next: \"Add a profile photo\",\n    onContinue: openProfile\n  }} />;\n}",
+  usage: "import ProfileMenu, { SettingsIcon, LogoutIcon } from \"@/components/plico/profile-menu-clean\";\nexport function Account() {\n  return <ProfileMenu name=\"Lena Hartmann\" email=\"lena.hartmann@fastmail.com\" items={[{\n    id: \"settings\",\n    label: \"Settings\",\n    icon: <SettingsIcon />,\n    onSelect: openSettings\n  }, {\n    id: \"logout\",\n    label: \"Logout\",\n    icon: <LogoutIcon />,\n    onSelect: signOut\n  }]} setup={{\n    done: 3,\n    total: 5,\n    next: \"Add a profile photo\",\n    onContinue: openProfile\n  }} />;\n}",
   props: [{
     name: `name`,
     type: `string`,

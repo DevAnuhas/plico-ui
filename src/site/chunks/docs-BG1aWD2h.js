@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`Feature cards about files, uploads, storage or a knowledge base; empty states for documents`, `Bento grids that need a calm, friendly illustration above the text`],
   whenNotToUse: [`Showing real files – the documents are decorative and contain placeholder lines only`, `Dark sections – the folder and documents are drawn for a light theme`],
-  usage: "import { SideFolder } from \"@/components/plico/side-folder\";\nexport function FeatureCard() {\n  return <article style={{\n    maxWidth: 360\n  }}>\n      <SideFolder />\n      <h3>Card title</h3>\n      <p>Short description of the feature.</p>\n    </article>;\n}",
+  usage: "import SideFolder from \"@/components/plico/side-folder\";\nexport function FeatureCard() {\n  return <article style={{\n    maxWidth: 360\n  }}>\n      <SideFolder />\n      <h3>Card title</h3>\n      <p>Short description of the feature.</p>\n    </article>;\n}",
   props: [{
     name: `label`,
     type: `string`,

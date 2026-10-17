@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`Quoting and contract tools where a phase of billing is put together – set-up fees, licences, support`, `Admin screens for subscriptions with one-off and recurring charges, discounts and minimum commitments`],
   whenNotToUse: [`A simple plan picker – use the Pricing Plans block`, `Usage-based pricing with tiers per unit – this works with fixed prices per line`],
-  usage: "import { Component as BillingSchedule } from \"@/components/plico/billing-schedule-clean\";\nfunction NewContract() {\n  return <BillingSchedule phase=\"Build-out phase\" defaultStart=\"2026-01-01\" onChange={(schedule) => save(schedule)} />;\n}\nexport {\n  NewContract\n};",
+  usage: "import BillingSchedule from \"@/components/plico/billing-schedule-clean\";\nfunction NewContract() {\n  return <BillingSchedule phase=\"Build-out phase\" defaultStart=\"2026-01-01\" onChange={schedule => save(schedule)} />;\n}\nexport { NewContract };",
   props: [{
     name: `title`,
     type: `string`,

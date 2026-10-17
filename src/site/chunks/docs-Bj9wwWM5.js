@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`Suggesting the next step an app or assistant thinks is best – with a way out`, `Settings people rarely change but should get a nudge on, like sync modes or plans`],
   whenNotToUse: [`Choices without a clear favorite – show them side by side instead`],
-  usage: "import { SmartRecommendation } from \"@/components/plico/smart-recommendation\";\nconst options = [{\n  id: \"incremental\",\n  label: \"Incremental sync\",\n  reason: \"Only 4% of rows changed.\",\n  signal: 3\n}, {\n  id: \"full\",\n  label: \"Full refresh\",\n  reason: \"Rebuilds every table.\",\n  signal: 1\n}];\nexport function Sync() {\n  return <SmartRecommendation options={options} onAccept={o => api.setMode(o.id)} />;\n}",
+  usage: "import SmartRecommendation from \"@/components/plico/smart-recommendation\";\nconst options = [{\n  id: \"incremental\",\n  label: \"Incremental sync\",\n  reason: \"Only 4% of rows changed.\",\n  signal: 3\n}, {\n  id: \"full\",\n  label: \"Full refresh\",\n  reason: \"Rebuilds every table.\",\n  signal: 1\n}];\nexport function Sync() {\n  return <SmartRecommendation options={options} onAccept={o => api.setMode(o.id)} />;\n}",
   props: [{
     name: `options`,
     type: `Recommendation[]`,

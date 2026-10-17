@@ -1,19 +1,78 @@
 "use client";
 import * as React from 'react';import * as ReactDOM from 'react-dom';import * as JSX from 'react/jsx-runtime';import {brand} from '../lib/brand.js';import {previewModules,fullScreenModules} from '../library/preview-map.js';
 function localText(value){return value.replaceAll('__PLICO_ORIGIN__',brand.url).replaceAll('__PLICO_REPO__',brand.repoUrl)}
-const sourceBundles=new Map(),sourceRequests=new Map(),sourceSelections=new Map(),sourceListeners=new Set();let sourceVersion=0;
-function sourceSubscribe(listener){sourceListeners.add(listener);return()=>sourceListeners.delete(listener)}
-function sourceSnapshot(){return sourceVersion}
-function sourceNotify(){sourceVersion++;for(const listener of sourceListeners)listener()}
-function selectedSourceFile(slug){const item=sourceBundles.get(slug),files=item?.files??[],target=sourceSelections.get(slug)??item?.meta?.primaryFile??item?.meta?.main;return files.find(file=>file.target===target||file.path===target)??files[0]}
-async function loadLocalSource(slug){if(!sourceBundles.has(slug)){if(!sourceRequests.has(slug))sourceRequests.set(slug,fetch('/r/'+encodeURIComponent(slug)+'.json').then(response=>{if(!response.ok)throw Error('Component source is unavailable.');return response.json()}).then(item=>{sourceBundles.set(slug,item);sourceNotify();return item}).finally(()=>sourceRequests.delete(slug)));await sourceRequests.get(slug)}return selectedSourceFile(slug)?.content??''}
-function sourceFilename(slug){const file=selectedSourceFile(slug);return (file?.target??file?.path??slug).split('/').at(-1)}
-function SourceFiles({slug}){React.useSyncExternalStore(sourceSubscribe,sourceSnapshot,()=>0);const item=sourceBundles.get(slug),files=item?.files??[],file=selectedSourceFile(slug);return React.createElement('div',{className:'source-browser'},React.createElement('label',null,'Source files ('+files.length+')',React.createElement('select',{value:file?.target??file?.path??'',onChange:event=>{sourceSelections.set(slug,event.target.value);sourceNotify()}},files.map((f,index)=>React.createElement('option',{value:f.target??f.path,key:(f.target??f.path)+index},f.target??f.path)))),React.createElement('code',{className:'source-browser__target'},file?.target??file?.path??'Loading file targets…'),React.createElement('p',null,'Copy shows the selected file. Install the complete item with the CLI, or retain every file and its relative imports when copying manually.'),React.createElement('a',{href:'/r/'+encodeURIComponent(slug)+'.json',download:slug+'.json'},'Download complete registry bundle'))}
-function InstallSourcePanel({entry,source}){const slug=entry.sourceSlug??entry.slug;return React.createElement(M,{id:'installation',title:'Installation',lead:'Install the complete source package with the shadcn CLI. Each item includes a local entry point and its required files.'},React.createElement(Zi,{label:'Terminal',code:'npx shadcn@latest add '+brand.url+'/r/'+slug+'.json'}),React.createElement('p',{className:'doc__p'},'For a protected deployment, configure the @plico namespace with the deployment header shown in the installation guide, then install @plico/'+slug+'.'),React.createElement('p',{className:'doc__p'},React.createElement(F,{to:'/docs/installation',className:'doc__link'},'Installation and protected deployment setup')),React.createElement(qi,{filename:'app/page.jsx',code:'import Demo, { Component } from "@/components/plico/'+slug+'";\n\nexport default function Page() {\n  return <Demo />;\n}'}),React.createElement('p',{className:'doc__p'},'Demo renders the configured preview. Component is the reusable primitive; pass the props described below. For manual installation, the bundle lists all target paths and file contents. Keep the complete directory hierarchy, embedded assets and applicable license files.'),React.createElement(SourceFiles,{slug}),React.createElement(qi,{filename:sourceFilename(slug),code:source??'// Loading the selected file…',maxHeight:360}))}
-function PlicoIntroduction(){return React.createElement(React.Fragment,null,React.createElement(M,{id:'what-it-is',title:'What '+brand.name+' is'},React.createElement('p',{className:'doc__p'},brand.name+' is a React library with live previews, documentation and local source packages. Browse components, blocks, screens, illustrations and motion, then install the pieces you need into your project.'),React.createElement('p',{className:'doc__p'},'Every item includes an entry point and its required modules, styles and assets. The Code tab lets you inspect or copy each file; the registry bundle contains the complete package.')),React.createElement(M,{id:'reading-a-page',title:'Reading a component page'},React.createElement('p',{className:'doc__p'},'Try the preview, reset it, compare available styles, then read the usage, API, keyboard and motion documentation. The Code tab includes a file selector and target paths. Press ⌘K or Ctrl+K to search the library.')),React.createElement(M,{id:'installing',title:'Install and own the source'},React.createElement('p',{className:'doc__p'},'Use the shadcn CLI to preserve each item’s file hierarchy and imports. Installed items expose a Demo, a reusable Component and a descriptive alias; screens also export FullScreen. Components remain local and editable.'),React.createElement(F,{to:'/docs/installation',className:'doc__link'},'Read installation instructions')),React.createElement(M,{id:'source-and-notices',title:'Source and notices'},React.createElement('p',{className:'doc__p'},'All items in this library are available without an application account or purchase gate. Retain the license and attribution files included with the source. Deployment access protection, when enabled by the host, also applies to registry and agent requests.')))}
-function PlicoInstallation(){const namespace=JSON.stringify({registries:{[brand.namespace]:brand.url+'/r/{name}.json'}},null,2),protectedNamespace=JSON.stringify({registries:{[brand.namespace]:{url:brand.url+'/r/{name}.json',headers:{'x-vercel-protection-bypass':'${PLICO_REGISTRY_TOKEN}'}}}},null,2);return React.createElement(React.Fragment,null,React.createElement(M,{id:'requirements',title:'Requirements'},React.createElement('p',{className:'doc__p'},'Use a React project and a configured components.json for the shadcn CLI. Its components alias selects the installation root. The examples below assume @/components; another alias changes the import path to match. These packages retain their local modules and embedded assets.')),React.createElement(M,{id:'install',title:'Install a complete item'},React.createElement(Zi,{label:'Terminal',code:'npx shadcn@latest add '+brand.url+'/r/button.json'}),React.createElement('p',{className:'doc__p'},'This direct URL command works when the deployment is accessible without a protection header. The item installs under the components alias, in plico/button, including its facade and dependencies.'),React.createElement(qi,{filename:'app/page.jsx',code:'import ButtonDemo, { Component as Button } from "@/components/plico/button";\n\nexport default function Page() {\n  return <ButtonDemo />;\n}'}),React.createElement('p',{className:'doc__p'},'The default export is the configured Demo. Use Component with the API documented on its page for your own application. A screen also exposes FullScreen.')),React.createElement(M,{id:'registry',title:'Configure short names'},React.createElement('p',{className:'doc__p'},'Merge this namespace into your existing components.json, then use @plico/item-name.'),React.createElement(qi,{filename:'components.json',code:namespace}),React.createElement(Zi,{label:'Terminal',code:'npx shadcn@latest add @plico/button'})),React.createElement(M,{id:'protected-deployments',title:'Protected deployments'},React.createElement('p',{className:'doc__p'},'When Vercel Deployment Protection is enabled, registry and MCP clients need a host-issued bypass token. Store it in PLICO_REGISTRY_TOKEN and configure the namespace header below. Use the namespace command so the CLI applies that header; a direct URL command does not inherit namespace headers.'),React.createElement(qi,{filename:'components.json',code:protectedNamespace}),React.createElement(Zi,{label:'Terminal',code:'npx shadcn@latest add @plico/button'})),React.createElement(M,{id:'manual',title:'Manual installation'},React.createElement('p',{className:'doc__p'},'Open Code on an item page and select a file to inspect its target and copy its content. Download the complete registry JSON to retrieve all files. Copy every target, preserve relative directories and imports, and retain bundled assets and applicable license files. A single copied source file may not include the item’s dependencies.')))}
+const sourceBundles = new Map(), sourceRequests = new Map(), sourceListeners = new Set();
+let sourceVersion = 0;
+function sourceSubscribe(listener) { sourceListeners.add(listener); return () => sourceListeners.delete(listener); }
+function sourceSnapshot() { return sourceVersion; }
+function sourceNotify() { sourceVersion++; for (const listener of sourceListeners) listener(); }
+function selectedSourceFile(slug) {
+  const item = sourceBundles.get(slug), files = item?.files ?? [];
+  return files.find(file => file.target === item?.meta?.primaryFile || file.path === item?.meta?.primaryFile) ?? files.find(file => /\.tsx$/.test(file.target ?? file.path ?? ''));
+}
+async function loadLocalSource(slug) {
+  if (!sourceBundles.has(slug)) {
+    if (!sourceRequests.has(slug)) sourceRequests.set(slug, fetch('/r/' + encodeURIComponent(slug) + '.json').then(response => {
+      if (!response.ok) throw Error('Component source is unavailable.');
+      return response.json();
+    }).then(item => { sourceBundles.set(slug, item); sourceNotify(); return item; }).finally(() => sourceRequests.delete(slug)));
+    await sourceRequests.get(slug);
+  }
+  return selectedSourceFile(slug)?.content ?? '';
+}
+function sourceFilename(slug) { return slug + '.tsx'; }
+function InstallSourcePanel({ entry, source }) {
+  const [method, setMethod] = React.useState('cli');
+  const slug = entry.sourceSlug ?? entry.slug;
+  return React.createElement(M, { id: 'installation', title: 'Installation', lead: 'Add ' + entry.name + ' with the shadcn CLI, or copy the component by hand.' },
+    entry.docs?.requirements?.length ? React.createElement('p', { className: 'doc__p' }, 'Requires ' + entry.docs.requirements.join(', ') + '.') : null,
+    React.createElement('div', { className: 'underline-tabs', role: 'tablist', 'aria-label': 'Installation method' },
+      React.createElement('button', { role: 'tab', 'aria-selected': method === 'cli', onClick: () => setMethod('cli') }, 'CLI'),
+      React.createElement('button', { role: 'tab', 'aria-selected': method === 'manual', onClick: () => setMethod('manual') }, 'Manual')),
+    method === 'cli' ? React.createElement(Xi, { command: manager => pi(slug, manager) }) : React.createElement('div', { className: 'manual' },
+      React.createElement('p', { className: 'doc__p' }, 'Copy the component into your project as ', React.createElement('code', { className: 'token' }, sourceFilename(slug)), '.'),
+      React.createElement(qi, { filename: sourceFilename(slug), code: source ?? '// Loading the code…', maxHeight: 360 })));
+}
+function PlicoIntroduction() {
+  return React.createElement(React.Fragment, null,
+    React.createElement(M, { id: 'what-it-is', title: 'What ' + brand.name + ' is' },
+      React.createElement('p', { className: 'doc__p' }, brand.name + ' is a React library with live previews, documentation and editable source. Browse components, blocks, screens, illustrations and motion, then add the pieces you need.'),
+      React.createElement('p', { className: 'doc__p' }, 'Install a component with the shadcn CLI or copy its TSX source. The Code tab shows the same named file you install.')),
+    React.createElement(M, { id: 'reading-a-page', title: 'Reading a component page' },
+      React.createElement('p', { className: 'doc__p' }, 'Try the preview, reset it, compare available styles, then read the usage, API, keyboard and motion documentation. Press ⌘K or Ctrl+K to search the library.')),
+    React.createElement(M, { id: 'installing', title: 'Install and use' },
+      React.createElement('p', { className: 'doc__p' }, 'The default export is the reusable component. Import the named Demo for its configured showcase; screens also export FullScreen. Components stay local and editable.'),
+      React.createElement(F, { to: '/docs/installation', className: 'doc__link' }, 'Read installation instructions')));
+}
+function PlicoInstallation() {
+  const namespace = JSON.stringify({ registries: { [brand.namespace]: brand.url + '/r/{name}.json' } }, null, 2);
+  const protectedNamespace = JSON.stringify({ registries: { [brand.namespace]: { url: brand.url + '/r/{name}.json', headers: { 'x-vercel-protection-bypass': '${PLICO_REGISTRY_TOKEN}' } } } }, null, 2);
+  const config = JSON.stringify({ '$schema': 'https://ui.shadcn.com/schema.json', style: 'new-york', rsc: false, tsx: true, tailwind: { config: '', css: '', baseColor: 'neutral', cssVariables: true, prefix: '' }, aliases: { components: '@/components', ui: '@/components/ui', utils: '@/lib/utils', lib: '@/lib', hooks: '@/hooks' } }, null, 2);
+  return React.createElement(React.Fragment, null,
+    React.createElement(M, { id: 'requirements', title: 'Requirements' }, React.createElement('p', { className: 'doc__p' }, 'Use a React 19 project with the @/* path alias, for example Next.js or Vite. Each component includes its styles.')),
+    React.createElement(M, { id: 'initialize', title: '1. Add a components.json', lead: 'Skip this step if your project already has one.' },
+      React.createElement('p', { className: 'doc__p' }, 'In a Tailwind project, initialize shadcn:'),
+      React.createElement(Xi, { command: manager => fi[manager] + ' shadcn@latest init' }),
+      React.createElement('p', { className: 'doc__p doc__p--spaced' }, 'Without Tailwind, create components.json in your project root:'),
+      React.createElement(qi, { filename: 'components.json', lineNumbers: false, code: config })),
+    React.createElement(M, { id: 'install', title: '2. Install a component' },
+      React.createElement(Xi, { command: manager => pi('button', manager) }),
+      React.createElement('p', { className: 'doc__p doc__p--spaced' }, 'Then import the reusable component:'),
+      React.createElement(qi, { filename: 'app/page.tsx', code: 'import Button from "@/components/plico/button";\n\nexport default function Page() {\n  return <Button>Continue</Button>;\n}' }),
+      React.createElement('p', { className: 'doc__p' }, 'Use the named Demo export for the configured showcase. Screens also provide a FullScreen export.')),
+    React.createElement(M, { id: 'registry', title: 'Optional: short names' },
+      React.createElement('p', { className: 'doc__p' }, 'Merge this namespace into your existing components.json, then install by name:'),
+      React.createElement(qi, { filename: 'components.json', lineNumbers: false, code: namespace }),
+      React.createElement(Xi, { command: manager => fi[manager] + ' shadcn@latest add @plico/button' })),
+    React.createElement(M, { id: 'protected-deployments', title: 'Protected deployments' },
+      React.createElement('p', { className: 'doc__p' }, 'If the host uses Vercel Deployment Protection, set PLICO_REGISTRY_TOKEN to its bypass token and configure this namespace header. Install with @plico/name so the CLI uses the header.'),
+      React.createElement(qi, { filename: 'components.json', lineNumbers: false, code: protectedNamespace }),
+      React.createElement(Xi, { command: manager => fi[manager] + ' shadcn@latest add @plico/button' })),
+    React.createElement(M, { id: 'manual', title: 'Manual installation' },
+      React.createElement('p', { className: 'doc__p' }, 'Open a component page, switch Installation to Manual, and copy the named TSX file into your project. The Code tab shows the same source.')));
+}
 function LocalRedirect(){React.useEffect(()=>aa('/components',true),[]);return null}
-function LocalLicense(){const route=typeof window==='undefined'?'license':window.location.pathname.split('/').filter(Boolean)[0],title={license:'License and notices',terms:'Terms of this experiment',privacy:'Privacy',imprint:'Project information',refund:'No purchases'}[route]??'Project information',text={license:'This private library experiment includes source files with their applicable license and attribution notices. Consult the repository notices before redistributing an item.',terms:'This is a private UI library experiment for evaluation. The examples are interface demonstrations and do not provide production services, transactions or backend integrations.',privacy:'The site does not include application accounts, payment collection or marketing analytics. Your browser stores theme and style preferences locally. The hosting platform may process request and access logs under its own policies.',imprint:'Plico UI is a private software experiment. Project information and source notices are maintained in the repository; this page does not make a commercial contact or legal-address claim.',refund:'This experiment does not sell products or collect payments.'}[route]??'Project information is maintained in the repository.';return React.createElement('article',{className:'doc__article'},React.createElement('h1',{className:'doc__title'},title),React.createElement('p',{className:'doc__p'},text),React.createElement('a',{href:brand.repoUrl,className:'doc__link'},'View repository'))}
+function LocalLicense(){const route=typeof window==='undefined'?'license':window.location.pathname.split('/').filter(Boolean)[0],title={license:'MIT License',terms:'Terms',privacy:'Privacy',imprint:'About Plico UI',refund:'No purchases'}[route]??'Project information',text={license:'Plico UI is licensed under the MIT License. You may use, modify and distribute the code under that license. Include the license and required notices with distributed copies.',terms:'Plico UI provides reusable React components and interactive examples. Component source is available under the MIT License.',privacy:'The site does not include application accounts, payment collection or marketing analytics. Your browser stores theme and style preferences locally. The hosting platform may process request and access logs under its own policies.',imprint:'Plico UI is a React component library for AI products. Project details are available in the repository.',refund:'Plico UI does not sell products or collect payments.'}[route]??'Project information is maintained in the repository.';return React.createElement('article',{className:'doc__article'},React.createElement('h1',{className:'doc__title'},title),React.createElement('p',{className:'doc__p'},text),React.createElement('a',{href:brand.repoUrl,className:'doc__link'},'View repository'))}
 
 const fullScreenPreviews=Object.fromEntries(Object.entries(fullScreenModules).map(([slug,loader])=>[slug,React.lazy(loader)]));
 var m = React;
@@ -133,13 +192,13 @@ function Ba() {
 function vo() {}
 var mc = [{
   q: "What is Plico UI?",
-  a: "React components, blocks, screens, illustrations and motion, with previews, documentation and editable source packages."
+  a: "React components, blocks, screens, illustrations and motion, with previews, documentation and editable TSX source."
 }, {
   q: "How do I install a component?",
-  a: "Use the shadcn CLI to install its entry point and required files. The Code tab also exposes each file and a complete registry bundle."
+  a: "Use the shadcn CLI, or copy the named TSX file from its page."
 }, {
   q: "What do I import?",
-  a: "Installed items expose a default Demo, a named Component and descriptive aliases under your components alias in plico/item-name. Screens also export FullScreen."
+  a: "The default export is the reusable component. Import Demo for the configured showcase, or FullScreen for a screen."
 }, {
   q: "Can I use a coding assistant?",
   a: "Use the Copy prompt bar, the library index at /llms.txt or the component tools at /mcp. Host deployment protection also applies to agent requests."
@@ -148,7 +207,7 @@ var mc = [{
   a: "The previews include light and dark themes. See each item’s documentation for its CSS variables and motion behavior."
 }, {
   q: "How is source access handled?",
-  a: "Every item is available without an application purchase or account gate. The host may protect the deployment itself. See the repository notices for source terms and attribution."
+  a: "Every component includes its source. The host may protect access to the deployment."
 }];
 function co() {}
 function Po() {
@@ -268,10 +327,7 @@ function ba() {
     title: "Use with your coding assistant"
   }, React.createElement("p", {
     className: "doc__p"
-  }, "Browse a component, copy its prompt or install it from the registry. Every item includes its local source and documentation."), React.createElement(Zi, {
-    label: "Terminal",
-    code: "npx shadcn@latest add " + brand.url + "/r/button.json"
-  })), React.createElement(M, {
+  }, "Browse a component, copy its prompt or install it from the registry. Import its default export as the reusable component; named Demo renders the showcase, and screens also export FullScreen."), React.createElement(Xi, { command: manager => pi("button", manager) })), React.createElement(M, {
     id: "mcp",
     title: "Connect the component tools"
   }, React.createElement("p", {
@@ -2839,7 +2895,7 @@ var Sa = [{
 }, {
   slug: `installation`,
   title: `Installation`,
-  description: `Install complete component source packages with the shadcn CLI.`,
+  description: `Install a component with the shadcn CLI or copy its TSX source.`,
   Content: ga
 }, {
   slug: `theming`,
@@ -5428,7 +5484,7 @@ function gc() {
               children: `One command, complete source`
             }), (0, A.jsx)(`p`, {
               className: `lp-tile__text`,
-              children: `Install with the shadcn CLI or copy it. It installs a local entry point with its required source files, styles and assets.`
+              children: `Install with the shadcn CLI or copy it. It adds a named TSX file with the component and its styles.`
             })]
           }), (0, A.jsxs)(`article`, {
             className: `lp-tile`,
@@ -5957,5 +6013,5 @@ function zc(e, t) {
   return n ? n[1] ?? `` : null;
 }
 export {di as $,F as A,j as B,Qa as C,Pa as D,Ra as E,Yi as F,Di as G,zi as H,Xi as I,Ci as J,Ti as K,qi as L,aa as M,ia as N,Na as O,M as P,k as Q,Ji as R,Xa as S,Ya as T,Ri as U,Bi as V,Ii as W,hi as X,pi as Y,mi as Z,co as _,us as a,$a as b,rs as c,Qo as d,si as et,Ho as f,vo as g,Po as h,Ns as i,li as it,P as j,Ca as k,Jo as l,Lo as m,qs as n,ui as nt,ds as o,Fo as p,wi as q,Vs as r,oi as rt,as as s,Xs as t,ci as tt,Zo as u,io as v,to as w,Ja as x,Za as y,Vi as z};
-export {SourceFiles,sourceFilename,InstallSourcePanel};
+export {sourceFilename,InstallSourcePanel};
 export default Rc;

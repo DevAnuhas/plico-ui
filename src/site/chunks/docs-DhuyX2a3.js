@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`, `App Shell, KPI Chart, Inline Diff, Segmented Control and Button (installed with it)`],
   whenToUse: [`Eval dashboards for prompts, agents or LLM features`, `Comparing prompt or model versions against a fixed test suite`],
   whenNotToUse: [`Live production monitoring of single requests – use a log or trace view`],
-  usage: "import { Component as EvalsScreen } from \"@/components/plico/evals\";\nfunction Page() {\n  return <EvalsScreen workspace=\"Acme\" user={{\n    name: \"Alex Morgan\"\n  }} onNavigate={(label) => router.push(routes[label])} />;\n}\nexport {\n  Page as default\n};",
+  usage: "import EvalsScreen from \"@/components/plico/evals\";\nfunction Page() {\n  return <EvalsScreen workspace=\"Acme\" user={{\n    name: \"Alex Morgan\"\n  }} onNavigate={label => router.push(routes[label])} />;\n}\nexport { Page as default };",
   props: [{
     name: `onNavigate`,
     type: `(label: string) => void`,

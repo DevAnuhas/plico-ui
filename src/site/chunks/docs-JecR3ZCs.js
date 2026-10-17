@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`One word or a short phrase in a hero headline that should carry the brand`, `A highlight inside a heading, like a product name or the payoff of a sentence`],
   whenNotToUse: [`Body copy or long passages – a moving gradient makes them harder to read`, `Several highlights on one screen – the effect works because it's rare`],
-  usage: "import { GradientText } from \"@/components/plico/gradient-text\";\nfunction Hero() {\n  return <h1>\n      Interfaces people actually <GradientText>feel.</GradientText>\n    </h1>;\n}\nexport {\n  Hero\n};",
+  usage: "import GradientText from \"@/components/plico/gradient-text\";\nfunction Hero() {\n  return <h1>\n      Interfaces people actually <GradientText>feel.</GradientText>\n    </h1>;\n}\nexport { Hero };",
   props: [{
     name: `children`,
     type: `ReactNode`,

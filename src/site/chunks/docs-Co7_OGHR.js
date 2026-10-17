@@ -4,13 +4,13 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`Analytics, reports and dashboards where people switch between periods and compare them`, `Filters for bookings, invoices or logs that need a start and an end date`],
   whenNotToUse: [`A single date, like a birthday – a plain date field is quicker`, `Ranges that span many years – type the dates instead`],
-  usage: "import { DateRangePicker } from \"@/components/plico/date-range-picker\";\nfunction ReportFilter() {\n  return <DateRangePicker onChange={(range, compare) => {\n    loadReport(range.start, range.end);\n    if (compare) loadComparison(compare.start, compare.end);\n  }} />;\n}\nexport {\n  ReportFilter\n};",
+  usage: "import DateRangePicker from \"@/components/plico/date-range-picker\";\nfunction ReportFilter() {\n  return <DateRangePicker onChange={(range, compare) => {\n    loadReport(range.start, range.end);\n    if (compare) loadComparison(compare.start, compare.end);\n  }} />;\n}\nexport { ReportFilter };",
   examples: [{
     title: `Controlled, Sunday first, no comparison`,
     code: "const [range, setRange] = useState({\n  start: new Date(2026, 8, 1),\n  end: new Date(2026, 8, 30)\n});\n<DateRangePicker value={range} onChange={setRange} weekStartsOn={0} compare={false} />;"
   }, {
     title: `Your own presets`,
-    code: "import { DateRangePicker, defaultPresets } from \"@/components/plico/date-range-picker\";\n<DateRangePicker presets={[...defaultPresets.slice(2, 5), {\n  id: \"14d\",\n  label: \"Last 14 days\",\n  range: (t) => ({\n    start: new Date(t.getFullYear(), t.getMonth(), t.getDate() - 13),\n    end: t\n  })\n}]} />;"
+    code: "import DateRangePicker, { defaultPresets } from \"@/components/plico/date-range-picker\";\n<DateRangePicker presets={[...defaultPresets.slice(2, 5), {\n  id: \"14d\",\n  label: \"Last 14 days\",\n  range: t => ({\n    start: new Date(t.getFullYear(), t.getMonth(), t.getDate() - 13),\n    end: t\n  })\n}]} />;"
   }],
   props: [{
     name: `value`,

@@ -1,6 +1,6 @@
 import {brand} from '../../lib/brand.js';
 function localText(value){return value.replaceAll('__PLICO_ORIGIN__',brand.url).replaceAll('__PLICO_REPO__',brand.repoUrl)}
-import { SourceFiles, sourceFilename, InstallSourcePanel } from "../site-app.js";
+import { sourceFilename, InstallSourcePanel } from "../site-app.js";
 import { t as e } from "./react-bridge.js";
 import { t } from "./jsx-bridge.js";
 import { t as n } from "./RefreshIcon-fjVu6A90.js";
@@ -53,7 +53,7 @@ var F = [[`path`, {
   }];
 function B(e) {
   const usage = e.docs?.usage?.trim();
-  return [`Add the "${e.name}" component from ${h.name} to my React project.`, `What it is: ${e.description}`, `Install the complete package with: ${y(e.sourceSlug ?? e.slug, "npm")}`, `If this host is protected, configure the namespace header at ${h.url}/docs/installation#protected-deployments and install by @plico name.`, ...(usage ? [`Use and adapt this example:`, usage] : []), `Keep the complete file hierarchy, styles and bundled assets.`, `Docs: ${h.url}${window.location.pathname}`].join("\n\n");
+  return [`Add the "${e.name}" component from ${h.name} to my React project.`, `What it is: ${e.description}`, `Install the component with: ${y(e.sourceSlug ?? e.slug, "npm")}`, `If this host is protected, configure the namespace header at ${h.url}/docs/installation#protected-deployments and install by @plico name.`, ...(usage ? [`Use and adapt this example:`, usage] : []), `Import the default export as the reusable component. Use the named Demo for the showcase, or FullScreen for screens. Keep the component’s styles.`, `Docs: ${h.url}${window.location.pathname}`].join("\n\n");
 }
 function V({
   entry: e,
@@ -116,7 +116,7 @@ function V({
           await navigator.clipboard.writeText(n), o(`code`), T(e.slug, `copy_code`);
         } catch {}
       },
-      title: t ? `Copy the selected source file` : `The code is part of Pro`,
+      title: t ? `Copy the source code` : `The code is part of Pro`,
       children: [(0, R.jsx)(a, {
         icon: r === `code` ? _ : l,
         size: 14
@@ -485,14 +485,12 @@ function K({
           size: 14
         })
       }), (0, R.jsx)(G, {}), m && (0, R.jsx)(s, {})]
-    }) : t ? L.createElement("div", null, L.createElement(SourceFiles, {
-      slug: g
-    }), (0, R.jsx)(f, {
+    }) : t ? (0, R.jsx)(f, {
       code: r ?? `// Loading the code…`,
       filename: sourceFilename(g),
       onCopied: () => T(e.slug, `copy_code`),
       maxHeight: 520
-    })) : (0, R.jsx)(k, {})]
+    }) : (0, R.jsx)(k, {})]
   });
 }
 function q({

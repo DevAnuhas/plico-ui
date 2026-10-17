@@ -1,8 +1,8 @@
 {
   "name": "@plico/site",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
-  "license": "UNLICENSED",
+  "license": "MIT",
   "packageManager": "npm@11.11.0",
   "scripts": {
     "dev": "next dev --hostname 127.0.0.1 --port 4210",
@@ -12,7 +12,9 @@
     "registry:verify": "node scripts/verify-registry.mjs",
     "verify:docs": "node scripts/verify-docs.mjs",
     "typecheck": "tsc --noEmit",
-    "verify:api": "node scripts/verify-api.mjs"
+    "verify:api": "node scripts/verify-api.mjs",
+    "registry:typecheck": "node scripts/verify-registry-types.mjs",
+    "verify:library": "node scripts/verify-library-api.mjs"
   },
   "engines": {
     "node": "24.x"
@@ -23,10 +25,7 @@
     "react-dom": "19.3.0"
   },
   "devDependencies": {
-    "@babel/generator": "8.0.6",
     "@babel/parser": "8.0.7",
-    "@babel/traverse": "8.0.7",
-    "@babel/types": "8.0.6",
     "@types/node": "24.10.1",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",

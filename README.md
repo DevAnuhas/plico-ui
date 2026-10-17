@@ -31,7 +31,7 @@ npx shadcn@latest add @plico/button
 ```
 
 ```tsx
-import { Button } from "@/components/plico/button";
+import Button from "@/components/plico/button";
 
 export function Example() {
   return <Button>Continue</Button>;
@@ -39,6 +39,8 @@ export function Example() {
 ```
 
 See [registry usage](docs/runbooks/registry.md) for styles, full screens, protected hosting, and agent access.
+
+Components install as named TypeScript files such as `components/plico/button.tsx`. Styles and assets stay with the component. The default export is the reusable component; `Demo` provides its configured example. Existing installations from v0.1 should follow the [v0.2 migration guide](docs/runbooks/migrate-v0.2.md).
 
 ## Commands
 
@@ -55,10 +57,11 @@ The [consumer smoke test](tests/registry-consumer/README.md) also installs compo
 ## Project map
 
 - `src/site/` — website, catalog, documentation, and preview presentation.
-- `src/library/` — catalog metadata, reusable items, demos, and shared runtime.
+- `src/components/plico/` — standalone TypeScript components, examples, and screen exports.
+- `src/library/` — catalog metadata and preview mappings.
 - `registry/` — registry definitions.
 - `public/r/` — generated shadcn registry JSON.
 - `src/app/` — Next.js routes, MCP, and `llms.txt`.
 - `docs/` — architecture and operating instructions.
 
-Start with the [documentation map](docs/README.md). Keep this repository and its deployments private. [Private Vercel deployment](docs/runbooks/deploy.md) covers the required protection setting. Licensing is defined by [LICENSE](LICENSE) and [THIRD_PARTY_NOTICES](THIRD_PARTY_NOTICES).
+Start with the [documentation map](docs/README.md). The project uses the MIT license; third-party notices are retained separately. This repository remains private. [Private Vercel deployment](docs/runbooks/deploy.md) covers deployment access settings.

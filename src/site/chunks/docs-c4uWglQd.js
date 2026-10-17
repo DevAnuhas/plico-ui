@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`, `App Shell, Agent Plan, Tool Call Card, Approval Card, Inline Diff, Thinking Loader and Button (installed with it)`],
   whenToUse: [`The detail view of one autonomous agent run – a background task, a scheduled job, a long workflow`, `Runs that pause for a human before they send, pay or publish something`],
   whenNotToUse: [`Back-and-forth conversations with the agent – use Agent Chat`, `A list of many runs – use a table with a status column`],
-  usage: "import { Component as AgentRunScreen } from \"@/components/plico/agent-run\";\nfunction Page() {\n  return <AgentRunScreen title=\"Prepare the Q3 board update\" steps={run.steps} draft={{\n    original: memo.before,\n    suggested: memo.after,\n    label: \"Board memo \\u2013 Q3\"\n  }} onApprove={(stepId) => api.approve(run.id, stepId)} onDeny={(stepId) => api.deny(run.id, stepId)} onNavigate={(label) => router.push(routes[label])} />;\n}\nexport {\n  Page as default\n};",
+  usage: "import AgentRunScreen from \"@/components/plico/agent-run\";\nfunction Page() {\n  return <AgentRunScreen title=\"Prepare the Q3 board update\" steps={run.steps} draft={{\n    original: memo.before,\n    suggested: memo.after,\n    label: \"Board memo \\u2013 Q3\"\n  }} onApprove={stepId => api.approve(run.id, stepId)} onDeny={stepId => api.deny(run.id, stepId)} onNavigate={label => router.push(routes[label])} />;\n}\nexport { Page as default };",
   props: [{
     name: `title`,
     type: `string`,

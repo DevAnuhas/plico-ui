@@ -1,0 +1,710 @@
+"use client";
+
+import * as React from "react";
+import { useEffect } from "react";
+import { useId } from "react";
+import { useLayoutEffect } from "react";
+import { useRef } from "react";
+import { useState } from "react";
+import type { CSSProperties } from "react";
+import type { ReactNode } from "react";
+import type { RefObject } from "react";
+function Icons() {
+  let e = React.useId();
+  return (
+    <svg viewBox={`0 0 24 24`} width={`24`} height={`24`} aria-hidden={`true`}>
+      <defs>
+        <linearGradient
+          id={`${e}-fill`}
+          x1={`3`}
+          y1={`3`}
+          x2={`21`}
+          y2={`21`}
+          gradientUnits={`userSpaceOnUse`}
+        >
+          <stop offset={`0`} stopColor={`#5b9dff`} />
+          <stop offset={`0.5`} stopColor={`#2f6bff`} />
+          <stop offset={`1`} stopColor={`#8b5cf6`} />
+        </linearGradient>
+      </defs>
+      <circle cx={`12`} cy={`12`} r={`12`} fill={`url(#${e}-fill)`} />
+    </svg>
+  );
+}
+var valueValue4 = {
+  name: `Atlas`,
+  avatar: <Icons />,
+  assistant: true,
+};
+var valueValue5 = (e: number) => Date.now() - e * 6e4;
+var ViewP = [
+  {
+    id: `1`,
+    author: {
+      name: `Lena Lindqvist`,
+      avatar: `data:image/jpeg;base64,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`,
+    },
+    createdAt: valueValue5(3),
+    text: `/edit Rename every “customers” to “members” on the pricing page.`,
+  },
+  {
+    id: `2`,
+    author: valueValue4,
+    createdAt: valueValue5(1),
+    text: ``,
+    status: `Edit completed`,
+    details: [
+      `Renamed 12 mentions in 3 sections`,
+      `Kept “customer support” as it is`,
+      `Left the legal pages untouched`,
+    ],
+  },
+];
+var valueValue6 = [
+  `Done – I also updated the meta description.`,
+  `Good catch. I'll leave a note for the copy review.`,
+  `On it. You'll see the change in a minute.`,
+];
+var valueValue7 = 0;
+function CommentThreadDemo2() {
+  return (
+    <div className={`thread-demo`}>
+      <CommentThread
+        messages={ViewP}
+        currentUser={{
+          name: `Sofia Marin`,
+          avatar: `data:image/jpeg;base64,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`,
+        }}
+        assistant={valueValue4}
+        onClose={() => {}}
+        onReply={(e) => {
+          if (!/@atlas/i.test(e)) return;
+          let t = valueValue6[valueValue7++ % valueValue6.length];
+          return new Promise((e) =>
+            setTimeout(
+              () =>
+                e({
+                  id: `a-${Date.now()}`,
+                  author: valueValue4,
+                  createdAt: Date.now(),
+                  text: t,
+                }),
+              1400,
+            ),
+          );
+        }}
+      />
+    </div>
+  );
+}
+type ThreadAuthor = {
+  name: string;
+  avatar?: ReactNode | string;
+  assistant?: boolean;
+};
+type ThreadMessage = {
+  id: string;
+  author: ThreadAuthor;
+  createdAt: Date | number;
+  text: string;
+  status?: string;
+  details?: string[];
+};
+type CommentThreadProps = {
+  title?: string;
+  messages: ThreadMessage[];
+  currentUser: ThreadAuthor;
+  assistant?: ThreadAuthor;
+  onReply?: (text: string) => ThreadMessage | Promise<ThreadMessage | void> | void;
+  onClose?: () => void;
+  className?: string;
+};
+function ago(time: number, now: number) {
+  const s = Math.max(0, Math.round((now - time) / 1000));
+  if (s < 45) return "just now";
+  const m = Math.round(s / 60);
+  if (m < 60) return `${m}min ago`;
+  const h = Math.round(m / 60);
+  return h < 24 ? `${h}h ago` : `${Math.round(h / 24)}d ago`;
+}
+function CommentThread({
+  title = "Comment",
+  messages: initial,
+  currentUser,
+  assistant,
+  onReply,
+  onClose,
+  className,
+}: CommentThreadProps) {
+  const [messages, setMessages] = useState(initial);
+  const [firstIds] = useState(
+    () => new Set(initial.filter((m) => m.author.assistant).map((m) => m.id)),
+  );
+  const [open, setOpen] = useState<Set<string>>(new Set());
+  const [draft, setDraft] = useState("");
+  const [thinking, setThinking] = useState(false);
+  const [now, setNow] = useState(() => Date.now());
+  const listRef = useRef<HTMLDivElement>(null);
+  const morphRef = useSmoothHeight(listRef);
+  useEffect(() => {
+    const t = window.setInterval(() => setNow(Date.now()), 30_000);
+    return () => window.clearInterval(t);
+  }, []);
+  useEffect(() => {
+    listRef.current?.scrollTo({
+      top: listRef.current.scrollHeight,
+      behavior: "smooth",
+    });
+  }, [messages.length, thinking]);
+  const send = async () => {
+    const text = draft.trim();
+    if (!text || thinking) return;
+    setDraft("");
+    setNow(Date.now());
+    lockHeight(true);
+    setMessages((m) => [
+      ...m,
+      {
+        id: `m-${Date.now()}`,
+        author: currentUser,
+        createdAt: Date.now(),
+        text,
+      },
+    ]);
+    const answer = onReply?.(text);
+    if (!answer) return;
+    setThinking(true);
+    try {
+      const reply = await answer;
+      if (reply)
+        setMessages((m) => [
+          ...m,
+          {
+            ...reply,
+            createdAt: Date.now(),
+          },
+        ]);
+    } finally {
+      setThinking(false);
+      setNow(Date.now());
+    }
+  };
+  const lockHeight = (on: boolean) => {
+    const list = listRef.current;
+    if (list) list.style.maxHeight = on ? `${list.offsetHeight}px` : "";
+  };
+  const toggle = (id: string) => {
+    lockHeight(false);
+    setOpen((o) => {
+      const next = new Set(o);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
+  };
+  return (
+    <>
+      <style href="ui-comment-thread" precedence="default">
+        {css}
+      </style>
+      <section className={["ui-ct", className].filter(Boolean).join(" ")} aria-label={title}>
+        <header className="ui-ct__head">
+          <h3 className="ui-ct__title">{title}</h3>
+          <span className="ui-ct__count">
+            {messages.length} {messages.length === 1 ? "message" : "messages"}
+          </span>
+          {onClose && (
+            <button
+              type="button"
+              className="ui-ct__icon-btn"
+              aria-label="Close comment"
+              onClick={onClose}
+            >
+              <Icon d="m4 4 8 8M12 4l-8 8" />
+            </button>
+          )}
+        </header>
+
+        <div className="ui-ct__card ui-ct__morph" ref={morphRef}>
+          <div className="ui-ct__scroll" ref={listRef} aria-live="polite">
+            {messages.map((m) => {
+              const isOpen = open.has(m.id);
+              const command = /^\/edit\b/i.test(m.text.trim());
+              return (
+                <article
+                  key={m.id}
+                  className="ui-ct__msg"
+                  data-delayed={firstIds.has(m.id) || undefined}
+                >
+                  <div className="ui-ct__meta">
+                    <Avatar author={m.author} />
+                    <span className="ui-ct__name">{m.author.name}</span>
+                    <time className="ui-ct__time" dateTime={new Date(m.createdAt).toISOString()}>
+                      {ago(+m.createdAt, now)}
+                    </time>
+                  </div>
+                  {m.text && (
+                    <p className="ui-ct__text">
+                      {command ? (
+                        <>
+                          <span className="ui-ct__command">/Edit</span>{" "}
+                          {m.text.trim().replace(/^\/edit\s*/i, "")}
+                        </>
+                      ) : (
+                        m.text
+                      )}
+                    </p>
+                  )}
+                  {m.status && (
+                    <div className="ui-ct__status">
+                      <button
+                        type="button"
+                        className="ui-ct__status-btn"
+                        aria-expanded={isOpen}
+                        disabled={!m.details?.length}
+                        onClick={() => toggle(m.id)}
+                      >
+                        <span className="ui-ct__check">
+                          <Icon d="m4 8.3 2.6 2.6L12 5.4" size={12} />
+                        </span>
+                        {m.status}
+                        {!!m.details?.length && (
+                          <span className="ui-ct__chevron">
+                            <Icon d="m4.5 6.25 3.5 3.5 3.5-3.5" size={14} />
+                          </span>
+                        )}
+                      </button>
+                      {!!m.details?.length && (
+                        <div
+                          className="ui-ct__details"
+                          data-open={isOpen || undefined}
+                          inert={!isOpen}
+                        >
+                          <ul>
+                            {m.details.map((d, i) => (
+                              <li
+                                key={d}
+                                style={
+                                  {
+                                    "--i": i,
+                                  } as CSSProperties
+                                }
+                              >
+                                {d}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </article>
+              );
+            })}
+            {thinking && assistant && (
+              <article className="ui-ct__msg" aria-label={`${assistant.name} is thinking`}>
+                <div className="ui-ct__meta">
+                  <Avatar author={assistant} />
+                  <span className="ui-ct__name">{assistant.name}</span>
+                </div>
+                <p className="ui-ct__thinking">Thinking…</p>
+              </article>
+            )}
+          </div>
+        </div>
+
+        <form
+          className="ui-ct__composer"
+          onSubmit={(e) => {
+            e.preventDefault();
+            send();
+          }}
+        >
+          <input
+            className="ui-ct__input"
+            value={draft}
+            onChange={(e) => setDraft(e.target.value)}
+            placeholder={assistant ? `Reply, or ask @${assistant.name}…` : "Add comment…"}
+            aria-label="Reply"
+          />
+          <button
+            type="submit"
+            className="ui-ct__send"
+            aria-label="Send reply"
+            disabled={!draft.trim() || thinking}
+          >
+            <Icon d="M8 13V3M3.5 7.5 8 3l4.5 4.5" size={14} />
+          </button>
+        </form>
+      </section>
+    </>
+  );
+}
+function Avatar({ author }: { author: ThreadAuthor }) {
+  if (author.avatar && typeof author.avatar !== "string")
+    return <span className="ui-ct__avatar">{author.avatar}</span>;
+  if (typeof author.avatar === "string") {
+    return (
+      <img
+        className="ui-ct__avatar"
+        src={author.avatar}
+        alt=""
+        width={24}
+        height={24}
+        loading="lazy"
+      />
+    );
+  }
+  return (
+    <span className="ui-ct__avatar ui-ct__avatar--initials" aria-hidden="true">
+      {author.name
+        .split(" ")
+        .map((p) => p[0])
+        .slice(0, 2)
+        .join("")}
+    </span>
+  );
+}
+function AssistantMark() {
+  const id = useId();
+  return (
+    <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+      <defs>
+        <linearGradient
+          id={`${id}-fill`}
+          x1="3"
+          y1="3"
+          x2="21"
+          y2="21"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0" stopColor="#5b9dff" />
+          <stop offset="0.5" stopColor="#2f6bff" />
+          <stop offset="1" stopColor="#8b5cf6" />
+        </linearGradient>
+      </defs>
+      <circle cx="12" cy="12" r="12" fill={`url(#${id}-fill)`} />
+    </svg>
+  );
+}
+const Icon = ({ d, size = 16 }: { d: string; size?: number }) => (
+  <svg
+    viewBox="0 0 16 16"
+    width={size}
+    height={size}
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    aria-hidden="true"
+  >
+    <path d={d} />
+  </svg>
+);
+function useSmoothHeight(inner: RefObject<HTMLElement | null>) {
+  const outer = useRef<HTMLDivElement>(null);
+  useLayoutEffect(() => {
+    const o = outer.current;
+    const i = inner.current;
+    if (!o || !i) return;
+    const sync = () => {
+      o.style.height = `${i.offsetHeight}px`;
+    };
+    sync();
+    const ro = new ResizeObserver(sync);
+    ro.observe(i);
+    const frame = requestAnimationFrame(() => o.setAttribute("data-smooth", ""));
+    return () => {
+      ro.disconnect();
+      cancelAnimationFrame(frame);
+    };
+  }, [inner]);
+  return outer;
+}
+const css = `
+.ui-ct {
+  --ui-ct-tray: #f0f0f0;
+  --ui-ct-card: #ffffff;
+  --ui-ct-ink: #171717;
+  --ui-ct-text: #404040;
+  --ui-ct-muted: #8f8f8f;
+  --ui-ct-accent: #2f6bff;
+  --ui-ct-ok: #1f8a4c;
+  --ui-ct-accent-text: #2f6bff;
+  --ui-ct-border: #e5e5e5;
+  --ui-ct-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+  --ui-ct-hover: rgba(0, 0, 0, 0.05);
+  --ui-ct-row-hover: #f5f5f5;
+  --ui-ct-initials: #eef3ff;
+  --ui-ct-dot: #d4d4d4;
+  --ui-ct-subtle: #a3a3a3;
+  --ui-ct-avatar-ring: rgba(0, 0, 0, 0.06);
+  --ui-ct-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 420px;
+  /* Like the Chat Composer: a gray tray with heading and reply field, the white card sits on top of it */
+  background: var(--ui-ct-tray);
+  /* The gray tray frames the white card on every side */
+  padding: 6px;
+  border-radius: 22px;
+  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--ui-ct-ink);
+  -webkit-font-smoothing: antialiased;
+}
+.ui-ct *, .ui-ct *::before, .ui-ct *::after { box-sizing: border-box; }
+.ui-ct button { margin: 0; font: inherit; color: inherit; cursor: pointer; }
+.ui-ct button:focus-visible { outline: 2px solid var(--ui-ct-accent); outline-offset: 2px; }
+
+.ui-ct__head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 46px;
+  padding: 6px 10px 6px 18px;
+}
+.ui-ct__title { margin: 0; font-size: 15px; font-weight: 500; line-height: 22px; }
+.ui-ct__count { margin-right: auto; font-size: 12.5px; color: var(--ui-ct-muted); }
+.ui-ct__icon-btn {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--ui-ct-muted) !important;
+  transition: background-color 140ms ease, color 140ms ease;
+}
+.ui-ct__icon-btn:hover { background: var(--ui-ct-hover); color: var(--ui-ct-ink) !important; }
+
+.ui-ct__card {
+  background: var(--ui-ct-card);
+  border: 1px solid var(--ui-ct-border);
+  border-radius: 16px;
+  box-shadow: var(--ui-ct-shadow);
+}
+.ui-ct__scroll {
+  display: grid;
+  gap: 18px;
+  align-content: start;
+  min-height: var(--ui-ct-min-height, 0px);
+  max-height: var(--ui-ct-max-height, 340px);
+  padding: 16px 18px 18px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+/* Each message builds up piece by piece: name row, text, status – the assistant's first reply a beat later */
+.ui-ct__msg { --ui-ct-d: 0ms; }
+.ui-ct__msg[data-delayed] { --ui-ct-d: 700ms; }
+.ui-ct__msg > * { animation: ui-ct-in 420ms var(--ui-ct-ease) both; animation-delay: var(--ui-ct-d); }
+.ui-ct__msg > :nth-child(2) { animation-delay: calc(var(--ui-ct-d) + 80ms); }
+.ui-ct__msg > :nth-child(3) { animation-delay: calc(var(--ui-ct-d) + 160ms); }
+.ui-ct__meta { display: flex; align-items: center; gap: 9px; }
+.ui-ct__avatar {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+  overflow: hidden;
+}
+img.ui-ct__avatar { box-shadow: 0 0 0 1px var(--ui-ct-avatar-ring); }
+.ui-ct__avatar svg { width: 100%; height: 100%; }
+.ui-ct__avatar--initials { background: var(--ui-ct-initials); font-size: 9px; font-weight: 600; color: var(--ui-ct-accent-text); }
+.ui-ct__name { font-size: 14px; font-weight: 500; line-height: 20px; }
+.ui-ct__time { margin-left: auto; font-size: 12.5px; color: var(--ui-ct-muted); font-variant-numeric: tabular-nums; }
+.ui-ct__text { margin: 8px 0 0; font-size: 14px; line-height: 21px; color: var(--ui-ct-text); }
+.ui-ct__command { color: var(--ui-ct-muted); }
+
+.ui-ct__status { margin-top: 8px; }
+.ui-ct__status-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 26px;
+  padding: 0 6px 0 8px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  font-size: 14px !important;
+  transition: background-color 140ms ease;
+}
+/* The global button reset sets margin: 0 – shift the row so the check icon sits centered under the avatars */
+.ui-ct .ui-ct__status-btn { margin-left: -4px; }
+.ui-ct__status-btn:hover:not(:disabled) { background: var(--ui-ct-row-hover); }
+.ui-ct__status-btn:disabled { cursor: default; }
+.ui-ct__check {
+  display: grid;
+  place-items: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--ui-ct-ok);
+  color: #fff;
+}
+.ui-ct__chevron { display: grid; color: var(--ui-ct-muted); transition: transform 260ms var(--ui-ct-ease); }
+.ui-ct__status-btn[aria-expanded="true"] .ui-ct__chevron { transform: rotate(180deg); }
+.ui-ct__details {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 320ms var(--ui-ct-ease);
+}
+.ui-ct__details[data-open] { grid-template-rows: 1fr; }
+.ui-ct__details ul {
+  min-height: 0;
+  overflow: hidden;
+  margin: 0;
+  padding: 0 0 0 28px;
+  list-style: none;
+}
+.ui-ct__details li {
+  position: relative;
+  margin-top: 6px;
+  font-size: 13px;
+  line-height: 19px;
+  color: var(--ui-ct-muted);
+  /* Closing: lines fade out quickly while the box folds */
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 160ms ease, transform 220ms var(--ui-ct-ease);
+}
+/* Opening: lines come in one after another */
+.ui-ct__details[data-open] li {
+  opacity: 1;
+  transform: none;
+  transition-duration: 320ms, 420ms;
+  transition-delay: calc(60ms + var(--i, 0) * 60ms);
+}
+/* Tree lines instead of dots: each line gets its own corner – down on the axis of the check icon, then a rounded turn right */
+.ui-ct__details li:first-child { margin-top: 5px; }
+.ui-ct__details li::before {
+  content: "";
+  position: absolute;
+  left: -16.625px;
+  top: -3px;
+  width: 10.5px;
+  height: 13px;
+  border-left: 1.25px solid var(--ui-ct-dot);
+  border-bottom: 1.25px solid var(--ui-ct-dot);
+  border-bottom-left-radius: 5px;
+}
+/* The first branch starts with a small gap under the check icon */
+.ui-ct__details li:first-child::before {
+  top: -5px;
+  height: 15px;
+}
+
+.ui-ct__thinking {
+  display: inline-block;
+  margin: 8px 0 0;
+  font-size: 14px;
+  background: linear-gradient(90deg, var(--ui-ct-subtle) 0%, var(--ui-ct-subtle) 35%, rgba(255, 255, 255, 0.9) 50%, var(--ui-ct-subtle) 65%, var(--ui-ct-subtle) 100%);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: ui-ct-shine 1.6s linear infinite;
+}
+
+.ui-ct__composer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 9px 9px 18px;
+}
+.ui-ct__input {
+  flex: 1;
+  min-width: 0;
+  height: 32px;
+  border: 0;
+  outline: none;
+  background: transparent;
+  font: inherit;
+  font-size: 14px;
+  color: var(--ui-ct-ink);
+}
+.ui-ct__input::placeholder { color: var(--ui-ct-subtle); }
+.ui-ct__send {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: linear-gradient(#323137, #201e25);
+  box-shadow: 0 0 0 1px #0d0d0d, 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #fff !important;
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+.ui-ct__send:disabled { opacity: 0.3; cursor: default; }
+.ui-ct__send:not(:disabled):active { transform: scale(0.94); }
+
+@keyframes ui-ct-in { from { opacity: 0; transform: translateY(4px); } }
+@keyframes ui-ct-shine { from { background-position: 100% 0; } to { background-position: 0% 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .ui-ct__msg > *, .ui-ct__thinking { animation: none; }
+  .ui-ct__details, .ui-ct__details li, .ui-ct__chevron { transition: none; }
+}
+
+/* Height changes glide instead of jumping */
+.ui-ct__morph { overflow: hidden; }
+.ui-ct__morph[data-smooth] { transition: height 380ms cubic-bezier(0.22, 1, 0.36, 1); }
+@media (prefers-reduced-motion: reduce) { .ui-ct__morph[data-smooth] { transition: none; } }
+
+
+/* Text fields: no focus box while typing – also against global :focus-visible rules of the host page */
+.ui-ct input:not([type="checkbox"]):not([type="radio"]):focus-visible,
+.ui-ct textarea:focus-visible,
+.ui-ct [contenteditable]:focus-visible { outline: none; }
+/* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
+:where(.dark, [data-theme="dark"]) .ui-ct {
+  --ui-ct-tray: #161618;
+  --ui-ct-card: #232326;
+  --ui-ct-ink: #ededed;
+  --ui-ct-text: #c4c4c4;
+  --ui-ct-muted: #8f8f8f;
+  --ui-ct-ok: #2a9d5c;
+  --ui-ct-accent-text: #6b95ff;
+  --ui-ct-border: rgba(255, 255, 255, 0.08);
+  --ui-ct-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --ui-ct-hover: rgba(255, 255, 255, 0.06);
+  --ui-ct-row-hover: rgba(255, 255, 255, 0.06);
+  --ui-ct-initials: rgba(47, 107, 255, 0.16);
+  --ui-ct-dot: rgba(255, 255, 255, 0.14);
+  --ui-ct-subtle: #6b6b70;
+  --ui-ct-avatar-ring: rgba(255, 255, 255, 0.08);
+}
+:where(.dark, [data-theme="dark"]) .ui-ct__send {
+  background: linear-gradient(#f4f4f5, #e4e4e7);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.6), 0 2px 4px rgba(0, 0, 0, 0.35), inset 0 1px 0 #ffffff;
+  color: #121213 !important;
+}
+`;
+const demoStyles =
+  ".thread-demo{grid-template-columns:minmax(0,420px);place-content:center;width:100%;display:grid}.stage .thread-demo .ui-ct{--ui-ct-min-height:290px;--ui-ct-max-height:340px}@media (width<=760px){.stage .thread-demo .ui-ct{--ui-ct-min-height:250px;--ui-ct-max-height:280px}}.card__preview .thread-demo{grid-template-columns:auto;position:absolute;inset:0}.card__preview .thread-demo .ui-ct{zoom:.55;width:420px;max-width:none}.stage .thread-demo .ui-ctc{--ui-ctc-min-height:290px;--ui-ctc-max-height:340px}@media (width<=760px){.stage .thread-demo .ui-ctc{--ui-ctc-min-height:250px;--ui-ctc-max-height:280px}}.card__preview .thread-demo .ui-ctc{zoom:.6;width:420px;max-width:none}\n";
+function CommentThreadDemo(props: Record<string, never>) {
+  return (
+    <>
+      <style href="plico-demo-comment-thread" precedence="default">
+        {demoStyles}
+      </style>
+      <CommentThreadDemo2 {...props} />
+    </>
+  );
+}
+export { AssistantMark };
+export { CommentThread };
+export { CommentThreadDemo };
+export { CommentThread as Component };
+export { CommentThreadDemo as Demo };
+export type { CommentThreadProps };
+export type { ThreadAuthor };
+export type { ThreadMessage };
+export default CommentThread;

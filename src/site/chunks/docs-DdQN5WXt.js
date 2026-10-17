@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`Hero sections, AI features or call-to-action blocks that need a warm, living backdrop`, `Behind a chat input or a prompt, to make it feel like the start of something`],
   whenNotToUse: [`Behind long body text – the bright floor competes with small type`, `Several floors on one screen – each one runs its own animation`],
-  usage: "import { GradientFloor } from \"@/components/plico/gradient-floor\";\nfunction Hero() {\n  return (\n    // Give the floor a height, e.g. with a class\n    <GradientFloor className=\"hero\">\n      <h1>Ideas start to glow</h1>\n    </GradientFloor>\n  );\n}\nexport {\n  Hero\n};",
+  usage: "import GradientFloor from \"@/components/plico/gradient-floor\";\nfunction Hero() {\n  return (\n    // Give the floor a height, e.g. with a class\n    <GradientFloor className=\"hero\">\n      <h1>Ideas start to glow</h1>\n    </GradientFloor>\n  );\n}\nexport { Hero };",
   examples: [{
     title: `Own colours, slower`,
     code: "<GradientFloor colors={[\"#22d3ee\", \"#6366f1\", \"#a855f7\"]} speed={6} />;"

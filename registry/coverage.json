@@ -4,851 +4,851 @@
   "fullScreenMappings": [
     {
       "slug": "agent-chat",
-      "entry": "src/library/agent-chat.jsx",
+      "entry": "src/components/plico/agent-chat.tsx",
       "export": "FullScreen"
     },
     {
       "slug": "agent-run",
-      "entry": "src/library/agent-run.jsx",
+      "entry": "src/components/plico/agent-run.tsx",
       "export": "FullScreen"
     },
     {
       "slug": "analytics",
-      "entry": "src/library/analytics.jsx",
+      "entry": "src/components/plico/analytics.tsx",
       "export": "FullScreen"
     },
     {
       "slug": "app-shell",
-      "entry": "src/library/app-shell.jsx",
+      "entry": "src/components/plico/app-shell.tsx",
       "export": "FullScreen"
     },
     {
       "slug": "assistant-home",
-      "entry": "src/library/assistant-home.jsx",
+      "entry": "src/components/plico/assistant-home.tsx",
       "export": "FullScreen"
     },
     {
       "slug": "crm",
-      "entry": "src/library/crm.jsx",
+      "entry": "src/components/plico/crm.tsx",
       "export": "FullScreen"
     },
     {
       "slug": "evals",
-      "entry": "src/library/evals.jsx",
+      "entry": "src/components/plico/evals.tsx",
       "export": "FullScreen"
     },
     {
       "slug": "files",
-      "entry": "src/library/files.jsx",
+      "entry": "src/components/plico/files.tsx",
       "export": "FullScreen"
     },
     {
       "slug": "folder",
-      "entry": "src/library/folder.jsx",
+      "entry": "src/components/plico/folder.tsx",
       "export": "FullScreen"
     },
     {
       "slug": "integrations",
-      "entry": "src/library/integrations.jsx",
+      "entry": "src/components/plico/integrations.tsx",
       "export": "FullScreen"
     },
     {
       "slug": "onboarding",
-      "entry": "src/library/onboarding.jsx",
+      "entry": "src/components/plico/onboarding.tsx",
       "export": "FullScreen"
     },
     {
       "slug": "settings-billing",
-      "entry": "src/library/settings-billing.jsx",
+      "entry": "src/components/plico/settings-billing.tsx",
       "export": "FullScreen"
     }
   ],
-  "registryFiles": 770,
+  "registryFiles": 314,
   "items": [
     {
       "name": "agent-inbox",
-      "files": 3,
-      "sha256": "1099788c6745ec3f85c88889a1513f4524e0c362e4a4a48a3c1f42a44afec365"
+      "files": 2,
+      "sha256": "a2550b7a79caa01982b3fc80060b20fdb7d0a978f5525d7fb9a288d9202421ad"
     },
     {
       "name": "agent-inbox-clean",
-      "files": 3,
-      "sha256": "e01c4a273af2a20c1b910d898fe1f8926fa3cce54820c52a182d49ec18229fe2"
+      "files": 2,
+      "sha256": "b4b92ecfee84e2208a1d43929d36dc647d1a76cb22dc3fc07012114b25ea80e5"
     },
     {
       "name": "agent-lanes",
-      "files": 3,
-      "sha256": "aab8f5833f1146eab321bd1c643b49308855ac69230a8b816f6cebbb74079342"
+      "files": 2,
+      "sha256": "31b3e3614376fed5618c76068fee222cbddf82c9f4588ab55399121a736f3430"
     },
     {
       "name": "agent-lanes-clean",
-      "files": 3,
-      "sha256": "8ade09793f3070d13c7dd2701dc5d2b3914c1fbd6daf8eba367dd464df80deba"
+      "files": 2,
+      "sha256": "bff41842620032936bc321434c81064eb84301027037b88d97acab718d2494d0"
     },
     {
       "name": "agent-plan",
-      "files": 4,
-      "sha256": "22675c37e860fffc410f54081f79bfddd6a842b142f28318b7663d9ed47809cf"
+      "files": 2,
+      "sha256": "06397a3d6337a60e29142bb32e9f3aebaf08c1fb0de37ce7877ba4ae8903fc0a"
     },
     {
       "name": "agent-plan-clean",
-      "files": 3,
-      "sha256": "d825113759be785b529ddc66f989b6d81b6d836e71c2394dc75c5ad29eff336d"
+      "files": 2,
+      "sha256": "d3cbcfdf9f0a817ebd2c24506c88982749f65235544758541b03aa02fd3ddb0f"
     },
     {
       "name": "agent-steering",
-      "files": 3,
-      "sha256": "dc56cba45af652c4d12c1e098cfd9a5af98341992d194395ae43fc168616f54d"
+      "files": 2,
+      "sha256": "72776c502107557365900eb5f1dc402e3299f6b7dfe02a7cce4e03faf4df7559"
     },
     {
       "name": "agent-steering-clean",
-      "files": 3,
-      "sha256": "be7f2dd91ac472172d52ab617633d85f01b3ed796d3b0a4e2962c1c27a7f2f82"
+      "files": 2,
+      "sha256": "5898942ccf44ca48513ab58a1c03831e4ffa17164d7fd78f02445f0cf0fd16a0"
     },
     {
       "name": "ai-answer",
-      "files": 3,
-      "sha256": "4be287964f9bff9d1481c9a35fd3fce42f9ed68881c038f5200f3cc541f4bc45"
+      "files": 2,
+      "sha256": "dd68273ee2b058cc4825a1b0cd226eca9e88a41601d02981a088326f4d14ccce"
     },
     {
       "name": "ai-answer-clean",
-      "files": 3,
-      "sha256": "a17a43519d302c1e13ccf3d790df18dc3702f4dbd953329f20369b60e90c981c"
+      "files": 2,
+      "sha256": "d39234cb13ba6833b4533c71ae77aa902a0e90ce42b9217ad8b0053551049b92"
     },
     {
       "name": "approval-card",
-      "files": 4,
-      "sha256": "814967118485a8e9425f7890d96f740094d23047bdf94d6ae4b566cd9d6bf2ac"
+      "files": 2,
+      "sha256": "7c898c64200115f37c401f6c9917510c3cfb0be1d1437fb7064316aa179df30f"
     },
     {
       "name": "approval-card-clean",
-      "files": 3,
-      "sha256": "3c3e42c6e6ab94c0cd3eb3ff6ffec6b55b7d6aaa8e4e58d1aa4a8848e61c0ab7"
+      "files": 2,
+      "sha256": "2e69cb30ba84c936a42cd7c7e28e26ff57ff4bdc4cb73028011ee7def11b6928"
     },
     {
       "name": "autonomy-dial",
-      "files": 3,
-      "sha256": "3db37699e53503a16207d20573b6582f0caacdd46cddfa1ecd4dadb2d91ec680"
+      "files": 2,
+      "sha256": "0532c66186c3d45ba2644f60ddbfa1b4898bf7f3935dfcc189a1b69a998b63ae"
     },
     {
       "name": "autonomy-dial-clean",
-      "files": 3,
-      "sha256": "4ba7eb62066e2e150f67ca07714c036f486e774760bb89cee5543f48fc303137"
+      "files": 2,
+      "sha256": "fca7a7ca0892e11163af96a050e5b1aada3317e0f52ad6509cc3c150fe13aacb"
     },
     {
       "name": "billing-schedule",
-      "files": 3,
-      "sha256": "8ac1ad5b77d286e63ecb43b6d8b886a62afba5c726e3862560582f41c4fcb404"
+      "files": 2,
+      "sha256": "bf5128e67e1aeac2b3c683384cb097426d34accb7dfc8238891b19b5dba1a416"
     },
     {
       "name": "billing-schedule-clean",
-      "files": 3,
-      "sha256": "a547833afafc2f48b0646fbcda530827565822e27df9f4a0f9d63cf0eb5a50bc"
+      "files": 2,
+      "sha256": "06eab21f86e581b88feedf6e11a6a22a06ea4060434264d63aaecdf8abe7b782"
     },
     {
       "name": "breakdown-chart",
-      "files": 4,
-      "sha256": "32be1ee9a63124b4ea344a10c96c8eab470dcfbc47c86e8a5d28c09a91c3032c"
+      "files": 2,
+      "sha256": "c57753954c3054fe8cf5047962d6643bec0c1c9993f735be62ecf87644e3c0f5"
     },
     {
       "name": "breakdown-chart-clean",
-      "files": 3,
-      "sha256": "5839cce8bc28e9020a0a36aa8f7698aaee094c4345c0466cfd6f3592f543e6e7"
+      "files": 2,
+      "sha256": "f5798aeed6f5f0deb7f15b47c9addc76e76934f111aa808dece24b961fc982ca"
     },
     {
       "name": "button",
-      "files": 6,
-      "sha256": "f4c1dc65c9fcab5398fc08c83b131bceee4b989049f4c6617f41cee2c3475f77"
+      "files": 2,
+      "sha256": "53cde395fe7445e99476adee84044e5807abbbd0a19061820c34b2fea443af3e"
     },
     {
       "name": "button-clean",
-      "files": 5,
-      "sha256": "5a21e1f97e6488a0245bb5d5698f2a134a41b11f0951725f8a93fa701bec0f92"
+      "files": 2,
+      "sha256": "cc2d95ffc72c2fcbcebfd1ad69d8c252433f1dbe6b9d0b8e1006dc66c9ca9179"
     },
     {
       "name": "change-summary",
-      "files": 5,
-      "sha256": "446044ce8698a2ca195a5e5a6c35678960804dda8349389285cdb24b5106dbc7"
+      "files": 2,
+      "sha256": "137129fb70b83065d36b519441c4f77699cc022206e5bd18c8b221de671e3b99"
     },
     {
       "name": "change-summary-clean",
-      "files": 5,
-      "sha256": "cbbbb4a9d8e0b3eb8eede2b279adddf65a750b1a0b21a033a4c99a43a8ba66dd"
+      "files": 2,
+      "sha256": "d9e6c95f711f5316d081c05a93bdc5737af32f6e4b6ea62f2acfadb73e7795d5"
     },
     {
       "name": "chat-composer",
-      "files": 4,
-      "sha256": "6b5ca0d8d21fbee20c10dabd951088820e062e9638563ca09dbd8d6f72928d5b"
+      "files": 2,
+      "sha256": "66b36e09f80cf0c869a2d03f8961efb4ebbf1d47e2c24c063fcfbe5f40be716b"
     },
     {
       "name": "chat-composer-clean",
-      "files": 3,
-      "sha256": "2ed206e7a54aebbae8556e43578e53ddc58fbc3ca485e05ba8ac130124ebcf1c"
+      "files": 2,
+      "sha256": "7de4a14369ddcd5261ec843cc0f771dcb8f9996576f66bc01df75543b3492b40"
     },
     {
       "name": "cited-answer",
-      "files": 3,
-      "sha256": "f3ff7522586d44cbda61c95420978abfb4f239ffd887af2f71e815efeef03e7d"
+      "files": 2,
+      "sha256": "c99d08735750cc6c5d176cb88ff341a011e10dff47268b43584deb7b147116ae"
     },
     {
       "name": "cited-answer-clean",
-      "files": 3,
-      "sha256": "f28f0b04ad8254141298d44470502c2f8071e5d1502746fe7a269f48090e504d"
+      "files": 2,
+      "sha256": "0a57121e10f37e81d9aa1db7df8401dd98a7d21a990fe14021d4eaea9efdbf71"
     },
     {
       "name": "combobox",
-      "files": 3,
-      "sha256": "4f11c5fd65aa9b34f6ae76c2209d1c0e57133262a17489f1271738a0d5253b8b"
+      "files": 2,
+      "sha256": "b468ddae849bb51a3345adaea80441cb545cc72dbbd6645810f2e9a81f4190e5"
     },
     {
       "name": "combobox-clean",
-      "files": 3,
-      "sha256": "96183ebff13a6eb0d1f612d1fd657e35fa014c2cff68a6b10f9e1cbebb64c8c2"
+      "files": 2,
+      "sha256": "6512df9b6b1bae46b99f9fc4699fbad27ab909a214ee52dec817e3b81d4d6646"
     },
     {
       "name": "command-menu",
-      "files": 3,
-      "sha256": "4a483b450eb4ebd70d492eef6fb0c9144fd037af5140f26cfc0c55868487bf8c"
+      "files": 2,
+      "sha256": "9a2be17df6d5c5988ff9e4e5a9c5095a77b25268436d6328e919a0b12ce08c0f"
     },
     {
       "name": "command-menu-clean",
-      "files": 3,
-      "sha256": "cc893d328e0516ecc8140b6a7c95a3f7c2f939b4c2ead3caeec24f61376912c7"
+      "files": 2,
+      "sha256": "04fe126d89d22021329427683394e1fe293b8f36d6457f781a37db2810e3aded"
     },
     {
       "name": "comment-thread",
-      "files": 5,
-      "sha256": "c6400dd01fef28673a2364ff43ba7bd3fe8e5689296e8a5fbcf822c22f4babdb"
+      "files": 2,
+      "sha256": "42843d30df093ca4c7ec3b39e56d4f6b2ec57fa227e5b0df95396de26d7d5c6e"
     },
     {
       "name": "comment-thread-clean",
-      "files": 5,
-      "sha256": "a14248c463c2eeed92218a45349949ee02745af49321423b9d1f65a4e141db80"
+      "files": 2,
+      "sha256": "e2ab86888755dc5de6c6419367bd23aa66a35adf52c653a208831d194ad5dc87"
     },
     {
       "name": "comments-panel",
-      "files": 3,
-      "sha256": "b7eb8d250b9c20aaf43cd783021b4a656e3f492e2d5518161462832fa4cb4a57"
+      "files": 2,
+      "sha256": "c25dd9e6656d15dbe48dfe45ce39da49c2840d50dfb5929f40c57d57f4c78c7a"
     },
     {
       "name": "comments-panel-clean",
-      "files": 3,
-      "sha256": "4006e8f2503e2e5290aecb7f0240644c74cd41e313d2b73bf6db1d3572ab2682"
+      "files": 2,
+      "sha256": "f6b277ad80df51ded113c4ba376e4a12c03e673c68d9d69e36d55dc9960a399b"
     },
     {
       "name": "compact-breakdown",
-      "files": 3,
-      "sha256": "b6bca92480fa248c896e6dd786d9f3b28b89c430b442926e40a32f268b94f642"
+      "files": 2,
+      "sha256": "9c7fe86b2223ef0dc1c6d0e45431bbc96637d9c329093dfbef7ede6473c4633b"
     },
     {
       "name": "compact-breakdown-clean",
-      "files": 3,
-      "sha256": "cd88f8d7c87053a96dfd3733f6a7ca11032b7887a81b82562e8bb418955fd562"
+      "files": 2,
+      "sha256": "0f4f77ab2ddf9f1d58619cfb5aeaa6d4fb231942d69a2212e6e724fd275c631e"
     },
     {
       "name": "context-window",
-      "files": 3,
-      "sha256": "dfa92a0e4663d9bc01c00b9c91f0dd38251367144b39f780ae76e88be35bf555"
+      "files": 2,
+      "sha256": "ce952727021053ab24429f2cc0bbf8c4fb077a8b5c84858e3e4af803f0e42c52"
     },
     {
       "name": "context-window-clean",
-      "files": 3,
-      "sha256": "6a4da86fb6e2fb2b15da5b5f1081c30f3877f5b0e0cbcae7421703cc11fc5447"
+      "files": 2,
+      "sha256": "7eef26ae2d75384d453f3917504354e91a10681dc09660904c8f44e852125ec4"
     },
     {
       "name": "data-table",
-      "files": 4,
-      "sha256": "1154319b0d5a11a7afb3092bce0fb4fe6ffd21138c81eb3c341583f4fa9c4172"
+      "files": 2,
+      "sha256": "ff337667eb3142193481b209990800197a3c84236bf5ca73416d5da165f7f766"
     },
     {
       "name": "data-table-clean",
-      "files": 3,
-      "sha256": "a5d6a04d5b6d15683f7fbbba11bc2a963bc0192f0ed8fff00c835dd838fd4b48"
+      "files": 2,
+      "sha256": "5d5da4f5ebfa3894db3529bf24a420b3fe3a120373141b99fccba0821f0c29cb"
     },
     {
       "name": "date-range-picker",
-      "files": 3,
-      "sha256": "ddf0d34ebd2e8be1cd3e3c1f0f9420ed794720965c53c5901f1d2ea448162943"
+      "files": 2,
+      "sha256": "6278ce67f620a3494a79d4a478d6cc6af60e2bfbb24acd764f0d8357c045e117"
     },
     {
       "name": "date-range-picker-clean",
-      "files": 3,
-      "sha256": "43bb44af53e9cfa7691fdefe87a0110ea4bc9f7ba37555eeaad740772a0938c2"
+      "files": 2,
+      "sha256": "59f144c748f4df932865b72c9ca55bcaa8e2a8cf38967f06124f9f39b726ba11"
     },
     {
       "name": "decision-inbox",
-      "files": 5,
-      "sha256": "7eb2dcb42dccd9e1eac70520a51f11552d64023c01399965305b5a19ab143957"
+      "files": 2,
+      "sha256": "d9382e630ae16405efdc02322f38a38ba89a3b1d4a025e86ffa163f4f57384c2"
     },
     {
       "name": "decision-inbox-clean",
-      "files": 5,
-      "sha256": "5bc6083fcc973982409cc6b8c17af8181681ba0025971abc157298729c66f3d2"
+      "files": 2,
+      "sha256": "f78dab6655ce6c997c69c96ce9e68872abe54f906e180a90b60d4904a37752e7"
     },
     {
       "name": "dropzone",
-      "files": 3,
-      "sha256": "c98f4c9721c7507fd2c539b8f39633ab5d6b3632bcd0a11ef8f3e50dd8ec5d57"
+      "files": 2,
+      "sha256": "9c1c35045e3e382108c1d1ec3688d7958f30611d93588aee150558f0252b784a"
     },
     {
       "name": "dropzone-clean",
-      "files": 3,
-      "sha256": "6dec582730f720e18a52dcd6788c101fcd3217dcc3e408a12b4a1de7b9600ad5"
+      "files": 2,
+      "sha256": "8c9652a540d30b452fb2d211ca621caff0eff9cc060f16d1624b2a6e5217c880"
     },
     {
       "name": "email-draft",
-      "files": 5,
-      "sha256": "81e1a2f7d769896c00b4b0c87f4f2ffb23f895f4cfa1e615aa5c86e25e8b9e34"
+      "files": 2,
+      "sha256": "187b5870b11b6761317e1ebb867005778310a40600e408d85942477f2f808f5f"
     },
     {
       "name": "email-draft-clean",
-      "files": 5,
-      "sha256": "2b3801d9f303596c2cd41812d58f19d271560beb59fc633fce5e7fa150e9cb66"
+      "files": 2,
+      "sha256": "a7153af3816e02258961896a0d052b992e750d9e16af2523550878ac1d14b971"
     },
     {
       "name": "experiment-card",
-      "files": 3,
-      "sha256": "638a7af86ace2d99343c801c1e521ecd4d8c49e284eb13fd666b03fa1b975b22"
+      "files": 2,
+      "sha256": "417e13b87932530831807e75e9d3e780d05767263840fcc5531ae112ca66bfa0"
     },
     {
       "name": "experiment-card-clean",
-      "files": 3,
-      "sha256": "1bcdb699c7dc06b9ef9cabf7ae71c4a9092c26ea2c3aa8438c3de4fe793a2528"
+      "files": 2,
+      "sha256": "74a86fdadcd8e56389ae4acaa23f2a77553a286c8b940e4f1aca7467a3b2b278"
     },
     {
       "name": "filter-menu",
-      "files": 6,
-      "sha256": "c91b37b3ee02d324ec1edac15d97f1fbd05bf51195166ae4e0f4094ec60de5d2"
+      "files": 2,
+      "sha256": "824efc896bcbdb0f211ae46b7db7cea67d155164740cb975ef54af07d6401868"
     },
     {
       "name": "filter-menu-clean",
-      "files": 5,
-      "sha256": "d34e6bde6ac444e46561dac0425228a42272c114ec50278ed2870f62281130b8"
+      "files": 2,
+      "sha256": "5d5d2d55522f0689e92b78f443a7ebeaa8df59fcd7dd769bae14a3733a002830"
     },
     {
       "name": "inline-diff",
-      "files": 4,
-      "sha256": "3bd391d9f93c91f575f771399bf073833054291bb6d18681fd97306e5c913d7f"
+      "files": 2,
+      "sha256": "3f1bb6b31f824bd31722a0263397e524ebf4a6435aa79e7b610dbd13dcd32437"
     },
     {
       "name": "inline-diff-clean",
-      "files": 3,
-      "sha256": "67b20a8bd045bbaec119111edaff28d7cac5cb30c5850172f29c66626b522a91"
+      "files": 2,
+      "sha256": "a628b4a9556896d38c07ae0430537330d70daffd5b36f4e314fa935be0253cfd"
     },
     {
       "name": "integration-picker",
-      "files": 3,
-      "sha256": "d236c0fcd0a5cfbce39519a3b5f346a2a0ca71d289dec79496818daff5469b1a"
+      "files": 2,
+      "sha256": "5241683adbc7f5de4058b7adbd279dcd6421d85f5dfb826257cc72f906021c27"
     },
     {
       "name": "integration-picker-clean",
-      "files": 3,
-      "sha256": "7eab04bd46d985797baf12991a28beb13d2319f6100c22ac120df7788374d389"
+      "files": 2,
+      "sha256": "0cee2cc32e883f70f147e930e9ef0d0efff52524d30b2d68fb58ca82dae5e2b1"
     },
     {
       "name": "integration-settings",
-      "files": 3,
-      "sha256": "b9c13545cc3be139b4154431bfaef7bb804be6ecaecbfc1ab0b54d9c21a6f97c"
+      "files": 2,
+      "sha256": "fedaae560b50a8dc50bb118a232f5c622e04d21612287434564e1c5215a62983"
     },
     {
       "name": "integration-settings-clean",
-      "files": 3,
-      "sha256": "e996bab308f4c8eab5f70c4a6b9656d317c442dcd25ad8695531da103f641d35"
+      "files": 2,
+      "sha256": "0dbb5e821c3c61c3ee932a72989d5b89abefbfce374d98d1c19f13889eb78de8"
     },
     {
       "name": "kpi-chart",
-      "files": 4,
-      "sha256": "1942f31f04ad4d45db802a839461228e6b1a41a2629f666684b0453ed3379e52"
+      "files": 2,
+      "sha256": "74d1f5e65303f3a2cc71d6afab6232307216a4ff4992c401f64d1d828a15765a"
     },
     {
       "name": "kpi-chart-clean",
-      "files": 3,
-      "sha256": "2d350cdfe2a4b5e017f5a67bf60b99407d5c24f19d65867b3ccdada58d289f4b"
+      "files": 2,
+      "sha256": "01e4bcf10282b984777f02562cdd08ad73aed0361c281ee311f9ef7c275955a3"
     },
     {
       "name": "memory-panel",
-      "files": 3,
-      "sha256": "ec31f5f4c002cce2835fa04bbf967b5f93b2dfb23d418ddfa1f3c39618a65eb2"
+      "files": 2,
+      "sha256": "f3e25b0c2ad93b2c5fcd6cbbdf8a38b9d7faa530cbd5fcab37628251f59831c6"
     },
     {
       "name": "memory-panel-clean",
-      "files": 3,
-      "sha256": "4bd308c1491b30bd96fe31f5f134e4739e792ba50249ca0e5af8079d9380a853"
+      "files": 2,
+      "sha256": "8549be83e89c77c24d162979f3b3cefeb4d2061db2f47d58514dd647e494b023"
     },
     {
       "name": "message-actions",
-      "files": 5,
-      "sha256": "8fb09d5886e3473b3c1eb9edad4e6128a0096db397b4bf161e3c8a231cbb1d47"
+      "files": 2,
+      "sha256": "104884433e284d5fe0f7755decc1c963fb879f645f0f8bd92585ed80990c10a7"
     },
     {
       "name": "message-actions-clean",
-      "files": 5,
-      "sha256": "5b6f5613775e564f65a645031170799984104eb8372e9259ff0150ac7e98494d"
+      "files": 2,
+      "sha256": "50ee9e15ff32a69adb74361e657121ea3f8350dcbbb94a8ad46238ad2afa7475"
     },
     {
       "name": "model-picker",
-      "files": 3,
-      "sha256": "9ad24a438b4704df40315567325075bce2e2590378b3d807ff30da0a6273487e"
+      "files": 2,
+      "sha256": "ae702f9a42030666bf81cc5da5fd80f2837472a51723a06314f59ab484dc7916"
     },
     {
       "name": "model-picker-clean",
-      "files": 3,
-      "sha256": "de3184fca0ba018804dc23195741b30f5df3128ba6e73844cea6a3340fe9ca42"
+      "files": 2,
+      "sha256": "12f9d9d54cb36581db703333890629886c3ef94db8f1df8a063e9c2bc5c7dc3b"
     },
     {
       "name": "notification-stack",
-      "files": 5,
-      "sha256": "156b00182b89ec4f1d5ffcfbc0064fddfedd21a3d561846da1d32d49e7fbfa21"
+      "files": 2,
+      "sha256": "fb26141085477aa624be3f70d9168d44c9be150b8ca05596b3776c605b2e66d3"
     },
     {
       "name": "notification-stack-clean",
-      "files": 5,
-      "sha256": "7f73712f34c4b3ccfafc9fde493fc67d06366d6e62a8191e0001c039f9960b97"
+      "files": 2,
+      "sha256": "9d56b1a04f04988a1cde40cbb36e937c351a0c768ecdd4be8ba9ec6480cd5370"
     },
     {
       "name": "otp-input",
-      "files": 5,
-      "sha256": "f991061eff3cf4a36976f55310f9218e0828f5bc831f68b4d383c1bb749ec8e0"
+      "files": 2,
+      "sha256": "b428744e970c9dd64c5d07a25226cb945336ffe152bb7bb53d2a5c3595b40292"
     },
     {
       "name": "otp-input-clean",
-      "files": 5,
-      "sha256": "65b5884c81044bb808c6e0f283dca6ddf4b648559daf313395f3ce52a22f066c"
+      "files": 2,
+      "sha256": "52675422c5c002bc611c300eb02a9408563cbc43f8d14d5ac51b9b9ef0232e1a"
     },
     {
       "name": "profile-menu",
-      "files": 5,
-      "sha256": "d66e6d541dc4f2ae0243ca2245c33b9492726345c943e756cc0bb6746117cf02"
+      "files": 2,
+      "sha256": "c4a1300a5733de4618e52b14fa41baea4849c35c98724e0d3494f69b180a9a25"
     },
     {
       "name": "profile-menu-clean",
-      "files": 5,
-      "sha256": "dfd5522193473665612a9bb35c24eec6f99f995e7417965d4aa366e38471b65a"
+      "files": 2,
+      "sha256": "bb1bc69a5b453c25402247ffb4be0288924ecef7472ce9c15e9812e244b1f6fb"
     },
     {
       "name": "progress-tracker",
-      "files": 5,
-      "sha256": "b28398c67f68e86233c9eced722c705fae9b90e88d4daf63b365cb57dc08be05"
+      "files": 2,
+      "sha256": "f41927b368c7776a55002ab7556ba9bea8183a92f337dfc5c05aa3e97206b1c6"
     },
     {
       "name": "progress-tracker-clean",
-      "files": 5,
-      "sha256": "54e46f7df13c0738a9b4fea3fb8e9f3df24c4426dee6f1a459bba2d06b1c5ea7"
+      "files": 2,
+      "sha256": "2db22201ce8f56db31e37560dfd7316ab67f41a63c825ab9feccc2785b562c69"
     },
     {
       "name": "project-card",
-      "files": 3,
-      "sha256": "aa3a3b38588ee54aa073f44696b7611fe7707fb9410ce3a6d1f62393f28282ea"
+      "files": 2,
+      "sha256": "c1993601e61e3d34375df818a85082fb4ddb48df4e90a8f2ca0f3f03bb6ab442"
     },
     {
       "name": "project-card-clean",
-      "files": 3,
-      "sha256": "25e46c2620a2858fd31e49d016447b0e02e42fa81e5f1a9819b05114ab068c1e"
+      "files": 2,
+      "sha256": "68ec399a1fc410267ee510698774f1e5519071accd88e348febf67a0b9323467"
     },
     {
       "name": "prompt-library",
-      "files": 3,
-      "sha256": "a4d48403288d3c4f7d713f4764470afd9ecad4b6ca6fe87b2a98c6a400841f4f"
+      "files": 2,
+      "sha256": "6eca712d575de4e7e05d0e6bdbd5559c9d7b8fbe24aa6879ae0d7894d71866bd"
     },
     {
       "name": "prompt-library-clean",
-      "files": 3,
-      "sha256": "86bf764278176c0c0058c170713f128e48c93359fc3a0b08e8b4a569e8c41760"
+      "files": 2,
+      "sha256": "70f1f1209834f1449a67f7bd81f22bbdf5bc8bbf40b581618d1c1a9b3354c5ab"
     },
     {
       "name": "reaction-bar",
-      "files": 5,
-      "sha256": "1257ad04ced321302a40bfd657d049490b138d99aa748d7bfe8ae6d06cd95e27"
+      "files": 2,
+      "sha256": "1138fe0a93c4f981fd269b220977e02b8757efdee3dbda3396edfe6900558342"
     },
     {
       "name": "reaction-bar-clean",
-      "files": 5,
-      "sha256": "fb0ad5351b428d45da9ff8bcf907444030e91730ed9580a0bf17e0544fe65231"
+      "files": 2,
+      "sha256": "8a1cde8ab793769e79001ca6b7da2cc1123aff0ad320b5503cadbcee2b62865d"
     },
     {
       "name": "segmented-control",
-      "files": 6,
-      "sha256": "0356e6ab8efc8e742d52a5385ed75320b5432dc554acd7d77f5e2fe7468b2cd3"
+      "files": 2,
+      "sha256": "e0ef4c3bda2462c3d5c10277921d70490eb8daf77262c58538268e1377c43da3"
     },
     {
       "name": "segmented-control-clean",
-      "files": 5,
-      "sha256": "283be8912db0c0dd95eac29d21520e5a9cbd3177e2a3ac71baa072ed4bf48294"
+      "files": 2,
+      "sha256": "8eb842813a3734f4fce91a004619d8295e13b0006372d82a08f5ed5c1715c7e5"
     },
     {
       "name": "setup-guide",
-      "files": 4,
-      "sha256": "037f2beea67a465a1a330d40a26beefc1ba4c7b7cfc1954b3b911d7e1c44ee4c"
+      "files": 2,
+      "sha256": "f55862ebeff9122695c40a1bf0a9933fdaaa3b4d658ab0aaee3a7404a0174fbf"
     },
     {
       "name": "setup-guide-clean",
-      "files": 3,
-      "sha256": "e131deace727ee0ba13ee08f6802b49fff2e8121b8261b8f5dfdd38f7a4de69f"
+      "files": 2,
+      "sha256": "973ff2dfcfec5b9f9f024faff7f8e5c843c18d742e53ba7917c11099dca4bd96"
     },
     {
       "name": "smart-recommendation",
-      "files": 5,
-      "sha256": "440f2d3016f6049922639ebeabd8e8561ea17e07785ae7353c9e9d0a0e3976a3"
+      "files": 2,
+      "sha256": "2adc0bf8b52c726c90a8ea2c99be310731d4fa0992c96a3af8d70a5de4b97b6e"
     },
     {
       "name": "smart-recommendation-clean",
-      "files": 5,
-      "sha256": "e8d2a5194ac4553a51e7dd53d5721201d1cb173bd3d0b1203ebcb4c69f9a91cb"
+      "files": 2,
+      "sha256": "32635baf21250c87f526ad0008ed0775661304e68bc7cfc90d0148c780c996cc"
     },
     {
       "name": "stepper-form",
-      "files": 3,
-      "sha256": "305fb8361036537fd3ecfcd4fa4f0feea3df2fe1f18dceaaa8080c4e34af05ee"
+      "files": 2,
+      "sha256": "b3d3dc7749a2c2b9ab8cc6d15fd0b0c0c6d600b464ca93d71e92f4fde17f0c85"
     },
     {
       "name": "stepper-form-clean",
-      "files": 3,
-      "sha256": "949483532d6a78b5016f949ff83a5c156b50e1929dd7620d4bdc2c75ad8c2186"
+      "files": 2,
+      "sha256": "8fa5fd95a62b0e377837dae256518b89f96719cdf8f406e151d3dcc233f30927"
     },
     {
       "name": "thinking-loader",
-      "files": 6,
-      "sha256": "9b9e1e8f356a237d7b888a54e33ca3a603561810a9afb0ce484a88a23116e964"
+      "files": 2,
+      "sha256": "07fd23acb4975348ee9a464b8e856d9c14859c9dad15f0300c5b281b7e1bde2f"
     },
     {
       "name": "thinking-loader-clean",
-      "files": 5,
-      "sha256": "29dd400433afa725aded516d7d1893eb020ef25f20dfe1300ab3f66fc67fb7fb"
+      "files": 2,
+      "sha256": "c45d583c2b09466f19a1cd9a13ca28d5f55dc5e695e6f27a1fd3074b67a36185"
     },
     {
       "name": "thinking-state",
-      "files": 4,
-      "sha256": "b01aaaf7f39319f4de39dde61c7a0c9a640b984bc002aa303a8f5f2bb5a5e26e"
+      "files": 2,
+      "sha256": "1c46472b3e95ef889e6b6668d27937b0db00e8abf803a117b99f74c22ab9385b"
     },
     {
       "name": "thinking-state-clean",
-      "files": 3,
-      "sha256": "4acb84397ac778942c0f4d0ba7739a4ab9a495ff4e160abfb0982b73bfaefaf8"
+      "files": 2,
+      "sha256": "3bcdf2d1c10fea9e35c5a7a31f6b42ad9aaf2759ef6d3c260fb9d8f93521d4c3"
     },
     {
       "name": "tips-panel",
-      "files": 5,
-      "sha256": "be0ff213a9bdf9300392aa42bcd0ce05ae589aafa3d2b806384d58fee28c2cd1"
+      "files": 2,
+      "sha256": "494d8f7915d0b6bb9608a79b1a13231122898ec3115196f72b65b96e9673011b"
     },
     {
       "name": "tips-panel-clean",
-      "files": 5,
-      "sha256": "faa3fb1f0a9917ed7f6deb85a92cf299a5a200c8a00316ef49c32850a549da3e"
+      "files": 2,
+      "sha256": "e06aa9697f61428beb4baa5bc1a5a960f9c84d42ddf81e7fb3c876932a4a17c5"
     },
     {
       "name": "toaster",
-      "files": 4,
-      "sha256": "ff61aef9cf33603dd1f680b939e285d8bce8219335829bdac157648eacb742c8"
+      "files": 2,
+      "sha256": "067a8a0078f9f060118d68e8efb048c06bf3d3c6992a06f711b24d0728d8356a"
     },
     {
       "name": "toaster-clean",
-      "files": 3,
-      "sha256": "06fd27d9ea1206984d1f3c5f8907233d5a752de6836b5ad758f6d7b20a14c5a2"
+      "files": 2,
+      "sha256": "7daa4cb8052ec5553082a09edc217e5fd8f8c94482e8e175e27da750d81309a9"
     },
     {
       "name": "tool-call-card",
-      "files": 6,
-      "sha256": "4e55c0f30583875026dc655a2b738e83ef5258260b2408b4e2b09f4fa281bc4f"
+      "files": 2,
+      "sha256": "651dd378a131cd7c147962e6f0c99c0dac6015e877abff1d82efd01c0d2a2fc3"
     },
     {
       "name": "tool-call-card-clean",
-      "files": 5,
-      "sha256": "c80bbcaa1b396a4749bb6e118e8d50cfc7da641b2a7d9aedbee2631dbdfb68b9"
+      "files": 2,
+      "sha256": "50cc135cee09dd5c79dddce278f35c8b8b7fb92e0d8a085d6c9d5604ef48683c"
     },
     {
       "name": "usage-meter",
-      "files": 4,
-      "sha256": "3e6db516ef151252a9b872dee30f2a90cd900934027c75dfbf6e736335d156e2"
+      "files": 2,
+      "sha256": "b5ddcbd427801c2057eeaab6a4424d4899242a219315fbabbca73b668b2c92c7"
     },
     {
       "name": "usage-meter-clean",
-      "files": 3,
-      "sha256": "789afc932e96e2830da6cb3c62ef8704f126e3c0e4501b3035116fa64517ba9a"
+      "files": 2,
+      "sha256": "305c296f2078d779deb91fbdae7061573cda9f2dd9ebc29c20d070a76f12b1c6"
     },
     {
       "name": "writing-assistant",
-      "files": 3,
-      "sha256": "97756a7db15ae1578d2e83712d00809e80254943e9f4daa3b6c90e59148a9650"
+      "files": 2,
+      "sha256": "2c4ce2422983aaeaff0a6966e2b71b3771ff5dd03352645dc15fa61b19bb4846"
     },
     {
       "name": "writing-assistant-clean",
-      "files": 3,
-      "sha256": "d7090fd1b651a4490208a244e319019b20a8c6ee32c954dfeb54e3de9a41abae"
+      "files": 2,
+      "sha256": "040e486d4f7a2da162268533d967d063e764a5e3a297a2f16f7aab0f1fbba930"
     },
     {
       "name": "agent-gallery",
-      "files": 3,
-      "sha256": "0b8ada15eab5622520017bb9d7faf510ac8b22369815a2e718f8eca5739379e4"
+      "files": 2,
+      "sha256": "96fbcb31425e3c11f7abf6db03d65e9400bb60bc38aced77cc56154d13cfdcf5"
     },
     {
       "name": "ai-workspace",
-      "files": 4,
-      "sha256": "b44548ef306f00351c0674f207e6ca0ba07ec1eb61ab7cb2b0d8ba2972f96ba0"
+      "files": 2,
+      "sha256": "9c5579a4513a7e680dfff4a4043ce0c976ae77b59ada9301c5fb7e7000f8e932"
     },
     {
       "name": "app-directory",
-      "files": 3,
-      "sha256": "f518c1531aafdacea77cb0afdd54cfaa90e9841086401c47ce3015ebff448839"
+      "files": 2,
+      "sha256": "ca315cc41b88d11c778ac6418b54f3b9bc0f76f89ea292d2ca9b0b25e0c55a29"
     },
     {
       "name": "client-context",
-      "files": 3,
-      "sha256": "90238eeedfbc5169d7e8ca14a0170dca61414d8fd8599f043f1efcae8b3c5639"
+      "files": 2,
+      "sha256": "b2ebe97f90c40da4c7c9eb8c0b765fe6aae3a279f09d6c8f53f4d8341fdd7e16"
     },
     {
       "name": "invoice-credit",
-      "files": 3,
-      "sha256": "4fb49dce008123f2dc9c3b2a187c58968d73aeb2f560d67937efcbfd6b1b2ef8"
+      "files": 2,
+      "sha256": "e91976bd9fa5ab733ace83af3a0221d7d319ac7784074adff59548b308df1d97"
     },
     {
       "name": "kpi-board",
-      "files": 3,
-      "sha256": "64159f79c00ab8d0c3e02cd12590b5609b08df63bb0de240fe831f11426a2d53"
+      "files": 2,
+      "sha256": "bded0826ca0eb29817141605d321bd44ddbd44cbacfcf292250e97ddb41c6eda"
     },
     {
       "name": "logo-marquee",
-      "files": 5,
-      "sha256": "bdbe92e6c87d865c4806bf3b13a78c7548e86a15e35d45b7012a90b4462df1db"
+      "files": 2,
+      "sha256": "cd7e25bc35520a40e50126b0133fd588e14979ac37545b81cade9d33d873736b"
     },
     {
       "name": "metrics-dashboard",
-      "files": 3,
-      "sha256": "5fc274956b169eb4cfa03c3c70e050fd7596a778f651f8f2c8cd6d3614d01ac2"
+      "files": 2,
+      "sha256": "8174cb3c0d68263b2760f7c8715f7ea1dd075e22c1b95ab4fa96bf117310edac"
     },
     {
       "name": "pricing-plans",
-      "files": 3,
-      "sha256": "57479200410637bfa2876c7dba782c62ca54f3648d7574d86f6c81a7e57d1d58"
+      "files": 2,
+      "sha256": "bdc1322d2ced79d458f8edf8071a3d795674fae4d9a554fc3947c72c4e963255"
     },
     {
       "name": "task-board",
-      "files": 4,
-      "sha256": "11a5601bb1099e69aed36802490811f044cae4cff616f4c69fa65cc9ce0b2f9a"
+      "files": 2,
+      "sha256": "a181d3cf894f74eb98a71eddca90c0ca0a927ddda0414c8eb40fe515146c7c23"
     },
     {
       "name": "testimonial-wall",
-      "files": 5,
-      "sha256": "76eb3b10ac650e82abea0bd250b7435e6c445fd6fb0a2359e1ab8d36660384ff"
+      "files": 2,
+      "sha256": "d30d482e35f040a38196fdbc77a8a8f921a4df690a7332289f505f3eae605c50"
     },
     {
       "name": "agent-team",
-      "files": 5,
-      "sha256": "1c14c266be6b1e54cc20d7bb9f00464bcc7bc0fea7f3d3f0ef9e44f65fea25cb"
+      "files": 2,
+      "sha256": "b86cf2e650a22b0e099b6102baf3898e9b6f38841b4ed9667ab703cb24f9f7d8"
     },
     {
       "name": "cover-flow",
-      "files": 5,
-      "sha256": "6de3877587c59b05d4d4ebd98b96c3f4b53f2f8f4c15f279efb7116f7a7b81f4"
+      "files": 2,
+      "sha256": "08c22e1f1e1bc426987cd589a0385669bade62fd02bbba7d50698c34c97cb797"
     },
     {
       "name": "empty-calendar",
-      "files": 5,
-      "sha256": "c9be9560c6051805b3f5854711ebf8ca521e6793d7c12929826d06a0530a397c"
+      "files": 2,
+      "sha256": "a3292792f86428b0bfd54c35500683f41d7ffa6c059751313540249c0a94354a"
     },
     {
       "name": "enrichment-orbit",
-      "files": 5,
-      "sha256": "e14e49959e630e5222a24ced46bbcb3b72f9cb53fb843d3b57b79545e77545f6"
+      "files": 2,
+      "sha256": "200b97d4ddfe030a9f9b2e37ede4379cdfce24ee9a622b70ea9f9958f469b546"
     },
     {
       "name": "frost-cloud",
-      "files": 5,
-      "sha256": "a43ef91a238e1ab7806398a5239c158758d0d3c729375dc1bf1bb14040758827"
+      "files": 2,
+      "sha256": "cd97813bb54315904ab6f4353fc81044dc773015f6e6c1816787b7f0750f4477"
     },
     {
       "name": "ghosted-chat",
-      "files": 5,
-      "sha256": "f731f90a2b9213c8822686d69a67f304b23fd129c7a6ae28a4ff3a73ab2289b5"
+      "files": 2,
+      "sha256": "dd8cfc8b1d11230caedf90699e8a71a5dc2396c16cd8bd8650ce057bd904ef2d"
     },
     {
       "name": "glass-folder",
-      "files": 4,
-      "sha256": "2a73f02380e66bf040464a93cd25b43de07154cc77ce7ec19cc0f12ab97b4e35"
+      "files": 2,
+      "sha256": "45386689b4fd4aafd7b46871cf160178c906f446b05c33d37388c46c356ea850"
     },
     {
       "name": "glow-cloud",
-      "files": 5,
-      "sha256": "34628816352c0ad4ef1fec7f3eb345ea670c6ed5c38463a495c5bca33439ab3f"
+      "files": 2,
+      "sha256": "c20cc3f91dc328357263bb7e850c79e0d10cb33f352a2dcdcc19f19683c9457b"
     },
     {
       "name": "glow-keyboard",
-      "files": 3,
-      "sha256": "98388bf020771a110de6bffde168f89c44722c6ec0940d763e2e5c6e9fbfa49d"
+      "files": 2,
+      "sha256": "2d87b6ede5bc30814c5ade31b114a484cb97165605c598f00f0fa274bac1e816"
     },
     {
       "name": "integration-beam",
-      "files": 5,
-      "sha256": "830592f4fdc3454758004430337c885ac42ba7e20ba34957278bd5131e0e3704"
+      "files": 2,
+      "sha256": "d65f92dcc960706241484c3f1d125db5b7c7052512487252e9a4ebaa8547ad20"
     },
     {
       "name": "integration-flow",
-      "files": 3,
-      "sha256": "839617fddbd5cdc89717bc2fcf85a58d961a247f69a19b70836246195e6db4cc"
+      "files": 2,
+      "sha256": "1ab2d7773ff4482cd6dafaaab8c41798b19e6835770aabd1a205f34713d59443"
     },
     {
       "name": "integration-grid",
-      "files": 6,
-      "sha256": "a02192bbe93414d2005115f06ce8badbef7938f661290fc9c1a62733624615df"
+      "files": 2,
+      "sha256": "e086f2accd58d0fcbc884b3993b976a5f2d893bcc2653bf0536cbd68a5f93c42"
     },
     {
       "name": "layer-stack",
-      "files": 5,
-      "sha256": "ed3e02ebf1be07268afe424b65c31e33eded347132705f2e59ff280256e4fbc4"
+      "files": 2,
+      "sha256": "3d5e0abc9d2bea6da8ac0dcf0844cc393ea623581c2d1071d450224c4f95a94d"
     },
     {
       "name": "lead-sourcing",
-      "files": 5,
-      "sha256": "0d74a04fbf8890d19b73c6d5c1f46373e5d4199890d045f6fe85527f519d7d46"
+      "files": 2,
+      "sha256": "0d04f4b9ceb093f9aecc4ef2a29fc793f2180c6394f7e6c4a592a6253903d2bd"
     },
     {
       "name": "logo-cluster",
-      "files": 5,
-      "sha256": "766b399ab1b2dd44722078047f9fe56d002a9bd2b30b0c04059b2ee1a50bef2c"
+      "files": 2,
+      "sha256": "810a64042bfbd397692d505bd68ab50eccab4781eca0249517f4870e3a3fe7a0"
     },
     {
       "name": "model-wheel",
-      "files": 5,
-      "sha256": "595e98ec2b82aaab46f3c8bf0f1a93ae03c00ae808a33307f399870d27346f06"
+      "files": 2,
+      "sha256": "4e68fda98f41156f313a3e4a60b6cfc483a4b845c29315e25fcad36f56838342"
     },
     {
       "name": "outreach-branches",
-      "files": 3,
-      "sha256": "f3632ce9c952ee9f10b2e7be2b264c9d86e57e996f725612da225125659ba99c"
+      "files": 2,
+      "sha256": "06572c197b9d1a0f762fd6c622f6c592bc42162b09da5b72ba826c6c1229b0a4"
     },
     {
       "name": "project-flow",
-      "files": 3,
-      "sha256": "909d416c245b3ea1c4843e107181ff2d9cb1bd4571644d58f9e145f18701abec"
+      "files": 2,
+      "sha256": "e693c7280604ab47d9eb950cfdb16af1c03a540b8d544180373a75794c45e71f"
     },
     {
       "name": "region-dach",
-      "files": 5,
-      "sha256": "0dc0160c9f832bf3ab637192b0cf33f9908ade464d8880ed42cc5262d8b04cb8"
+      "files": 2,
+      "sha256": "e38a087748a01b3346f2216ba725045a20f5bd889cbc8cfbb1fee0b4de15b283"
     },
     {
       "name": "side-folder",
-      "files": 5,
-      "sha256": "1bcca99c6fbc2d4ae5084899c8d4083c9559c611fa183c914c451ddd0d250098"
+      "files": 2,
+      "sha256": "7e402f744444a1c75667d3451b1b894b9bc7b665c211d61310a6f1b9f4f805e3"
     },
     {
       "name": "tab-overload",
-      "files": 5,
-      "sha256": "ffbc53d9d9bc8547b3aed47dbcceff716f860de665cef81e56c9407ff46bc6bb"
+      "files": 2,
+      "sha256": "20f490bfaaa5bf71a999d8c1dd0b8a21aaab047c1c56a6b1b430d74359118b58"
     },
     {
       "name": "team-invite",
-      "files": 5,
-      "sha256": "050a3b458e41628bdf3f9bb9b3685817b90f9441e5369fb5c4251a15cd4aa2df"
+      "files": 2,
+      "sha256": "77a6716acaf846537b4e095daf52eee9e6e7df58e44b23b29f315029b966c85b"
     },
     {
       "name": "voice-orb",
-      "files": 3,
-      "sha256": "158b5c4ce68fa13f6aca6085bf71943eba2ea39b782cca54345f310f57adf417"
+      "files": 2,
+      "sha256": "4a5481b30fe3f3866e2c66ce4f456b1d136d26ea96b907ec6cb52590ac8a9e14"
     },
     {
       "name": "world-map",
-      "files": 3,
-      "sha256": "3dfe7bfc867c0264e014b07e8fc9ec8f8a5b84ab14beb1a71615a2983a4e8c2b"
+      "files": 2,
+      "sha256": "0d5cc49c492fbb94de15812c7722c838092ad6cab92f1325b42b635334847e23"
     },
     {
       "name": "agent-chat",
-      "files": 28,
-      "sha256": "abe777141f3e8578a0cc07d7497110e731136e48e70702b11789b386eb996c5c"
+      "files": 2,
+      "sha256": "0a670b22d8e57f6a3ee23ddcf11213e5a58763175d0e44b0d5c648851171a119"
     },
     {
       "name": "agent-run",
-      "files": 25,
-      "sha256": "ce5543d51ebc566d2ac7119ca2617d7aa4d7b101c73c86679d2e95bf359f9460"
+      "files": 2,
+      "sha256": "68a00c0721944873f7210801e7a7fe208e4a688bc008a69efb8209bc9f9af1b4"
     },
     {
       "name": "analytics",
-      "files": 17,
-      "sha256": "be7ef52cf3e4ea9e242df643e7aa379f7af46d0498e2ac333e6454af6258dd13"
+      "files": 2,
+      "sha256": "1f424036079fafe3a7acba0ea00bd9922ba73e5af1406f19da457b6b98d76d80"
     },
     {
       "name": "app-shell",
-      "files": 8,
-      "sha256": "f1a610f79c328b9c6ba2a7e8d794dffc0919384068a50278e825b528003f5808"
+      "files": 2,
+      "sha256": "5d08866ff3a42b6feeab3fc68d00dc8e618aa8244f76cb17f63ad4eb510c61a8"
     },
     {
       "name": "assistant-home",
-      "files": 17,
-      "sha256": "e277f3c53145807f66aa097a97bd9835326e1ba376b1926c04ce9e663320776f"
+      "files": 2,
+      "sha256": "be55d58708282b6c1d6f6382ec880f2280317f5ecdb6f47b9a220ea60c121fab"
     },
     {
       "name": "crm",
-      "files": 18,
-      "sha256": "8da94c05999909f773f6a675d1a709e197ecc22b2ff00023b36c36abe6bdfa10"
+      "files": 2,
+      "sha256": "e977633e23a877d184db359e55badfed52acc21a03a41cbc8d013e312c5903ea"
     },
     {
       "name": "evals",
-      "files": 18,
-      "sha256": "473c1a7e9f8c4b41111c38680b61da9b9bfc71a84b1087bf010e3d7d058e6de0"
+      "files": 2,
+      "sha256": "e9f0d0e07cb2f0c6044ab97d5f131de8d69408c91cfc4e5913f6d66ca0ef1356"
     },
     {
       "name": "files",
-      "files": 11,
-      "sha256": "c7544d6047f3e8c47a096229a0abec0fb267c885bd6aaea29a1a657a30e24fa7"
+      "files": 2,
+      "sha256": "f8640430a5c87cd64f4a9ba3ecb79cb197e5a875b5007ec46d09ebc026cb9289"
     },
     {
       "name": "folder",
-      "files": 14,
-      "sha256": "fb16cfc4f36460840230f499bd3e4505a3bcd23364b0168e55cfd880b1d86de8"
+      "files": 2,
+      "sha256": "527bf985e3eb46896a69ad789f109cedf30da41744d58e87a108c3081de98b0e"
     },
     {
       "name": "integrations",
-      "files": 9,
-      "sha256": "afbdcaec7699d29e728ddba38973d1be371859d26d370c8a10a3005421f33a0e"
+      "files": 2,
+      "sha256": "3ff4aebbb1dad5cb5c4fc98f2a43ffbef89974c31e390ea6853dd881ba3bdaa6"
     },
     {
       "name": "onboarding",
-      "files": 16,
-      "sha256": "ad7efc78e3d70a177f9d6d30cf967c22ba99671f2a0e9046b4aa7175d0209c41"
+      "files": 2,
+      "sha256": "c840b3a3e6d106c2a5716d354330ff7b78df85d710b79c0dd59fd75b897d1427"
     },
     {
       "name": "settings-billing",
-      "files": 20,
-      "sha256": "2c9bf4a067ceac6a4d34c5f65dfa88dea5a5751b75770a3a166c44dc4103ec8b"
+      "files": 2,
+      "sha256": "e948ff78f6d5821430cfc5a6c68e7f4b84286e01ccbcbd99a2c968ada9dd4c57"
     },
     {
       "name": "blur-crossfade",
-      "files": 3,
-      "sha256": "77778bd5d6a8e08f1f032943eb73b6c4d2bebae65b5194f9246af3a25675ad9c"
+      "files": 2,
+      "sha256": "ad1192ec2b1cabb9196d00df0582f2c462da90ee234010cd0af3317cf2dbbd61"
     },
     {
       "name": "gradient-floor",
-      "files": 3,
-      "sha256": "7766b7b87f2e665698f86264d5d3ae37b9926b2521a020dc66fc63a7214a7086"
+      "files": 2,
+      "sha256": "9313fd7585a1418401d7ef2fd7b0f3a909e0fb2aa523fffeaf76193006258895"
     },
     {
       "name": "gradient-text",
-      "files": 3,
-      "sha256": "b65f8a64bc05534cde5b5ff1357c657b36b20904a5c4bb126ef9e2a8a90f5431"
+      "files": 2,
+      "sha256": "005147e073c970c9f37cbc9b79e275615d233b3528e1470844d944614157f533"
     },
     {
       "name": "grid-background",
-      "files": 5,
-      "sha256": "865fba4b421f8af3715449de9338ec5987fbe6f67cb1a003df9edb088888d1d2"
+      "files": 2,
+      "sha256": "e1f46530715b6c0f000179a6f8d6ae5f0bce044de99830ae0932b36a4b8268a3"
     },
     {
       "name": "number-ticker",
-      "files": 5,
-      "sha256": "311cedb8f2aba18344267a9a6dd4d23db36d7a802c45abdcfcf171073a26d3bc"
+      "files": 2,
+      "sha256": "5513be078c49bf70b69f59937c953a4251d0a7374528dccc36fc9a59b5152f1d"
     },
     {
       "name": "shimmer-loader",
-      "files": 5,
-      "sha256": "f4f69146f1dea3b5efe96e9fdd62e74dd306c3790c9e508fd7bf4686091ec561"
+      "files": 2,
+      "sha256": "8ad1e0e417d39d6d125a3f373c7de6309c2b06cba85f6fbcf916482c7882ee24"
     },
     {
       "name": "text-reveal",
-      "files": 5,
-      "sha256": "41c74a84611522cfe1d8659be8073875d3f339375269eaef198ff916781ac597"
+      "files": 2,
+      "sha256": "b66865d60d425c0ae9fcc5ecc4d93f1379577ef2aeaecb99fd63e96625c71262"
     },
     {
       "name": "tilt-card",
-      "files": 3,
-      "sha256": "aba3b4740e01e239d5ba7960c5712fd5daa9928ee6d4777dd4c1b22dc84003c6"
+      "files": 2,
+      "sha256": "fd36e2249298237e15b010dc28720b201cfddabcec30aca9b13c32be99348f3b"
     }
   ]
 }

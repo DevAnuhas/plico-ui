@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`Dashboards that show one headline number and how its parts moved over a short period`, `Comparing a handful of channels, pages or plans day by day`],
   whenNotToUse: [`More than about six lines – the chart and the tooltip get hard to read`, `Long time ranges with hundreds of points – use a chart library with zoom and sampling`],
-  usage: "import { KpiChart } from \"@/components/plico/kpi-chart\";\nfunction Revenue() {\n  return <KpiChart title=\"Revenue\" value=\"$96.4k\" delta={7900} format={(n) => `$${(n / 1e3).toFixed(1)}k`} labels={[\"Mar 3\", \"Mar 4\", \"Mar 5\"]} series={[{\n    label: \"Organic\",\n    color: \"#2f6bff\",\n    values: [4600, 4900, 5200]\n  }, {\n    label: \"Paid ads\",\n    color: \"#ec4899\",\n    values: [3100, 3400, 3200]\n  }]} footer=\"Top channels\" />;\n}\nexport {\n  Revenue\n};",
+  usage: "import KpiChart from \"@/components/plico/kpi-chart\";\nfunction Revenue() {\n  return <KpiChart title=\"Revenue\" value=\"$96.4k\" delta={7900} format={n => `$${(n / 1e3).toFixed(1)}k`} labels={[\"Mar 3\", \"Mar 4\", \"Mar 5\"]} series={[{\n    label: \"Organic\",\n    color: \"#2f6bff\",\n    values: [4600, 4900, 5200]\n  }, {\n    label: \"Paid ads\",\n    color: \"#ec4899\",\n    values: [3100, 3400, 3200]\n  }]} footer=\"Top channels\" />;\n}\nexport { Revenue };",
   examples: [{
     title: `Tooltip open at rest`,
     code: "<KpiChart {...props} defaultIndex={5} />;"

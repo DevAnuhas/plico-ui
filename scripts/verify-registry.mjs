@@ -1,168 +1,83 @@
 import assert from "node:assert/strict";
-import { readFile, readdir, stat, writeFile, mkdir } from "node:fs/promises";
+import { readFile, readdir, writeFile, mkdir } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { parse } from "@babel/parser";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const registryDir = path.join(root, "public/r");
+const directory = path.join(root, "public/r");
 const readJSON = async (file) => JSON.parse(await readFile(file, "utf8"));
-const exists = async (file) => stat(file).then(() => true, () => false);
-const catalogPath = [path.join(registryDir, "registry.json"), path.join(root, "registry.json")];
-const catalogFile = (await Promise.all(catalogPath.map(exists))).findIndex(Boolean);
-assert(catalogFile !== -1, "Build the registry before verifying it.");
-const catalog = await readJSON(catalogPath[catalogFile]);
-assert(Array.isArray(catalog.items) && catalog.items.length, "Built catalog must contain items.");
-assert(typeof catalog.name === "string" && catalog.name, "Catalog needs a name.");
-assert(typeof catalog.homepage === "string" && /^https?:\/\//.test(catalog.homepage), "Catalog needs an HTTP(S) homepage.");
-
-// Validate this project's static payload against the relevant published contract.
-// This is deliberately not presented as a general-purpose JSON Schema validator.
-const itemTypes = new Set(["registry:lib", "registry:block", "registry:component", "registry:ui", "registry:hook", "registry:theme", "registry:page", "registry:file", "registry:style", "registry:base", "registry:font", "registry:item"]);
-function checkItemShape(item) {
-  assert(item && typeof item === "object" && !Array.isArray(item), "Registry item must be an object.");
-  assert(typeof item.name === "string" && item.name, "Registry item needs a string name.");
-  assert(itemTypes.has(item.type), `${item.name}: invalid registry type ${item.type}`);
-  for (const key of ["title", "description", "author", "docs"]) {
-    assert(item[key] === undefined || typeof item[key] === "string", `${item.name}: ${key} must be a string.`);
-  }
-  for (const key of ["dependencies", "devDependencies", "registryDependencies", "categories"]) {
-    assert(item[key] === undefined || (Array.isArray(item[key]) && item[key].every((value) => typeof value === "string")), `${item.name}: ${key} must be a string array.`);
-  }
-  if (item.files !== undefined) {
-    assert(Array.isArray(item.files), `${item.name}: files must be an array.`);
-    for (const file of item.files) {
-      assert(file && typeof file === "object" && typeof file.path === "string", `${item.name}: file needs a path.`);
-      assert(itemTypes.has(file.type) && file.type !== "registry:font", `${item.name}: invalid file type.`);
-      assert(file.content === undefined || typeof file.content === "string", `${item.name}: file content must be a string.`);
-      assert(file.target === undefined || typeof file.target === "string", `${item.name}: file target must be a string.`);
-      if (["registry:file", "registry:page"].includes(file.type)) assert(typeof file.target === "string", `${item.name}: file/page requires a target.`);
-    }
-  }
-}
-
-function visit(node, callback) {
+const catalog = await readJSON(path.join(directory, "registry.json"));
+const inventory = await readJSON(path.join(root, "src/library/catalog.json"));
+assert(Array.isArray(catalog.items) && catalog.items.length, "Registry needs a catalog.");
+const names = new Set();
+let files = 0, imports = 0, mitItems = 0, embeddedAssets = 0;
+function walk(node, visitor) {
   if (!node || typeof node !== "object") return;
-  if (typeof node.type === "string") callback(node);
+  if (typeof node.type === "string") visitor(node);
   for (const [key, value] of Object.entries(node)) {
     if (["loc", "start", "end", "extra", "comments", "tokens"].includes(key)) continue;
-    if (Array.isArray(value)) value.forEach((child) => visit(child, callback));
-    else if (value && typeof value === "object") visit(value, callback);
+    if (Array.isArray(value)) value.forEach((child) => walk(child, visitor));
+    else if (value && typeof value === "object") walk(value, visitor);
   }
 }
-
-function packageName(specifier) {
-  return specifier.startsWith("@") ? specifier.split("/").slice(0, 2).join("/") : specifier.split("/")[0];
-}
-
-function dependencyName(dependency) {
-  return dependency.startsWith("@") ? dependency.slice(0, dependency.indexOf("@", 1) < 0 ? undefined : dependency.indexOf("@", 1)) : dependency.split("@")[0];
-}
-
-function sources(code, filename) {
-  const ast = parse(code, { sourceType: "module", plugins: ["jsx", "typescript"], sourceFilename: filename });
-  const imports = [];
-  const assets = [];
-  visit(ast, (node) => {
-    if (["ImportDeclaration", "ExportNamedDeclaration", "ExportAllDeclaration"].includes(node.type) && node.source?.value) imports.push(node.source.value);
-    if (node.type === "ImportExpression" && node.source?.type === "StringLiteral") imports.push(node.source.value);
-    if (node.type === "CallExpression" && (node.callee?.type === "Import" || node.callee?.name === "require") && node.arguments?.[0]?.type === "StringLiteral") imports.push(node.arguments[0].value);
-    if (node.type === "StringLiteral" && /^\/(?:assets|avatars|logos|fonts)\//.test(node.value)) assets.push(node.value);
-    if (["StringLiteral", "TemplateElement"].includes(node.type)) {
-      const value = node.value?.raw ?? node.value;
-      if (typeof value === "string") {
-        for (const match of value.matchAll(/url\(\s*["']?(\/(?:assets|avatars|logos|fonts)\/[^\s)'"?#]+)/g)) assets.push(match[1]);
-      }
-    }
-  });
-  return { imports, assets };
-}
-
-const names = new Set();
-const targets = new Map();
-const manifest = await readJSON(path.join(root, "registry/library-manifest.json"));
-const inventory = new Map(manifest.entries.map((entry) => [entry.sourceSlug, entry]));
-assert.equal(inventory.size, manifest.entries.length, "Source inventory contains duplicate names.");
-let filesChecked = 0;
-let modulesChecked = 0;
-let importChecks = 0;
-let localAssetChecks = 0;
-let mitItems = 0;
+function packageName(value) { return value.startsWith("@") ? value.split("/").slice(0, 2).join("/") : value.split("/")[0]; }
+function dependencyName(value) { const suffix = value.indexOf("@", value.startsWith("@") ? 1 : 0); return suffix < 0 ? value : value.slice(0, suffix); }
 for (const summary of catalog.items) {
-  checkItemShape(summary);
-  assert(/^[a-z0-9][a-z0-9-]*$/.test(summary.name), `Unsafe item name ${summary.name}`);
-  assert(!names.has(summary.name), `Duplicate catalog item ${summary.name}`);
+  assert(/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(summary.name), "Registry names must be semantic slugs.");
+  assert(!names.has(summary.name), `Duplicate item ${summary.name}`);
   names.add(summary.name);
-  const item = await readJSON(path.join(registryDir, `${summary.name}.json`));
-  checkItemShape(item);
-  assert.equal(item.name, summary.name, "Catalog and item names differ.");
-  assert.equal(item.type, summary.type, `${item.name}: catalog and item types differ.`);
-  assert(item.files?.length, `${item.name}: missing installable files.`);
-  assert(inventory.has(item.name), `${item.name}: missing source inventory entry.`);
-  assert(!item.envVars || Object.keys(item.envVars).length === 0, `${item.name}: library source must not install secret/environment values.`);
-  const fileTargets = new Map();
+  const item = await readJSON(path.join(directory, `${summary.name}.json`));
+  assert.equal(item.name, summary.name);
+  assert(["registry:component", "registry:ui", "registry:block"].includes(item.type), `${item.name}: unsupported item type.`);
+  assert.equal(item.type, summary.type);
+  assert(Array.isArray(item.files), `${item.name}: missing files.`);
+  assert(!Object.keys(item.envVars ?? {}).length, `${item.name}: source must not install secrets.`);
+  const code = item.files.filter((file) => /\.[cm]?[jt]sx?$/.test(file.path));
+  assert.equal(code.length, 1, `${item.name}: install exactly one self-contained TSX file.`);
+  assert.equal(path.posix.basename(code[0].path), `${item.name}.tsx`, `${item.name}: semantic source filename required.`);
+  assert.equal(code[0].target, `@components/plico/${item.name}.tsx`, `${item.name}: flat documented target required.`);
+  assert.equal(item.meta?.main, code[0].target, `${item.name}: main must point to the complete source.`);
+  assert.equal(item.meta?.primaryFile, code[0].target, `${item.name}: source panel must show the complete source.`);
+  const targets = new Set();
   for (const file of item.files) {
-    assert(typeof file.content === "string" && file.content.length, `${item.name}/${file.path}: missing embedded content.`);
-    assert(!path.isAbsolute(file.path) && !file.path.split("/").includes(".."), `${item.name}: unsafe source path.`);
-    assert.equal(await readFile(path.join(root, file.path), "utf8"), file.content, `${item.name}/${file.path}: registry differs from canonical source.`);
-    assert(typeof file.target === "string" && /^(?:@(?:components|ui|lib|hooks)\/|~\/)/.test(file.target), `${item.name}/${file.path}: explicit portable target required.`);
-    assert(!file.target.split("/").includes("..") && !file.target.includes("\\"), `${item.name}: unsafe destination ${file.target}`);
-    assert(!fileTargets.has(file.target), `${item.name}: duplicate destination ${file.target}`);
-    fileTargets.set(file.target, file);
-    const prior = targets.get(file.target);
-    assert(!prior || prior === file.content, `${item.name}: conflicts with another item's destination ${file.target}`);
-    targets.set(file.target, file.content);
-    filesChecked++;
-  }
-  assert(fileTargets.has(item.meta?.entrypoint), `${item.name}: metadata entrypoint is absent from installed files.`);
-  const declared = new Set(["react", "react-dom", ...(item.dependencies ?? []).map(dependencyName), ...(item.devDependencies ?? []).map(dependencyName)]);
-  for (const file of item.files) {
-    if (!/\.[cm]?[jt]sx?$/.test(file.path)) continue;
-    modulesChecked++;
-    const { imports, assets } = sources(file.content, file.path);
-    for (const specifier of imports) {
-      assert(typeof specifier === "string", `${item.name}: import must be a string.`);
-      assert(!/^(?:https?:|file:|\/)/.test(specifier), `${item.name}/${file.path}: nonportable import ${specifier}`);
-      if (specifier.startsWith(".")) {
-        const destination = path.posix.normalize(path.posix.join(path.posix.dirname(file.target), specifier));
-        const candidates = [destination, ...[".js", ".jsx", ".ts", ".tsx", ".mjs"].map((ext) => destination + ext), ...["index.js", "index.jsx", "index.ts", "index.tsx"].map((name) => `${destination}/${name}`)];
-        assert(candidates.some((candidate) => fileTargets.has(candidate)), `${item.name}/${file.path}: import ${specifier} is absent from this item's installed closure.`);
-      } else {
-        assert(!specifier.startsWith("@/"), `${item.name}/${file.path}: source contains an unbound consumer alias ${specifier}`);
-        assert(declared.has(packageName(specifier)), `${item.name}/${file.path}: undeclared dependency ${specifier}`);
-      }
-      importChecks++;
-    }
-    for (const asset of assets) {
-      assert(fileTargets.has(`~/public${asset}`), `${item.name}/${file.path}: public asset ${asset} will not exist in a clean consumer.`);
-      localAssetChecks++;
+    assert(typeof file.content === "string" && file.content.length, `${item.name}: missing embedded content.`);
+    assert(!path.isAbsolute(file.path) && !file.path.split("/").includes(".."), `${item.name}: unsafe path.`);
+    assert.equal(await readFile(path.join(root, file.path), "utf8"), file.content, `${item.name}: payload differs from canonical source.`);
+    assert(typeof file.target === "string" && /^(?:@(?:components|ui|lib|hooks)\/|~\/)/.test(file.target), `${item.name}: portable target required.`);
+    assert(!file.target.split("/").includes("..") && !file.target.includes("\\") && !targets.has(file.target), `${item.name}: unsafe or duplicate target.`);
+    targets.add(file.target); files++;
+    if (file !== code[0]) {
+      assert.equal(file.type, "registry:file", `${item.name}: only a separate notice may accompany TSX.`);
+      assert(/Copyright/.test(file.content) && /Permission is hereby granted/.test(file.content) && /THE SOFTWARE IS PROVIDED/.test(file.content), `${item.name}: incomplete separate MIT notice.`);
     }
   }
-  // Any installed MIT notice must retain its copyright, permission and warranty text.
-  const installedText = item.files.map((file) => file.content).join("\n");
-  if (inventory.get(item.name).sourceKind === "mit-source" || item.meta?.license === "MIT" || /MIT License|Permission is hereby granted/.test(installedText)) {
-    assert(/Copyright/.test(installedText) && /Permission is hereby granted/.test(installedText) && /THE SOFTWARE IS PROVIDED/.test(installedText), `${item.name}: incomplete MIT notice.`);
-    mitItems++;
+  if (item.meta?.license === "MIT") { assert(item.files.some((file) => file !== code[0]), `${item.name}: preserve its separate MIT notice.`); mitItems++; }
+  assert(!/@ts-(?:nocheck|ignore|expect-error)\b/.test(code[0].content), `${item.name}: TypeScript suppression forbidden.`);
+  assert(!/Permission is hereby granted|THE SOFTWARE IS PROVIDED/.test(code[0].content), `${item.name}: license text belongs in a separate notice.`);
+  const declared = new Set(["react", "react-dom", ...(item.dependencies ?? []).map(dependencyName)]);
+  const ast = parse(code[0].content, { sourceType: "module", plugins: ["jsx", "typescript"] });
+  const dependencyImports = [];
+  walk(ast, (node) => {
+    if ((node.type === "TSTypeAliasDeclaration" || node.type === "TSInterfaceDeclaration") && /Props$/.test(node.id?.name ?? "")) {
+      assert.notEqual(node.typeAnnotation?.type, "TSAnyKeyword", `${item.name}: public Props cannot be any.`);
+      if (node.typeAnnotation?.type === "TSTypeReference" && node.typeAnnotation.typeName?.name === "Record") assert.notEqual(node.typeAnnotation.typeParameters?.params?.[1]?.type, "TSAnyKeyword", `${item.name}: blanket dynamic Props record is forbidden.`);
+    }
+    if (["ImportDeclaration", "ExportNamedDeclaration", "ExportAllDeclaration"].includes(node.type) && node.source) dependencyImports.push(node.source.value);
+    if (node.type === "ImportExpression" && node.source?.type === "StringLiteral") dependencyImports.push(node.source.value);
+    if (node.type === "CallExpression" && (node.callee?.type === "Import" || node.callee?.name === "require") && node.arguments[0]?.type === "StringLiteral") dependencyImports.push(node.arguments[0].value);
+    if (node.type === "StringLiteral" && /^\/(?:assets|avatars|logos|fonts)\//.test(node.value)) assert.fail(`${item.name}: undeployed public asset path.`);
+  });
+  for (const specifier of dependencyImports) {
+    assert(!/^(?:\.|\/|@\/|https?:|file:)/.test(specifier), `${item.name}: not self-contained; imports ${specifier}`);
+    assert(declared.has(packageName(specifier)), `${item.name}: undeclared package ${specifier}`); imports++;
   }
+  assert(!/url\(\s*["']?\/(?:assets|avatars|logos|fonts)\//.test(code[0].content), `${item.name}: undeployed CSS asset.`);
+  embeddedAssets += (code[0].content.match(/data:(?:image|font|application\/(?:font|x-font))/g) ?? []).length;
 }
-assert.deepEqual([...names].sort(), [...inventory.keys()].sort(), "Catalog does not exactly cover the source inventory.");
-const generatedNames = (await readdir(registryDir)).filter((file) => file.endsWith(".json") && !["registry.json", "index.json"].includes(file)).map((file) => file.slice(0, -5));
-assert.deepEqual(generatedNames.sort(), [...names].sort(), "Catalog does not exactly cover generated item JSON.");
-
-const report = {
-  passed: true,
-  validator: "Project structural checks based on published shadcn registry/item schemas, plus install-closure assertions; not a general-purpose JSON Schema validator",
-  items: names.size,
-  files: filesChecked,
-  modules: modulesChecked,
-  imports: importChecks,
-  installedPublicAssetReferences: localAssetChecks,
-  itemsWithRetainedMITNotice: mitItems,
-  scope: "Static catalog/schema, safe destinations, file/import/dependency closure, local asset references and retained notices. Native rendering and real CLI install are separate consumer smoke checks."
-};
-if (process.env.PLICO_VERIFY_REPORT) {
-  const reportFile = path.resolve(process.env.PLICO_VERIFY_REPORT);
-  await mkdir(path.dirname(reportFile), { recursive: true });
-  await writeFile(reportFile, `${JSON.stringify(report, null, 2)}\n`);
-}
+assert.deepEqual([...names].sort(), inventory.items.map((item) => item.registryItem).sort(), "Registry and installable catalog differ.");
+const generated = (await readdir(directory)).filter((name) => name.endsWith(".json") && name !== "registry.json").map((name) => name.slice(0, -5));
+assert.deepEqual([...names].sort(), generated.sort(), "Generated JSON and catalog differ.");
+const report = { passed: true, items: names.size, files, tsxFiles: names.size, packageImports: imports, mitItems, embeddedAssets, scope: "One complete semantic TSX per item, flat targets, asset portability, no blanket Props/suppression escapes and separate notices. Strict compilation and public prop types are checked separately." };
+if (process.env.PLICO_VERIFY_REPORT) { const file = path.resolve(process.env.PLICO_VERIFY_REPORT); await mkdir(path.dirname(file), { recursive: true }); await writeFile(file, `${JSON.stringify(report, null, 2)}\n`); }
 console.log(JSON.stringify(report, null, 2));

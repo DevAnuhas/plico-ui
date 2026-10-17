@@ -24,7 +24,7 @@ try {
   for (const entry of entries) {
     const item = items.get(entry.sourceSlug);
     for (const name of entry.exports) { assert(name in item, `${entry.sourceSlug}: missing runtime export ${name}`); exportedSymbols++; }
-    assert.equal(item.default, item.Demo, `${entry.sourceSlug}: default demo contract`);
+    assert.equal(item.default, item.Component, `${entry.sourceSlug}: default reusable component contract`);
     assert.equal(typeof item.Component, "function", `${entry.sourceSlug}: component function`);
   }
   for (const name of ["autonomy-dial", "autonomy-dial-clean"]) {
@@ -72,5 +72,5 @@ try {
   }
   const typedHelpers = { "profile-menu": ["SettingsIcon", "LogoutIcon"], "message-actions": ["MessageText"], "tips-panel": ["Kbd"], "tool-call-card": ["ToolCallGroup"], "comment-thread": ["AssistantMark"], "shimmer-loader": ["Skeleton", "ShimmerText"], "model-wheel": ["defaultModels"] };
   for (const [name, helpers] of Object.entries(typedHelpers)) for (const variant of [name, name + "-clean"].filter(key => items.has(key))) for (const helper of helpers) assert(helper in items.get(variant), `${variant}: typed helper ${helper}`);
-  console.log(JSON.stringify({ passed: true, variants: entries.length, exportedRuntimeSymbols: exportedSymbols, checks: ["all facade exports", "policy boundaries", "diff helper output", "date presets", "distinct Stepper helpers", "column icons", "store-backed Toaster and promise identity", "typed helper visibility"] }, null, 2));
+  console.log(JSON.stringify({ passed: true, variants: entries.length, exportedRuntimeSymbols: exportedSymbols, checks: ["all component exports", "policy boundaries", "diff helper output", "date presets", "distinct Stepper helpers", "column icons", "store-backed Toaster and promise identity", "typed helper visibility"] }, null, 2));
 } finally { fs.rmSync(temp, { recursive: true, force: true }); }

@@ -4,10 +4,10 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`Feature cards about model choice, routing or "bring your own model"`, `Landing pages that list supported AI providers in a calm, moving way`],
   whenNotToUse: [`A real model picker – the wheel can be spun, but it doesn't report a choice`, `Long lists – the drum shows about seven rows at a time`],
-  usage: "import { ModelWheel } from \"@/components/plico/model-wheel\";\nexport function FeatureCard() {\n  return <article style={{\n    maxWidth: 360\n  }}>\n      <ModelWheel />\n      <h3>Every model, one workspace</h3>\n    </article>;\n}",
+  usage: "import ModelWheel from \"@/components/plico/model-wheel\";\nexport function FeatureCard() {\n  return <article style={{\n    maxWidth: 360\n  }}>\n      <ModelWheel />\n      <h3>Every model, one workspace</h3>\n    </article>;\n}",
   examples: [{
     title: `Slower, with your own models`,
-    code: "import { ModelWheel, defaultModels } from \"@/components/plico/model-wheel\";\n<ModelWheel hold={2400} models={defaultModels.filter(m => m.name !== \"Llama\")} />;"
+    code: "import ModelWheel, { defaultModels } from \"@/components/plico/model-wheel\";\n<ModelWheel hold={2400} models={defaultModels.filter(m => m.name !== \"Llama\")} />;"
   }],
   props: [{
     name: `models`,

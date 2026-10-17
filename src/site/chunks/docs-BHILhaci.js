@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`A problem card about cold outreach that gets ignored or messages left on read`, `Bento grids and feature cards that need a small illustration above the text`],
   whenNotToUse: [`A real chat UI – the bubbles are a fixed, decorative scene`, `Very small sizes below ~220px wide, where the bubble text gets hard to read`],
-  usage: "import { GhostedChat } from \"@/components/plico/ghosted-chat\";\nexport function FeatureCard() {\n  return <article style={{\n    maxWidth: 360\n  }}>\n      <GhostedChat />\n      <h3>Card title</h3>\n      <p>Short description of the problem or step.</p>\n    </article>;\n}",
+  usage: "import GhostedChat from \"@/components/plico/ghosted-chat\";\nexport function FeatureCard() {\n  return <article style={{\n    maxWidth: 360\n  }}>\n      <GhostedChat />\n      <h3>Card title</h3>\n      <p>Short description of the problem or step.</p>\n    </article>;\n}",
   props: [{
     name: `label`,
     type: `string`,

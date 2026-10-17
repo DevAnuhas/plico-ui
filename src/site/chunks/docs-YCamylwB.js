@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`Six to twenty visual items where looking at one at a time is the point – albums, places, products, case studies, templates`, `A showcase row that should feel physical: drag, flick, sideways trackpad scroll`],
   whenNotToUse: [`Text-heavy slides or many items to compare side by side – use a plain carousel or a grid`, `Large libraries – a grid with a lightbox scales better`],
-  usage: "import { CoverFlow } from \"@/components/plico/cover-flow\";\nexport function Albums() {\n  return <CoverFlow aria-label=\"New releases\" items={[{\n    id: 1,\n    title: \"Low Tide\",\n    subtitle: \"Mara Lind\",\n    image: \"/covers/low-tide.jpg\"\n  }, {\n    id: 2,\n    title: \"Night Drive\",\n    subtitle: \"Okto\",\n    image: \"/covers/night-drive.jpg\"\n  }, {\n    id: 3,\n    title: \"Paper Moon\",\n    subtitle: \"Ilse & June\",\n    image: \"/covers/paper-moon.jpg\"\n  }]} onSelect={item => openAlbum(item.id)} />;\n}",
+  usage: "import CoverFlow from \"@/components/plico/cover-flow\";\nexport function Albums() {\n  return <CoverFlow aria-label=\"New releases\" items={[{\n    id: 1,\n    title: \"Low Tide\",\n    subtitle: \"Mara Lind\",\n    image: \"/covers/low-tide.jpg\"\n  }, {\n    id: 2,\n    title: \"Night Drive\",\n    subtitle: \"Okto\",\n    image: \"/covers/night-drive.jpg\"\n  }, {\n    id: 3,\n    title: \"Paper Moon\",\n    subtitle: \"Ilse & June\",\n    image: \"/covers/paper-moon.jpg\"\n  }]} onSelect={item => openAlbum(item.id)} />;\n}",
   examples: [{
     title: `Portrait cards, own caption`,
     code: "<CoverFlow items={places} itemWidth={240} itemHeight={320} renderCaption={item => <>\n      <strong>{item.title}</strong>\n      <span>{item.subtitle}</span>\n    </>} />;"

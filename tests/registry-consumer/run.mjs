@@ -15,7 +15,7 @@ const token = randomBytes(32).toString("hex");
 const env = { ...process.env, PATH: `${path.dirname(process.execPath)}${path.delimiter}${process.env.PATH ?? ""}`, CI: "1", NEXT_TELEMETRY_DISABLED: "1", PLICO_REGISTRY_TOKEN: token };
 const npm = process.platform === "win32" ? "npm.cmd" : "npm";
 const consumer = await mkdtemp(path.join(tmpdir(), "plico-registry-consumer-"));
-const selected = ["button", "agent-chat", "task-board"];
+const selected = ["app-shell", "button", "toaster", "stepper-form", "agent-chat", "task-board"];
 const requests = [];
 const steps = [];
 let nextProcess;
@@ -126,7 +126,6 @@ try {
 
   const items = await Promise.all(selected.map(async (name) => JSON.parse(await readFile(path.join(registryDir, `${name}.json`), "utf8"))));
   let installedFiles = 0;
-  const rendered = [];
   const imports = [];
   for (const item of items) {
     const installed = [];
@@ -142,15 +141,19 @@ try {
       assert(/Permission is hereby granted/.test(joined), "Installed component payload lost its MIT permission text.");
       assert(/THE SOFTWARE IS PROVIDED/.test(joined), "Installed component payload lost its MIT warranty text.");
     }
-    const candidate = item.files.find((file) => file.target === (item.meta?.main ?? item.meta?.entrypoint));
+    const sourceFiles = item.files.filter((file) => /\.[cm]?[jt]sx?$/.test(file.path));
+    assert.equal(sourceFiles.length, 1, `${item.name}: exactly one source file must be installed.`);
+    const candidate = sourceFiles[0];
     assert(candidate, `${item.name}: cannot find a demo/component entry to render.`);
+    assert.equal(candidate.target, `@components/plico/${item.name}.tsx`);
+    assert(!/@ts-(?:nocheck|ignore|expect-error)\b/.test(candidate.content), `${item.name}: installed source must not suppress type checking.`);
     const exportNames = itemExports(item, candidate);
-    const symbol = item.name === "button" ? "Button" : item.name === "agent-chat" ? "FullScreen" : "Demo";
+    const symbol = "default";
     assert(symbol && exportNames.includes(symbol), `${item.name}: missing expected exported render entry (${exportNames.join(", ")}).`);
-    const localName = item.name === "button" ? "InstalledButton" : item.name === "agent-chat" ? "InstalledScreen" : "InstalledBoard";
+    const localName = { "app-shell": "AppShell", button: "Button", toaster: "Toaster", "stepper-form": "StepperForm", "agent-chat": "AgentChat", "task-board": "TaskBoard" }[item.name];
     const specifier = `@/${installedPath(candidate).replace(/^src\//, "").replace(/\.[jt]sx?$/, "").replace(/\/index$/, "")}`;
-    imports.push(symbol === "default" ? `import ${localName} from ${JSON.stringify(specifier)};` : `import { ${symbol} as ${localName} } from ${JSON.stringify(specifier)};`);
-    rendered.push(item.name === "button" ? '<InstalledButton>Registry smoke button</InstalledButton>' : `<section className="smoke-preview"><${localName} /></section>`);
+    const named = { "app-shell": "Demo as AppShellDemo", button: "Demo as ButtonDemo", toaster: "toast", "stepper-form": "StepperField, StepperInput, Demo as StepperDemo", "agent-chat": "Demo as AgentChatDemo", "task-board": "Demo as TaskBoardDemo" }[item.name];
+    imports.push(`import ${localName}, { ${named} } from ${JSON.stringify(specifier)};`);
   }
   const sourceFiles = await listFiles(path.join(consumer, "src/parts"));
   let embeddedAssets = 0;
@@ -159,9 +162,27 @@ try {
     embeddedAssets += (source.match(/data:(?:image|font|application\/(?:font|x-font))/g) ?? []).length;
   }
   assert(embeddedAssets > 0, "Complex screen must carry its binary avatar/font assets into the consumer.");
-  await writeFile(path.join(consumer, "src/app/installed-preview.jsx"), `"use client";\n${imports.join("\n")}\nexport default function InstalledPreview() { return <>${rendered.join("\n")}</>; }\n`);
+  const preview = `"use client";
+import { useState } from "react";
+${imports.join("\n")}
+export default function InstalledPreview() {
+  const [status, setStatus] = useState("Ready");
+  return <>
+    <Button onClick={() => { toast.success("Saved", { description: "Typed helper API" }); setStatus("Saved"); }}>Registry smoke button</Button>
+    <p>{status}</p>
+    <section className="smoke-preview"><AppShell workspace="Registry test" onNavigate={(label: string) => setStatus(label)}><p>Strict App Shell consumer</p></AppShell></section>
+    <StepperForm initialValues={{ name: "" }} onComplete={async (values) => { setStatus(values.name); }} steps={[{ id: "name", title: "Name", render: ({ values, setValues }) => <StepperField name="name" label="Workspace name"><StepperInput value={values.name} onChange={(event) => setValues({ name: event.target.value })} /></StepperField> }]} />
+    <Toaster position="bottom-right" />
+    <section className="smoke-preview"><AgentChat workspace="Registry test" onNavigate={(label: string) => setStatus(label)} /></section>
+    <details><summary>Named demos</summary><AppShellDemo /><ButtonDemo /><StepperDemo /><AgentChatDemo /><TaskBoardDemo /></details>
+  </>;
+}
+`;
+  await writeFile(path.join(consumer, "src/app/installed-preview.tsx"), preview);
   steps.push("All installed target files exist through a nondefault components alias; MIT notice and embedded complex-screen assets survive installation.");
 
+  await command(process.execPath, [path.join(consumer, "node_modules/typescript/bin/tsc"), "--noEmit"]);
+  steps.push("Installed TSX and typed default/helper/Demo usage pass strict tsc with allowJs=false, without type suppressions.");
   await command(process.execPath, [path.join(consumer, "node_modules/next/dist/bin/next"), "build"]);
   console.log("Isolated consumer Next production build passed.");
   steps.push("Independent Next 16.4.2 production build imports and prerenders the installed free component and complex screen.");
@@ -199,6 +220,8 @@ try {
     embeddedAssets,
     nondefaultComponentsAlias: "@/parts",
     independentConsumerDependencies: true,
+    strict: true,
+    allowJs: false,
     checks: steps,
     registryRequests: requests,
     limitations: "Local header-protected fixture proves CLI header forwarding and installation; no Vercel deployment was created. Production HTTP/markup checks do not replace native browser interaction or visual QA."

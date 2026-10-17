@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`KPIs, prices and counters that change while the user is looking, like dashboards or live stats`, `Headline numbers on a landing page that should count in when they scroll into view`],
   whenNotToUse: [`Dense tables with many numbers – rolling digits everywhere becomes noise`, `Values that change many times per second; the roll never settles`],
-  usage: "import { NumberTicker } from \"@/components/plico/number-ticker\";\nexport function RevenueKpi({\n  revenue\n}: {\n  revenue: number;\n}) {\n  return <p className=\"text-4xl font-semibold\">\n      <NumberTicker value={revenue} format={{\n      style: \"currency\",\n      currency: \"USD\",\n      maximumFractionDigits: 0\n    }} />\n    </p>;\n}",
+  usage: "import NumberTicker from \"@/components/plico/number-ticker\";\nexport function RevenueKpi({\n  revenue\n}: {\n  revenue: number;\n}) {\n  return <p className=\"text-4xl font-semibold\">\n      <NumberTicker value={revenue} format={{\n      style: \"currency\",\n      currency: \"USD\",\n      maximumFractionDigits: 0\n    }} />\n    </p>;\n}",
   props: [{
     name: `value`,
     type: `number`,

@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`Agency, accounting and CRM tools where a team keeps goals, files and decisions per client`, `Product pages for AI tools – show the context that makes every answer fit the client`],
   whenNotToUse: [`A full activity log with hundreds of events – page or virtualise it instead`, `Real-time collaboration – the timeline adds entries locally and leaves syncing to you`],
-  usage: "import { ClientContext } from \"@/components/plico/client-context\";\nfunction ClientPage() {\n  return <ClientContext me={{\n    name: \"Lena Hart\",\n    avatar: \"/avatars/lena.jpg\"\n  }} onAddContext={(clientId, text, files) => api.addContext(clientId, {\n    text,\n    files\n  })} onCreateClient={(name) => api.createClient(name)} />;\n}\nexport {\n  ClientPage\n};",
+  usage: "import ClientContext from \"@/components/plico/client-context\";\nfunction ClientPage() {\n  return <ClientContext me={{\n    name: \"Lena Hart\",\n    avatar: \"/avatars/lena.jpg\"\n  }} onAddContext={(clientId, text, files) => api.addContext(clientId, {\n    text,\n    files\n  })} onCreateClient={name => api.createClient(name)} />;\n}\nexport { ClientPage };",
   props: [{
     name: `clients`,
     type: `ContextClient[]`,

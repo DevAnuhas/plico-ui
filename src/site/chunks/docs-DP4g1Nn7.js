@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`, `Chat Composer – installed automatically with the CLI`],
   whenToUse: [`The main screen of an AI assistant or copilot inside your product`, `Internal tools where people chat with your data and group work into projects`],
   whenNotToUse: [`A small chat widget in a corner – use the Chat Composer on its own`],
-  usage: "import { AiWorkspace } from \"@/components/plico/ai-workspace\";\nfunction Assistant() {\n  return <AiWorkspace userName=\"Lena\" respond={async (message, history) => {\n    const res = await fetch(\"/api/chat\", {\n      method: \"POST\",\n      body: JSON.stringify({\n        message,\n        history\n      })\n    });\n    return (await res.json()).answer;\n  }} />;\n}\nexport {\n  Assistant\n};",
+  usage: "import AiWorkspace from \"@/components/plico/ai-workspace\";\nfunction Assistant() {\n  return <AiWorkspace userName=\"Lena\" respond={async (message, history) => {\n    const res = await fetch(\"/api/chat\", {\n      method: \"POST\",\n      body: JSON.stringify({\n        message,\n        history\n      })\n    });\n    return (await res.json()).answer;\n  }} />;\n}\nexport { Assistant };",
   props: [{
     name: `respond`,
     type: `(message, history) => Promise<string>`,

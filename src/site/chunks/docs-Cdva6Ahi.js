@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`, `App Shell (installed with it)`],
   whenToUse: [`The first screen of an AI assistant or copilot`, `A start page that leads straight into a prompt`],
   whenNotToUse: [`Apps where the chat is not the main action`],
-  usage: "import { Component as AssistantHomeScreen } from \"@/components/plico/assistant-home\";\nfunction Page() {\n  return <AssistantHomeScreen workspace=\"Acme\" user={{\n    name: \"Alex Morgan\"\n  }} onNavigate={(label) => router.push(routes[label])} />;\n}\nexport {\n  Page as default\n};",
+  usage: "import AssistantHomeScreen from \"@/components/plico/assistant-home\";\nfunction Page() {\n  return <AssistantHomeScreen workspace=\"Acme\" user={{\n    name: \"Alex Morgan\"\n  }} onNavigate={label => router.push(routes[label])} />;\n}\nexport { Page as default };",
   props: [{
     name: `onNavigate`,
     type: `(label: string) => void`,

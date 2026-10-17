@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`A comments sidebar next to a document, design or record`, `Collaboration with an assistant that can apply edits people suggest with /edit`],
   whenNotToUse: [`Long discussions with nested replies – use the Comment Thread for one conversation`],
-  usage: "import { CommentsPanel } from \"@/components/plico/comments-panel\";\nfunction Sidebar({\n  comments,\n  me\n}) {\n  return <CommentsPanel comments={comments} currentUser={me} onRunEdit={(c) => api.applyEdit(c.text)} onAdd={(c) => api.saveComment(c)} />;\n}\nexport {\n  Sidebar\n};",
+  usage: "import CommentsPanel from \"@/components/plico/comments-panel\";\nfunction Sidebar({\n  comments,\n  me\n}) {\n  return <CommentsPanel comments={comments} currentUser={me} onRunEdit={c => api.applyEdit(c.text)} onAdd={c => api.saveComment(c)} />;\n}\nexport { Sidebar };",
   props: [{
     name: `comments`,
     type: `PanelComment[]`,

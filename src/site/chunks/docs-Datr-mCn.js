@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`Button labels and status text that change in place – Save → Saving… → Saved`, `Panels, tips or steps that swap content of different lengths without a jump in the layout`],
   whenNotToUse: [`Navigating between pages or large views – use a route transition instead`, `Content that updates many times per second, like counters or live prices`],
-  usage: "import { BlurCrossfade } from \"@/components/plico/blur-crossfade\";\nfunction SaveButton({\n  status\n}) {\n  return <button>\n      <BlurCrossfade id={status} morph=\"both\" as=\"span\">\n        {status === \"saving\" ? \"Saving\\u2026\" : status === \"saved\" ? \"Saved\" : \"Save\"}\n      </BlurCrossfade>\n    </button>;\n}\n<BlurCrossfade id={step}>\n  <p>{steps[step]}</p>\n</BlurCrossfade>;\nexport {\n  SaveButton\n};",
+  usage: "import BlurCrossfade from \"@/components/plico/blur-crossfade\";\nfunction SaveButton({\n  status\n}) {\n  return <button>\n      <BlurCrossfade id={status} morph=\"both\" as=\"span\">\n        {status === \"saving\" ? \"Saving\\u2026\" : status === \"saved\" ? \"Saved\" : \"Save\"}\n      </BlurCrossfade>\n    </button>;\n}\n<BlurCrossfade id={step}>\n  <p>{steps[step]}</p>\n</BlurCrossfade>;\nexport { SaveButton };",
   props: [{
     name: `id`,
     type: `string | number`,

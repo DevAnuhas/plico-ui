@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`Voice mode of an assistant: one calm object that shows whether the AI listens, thinks or talks`, `Hero of an AI product page, an empty state before the first prompt, or a call screen`, `Anywhere a spinner would undersell what is happening – the orb says which phase it is`],
   whenNotToUse: [`Inline in a chat thread or next to text – use Thinking Loader or Thinking State, they are made for small sizes`, `As decoration that never changes state – a still image costs nothing; the orb draws every frame`, `Below about 96px – the dots merge into a blob`],
-  usage: "import { VoiceOrb } from \"@/components/plico/voice-orb\";\nfunction VoiceMode() {\n  const {\n    state,\n    level,\n    toggle\n  } = useVoiceSession();\n  return <VoiceOrb state={state} level={level} onPress={toggle} />;\n}\nexport {\n  VoiceMode\n};",
+  usage: "import VoiceOrb from \"@/components/plico/voice-orb\";\nfunction VoiceMode() {\n  const {\n    state,\n    level,\n    toggle\n  } = useVoiceSession();\n  return <VoiceOrb state={state} level={level} onPress={toggle} />;\n}\nexport { VoiceMode };",
   examples: [{
     title: `Driven by the microphone`,
     code: "const [level, setLevel] = useState(0);\nuseEffect(() => {\n  const data = new Uint8Array(analyser.frequencyBinCount);\n  let frame = 0;\n  const read = () => {\n    analyser.getByteTimeDomainData(data);\n    let peak = 0;\n    for (const v of data) peak = Math.max(peak, Math.abs(v - 128) / 128);\n    setLevel(peak);\n    frame = requestAnimationFrame(read);\n  };\n  read();\n  return () => cancelAnimationFrame(frame);\n}, [analyser]);\n<VoiceOrb state=\"listening\" level={level} />;"

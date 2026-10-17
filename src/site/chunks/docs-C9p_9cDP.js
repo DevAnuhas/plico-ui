@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`Any action a user triggers: submit a form, send a message, open a dialog`, `Async actions that take a moment – the loading state keeps the label readable while it works`],
   whenNotToUse: [`Navigation to another page – use a link so it can be opened in a new tab`, `Switching between views – a segmented control or tabs show the current state`],
-  usage: "import { Button } from \"@/components/plico/button\";\nexport function Actions() {\n  return <>\n      <Button variant=\"ghost\">Cancel</Button>\n      <Button>Save changes</Button>\n    </>;\n}",
+  usage: "import Button from \"@/components/plico/button\";\nexport function Actions() {\n  return <>\n      <Button variant=\"ghost\">Cancel</Button>\n      <Button>Save changes</Button>\n    </>;\n}",
   examples: [{
     title: `Destructive`,
     code: "<Button variant=\"destructive\" icon={<TrashIcon />} onClick={remove}>\n  Delete\n</Button>;"

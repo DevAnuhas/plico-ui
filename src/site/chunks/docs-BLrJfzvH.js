@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`, `App Shell, KPI Chart and Button (installed with it)`],
   whenToUse: [`Revenue, product or marketing dashboards`, `Overview pages that combine key figures and charts`],
   whenNotToUse: [`Live monitoring with many changing values – use a denser layout`],
-  usage: "import { Component as AnalyticsScreen } from \"@/components/plico/analytics\";\nfunction Page() {\n  return <AnalyticsScreen workspace=\"Acme\" user={{\n    name: \"Alex Morgan\"\n  }} onNavigate={(label) => router.push(routes[label])} />;\n}\nexport {\n  Page as default\n};",
+  usage: "import AnalyticsScreen from \"@/components/plico/analytics\";\nfunction Page() {\n  return <AnalyticsScreen workspace=\"Acme\" user={{\n    name: \"Alex Morgan\"\n  }} onNavigate={label => router.push(routes[label])} />;\n}\nexport { Page as default };",
   props: [{
     name: `onNavigate`,
     type: `(label: string) => void`,

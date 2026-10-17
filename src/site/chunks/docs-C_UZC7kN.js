@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`Integration or ecosystem sections – "works with the tools you already use"`, `Feature cards that need a lively, friendly picture around your own brand`],
   whenNotToUse: [`Listing your real integrations – the logos are examples`, `Places where people need to read or click the logos`],
-  usage: "import { LogoCluster } from \"@/components/plico/logo-cluster\";\nexport function IntegrationsCard() {\n  return <article style={{\n    maxWidth: 360\n  }}>\n      <LogoCluster />\n      <h3>Connects with everything</h3>\n    </article>;\n}",
+  usage: "import LogoCluster from \"@/components/plico/logo-cluster\";\nexport function IntegrationsCard() {\n  return <article style={{\n    maxWidth: 360\n  }}>\n      <LogoCluster />\n      <h3>Connects with everything</h3>\n    </article>;\n}",
   props: [{
     name: `label`,
     type: `string`,

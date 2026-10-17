@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`Reactions under posts, comments or updates in a feed`, `Any toggle with a public count, like saves or upvotes`],
   whenNotToUse: [`Actions that need a confirmation – a toggle gives none`],
-  usage: "import { Component as ReactionBar } from \"@/components/plico/reaction-bar-clean\";\nexport function PostActions({\n  post\n}) {\n  return <ReactionBar reactions={{\n    like: {\n      count: post.likes,\n      active: post.liked\n    },\n    comment: {\n      count: post.comments\n    }\n  }} onReact={(key, state) => api.react(post.id, key, state.active)} />;\n}",
+  usage: "import ReactionBar from \"@/components/plico/reaction-bar-clean\";\nexport function PostActions({\n  post\n}) {\n  return <ReactionBar reactions={{\n    like: {\n      count: post.likes,\n      active: post.liked\n    },\n    comment: {\n      count: post.comments\n    }\n  }} onReact={(key, state) => api.react(post.id, key, state.active)} />;\n}",
   props: [{
     name: `reactions`,
     type: `Partial<Record<ReactionKey, { count; active? }>>`,

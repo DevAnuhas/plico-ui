@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`AI and automation products where one prompt sets up several agents or roles`, `Feature cards about teams, delegation or workflows that span several tools`],
   whenNotToUse: [`Real org charts or live agent status – the scene is decorative and loops on its own`, `More than three agents – the layout is built for exactly three`],
-  usage: "import { AgentTeam } from \"@/components/plico/agent-team\";\nexport function FeatureCard() {\n  return <article style={{\n    maxWidth: 560\n  }}>\n      <AgentTeam prompt=\"Build a team to work my inbound pipeline\" members={[{\n      role: \"Lead Researcher\",\n      avatar: \"/team/lena.jpg\",\n      tools: [\"linkedin\", \"hubspot\"]\n    }, {\n      role: \"Inbound Qualifier\",\n      avatar: \"/team/theo.jpg\",\n      tools: [\"hubspot\", \"slack\"]\n    }, {\n      role: \"Outbound SDR\",\n      avatar: \"/team/noah.jpg\",\n      tools: [\"gmail\", \"salesforce\"]\n    }]} />\n    </article>;\n}",
+  usage: "import AgentTeam from \"@/components/plico/agent-team\";\nexport function FeatureCard() {\n  return <article style={{\n    maxWidth: 560\n  }}>\n      <AgentTeam prompt=\"Build a team to work my inbound pipeline\" members={[{\n      role: \"Lead Researcher\",\n      avatar: \"/team/lena.jpg\",\n      tools: [\"linkedin\", \"hubspot\"]\n    }, {\n      role: \"Inbound Qualifier\",\n      avatar: \"/team/theo.jpg\",\n      tools: [\"hubspot\", \"slack\"]\n    }, {\n      role: \"Outbound SDR\",\n      avatar: \"/team/noah.jpg\",\n      tools: [\"gmail\", \"salesforce\"]\n    }]} />\n    </article>;\n}",
   props: [{
     name: `prompt`,
     type: `string`,

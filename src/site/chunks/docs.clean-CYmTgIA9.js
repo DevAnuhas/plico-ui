@@ -4,7 +4,7 @@ var e = {
   requirements: [`React 19`],
   whenToUse: [`A single conversation attached to a selection, a cell or a line of text`, `Showing what an assistant did after someone asked for a change`],
   whenNotToUse: [`A feed of many comments – use the Comments Panel`],
-  usage: "import { AssistantMark, Component as CommentThread } from \"@/components/plico/comment-thread-clean\";\nconst atlas = {\n  name: \"Atlas\",\n  avatar: <AssistantMark />,\n  assistant: true\n};\nexport function Thread({\n  messages,\n  me\n}) {\n  return <CommentThread messages={messages} currentUser={me} assistant={atlas} onReply={async text => text.includes(\"@Atlas\") ? await api.ask(text) : undefined} />;\n}",
+  usage: "import { AssistantMark, CommentThread } from \"@/components/plico/comment-thread-clean\";\nconst atlas = {\n  name: \"Atlas\",\n  avatar: <AssistantMark />,\n  assistant: true\n};\nexport function Thread({\n  messages,\n  me\n}) {\n  return <CommentThread messages={messages} currentUser={me} assistant={atlas} onReply={async text => text.includes(\"@Atlas\") ? await api.ask(text) : undefined} />;\n}",
   props: [{
     name: `messages`,
     type: `ThreadMessage[]`,

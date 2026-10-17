@@ -13,19 +13,20 @@ Initialize the receiving project with `npx shadcn@latest init`. Add an `@plico` 
 ```
 
 ```sh
+pnpm dlx shadcn@latest add @plico/button
 npx shadcn@latest add @plico/button
-npx shadcn@latest add @plico/button-clean
-npx shadcn@latest add @plico/agent-chat
+yarn dlx shadcn@latest add @plico/button
+bunx --bun shadcn@latest add @plico/button
 ```
 
 An item's page shows its exact name and installation command. Classic and Clean variants have separate names. Install one style at a time when they export equivalent UI.
 
 ```tsx
-import { Button } from "@/components/plico/button";
+import Button, { Demo as ButtonDemo } from "@/components/plico/button";
 import { FullScreen } from "@/components/plico/agent-chat";
 ```
 
-Use `Component` or the named component alias for reusable UI, `Demo` for the catalog example, and `FullScreen` for supported complete screens. The target follows the receiving project's configured shadcn components alias; `@/components` is the default example here.
+Use the default export, `Component`, or a descriptive named alias for reusable UI; `Demo` renders the configured example. `FullScreen` renders supported complete screens. The target follows the receiving project's configured shadcn components alias; `@/components` is the default example here. Each item installs one standalone `.tsx` component and a shared notice at `licenses/plico-ui.txt`.
 
 ## Protected deployment
 
@@ -55,4 +56,4 @@ The machine-readable entry points are:
 
 Configure an MCP client that supports the 2025-11-25 protocol and HTTP headers. Use the same deployment-protection header for a protected host. The tools list components with optional query, section, style, pagination, retrieve source by catalog name, and produce installation commands. They do not write to the receiving project; the agent uses the shadcn CLI to install the returned registry name.
 
-The catalog's source viewer offers a file picker and a registry bundle link. Preserve any installed LICENSE files when moving components into another project.
+The Code tab and Manual installation view expose the same TypeScript component installed by the CLI. Keep the shared notice with redistributed components. For existing v0.1 installations, follow the [migration guide](migrate-v0.2.md).
