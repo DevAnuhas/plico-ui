@@ -1,0 +1,100 @@
+import {brand} from '../../lib/brand.js';
+function localText(value){return value.replaceAll('__PLICO_ORIGIN__',brand.url).replaceAll('__PLICO_REPO__',brand.repoUrl)}
+var e = {
+  requirements: [`React 19`],
+  whenToUse: [`Assigning people, labels, tags or projects – anything picked from a list that's too long to scan`, `Filters where several values can apply at once, like owners or statuses`, `Tag fields that should also accept new values (creatable)`],
+  whenNotToUse: [`Up to five fixed choices – checkboxes or a segmented control show them all at once`, `Free text with no list behind it – use a plain input`, `Running actions rather than picking values – use the command menu`],
+  usage: "import { Combobox } from \"@/components/plico/combobox\";\nconst people = [{\n  value: \"maya\",\n  label: \"Maya Chen\",\n  hint: \"Product Designer\",\n  avatar: true,\n  group: \"Design\"\n}, {\n  value: \"sara\",\n  label: \"Sara Okafor\",\n  hint: \"Staff Engineer\",\n  avatar: \"/avatars/sara.jpg\",\n  group: \"Engineering\"\n}, {\n  value: \"elif\",\n  label: \"Elif Yilmaz\",\n  hint: \"Head of Product\",\n  avatar: true,\n  group: \"Product\"\n}];\nfunction Reviewers() {\n  const [reviewers, setReviewers] = useState([\"maya\"]);\n  return <Combobox label=\"Reviewers\" options={people} value={reviewers} onChange={setReviewers} placeholder=\"Add reviewers…\" maxVisibleTags={4} />;\n}\nexport {\n  Reviewers\n};",
+  examples: [{
+    title: `Labels with color dots, new ones on the fly`,
+    code: "<Combobox label=\"Labels\" options={[{\n  value: \"bug\",\n  label: \"Bug\",\n  color: \"#e5484d\"\n}, {\n  value: \"feature\",\n  label: \"Feature\",\n  color: \"#2f6bff\"\n}, {\n  value: \"docs\",\n  label: \"Docs\",\n  color: \"#8f8f8f\"\n}]} creatable onCreate={(text) => ({\n  value: text.toLowerCase(),\n  label: text,\n  color: \"#b5b5b5\"\n})} />;"
+  }, {
+    title: `Single choice`,
+    code: "<Combobox label=\"Owner\" multiple={false} options={people} defaultValue={[\"sara\"]} />;"
+  }],
+  props: [{
+    name: `options`,
+    type: `{ value, label, hint?, avatar?, color?, icon?, group?, keywords? }[]`,
+    description: `The list. avatar is an image URL or true for initials; options with the same group are listed under one title`
+  }, {
+    name: `multiple`,
+    type: `boolean`,
+    default: `true`,
+    description: `Pick many (chips) or one – one closes the list after picking`
+  }, {
+    name: `value`,
+    type: `string[]`,
+    description: `Controlled values (also for single choice, with at most one entry)`
+  }, {
+    name: `defaultValue`,
+    type: `string[]`,
+    default: `[]`,
+    description: `Starting values when uncontrolled`
+  }, {
+    name: `onChange`,
+    type: `(value: string[], options: ComboboxOption[]) => void`,
+    description: `Called on every pick, removal or creation`
+  }, {
+    name: `placeholder`,
+    type: `string`,
+    default: `"Search…"`,
+    description: `Shown while nothing is picked`
+  }, {
+    name: `creatable`,
+    type: `boolean`,
+    default: `false`,
+    description: `Offer a create row when no option matches the typed text exactly`
+  }, {
+    name: `onCreate`,
+    type: `(text: string) => ComboboxOption | void`,
+    description: `Builds the new option – defaults to { value: text, label: text }`
+  }, {
+    name: `createLabel`,
+    type: `(text: string) => string`,
+    default: `Create “…”`,
+    description: `Text of the create row, e.g. Invite “…”`
+  }, {
+    name: `maxVisibleTags`,
+    type: `number`,
+    description: `Show at most this many chips, the rest as a "+3" chip`
+  }, {
+    name: `label`,
+    type: `string`,
+    description: `Visible label above the field (also names the list)`
+  }, {
+    name: `defaultOpen`,
+    type: `boolean`,
+    default: `false`,
+    description: `Open the list right away`
+  }, {
+    name: `emptyText`,
+    type: `string`,
+    default: `"No results"`,
+    description: `Shown when nothing matches`
+  }, {
+    name: `className`,
+    type: `string`,
+    description: `Extra class on the root`
+  }],
+  keyboard: [{
+    keys: [`↑`, `↓`],
+    description: `Open the list, then move between rows`
+  }, {
+    keys: [`↵`],
+    description: `Pick or unpick the active row (or create)`
+  }, {
+    keys: [`⌫`],
+    description: `In the empty field: highlight the last chip, press again to remove it`
+  }, {
+    keys: [`Esc`],
+    description: `Close the list; when closed, clear the typed text`
+  }, {
+    keys: [`Tab`],
+    description: `Close the list and move on`
+  }],
+  accessibility: [`Follows the ARIA combobox pattern: the input has role combobox with aria-expanded, aria-controls and aria-activedescendant; the list is a listbox with grouped options`, `Picked rows carry aria-selected, the listbox is aria-multiselectable in multiple mode`, `Picks and removals are announced in a polite live region, together with the count`, `Focus stays in the input while clicking rows and chip × buttons; the field shows a soft focus ring`],
+  motion: [`Chips grow in with a small pop and fold away after a short flash; the field glides to its new height when chips wrap`, `A gray highlight glides to the active row; the list glides to its new height while filtering`, `Check marks pop in with a gentle spring; the "+3" chip and the count roll up or down`, `With prefers-reduced-motion everything switches instantly`],
+  responsive: [`The list is as wide as the field, so it always fits the screen`, `Chips wrap onto new lines and long names truncate – works down to 320px`, `Touch screens get 44px rows, bigger chip buttons and 16px input text (no iOS zoom)`, `Dark mode built in: switches when an ancestor (usually <html>) has the class dark or data-theme="dark"`],
+  related: [`filter-menu`, `command-menu`, `integration-picker`]
+};
+export { e as docs };

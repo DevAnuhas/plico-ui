@@ -1,0 +1,19 @@
+"use client";
+import * as React from "react";
+import { PlicoDemo_D as PublicDemo } from "../../modules/demo.clean-1HqvmQFW.jsx";
+export { PlicoCore_f as Component } from "../../modules/demo.clean-1HqvmQFW.jsx";
+export { PlicoCore_f as AgentLanesClean } from "../../modules/demo.clean-1HqvmQFW.jsx";
+const demoStyles =
+  ".lanes-demo{grid-template-columns:minmax(0,760px);justify-content:center;width:100%;display:grid}.card__preview .lanes-demo{grid-template-columns:auto;align-content:start;position:absolute;inset:44px 0 0}.card__preview .lanes-demo :is(.ui-al,.ui-alc){zoom:.4;width:760px;max-width:none}.stage:has(.lanes-demo){height:520px}.stage .lanes-demo .ui-alc{zoom:1.05}@media (width<=760px){.stage:has(.lanes-demo){align-items:start;height:560px;padding:120px 12px 16px}.stage .lanes-demo .ui-alc{zoom:1}}\n";
+export function Demo(props) {
+  return (
+    <>
+      <style href="plico-demo-agent-lanes-clean" precedence="default">
+        {demoStyles}
+      </style>
+      <PublicDemo {...props} />
+    </>
+  );
+}
+export { Demo as AgentLanesCleanDemo };
+export default Demo;

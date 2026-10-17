@@ -1,0 +1,19 @@
+"use client";
+import * as React from "react";
+import { PlicoDemo_v as PublicDemo } from "../../modules/demo-nVEvL_e8.jsx";
+export { PlicoCore_l as Component } from "../../modules/demo-nVEvL_e8.jsx";
+export { PlicoCore_l as BillingSchedule } from "../../modules/demo-nVEvL_e8.jsx";
+const demoStyles =
+  ".billing-schedule-demo{grid-template-columns:minmax(0,1fr);place-items:center;width:100%;display:grid}.card__preview .billing-schedule-demo{grid-template-columns:auto;place-content:center;position:absolute;inset:0}.card__preview .billing-schedule-demo .ui-bs{zoom:.4;width:560px}.stage:has(.billing-schedule-demo){height:auto;min-height:520px}@media (width<=760px){.stage:has(.billing-schedule-demo){align-items:start;padding:120px 12px 16px}}.card__preview .billing-schedule-demo:has(.ui-bsc){inset:40px 0 0}.card__preview .billing-schedule-demo .ui-bsc{zoom:.46;width:560px;max-width:none}@media (width>=761px){.stage .billing-schedule-demo .ui-bsc{zoom:1.08}}\n";
+export function Demo(props) {
+  return (
+    <>
+      <style href="plico-demo-billing-schedule" precedence="default">
+        {demoStyles}
+      </style>
+      <PublicDemo {...props} />
+    </>
+  );
+}
+export { Demo as BillingScheduleDemo };
+export default Demo;

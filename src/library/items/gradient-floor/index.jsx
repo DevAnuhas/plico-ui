@@ -1,0 +1,19 @@
+"use client";
+import * as React from "react";
+import { PlicoDemo_f as PublicDemo } from "../../modules/demo-CROkL7VF.jsx";
+export { PlicoCore_l as Component } from "../../modules/demo-CROkL7VF.jsx";
+export { PlicoCore_l as GradientFloor } from "../../modules/demo-CROkL7VF.jsx";
+const demoStyles =
+  ".gradient-floor-demo{width:100%}.gradient-floor-demo__panel{border-radius:20px;height:360px;box-shadow:inset 0 0 0 1px #e5e5e5,0 1px 2px #0000000a}.card__preview .gradient-floor-demo{position:absolute;inset:0}.card__preview .gradient-floor-demo__panel{height:100%;box-shadow:none;border-radius:0}:where(.dark,[data-theme=dark]) .gradient-floor-demo__panel{box-shadow:inset 0 0 0 1px #ffffff14}:where(.dark,[data-theme=dark]) .card__preview .gradient-floor-demo__panel{box-shadow:none}\n";
+export function Demo(props) {
+  return (
+    <>
+      <style href="plico-demo-gradient-floor" precedence="default">
+        {demoStyles}
+      </style>
+      <PublicDemo {...props} />
+    </>
+  );
+}
+export { Demo as GradientFloorDemo };
+export default Demo;

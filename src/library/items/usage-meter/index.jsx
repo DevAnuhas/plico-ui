@@ -1,0 +1,19 @@
+"use client";
+import * as React from "react";
+import { PlicoDemo_u as PublicDemo } from "../../modules/demo-VZNuxSqd.jsx";
+export { PlicoCore_m as Component } from "../../modules/component-gYCRsgrh.jsx";
+export { PlicoCore_m as UsageMeter } from "../../modules/component-gYCRsgrh.jsx";
+const demoStyles =
+  ".usage-demo{grid-template-columns:minmax(0,460px);place-content:center;width:100%;display:grid}.card__preview .usage-demo{grid-template-columns:auto;place-content:center;position:absolute;inset:40px 0 8px}.card__preview .usage-demo .ui-um{zoom:.36;width:440px;max-width:none}.stage:has(.usage-demo){align-items:start;height:580px;padding:48px 32px}@media (width<=760px){.stage:has(.usage-demo){height:690px;padding:120px 16px 16px}}@media (width<=760px) and (hover:none) and (pointer:coarse){.stage:has(.usage-demo){height:770px}}.card__preview .usage-demo .ui-umc{zoom:.37;width:440px;max-width:none}\n";
+export function Demo(props) {
+  return (
+    <>
+      <style href="plico-demo-usage-meter" precedence="default">
+        {demoStyles}
+      </style>
+      <PublicDemo {...props} />
+    </>
+  );
+}
+export { Demo as UsageMeterDemo };
+export default Demo;

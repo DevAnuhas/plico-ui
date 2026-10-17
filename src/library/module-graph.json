@@ -1,0 +1,6112 @@
+[
+  {
+    "source": "demo-D8lqmxyw.js",
+    "output": "src/library/modules/demo-D8lqmxyw.jsx",
+    "bindings": [
+      "x",
+      "b",
+      "_",
+      "r",
+      "t",
+      "ie",
+      "h",
+      "m",
+      "n",
+      "e",
+      "ne",
+      "re",
+      "a",
+      "c",
+      "ae",
+      "te",
+      "g",
+      "s",
+      "ee",
+      "i",
+      "oe",
+      "p",
+      "f",
+      "o",
+      "d",
+      "u",
+      "l",
+      "y",
+      "v"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "_": "PlicoCore__",
+      "x": "PlicoDemo_x"
+    }
+  },
+  {
+    "source": "demo.clean-BBgUsqmk.js",
+    "output": "src/library/modules/demo.clean-BBgUsqmk.jsx",
+    "bindings": [
+      "C",
+      "y",
+      "r",
+      "t",
+      "m",
+      "i",
+      "v",
+      "p",
+      "_",
+      "b",
+      "g",
+      "ee",
+      "h",
+      "u",
+      "l",
+      "o",
+      "f",
+      "d",
+      "n",
+      "e",
+      "a",
+      "c",
+      "s",
+      "S",
+      "x"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "y": "PlicoCore_y",
+      "C": "PlicoDemo_C"
+    }
+  },
+  {
+    "source": "demo-DjN2XUBS.js",
+    "output": "src/library/modules/demo-DjN2XUBS.jsx",
+    "bindings": [
+      "D",
+      "_",
+      "r",
+      "t",
+      "n",
+      "e",
+      "g",
+      "f",
+      "i",
+      "o",
+      "a",
+      "c",
+      "l",
+      "d",
+      "s",
+      "u",
+      "p",
+      "m",
+      "E",
+      "C",
+      "T",
+      "w",
+      "x",
+      "S",
+      "y",
+      "b",
+      "v",
+      "h"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "f": "PlicoCore_f",
+      "D": "PlicoDemo_D"
+    }
+  },
+  {
+    "source": "demo.clean-1HqvmQFW.js",
+    "output": "src/library/modules/demo.clean-1HqvmQFW.jsx",
+    "bindings": [
+      "D",
+      "_",
+      "r",
+      "t",
+      "n",
+      "e",
+      "g",
+      "f",
+      "i",
+      "o",
+      "a",
+      "c",
+      "l",
+      "d",
+      "s",
+      "u",
+      "p",
+      "m",
+      "E",
+      "C",
+      "T",
+      "w",
+      "x",
+      "S",
+      "y",
+      "b",
+      "v",
+      "h"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "f": "PlicoCore_f",
+      "D": "PlicoDemo_D"
+    }
+  },
+  {
+    "source": "demo-Dhxw29y6.js",
+    "output": "src/library/modules/demo-Dhxw29y6.jsx",
+    "bindings": [
+      "c",
+      "a",
+      "n",
+      "i",
+      "t",
+      "r",
+      "e",
+      "s",
+      "o"
+    ],
+    "dependencies": [
+      "component-XY52GlKn.js"
+    ],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "c": "PlicoDemo_c"
+    }
+  },
+  {
+    "source": "demo.clean-DhEwvoWY.js",
+    "output": "src/library/modules/demo.clean-DhEwvoWY.jsx",
+    "bindings": [
+      "y",
+      "g",
+      "p",
+      "r",
+      "t",
+      "d",
+      "m",
+      "o",
+      "u",
+      "f",
+      "h",
+      "s",
+      "l",
+      "a",
+      "i",
+      "c",
+      "n",
+      "e",
+      "v",
+      "_"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "p": "PlicoCore_p",
+      "y": "PlicoDemo_y"
+    }
+  },
+  {
+    "source": "demo-BIClVWrb.js",
+    "output": "src/library/modules/demo-BIClVWrb.jsx",
+    "bindings": [
+      "O",
+      "x",
+      "r",
+      "t",
+      "v",
+      "d",
+      "_",
+      "g",
+      "y",
+      "b",
+      "s",
+      "p",
+      "h",
+      "m",
+      "f",
+      "S",
+      "o",
+      "a",
+      "n",
+      "e",
+      "u",
+      "c",
+      "i",
+      "l",
+      "D",
+      "w",
+      "E",
+      "C",
+      "T"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "x": "PlicoCore_x",
+      "O": "PlicoDemo_O"
+    }
+  },
+  {
+    "source": "demo.clean-BdEtaf2R.js",
+    "output": "src/library/modules/demo.clean-BdEtaf2R.jsx",
+    "bindings": [
+      "O",
+      "x",
+      "r",
+      "t",
+      "v",
+      "d",
+      "_",
+      "g",
+      "y",
+      "b",
+      "s",
+      "p",
+      "h",
+      "m",
+      "f",
+      "S",
+      "o",
+      "a",
+      "n",
+      "e",
+      "u",
+      "c",
+      "i",
+      "l",
+      "D",
+      "w",
+      "E",
+      "C",
+      "T"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "x": "PlicoCore_x",
+      "O": "PlicoDemo_O"
+    }
+  },
+  {
+    "source": "demo-DRZinwQJ.js",
+    "output": "src/library/modules/demo-DRZinwQJ.jsx",
+    "bindings": [
+      "g",
+      "h",
+      "m",
+      "p",
+      "r",
+      "t",
+      "f",
+      "d",
+      "s",
+      "o",
+      "ee",
+      "l",
+      "c",
+      "n",
+      "e",
+      "u",
+      "re",
+      "a",
+      "te",
+      "ne",
+      "i"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "d": "PlicoCore_d",
+      "g": "PlicoDemo_g"
+    }
+  },
+  {
+    "source": "demo.clean-DRkQ7w4o.js",
+    "output": "src/library/modules/demo.clean-DRkQ7w4o.jsx",
+    "bindings": [
+      "h",
+      "m",
+      "p",
+      "f",
+      "r",
+      "t",
+      "d",
+      "u",
+      "s",
+      "o",
+      "c",
+      "l",
+      "ne",
+      "a",
+      "n",
+      "e",
+      "ee",
+      "te",
+      "i"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "u": "PlicoCore_u",
+      "h": "PlicoDemo_h"
+    }
+  },
+  {
+    "source": "demo-DQ8Q9s5p.js",
+    "output": "src/library/modules/demo-DQ8Q9s5p.jsx",
+    "bindings": [
+      "o",
+      "i",
+      "t",
+      "a",
+      "n",
+      "r",
+      "e"
+    ],
+    "dependencies": [
+      "component-SU9mzBXM.js"
+    ],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "o": "PlicoDemo_o"
+    }
+  },
+  {
+    "source": "demo.clean-WOdGIyW9.js",
+    "output": "src/library/modules/demo.clean-WOdGIyW9.jsx",
+    "bindings": [
+      "u",
+      "r",
+      "t",
+      "l",
+      "a",
+      "s",
+      "i",
+      "c",
+      "o",
+      "n",
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "a": "PlicoCore_a",
+      "u": "PlicoDemo_u"
+    }
+  },
+  {
+    "source": "demo-Dzn4_UqA.js",
+    "output": "src/library/modules/demo-Dzn4_UqA.jsx",
+    "bindings": [
+      "C",
+      "x",
+      "r",
+      "t",
+      "b",
+      "y",
+      "n",
+      "e",
+      "_",
+      "g",
+      "a",
+      "m",
+      "v",
+      "p",
+      "f",
+      "o",
+      "d",
+      "u",
+      "h",
+      "c",
+      "s",
+      "l",
+      "i",
+      "S"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "_": "PlicoCore__",
+      "C": "PlicoDemo_C"
+    }
+  },
+  {
+    "source": "demo.clean-tD99wK4F.js",
+    "output": "src/library/modules/demo.clean-tD99wK4F.jsx",
+    "bindings": [
+      "C",
+      "x",
+      "r",
+      "t",
+      "b",
+      "y",
+      "n",
+      "e",
+      "_",
+      "g",
+      "a",
+      "m",
+      "v",
+      "p",
+      "f",
+      "o",
+      "d",
+      "u",
+      "h",
+      "c",
+      "s",
+      "l",
+      "i",
+      "S"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "_": "PlicoCore__",
+      "C": "PlicoDemo_C"
+    }
+  },
+  {
+    "source": "demo-nVEvL_e8.js",
+    "output": "src/library/modules/demo-nVEvL_e8.jsx",
+    "bindings": [
+      "v",
+      "l",
+      "r",
+      "t",
+      "f",
+      "p",
+      "c",
+      "s",
+      "d",
+      "a",
+      "h",
+      "n",
+      "e",
+      "m",
+      "u",
+      "i",
+      "_",
+      "g",
+      "o"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "l": "PlicoCore_l",
+      "v": "PlicoDemo_v"
+    }
+  },
+  {
+    "source": "demo.clean-C4OVVYU0.js",
+    "output": "src/library/modules/demo.clean-C4OVVYU0.jsx",
+    "bindings": [
+      "v",
+      "l",
+      "r",
+      "t",
+      "f",
+      "p",
+      "c",
+      "s",
+      "d",
+      "a",
+      "h",
+      "n",
+      "e",
+      "m",
+      "u",
+      "i",
+      "_",
+      "g",
+      "o"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "l": "PlicoCore_l",
+      "v": "PlicoDemo_v"
+    }
+  },
+  {
+    "source": "demo-B2j7cOwX.js",
+    "output": "src/library/modules/demo-B2j7cOwX.jsx",
+    "bindings": [
+      "c",
+      "o",
+      "a",
+      "i",
+      "t",
+      "r",
+      "e",
+      "s",
+      "n"
+    ],
+    "dependencies": [
+      "component-C_OhOiCe.js"
+    ],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "c": "PlicoDemo_c"
+    }
+  },
+  {
+    "source": "demo.clean-C0Kuxzg7.js",
+    "output": "src/library/modules/demo.clean-C0Kuxzg7.jsx",
+    "bindings": [
+      "v",
+      "g",
+      "h",
+      "m",
+      "d",
+      "r",
+      "t",
+      "_",
+      "s",
+      "o",
+      "c",
+      "u",
+      "l",
+      "n",
+      "e",
+      "p",
+      "a",
+      "i",
+      "f"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "s": "PlicoCore_s",
+      "v": "PlicoDemo_v"
+    }
+  },
+  {
+    "source": "demo-Da5-XF-c.js",
+    "output": "src/library/modules/demo-Da5-XF-c.jsx",
+    "bindings": [
+      "v",
+      "_",
+      "i",
+      "t",
+      "n",
+      "h",
+      "r",
+      "e",
+      "d",
+      "a",
+      "p",
+      "u",
+      "l",
+      "s",
+      "c",
+      "f",
+      "m",
+      "g",
+      "o"
+    ],
+    "dependencies": [
+      "component-x-U6EJWL.js"
+    ],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "g": "PlicoCore_g",
+      "v": "PlicoDemo_v"
+    }
+  },
+  {
+    "source": "demo.clean-DkN_5ZQ5.js",
+    "output": "src/library/modules/demo.clean-DkN_5ZQ5.jsx",
+    "bindings": [
+      "C",
+      "S",
+      "r",
+      "t",
+      "i",
+      "a",
+      "l",
+      "n",
+      "e",
+      "c",
+      "o",
+      "s",
+      "b",
+      "g",
+      "u",
+      "v",
+      "h",
+      "m",
+      "f",
+      "p",
+      "_",
+      "y",
+      "x",
+      "d"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "x": "PlicoCore_x",
+      "C": "PlicoDemo_C"
+    }
+  },
+  {
+    "source": "demo-D_fnjW-9.js",
+    "output": "src/library/modules/demo-D_fnjW-9.jsx",
+    "bindings": [
+      "c",
+      "s",
+      "n",
+      "t",
+      "e",
+      "i",
+      "a",
+      "r",
+      "o"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "n": "PlicoCore_n",
+      "c": "PlicoDemo_c"
+    }
+  },
+  {
+    "source": "demo.clean-CUpZACNd.js",
+    "output": "src/library/modules/demo.clean-CUpZACNd.jsx",
+    "bindings": [
+      "c",
+      "s",
+      "n",
+      "t",
+      "e",
+      "i",
+      "a",
+      "r",
+      "o"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "n": "PlicoCore_n",
+      "c": "PlicoDemo_c"
+    }
+  },
+  {
+    "source": "demo-BvRPen0m.js",
+    "output": "src/library/modules/demo-BvRPen0m.jsx",
+    "bindings": [
+      "r",
+      "t",
+      "n",
+      "e"
+    ],
+    "dependencies": [
+      "component-DwKackPh.js"
+    ],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "r": "PlicoDemo_r"
+    }
+  },
+  {
+    "source": "demo.clean-CA_ipDzE.js",
+    "output": "src/library/modules/demo.clean-CA_ipDzE.jsx",
+    "bindings": [
+      "k",
+      "c",
+      "r",
+      "t",
+      "u",
+      "T",
+      "C",
+      "n",
+      "e",
+      "l",
+      "v",
+      "_",
+      "S",
+      "y",
+      "x",
+      "b",
+      "E",
+      "g",
+      "m",
+      "h",
+      "p",
+      "f",
+      "d",
+      "ee",
+      "o",
+      "a",
+      "s",
+      "i",
+      "O",
+      "D",
+      "w"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "c": "PlicoCore_c",
+      "k": "PlicoDemo_k"
+    }
+  },
+  {
+    "source": "demo-fp335z0j.js",
+    "output": "src/library/modules/demo-fp335z0j.jsx",
+    "bindings": [
+      "S",
+      "b",
+      "x",
+      "v",
+      "g",
+      "d",
+      "r",
+      "t",
+      "u",
+      "n",
+      "e",
+      "_",
+      "a",
+      "i",
+      "m",
+      "h",
+      "p",
+      "l",
+      "s",
+      "c",
+      "f",
+      "o",
+      "y"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "v": "PlicoCore_v",
+      "S": "PlicoDemo_S"
+    }
+  },
+  {
+    "source": "demo.clean-Do8sBWBG.js",
+    "output": "src/library/modules/demo.clean-Do8sBWBG.jsx",
+    "bindings": [
+      "y",
+      "_",
+      "v",
+      "h",
+      "f",
+      "d",
+      "r",
+      "t",
+      "u",
+      "n",
+      "e",
+      "l",
+      "s",
+      "c",
+      "o",
+      "p",
+      "a",
+      "i",
+      "g",
+      "m"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "h": "PlicoCore_h",
+      "y": "PlicoDemo_y"
+    }
+  },
+  {
+    "source": "demo-Dh1VwBQQ.js",
+    "output": "src/library/modules/demo-Dh1VwBQQ.jsx",
+    "bindings": [
+      "ne",
+      "p",
+      "f",
+      "r",
+      "t",
+      "d",
+      "u",
+      "i",
+      "c",
+      "l",
+      "s",
+      "ee",
+      "a",
+      "o",
+      "n",
+      "e",
+      "te"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "f": "PlicoCore_f",
+      "ne": "PlicoDemo_ne"
+    }
+  },
+  {
+    "source": "demo.clean-BeAF0VV4.js",
+    "output": "src/library/modules/demo.clean-BeAF0VV4.jsx",
+    "bindings": [
+      "m",
+      "ne",
+      "p",
+      "r",
+      "t",
+      "f",
+      "d",
+      "i",
+      "c",
+      "u",
+      "s",
+      "ee",
+      "a",
+      "o",
+      "n",
+      "e",
+      "te",
+      "l"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "p": "PlicoCore_p",
+      "m": "PlicoDemo_m"
+    }
+  },
+  {
+    "source": "demo-ZZIguRMl.js",
+    "output": "src/library/modules/demo-ZZIguRMl.jsx",
+    "bindings": [
+      "p",
+      "d",
+      "r",
+      "t",
+      "l",
+      "f",
+      "n",
+      "e",
+      "o",
+      "u",
+      "c",
+      "a",
+      "i",
+      "s"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "d": "PlicoCore_d",
+      "p": "PlicoDemo_p"
+    }
+  },
+  {
+    "source": "demo.clean-CfccVVbn.js",
+    "output": "src/library/modules/demo.clean-CfccVVbn.jsx",
+    "bindings": [
+      "p",
+      "d",
+      "r",
+      "t",
+      "l",
+      "f",
+      "n",
+      "e",
+      "o",
+      "u",
+      "c",
+      "a",
+      "i",
+      "s"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "d": "PlicoCore_d",
+      "p": "PlicoDemo_p"
+    }
+  },
+  {
+    "source": "demo-TTVz3U3f.js",
+    "output": "src/library/modules/demo-TTVz3U3f.jsx",
+    "bindings": [
+      "g",
+      "d",
+      "s",
+      "r",
+      "t",
+      "n",
+      "e",
+      "m",
+      "h",
+      "p",
+      "f",
+      "a",
+      "c",
+      "o",
+      "i",
+      "u",
+      "l"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "a": "PlicoCore_a",
+      "g": "PlicoDemo_g"
+    }
+  },
+  {
+    "source": "demo.clean-DgcZN_UD.js",
+    "output": "src/library/modules/demo.clean-DgcZN_UD.jsx",
+    "bindings": [
+      "g",
+      "d",
+      "s",
+      "r",
+      "t",
+      "n",
+      "e",
+      "m",
+      "h",
+      "p",
+      "f",
+      "a",
+      "o",
+      "c",
+      "i",
+      "u",
+      "l"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "a": "PlicoCore_a",
+      "g": "PlicoDemo_g"
+    }
+  },
+  {
+    "source": "demo-CPh6u-dx.js",
+    "output": "src/library/modules/demo-CPh6u-dx.jsx",
+    "bindings": [
+      "m",
+      "p",
+      "f",
+      "s",
+      "l",
+      "r",
+      "t",
+      "c",
+      "o",
+      "i",
+      "d",
+      "a",
+      "n",
+      "e",
+      "u"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "s": "PlicoCore_s",
+      "m": "PlicoDemo_m"
+    }
+  },
+  {
+    "source": "demo.clean-kKXDAKEK.js",
+    "output": "src/library/modules/demo.clean-kKXDAKEK.jsx",
+    "bindings": [
+      "h",
+      "m",
+      "p",
+      "s",
+      "l",
+      "u",
+      "r",
+      "t",
+      "c",
+      "o",
+      "i",
+      "f",
+      "a",
+      "n",
+      "e",
+      "d"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "s": "PlicoCore_s",
+      "h": "PlicoDemo_h"
+    }
+  },
+  {
+    "source": "demo-BOiMGMeM.js",
+    "output": "src/library/modules/demo-BOiMGMeM.jsx",
+    "bindings": [
+      "g",
+      "h",
+      "m",
+      "p",
+      "d",
+      "r",
+      "t",
+      "f",
+      "n",
+      "e",
+      "o",
+      "c",
+      "u",
+      "s",
+      "l",
+      "a",
+      "i"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "d": "PlicoCore_d",
+      "g": "PlicoDemo_g"
+    }
+  },
+  {
+    "source": "demo.clean-CSd5ZCWu.js",
+    "output": "src/library/modules/demo.clean-CSd5ZCWu.jsx",
+    "bindings": [
+      "g",
+      "h",
+      "m",
+      "p",
+      "d",
+      "r",
+      "t",
+      "f",
+      "n",
+      "e",
+      "o",
+      "c",
+      "u",
+      "s",
+      "l",
+      "a",
+      "i"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "d": "PlicoCore_d",
+      "g": "PlicoDemo_g"
+    }
+  },
+  {
+    "source": "demo-jxSKfjMs.js",
+    "output": "src/library/modules/demo-jxSKfjMs.jsx",
+    "bindings": [
+      "_",
+      "h",
+      "r",
+      "t",
+      "g",
+      "m",
+      "re",
+      "f",
+      "d",
+      "n",
+      "e",
+      "ee",
+      "a",
+      "p",
+      "o",
+      "ie",
+      "ne",
+      "te",
+      "c",
+      "l",
+      "u",
+      "s",
+      "i"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "m": "PlicoCore_m",
+      "_": "PlicoDemo__"
+    }
+  },
+  {
+    "source": "demo.clean-BVM0xTTl.js",
+    "output": "src/library/modules/demo.clean-BVM0xTTl.jsx",
+    "bindings": [
+      "_",
+      "h",
+      "r",
+      "t",
+      "g",
+      "m",
+      "re",
+      "f",
+      "d",
+      "n",
+      "e",
+      "ee",
+      "a",
+      "p",
+      "o",
+      "ie",
+      "ne",
+      "te",
+      "c",
+      "l",
+      "u",
+      "s",
+      "i"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "m": "PlicoCore_m",
+      "_": "PlicoDemo__"
+    }
+  },
+  {
+    "source": "demo-BiF59Z3j.js",
+    "output": "src/library/modules/demo-BiF59Z3j.jsx",
+    "bindings": [
+      "v",
+      "g",
+      "p",
+      "c",
+      "t",
+      "f",
+      "d",
+      "u",
+      "l",
+      "h",
+      "i",
+      "a",
+      "r",
+      "n",
+      "m",
+      "o",
+      "_",
+      "s",
+      "e"
+    ],
+    "dependencies": [
+      "component-OCVPe01Z.js"
+    ],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "v": "PlicoDemo_v"
+    }
+  },
+  {
+    "source": "demo.clean-DJWKIoS0.js",
+    "output": "src/library/modules/demo.clean-DJWKIoS0.jsx",
+    "bindings": [
+      "O",
+      "E",
+      "C",
+      "r",
+      "t",
+      "S",
+      "x",
+      "b",
+      "y",
+      "T",
+      "v",
+      "m",
+      "p",
+      "_",
+      "g",
+      "h",
+      "w",
+      "c",
+      "ee",
+      "te",
+      "l",
+      "i",
+      "u",
+      "d",
+      "n",
+      "e",
+      "f",
+      "ie",
+      "re",
+      "ne",
+      "oe",
+      "o",
+      "a",
+      "s",
+      "ae",
+      "D"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "c": "PlicoCore_c",
+      "O": "PlicoDemo_O"
+    }
+  },
+  {
+    "source": "demo-sfbKzZ34.js",
+    "output": "src/library/modules/demo-sfbKzZ34.jsx",
+    "bindings": [
+      "x",
+      "b",
+      "r",
+      "t",
+      "h",
+      "m",
+      "p",
+      "l",
+      "ae",
+      "ne",
+      "c",
+      "oe",
+      "s",
+      "te",
+      "v",
+      "_",
+      "g",
+      "a",
+      "ee",
+      "u",
+      "se",
+      "n",
+      "e",
+      "y",
+      "o",
+      "d",
+      "f",
+      "i",
+      "ie",
+      "re"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "b": "PlicoCore_b",
+      "x": "PlicoDemo_x"
+    }
+  },
+  {
+    "source": "demo.clean-CFbJ9noA.js",
+    "output": "src/library/modules/demo.clean-CFbJ9noA.jsx",
+    "bindings": [
+      "x",
+      "b",
+      "r",
+      "t",
+      "h",
+      "m",
+      "p",
+      "l",
+      "ie",
+      "ne",
+      "c",
+      "ae",
+      "s",
+      "te",
+      "y",
+      "v",
+      "g",
+      "a",
+      "ee",
+      "u",
+      "oe",
+      "n",
+      "e",
+      "o",
+      "d",
+      "f",
+      "i",
+      "re",
+      "_"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "b": "PlicoCore_b",
+      "x": "PlicoDemo_x"
+    }
+  },
+  {
+    "source": "demo-CcNPpld_.js",
+    "output": "src/library/modules/demo-CcNPpld_.jsx",
+    "bindings": [
+      "l",
+      "c",
+      "i",
+      "r",
+      "t",
+      "o",
+      "a",
+      "s",
+      "n",
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "i": "PlicoCore_i",
+      "l": "PlicoDemo_l"
+    }
+  },
+  {
+    "source": "demo.clean-Cwxrnsci.js",
+    "output": "src/library/modules/demo.clean-Cwxrnsci.jsx",
+    "bindings": [
+      "l",
+      "c",
+      "i",
+      "r",
+      "t",
+      "o",
+      "a",
+      "s",
+      "n",
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "i": "PlicoCore_i",
+      "l": "PlicoDemo_l"
+    }
+  },
+  {
+    "source": "demo-CQyRPKqn.js",
+    "output": "src/library/modules/demo-CQyRPKqn.jsx",
+    "bindings": [
+      "y",
+      "v",
+      "r",
+      "t",
+      "m",
+      "p",
+      "o",
+      "i",
+      "ee",
+      "s",
+      "h",
+      "l",
+      "a",
+      "c",
+      "g",
+      "te",
+      "_",
+      "n",
+      "e",
+      "u",
+      "f",
+      "d"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "v": "PlicoCore_v",
+      "y": "PlicoDemo_y"
+    }
+  },
+  {
+    "source": "demo.clean-DN2ioSob.js",
+    "output": "src/library/modules/demo.clean-DN2ioSob.jsx",
+    "bindings": [
+      "b",
+      "y",
+      "r",
+      "t",
+      "h",
+      "m",
+      "o",
+      "i",
+      "c",
+      "s",
+      "ee",
+      "u",
+      "a",
+      "l",
+      "_",
+      "g",
+      "te",
+      "v",
+      "n",
+      "e",
+      "d",
+      "p",
+      "f"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "y": "PlicoCore_y",
+      "b": "PlicoDemo_b"
+    }
+  },
+  {
+    "source": "demo-CQRf-Cg5.js",
+    "output": "src/library/modules/demo-CQRf-Cg5.jsx",
+    "bindings": [
+      "d",
+      "s",
+      "r",
+      "t",
+      "c",
+      "u",
+      "a",
+      "n",
+      "e",
+      "l",
+      "o",
+      "i"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "s": "PlicoCore_s",
+      "d": "PlicoDemo_d"
+    }
+  },
+  {
+    "source": "demo.clean-CjJwmC-8.js",
+    "output": "src/library/modules/demo.clean-CjJwmC-8.jsx",
+    "bindings": [
+      "d",
+      "s",
+      "r",
+      "t",
+      "c",
+      "u",
+      "a",
+      "n",
+      "e",
+      "l",
+      "o",
+      "i"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "s": "PlicoCore_s",
+      "d": "PlicoDemo_d"
+    }
+  },
+  {
+    "source": "demo-CbW_KPTI.js",
+    "output": "src/library/modules/demo-CbW_KPTI.jsx",
+    "bindings": [
+      "g",
+      "h",
+      "m",
+      "p",
+      "f",
+      "u",
+      "r",
+      "t",
+      "d",
+      "ee",
+      "te",
+      "ne",
+      "o",
+      "n",
+      "e",
+      "l",
+      "s",
+      "c",
+      "i",
+      "a"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "p": "PlicoCore_p",
+      "g": "PlicoDemo_g"
+    }
+  },
+  {
+    "source": "demo.clean-BWn0UMw5.js",
+    "output": "src/library/modules/demo.clean-BWn0UMw5.jsx",
+    "bindings": [
+      "g",
+      "h",
+      "m",
+      "p",
+      "f",
+      "u",
+      "r",
+      "t",
+      "d",
+      "ee",
+      "te",
+      "ne",
+      "o",
+      "n",
+      "e",
+      "l",
+      "s",
+      "c",
+      "i",
+      "a"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "p": "PlicoCore_p",
+      "g": "PlicoDemo_g"
+    }
+  },
+  {
+    "source": "demo-BkxWHDVt.js",
+    "output": "src/library/modules/demo-BkxWHDVt.jsx",
+    "bindings": [
+      "i",
+      "r",
+      "t",
+      "n",
+      "e"
+    ],
+    "dependencies": [
+      "component-LyBMd15F.js"
+    ],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "i": "PlicoDemo_i"
+    }
+  },
+  {
+    "source": "demo.clean-Djfm83dS.js",
+    "output": "src/library/modules/demo.clean-Djfm83dS.jsx",
+    "bindings": [
+      "l",
+      "c",
+      "a",
+      "r",
+      "t",
+      "s",
+      "i",
+      "n",
+      "e",
+      "o"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "a": "PlicoCore_a",
+      "l": "PlicoDemo_l"
+    }
+  },
+  {
+    "source": "demo-CkNJ3LE1.js",
+    "output": "src/library/modules/demo-CkNJ3LE1.jsx",
+    "bindings": [
+      "d",
+      "o",
+      "a",
+      "n",
+      "i",
+      "t",
+      "u",
+      "l",
+      "c",
+      "s",
+      "r",
+      "e"
+    ],
+    "dependencies": [
+      "component-CADGuG8q.js"
+    ],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "d": "PlicoDemo_d"
+    }
+  },
+  {
+    "source": "demo.clean--VSPSi3o.js",
+    "output": "src/library/modules/demo.clean--VSPSi3o.jsx",
+    "bindings": [
+      "v",
+      "p",
+      "f",
+      "u",
+      "r",
+      "t",
+      "l",
+      "c",
+      "d",
+      "n",
+      "e",
+      "s",
+      "o",
+      "a",
+      "i",
+      "_",
+      "g",
+      "h",
+      "m"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "u": "PlicoCore_u",
+      "v": "PlicoDemo_v"
+    }
+  },
+  {
+    "source": "demo-CGtzgHa8.js",
+    "output": "src/library/modules/demo-CGtzgHa8.jsx",
+    "bindings": [
+      "h",
+      "p",
+      "r",
+      "t",
+      "f",
+      "s",
+      "o",
+      "a",
+      "n",
+      "e",
+      "i",
+      "d",
+      "u",
+      "c",
+      "m",
+      "l"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "p": "PlicoCore_p",
+      "h": "PlicoDemo_h"
+    }
+  },
+  {
+    "source": "demo.clean-Cz5lRox3.js",
+    "output": "src/library/modules/demo.clean-Cz5lRox3.jsx",
+    "bindings": [
+      "h",
+      "p",
+      "r",
+      "t",
+      "f",
+      "s",
+      "o",
+      "a",
+      "n",
+      "e",
+      "i",
+      "d",
+      "u",
+      "c",
+      "m",
+      "l"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "p": "PlicoCore_p",
+      "h": "PlicoDemo_h"
+    }
+  },
+  {
+    "source": "demo-gOEEj_G8.js",
+    "output": "src/library/modules/demo-gOEEj_G8.jsx",
+    "bindings": [
+      "m",
+      "p",
+      "r",
+      "t",
+      "s",
+      "c",
+      "d",
+      "u",
+      "n",
+      "e",
+      "l",
+      "f",
+      "a",
+      "o",
+      "i"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "s": "PlicoCore_s",
+      "m": "PlicoDemo_m"
+    }
+  },
+  {
+    "source": "demo.clean-BMo3zBgx.js",
+    "output": "src/library/modules/demo.clean-BMo3zBgx.jsx",
+    "bindings": [
+      "m",
+      "p",
+      "r",
+      "t",
+      "s",
+      "c",
+      "d",
+      "u",
+      "n",
+      "e",
+      "l",
+      "f",
+      "a",
+      "o",
+      "i"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "s": "PlicoCore_s",
+      "m": "PlicoDemo_m"
+    }
+  },
+  {
+    "source": "demo-C5oa8zop.js",
+    "output": "src/library/modules/demo-C5oa8zop.jsx",
+    "bindings": [
+      "l",
+      "s",
+      "a",
+      "o",
+      "i",
+      "r",
+      "c",
+      "t",
+      "n",
+      "e"
+    ],
+    "dependencies": [
+      "component-cuEFw_I6.js"
+    ],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "l": "PlicoDemo_l"
+    }
+  },
+  {
+    "source": "demo.clean-BdfQ2LZR.js",
+    "output": "src/library/modules/demo.clean-BdfQ2LZR.jsx",
+    "bindings": [
+      "m",
+      "f",
+      "u",
+      "d",
+      "l",
+      "c",
+      "p",
+      "o",
+      "r",
+      "t",
+      "s",
+      "a",
+      "n",
+      "e",
+      "i"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "o": "PlicoCore_o",
+      "m": "PlicoDemo_m"
+    }
+  },
+  {
+    "source": "demo-DZle1gG8.js",
+    "output": "src/library/modules/demo-DZle1gG8.jsx",
+    "bindings": [
+      "fe",
+      "de",
+      "le",
+      "ce",
+      "f",
+      "r",
+      "t",
+      "p",
+      "ie",
+      "d",
+      "n",
+      "e",
+      "l",
+      "ae",
+      "re",
+      "te",
+      "ne",
+      "ee",
+      "m",
+      "oe",
+      "se",
+      "ue",
+      "s",
+      "c",
+      "o",
+      "a",
+      "u",
+      "i"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "le": "PlicoCore_le",
+      "fe": "PlicoDemo_fe"
+    }
+  },
+  {
+    "source": "demo.clean-2HwVU5pS.js",
+    "output": "src/library/modules/demo.clean-2HwVU5pS.jsx",
+    "bindings": [
+      "pe",
+      "fe",
+      "ue",
+      "le",
+      "p",
+      "r",
+      "t",
+      "ie",
+      "f",
+      "n",
+      "e",
+      "l",
+      "ae",
+      "re",
+      "te",
+      "ne",
+      "ee",
+      "oe",
+      "se",
+      "ce",
+      "de",
+      "s",
+      "c",
+      "o",
+      "a",
+      "u",
+      "i",
+      "d"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "ue": "PlicoCore_ue",
+      "pe": "PlicoDemo_pe"
+    }
+  },
+  {
+    "source": "demo-CgV2euur.js",
+    "output": "src/library/modules/demo-CgV2euur.jsx",
+    "bindings": [
+      "m",
+      "d",
+      "r",
+      "t",
+      "c",
+      "s",
+      "a",
+      "n",
+      "e",
+      "f",
+      "i",
+      "u",
+      "l",
+      "o",
+      "p"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "o": "PlicoCore_o",
+      "m": "PlicoDemo_m"
+    }
+  },
+  {
+    "source": "demo.clean-jqs229XM.js",
+    "output": "src/library/modules/demo.clean-jqs229XM.jsx",
+    "bindings": [
+      "h",
+      "f",
+      "r",
+      "t",
+      "l",
+      "s",
+      "a",
+      "n",
+      "e",
+      "p",
+      "c",
+      "i",
+      "d",
+      "u",
+      "o",
+      "m"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "o": "PlicoCore_o",
+      "h": "PlicoDemo_h"
+    }
+  },
+  {
+    "source": "demo-D9-q9LWy.js",
+    "output": "src/library/modules/demo-D9-q9LWy.jsx",
+    "bindings": [
+      "y",
+      "r",
+      "t",
+      "v",
+      "_",
+      "p",
+      "n",
+      "e",
+      "ne",
+      "m",
+      "i",
+      "h",
+      "l",
+      "o",
+      "te",
+      "g",
+      "ee",
+      "re",
+      "d",
+      "u",
+      "f",
+      "s",
+      "c",
+      "a"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "_": "PlicoCore__",
+      "y": "PlicoDemo_y"
+    }
+  },
+  {
+    "source": "demo.clean-CoifhOe5.js",
+    "output": "src/library/modules/demo.clean-CoifhOe5.jsx",
+    "bindings": [
+      "y",
+      "r",
+      "t",
+      "v",
+      "_",
+      "p",
+      "n",
+      "e",
+      "ne",
+      "m",
+      "i",
+      "h",
+      "l",
+      "o",
+      "te",
+      "g",
+      "ee",
+      "re",
+      "d",
+      "u",
+      "f",
+      "s",
+      "c",
+      "a"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "_": "PlicoCore__",
+      "y": "PlicoDemo_y"
+    }
+  },
+  {
+    "source": "demo-RSBM-GoA.js",
+    "output": "src/library/modules/demo-RSBM-GoA.jsx",
+    "bindings": [
+      "d",
+      "u",
+      "a",
+      "r",
+      "t",
+      "c",
+      "s",
+      "o",
+      "i",
+      "l",
+      "n",
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "a": "PlicoCore_a",
+      "d": "PlicoDemo_d"
+    }
+  },
+  {
+    "source": "demo.clean-gBQjVTxc.js",
+    "output": "src/library/modules/demo.clean-gBQjVTxc.jsx",
+    "bindings": [
+      "d",
+      "u",
+      "a",
+      "r",
+      "t",
+      "c",
+      "s",
+      "o",
+      "i",
+      "l",
+      "n",
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "a": "PlicoCore_a",
+      "d": "PlicoDemo_d"
+    }
+  },
+  {
+    "source": "demo-BKNS7xRz.js",
+    "output": "src/library/modules/demo-BKNS7xRz.jsx",
+    "bindings": [
+      "d",
+      "r",
+      "t",
+      "ee",
+      "s",
+      "i",
+      "o",
+      "c",
+      "n",
+      "e",
+      "a",
+      "l",
+      "u"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "s": "PlicoCore_s",
+      "d": "PlicoDemo_d"
+    }
+  },
+  {
+    "source": "demo.clean-SPg51xTG.js",
+    "output": "src/library/modules/demo.clean-SPg51xTG.jsx",
+    "bindings": [
+      "d",
+      "r",
+      "t",
+      "ee",
+      "s",
+      "i",
+      "o",
+      "c",
+      "n",
+      "e",
+      "a",
+      "l",
+      "u"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "s": "PlicoCore_s",
+      "d": "PlicoDemo_d"
+    }
+  },
+  {
+    "source": "demo-d_AV0tPL.js",
+    "output": "src/library/modules/demo-d_AV0tPL.jsx",
+    "bindings": [
+      "h",
+      "i",
+      "a",
+      "f",
+      "r",
+      "t",
+      "d",
+      "m",
+      "n",
+      "e",
+      "p",
+      "u",
+      "o",
+      "l",
+      "c",
+      "s"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "i": "PlicoCore_i",
+      "h": "PlicoDemo_h"
+    }
+  },
+  {
+    "source": "demo.clean-Du4BhTGQ.js",
+    "output": "src/library/modules/demo.clean-Du4BhTGQ.jsx",
+    "bindings": [
+      "h",
+      "i",
+      "a",
+      "f",
+      "r",
+      "t",
+      "d",
+      "m",
+      "n",
+      "e",
+      "p",
+      "u",
+      "o",
+      "l",
+      "c",
+      "s"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "i": "PlicoCore_i",
+      "h": "PlicoDemo_h"
+    }
+  },
+  {
+    "source": "demo-BKqcXOSN.js",
+    "output": "src/library/modules/demo-BKqcXOSN.jsx",
+    "bindings": [
+      "s",
+      "o",
+      "i",
+      "r",
+      "t",
+      "a",
+      "n",
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "i": "PlicoCore_i",
+      "s": "PlicoDemo_s"
+    }
+  },
+  {
+    "source": "demo.clean-CQ9Mgt2p.js",
+    "output": "src/library/modules/demo.clean-CQ9Mgt2p.jsx",
+    "bindings": [
+      "s",
+      "o",
+      "i",
+      "r",
+      "t",
+      "a",
+      "n",
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "i": "PlicoCore_i",
+      "s": "PlicoDemo_s"
+    }
+  },
+  {
+    "source": "demo-D4OBH9QL.js",
+    "output": "src/library/modules/demo-D4OBH9QL.jsx",
+    "bindings": [
+      "h",
+      "m",
+      "p",
+      "f",
+      "l",
+      "r",
+      "t",
+      "d",
+      "a",
+      "o",
+      "u",
+      "c",
+      "s",
+      "ee",
+      "n",
+      "e",
+      "i"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "f": "PlicoCore_f",
+      "h": "PlicoDemo_h"
+    }
+  },
+  {
+    "source": "demo.clean-WHeg8d8a.js",
+    "output": "src/library/modules/demo.clean-WHeg8d8a.jsx",
+    "bindings": [
+      "h",
+      "m",
+      "p",
+      "f",
+      "l",
+      "r",
+      "t",
+      "d",
+      "a",
+      "o",
+      "u",
+      "c",
+      "s",
+      "ee",
+      "n",
+      "e",
+      "i"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "f": "PlicoCore_f",
+      "h": "PlicoDemo_h"
+    }
+  },
+  {
+    "source": "demo-B8j58gGW.js",
+    "output": "src/library/modules/demo-B8j58gGW.jsx",
+    "bindings": [
+      "S",
+      "y",
+      "v",
+      "r",
+      "t",
+      "ne",
+      "h",
+      "ee",
+      "te",
+      "m",
+      "n",
+      "e",
+      "_",
+      "s",
+      "a",
+      "o",
+      "g",
+      "re",
+      "l",
+      "p",
+      "d",
+      "f",
+      "c",
+      "i",
+      "u",
+      "x",
+      "b"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "v": "PlicoCore_v",
+      "S": "PlicoDemo_S"
+    }
+  },
+  {
+    "source": "demo.clean-DF4dB9bw.js",
+    "output": "src/library/modules/demo.clean-DF4dB9bw.jsx",
+    "bindings": [
+      "S",
+      "y",
+      "v",
+      "r",
+      "t",
+      "ne",
+      "h",
+      "ee",
+      "te",
+      "m",
+      "n",
+      "e",
+      "_",
+      "s",
+      "a",
+      "o",
+      "g",
+      "re",
+      "l",
+      "p",
+      "d",
+      "f",
+      "c",
+      "i",
+      "u",
+      "x",
+      "b"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "v": "PlicoCore_v",
+      "S": "PlicoDemo_S"
+    }
+  },
+  {
+    "source": "demo-DlJqXDIq.js",
+    "output": "src/library/modules/demo-DlJqXDIq.jsx",
+    "bindings": [
+      "d",
+      "o",
+      "s",
+      "r",
+      "t",
+      "n",
+      "e",
+      "a",
+      "l",
+      "c",
+      "i",
+      "u"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "o": "PlicoCore_o",
+      "d": "PlicoDemo_d"
+    }
+  },
+  {
+    "source": "demo.clean-1KuFFkG8.js",
+    "output": "src/library/modules/demo.clean-1KuFFkG8.jsx",
+    "bindings": [
+      "d",
+      "o",
+      "s",
+      "r",
+      "t",
+      "n",
+      "e",
+      "a",
+      "l",
+      "c",
+      "i",
+      "u"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "o": "PlicoCore_o",
+      "d": "PlicoDemo_d"
+    }
+  },
+  {
+    "source": "demo-BzK_zDAD.js",
+    "output": "src/library/modules/demo-BzK_zDAD.jsx",
+    "bindings": [
+      "u",
+      "c",
+      "n",
+      "i",
+      "t",
+      "s",
+      "a",
+      "o",
+      "l",
+      "r",
+      "e"
+    ],
+    "dependencies": [
+      "component-BDo0fvGw.js"
+    ],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "u": "PlicoDemo_u"
+    }
+  },
+  {
+    "source": "demo.clean-D1uXYCFG.js",
+    "output": "src/library/modules/demo.clean-D1uXYCFG.jsx",
+    "bindings": [
+      "d",
+      "l",
+      "i",
+      "r",
+      "t",
+      "a",
+      "n",
+      "e",
+      "c",
+      "o",
+      "s",
+      "u"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "i": "PlicoCore_i",
+      "d": "PlicoDemo_d"
+    }
+  },
+  {
+    "source": "demo-BA5aHbcY.js",
+    "output": "src/library/modules/demo-BA5aHbcY.jsx",
+    "bindings": [
+      "o",
+      "a",
+      "n",
+      "i",
+      "t",
+      "r",
+      "e"
+    ],
+    "dependencies": [
+      "component-Dd3X9r8k.js"
+    ],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "o": "PlicoDemo_o"
+    }
+  },
+  {
+    "source": "demo.clean-Ca5XH5pf.js",
+    "output": "src/library/modules/demo.clean-Ca5XH5pf.jsx",
+    "bindings": [
+      "p",
+      "f",
+      "i",
+      "r",
+      "t",
+      "u",
+      "l",
+      "a",
+      "c",
+      "o",
+      "s",
+      "d",
+      "n",
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "i": "PlicoCore_i",
+      "p": "PlicoDemo_p"
+    }
+  },
+  {
+    "source": "demo-Ed3S7lvS.js",
+    "output": "src/library/modules/demo-Ed3S7lvS.jsx",
+    "bindings": [
+      "u",
+      "l",
+      "r",
+      "t",
+      "a",
+      "s",
+      "i",
+      "o",
+      "c",
+      "n",
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "a": "PlicoCore_a",
+      "u": "PlicoDemo_u"
+    }
+  },
+  {
+    "source": "demo.clean-CnpU6JZL.js",
+    "output": "src/library/modules/demo.clean-CnpU6JZL.jsx",
+    "bindings": [
+      "u",
+      "l",
+      "r",
+      "t",
+      "a",
+      "s",
+      "i",
+      "o",
+      "c",
+      "n",
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "a": "PlicoCore_a",
+      "u": "PlicoDemo_u"
+    }
+  },
+  {
+    "source": "demo-BI6YmM8v.js",
+    "output": "src/library/modules/demo-BI6YmM8v.jsx",
+    "bindings": [
+      "D",
+      "r",
+      "t",
+      "x",
+      "d",
+      "u",
+      "i",
+      "b",
+      "w",
+      "y",
+      "c",
+      "n",
+      "e",
+      "v",
+      "l",
+      "o",
+      "p",
+      "_",
+      "h",
+      "s",
+      "f",
+      "E",
+      "g",
+      "T",
+      "C",
+      "m",
+      "S",
+      "a"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "m": "PlicoCore_m",
+      "D": "PlicoDemo_D"
+    }
+  },
+  {
+    "source": "demo.clean-7tCw9u4A.js",
+    "output": "src/library/modules/demo.clean-7tCw9u4A.jsx",
+    "bindings": [
+      "D",
+      "r",
+      "t",
+      "x",
+      "d",
+      "u",
+      "i",
+      "b",
+      "w",
+      "y",
+      "c",
+      "n",
+      "e",
+      "v",
+      "l",
+      "o",
+      "p",
+      "_",
+      "h",
+      "s",
+      "f",
+      "E",
+      "g",
+      "T",
+      "C",
+      "m",
+      "S",
+      "a"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "m": "PlicoCore_m",
+      "D": "PlicoDemo_D"
+    }
+  },
+  {
+    "source": "demo-qJGH2Gjh.js",
+    "output": "src/library/modules/demo-qJGH2Gjh.jsx",
+    "bindings": [
+      "c",
+      "o",
+      "a",
+      "n",
+      "i",
+      "t",
+      "s",
+      "r",
+      "e"
+    ],
+    "dependencies": [
+      "component-jpqc9dJC.js"
+    ],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "c": "PlicoDemo_c"
+    }
+  },
+  {
+    "source": "demo.clean-DWvTXnKE.js",
+    "output": "src/library/modules/demo.clean-DWvTXnKE.jsx",
+    "bindings": [
+      "d",
+      "l",
+      "c",
+      "o",
+      "r",
+      "t",
+      "a",
+      "s",
+      "n",
+      "e",
+      "i",
+      "u"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "o": "PlicoCore_o",
+      "d": "PlicoDemo_d"
+    }
+  },
+  {
+    "source": "demo-CnnmXlmZ.js",
+    "output": "src/library/modules/demo-CnnmXlmZ.jsx",
+    "bindings": [
+      "a",
+      "i",
+      "n",
+      "e",
+      "r",
+      "t"
+    ],
+    "dependencies": [
+      "component-DWcBqJQY.js"
+    ],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "a": "PlicoDemo_a"
+    }
+  },
+  {
+    "source": "demo.clean-D9vXyDyZ.js",
+    "output": "src/library/modules/demo.clean-D9vXyDyZ.jsx",
+    "bindings": [
+      "f",
+      "d",
+      "r",
+      "t",
+      "u",
+      "a",
+      "i",
+      "o",
+      "c",
+      "s",
+      "l",
+      "n",
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "a": "PlicoCore_a",
+      "f": "PlicoDemo_f"
+    }
+  },
+  {
+    "source": "demo-D2Q4vYDw.js",
+    "output": "src/library/modules/demo-D2Q4vYDw.jsx",
+    "bindings": [
+      "u",
+      "c",
+      "a",
+      "r",
+      "t",
+      "i",
+      "o",
+      "s",
+      "n",
+      "e",
+      "l"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "i": "PlicoCore_i",
+      "u": "PlicoDemo_u"
+    }
+  },
+  {
+    "source": "demo.clean-Bfu_rP8L.js",
+    "output": "src/library/modules/demo.clean-Bfu_rP8L.jsx",
+    "bindings": [
+      "u",
+      "c",
+      "a",
+      "r",
+      "t",
+      "i",
+      "o",
+      "s",
+      "n",
+      "e",
+      "l"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "i": "PlicoCore_i",
+      "u": "PlicoDemo_u"
+    }
+  },
+  {
+    "source": "demo-BRHZ1FKP.js",
+    "output": "src/library/modules/demo-BRHZ1FKP.jsx",
+    "bindings": [
+      "l",
+      "r",
+      "a",
+      "t",
+      "c",
+      "s",
+      "o",
+      "n",
+      "i",
+      "e"
+    ],
+    "dependencies": [
+      "index-CA7yMmEL.js"
+    ],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "s": "PlicoCore_s",
+      "l": "PlicoDemo_l"
+    }
+  },
+  {
+    "source": "demo.clean-CWpzS1qi.js",
+    "output": "src/library/modules/demo.clean-CWpzS1qi.jsx",
+    "bindings": [
+      "j",
+      "E",
+      "r",
+      "t",
+      "x",
+      "T",
+      "S",
+      "b",
+      "m",
+      "p",
+      "i",
+      "c",
+      "a",
+      "y",
+      "n",
+      "e",
+      "D",
+      "C",
+      "w",
+      "d",
+      "o",
+      "u",
+      "l",
+      "A",
+      "k",
+      "O",
+      "v",
+      "_",
+      "f",
+      "s",
+      "g",
+      "h"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "k": "PlicoCore_k",
+      "j": "PlicoDemo_j"
+    }
+  },
+  {
+    "source": "demo-C2oxSuna.js",
+    "output": "src/library/modules/demo-C2oxSuna.jsx",
+    "bindings": [
+      "l",
+      "f",
+      "a",
+      "t",
+      "r",
+      "d",
+      "c",
+      "u",
+      "n",
+      "s",
+      "o",
+      "i",
+      "e"
+    ],
+    "dependencies": [
+      "component-CA_4LgO0.js"
+    ],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "l": "PlicoDemo_l"
+    }
+  },
+  {
+    "source": "demo.clean-q2ZwGlZu.js",
+    "output": "src/library/modules/demo.clean-q2ZwGlZu.jsx",
+    "bindings": [
+      "S",
+      "T",
+      "r",
+      "t",
+      "i",
+      "o",
+      "g",
+      "h",
+      "s",
+      "_",
+      "n",
+      "e",
+      "m",
+      "l",
+      "u",
+      "p",
+      "c",
+      "d",
+      "v",
+      "f",
+      "w",
+      "x",
+      "C",
+      "a",
+      "b",
+      "y"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "a": "PlicoCore_a",
+      "S": "PlicoDemo_S"
+    }
+  },
+  {
+    "source": "demo-VZNuxSqd.js",
+    "output": "src/library/modules/demo-VZNuxSqd.jsx",
+    "bindings": [
+      "u",
+      "s",
+      "a",
+      "l",
+      "c",
+      "o",
+      "n",
+      "i",
+      "t",
+      "r",
+      "e"
+    ],
+    "dependencies": [
+      "component-gYCRsgrh.js"
+    ],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "u": "PlicoDemo_u"
+    }
+  },
+  {
+    "source": "demo.clean-Cuu_AdnG.js",
+    "output": "src/library/modules/demo.clean-Cuu_AdnG.jsx",
+    "bindings": [
+      "v",
+      "h",
+      "m",
+      "_",
+      "g",
+      "ne",
+      "p",
+      "r",
+      "t",
+      "i",
+      "a",
+      "s",
+      "o",
+      "te",
+      "n",
+      "e",
+      "d",
+      "ee",
+      "l",
+      "u",
+      "f",
+      "c"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "p": "PlicoCore_p",
+      "v": "PlicoDemo_v"
+    }
+  },
+  {
+    "source": "demo-DmFQrpJF.js",
+    "output": "src/library/modules/demo-DmFQrpJF.jsx",
+    "bindings": [
+      "s",
+      "a",
+      "r",
+      "t",
+      "o",
+      "n",
+      "e",
+      "i"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "a": "PlicoCore_a",
+      "s": "PlicoDemo_s"
+    }
+  },
+  {
+    "source": "demo.clean-DoHFMx8x.js",
+    "output": "src/library/modules/demo.clean-DoHFMx8x.jsx",
+    "bindings": [
+      "s",
+      "a",
+      "r",
+      "t",
+      "o",
+      "n",
+      "e",
+      "i"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "a": "PlicoCore_a",
+      "s": "PlicoDemo_s"
+    }
+  },
+  {
+    "source": "demo-qWgXlPG0.js",
+    "output": "src/library/modules/demo-qWgXlPG0.jsx",
+    "bindings": [
+      "m",
+      "a",
+      "r",
+      "t",
+      "d",
+      "u",
+      "l",
+      "c",
+      "s",
+      "o",
+      "f",
+      "n",
+      "e",
+      "i",
+      "p"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "a": "PlicoCore_a",
+      "m": "PlicoDemo_m"
+    }
+  },
+  {
+    "source": "demo-158Rlrkj.js",
+    "output": "src/library/modules/demo-158Rlrkj.jsx",
+    "bindings": [
+      "m",
+      "s",
+      "i",
+      "t",
+      "f",
+      "u",
+      "l",
+      "d",
+      "n",
+      "c",
+      "r",
+      "e",
+      "re",
+      "o",
+      "a",
+      "ee",
+      "ne",
+      "te",
+      "p"
+    ],
+    "dependencies": [
+      "component-DwKackPh.js"
+    ],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "s": "PlicoCore_s",
+      "m": "PlicoDemo_m"
+    }
+  },
+  {
+    "source": "demo-CdNvbDAu.js",
+    "output": "src/library/modules/demo-CdNvbDAu.jsx",
+    "bindings": [
+      "x",
+      "i",
+      "r",
+      "t",
+      "a",
+      "d",
+      "o",
+      "p",
+      "n",
+      "e",
+      "f",
+      "u",
+      "c",
+      "s",
+      "l",
+      "y",
+      "v",
+      "h",
+      "m",
+      "_",
+      "g",
+      "b"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "i": "PlicoCore_i",
+      "x": "PlicoDemo_x"
+    }
+  },
+  {
+    "source": "demo-D9Vw9aDF.js",
+    "output": "src/library/modules/demo-D9Vw9aDF.jsx",
+    "bindings": [
+      "ve",
+      "u",
+      "r",
+      "t",
+      "h",
+      "ie",
+      "y",
+      "g",
+      "he",
+      "se",
+      "fe",
+      "o",
+      "d",
+      "ee",
+      "p",
+      "f",
+      "me",
+      "ge",
+      "m",
+      "re",
+      "pe",
+      "de",
+      "ue",
+      "c",
+      "v",
+      "_",
+      "le",
+      "ce",
+      "s",
+      "ae",
+      "ne",
+      "oe",
+      "_e",
+      "l",
+      "n",
+      "e",
+      "te",
+      "a",
+      "i",
+      "b"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "u": "PlicoCore_u",
+      "ve": "PlicoDemo_ve"
+    }
+  },
+  {
+    "source": "demo-BRSx7pv5.js",
+    "output": "src/library/modules/demo-BRSx7pv5.jsx",
+    "bindings": [
+      "g",
+      "a",
+      "r",
+      "t",
+      "f",
+      "p",
+      "o",
+      "n",
+      "e",
+      "u",
+      "c",
+      "d",
+      "l",
+      "s",
+      "m",
+      "i",
+      "h"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "a": "PlicoCore_a",
+      "g": "PlicoDemo_g"
+    }
+  },
+  {
+    "source": "demo-CawsKXt1.js",
+    "output": "src/library/modules/demo-CawsKXt1.jsx",
+    "bindings": [
+      "E",
+      "y",
+      "v",
+      "oe",
+      "T",
+      "w",
+      "C",
+      "b",
+      "ae",
+      "x",
+      "S",
+      "re",
+      "r",
+      "t",
+      "a",
+      "g",
+      "h",
+      "te",
+      "ne",
+      "m",
+      "ee",
+      "n",
+      "e",
+      "f",
+      "i",
+      "d",
+      "ie",
+      "c",
+      "u",
+      "p",
+      "s",
+      "l",
+      "o",
+      "_"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "re": "PlicoCore_re",
+      "E": "PlicoDemo_E"
+    }
+  },
+  {
+    "source": "demo-Bp-um2Aj.js",
+    "output": "src/library/modules/demo-Bp-um2Aj.jsx",
+    "bindings": [
+      "l",
+      "c",
+      "r",
+      "t",
+      "o",
+      "s",
+      "a",
+      "i",
+      "n",
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "o": "PlicoCore_o",
+      "l": "PlicoDemo_l"
+    }
+  },
+  {
+    "source": "demo-2EA4yYHc.js",
+    "output": "src/library/modules/demo-2EA4yYHc.jsx",
+    "bindings": [
+      "x",
+      "_",
+      "s",
+      "v",
+      "y",
+      "r",
+      "t",
+      "m",
+      "n",
+      "e",
+      "o",
+      "f",
+      "g",
+      "h",
+      "ee",
+      "l",
+      "ne",
+      "a",
+      "i",
+      "re",
+      "p",
+      "te",
+      "d",
+      "u",
+      "c",
+      "b"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "_": "PlicoCore__",
+      "x": "PlicoDemo_x"
+    }
+  },
+  {
+    "source": "demo-D7hRHGEh.js",
+    "output": "src/library/modules/demo-D7hRHGEh.jsx",
+    "bindings": [
+      "b",
+      "i",
+      "r",
+      "t",
+      "f",
+      "d",
+      "m",
+      "p",
+      "n",
+      "e",
+      "u",
+      "a",
+      "v",
+      "_",
+      "g",
+      "h",
+      "l",
+      "o",
+      "c",
+      "s",
+      "y"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "i": "PlicoCore_i",
+      "b": "PlicoDemo_b"
+    }
+  },
+  {
+    "source": "demo-BfsFftdy.js",
+    "output": "src/library/modules/demo-BfsFftdy.jsx",
+    "bindings": [
+      "y",
+      "g",
+      "h",
+      "m",
+      "n",
+      "i",
+      "t",
+      "_",
+      "o",
+      "s",
+      "a",
+      "c",
+      "f",
+      "l",
+      "d",
+      "u",
+      "p",
+      "r",
+      "e",
+      "v"
+    ],
+    "dependencies": [
+      "component-C_OhOiCe.js"
+    ],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "o": "PlicoCore_o",
+      "y": "PlicoDemo_y"
+    }
+  },
+  {
+    "source": "demo-DrrNKEd7.js",
+    "output": "src/library/modules/demo-DrrNKEd7.jsx",
+    "bindings": [
+      "p",
+      "f",
+      "u",
+      "r",
+      "t",
+      "d",
+      "c",
+      "s",
+      "o",
+      "i",
+      "n",
+      "e",
+      "a",
+      "l"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "u": "PlicoCore_u",
+      "p": "PlicoDemo_p"
+    }
+  },
+  {
+    "source": "demo-BtlH6dH8.js",
+    "output": "src/library/modules/demo-BtlH6dH8.jsx",
+    "bindings": [
+      "p",
+      "l",
+      "r",
+      "t",
+      "d",
+      "u",
+      "f",
+      "c",
+      "s",
+      "o",
+      "a",
+      "i",
+      "n",
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "l": "PlicoCore_l",
+      "p": "PlicoDemo_p"
+    }
+  },
+  {
+    "source": "demo-C2jfF4UB.js",
+    "output": "src/library/modules/demo-C2jfF4UB.jsx",
+    "bindings": [
+      "c",
+      "s",
+      "r",
+      "t",
+      "a",
+      "o",
+      "i",
+      "n",
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "a": "PlicoCore_a",
+      "c": "PlicoDemo_c"
+    }
+  },
+  {
+    "source": "demo-MXjIQshC.js",
+    "output": "src/library/modules/demo-MXjIQshC.jsx",
+    "bindings": [
+      "s",
+      "i",
+      "r",
+      "t",
+      "a",
+      "o",
+      "n",
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "i": "PlicoCore_i",
+      "s": "PlicoDemo_s"
+    }
+  },
+  {
+    "source": "demo-CU49Fdlm.js",
+    "output": "src/library/modules/demo-CU49Fdlm.jsx",
+    "bindings": [
+      "c",
+      "a",
+      "r",
+      "t",
+      "i",
+      "s",
+      "o",
+      "n",
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "a": "PlicoCore_a",
+      "c": "PlicoDemo_c"
+    }
+  },
+  {
+    "source": "demo-DrDu-VuE.js",
+    "output": "src/library/modules/demo-DrDu-VuE.jsx",
+    "bindings": [
+      "h",
+      "p",
+      "o",
+      "r",
+      "t",
+      "a",
+      "c",
+      "s",
+      "d",
+      "f",
+      "m",
+      "i",
+      "u",
+      "l",
+      "n",
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "p": "PlicoCore_p",
+      "h": "PlicoDemo_h"
+    }
+  },
+  {
+    "source": "demo-Cm2FVMWj.js",
+    "output": "src/library/modules/demo-Cm2FVMWj.jsx",
+    "bindings": [
+      "s",
+      "a",
+      "r",
+      "t",
+      "o",
+      "i",
+      "n",
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "a": "PlicoCore_a",
+      "s": "PlicoDemo_s"
+    }
+  },
+  {
+    "source": "demo-ljSEPvt1.js",
+    "output": "src/library/modules/demo-ljSEPvt1.jsx",
+    "bindings": [
+      "r",
+      "t",
+      "n",
+      "e"
+    ],
+    "dependencies": [
+      "index-CA7yMmEL.js"
+    ],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "r": "PlicoDemo_r"
+    }
+  },
+  {
+    "source": "demo-Cm8kSHcX.js",
+    "output": "src/library/modules/demo-Cm8kSHcX.jsx",
+    "bindings": [
+      "h",
+      "p",
+      "o",
+      "r",
+      "t",
+      "a",
+      "c",
+      "s",
+      "d",
+      "f",
+      "m",
+      "i",
+      "u",
+      "l",
+      "n",
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "p": "PlicoCore_p",
+      "h": "PlicoDemo_h"
+    }
+  },
+  {
+    "source": "demo-BrYW73Cf.js",
+    "output": "src/library/modules/demo-BrYW73Cf.jsx",
+    "bindings": [
+      "S",
+      "y",
+      "b",
+      "r",
+      "t",
+      "i",
+      "o",
+      "p",
+      "l",
+      "c",
+      "a",
+      "x",
+      "g",
+      "_",
+      "h",
+      "m",
+      "f",
+      "d",
+      "u",
+      "ee",
+      "s",
+      "n",
+      "e",
+      "v"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "y": "PlicoCore_y",
+      "S": "PlicoDemo_S"
+    }
+  },
+  {
+    "source": "demo-B_Bc7Zla.js",
+    "output": "src/library/modules/demo-B_Bc7Zla.jsx",
+    "bindings": [
+      "b",
+      "p",
+      "r",
+      "t",
+      "m",
+      "y",
+      "l",
+      "c",
+      "n",
+      "e",
+      "f",
+      "i",
+      "u",
+      "s",
+      "d",
+      "o",
+      "a",
+      "g",
+      "v",
+      "h",
+      "_"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "p": "PlicoCore_p",
+      "b": "PlicoDemo_b"
+    }
+  },
+  {
+    "source": "demo-CBQvHgq1.js",
+    "output": "src/library/modules/demo-CBQvHgq1.jsx",
+    "bindings": [
+      "b",
+      "d",
+      "r",
+      "t",
+      "f",
+      "c",
+      "l",
+      "h",
+      "m",
+      "p",
+      "y",
+      "v",
+      "g",
+      "_",
+      "n",
+      "e",
+      "a",
+      "i",
+      "o",
+      "s",
+      "u"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "d": "PlicoCore_d",
+      "b": "PlicoDemo_b"
+    }
+  },
+  {
+    "source": "demo-BABw5NIJ.js",
+    "output": "src/library/modules/demo-BABw5NIJ.jsx",
+    "bindings": [
+      "r",
+      "t",
+      "n",
+      "e"
+    ],
+    "dependencies": [
+      "component-WEwHkvy1.js"
+    ],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "r": "PlicoDemo_r"
+    }
+  },
+  {
+    "source": "demo-KQRMxKWn.js",
+    "output": "src/library/modules/demo-KQRMxKWn.jsx",
+    "bindings": [
+      "m",
+      "d",
+      "r",
+      "t",
+      "f",
+      "a",
+      "c",
+      "l",
+      "p",
+      "s",
+      "o",
+      "u",
+      "n",
+      "e",
+      "i"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "d": "PlicoCore_d",
+      "m": "PlicoDemo_m"
+    }
+  },
+  {
+    "source": "demo-BTBcqeeL.js",
+    "output": "src/library/modules/demo-BTBcqeeL.jsx",
+    "bindings": [
+      "f",
+      "a",
+      "u",
+      "r",
+      "t",
+      "i",
+      "d",
+      "c",
+      "o",
+      "n",
+      "e",
+      "l",
+      "s"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "a": "PlicoCore_a",
+      "f": "PlicoDemo_f"
+    }
+  },
+  {
+    "source": "demo-CkkSZhS9.js",
+    "output": "src/library/modules/demo-CkkSZhS9.jsx",
+    "bindings": [
+      "u",
+      "c",
+      "o",
+      "r",
+      "t",
+      "i",
+      "a",
+      "l",
+      "s",
+      "n",
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "c": "PlicoCore_c",
+      "u": "PlicoDemo_u"
+    }
+  },
+  {
+    "source": "demo-OZULToi6.js",
+    "output": "src/library/modules/demo-OZULToi6.jsx",
+    "bindings": [
+      "d",
+      "l",
+      "r",
+      "t",
+      "u",
+      "a",
+      "s",
+      "o",
+      "c",
+      "n",
+      "e",
+      "i"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "l": "PlicoCore_l",
+      "d": "PlicoDemo_d"
+    }
+  },
+  {
+    "source": "demo-DE0jF2h1.js",
+    "output": "src/library/modules/demo-DE0jF2h1.jsx",
+    "bindings": [
+      "g",
+      "u",
+      "l",
+      "c",
+      "r",
+      "t",
+      "s",
+      "a",
+      "o",
+      "i",
+      "p",
+      "h",
+      "f",
+      "d",
+      "n",
+      "e",
+      "m"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "u": "PlicoCore_u",
+      "g": "PlicoDemo_g"
+    }
+  },
+  {
+    "source": "demo-D34v7Pjy.js",
+    "output": "src/library/modules/demo-D34v7Pjy.jsx",
+    "bindings": [
+      "d",
+      "a",
+      "l",
+      "c",
+      "s",
+      "r",
+      "t",
+      "o",
+      "i",
+      "n",
+      "e",
+      "u"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "a": "PlicoCore_a",
+      "d": "PlicoDemo_d"
+    }
+  },
+  {
+    "source": "demo-CmYYw1tl.js",
+    "output": "src/library/modules/demo-CmYYw1tl.jsx",
+    "bindings": [
+      "T",
+      "a",
+      "s",
+      "l",
+      "r",
+      "t",
+      "i",
+      "c",
+      "n",
+      "e",
+      "o",
+      "C",
+      "S",
+      "u",
+      "b",
+      "x",
+      "v",
+      "y",
+      "g",
+      "_",
+      "m",
+      "h",
+      "p",
+      "f",
+      "d",
+      "w"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "a": "PlicoCore_a",
+      "T": "PlicoDemo_T"
+    }
+  },
+  {
+    "source": "demo-ClUxDNiT.js",
+    "output": "src/library/modules/demo-ClUxDNiT.jsx",
+    "bindings": [
+      "l",
+      "s",
+      "i",
+      "r",
+      "t",
+      "a",
+      "c",
+      "o",
+      "n",
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "s": "PlicoCore_s",
+      "l": "PlicoDemo_l"
+    }
+  },
+  {
+    "source": "demo-CVKU8Uzh.js",
+    "output": "src/library/modules/demo-CVKU8Uzh.jsx",
+    "bindings": [
+      "s",
+      "a",
+      "r",
+      "t",
+      "i",
+      "o",
+      "n",
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "a": "PlicoCore_a",
+      "s": "PlicoDemo_s"
+    }
+  },
+  {
+    "source": "demo-cWsVSmbI.js",
+    "output": "src/library/modules/demo-cWsVSmbI.jsx",
+    "bindings": [
+      "s",
+      "i",
+      "r",
+      "t",
+      "a",
+      "o",
+      "n",
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "i": "PlicoCore_i",
+      "s": "PlicoDemo_s"
+    }
+  },
+  {
+    "source": "demo-C5SE4pL3.js",
+    "output": "src/library/modules/demo-C5SE4pL3.jsx",
+    "bindings": [
+      "p",
+      "r",
+      "t",
+      "f",
+      "u",
+      "i",
+      "d",
+      "n",
+      "e",
+      "a",
+      "s",
+      "o",
+      "c",
+      "l"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "u": "PlicoCore_u",
+      "p": "PlicoDemo_p"
+    }
+  },
+  {
+    "source": "demo-DOm8gFae.js",
+    "output": "src/library/modules/demo-DOm8gFae.jsx",
+    "bindings": [
+      "p",
+      "a",
+      "s",
+      "l",
+      "r",
+      "t",
+      "i",
+      "c",
+      "n",
+      "e",
+      "o",
+      "u",
+      "d",
+      "f"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "a": "PlicoCore_a",
+      "p": "PlicoDemo_p"
+    }
+  },
+  {
+    "source": "demo-CeLmzXST.js",
+    "output": "src/library/modules/demo-CeLmzXST.jsx",
+    "bindings": [
+      "ie",
+      "r",
+      "ne",
+      "U",
+      "t",
+      "g",
+      "b",
+      "F",
+      "k",
+      "A",
+      "j",
+      "o",
+      "i",
+      "z",
+      "Z",
+      "te",
+      "P",
+      "E",
+      "y",
+      "Y",
+      "J",
+      "$",
+      "M",
+      "V",
+      "N",
+      "Q",
+      "q",
+      "X",
+      "p",
+      "u",
+      "a",
+      "c",
+      "K",
+      "S",
+      "I",
+      "m",
+      "C",
+      "O",
+      "T",
+      "x",
+      "ee",
+      "L",
+      "h",
+      "v",
+      "re",
+      "G",
+      "w",
+      "l",
+      "W",
+      "R",
+      "f",
+      "B",
+      "d",
+      "D",
+      "_",
+      "H",
+      "e",
+      "s",
+      "n"
+    ],
+    "dependencies": [
+      "screen-bridge.jsx",
+      "component-B0ZYbJEt.js",
+      "WorkflowSquare03Icon-KUZ5l40I.js",
+      "ShoppingBag01Icon-fOOVs0Uq.js",
+      "Target02Icon-B_T0iwXf.js",
+      "component-BtHQvHKg.js",
+      "component-x-U6EJWL.js",
+      "Dollar01Icon-CKgdstwc.js",
+      "Calendar03Icon-DcAo2VXN.js",
+      "PresentationBarChart01Icon-C8MfgXhe.js",
+      "MoreHorizontalIcon-CBUy2huH.js",
+      "Delete02Icon-CsyBlwAn.js",
+      "BubbleChatIcon-pbmBjpVO.js",
+      "Analytics01Icon-DzRjULbW.js",
+      "Home01Icon-CtlfDZqB.js"
+    ],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "ne": "PlicoCore_ne",
+      "ie": "PlicoDemo_ie"
+    }
+  },
+  {
+    "source": "demo-DhakOwR1.js",
+    "output": "src/library/modules/demo-DhakOwR1.jsx",
+    "bindings": [
+      "O",
+      "r",
+      "E",
+      "C",
+      "t",
+      "u",
+      "pe",
+      "h",
+      "le",
+      "o",
+      "a",
+      "xe",
+      "y",
+      "te",
+      "T",
+      "ne",
+      "ye",
+      "p",
+      "b",
+      "d",
+      "_",
+      "ie",
+      "re",
+      "se",
+      "ee",
+      "m",
+      "ue",
+      "f",
+      "ce",
+      "g",
+      "ae",
+      "de",
+      "i",
+      "me",
+      "be",
+      "fe",
+      "x",
+      "D",
+      "ge",
+      "s",
+      "he",
+      "l",
+      "c",
+      "v",
+      "oe",
+      "S",
+      "e",
+      "w",
+      "ve",
+      "_e",
+      "n"
+    ],
+    "dependencies": [
+      "screen-bridge.jsx",
+      "component-B0ZYbJEt.js",
+      "WorkflowSquare03Icon-KUZ5l40I.js",
+      "PresentationBarChart01Icon-C8MfgXhe.js",
+      "component-CADGuG8q.js",
+      "Mail01Icon-qGLuNJQs.js",
+      "component-SU9mzBXM.js",
+      "component-jpqc9dJC.js",
+      "Calendar03Icon-DcAo2VXN.js",
+      "Dollar01Icon-CKgdstwc.js",
+      "component-CA_4LgO0.js",
+      "component-XY52GlKn.js",
+      "MoreHorizontalIcon-CBUy2huH.js",
+      "BubbleChatIcon-pbmBjpVO.js",
+      "Copy01Icon-DrPxamgF.js",
+      "RepeatIcon-CJJ1C8N9.js",
+      "component-x-U6EJWL.js",
+      "Analytics01Icon-DzRjULbW.js",
+      "Home01Icon-CtlfDZqB.js"
+    ],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "E": "PlicoCore_E",
+      "O": "PlicoDemo_O"
+    }
+  },
+  {
+    "source": "demo-BpIKiAtr.js",
+    "output": "src/library/modules/demo-BpIKiAtr.jsx",
+    "bindings": [
+      "H",
+      "r",
+      "B",
+      "A",
+      "O",
+      "a",
+      "x",
+      "t",
+      "k",
+      "R",
+      "L",
+      "w",
+      "N",
+      "F",
+      "M",
+      "D",
+      "P",
+      "z",
+      "j",
+      "i",
+      "f",
+      "l",
+      "d",
+      "I",
+      "c",
+      "o",
+      "V",
+      "C",
+      "m",
+      "y",
+      "h",
+      "v",
+      "S",
+      "g",
+      "_",
+      "p",
+      "u",
+      "E",
+      "T",
+      "s",
+      "b",
+      "e",
+      "n"
+    ],
+    "dependencies": [
+      "screen-bridge.jsx",
+      "component-cuEFw_I6.js",
+      "component-x-U6EJWL.js",
+      "Download04Icon-C2-aGxK5.js",
+      "component-B0ZYbJEt.js",
+      "Calendar03Icon-DcAo2VXN.js",
+      "Analytics01Icon-DzRjULbW.js",
+      "RepeatIcon-CJJ1C8N9.js",
+      "ShoppingBag01Icon-fOOVs0Uq.js",
+      "UserMultipleIcon-BFkjj3cH.js",
+      "Home01Icon-CtlfDZqB.js"
+    ],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "B": "PlicoCore_B",
+      "H": "PlicoDemo_H"
+    }
+  },
+  {
+    "source": "demo-BeOo5q8C.js",
+    "output": "src/library/modules/demo-BeOo5q8C.jsx",
+    "bindings": [
+      "o",
+      "r",
+      "a",
+      "e",
+      "n",
+      "i",
+      "t"
+    ],
+    "dependencies": [
+      "component-B0ZYbJEt.js",
+      "screen-bridge.jsx"
+    ],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "o": "PlicoDemo_o"
+    }
+  },
+  {
+    "source": "demo-CHSa66dF.js",
+    "output": "src/library/modules/demo-CHSa66dF.jsx",
+    "bindings": [
+      "a",
+      "n",
+      "r",
+      "i",
+      "e",
+      "t"
+    ],
+    "dependencies": [
+      "screen-bridge.jsx",
+      "component-BtHQvHKg.js"
+    ],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "a": "PlicoDemo_a"
+    }
+  },
+  {
+    "source": "demo-vftwgdm_.js",
+    "output": "src/library/modules/demo-vftwgdm_.jsx",
+    "bindings": [
+      "Z",
+      "r",
+      "Y",
+      "l",
+      "N",
+      "t",
+      "u",
+      "q",
+      "J",
+      "v",
+      "g",
+      "f",
+      "K",
+      "L",
+      "I",
+      "U",
+      "B",
+      "G",
+      "H",
+      "V",
+      "_",
+      "D",
+      "y",
+      "m",
+      "x",
+      "A",
+      "j",
+      "S",
+      "i",
+      "z",
+      "R",
+      "W",
+      "h",
+      "E",
+      "k",
+      "o",
+      "d",
+      "s",
+      "X",
+      "F",
+      "w",
+      "O",
+      "C",
+      "P",
+      "a",
+      "T",
+      "b",
+      "p",
+      "c",
+      "M",
+      "e",
+      "n"
+    ],
+    "dependencies": [
+      "screen-bridge.jsx",
+      "component-B0ZYbJEt.js",
+      "Copy01Icon-DrPxamgF.js",
+      "Calendar03Icon-DcAo2VXN.js",
+      "Dollar01Icon-CKgdstwc.js",
+      "Link01Icon-DMZyIG_F.js",
+      "Table01Icon-CpK0cmMJ.js",
+      "component-OCVPe01Z.js",
+      "UserMultipleIcon-BFkjj3cH.js",
+      "Target02Icon-B_T0iwXf.js",
+      "Analytics01Icon-DzRjULbW.js",
+      "Home01Icon-CtlfDZqB.js"
+    ],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "Y": "PlicoCore_Y",
+      "Z": "PlicoDemo_Z"
+    }
+  },
+  {
+    "source": "demo-9TUmGUMi.js",
+    "output": "src/library/modules/demo-9TUmGUMi.jsx",
+    "bindings": [
+      "U",
+      "r",
+      "B",
+      "L",
+      "T",
+      "t",
+      "V",
+      "F",
+      "s",
+      "I",
+      "N",
+      "M",
+      "a",
+      "O",
+      "A",
+      "j",
+      "k",
+      "o",
+      "x",
+      "f",
+      "i",
+      "y",
+      "l",
+      "d",
+      "_",
+      "H",
+      "D",
+      "v",
+      "b",
+      "C",
+      "E",
+      "c",
+      "h",
+      "S",
+      "m",
+      "g",
+      "p",
+      "z",
+      "P",
+      "R",
+      "w",
+      "e",
+      "u",
+      "n"
+    ],
+    "dependencies": [
+      "screen-bridge.jsx",
+      "component-BDo0fvGw.js",
+      "component-CADGuG8q.js",
+      "component-cuEFw_I6.js",
+      "component-B0ZYbJEt.js",
+      "component-x-U6EJWL.js",
+      "Mail01Icon-qGLuNJQs.js",
+      "UserAdd01Icon-CeNWxiQ5.js",
+      "Analytics01Icon-DzRjULbW.js",
+      "Database01Icon-DrAaO4oe.js",
+      "BubbleChatIcon-pbmBjpVO.js",
+      "Home01Icon-CtlfDZqB.js"
+    ],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "B": "PlicoCore_B",
+      "U": "PlicoDemo_U"
+    }
+  },
+  {
+    "source": "demo-DXkqoFJb.js",
+    "output": "src/library/modules/demo-DXkqoFJb.jsx",
+    "bindings": [
+      "k",
+      "i",
+      "D",
+      "h",
+      "x",
+      "t",
+      "y",
+      "v",
+      "p",
+      "u",
+      "d",
+      "o",
+      "a",
+      "_",
+      "l",
+      "w",
+      "s",
+      "m",
+      "c",
+      "r",
+      "f",
+      "O",
+      "g",
+      "T",
+      "E",
+      "b",
+      "e",
+      "C",
+      "S",
+      "n"
+    ],
+    "dependencies": [
+      "screen-bridge.jsx",
+      "component-B0ZYbJEt.js",
+      "UserMultiple02Icon-CmkUO2wo.js",
+      "component-x-U6EJWL.js",
+      "index-CA7yMmEL.js"
+    ],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "D": "PlicoCore_D",
+      "k": "PlicoDemo_k"
+    }
+  },
+  {
+    "source": "demo-DM_UqYSi.js",
+    "output": "src/library/modules/demo-DM_UqYSi.jsx",
+    "bindings": [
+      "D",
+      "a",
+      "T",
+      "b",
+      "f",
+      "C",
+      "t",
+      "o",
+      "p",
+      "l",
+      "u",
+      "x",
+      "v",
+      "_",
+      "h",
+      "g",
+      "s",
+      "d",
+      "i",
+      "y",
+      "E",
+      "m",
+      "c",
+      "S",
+      "e",
+      "w",
+      "r",
+      "n"
+    ],
+    "dependencies": [
+      "screen-bridge.jsx",
+      "component-B0ZYbJEt.js",
+      "component-x-U6EJWL.js",
+      "UserMultiple02Icon-CmkUO2wo.js",
+      "MoreHorizontalIcon-CBUy2huH.js",
+      "Delete02Icon-CsyBlwAn.js",
+      "Link01Icon-DMZyIG_F.js",
+      "index-CA7yMmEL.js"
+    ],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "T": "PlicoCore_T",
+      "D": "PlicoDemo_D"
+    }
+  },
+  {
+    "source": "demo-HbaZwPph.js",
+    "output": "src/library/modules/demo-HbaZwPph.jsx",
+    "bindings": [
+      "E",
+      "r",
+      "S",
+      "s",
+      "l",
+      "_",
+      "t",
+      "C",
+      "w",
+      "a",
+      "m",
+      "h",
+      "d",
+      "i",
+      "c",
+      "p",
+      "u",
+      "T",
+      "f",
+      "x",
+      "b",
+      "y",
+      "v",
+      "o",
+      "g",
+      "e",
+      "n"
+    ],
+    "dependencies": [
+      "screen-bridge.jsx",
+      "component-B0ZYbJEt.js",
+      "component-x-U6EJWL.js"
+    ],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "S": "PlicoCore_S",
+      "E": "PlicoDemo_E"
+    }
+  },
+  {
+    "source": "demo-BgLxDeeC.js",
+    "output": "src/library/modules/demo-BgLxDeeC.jsx",
+    "bindings": [
+      "M",
+      "r",
+      "j",
+      "C",
+      "t",
+      "b",
+      "f",
+      "m",
+      "w",
+      "d",
+      "i",
+      "ee",
+      "O",
+      "x",
+      "g",
+      "re",
+      "_",
+      "y",
+      "D",
+      "u",
+      "c",
+      "k",
+      "S",
+      "e",
+      "ne",
+      "T",
+      "E",
+      "a",
+      "A",
+      "ie",
+      "o",
+      "s",
+      "h",
+      "ae",
+      "te",
+      "v",
+      "p",
+      "l",
+      "n"
+    ],
+    "dependencies": [
+      "screen-bridge.jsx",
+      "component-B0ZYbJEt.js",
+      "component-x-U6EJWL.js",
+      "ChartColumnIcon-CdOeU6Br.js",
+      "Copy01Icon-DrPxamgF.js",
+      "Link01Icon-DMZyIG_F.js",
+      "component-BDo0fvGw.js",
+      "Analytics01Icon-DzRjULbW.js",
+      "BubbleChatIcon-pbmBjpVO.js",
+      "Home01Icon-CtlfDZqB.js"
+    ],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "j": "PlicoCore_j",
+      "M": "PlicoDemo_M"
+    }
+  },
+  {
+    "source": "demo-BGahYM4K.js",
+    "output": "src/library/modules/demo-BGahYM4K.jsx",
+    "bindings": [
+      "ee",
+      "r",
+      "J",
+      "Q",
+      "T",
+      "_",
+      "F",
+      "t",
+      "w",
+      "b",
+      "K",
+      "N",
+      "y",
+      "d",
+      "i",
+      "U",
+      "P",
+      "e",
+      "Y",
+      "E",
+      "B",
+      "S",
+      "R",
+      "a",
+      "O",
+      "j",
+      "z",
+      "G",
+      "o",
+      "Z",
+      "k",
+      "g",
+      "H",
+      "m",
+      "q",
+      "h",
+      "A",
+      "V",
+      "X",
+      "D",
+      "W",
+      "M",
+      "L",
+      "v",
+      "$",
+      "I",
+      "p",
+      "s",
+      "l",
+      "u",
+      "C",
+      "c",
+      "x",
+      "f",
+      "n"
+    ],
+    "dependencies": [
+      "screen-bridge.jsx",
+      "Delete02Icon-CsyBlwAn.js",
+      "component-B0ZYbJEt.js",
+      "Copy01Icon-DrPxamgF.js",
+      "component-x-U6EJWL.js",
+      "Download04Icon-C2-aGxK5.js",
+      "component-BDo0fvGw.js",
+      "Mail01Icon-qGLuNJQs.js",
+      "component-gYCRsgrh.js",
+      "MoreHorizontalIcon-CBUy2huH.js",
+      "UserAdd01Icon-CeNWxiQ5.js",
+      "Globe02Icon-jOAiZzRC.js",
+      "Analytics01Icon-DzRjULbW.js",
+      "BubbleChatIcon-pbmBjpVO.js"
+    ],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "J": "PlicoCore_J",
+      "ee": "PlicoDemo_ee"
+    }
+  },
+  {
+    "source": "demo-b0-CVBH2.js",
+    "output": "src/library/modules/demo-b0-CVBH2.jsx",
+    "bindings": [
+      "c",
+      "r",
+      "t",
+      "s",
+      "a",
+      "o",
+      "n",
+      "e",
+      "i"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "a": "PlicoCore_a",
+      "c": "PlicoDemo_c"
+    }
+  },
+  {
+    "source": "demo-CROkL7VF.js",
+    "output": "src/library/modules/demo-CROkL7VF.jsx",
+    "bindings": [
+      "f",
+      "l",
+      "r",
+      "t",
+      "a",
+      "c",
+      "s",
+      "o",
+      "i",
+      "d",
+      "u",
+      "n",
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "l": "PlicoCore_l",
+      "f": "PlicoDemo_f"
+    }
+  },
+  {
+    "source": "demo-BZms21rB.js",
+    "output": "src/library/modules/demo-BZms21rB.jsx",
+    "bindings": [
+      "o",
+      "r",
+      "t",
+      "i",
+      "a",
+      "n",
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "i": "PlicoCore_i",
+      "o": "PlicoDemo_o"
+    }
+  },
+  {
+    "source": "demo-S1hMjDCH.js",
+    "output": "src/library/modules/demo-S1hMjDCH.jsx",
+    "bindings": [
+      "s",
+      "r",
+      "t",
+      "a",
+      "o",
+      "i",
+      "n",
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "a": "PlicoCore_a",
+      "s": "PlicoDemo_s"
+    }
+  },
+  {
+    "source": "demo-0IZOAjVo.js",
+    "output": "src/library/modules/demo-0IZOAjVo.jsx",
+    "bindings": [
+      "p",
+      "r",
+      "t",
+      "d",
+      "c",
+      "s",
+      "a",
+      "l",
+      "o",
+      "n",
+      "e",
+      "i",
+      "u",
+      "f"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "c": "PlicoCore_c",
+      "p": "PlicoDemo_p"
+    }
+  },
+  {
+    "source": "demo-Cc3_N5Az.js",
+    "output": "src/library/modules/demo-Cc3_N5Az.jsx",
+    "bindings": [
+      "u",
+      "r",
+      "t",
+      "l",
+      "o",
+      "i",
+      "a",
+      "c",
+      "s",
+      "n",
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "s": "PlicoCore_s",
+      "u": "PlicoDemo_u"
+    }
+  },
+  {
+    "source": "demo-BEzbCisV.js",
+    "output": "src/library/modules/demo-BEzbCisV.jsx",
+    "bindings": [
+      "o",
+      "r",
+      "t",
+      "i",
+      "a",
+      "n",
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "i": "PlicoCore_i",
+      "o": "PlicoDemo_o"
+    }
+  },
+  {
+    "source": "demo-DC242hdM.js",
+    "output": "src/library/modules/demo-DC242hdM.jsx",
+    "bindings": [
+      "o",
+      "r",
+      "t",
+      "i",
+      "a",
+      "n",
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "default"
+    ],
+    "extraExports": {
+      "i": "PlicoCore_i",
+      "o": "PlicoDemo_o"
+    }
+  },
+  {
+    "source": "Delete02Icon-CsyBlwAn.js",
+    "output": "src/library/modules/Delete02Icon-CsyBlwAn.jsx",
+    "bindings": [
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "t"
+    ],
+    "extraExports": {}
+  },
+  {
+    "source": "component-B0ZYbJEt.js",
+    "output": "src/library/modules/component-B0ZYbJEt.jsx",
+    "bindings": [
+      "D",
+      "n",
+      "E",
+      "t",
+      "F",
+      "q",
+      "u",
+      "y",
+      "C",
+      "H",
+      "V",
+      "B",
+      "T",
+      "e",
+      "z",
+      "W",
+      "a",
+      "P",
+      "N",
+      "x",
+      "l",
+      "f",
+      "v",
+      "M",
+      "_",
+      "h",
+      "w",
+      "i",
+      "j",
+      "o",
+      "c",
+      "p",
+      "S",
+      "b",
+      "te",
+      "A",
+      "k",
+      "O",
+      "ee",
+      "G",
+      "R",
+      "Y",
+      "X",
+      "J",
+      "Z",
+      "I",
+      "s",
+      "U",
+      "r",
+      "d",
+      "K",
+      "L",
+      "g",
+      "m"
+    ],
+    "dependencies": [
+      "HugeiconsIcon-C2cDExRS.js",
+      "component-Dd3X9r8k.js",
+      "component-LyBMd15F.js"
+    ],
+    "exports": [
+      "o",
+      "s",
+      "r",
+      "S",
+      "y",
+      "n",
+      "c",
+      "l",
+      "p",
+      "b",
+      "D",
+      "E",
+      "C",
+      "t",
+      "_",
+      "k",
+      "O",
+      "u",
+      "g",
+      "i",
+      "f",
+      "a",
+      "d",
+      "m",
+      "A",
+      "v",
+      "w",
+      "T",
+      "h",
+      "x"
+    ],
+    "extraExports": {
+      "M": "PlicoCore_M"
+    }
+  },
+  {
+    "source": "HugeiconsIcon-C2cDExRS.js",
+    "output": "src/library/modules/HugeiconsIcon-C2cDExRS.jsx",
+    "bindings": [
+      "r",
+      "t",
+      "e",
+      "n"
+    ],
+    "dependencies": [],
+    "exports": [
+      "t"
+    ],
+    "extraExports": {}
+  },
+  {
+    "source": "Copy01Icon-DrPxamgF.js",
+    "output": "src/library/modules/Copy01Icon-DrPxamgF.jsx",
+    "bindings": [
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "t"
+    ],
+    "extraExports": {}
+  },
+  {
+    "source": "component-x-U6EJWL.js",
+    "output": "src/library/modules/component-x-U6EJWL.jsx",
+    "bindings": [
+      "i",
+      "r",
+      "t",
+      "a",
+      "l",
+      "n",
+      "e",
+      "c",
+      "o",
+      "s"
+    ],
+    "dependencies": [],
+    "exports": [
+      "t"
+    ],
+    "extraExports": {}
+  },
+  {
+    "source": "Download04Icon-C2-aGxK5.js",
+    "output": "src/library/modules/Download04Icon-C2-aGxK5.jsx",
+    "bindings": [
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "t"
+    ],
+    "extraExports": {}
+  },
+  {
+    "source": "component-BDo0fvGw.js",
+    "output": "src/library/modules/component-BDo0fvGw.jsx",
+    "bindings": [
+      "i",
+      "r",
+      "t",
+      "a",
+      "n",
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "t"
+    ],
+    "extraExports": {
+      "i": "PlicoCore_i"
+    }
+  },
+  {
+    "source": "Mail01Icon-qGLuNJQs.js",
+    "output": "src/library/modules/Mail01Icon-qGLuNJQs.jsx",
+    "bindings": [
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "t"
+    ],
+    "extraExports": {}
+  },
+  {
+    "source": "component-gYCRsgrh.js",
+    "output": "src/library/modules/component-gYCRsgrh.jsx",
+    "bindings": [
+      "m",
+      "r",
+      "t",
+      "i",
+      "a",
+      "s",
+      "o",
+      "ee",
+      "n",
+      "e",
+      "f",
+      "d",
+      "l",
+      "u",
+      "p",
+      "c"
+    ],
+    "dependencies": [],
+    "exports": [
+      "t"
+    ],
+    "extraExports": {
+      "m": "PlicoCore_m"
+    }
+  },
+  {
+    "source": "MoreHorizontalIcon-CBUy2huH.js",
+    "output": "src/library/modules/MoreHorizontalIcon-CBUy2huH.jsx",
+    "bindings": [
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "t"
+    ],
+    "extraExports": {}
+  },
+  {
+    "source": "UserAdd01Icon-CeNWxiQ5.js",
+    "output": "src/library/modules/UserAdd01Icon-CeNWxiQ5.jsx",
+    "bindings": [
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "t"
+    ],
+    "extraExports": {}
+  },
+  {
+    "source": "Globe02Icon-jOAiZzRC.js",
+    "output": "src/library/modules/Globe02Icon-jOAiZzRC.jsx",
+    "bindings": [
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "t"
+    ],
+    "extraExports": {}
+  },
+  {
+    "source": "Analytics01Icon-DzRjULbW.js",
+    "output": "src/library/modules/Analytics01Icon-DzRjULbW.jsx",
+    "bindings": [
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "t"
+    ],
+    "extraExports": {}
+  },
+  {
+    "source": "BubbleChatIcon-pbmBjpVO.js",
+    "output": "src/library/modules/BubbleChatIcon-pbmBjpVO.jsx",
+    "bindings": [
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "t"
+    ],
+    "extraExports": {}
+  },
+  {
+    "source": "component-Dd3X9r8k.js",
+    "output": "src/library/modules/component-Dd3X9r8k.jsx",
+    "bindings": [
+      "i",
+      "r",
+      "t",
+      "u",
+      "l",
+      "a",
+      "c",
+      "o",
+      "s",
+      "d",
+      "n",
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "t"
+    ],
+    "extraExports": {
+      "i": "PlicoCore_i"
+    }
+  },
+  {
+    "source": "ChartColumnIcon-CdOeU6Br.js",
+    "output": "src/library/modules/ChartColumnIcon-CdOeU6Br.jsx",
+    "bindings": [
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "t"
+    ],
+    "extraExports": {}
+  },
+  {
+    "source": "Link01Icon-DMZyIG_F.js",
+    "output": "src/library/modules/Link01Icon-DMZyIG_F.jsx",
+    "bindings": [
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "t"
+    ],
+    "extraExports": {}
+  },
+  {
+    "source": "Home01Icon-CtlfDZqB.js",
+    "output": "src/library/modules/Home01Icon-CtlfDZqB.jsx",
+    "bindings": [
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "t"
+    ],
+    "extraExports": {}
+  },
+  {
+    "source": "UserMultiple02Icon-CmkUO2wo.js",
+    "output": "src/library/modules/UserMultiple02Icon-CmkUO2wo.jsx",
+    "bindings": [
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "t"
+    ],
+    "extraExports": {}
+  },
+  {
+    "source": "index-CA7yMmEL.js",
+    "output": "src/library/modules/index-CA7yMmEL.jsx",
+    "bindings": [
+      "Xs",
+      "A",
+      "o",
+      "Ys",
+      "Js",
+      "Zs",
+      "m",
+      "n",
+      "Vs",
+      "Is",
+      "Bs",
+      "Ls",
+      "Fs",
+      "ks",
+      "Os",
+      "ys",
+      "Cs",
+      "bs",
+      "Ps",
+      "Hs",
+      "Rs",
+      "zs",
+      "Es",
+      "xs",
+      "Ts",
+      "ws",
+      "Ns",
+      "Ms",
+      "Ds",
+      "Ss",
+      "js",
+      "As"
+    ],
+    "dependencies": [],
+    "exports": [
+      "t",
+      "r",
+      "i"
+    ],
+    "extraExports": {
+      "Xs": "PlicoCore_Xs"
+    }
+  },
+  {
+    "source": "component-LyBMd15F.js",
+    "output": "src/library/modules/component-LyBMd15F.jsx",
+    "bindings": [
+      "i",
+      "r",
+      "t",
+      "o",
+      "a",
+      "n",
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "t"
+    ],
+    "extraExports": {
+      "i": "PlicoCore_i"
+    }
+  },
+  {
+    "source": "component-CADGuG8q.js",
+    "output": "src/library/modules/component-CADGuG8q.jsx",
+    "bindings": [
+      "u",
+      "r",
+      "t",
+      "l",
+      "c",
+      "d",
+      "n",
+      "e",
+      "s",
+      "o",
+      "a",
+      "i"
+    ],
+    "dependencies": [],
+    "exports": [
+      "t"
+    ],
+    "extraExports": {
+      "u": "PlicoCore_u"
+    }
+  },
+  {
+    "source": "component-cuEFw_I6.js",
+    "output": "src/library/modules/component-cuEFw_I6.jsx",
+    "bindings": [
+      "o",
+      "r",
+      "t",
+      "s",
+      "a",
+      "n",
+      "e",
+      "i"
+    ],
+    "dependencies": [],
+    "exports": [
+      "t"
+    ],
+    "extraExports": {
+      "o": "PlicoCore_o"
+    }
+  },
+  {
+    "source": "Database01Icon-DrAaO4oe.js",
+    "output": "src/library/modules/Database01Icon-DrAaO4oe.jsx",
+    "bindings": [
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "t"
+    ],
+    "extraExports": {}
+  },
+  {
+    "source": "Calendar03Icon-DcAo2VXN.js",
+    "output": "src/library/modules/Calendar03Icon-DcAo2VXN.jsx",
+    "bindings": [
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "t"
+    ],
+    "extraExports": {}
+  },
+  {
+    "source": "Dollar01Icon-CKgdstwc.js",
+    "output": "src/library/modules/Dollar01Icon-CKgdstwc.jsx",
+    "bindings": [
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "t"
+    ],
+    "extraExports": {}
+  },
+  {
+    "source": "Table01Icon-CpK0cmMJ.js",
+    "output": "src/library/modules/Table01Icon-CpK0cmMJ.jsx",
+    "bindings": [
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "t"
+    ],
+    "extraExports": {}
+  },
+  {
+    "source": "component-OCVPe01Z.js",
+    "output": "src/library/modules/component-OCVPe01Z.jsx",
+    "bindings": [
+      "c",
+      "r",
+      "t",
+      "ee",
+      "p",
+      "l",
+      "i",
+      "u",
+      "d",
+      "n",
+      "e",
+      "f",
+      "ne",
+      "m",
+      "te",
+      "re",
+      "o",
+      "a",
+      "s",
+      "b",
+      "y",
+      "h",
+      "v",
+      "_",
+      "g"
+    ],
+    "dependencies": [],
+    "exports": [
+      "t",
+      "n",
+      "r",
+      "i",
+      "a"
+    ],
+    "extraExports": {
+      "c": "PlicoCore_c"
+    }
+  },
+  {
+    "source": "UserMultipleIcon-BFkjj3cH.js",
+    "output": "src/library/modules/UserMultipleIcon-BFkjj3cH.jsx",
+    "bindings": [
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "t"
+    ],
+    "extraExports": {}
+  },
+  {
+    "source": "Target02Icon-B_T0iwXf.js",
+    "output": "src/library/modules/Target02Icon-B_T0iwXf.jsx",
+    "bindings": [
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "t"
+    ],
+    "extraExports": {}
+  },
+  {
+    "source": "component-BtHQvHKg.js",
+    "output": "src/library/modules/component-BtHQvHKg.jsx",
+    "bindings": [
+      "N",
+      "p",
+      "k",
+      "t",
+      "A",
+      "h",
+      "D",
+      "C",
+      "v",
+      "a",
+      "S",
+      "g",
+      "B",
+      "W",
+      "V",
+      "O",
+      "e",
+      "U",
+      "H",
+      "f",
+      "n",
+      "u",
+      "d",
+      "x",
+      "w",
+      "o",
+      "b",
+      "R",
+      "E",
+      "i",
+      "T",
+      "z",
+      "s",
+      "_",
+      "l",
+      "c",
+      "K",
+      "j",
+      "F",
+      "I",
+      "r",
+      "L",
+      "y",
+      "G",
+      "m",
+      "M",
+      "P"
+    ],
+    "dependencies": [
+      "component-B0ZYbJEt.js",
+      "ChartColumnIcon-CdOeU6Br.js",
+      "Table01Icon-CpK0cmMJ.js",
+      "PresentationBarChart01Icon-C8MfgXhe.js",
+      "Database01Icon-DrAaO4oe.js",
+      "index-CA7yMmEL.js",
+      "Globe02Icon-jOAiZzRC.js",
+      "component-DWcBqJQY.js",
+      "UserAdd01Icon-CeNWxiQ5.js"
+    ],
+    "exports": [
+      "t",
+      "a",
+      "r",
+      "n",
+      "o",
+      "i"
+    ],
+    "extraExports": {
+      "N": "PlicoCore_N"
+    }
+  },
+  {
+    "source": "PresentationBarChart01Icon-C8MfgXhe.js",
+    "output": "src/library/modules/PresentationBarChart01Icon-C8MfgXhe.jsx",
+    "bindings": [
+      "t",
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "t",
+      "n"
+    ],
+    "extraExports": {}
+  },
+  {
+    "source": "component-DWcBqJQY.js",
+    "output": "src/library/modules/component-DWcBqJQY.jsx",
+    "bindings": [
+      "o",
+      "r",
+      "t",
+      "a",
+      "s",
+      "c",
+      "l",
+      "n",
+      "e",
+      "i"
+    ],
+    "dependencies": [],
+    "exports": [
+      "t"
+    ],
+    "extraExports": {
+      "o": "PlicoCore_o"
+    }
+  },
+  {
+    "source": "RepeatIcon-CJJ1C8N9.js",
+    "output": "src/library/modules/RepeatIcon-CJJ1C8N9.jsx",
+    "bindings": [
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "t"
+    ],
+    "extraExports": {}
+  },
+  {
+    "source": "ShoppingBag01Icon-fOOVs0Uq.js",
+    "output": "src/library/modules/ShoppingBag01Icon-fOOVs0Uq.jsx",
+    "bindings": [
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "t"
+    ],
+    "extraExports": {}
+  },
+  {
+    "source": "WorkflowSquare03Icon-KUZ5l40I.js",
+    "output": "src/library/modules/WorkflowSquare03Icon-KUZ5l40I.jsx",
+    "bindings": [
+      "i",
+      "r",
+      "e",
+      "n",
+      "t"
+    ],
+    "dependencies": [],
+    "exports": [
+      "t",
+      "n",
+      "a",
+      "r",
+      "i"
+    ],
+    "extraExports": {}
+  },
+  {
+    "source": "component-SU9mzBXM.js",
+    "output": "src/library/modules/component-SU9mzBXM.jsx",
+    "bindings": [
+      "a",
+      "r",
+      "t",
+      "te",
+      "i",
+      "ne",
+      "ee",
+      "n",
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "t"
+    ],
+    "extraExports": {
+      "a": "PlicoCore_a"
+    }
+  },
+  {
+    "source": "component-jpqc9dJC.js",
+    "output": "src/library/modules/component-jpqc9dJC.jsx",
+    "bindings": [
+      "o",
+      "r",
+      "t",
+      "a",
+      "s",
+      "n",
+      "e",
+      "i"
+    ],
+    "dependencies": [],
+    "exports": [
+      "t"
+    ],
+    "extraExports": {
+      "o": "PlicoCore_o"
+    }
+  },
+  {
+    "source": "component-CA_4LgO0.js",
+    "output": "src/library/modules/component-CA_4LgO0.jsx",
+    "bindings": [
+      "i",
+      "r",
+      "t",
+      "o",
+      "g",
+      "h",
+      "s",
+      "_",
+      "n",
+      "e",
+      "m",
+      "l",
+      "u",
+      "p",
+      "c",
+      "d",
+      "v",
+      "f",
+      "a"
+    ],
+    "dependencies": [],
+    "exports": [
+      "t",
+      "n"
+    ],
+    "extraExports": {
+      "a": "PlicoCore_a"
+    }
+  },
+  {
+    "source": "component-XY52GlKn.js",
+    "output": "src/library/modules/component-XY52GlKn.jsx",
+    "bindings": [
+      "d",
+      "r",
+      "t",
+      "u",
+      "ne",
+      "o",
+      "l",
+      "te",
+      "re",
+      "s",
+      "ee",
+      "a",
+      "i",
+      "c",
+      "n",
+      "e"
+    ],
+    "dependencies": [],
+    "exports": [
+      "t"
+    ],
+    "extraExports": {
+      "d": "PlicoCore_d"
+    }
+  },
+  {
+    "source": "component-WEwHkvy1.js",
+    "output": "src/library/modules/component-WEwHkvy1.jsx",
+    "bindings": [
+      "o",
+      "t",
+      "e",
+      "s",
+      "l",
+      "i",
+      "n",
+      "a",
+      "r",
+      "c"
+    ],
+    "dependencies": [],
+    "exports": [
+      "IntegrationGrid"
+    ],
+    "extraExports": {
+      "o": "PlicoCore_o"
+    }
+  },
+  {
+    "source": "component-C_OhOiCe.js",
+    "output": "src/library/modules/component-C_OhOiCe.jsx",
+    "bindings": [
+      "d",
+      "r",
+      "t",
+      "s",
+      "o",
+      "c",
+      "u",
+      "l",
+      "n",
+      "e",
+      "p",
+      "a",
+      "i",
+      "f"
+    ],
+    "dependencies": [],
+    "exports": [
+      "n",
+      "t"
+    ],
+    "extraExports": {
+      "s": "PlicoCore_s"
+    }
+  },
+  {
+    "source": "component-DwKackPh.js",
+    "output": "src/library/modules/component-DwKackPh.jsx",
+    "bindings": [
+      "s",
+      "r",
+      "t",
+      "l",
+      "C",
+      "x",
+      "n",
+      "e",
+      "c",
+      "w",
+      "h",
+      "p",
+      "m",
+      "f",
+      "d",
+      "u",
+      "b",
+      "_",
+      "y",
+      "v",
+      "g",
+      "D",
+      "o",
+      "a",
+      "i",
+      "E",
+      "T",
+      "S"
+    ],
+    "dependencies": [],
+    "exports": [
+      "t"
+    ],
+    "extraExports": {
+      "s": "PlicoCore_s"
+    }
+  }
+]

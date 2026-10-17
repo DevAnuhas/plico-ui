@@ -1,0 +1,19 @@
+"use client";
+import * as React from "react";
+import { PlicoDemo_b as PublicDemo } from "../../modules/demo-D7hRHGEh.jsx";
+export { PlicoCore_i as Component } from "../../modules/demo-D7hRHGEh.jsx";
+export { PlicoCore_i as PricingPlans } from "../../modules/demo-D7hRHGEh.jsx";
+const demoStyles =
+  ".pricing-plans-demo{align-self:stretch;width:100%;min-width:0}.pricing-plans-demo .ui-pp{background:0 0}.pricing-plans-demo[data-fit=stage]{justify-items:center;padding:8px 0 24px;display:grid}.pricing-plans-demo[data-fit] .ui-pp__plans{grid-template-columns:repeat(3,minmax(0,1fr));max-width:none}.card__preview .pricing-plans-demo{position:absolute;inset:0;overflow:hidden;-webkit-mask-image:linear-gradient(#000 72%,#0000);mask-image:linear-gradient(#000 72%,#0000)}.pricing-plans-demo[data-fit=card] .pricing-plans-demo__frame{transform-origin:0 0;position:absolute;top:0;left:24px}.card__preview .pricing-plans-demo .ui-pp{padding:36px 0 0}.pricing-plans-demo__frame{min-width:0}\n";
+export function Demo(props) {
+  return (
+    <>
+      <style href="plico-demo-pricing-plans" precedence="default">
+        {demoStyles}
+      </style>
+      <PublicDemo {...props} />
+    </>
+  );
+}
+export { Demo as PricingPlansDemo };
+export default Demo;

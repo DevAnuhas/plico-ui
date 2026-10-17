@@ -1,0 +1,45 @@
+import {brand} from '../../lib/brand.js';
+function localText(value){return value.replaceAll('__PLICO_ORIGIN__',brand.url).replaceAll('__PLICO_REPO__',brand.repoUrl)}
+var e = {
+  requirements: [`React 19`],
+  whenToUse: [`An integrations or marketplace page in a SaaS product`, `Settings screens where people connect and disconnect third-party tools`],
+  whenNotToUse: [`Two or three integrations – a short list in settings is enough`, `Hundreds of apps – add server-side search and paging`],
+  usage: "import { AppDirectory } from \"@/components/plico/app-directory\";\nfunction Integrations() {\n  return <AppDirectory apps={apps} onToggle={(app, connected) => save(app.id, connected)} />;\n}\nexport {\n  Integrations\n};",
+  props: [{
+    name: `apps`,
+    type: `App[]`,
+    description: `id, name, vendor, description, categories, logo, tile color, essential and connected`
+  }, {
+    name: `categories`,
+    type: `AppCategory[]`,
+    description: `Sidebar entries with id, label and icon – essentials and all are built in`
+  }, {
+    name: `title`,
+    type: `string`,
+    default: `"Integrations"`,
+    description: `Heading inside the card`
+  }, {
+    name: `subtitle`,
+    type: `string`,
+    description: `Line under the heading`
+  }, {
+    name: `onToggle`,
+    type: `(app: App, connected: boolean) => void`,
+    description: `Called after an app was connected or disconnected`
+  }, {
+    name: `className`,
+    type: `string`,
+    description: `Extra class on the block`
+  }],
+  keyboard: [{
+    keys: [`Tab`],
+    description: `Move through search, filter, categories and the connect buttons`
+  }, {
+    keys: [`Escape`],
+    description: `Close the filter menu`
+  }],
+  accessibility: [`Search has a label, the filter is a menu of radio items, the current category is marked`, `Connect buttons say which app they connect; the result heading is a live region`],
+  motion: [`Cards fade in, connecting shows a spinner, the filter menu drops in – reduced motion turns this off`],
+  responsive: [`Three columns with a sidebar on wide containers; below 820px the categories become a row of chips and the grid two columns; below 560px one column`, `Dark mode built in: switches when an ancestor (usually <html>) has the class dark or data-theme="dark"`]
+};
+export { e as docs };

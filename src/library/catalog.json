@@ -1,0 +1,2372 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "name": "agent-inbox",
+      "section": "components",
+      "slug": "agent-inbox",
+      "style": "classic",
+      "title": "Agent Inbox",
+      "description": "All your background agent tasks in one calm list – live clocks and status tags, filter tabs with rolling counts, rows that unfold to the last steps with Approve, Reject, Retry or Open, and glide to their new place",
+      "registryItem": "agent-inbox",
+      "registryPath": "/r/agent-inbox.json",
+      "entryPoint": "src/library/agent-inbox.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "agent-inbox-clean",
+      "section": "components",
+      "slug": "agent-inbox",
+      "style": "clean",
+      "title": "Agent Inbox",
+      "description": "All your background agent tasks in one calm list – live clocks and status tags, filter tabs with rolling counts, rows that unfold to the last steps with Approve, Reject, Retry or Open, and glide to their new place",
+      "registryItem": "agent-inbox-clean",
+      "registryPath": "/r/agent-inbox-clean.json",
+      "entryPoint": "src/library/agent-inbox-clean.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "agent-lanes",
+      "section": "components",
+      "slug": "agent-lanes",
+      "style": "classic",
+      "title": "Agent Lanes",
+      "description": "Where every agent is right now – a live timeline with a lane per agent, tasks growing into “now”, hand-offs drawn between agents and approvals right on the block",
+      "registryItem": "agent-lanes",
+      "registryPath": "/r/agent-lanes.json",
+      "entryPoint": "src/library/agent-lanes.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "agent-lanes-clean",
+      "section": "components",
+      "slug": "agent-lanes",
+      "style": "clean",
+      "title": "Agent Lanes",
+      "description": "Where every agent is right now – a live timeline with a lane per agent, tasks growing into “now”, hand-offs drawn between agents and approvals right on the block",
+      "registryItem": "agent-lanes-clean",
+      "registryPath": "/r/agent-lanes-clean.json",
+      "entryPoint": "src/library/agent-lanes-clean.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "agent-plan",
+      "section": "components",
+      "slug": "agent-plan",
+      "style": "classic",
+      "title": "Agent Plan",
+      "description": "An agent's step-by-step plan to review before it runs – rename, drag to reorder, remove or add steps, then watch each one run with live timers and retry from a failed step",
+      "registryItem": "agent-plan",
+      "registryPath": "/r/agent-plan.json",
+      "entryPoint": "src/library/agent-plan.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "agent-plan-clean",
+      "section": "components",
+      "slug": "agent-plan",
+      "style": "clean",
+      "title": "Agent Plan",
+      "description": "An agent's step-by-step plan to review before it runs – rename, drag to reorder, remove or add steps, then watch each one run with live timers and retry from a failed step",
+      "registryItem": "agent-plan-clean",
+      "registryPath": "/r/agent-plan-clean.json",
+      "entryPoint": "src/library/agent-plan-clean.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "agent-steering",
+      "section": "components",
+      "slug": "agent-steering",
+      "style": "classic",
+      "title": "Agent Steering",
+      "description": "Steer an agent while it works – queue a note for the next step and watch it glide into the plan when the agent picks it up, or interrupt right away",
+      "registryItem": "agent-steering",
+      "registryPath": "/r/agent-steering.json",
+      "entryPoint": "src/library/agent-steering.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "agent-steering-clean",
+      "section": "components",
+      "slug": "agent-steering",
+      "style": "clean",
+      "title": "Agent Steering",
+      "description": "Steer an agent while it works – queue a note for the next step and watch it glide into the plan when the agent picks it up, or interrupt right away",
+      "registryItem": "agent-steering-clean",
+      "registryPath": "/r/agent-steering-clean.json",
+      "entryPoint": "src/library/agent-steering-clean.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "ai-answer",
+      "section": "components",
+      "slug": "ai-answer",
+      "style": "classic",
+      "title": "AI Answer",
+      "description": "Streamed answer with source cards, citation chips that preview their source, copy, regenerate, feedback and follow-ups",
+      "registryItem": "ai-answer",
+      "registryPath": "/r/ai-answer.json",
+      "entryPoint": "src/library/ai-answer.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "ai-answer-clean",
+      "section": "components",
+      "slug": "ai-answer",
+      "style": "clean",
+      "title": "AI Answer",
+      "description": "Streamed answer with source cards, citation chips that preview their source, copy, regenerate, feedback and follow-ups",
+      "registryItem": "ai-answer-clean",
+      "registryPath": "/r/ai-answer-clean.json",
+      "entryPoint": "src/library/ai-answer-clean.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "approval-card",
+      "section": "components",
+      "slug": "approval-card",
+      "style": "classic",
+      "title": "Approval Card",
+      "description": "An agent asks before it acts – risk badge, preview, Approve and Deny with shortcuts, a pausing countdown, and a smooth morph into a resolved row",
+      "registryItem": "approval-card",
+      "registryPath": "/r/approval-card.json",
+      "entryPoint": "src/library/approval-card.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "approval-card-clean",
+      "section": "components",
+      "slug": "approval-card",
+      "style": "clean",
+      "title": "Approval Card",
+      "description": "An agent asks before it acts – risk badge, preview, Approve and Deny with shortcuts, a pausing countdown, and a smooth morph into a resolved row",
+      "registryItem": "approval-card-clean",
+      "registryPath": "/r/approval-card-clean.json",
+      "entryPoint": "src/library/approval-card-clean.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "autonomy-dial",
+      "section": "components",
+      "slug": "autonomy-dial",
+      "style": "classic",
+      "title": "Autonomy Dial",
+      "description": "How much an agent may do on its own – a three-stop dial, and its real actions gliding between “Runs on its own” and “Asks you first”, with a lock for what always asks",
+      "registryItem": "autonomy-dial",
+      "registryPath": "/r/autonomy-dial.json",
+      "entryPoint": "src/library/autonomy-dial.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "autonomy-dial-clean",
+      "section": "components",
+      "slug": "autonomy-dial",
+      "style": "clean",
+      "title": "Autonomy Dial",
+      "description": "How much an agent may do on its own – a three-stop dial, and its real actions gliding between “Runs on its own” and “Asks you first”, with a lock for what always asks",
+      "registryItem": "autonomy-dial-clean",
+      "registryPath": "/r/autonomy-dial-clean.json",
+      "entryPoint": "src/library/autonomy-dial-clean.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "billing-schedule",
+      "section": "components",
+      "slug": "billing-schedule",
+      "style": "classic",
+      "title": "Billing Schedule",
+      "description": "Build a billing phase – start date, duration, products with repeats and timing, discount, minimum and live totals",
+      "registryItem": "billing-schedule",
+      "registryPath": "/r/billing-schedule.json",
+      "entryPoint": "src/library/billing-schedule.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "billing-schedule-clean",
+      "section": "components",
+      "slug": "billing-schedule",
+      "style": "clean",
+      "title": "Billing Schedule",
+      "description": "Build a billing phase – start date, duration, products with repeats and timing, discount, minimum and live totals",
+      "registryItem": "billing-schedule-clean",
+      "registryPath": "/r/billing-schedule-clean.json",
+      "entryPoint": "src/library/billing-schedule-clean.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "breakdown-chart",
+      "section": "components",
+      "slug": "breakdown-chart",
+      "style": "classic",
+      "title": "Breakdown Chart",
+      "description": "Stacked bar chart with measure, slice and segment pickers, a hover breakdown and a linked table",
+      "registryItem": "breakdown-chart",
+      "registryPath": "/r/breakdown-chart.json",
+      "entryPoint": "src/library/breakdown-chart.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "breakdown-chart-clean",
+      "section": "components",
+      "slug": "breakdown-chart",
+      "style": "clean",
+      "title": "Breakdown Chart",
+      "description": "Stacked bar chart with measure, slice and segment pickers, a hover breakdown and a linked table",
+      "registryItem": "breakdown-chart-clean",
+      "registryPath": "/r/breakdown-chart-clean.json",
+      "entryPoint": "src/library/breakdown-chart-clean.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "button",
+      "section": "components",
+      "slug": "button",
+      "style": "classic",
+      "title": "Button",
+      "description": "Primary, secondary, ghost and destructive buttons with icons, sizes and a shimmering loading state",
+      "registryItem": "button",
+      "registryPath": "/r/button.json",
+      "entryPoint": "src/library/button.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "button-clean",
+      "section": "components",
+      "slug": "button",
+      "style": "clean",
+      "title": "Button",
+      "description": "Primary, secondary, ghost and destructive buttons with icons, sizes and a shimmering loading state",
+      "registryItem": "button-clean",
+      "registryPath": "/r/button-clean.json",
+      "entryPoint": "src/library/button-clean.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "change-summary",
+      "section": "components",
+      "slug": "change-summary",
+      "style": "classic",
+      "title": "Change Summary",
+      "description": "What moved since last time – one metric per row with a colored trend",
+      "registryItem": "change-summary",
+      "registryPath": "/r/change-summary.json",
+      "entryPoint": "src/library/change-summary.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "change-summary-clean",
+      "section": "components",
+      "slug": "change-summary",
+      "style": "clean",
+      "title": "Change Summary",
+      "description": "What moved since last time – one metric per row with a colored trend",
+      "registryItem": "change-summary-clean",
+      "registryPath": "/r/change-summary-clean.json",
+      "entryPoint": "src/library/change-summary-clean.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "chat-composer",
+      "section": "components",
+      "slug": "chat-composer",
+      "style": "classic",
+      "title": "Chat Composer",
+      "description": "Prompt composer with model picker, voice input, app connections and approval request",
+      "registryItem": "chat-composer",
+      "registryPath": "/r/chat-composer.json",
+      "entryPoint": "src/library/chat-composer.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "chat-composer-clean",
+      "section": "components",
+      "slug": "chat-composer",
+      "style": "clean",
+      "title": "Chat Composer",
+      "description": "Prompt composer with model picker, voice input, app connections and approval request",
+      "registryItem": "chat-composer-clean",
+      "registryPath": "/r/chat-composer-clean.json",
+      "entryPoint": "src/library/chat-composer-clean.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "cited-answer",
+      "section": "components",
+      "slug": "cited-answer",
+      "style": "classic",
+      "title": "Cited Answer",
+      "description": "An AI answer wired to its sources – point at a citation to light up its sentence and source, click to unfold the quoted passage with the matching words marked",
+      "registryItem": "cited-answer",
+      "registryPath": "/r/cited-answer.json",
+      "entryPoint": "src/library/cited-answer.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "cited-answer-clean",
+      "section": "components",
+      "slug": "cited-answer",
+      "style": "clean",
+      "title": "Cited Answer",
+      "description": "An AI answer wired to its sources – point at a citation to light up its sentence and source, click to unfold the quoted passage with the matching words marked",
+      "registryItem": "cited-answer-clean",
+      "registryPath": "/r/cited-answer-clean.json",
+      "entryPoint": "src/library/cited-answer-clean.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "combobox",
+      "section": "components",
+      "slug": "combobox",
+      "style": "classic",
+      "title": "Combobox",
+      "description": "Pick one or many from a searchable, grouped list – chips with avatars, highlighted matches, create-on-the-fly and full keyboard support",
+      "registryItem": "combobox",
+      "registryPath": "/r/combobox.json",
+      "entryPoint": "src/library/combobox.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "combobox-clean",
+      "section": "components",
+      "slug": "combobox",
+      "style": "clean",
+      "title": "Combobox",
+      "description": "Pick one or many from a searchable, grouped list – chips with avatars, highlighted matches, create-on-the-fly and full keyboard support",
+      "registryItem": "combobox-clean",
+      "registryPath": "/r/combobox-clean.json",
+      "entryPoint": "src/library/combobox-clean.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "command-menu",
+      "section": "components",
+      "slug": "command-menu",
+      "style": "classic",
+      "title": "Command Menu",
+      "description": "Search and run anything from one field – tool actions with logos and ⌘1–⌘5, everyday commands with icons",
+      "registryItem": "command-menu",
+      "registryPath": "/r/command-menu.json",
+      "entryPoint": "src/library/command-menu.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "command-menu-clean",
+      "section": "components",
+      "slug": "command-menu",
+      "style": "clean",
+      "title": "Command Menu",
+      "description": "Search and run anything from one field – tool actions with logos and ⌘1–⌘5, everyday commands with icons",
+      "registryItem": "command-menu-clean",
+      "registryPath": "/r/command-menu-clean.json",
+      "entryPoint": "src/library/command-menu-clean.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "comment-thread",
+      "section": "components",
+      "slug": "comment-thread",
+      "style": "classic",
+      "title": "Comment Thread",
+      "description": "One comment with replies – an assistant reports what it did, folds open details and answers @mentions",
+      "registryItem": "comment-thread",
+      "registryPath": "/r/comment-thread.json",
+      "entryPoint": "src/library/comment-thread.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "comment-thread-clean",
+      "section": "components",
+      "slug": "comment-thread",
+      "style": "clean",
+      "title": "Comment Thread",
+      "description": "One comment with replies – an assistant reports what it did, folds open details and answers @mentions",
+      "registryItem": "comment-thread-clean",
+      "registryPath": "/r/comment-thread-clean.json",
+      "entryPoint": "src/library/comment-thread-clean.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "comments-panel",
+      "section": "components",
+      "slug": "comments-panel",
+      "style": "classic",
+      "title": "Comments Panel",
+      "description": "Comment feed with filters, runnable /edit commands, resolve and a composer",
+      "registryItem": "comments-panel",
+      "registryPath": "/r/comments-panel.json",
+      "entryPoint": "src/library/comments-panel.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "comments-panel-clean",
+      "section": "components",
+      "slug": "comments-panel",
+      "style": "clean",
+      "title": "Comments Panel",
+      "description": "Comment feed with filters, runnable /edit commands, resolve and a composer",
+      "registryItem": "comments-panel-clean",
+      "registryPath": "/r/comments-panel-clean.json",
+      "entryPoint": "src/library/comments-panel-clean.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "compact-breakdown",
+      "section": "components",
+      "slug": "compact-breakdown",
+      "style": "classic",
+      "title": "Compact Breakdown",
+      "description": "A total split into its parts in one small card – numbers roll, the bar glides and the ranked rows trade places when the period changes",
+      "registryItem": "compact-breakdown",
+      "registryPath": "/r/compact-breakdown.json",
+      "entryPoint": "src/library/compact-breakdown.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "compact-breakdown-clean",
+      "section": "components",
+      "slug": "compact-breakdown",
+      "style": "clean",
+      "title": "Compact Breakdown",
+      "description": "A total split into its parts in one small card – numbers roll, the bar glides and the ranked rows trade places when the period changes",
+      "registryItem": "compact-breakdown-clean",
+      "registryPath": "/r/compact-breakdown-clean.json",
+      "entryPoint": "src/library/compact-breakdown-clean.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "context-window",
+      "section": "components",
+      "slug": "context-window",
+      "style": "classic",
+      "title": "Context Window",
+      "description": "What fills the model's context, as a field of cells – hover a part to light it up, remove files, and compact the conversation while its cells shimmer and clear",
+      "registryItem": "context-window",
+      "registryPath": "/r/context-window.json",
+      "entryPoint": "src/library/context-window.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "context-window-clean",
+      "section": "components",
+      "slug": "context-window",
+      "style": "clean",
+      "title": "Context Window",
+      "description": "What fills the model's context, as a field of cells – hover a part to light it up, remove files, and compact the conversation while its cells shimmer and clear",
+      "registryItem": "context-window-clean",
+      "registryPath": "/r/context-window-clean.json",
+      "entryPoint": "src/library/context-window-clean.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "data-table",
+      "section": "components",
+      "slug": "data-table",
+      "style": "classic",
+      "title": "Data Table",
+      "description": "Spreadsheet-style table: select cells and ranges, edit in place, copy and paste, undo and sort",
+      "registryItem": "data-table",
+      "registryPath": "/r/data-table.json",
+      "entryPoint": "src/library/data-table.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "data-table-clean",
+      "section": "components",
+      "slug": "data-table",
+      "style": "clean",
+      "title": "Data Table",
+      "description": "Spreadsheet-style table: select cells and ranges, edit in place, copy and paste, undo and sort",
+      "registryItem": "data-table-clean",
+      "registryPath": "/r/data-table-clean.json",
+      "entryPoint": "src/library/data-table-clean.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "date-range-picker",
+      "section": "components",
+      "slug": "date-range-picker",
+      "style": "classic",
+      "title": "Date Range Picker",
+      "description": "Presets and two calendars with a hover preview, comparison with the previous period or year, full keyboard control",
+      "registryItem": "date-range-picker",
+      "registryPath": "/r/date-range-picker.json",
+      "entryPoint": "src/library/date-range-picker.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "date-range-picker-clean",
+      "section": "components",
+      "slug": "date-range-picker",
+      "style": "clean",
+      "title": "Date Range Picker",
+      "description": "Presets and two calendars with a hover preview, comparison with the previous period or year, full keyboard control",
+      "registryItem": "date-range-picker-clean",
+      "registryPath": "/r/date-range-picker-clean.json",
+      "entryPoint": "src/library/date-range-picker-clean.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "decision-inbox",
+      "section": "components",
+      "slug": "decision-inbox",
+      "style": "classic",
+      "title": "Decision Inbox",
+      "description": "Open decisions with two quick answers each – answered ones confirm and fold away",
+      "registryItem": "decision-inbox",
+      "registryPath": "/r/decision-inbox.json",
+      "entryPoint": "src/library/decision-inbox.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "decision-inbox-clean",
+      "section": "components",
+      "slug": "decision-inbox",
+      "style": "clean",
+      "title": "Decision Inbox",
+      "description": "Open decisions with two quick answers each – answered ones confirm and fold away",
+      "registryItem": "decision-inbox-clean",
+      "registryPath": "/r/decision-inbox-clean.json",
+      "entryPoint": "src/library/decision-inbox-clean.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "dropzone",
+      "section": "components",
+      "slug": "dropzone",
+      "style": "classic",
+      "title": "Dropzone",
+      "description": "Drag files in and watch them upload – fanning documents, colored type badges, progress with time left, errors with retry",
+      "registryItem": "dropzone",
+      "registryPath": "/r/dropzone.json",
+      "entryPoint": "src/library/dropzone.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "dropzone-clean",
+      "section": "components",
+      "slug": "dropzone",
+      "style": "clean",
+      "title": "Dropzone",
+      "description": "Drag files in and watch them upload – fanning documents, colored type badges, progress with time left, errors with retry",
+      "registryItem": "dropzone-clean",
+      "registryPath": "/r/dropzone-clean.json",
+      "entryPoint": "src/library/dropzone-clean.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "email-draft",
+      "section": "components",
+      "slug": "email-draft",
+      "style": "classic",
+      "title": "Email Draft",
+      "description": "Agent-written email for review – switch recipient and tone, edit inline, remove the attachment, send or discard with undo",
+      "registryItem": "email-draft",
+      "registryPath": "/r/email-draft.json",
+      "entryPoint": "src/library/email-draft.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "email-draft-clean",
+      "section": "components",
+      "slug": "email-draft",
+      "style": "clean",
+      "title": "Email Draft",
+      "description": "Agent-written email for review – switch recipient and tone, edit inline, remove the attachment, send or discard with undo",
+      "registryItem": "email-draft-clean",
+      "registryPath": "/r/email-draft-clean.json",
+      "entryPoint": "src/library/email-draft-clean.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "experiment-card",
+      "section": "components",
+      "slug": "experiment-card",
+      "style": "classic",
+      "title": "Experiment Card",
+      "description": "An A/B test in two lines that quietly unfolds on hover – variants linked to a tiny chart, a metric switch with rolling numbers, and a winner you pick with a click",
+      "registryItem": "experiment-card",
+      "registryPath": "/r/experiment-card.json",
+      "entryPoint": "src/library/experiment-card.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "experiment-card-clean",
+      "section": "components",
+      "slug": "experiment-card",
+      "style": "clean",
+      "title": "Experiment Card",
+      "description": "An A/B test in two lines that quietly unfolds on hover – variants linked to a tiny chart, a metric switch with rolling numbers, and a winner you pick with a click",
+      "registryItem": "experiment-card-clean",
+      "registryPath": "/r/experiment-card-clean.json",
+      "entryPoint": "src/library/experiment-card-clean.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "filter-menu",
+      "section": "components",
+      "slug": "filter-menu",
+      "style": "classic",
+      "title": "Filter Menu",
+      "description": "Grouped filters with removable chips, collapsible checkbox groups, Clear all and full keyboard control",
+      "registryItem": "filter-menu",
+      "registryPath": "/r/filter-menu.json",
+      "entryPoint": "src/library/filter-menu.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "filter-menu-clean",
+      "section": "components",
+      "slug": "filter-menu",
+      "style": "clean",
+      "title": "Filter Menu",
+      "description": "Grouped filters with removable chips, collapsible checkbox groups, Clear all and full keyboard control",
+      "registryItem": "filter-menu-clean",
+      "registryPath": "/r/filter-menu-clean.json",
+      "entryPoint": "src/library/filter-menu-clean.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "inline-diff",
+      "section": "components",
+      "slug": "inline-diff",
+      "style": "classic",
+      "title": "Inline Diff",
+      "description": "AI edits to prose shown inline – struck and added words you accept or reject one by one, with keys, a popover and undo",
+      "registryItem": "inline-diff",
+      "registryPath": "/r/inline-diff.json",
+      "entryPoint": "src/library/inline-diff.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "inline-diff-clean",
+      "section": "components",
+      "slug": "inline-diff",
+      "style": "clean",
+      "title": "Inline Diff",
+      "description": "AI edits to prose shown inline – struck and added words you accept or reject one by one, with keys, a popover and undo",
+      "registryItem": "inline-diff-clean",
+      "registryPath": "/r/inline-diff-clean.json",
+      "entryPoint": "src/library/inline-diff-clean.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "integration-picker",
+      "section": "components",
+      "slug": "integration-picker",
+      "style": "classic",
+      "title": "Integration Picker",
+      "description": "Integrations page of a command menu – search, a list of services and the picked one with its connection on two tiles",
+      "registryItem": "integration-picker",
+      "registryPath": "/r/integration-picker.json",
+      "entryPoint": "src/library/integration-picker.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "integration-picker-clean",
+      "section": "components",
+      "slug": "integration-picker",
+      "style": "clean",
+      "title": "Integration Picker",
+      "description": "Integrations page of a command menu – search, a list of services and the picked one with its connection on two tiles",
+      "registryItem": "integration-picker-clean",
+      "registryPath": "/r/integration-picker-clean.json",
+      "entryPoint": "src/library/integration-picker-clean.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "integration-settings",
+      "section": "components",
+      "slug": "integration-settings",
+      "style": "classic",
+      "title": "Integration Settings",
+      "description": "Settings card for a connected service – on/off switch, API key, validated site address, time zone and a save bar",
+      "registryItem": "integration-settings",
+      "registryPath": "/r/integration-settings.json",
+      "entryPoint": "src/library/integration-settings.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "integration-settings-clean",
+      "section": "components",
+      "slug": "integration-settings",
+      "style": "clean",
+      "title": "Integration Settings",
+      "description": "Settings card for a connected service – on/off switch, API key, validated site address, time zone and a save bar",
+      "registryItem": "integration-settings-clean",
+      "registryPath": "/r/integration-settings-clean.json",
+      "entryPoint": "src/library/integration-settings-clean.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "kpi-chart",
+      "section": "components",
+      "slug": "kpi-chart",
+      "style": "classic",
+      "title": "KPI Chart",
+      "description": "Metric card with a multi-line chart and a tooltip that follows the pointer",
+      "registryItem": "kpi-chart",
+      "registryPath": "/r/kpi-chart.json",
+      "entryPoint": "src/library/kpi-chart.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "kpi-chart-clean",
+      "section": "components",
+      "slug": "kpi-chart",
+      "style": "clean",
+      "title": "KPI Chart",
+      "description": "Metric card with a multi-line chart and a tooltip that follows the pointer",
+      "registryItem": "kpi-chart-clean",
+      "registryPath": "/r/kpi-chart-clean.json",
+      "entryPoint": "src/library/kpi-chart-clean.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "memory-panel",
+      "section": "components",
+      "slug": "memory-panel",
+      "style": "classic",
+      "title": "Memory Panel",
+      "description": "What the assistant remembers about you, grouped and editable – a master switch, category filters, and on every memory edit in place, pause or forget with Undo on the tray",
+      "registryItem": "memory-panel",
+      "registryPath": "/r/memory-panel.json",
+      "entryPoint": "src/library/memory-panel.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "memory-panel-clean",
+      "section": "components",
+      "slug": "memory-panel",
+      "style": "clean",
+      "title": "Memory Panel",
+      "description": "What the assistant remembers about you, grouped and editable – a master switch, category filters, and on every memory edit in place, pause or forget with Undo on the tray",
+      "registryItem": "memory-panel-clean",
+      "registryPath": "/r/memory-panel-clean.json",
+      "entryPoint": "src/library/memory-panel-clean.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "message-actions",
+      "section": "components",
+      "slug": "message-actions",
+      "style": "classic",
+      "title": "Message Actions",
+      "description": "The quiet bar under an AI message – copy turns into a check, regenerate spins and unfolds a version switcher, thumbs pop and ask why, read aloud becomes a tiny equalizer",
+      "registryItem": "message-actions",
+      "registryPath": "/r/message-actions.json",
+      "entryPoint": "src/library/message-actions.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "message-actions-clean",
+      "section": "components",
+      "slug": "message-actions",
+      "style": "clean",
+      "title": "Message Actions",
+      "description": "The quiet bar under an AI message – copy turns into a check, regenerate spins and unfolds a version switcher, thumbs pop and ask why, read aloud becomes a tiny equalizer",
+      "registryItem": "message-actions-clean",
+      "registryPath": "/r/message-actions-clean.json",
+      "entryPoint": "src/library/message-actions-clean.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "model-picker",
+      "section": "components",
+      "slug": "model-picker",
+      "style": "classic",
+      "title": "Model Picker",
+      "description": "The model menu of an AI chat – point at a model and its speed, quality and cost bars fill, switch on extended thinking and its effort unfolds, while the tray rolls the first-token time and price",
+      "registryItem": "model-picker",
+      "registryPath": "/r/model-picker.json",
+      "entryPoint": "src/library/model-picker.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "model-picker-clean",
+      "section": "components",
+      "slug": "model-picker",
+      "style": "clean",
+      "title": "Model Picker",
+      "description": "The model menu of an AI chat – point at a model and its speed, quality and cost bars fill, switch on extended thinking and its effort unfolds, while the tray rolls the first-token time and price",
+      "registryItem": "model-picker-clean",
+      "registryPath": "/r/model-picker-clean.json",
+      "entryPoint": "src/library/model-picker-clean.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "notification-stack",
+      "section": "components",
+      "slug": "notification-stack",
+      "style": "classic",
+      "title": "Notification Stack",
+      "description": "Notice cards stacked behind each other – dismiss the front one to reveal the next",
+      "registryItem": "notification-stack",
+      "registryPath": "/r/notification-stack.json",
+      "entryPoint": "src/library/notification-stack.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "notification-stack-clean",
+      "section": "components",
+      "slug": "notification-stack",
+      "style": "clean",
+      "title": "Notification Stack",
+      "description": "Notice cards stacked behind each other – dismiss the front one to reveal the next",
+      "registryItem": "notification-stack-clean",
+      "registryPath": "/r/notification-stack-clean.json",
+      "entryPoint": "src/library/notification-stack-clean.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "otp-input",
+      "section": "components",
+      "slug": "otp-input",
+      "style": "classic",
+      "title": "OTP Input",
+      "description": "The verification code field done right – a gliding focus ring, paste and SMS autofill, a calm shake on errors and a morph into Verified",
+      "registryItem": "otp-input",
+      "registryPath": "/r/otp-input.json",
+      "entryPoint": "src/library/otp-input.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "otp-input-clean",
+      "section": "components",
+      "slug": "otp-input",
+      "style": "clean",
+      "title": "OTP Input",
+      "description": "The verification code field done right – a gliding focus ring, paste and SMS autofill, a calm shake on errors and a morph into Verified",
+      "registryItem": "otp-input-clean",
+      "registryPath": "/r/otp-input-clean.json",
+      "entryPoint": "src/library/otp-input-clean.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "profile-menu",
+      "section": "components",
+      "slug": "profile-menu",
+      "style": "classic",
+      "title": "Profile Menu",
+      "description": "Account card with the signed-in user, menu actions and profile setup progress",
+      "registryItem": "profile-menu",
+      "registryPath": "/r/profile-menu.json",
+      "entryPoint": "src/library/profile-menu.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "profile-menu-clean",
+      "section": "components",
+      "slug": "profile-menu",
+      "style": "clean",
+      "title": "Profile Menu",
+      "description": "Account card with the signed-in user, menu actions and profile setup progress",
+      "registryItem": "profile-menu-clean",
+      "registryPath": "/r/profile-menu-clean.json",
+      "entryPoint": "src/library/profile-menu-clean.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "progress-tracker",
+      "section": "components",
+      "slug": "progress-tracker",
+      "style": "classic",
+      "title": "Progress Tracker",
+      "description": "Onboarding checklist with an animated progress bar, ticks that draw themselves and auto play",
+      "registryItem": "progress-tracker",
+      "registryPath": "/r/progress-tracker.json",
+      "entryPoint": "src/library/progress-tracker.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "progress-tracker-clean",
+      "section": "components",
+      "slug": "progress-tracker",
+      "style": "clean",
+      "title": "Progress Tracker",
+      "description": "Onboarding checklist with an animated progress bar, ticks that draw themselves and auto play",
+      "registryItem": "progress-tracker-clean",
+      "registryPath": "/r/progress-tracker-clean.json",
+      "entryPoint": "src/library/progress-tracker-clean.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "project-card",
+      "section": "components",
+      "slug": "project-card",
+      "style": "classic",
+      "title": "Project Card",
+      "description": "A two-line project summary that quietly unfolds on hover – a progress ring with one segment per subtask, a people filter and a status picker, all linked by hover",
+      "registryItem": "project-card",
+      "registryPath": "/r/project-card.json",
+      "entryPoint": "src/library/project-card.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "project-card-clean",
+      "section": "components",
+      "slug": "project-card",
+      "style": "clean",
+      "title": "Project Card",
+      "description": "A two-line project summary that quietly unfolds on hover – a progress ring with one segment per subtask, a people filter and a status picker, all linked by hover",
+      "registryItem": "project-card-clean",
+      "registryPath": "/r/project-card-clean.json",
+      "entryPoint": "src/library/project-card-clean.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "prompt-library",
+      "section": "components",
+      "slug": "prompt-library",
+      "style": "classic",
+      "title": "Prompt Library",
+      "description": "Saved prompt templates with variables – type straight into the sentence, watch the finished prompt assemble below, and use it once every variable is filled",
+      "registryItem": "prompt-library",
+      "registryPath": "/r/prompt-library.json",
+      "entryPoint": "src/library/prompt-library.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "prompt-library-clean",
+      "section": "components",
+      "slug": "prompt-library",
+      "style": "clean",
+      "title": "Prompt Library",
+      "description": "Saved prompt templates with variables – type straight into the sentence, watch the finished prompt assemble below, and use it once every variable is filled",
+      "registryItem": "prompt-library-clean",
+      "registryPath": "/r/prompt-library-clean.json",
+      "entryPoint": "src/library/prompt-library-clean.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "reaction-bar",
+      "section": "components",
+      "slug": "reaction-bar",
+      "style": "classic",
+      "title": "Reaction Bar",
+      "description": "Like, comment, repost and share in one pill – icons pop and fill, counts roll in digit by digit",
+      "registryItem": "reaction-bar",
+      "registryPath": "/r/reaction-bar.json",
+      "entryPoint": "src/library/reaction-bar.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "reaction-bar-clean",
+      "section": "components",
+      "slug": "reaction-bar",
+      "style": "clean",
+      "title": "Reaction Bar",
+      "description": "Like, comment, repost and share in one pill – icons pop and fill, counts roll in digit by digit",
+      "registryItem": "reaction-bar-clean",
+      "registryPath": "/r/reaction-bar-clean.json",
+      "entryPoint": "src/library/reaction-bar-clean.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "segmented-control",
+      "section": "components",
+      "slug": "segmented-control",
+      "style": "classic",
+      "title": "Segmented Control",
+      "description": "Switch between two to six options – a raised pill or underline that glides, stretches a little and can be dragged across, with icons, counts and badges",
+      "registryItem": "segmented-control",
+      "registryPath": "/r/segmented-control.json",
+      "entryPoint": "src/library/segmented-control.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "segmented-control-clean",
+      "section": "components",
+      "slug": "segmented-control",
+      "style": "clean",
+      "title": "Segmented Control",
+      "description": "Switch between two to six options – a raised pill or underline that glides, stretches a little and can be dragged across, with icons, counts and badges",
+      "registryItem": "segmented-control-clean",
+      "registryPath": "/r/segmented-control-clean.json",
+      "entryPoint": "src/library/segmented-control-clean.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "setup-guide",
+      "section": "components",
+      "slug": "setup-guide",
+      "style": "classic",
+      "title": "Setup Guide",
+      "description": "Onboarding panel with a progress bar and collapsible task groups that strike through when done",
+      "registryItem": "setup-guide",
+      "registryPath": "/r/setup-guide.json",
+      "entryPoint": "src/library/setup-guide.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "setup-guide-clean",
+      "section": "components",
+      "slug": "setup-guide",
+      "style": "clean",
+      "title": "Setup Guide",
+      "description": "Onboarding panel with a progress bar and collapsible task groups that strike through when done",
+      "registryItem": "setup-guide-clean",
+      "registryPath": "/r/setup-guide-clean.json",
+      "entryPoint": "src/library/setup-guide-clean.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "smart-recommendation",
+      "section": "components",
+      "slug": "smart-recommendation",
+      "style": "classic",
+      "title": "Smart Recommendation",
+      "description": "Suggestion card with a confidence signal, alternatives to switch to and accept with undo",
+      "registryItem": "smart-recommendation",
+      "registryPath": "/r/smart-recommendation.json",
+      "entryPoint": "src/library/smart-recommendation.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "smart-recommendation-clean",
+      "section": "components",
+      "slug": "smart-recommendation",
+      "style": "clean",
+      "title": "Smart Recommendation",
+      "description": "Suggestion card with a confidence signal, alternatives to switch to and accept with undo",
+      "registryItem": "smart-recommendation-clean",
+      "registryPath": "/r/smart-recommendation-clean.json",
+      "entryPoint": "src/library/smart-recommendation-clean.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "stepper-form",
+      "section": "components",
+      "slug": "stepper-form",
+      "style": "classic",
+      "title": "Stepper Form",
+      "description": "A multi-step flow for onboarding and setup – steps that fill and check off, sliding steps, a card that morphs to each step, inline validation and a success state",
+      "registryItem": "stepper-form",
+      "registryPath": "/r/stepper-form.json",
+      "entryPoint": "src/library/stepper-form.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "stepper-form-clean",
+      "section": "components",
+      "slug": "stepper-form",
+      "style": "clean",
+      "title": "Stepper Form",
+      "description": "A multi-step flow for onboarding and setup – steps that fill and check off, sliding steps, a card that morphs to each step, inline validation and a success state",
+      "registryItem": "stepper-form-clean",
+      "registryPath": "/r/stepper-form-clean.json",
+      "entryPoint": "src/library/stepper-form-clean.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "thinking-loader",
+      "section": "components",
+      "slug": "thinking-loader",
+      "style": "classic",
+      "title": "Thinking Loader",
+      "description": "A small working pill for AI replies – an eight-ray spinner and a shimmering label that rolls through phases and settles on a check",
+      "registryItem": "thinking-loader",
+      "registryPath": "/r/thinking-loader.json",
+      "entryPoint": "src/library/thinking-loader.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "thinking-loader-clean",
+      "section": "components",
+      "slug": "thinking-loader",
+      "style": "clean",
+      "title": "Thinking Loader",
+      "description": "A small working pill for AI replies – an eight-ray spinner and a shimmering label that rolls through phases and settles on a check",
+      "registryItem": "thinking-loader-clean",
+      "registryPath": "/r/thinking-loader-clean.json",
+      "entryPoint": "src/library/thinking-loader-clean.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "thinking-state",
+      "section": "components",
+      "slug": "thinking-state",
+      "style": "classic",
+      "title": "Thinking State",
+      "description": "AI working panel with a live timer, searched sources and thinking steps that appear one by one",
+      "registryItem": "thinking-state",
+      "registryPath": "/r/thinking-state.json",
+      "entryPoint": "src/library/thinking-state.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "thinking-state-clean",
+      "section": "components",
+      "slug": "thinking-state",
+      "style": "clean",
+      "title": "Thinking State",
+      "description": "AI working panel with a live timer, searched sources and thinking steps that appear one by one",
+      "registryItem": "thinking-state-clean",
+      "registryPath": "/r/thinking-state-clean.json",
+      "entryPoint": "src/library/thinking-state-clean.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "tips-panel",
+      "section": "components",
+      "slug": "tips-panel",
+      "style": "classic",
+      "title": "Tips Panel",
+      "description": "Grid of short tips with one action each – taken tips turn into a done state",
+      "registryItem": "tips-panel",
+      "registryPath": "/r/tips-panel.json",
+      "entryPoint": "src/library/tips-panel.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "tips-panel-clean",
+      "section": "components",
+      "slug": "tips-panel",
+      "style": "clean",
+      "title": "Tips Panel",
+      "description": "Grid of short tips with one action each – taken tips turn into a done state",
+      "registryItem": "tips-panel-clean",
+      "registryPath": "/r/tips-panel-clean.json",
+      "entryPoint": "src/library/tips-panel-clean.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "toaster",
+      "section": "components",
+      "slug": "toaster",
+      "style": "classic",
+      "title": "Toaster",
+      "description": "Calm toasts from anywhere – a stack that fans out on hover, promise toasts that morph from spinner to check, swipe to dismiss",
+      "registryItem": "toaster",
+      "registryPath": "/r/toaster.json",
+      "entryPoint": "src/library/toaster.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "toaster-clean",
+      "section": "components",
+      "slug": "toaster",
+      "style": "clean",
+      "title": "Toaster",
+      "description": "Calm toasts from anywhere – a stack that fans out on hover, promise toasts that morph from spinner to check, swipe to dismiss",
+      "registryItem": "toaster-clean",
+      "registryPath": "/r/toaster-clean.json",
+      "entryPoint": "src/library/toaster-clean.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "tool-call-card",
+      "section": "components",
+      "slug": "tool-call-card",
+      "style": "classic",
+      "title": "Tool Call Card",
+      "description": "An agent's tool call in one line – live timer, status and summary, folds open to highlighted arguments and result with copy, retry on errors and a group that sums them up",
+      "registryItem": "tool-call-card",
+      "registryPath": "/r/tool-call-card.json",
+      "entryPoint": "src/library/tool-call-card.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "tool-call-card-clean",
+      "section": "components",
+      "slug": "tool-call-card",
+      "style": "clean",
+      "title": "Tool Call Card",
+      "description": "An agent's tool call in one line – live timer, status and summary, folds open to highlighted arguments and result with copy, retry on errors and a group that sums them up",
+      "registryItem": "tool-call-card-clean",
+      "registryPath": "/r/tool-call-card-clean.json",
+      "entryPoint": "src/library/tool-call-card-clean.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "usage-meter",
+      "section": "components",
+      "slug": "usage-meter",
+      "style": "classic",
+      "title": "Usage Meter",
+      "description": "Plan usage and AI credits – a stacked credits meter by category, daily sparkline, limits and a button that speaks up near the limit",
+      "registryItem": "usage-meter",
+      "registryPath": "/r/usage-meter.json",
+      "entryPoint": "src/library/usage-meter.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "usage-meter-clean",
+      "section": "components",
+      "slug": "usage-meter",
+      "style": "clean",
+      "title": "Usage Meter",
+      "description": "Plan usage and AI credits – a stacked credits meter by category, daily sparkline, limits and a button that speaks up near the limit",
+      "registryItem": "usage-meter-clean",
+      "registryPath": "/r/usage-meter-clean.json",
+      "entryPoint": "src/library/usage-meter-clean.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "writing-assistant",
+      "section": "components",
+      "slug": "writing-assistant",
+      "style": "classic",
+      "title": "Writing Assistant",
+      "description": "AI chat card with a soft gradient glow, suggestions, streaming replies and live voice dictation",
+      "registryItem": "writing-assistant",
+      "registryPath": "/r/writing-assistant.json",
+      "entryPoint": "src/library/writing-assistant.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "writing-assistant-clean",
+      "section": "components",
+      "slug": "writing-assistant",
+      "style": "clean",
+      "title": "Writing Assistant",
+      "description": "AI chat card with a soft gradient glow, suggestions, streaming replies and live voice dictation",
+      "registryItem": "writing-assistant-clean",
+      "registryPath": "/r/writing-assistant-clean.json",
+      "entryPoint": "src/library/writing-assistant-clean.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "agent-gallery",
+      "section": "blocks",
+      "slug": "agent-gallery",
+      "style": "default",
+      "title": "Agent Gallery",
+      "description": "Slim gradient panels with one open product screen in the middle – pick a panel and it glides open",
+      "registryItem": "agent-gallery",
+      "registryPath": "/r/agent-gallery.json",
+      "entryPoint": "src/library/agent-gallery.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "ai-workspace",
+      "section": "blocks",
+      "slug": "ai-workspace",
+      "style": "default",
+      "title": "AI Workspace",
+      "description": "Complete assistant app – sidebar, welcome, streaming chat and projects, built on the Chat Composer",
+      "registryItem": "ai-workspace",
+      "registryPath": "/r/ai-workspace.json",
+      "entryPoint": "src/library/ai-workspace.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "app-directory",
+      "section": "blocks",
+      "slug": "app-directory",
+      "style": "default",
+      "title": "App Directory",
+      "description": "Browse, search and connect integrations – categories, filters and app cards with a connect flow",
+      "registryItem": "app-directory",
+      "registryPath": "/r/app-directory.json",
+      "entryPoint": "src/library/app-directory.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "client-context",
+      "section": "blocks",
+      "slug": "client-context",
+      "style": "default",
+      "title": "Client Context",
+      "description": "A client workspace with live numbers and a shared context timeline – switch clients, search, filter and add notes or files",
+      "registryItem": "client-context",
+      "registryPath": "/r/client-context.json",
+      "entryPoint": "src/library/client-context.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "invoice-credit",
+      "section": "blocks",
+      "slug": "invoice-credit",
+      "style": "default",
+      "title": "Invoice & Credit Note",
+      "description": "An invoice and its credit note stacked like paper – switch between them, pick lines to credit, adjust amounts and issue",
+      "registryItem": "invoice-credit",
+      "registryPath": "/r/invoice-credit.json",
+      "entryPoint": "src/library/invoice-credit.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "kpi-board",
+      "section": "blocks",
+      "slug": "kpi-board",
+      "style": "default",
+      "title": "KPI Board",
+      "description": "The top of a dashboard – three trend cards, an overview chart that compares this period with the last, and a focus card; hover shows any day's value and every number rolls when the range changes",
+      "registryItem": "kpi-board",
+      "registryPath": "/r/kpi-board.json",
+      "entryPoint": "src/library/kpi-board.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "logo-marquee",
+      "section": "blocks",
+      "slug": "logo-marquee",
+      "style": "default",
+      "title": "Logo Marquee",
+      "description": "The endless “Trusted by” strip – a seamless loop that eases to a stop on hover, scrubs with inertia and lifts the hovered logo to colour",
+      "registryItem": "logo-marquee",
+      "registryPath": "/r/logo-marquee.json",
+      "entryPoint": "src/library/logo-marquee.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "metrics-dashboard",
+      "section": "blocks",
+      "slug": "metrics-dashboard",
+      "style": "default",
+      "title": "Metrics Dashboard",
+      "description": "Sales overview – KPI cards pick the metric, one chart switches between dotted line and bars, with top products and channels",
+      "registryItem": "metrics-dashboard",
+      "registryPath": "/r/metrics-dashboard.json",
+      "entryPoint": "src/library/metrics-dashboard.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "pricing-plans",
+      "section": "blocks",
+      "slug": "pricing-plans",
+      "style": "default",
+      "title": "Pricing Plans",
+      "description": "Pricing section with a monthly / yearly switch, three plan cards and collapsible details",
+      "registryItem": "pricing-plans",
+      "registryPath": "/r/pricing-plans.json",
+      "entryPoint": "src/library/pricing-plans.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "task-board",
+      "section": "blocks",
+      "slug": "task-board",
+      "style": "default",
+      "title": "Task Board",
+      "description": "Kanban board with drag and drop, quick add, a detail panel, search, label filters and a compact view",
+      "registryItem": "task-board",
+      "registryPath": "/r/task-board.json",
+      "entryPoint": "src/library/task-board.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "testimonial-wall",
+      "section": "blocks",
+      "slug": "testimonial-wall",
+      "style": "default",
+      "title": "Testimonial Wall",
+      "description": "The landing-page wall of quotes – columns that scroll endlessly in opposite directions, ease to a stop on hover and scrub with inertia",
+      "registryItem": "testimonial-wall",
+      "registryPath": "/r/testimonial-wall.json",
+      "entryPoint": "src/library/testimonial-wall.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "agent-team",
+      "section": "illustrations",
+      "slug": "agent-team",
+      "style": "default",
+      "title": "Agent Team",
+      "description": "A prompt types itself and branches out into three agents, each with a role and overlapping tool logos",
+      "registryItem": "agent-team",
+      "registryPath": "/r/agent-team.json",
+      "entryPoint": "src/library/agent-team.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "cover-flow",
+      "section": "illustrations",
+      "slug": "cover-flow",
+      "style": "default",
+      "title": "Cover Flow",
+      "description": "Browse covers in 3D – drag, flick or scrub the row, it springs to the nearest cover; images drift in their frames over a soft reflection",
+      "registryItem": "cover-flow",
+      "registryPath": "/r/cover-flow.json",
+      "entryPoint": "src/library/cover-flow.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "empty-calendar",
+      "section": "illustrations",
+      "slug": "empty-calendar",
+      "style": "default",
+      "title": "Empty Calendar",
+      "description": "Stack of calendar cards marked empty, fanning out on hover",
+      "registryItem": "empty-calendar",
+      "registryPath": "/r/empty-calendar.json",
+      "entryPoint": "src/library/empty-calendar.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "enrichment-orbit",
+      "section": "illustrations",
+      "slug": "enrichment-orbit",
+      "style": "default",
+      "title": "Enrichment Orbit",
+      "description": "Grok tile inside two rings with comets and data nodes orbiting around it",
+      "registryItem": "enrichment-orbit",
+      "registryPath": "/r/enrichment-orbit.json",
+      "entryPoint": "src/library/enrichment-orbit.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "frost-cloud",
+      "section": "illustrations",
+      "slug": "frost-cloud",
+      "style": "default",
+      "title": "Frost Cloud",
+      "description": "A frosted white cloud with eyes cut out of it, on a red-orange or blue sky – it floats, turns to look around, blinks, follows the pointer and bounces with a wink when clicked",
+      "registryItem": "frost-cloud",
+      "registryPath": "/r/frost-cloud.json",
+      "entryPoint": "src/library/frost-cloud.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "ghosted-chat",
+      "section": "illustrations",
+      "slug": "ghosted-chat",
+      "style": "default",
+      "title": "Ghosted Chat",
+      "description": "Unanswered chat messages marked as read, with a thumbs-down reply on hover",
+      "registryItem": "ghosted-chat",
+      "registryPath": "/r/ghosted-chat.json",
+      "entryPoint": "src/library/ghosted-chat.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "glass-folder",
+      "section": "illustrations",
+      "slug": "glass-folder",
+      "style": "default",
+      "title": "Glass Folder",
+      "description": "Glassy blue folder with documents behind a frosted pocket that tips open on hover",
+      "registryItem": "glass-folder",
+      "registryPath": "/r/glass-folder.json",
+      "entryPoint": "src/library/glass-folder.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "glow-cloud",
+      "section": "illustrations",
+      "slug": "glow-cloud",
+      "style": "default",
+      "title": "Glow Cloud",
+      "description": "A glowing cloud with eyes in blue or red-orange – it floats, turns to look around, blinks, follows the pointer and bounces with a wink when clicked",
+      "registryItem": "glow-cloud",
+      "registryPath": "/r/glow-cloud.json",
+      "entryPoint": "src/library/glow-cloud.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "glow-keyboard",
+      "section": "illustrations",
+      "slug": "glow-keyboard",
+      "style": "default",
+      "title": "Glow Keyboard",
+      "description": "AI chat input that types itself over a glass keyboard – every key press sends a wave up the gradient floor",
+      "registryItem": "glow-keyboard",
+      "registryPath": "/r/glow-keyboard.json",
+      "entryPoint": "src/library/glow-keyboard.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "integration-beam",
+      "section": "illustrations",
+      "slug": "integration-beam",
+      "style": "default",
+      "title": "Integration Beam",
+      "description": "Your product between the tools it connects – light pulses flow along curved beams, hover to focus a tool, click to pause it",
+      "registryItem": "integration-beam",
+      "registryPath": "/r/integration-beam.json",
+      "entryPoint": "src/library/integration-beam.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "integration-flow",
+      "section": "illustrations",
+      "slug": "integration-flow",
+      "style": "default",
+      "title": "Integration Flow",
+      "description": "Integration pills rotating along a dashed arc, each beaming its data into a central analysis hub",
+      "registryItem": "integration-flow",
+      "registryPath": "/r/integration-flow.json",
+      "entryPoint": "src/library/integration-flow.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "integration-grid",
+      "section": "illustrations",
+      "slug": "integration-grid",
+      "style": "default",
+      "title": "Integration Grid",
+      "description": "Honeycomb-like wall of integration logos around a bright centre tile with your product mark, fading out toward the edges",
+      "registryItem": "integration-grid",
+      "registryPath": "/r/integration-grid.json",
+      "entryPoint": "src/library/integration-grid.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "layer-stack",
+      "section": "illustrations",
+      "slug": "layer-stack",
+      "style": "default",
+      "title": "Layer Stack",
+      "description": "Isometric stack of five layers with a list beside it – the chosen entry lifts its layer out in color",
+      "registryItem": "layer-stack",
+      "registryPath": "/r/layer-stack.json",
+      "entryPoint": "src/library/layer-stack.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "lead-sourcing",
+      "section": "illustrations",
+      "slug": "lead-sourcing",
+      "style": "default",
+      "title": "Lead Sourcing",
+      "description": "ChatGPT tile linked to Gmail and Grok, with a shine running along the connection",
+      "registryItem": "lead-sourcing",
+      "registryPath": "/r/lead-sourcing.json",
+      "entryPoint": "src/library/lead-sourcing.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "logo-cluster",
+      "section": "illustrations",
+      "slug": "logo-cluster",
+      "style": "default",
+      "title": "Logo Cluster",
+      "description": "Your mark on a white disc in the middle – company logos bounce out of it and settle around it",
+      "registryItem": "logo-cluster",
+      "registryPath": "/r/logo-cluster.json",
+      "entryPoint": "src/library/logo-cluster.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "model-wheel",
+      "section": "illustrations",
+      "slug": "model-wheel",
+      "style": "default",
+      "title": "Model Wheel",
+      "description": "AI model names on a turning drum – the rows bend away at the edges and each model lands on a soft gray fill",
+      "registryItem": "model-wheel",
+      "registryPath": "/r/model-wheel.json",
+      "entryPoint": "src/library/model-wheel.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "outreach-branches",
+      "section": "illustrations",
+      "slug": "outreach-branches",
+      "style": "default",
+      "title": "Outreach Branches",
+      "description": "Lines branching out to Gmail, Slack and Notion with colored pulses flowing down",
+      "registryItem": "outreach-branches",
+      "registryPath": "/r/outreach-branches.json",
+      "entryPoint": "src/library/outreach-branches.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "project-flow",
+      "section": "illustrations",
+      "slug": "project-flow",
+      "style": "default",
+      "title": "Project Flow",
+      "description": "Animated scene of a client task branching into subtasks, notes and assigned roles",
+      "registryItem": "project-flow",
+      "registryPath": "/r/project-flow.json",
+      "entryPoint": "src/library/project-flow.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "region-dach",
+      "section": "illustrations",
+      "slug": "region-dach",
+      "style": "default",
+      "title": "DACH Region",
+      "description": "DACH map with fading neighbours and a pastel band along the border, switchable to the US, China, India, Brazil or Japan",
+      "registryItem": "region-dach",
+      "registryPath": "/r/region-dach.json",
+      "entryPoint": "src/library/region-dach.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "side-folder",
+      "section": "illustrations",
+      "slug": "side-folder",
+      "style": "default",
+      "title": "Side Folder",
+      "description": "Glassy blue folder on its side, documents sliding out to the right as the pocket swings open on hover",
+      "registryItem": "side-folder",
+      "registryPath": "/r/side-folder.json",
+      "entryPoint": "src/library/side-folder.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "tab-overload",
+      "section": "illustrations",
+      "slug": "tab-overload",
+      "style": "default",
+      "title": "Tab Overload",
+      "description": "Overlapping browser windows where the highlight follows the hovered tab",
+      "registryItem": "tab-overload",
+      "registryPath": "/r/tab-overload.json",
+      "entryPoint": "src/library/tab-overload.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "team-invite",
+      "section": "illustrations",
+      "slug": "team-invite",
+      "style": "default",
+      "title": "Team Invite",
+      "description": "Connected teammates – a cursor drags a new one into the empty slot, the line turns solid and they go online",
+      "registryItem": "team-invite",
+      "registryPath": "/r/team-invite.json",
+      "entryPoint": "src/library/team-invite.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "voice-orb",
+      "section": "illustrations",
+      "slug": "voice-orb",
+      "style": "default",
+      "title": "Voice Orb",
+      "description": "The face of a voice assistant – a sphere of dots that breathes, catches sound, collapses into a spinning ring while thinking and ripples when it speaks",
+      "registryItem": "voice-orb",
+      "registryPath": "/r/voice-orb.json",
+      "entryPoint": "src/library/voice-orb.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "world-map",
+      "section": "illustrations",
+      "slug": "world-map",
+      "style": "default",
+      "title": "World Map Continental",
+      "description": "World map with one highlighted continent and a pastel band along its coastline, switchable between all six",
+      "registryItem": "world-map",
+      "registryPath": "/r/world-map.json",
+      "entryPoint": "src/library/world-map.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "agent-chat",
+      "section": "screens",
+      "slug": "agent-chat",
+      "style": "default",
+      "title": "Agent Chat",
+      "description": "Chat with an orchestrating agent, the agents at work, and a brief to fill in beside it",
+      "registryItem": "agent-chat",
+      "registryPath": "/r/agent-chat.json",
+      "entryPoint": "src/library/agent-chat.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo",
+        "fullScreen": "FullScreen"
+      }
+    },
+    {
+      "name": "agent-run",
+      "section": "screens",
+      "slug": "agent-run",
+      "style": "default",
+      "title": "Agent Run",
+      "description": "One autonomous agent run: the plan ticking through its steps, the tool calls, an approval it waits on and the draft it wrote",
+      "registryItem": "agent-run",
+      "registryPath": "/r/agent-run.json",
+      "entryPoint": "src/library/agent-run.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo",
+        "fullScreen": "FullScreen"
+      }
+    },
+    {
+      "name": "analytics",
+      "section": "screens",
+      "slug": "analytics",
+      "style": "default",
+      "title": "Analytics",
+      "description": "Revenue dashboard: key figures, revenue by channel, breakdown, top products and weekly trends",
+      "registryItem": "analytics",
+      "registryPath": "/r/analytics.json",
+      "entryPoint": "src/library/analytics.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo",
+        "fullScreen": "FullScreen"
+      }
+    },
+    {
+      "name": "app-shell",
+      "section": "screens",
+      "slug": "app-shell",
+      "style": "default",
+      "title": "App Shell",
+      "description": "Collapsible sidebar with workspace, menu, projects and account – the frame every screen sits in",
+      "registryItem": "app-shell",
+      "registryPath": "/r/app-shell.json",
+      "entryPoint": "src/library/app-shell.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo",
+        "fullScreen": "FullScreen"
+      }
+    },
+    {
+      "name": "assistant-home",
+      "section": "screens",
+      "slug": "assistant-home",
+      "style": "default",
+      "title": "Assistant Home",
+      "description": "AI assistant start page: greeting, prompt box with tools, connected apps and suggestions",
+      "registryItem": "assistant-home",
+      "registryPath": "/r/assistant-home.json",
+      "entryPoint": "src/library/assistant-home.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo",
+        "fullScreen": "FullScreen"
+      }
+    },
+    {
+      "name": "crm",
+      "section": "screens",
+      "slug": "crm",
+      "style": "default",
+      "title": "CRM",
+      "description": "Company list with pipelines, open views as tabs and an editable data table",
+      "registryItem": "crm",
+      "registryPath": "/r/crm.json",
+      "entryPoint": "src/library/crm.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo",
+        "fullScreen": "FullScreen"
+      }
+    },
+    {
+      "name": "evals",
+      "section": "screens",
+      "slug": "evals",
+      "style": "default",
+      "title": "Evals",
+      "description": "Prompt evaluation dashboard: pass rate by version, reviewable prompt changes and test cases you can re-run",
+      "registryItem": "evals",
+      "registryPath": "/r/evals.json",
+      "entryPoint": "src/library/evals.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo",
+        "fullScreen": "FullScreen"
+      }
+    },
+    {
+      "name": "files",
+      "section": "screens",
+      "slug": "files",
+      "style": "default",
+      "title": "Folders",
+      "description": "Folder overview with tabs, search, sort, grid/list toggle and file templates",
+      "registryItem": "files",
+      "registryPath": "/r/files.json",
+      "entryPoint": "src/library/files.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo",
+        "fullScreen": "FullScreen"
+      }
+    },
+    {
+      "name": "folder",
+      "section": "screens",
+      "slug": "folder",
+      "style": "default",
+      "title": "Folder",
+      "description": "Inside one folder: breadcrumbs, file cards with previews, and an empty state",
+      "registryItem": "folder",
+      "registryPath": "/r/folder.json",
+      "entryPoint": "src/library/folder.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo",
+        "fullScreen": "FullScreen"
+      }
+    },
+    {
+      "name": "integrations",
+      "section": "screens",
+      "slug": "integrations",
+      "style": "default",
+      "title": "Integrations",
+      "description": "App directory with a sticky header, categories, search and connect states",
+      "registryItem": "integrations",
+      "registryPath": "/r/integrations.json",
+      "entryPoint": "src/library/integrations.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo",
+        "fullScreen": "FullScreen"
+      }
+    },
+    {
+      "name": "onboarding",
+      "section": "screens",
+      "slug": "onboarding",
+      "style": "default",
+      "title": "Onboarding",
+      "description": "First-run flow of an AI workspace: workspace setup, tool connections, team invites and a first agent, with a getting-started checklist",
+      "registryItem": "onboarding",
+      "registryPath": "/r/onboarding.json",
+      "entryPoint": "src/library/onboarding.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo",
+        "fullScreen": "FullScreen"
+      }
+    },
+    {
+      "name": "settings-billing",
+      "section": "screens",
+      "slug": "settings-billing",
+      "style": "default",
+      "title": "Settings & Billing",
+      "description": "Settings page with tabs: workspace, members, API keys and billing with plan, usage, payment method, plan comparison and invoices",
+      "registryItem": "settings-billing",
+      "registryPath": "/r/settings-billing.json",
+      "entryPoint": "src/library/settings-billing.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo",
+        "fullScreen": "FullScreen"
+      }
+    },
+    {
+      "name": "blur-crossfade",
+      "section": "motion",
+      "slug": "blur-crossfade",
+      "style": "default",
+      "title": "Blur Crossfade",
+      "description": "Swaps content with a soft blur while the box glides smoothly to the size of what comes next",
+      "registryItem": "blur-crossfade",
+      "registryPath": "/r/blur-crossfade.json",
+      "entryPoint": "src/library/blur-crossfade.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "gradient-floor",
+      "section": "motion",
+      "slug": "gradient-floor",
+      "style": "default",
+      "title": "Gradient Floor",
+      "description": "A blurred colour gradient that glows up from the bottom edge – two layers that drift and morph",
+      "registryItem": "gradient-floor",
+      "registryPath": "/r/gradient-floor.json",
+      "entryPoint": "src/library/gradient-floor.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "gradient-text",
+      "section": "motion",
+      "slug": "gradient-text",
+      "style": "default",
+      "title": "Gradient Text",
+      "description": "Letters cut from a liquid, ever-flowing gradient – the color sweeps across the word the first time it's seen",
+      "registryItem": "gradient-text",
+      "registryPath": "/r/gradient-text.json",
+      "entryPoint": "src/library/gradient-text.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "grid-background",
+      "section": "motion",
+      "slug": "grid-background",
+      "style": "default",
+      "title": "Grid Background",
+      "description": "A fine line grid that drifts slowly behind your content and fades out towards the edges",
+      "registryItem": "grid-background",
+      "registryPath": "/r/grid-background.json",
+      "entryPoint": "src/library/grid-background.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "number-ticker",
+      "section": "motion",
+      "slug": "number-ticker",
+      "style": "default",
+      "title": "Number Ticker",
+      "description": "Odometer-style numbers – every digit rolls to its new value and counts in from zero when it scrolls into view",
+      "registryItem": "number-ticker",
+      "registryPath": "/r/number-ticker.json",
+      "entryPoint": "src/library/number-ticker.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "shimmer-loader",
+      "section": "motion",
+      "slug": "shimmer-loader",
+      "style": "default",
+      "title": "Shimmer Loader",
+      "description": "Skeleton blocks that share one soft light sweep, plus shimmering text for “Thinking…” states",
+      "registryItem": "shimmer-loader",
+      "registryPath": "/r/shimmer-loader.json",
+      "entryPoint": "src/library/shimmer-loader.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "text-reveal",
+      "section": "motion",
+      "slug": "text-reveal",
+      "style": "default",
+      "title": "Text Reveal",
+      "description": "Text that arrives word by word or letter by letter – each piece rises out of a soft blur as it scrolls into view",
+      "registryItem": "text-reveal",
+      "registryPath": "/r/text-reveal.json",
+      "entryPoint": "src/library/text-reveal.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    },
+    {
+      "name": "tilt-card",
+      "section": "motion",
+      "slug": "tilt-card",
+      "style": "default",
+      "title": "Tilt Card",
+      "description": "A card that tilts in 3D towards the pointer, with a soft glare that follows it and a smooth spring back",
+      "registryItem": "tilt-card",
+      "registryPath": "/r/tilt-card.json",
+      "entryPoint": "src/library/tilt-card.jsx",
+      "exports": {
+        "component": "Component",
+        "demo": "Demo"
+      }
+    }
+  ]
+}

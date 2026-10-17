@@ -1,0 +1,3138 @@
+{
+  "schemaVersion": 1,
+  "entries": [
+    {
+      "publicEntry": "src/library/agent-inbox.jsx",
+      "section": "components",
+      "slug": "agent-inbox",
+      "sourceSlug": "agent-inbox",
+      "variant": "classic",
+      "title": "Agent Inbox",
+      "entry": "src/library/items/agent-inbox/index.jsx",
+      "primaryEntry": "src/library/modules/demo-D8lqmxyw.jsx",
+      "exports": [
+        "AgentInbox",
+        "AgentInboxDemo",
+        "Component",
+        "Demo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/agent-inbox-clean.jsx",
+      "section": "components",
+      "slug": "agent-inbox",
+      "sourceSlug": "agent-inbox-clean",
+      "variant": "clean",
+      "title": "Agent Inbox",
+      "entry": "src/library/items/agent-inbox-clean/index.jsx",
+      "primaryEntry": "src/library/modules/demo.clean-BBgUsqmk.jsx",
+      "exports": [
+        "AgentInboxClean",
+        "AgentInboxCleanDemo",
+        "Component",
+        "Demo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/agent-lanes.jsx",
+      "section": "components",
+      "slug": "agent-lanes",
+      "sourceSlug": "agent-lanes",
+      "variant": "classic",
+      "title": "Agent Lanes",
+      "entry": "src/library/items/agent-lanes/index.jsx",
+      "primaryEntry": "src/library/modules/demo-DjN2XUBS.jsx",
+      "exports": [
+        "AgentLanes",
+        "AgentLanesDemo",
+        "Component",
+        "Demo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/agent-lanes-clean.jsx",
+      "section": "components",
+      "slug": "agent-lanes",
+      "sourceSlug": "agent-lanes-clean",
+      "variant": "clean",
+      "title": "Agent Lanes",
+      "entry": "src/library/items/agent-lanes-clean/index.jsx",
+      "primaryEntry": "src/library/modules/demo.clean-1HqvmQFW.jsx",
+      "exports": [
+        "AgentLanesClean",
+        "AgentLanesCleanDemo",
+        "Component",
+        "Demo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/agent-plan.jsx",
+      "section": "components",
+      "slug": "agent-plan",
+      "sourceSlug": "agent-plan",
+      "variant": "classic",
+      "title": "Agent Plan",
+      "entry": "src/library/items/agent-plan/index.jsx",
+      "primaryEntry": "src/library/modules/component-XY52GlKn.jsx",
+      "exports": [
+        "AgentPlan",
+        "AgentPlanDemo",
+        "Component",
+        "Demo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/agent-plan-clean.jsx",
+      "section": "components",
+      "slug": "agent-plan",
+      "sourceSlug": "agent-plan-clean",
+      "variant": "clean",
+      "title": "Agent Plan",
+      "entry": "src/library/items/agent-plan-clean/index.jsx",
+      "primaryEntry": "src/library/modules/demo.clean-DhEwvoWY.jsx",
+      "exports": [
+        "AgentPlanClean",
+        "AgentPlanCleanDemo",
+        "Component",
+        "Demo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/agent-steering.jsx",
+      "section": "components",
+      "slug": "agent-steering",
+      "sourceSlug": "agent-steering",
+      "variant": "classic",
+      "title": "Agent Steering",
+      "entry": "src/library/items/agent-steering/index.jsx",
+      "primaryEntry": "src/library/modules/demo-BIClVWrb.jsx",
+      "exports": [
+        "AgentSteering",
+        "AgentSteeringDemo",
+        "Component",
+        "Demo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/agent-steering-clean.jsx",
+      "section": "components",
+      "slug": "agent-steering",
+      "sourceSlug": "agent-steering-clean",
+      "variant": "clean",
+      "title": "Agent Steering",
+      "entry": "src/library/items/agent-steering-clean/index.jsx",
+      "primaryEntry": "src/library/modules/demo.clean-BdEtaf2R.jsx",
+      "exports": [
+        "AgentSteeringClean",
+        "AgentSteeringCleanDemo",
+        "Component",
+        "Demo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/ai-answer.jsx",
+      "section": "components",
+      "slug": "ai-answer",
+      "sourceSlug": "ai-answer",
+      "variant": "classic",
+      "title": "AI Answer",
+      "entry": "src/library/items/ai-answer/index.jsx",
+      "primaryEntry": "src/library/modules/demo-DRZinwQJ.jsx",
+      "exports": [
+        "AiAnswer",
+        "AiAnswerDemo",
+        "Component",
+        "Demo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/ai-answer-clean.jsx",
+      "section": "components",
+      "slug": "ai-answer",
+      "sourceSlug": "ai-answer-clean",
+      "variant": "clean",
+      "title": "AI Answer",
+      "entry": "src/library/items/ai-answer-clean/index.jsx",
+      "primaryEntry": "src/library/modules/demo.clean-DRkQ7w4o.jsx",
+      "exports": [
+        "AiAnswerClean",
+        "AiAnswerCleanDemo",
+        "Component",
+        "Demo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/approval-card.jsx",
+      "section": "components",
+      "slug": "approval-card",
+      "sourceSlug": "approval-card",
+      "variant": "classic",
+      "title": "Approval Card",
+      "entry": "src/library/items/approval-card/index.jsx",
+      "primaryEntry": "src/library/modules/component-SU9mzBXM.jsx",
+      "exports": [
+        "ApprovalCard",
+        "ApprovalCardDemo",
+        "Component",
+        "Demo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/approval-card-clean.jsx",
+      "section": "components",
+      "slug": "approval-card",
+      "sourceSlug": "approval-card-clean",
+      "variant": "clean",
+      "title": "Approval Card",
+      "entry": "src/library/items/approval-card-clean/index.jsx",
+      "primaryEntry": "src/library/modules/demo.clean-WOdGIyW9.jsx",
+      "exports": [
+        "ApprovalCardClean",
+        "ApprovalCardCleanDemo",
+        "Component",
+        "Demo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/autonomy-dial.jsx",
+      "section": "components",
+      "slug": "autonomy-dial",
+      "sourceSlug": "autonomy-dial",
+      "variant": "classic",
+      "title": "Autonomy Dial",
+      "entry": "src/library/items/autonomy-dial/index.jsx",
+      "primaryEntry": "src/library/modules/demo-Dzn4_UqA.jsx",
+      "exports": [
+        "AutonomyDial",
+        "AutonomyDialDemo",
+        "Component",
+        "Demo",
+        "asksFirst",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/autonomy-dial-clean.jsx",
+      "section": "components",
+      "slug": "autonomy-dial",
+      "sourceSlug": "autonomy-dial-clean",
+      "variant": "clean",
+      "title": "Autonomy Dial",
+      "entry": "src/library/items/autonomy-dial-clean/index.jsx",
+      "primaryEntry": "src/library/modules/demo.clean-tD99wK4F.jsx",
+      "exports": [
+        "AutonomyDialClean",
+        "AutonomyDialCleanDemo",
+        "Component",
+        "Demo",
+        "asksFirst",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/billing-schedule.jsx",
+      "section": "components",
+      "slug": "billing-schedule",
+      "sourceSlug": "billing-schedule",
+      "variant": "classic",
+      "title": "Billing Schedule",
+      "entry": "src/library/items/billing-schedule/index.jsx",
+      "primaryEntry": "src/library/modules/demo-nVEvL_e8.jsx",
+      "exports": [
+        "BillingSchedule",
+        "BillingScheduleDemo",
+        "Component",
+        "Demo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/billing-schedule-clean.jsx",
+      "section": "components",
+      "slug": "billing-schedule",
+      "sourceSlug": "billing-schedule-clean",
+      "variant": "clean",
+      "title": "Billing Schedule",
+      "entry": "src/library/items/billing-schedule-clean/index.jsx",
+      "primaryEntry": "src/library/modules/demo.clean-C4OVVYU0.jsx",
+      "exports": [
+        "BillingScheduleClean",
+        "BillingScheduleCleanDemo",
+        "Component",
+        "Demo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/breakdown-chart.jsx",
+      "section": "components",
+      "slug": "breakdown-chart",
+      "sourceSlug": "breakdown-chart",
+      "variant": "classic",
+      "title": "Breakdown Chart",
+      "entry": "src/library/items/breakdown-chart/index.jsx",
+      "primaryEntry": "src/library/modules/component-C_OhOiCe.jsx",
+      "exports": [
+        "BreakdownChart",
+        "BreakdownChartDemo",
+        "Component",
+        "Demo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/breakdown-chart-clean.jsx",
+      "section": "components",
+      "slug": "breakdown-chart",
+      "sourceSlug": "breakdown-chart-clean",
+      "variant": "clean",
+      "title": "Breakdown Chart",
+      "entry": "src/library/items/breakdown-chart-clean/index.jsx",
+      "primaryEntry": "src/library/modules/demo.clean-C0Kuxzg7.jsx",
+      "exports": [
+        "BreakdownChartClean",
+        "BreakdownChartCleanDemo",
+        "Component",
+        "Demo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/button.jsx",
+      "section": "components",
+      "slug": "button",
+      "sourceSlug": "button",
+      "variant": "classic",
+      "title": "Button",
+      "entry": "src/library/items/button/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/button/Component.tsx",
+      "exports": [
+        "Button",
+        "ButtonDemo",
+        "Component",
+        "Demo",
+        "default"
+      ],
+      "typeExports": [
+        "ButtonProps"
+      ]
+    },
+    {
+      "publicEntry": "src/library/button-clean.jsx",
+      "section": "components",
+      "slug": "button",
+      "sourceSlug": "button-clean",
+      "variant": "clean",
+      "title": "Button",
+      "entry": "src/library/items/button-clean/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/button-clean/Component.tsx",
+      "exports": [
+        "Button",
+        "ButtonClean",
+        "ButtonCleanDemo",
+        "Component",
+        "Demo",
+        "default"
+      ],
+      "typeExports": [
+        "ButtonProps"
+      ]
+    },
+    {
+      "publicEntry": "src/library/change-summary.jsx",
+      "section": "components",
+      "slug": "change-summary",
+      "sourceSlug": "change-summary",
+      "variant": "classic",
+      "title": "Change Summary",
+      "entry": "src/library/items/change-summary/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/change-summary/Component.tsx",
+      "exports": [
+        "ChangeSummary",
+        "ChangeSummaryDemo",
+        "Component",
+        "Demo",
+        "default"
+      ],
+      "typeExports": [
+        "ChangeSummaryProps",
+        "MetricChange"
+      ]
+    },
+    {
+      "publicEntry": "src/library/change-summary-clean.jsx",
+      "section": "components",
+      "slug": "change-summary",
+      "sourceSlug": "change-summary-clean",
+      "variant": "clean",
+      "title": "Change Summary",
+      "entry": "src/library/items/change-summary-clean/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/change-summary-clean/Component.tsx",
+      "exports": [
+        "ChangeSummary",
+        "ChangeSummaryClean",
+        "ChangeSummaryCleanDemo",
+        "Component",
+        "Demo",
+        "default"
+      ],
+      "typeExports": [
+        "ChangeSummaryProps",
+        "MetricChange"
+      ]
+    },
+    {
+      "publicEntry": "src/library/chat-composer.jsx",
+      "section": "components",
+      "slug": "chat-composer",
+      "sourceSlug": "chat-composer",
+      "variant": "classic",
+      "title": "Chat Composer",
+      "entry": "src/library/items/chat-composer/index.jsx",
+      "primaryEntry": "src/library/modules/component-DwKackPh.jsx",
+      "exports": [
+        "ChatComposer",
+        "ChatComposerDemo",
+        "Component",
+        "Demo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/chat-composer-clean.jsx",
+      "section": "components",
+      "slug": "chat-composer",
+      "sourceSlug": "chat-composer-clean",
+      "variant": "clean",
+      "title": "Chat Composer",
+      "entry": "src/library/items/chat-composer-clean/index.jsx",
+      "primaryEntry": "src/library/modules/demo.clean-CA_ipDzE.jsx",
+      "exports": [
+        "ChatComposerClean",
+        "ChatComposerCleanDemo",
+        "Component",
+        "Demo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/cited-answer.jsx",
+      "section": "components",
+      "slug": "cited-answer",
+      "sourceSlug": "cited-answer",
+      "variant": "classic",
+      "title": "Cited Answer",
+      "entry": "src/library/items/cited-answer/index.jsx",
+      "primaryEntry": "src/library/modules/demo-fp335z0j.jsx",
+      "exports": [
+        "CitedAnswer",
+        "CitedAnswerDemo",
+        "Component",
+        "Demo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/cited-answer-clean.jsx",
+      "section": "components",
+      "slug": "cited-answer",
+      "sourceSlug": "cited-answer-clean",
+      "variant": "clean",
+      "title": "Cited Answer",
+      "entry": "src/library/items/cited-answer-clean/index.jsx",
+      "primaryEntry": "src/library/modules/demo.clean-Do8sBWBG.jsx",
+      "exports": [
+        "CitedAnswerClean",
+        "CitedAnswerCleanDemo",
+        "Component",
+        "Demo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/combobox.jsx",
+      "section": "components",
+      "slug": "combobox",
+      "sourceSlug": "combobox",
+      "variant": "classic",
+      "title": "Combobox",
+      "entry": "src/library/items/combobox/index.jsx",
+      "primaryEntry": "src/library/modules/demo-Dh1VwBQQ.jsx",
+      "exports": [
+        "Combobox",
+        "ComboboxDemo",
+        "Component",
+        "Demo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/combobox-clean.jsx",
+      "section": "components",
+      "slug": "combobox",
+      "sourceSlug": "combobox-clean",
+      "variant": "clean",
+      "title": "Combobox",
+      "entry": "src/library/items/combobox-clean/index.jsx",
+      "primaryEntry": "src/library/modules/demo.clean-BeAF0VV4.jsx",
+      "exports": [
+        "ComboboxClean",
+        "ComboboxCleanDemo",
+        "Component",
+        "Demo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/command-menu.jsx",
+      "section": "components",
+      "slug": "command-menu",
+      "sourceSlug": "command-menu",
+      "variant": "classic",
+      "title": "Command Menu",
+      "entry": "src/library/items/command-menu/index.jsx",
+      "primaryEntry": "src/library/modules/demo-ZZIguRMl.jsx",
+      "exports": [
+        "CommandMenu",
+        "CommandMenuDemo",
+        "Component",
+        "Demo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/command-menu-clean.jsx",
+      "section": "components",
+      "slug": "command-menu",
+      "sourceSlug": "command-menu-clean",
+      "variant": "clean",
+      "title": "Command Menu",
+      "entry": "src/library/items/command-menu-clean/index.jsx",
+      "primaryEntry": "src/library/modules/demo.clean-CfccVVbn.jsx",
+      "exports": [
+        "CommandMenuClean",
+        "CommandMenuCleanDemo",
+        "Component",
+        "Demo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/comment-thread.jsx",
+      "section": "components",
+      "slug": "comment-thread",
+      "sourceSlug": "comment-thread",
+      "variant": "classic",
+      "title": "Comment Thread",
+      "entry": "src/library/items/comment-thread/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/comment-thread/Component.tsx",
+      "exports": [
+        "AssistantMark",
+        "CommentThread",
+        "CommentThreadDemo",
+        "Component",
+        "Demo",
+        "default"
+      ],
+      "typeExports": [
+        "CommentThreadProps",
+        "ThreadAuthor",
+        "ThreadMessage"
+      ]
+    },
+    {
+      "publicEntry": "src/library/comment-thread-clean.jsx",
+      "section": "components",
+      "slug": "comment-thread",
+      "sourceSlug": "comment-thread-clean",
+      "variant": "clean",
+      "title": "Comment Thread",
+      "entry": "src/library/items/comment-thread-clean/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/comment-thread-clean/Component.tsx",
+      "exports": [
+        "AssistantMark",
+        "CommentThread",
+        "CommentThreadClean",
+        "CommentThreadCleanDemo",
+        "Component",
+        "Demo",
+        "default"
+      ],
+      "typeExports": [
+        "CommentThreadProps",
+        "ThreadAuthor",
+        "ThreadMessage"
+      ]
+    },
+    {
+      "publicEntry": "src/library/comments-panel.jsx",
+      "section": "components",
+      "slug": "comments-panel",
+      "sourceSlug": "comments-panel",
+      "variant": "classic",
+      "title": "Comments Panel",
+      "entry": "src/library/items/comments-panel/index.jsx",
+      "primaryEntry": "src/library/modules/demo-CPh6u-dx.jsx",
+      "exports": [
+        "CommentsPanel",
+        "CommentsPanelDemo",
+        "Component",
+        "Demo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/comments-panel-clean.jsx",
+      "section": "components",
+      "slug": "comments-panel",
+      "sourceSlug": "comments-panel-clean",
+      "variant": "clean",
+      "title": "Comments Panel",
+      "entry": "src/library/items/comments-panel-clean/index.jsx",
+      "primaryEntry": "src/library/modules/demo.clean-kKXDAKEK.jsx",
+      "exports": [
+        "CommentsPanelClean",
+        "CommentsPanelCleanDemo",
+        "Component",
+        "Demo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/compact-breakdown.jsx",
+      "section": "components",
+      "slug": "compact-breakdown",
+      "sourceSlug": "compact-breakdown",
+      "variant": "classic",
+      "title": "Compact Breakdown",
+      "entry": "src/library/items/compact-breakdown/index.jsx",
+      "primaryEntry": "src/library/modules/demo-BOiMGMeM.jsx",
+      "exports": [
+        "CompactBreakdown",
+        "CompactBreakdownDemo",
+        "Component",
+        "Demo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/compact-breakdown-clean.jsx",
+      "section": "components",
+      "slug": "compact-breakdown",
+      "sourceSlug": "compact-breakdown-clean",
+      "variant": "clean",
+      "title": "Compact Breakdown",
+      "entry": "src/library/items/compact-breakdown-clean/index.jsx",
+      "primaryEntry": "src/library/modules/demo.clean-CSd5ZCWu.jsx",
+      "exports": [
+        "CompactBreakdownClean",
+        "CompactBreakdownCleanDemo",
+        "Component",
+        "Demo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/context-window.jsx",
+      "section": "components",
+      "slug": "context-window",
+      "sourceSlug": "context-window",
+      "variant": "classic",
+      "title": "Context Window",
+      "entry": "src/library/items/context-window/index.jsx",
+      "primaryEntry": "src/library/modules/demo-jxSKfjMs.jsx",
+      "exports": [
+        "Component",
+        "ContextWindow",
+        "ContextWindowDemo",
+        "Demo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/context-window-clean.jsx",
+      "section": "components",
+      "slug": "context-window",
+      "sourceSlug": "context-window-clean",
+      "variant": "clean",
+      "title": "Context Window",
+      "entry": "src/library/items/context-window-clean/index.jsx",
+      "primaryEntry": "src/library/modules/demo.clean-BVM0xTTl.jsx",
+      "exports": [
+        "Component",
+        "ContextWindowClean",
+        "ContextWindowCleanDemo",
+        "Demo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/data-table.jsx",
+      "section": "components",
+      "slug": "data-table",
+      "sourceSlug": "data-table",
+      "variant": "classic",
+      "title": "Data Table",
+      "entry": "src/library/items/data-table/index.jsx",
+      "primaryEntry": "src/library/modules/component-OCVPe01Z.jsx",
+      "exports": [
+        "Component",
+        "DataTable",
+        "DataTableDemo",
+        "Demo",
+        "TagColumnIcon",
+        "TextColumnIcon",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/data-table-clean.jsx",
+      "section": "components",
+      "slug": "data-table",
+      "sourceSlug": "data-table-clean",
+      "variant": "clean",
+      "title": "Data Table",
+      "entry": "src/library/items/data-table-clean/index.jsx",
+      "primaryEntry": "src/library/modules/demo.clean-DJWKIoS0.jsx",
+      "exports": [
+        "Component",
+        "DataTableClean",
+        "DataTableCleanDemo",
+        "Demo",
+        "TagColumnIcon",
+        "TextColumnIcon",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/date-range-picker.jsx",
+      "section": "components",
+      "slug": "date-range-picker",
+      "sourceSlug": "date-range-picker",
+      "variant": "classic",
+      "title": "Date Range Picker",
+      "entry": "src/library/items/date-range-picker/index.jsx",
+      "primaryEntry": "src/library/modules/demo-sfbKzZ34.jsx",
+      "exports": [
+        "Component",
+        "DateRangePicker",
+        "DateRangePickerDemo",
+        "Demo",
+        "default",
+        "defaultPresets"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/date-range-picker-clean.jsx",
+      "section": "components",
+      "slug": "date-range-picker",
+      "sourceSlug": "date-range-picker-clean",
+      "variant": "clean",
+      "title": "Date Range Picker",
+      "entry": "src/library/items/date-range-picker-clean/index.jsx",
+      "primaryEntry": "src/library/modules/demo.clean-CFbJ9noA.jsx",
+      "exports": [
+        "Component",
+        "DateRangePickerClean",
+        "DateRangePickerCleanDemo",
+        "Demo",
+        "default",
+        "defaultPresets"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/decision-inbox.jsx",
+      "section": "components",
+      "slug": "decision-inbox",
+      "sourceSlug": "decision-inbox",
+      "variant": "classic",
+      "title": "Decision Inbox",
+      "entry": "src/library/items/decision-inbox/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/decision-inbox/Component.tsx",
+      "exports": [
+        "Component",
+        "DecisionInbox",
+        "DecisionInboxDemo",
+        "Demo",
+        "default"
+      ],
+      "typeExports": [
+        "Decision",
+        "DecisionInboxProps"
+      ]
+    },
+    {
+      "publicEntry": "src/library/decision-inbox-clean.jsx",
+      "section": "components",
+      "slug": "decision-inbox",
+      "sourceSlug": "decision-inbox-clean",
+      "variant": "clean",
+      "title": "Decision Inbox",
+      "entry": "src/library/items/decision-inbox-clean/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/decision-inbox-clean/Component.tsx",
+      "exports": [
+        "Component",
+        "DecisionInbox",
+        "DecisionInboxClean",
+        "DecisionInboxCleanDemo",
+        "Demo",
+        "default"
+      ],
+      "typeExports": [
+        "Decision",
+        "DecisionInboxProps"
+      ]
+    },
+    {
+      "publicEntry": "src/library/dropzone.jsx",
+      "section": "components",
+      "slug": "dropzone",
+      "sourceSlug": "dropzone",
+      "variant": "classic",
+      "title": "Dropzone",
+      "entry": "src/library/items/dropzone/index.jsx",
+      "primaryEntry": "src/library/modules/demo-CQyRPKqn.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "Dropzone",
+        "DropzoneDemo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/dropzone-clean.jsx",
+      "section": "components",
+      "slug": "dropzone",
+      "sourceSlug": "dropzone-clean",
+      "variant": "clean",
+      "title": "Dropzone",
+      "entry": "src/library/items/dropzone-clean/index.jsx",
+      "primaryEntry": "src/library/modules/demo.clean-DN2ioSob.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "DropzoneClean",
+        "DropzoneCleanDemo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/email-draft.jsx",
+      "section": "components",
+      "slug": "email-draft",
+      "sourceSlug": "email-draft",
+      "variant": "classic",
+      "title": "Email Draft",
+      "entry": "src/library/items/email-draft/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/email-draft/Component.tsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "EmailDraft",
+        "EmailDraftDemo",
+        "default"
+      ],
+      "typeExports": [
+        "DraftContact",
+        "DraftTone",
+        "EmailDraftProps"
+      ]
+    },
+    {
+      "publicEntry": "src/library/email-draft-clean.jsx",
+      "section": "components",
+      "slug": "email-draft",
+      "sourceSlug": "email-draft-clean",
+      "variant": "clean",
+      "title": "Email Draft",
+      "entry": "src/library/items/email-draft-clean/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/email-draft-clean/Component.tsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "EmailDraft",
+        "EmailDraftClean",
+        "EmailDraftCleanDemo",
+        "default"
+      ],
+      "typeExports": [
+        "DraftContact",
+        "DraftTone",
+        "EmailDraftProps"
+      ]
+    },
+    {
+      "publicEntry": "src/library/experiment-card.jsx",
+      "section": "components",
+      "slug": "experiment-card",
+      "sourceSlug": "experiment-card",
+      "variant": "classic",
+      "title": "Experiment Card",
+      "entry": "src/library/items/experiment-card/index.jsx",
+      "primaryEntry": "src/library/modules/demo-CbW_KPTI.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "ExperimentCard",
+        "ExperimentCardDemo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/experiment-card-clean.jsx",
+      "section": "components",
+      "slug": "experiment-card",
+      "sourceSlug": "experiment-card-clean",
+      "variant": "clean",
+      "title": "Experiment Card",
+      "entry": "src/library/items/experiment-card-clean/index.jsx",
+      "primaryEntry": "src/library/modules/demo.clean-BWn0UMw5.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "ExperimentCardClean",
+        "ExperimentCardCleanDemo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/filter-menu.jsx",
+      "section": "components",
+      "slug": "filter-menu",
+      "sourceSlug": "filter-menu",
+      "variant": "classic",
+      "title": "Filter Menu",
+      "entry": "src/library/items/filter-menu/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/filter-menu/Component.tsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "FilterMenu",
+        "FilterMenuDemo",
+        "default"
+      ],
+      "typeExports": [
+        "FilterGroup",
+        "FilterMenuProps",
+        "FilterOption",
+        "FilterValue"
+      ]
+    },
+    {
+      "publicEntry": "src/library/filter-menu-clean.jsx",
+      "section": "components",
+      "slug": "filter-menu",
+      "sourceSlug": "filter-menu-clean",
+      "variant": "clean",
+      "title": "Filter Menu",
+      "entry": "src/library/items/filter-menu-clean/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/filter-menu-clean/Component.tsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "FilterMenu",
+        "FilterMenuClean",
+        "FilterMenuCleanDemo",
+        "default"
+      ],
+      "typeExports": [
+        "FilterGroup",
+        "FilterMenuProps",
+        "FilterOption",
+        "FilterValue"
+      ]
+    },
+    {
+      "publicEntry": "src/library/inline-diff.jsx",
+      "section": "components",
+      "slug": "inline-diff",
+      "sourceSlug": "inline-diff",
+      "variant": "classic",
+      "title": "Inline Diff",
+      "entry": "src/library/items/inline-diff/index.jsx",
+      "primaryEntry": "src/library/modules/component-CADGuG8q.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "InlineDiff",
+        "InlineDiffDemo",
+        "default",
+        "diffWords"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/inline-diff-clean.jsx",
+      "section": "components",
+      "slug": "inline-diff",
+      "sourceSlug": "inline-diff-clean",
+      "variant": "clean",
+      "title": "Inline Diff",
+      "entry": "src/library/items/inline-diff-clean/index.jsx",
+      "primaryEntry": "src/library/modules/demo.clean--VSPSi3o.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "InlineDiffClean",
+        "InlineDiffCleanDemo",
+        "default",
+        "diffWords"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/integration-picker.jsx",
+      "section": "components",
+      "slug": "integration-picker",
+      "sourceSlug": "integration-picker",
+      "variant": "classic",
+      "title": "Integration Picker",
+      "entry": "src/library/items/integration-picker/index.jsx",
+      "primaryEntry": "src/library/modules/demo-CGtzgHa8.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "IntegrationPicker",
+        "IntegrationPickerDemo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/integration-picker-clean.jsx",
+      "section": "components",
+      "slug": "integration-picker",
+      "sourceSlug": "integration-picker-clean",
+      "variant": "clean",
+      "title": "Integration Picker",
+      "entry": "src/library/items/integration-picker-clean/index.jsx",
+      "primaryEntry": "src/library/modules/demo.clean-Cz5lRox3.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "IntegrationPickerClean",
+        "IntegrationPickerCleanDemo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/integration-settings.jsx",
+      "section": "components",
+      "slug": "integration-settings",
+      "sourceSlug": "integration-settings",
+      "variant": "classic",
+      "title": "Integration Settings",
+      "entry": "src/library/items/integration-settings/index.jsx",
+      "primaryEntry": "src/library/modules/demo-gOEEj_G8.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "IntegrationSettings",
+        "IntegrationSettingsDemo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/integration-settings-clean.jsx",
+      "section": "components",
+      "slug": "integration-settings",
+      "sourceSlug": "integration-settings-clean",
+      "variant": "clean",
+      "title": "Integration Settings",
+      "entry": "src/library/items/integration-settings-clean/index.jsx",
+      "primaryEntry": "src/library/modules/demo.clean-BMo3zBgx.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "IntegrationSettingsClean",
+        "IntegrationSettingsCleanDemo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/kpi-chart.jsx",
+      "section": "components",
+      "slug": "kpi-chart",
+      "sourceSlug": "kpi-chart",
+      "variant": "classic",
+      "title": "KPI Chart",
+      "entry": "src/library/items/kpi-chart/index.jsx",
+      "primaryEntry": "src/library/modules/component-cuEFw_I6.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "KpiChart",
+        "KpiChartDemo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/kpi-chart-clean.jsx",
+      "section": "components",
+      "slug": "kpi-chart",
+      "sourceSlug": "kpi-chart-clean",
+      "variant": "clean",
+      "title": "KPI Chart",
+      "entry": "src/library/items/kpi-chart-clean/index.jsx",
+      "primaryEntry": "src/library/modules/demo.clean-BdfQ2LZR.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "KpiChartClean",
+        "KpiChartCleanDemo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/memory-panel.jsx",
+      "section": "components",
+      "slug": "memory-panel",
+      "sourceSlug": "memory-panel",
+      "variant": "classic",
+      "title": "Memory Panel",
+      "entry": "src/library/items/memory-panel/index.jsx",
+      "primaryEntry": "src/library/modules/demo-DZle1gG8.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "MemoryPanel",
+        "MemoryPanelDemo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/memory-panel-clean.jsx",
+      "section": "components",
+      "slug": "memory-panel",
+      "sourceSlug": "memory-panel-clean",
+      "variant": "clean",
+      "title": "Memory Panel",
+      "entry": "src/library/items/memory-panel-clean/index.jsx",
+      "primaryEntry": "src/library/modules/demo.clean-2HwVU5pS.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "MemoryPanelClean",
+        "MemoryPanelCleanDemo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/message-actions.jsx",
+      "section": "components",
+      "slug": "message-actions",
+      "sourceSlug": "message-actions",
+      "variant": "classic",
+      "title": "Message Actions",
+      "entry": "src/library/items/message-actions/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/message-actions/Component.tsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "MessageActions",
+        "MessageActionsDemo",
+        "MessageText",
+        "default"
+      ],
+      "typeExports": [
+        "FeedbackKind",
+        "MessageActionKey",
+        "MessageActionsProps"
+      ]
+    },
+    {
+      "publicEntry": "src/library/message-actions-clean.jsx",
+      "section": "components",
+      "slug": "message-actions",
+      "sourceSlug": "message-actions-clean",
+      "variant": "clean",
+      "title": "Message Actions",
+      "entry": "src/library/items/message-actions-clean/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/message-actions-clean/Component.tsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "MessageActions",
+        "MessageActionsClean",
+        "MessageActionsCleanDemo",
+        "MessageText",
+        "default"
+      ],
+      "typeExports": [
+        "FeedbackKind",
+        "MessageActionKey",
+        "MessageActionsProps"
+      ]
+    },
+    {
+      "publicEntry": "src/library/model-picker.jsx",
+      "section": "components",
+      "slug": "model-picker",
+      "sourceSlug": "model-picker",
+      "variant": "classic",
+      "title": "Model Picker",
+      "entry": "src/library/items/model-picker/index.jsx",
+      "primaryEntry": "src/library/modules/demo-D9-q9LWy.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "ModelPicker",
+        "ModelPickerDemo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/model-picker-clean.jsx",
+      "section": "components",
+      "slug": "model-picker",
+      "sourceSlug": "model-picker-clean",
+      "variant": "clean",
+      "title": "Model Picker",
+      "entry": "src/library/items/model-picker-clean/index.jsx",
+      "primaryEntry": "src/library/modules/demo.clean-CoifhOe5.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "ModelPickerClean",
+        "ModelPickerCleanDemo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/notification-stack.jsx",
+      "section": "components",
+      "slug": "notification-stack",
+      "sourceSlug": "notification-stack",
+      "variant": "classic",
+      "title": "Notification Stack",
+      "entry": "src/library/items/notification-stack/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/notification-stack/Component.tsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "NotificationStack",
+        "NotificationStackDemo",
+        "default"
+      ],
+      "typeExports": [
+        "Notice",
+        "NoticePattern",
+        "NotificationStackProps"
+      ]
+    },
+    {
+      "publicEntry": "src/library/notification-stack-clean.jsx",
+      "section": "components",
+      "slug": "notification-stack",
+      "sourceSlug": "notification-stack-clean",
+      "variant": "clean",
+      "title": "Notification Stack",
+      "entry": "src/library/items/notification-stack-clean/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/notification-stack-clean/Component.tsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "NotificationStack",
+        "NotificationStackClean",
+        "NotificationStackCleanDemo",
+        "default"
+      ],
+      "typeExports": [
+        "Notice",
+        "NoticePattern",
+        "NotificationStackProps"
+      ]
+    },
+    {
+      "publicEntry": "src/library/otp-input.jsx",
+      "section": "components",
+      "slug": "otp-input",
+      "sourceSlug": "otp-input",
+      "variant": "classic",
+      "title": "OTP Input",
+      "entry": "src/library/items/otp-input/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/otp-input/Component.tsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "OtpInput",
+        "OtpInputDemo",
+        "default"
+      ],
+      "typeExports": [
+        "OtpInputProps",
+        "OtpStatus"
+      ]
+    },
+    {
+      "publicEntry": "src/library/otp-input-clean.jsx",
+      "section": "components",
+      "slug": "otp-input",
+      "sourceSlug": "otp-input-clean",
+      "variant": "clean",
+      "title": "OTP Input",
+      "entry": "src/library/items/otp-input-clean/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/otp-input-clean/Component.tsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "OtpInput",
+        "OtpInputClean",
+        "OtpInputCleanDemo",
+        "default"
+      ],
+      "typeExports": [
+        "OtpInputProps",
+        "OtpStatus"
+      ]
+    },
+    {
+      "publicEntry": "src/library/profile-menu.jsx",
+      "section": "components",
+      "slug": "profile-menu",
+      "sourceSlug": "profile-menu",
+      "variant": "classic",
+      "title": "Profile Menu",
+      "entry": "src/library/items/profile-menu/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/profile-menu/Component.tsx",
+      "exports": [
+        "AppsIcon",
+        "Component",
+        "Demo",
+        "DocsIcon",
+        "LanguageIcon",
+        "LogoutIcon",
+        "ProfileMenu",
+        "ProfileMenuDemo",
+        "SettingsIcon",
+        "default"
+      ],
+      "typeExports": [
+        "ProfileMenuItem",
+        "ProfileMenuProps",
+        "ProfileSetup"
+      ]
+    },
+    {
+      "publicEntry": "src/library/profile-menu-clean.jsx",
+      "section": "components",
+      "slug": "profile-menu",
+      "sourceSlug": "profile-menu-clean",
+      "variant": "clean",
+      "title": "Profile Menu",
+      "entry": "src/library/items/profile-menu-clean/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/profile-menu-clean/Component.tsx",
+      "exports": [
+        "AppsIcon",
+        "Component",
+        "Demo",
+        "DocsIcon",
+        "LanguageIcon",
+        "LogoutIcon",
+        "ProfileMenu",
+        "ProfileMenuClean",
+        "ProfileMenuCleanDemo",
+        "SettingsIcon",
+        "default"
+      ],
+      "typeExports": [
+        "ProfileMenuItem",
+        "ProfileMenuProps",
+        "ProfileSetup"
+      ]
+    },
+    {
+      "publicEntry": "src/library/progress-tracker.jsx",
+      "section": "components",
+      "slug": "progress-tracker",
+      "sourceSlug": "progress-tracker",
+      "variant": "classic",
+      "title": "Progress Tracker",
+      "entry": "src/library/items/progress-tracker/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/progress-tracker/Component.tsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "ProgressTracker",
+        "ProgressTrackerDemo",
+        "default"
+      ],
+      "typeExports": [
+        "ProgressStep",
+        "ProgressTrackerProps"
+      ]
+    },
+    {
+      "publicEntry": "src/library/progress-tracker-clean.jsx",
+      "section": "components",
+      "slug": "progress-tracker",
+      "sourceSlug": "progress-tracker-clean",
+      "variant": "clean",
+      "title": "Progress Tracker",
+      "entry": "src/library/items/progress-tracker-clean/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/progress-tracker-clean/Component.tsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "ProgressTracker",
+        "ProgressTrackerClean",
+        "ProgressTrackerCleanDemo",
+        "default"
+      ],
+      "typeExports": [
+        "ProgressStep",
+        "ProgressTrackerProps"
+      ]
+    },
+    {
+      "publicEntry": "src/library/project-card.jsx",
+      "section": "components",
+      "slug": "project-card",
+      "sourceSlug": "project-card",
+      "variant": "classic",
+      "title": "Project Card",
+      "entry": "src/library/items/project-card/index.jsx",
+      "primaryEntry": "src/library/modules/demo-D4OBH9QL.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "ProjectCard",
+        "ProjectCardDemo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/project-card-clean.jsx",
+      "section": "components",
+      "slug": "project-card",
+      "sourceSlug": "project-card-clean",
+      "variant": "clean",
+      "title": "Project Card",
+      "entry": "src/library/items/project-card-clean/index.jsx",
+      "primaryEntry": "src/library/modules/demo.clean-WHeg8d8a.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "ProjectCardClean",
+        "ProjectCardCleanDemo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/prompt-library.jsx",
+      "section": "components",
+      "slug": "prompt-library",
+      "sourceSlug": "prompt-library",
+      "variant": "classic",
+      "title": "Prompt Library",
+      "entry": "src/library/items/prompt-library/index.jsx",
+      "primaryEntry": "src/library/modules/demo-B8j58gGW.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "PromptLibrary",
+        "PromptLibraryDemo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/prompt-library-clean.jsx",
+      "section": "components",
+      "slug": "prompt-library",
+      "sourceSlug": "prompt-library-clean",
+      "variant": "clean",
+      "title": "Prompt Library",
+      "entry": "src/library/items/prompt-library-clean/index.jsx",
+      "primaryEntry": "src/library/modules/demo.clean-DF4dB9bw.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "PromptLibraryClean",
+        "PromptLibraryCleanDemo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/reaction-bar.jsx",
+      "section": "components",
+      "slug": "reaction-bar",
+      "sourceSlug": "reaction-bar",
+      "variant": "classic",
+      "title": "Reaction Bar",
+      "entry": "src/library/items/reaction-bar/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/reaction-bar/Component.tsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "ReactionBar",
+        "ReactionBarDemo",
+        "default"
+      ],
+      "typeExports": [
+        "ReactionBarProps",
+        "ReactionKey",
+        "ReactionState"
+      ]
+    },
+    {
+      "publicEntry": "src/library/reaction-bar-clean.jsx",
+      "section": "components",
+      "slug": "reaction-bar",
+      "sourceSlug": "reaction-bar-clean",
+      "variant": "clean",
+      "title": "Reaction Bar",
+      "entry": "src/library/items/reaction-bar-clean/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/reaction-bar-clean/Component.tsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "ReactionBar",
+        "ReactionBarClean",
+        "ReactionBarCleanDemo",
+        "default"
+      ],
+      "typeExports": [
+        "ReactionBarProps",
+        "ReactionKey",
+        "ReactionState"
+      ]
+    },
+    {
+      "publicEntry": "src/library/segmented-control.jsx",
+      "section": "components",
+      "slug": "segmented-control",
+      "sourceSlug": "segmented-control",
+      "variant": "classic",
+      "title": "Segmented Control",
+      "entry": "src/library/items/segmented-control/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/segmented-control/Component.tsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "SegmentedControl",
+        "SegmentedControlDemo",
+        "default"
+      ],
+      "typeExports": [
+        "SegmentOption",
+        "SegmentedControlProps"
+      ]
+    },
+    {
+      "publicEntry": "src/library/segmented-control-clean.jsx",
+      "section": "components",
+      "slug": "segmented-control",
+      "sourceSlug": "segmented-control-clean",
+      "variant": "clean",
+      "title": "Segmented Control",
+      "entry": "src/library/items/segmented-control-clean/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/segmented-control-clean/Component.tsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "SegmentedControl",
+        "SegmentedControlClean",
+        "SegmentedControlCleanDemo",
+        "default"
+      ],
+      "typeExports": [
+        "SegmentOption",
+        "SegmentedControlProps"
+      ]
+    },
+    {
+      "publicEntry": "src/library/setup-guide.jsx",
+      "section": "components",
+      "slug": "setup-guide",
+      "sourceSlug": "setup-guide",
+      "variant": "classic",
+      "title": "Setup Guide",
+      "entry": "src/library/items/setup-guide/index.jsx",
+      "primaryEntry": "src/library/modules/component-Dd3X9r8k.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "SetupGuide",
+        "SetupGuideDemo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/setup-guide-clean.jsx",
+      "section": "components",
+      "slug": "setup-guide",
+      "sourceSlug": "setup-guide-clean",
+      "variant": "clean",
+      "title": "Setup Guide",
+      "entry": "src/library/items/setup-guide-clean/index.jsx",
+      "primaryEntry": "src/library/modules/demo.clean-Ca5XH5pf.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "SetupGuideClean",
+        "SetupGuideCleanDemo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/smart-recommendation.jsx",
+      "section": "components",
+      "slug": "smart-recommendation",
+      "sourceSlug": "smart-recommendation",
+      "variant": "classic",
+      "title": "Smart Recommendation",
+      "entry": "src/library/items/smart-recommendation/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/smart-recommendation/Component.tsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "SmartRecommendation",
+        "SmartRecommendationDemo",
+        "default"
+      ],
+      "typeExports": [
+        "Recommendation",
+        "SmartRecommendationProps"
+      ]
+    },
+    {
+      "publicEntry": "src/library/smart-recommendation-clean.jsx",
+      "section": "components",
+      "slug": "smart-recommendation",
+      "sourceSlug": "smart-recommendation-clean",
+      "variant": "clean",
+      "title": "Smart Recommendation",
+      "entry": "src/library/items/smart-recommendation-clean/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/smart-recommendation-clean/Component.tsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "SmartRecommendation",
+        "SmartRecommendationClean",
+        "SmartRecommendationCleanDemo",
+        "default"
+      ],
+      "typeExports": [
+        "Recommendation",
+        "SmartRecommendationProps"
+      ]
+    },
+    {
+      "publicEntry": "src/library/stepper-form.jsx",
+      "section": "components",
+      "slug": "stepper-form",
+      "sourceSlug": "stepper-form",
+      "variant": "classic",
+      "title": "Stepper Form",
+      "entry": "src/library/items/stepper-form/index.jsx",
+      "primaryEntry": "src/library/modules/demo-BI6YmM8v.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "StepperChoices",
+        "StepperField",
+        "StepperForm",
+        "StepperFormDemo",
+        "StepperInput",
+        "StepperReview",
+        "StepperTags",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/stepper-form-clean.jsx",
+      "section": "components",
+      "slug": "stepper-form",
+      "sourceSlug": "stepper-form-clean",
+      "variant": "clean",
+      "title": "Stepper Form",
+      "entry": "src/library/items/stepper-form-clean/index.jsx",
+      "primaryEntry": "src/library/modules/demo.clean-7tCw9u4A.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "StepperChoices",
+        "StepperField",
+        "StepperFormClean",
+        "StepperFormCleanDemo",
+        "StepperInput",
+        "StepperReview",
+        "StepperTags",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/thinking-loader.jsx",
+      "section": "components",
+      "slug": "thinking-loader",
+      "sourceSlug": "thinking-loader",
+      "variant": "classic",
+      "title": "Thinking Loader",
+      "entry": "src/library/items/thinking-loader/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/thinking-loader/Component.tsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "ThinkingLoader",
+        "ThinkingLoaderDemo",
+        "default"
+      ],
+      "typeExports": [
+        "ThinkingLoaderProps"
+      ]
+    },
+    {
+      "publicEntry": "src/library/thinking-loader-clean.jsx",
+      "section": "components",
+      "slug": "thinking-loader",
+      "sourceSlug": "thinking-loader-clean",
+      "variant": "clean",
+      "title": "Thinking Loader",
+      "entry": "src/library/items/thinking-loader-clean/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/thinking-loader-clean/Component.tsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "ThinkingLoader",
+        "ThinkingLoaderClean",
+        "ThinkingLoaderCleanDemo",
+        "default"
+      ],
+      "typeExports": [
+        "ThinkingLoaderProps"
+      ]
+    },
+    {
+      "publicEntry": "src/library/thinking-state.jsx",
+      "section": "components",
+      "slug": "thinking-state",
+      "sourceSlug": "thinking-state",
+      "variant": "classic",
+      "title": "Thinking State",
+      "entry": "src/library/items/thinking-state/index.jsx",
+      "primaryEntry": "src/library/modules/component-DWcBqJQY.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "ThinkingState",
+        "ThinkingStateDemo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/thinking-state-clean.jsx",
+      "section": "components",
+      "slug": "thinking-state",
+      "sourceSlug": "thinking-state-clean",
+      "variant": "clean",
+      "title": "Thinking State",
+      "entry": "src/library/items/thinking-state-clean/index.jsx",
+      "primaryEntry": "src/library/modules/demo.clean-D9vXyDyZ.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "ThinkingStateClean",
+        "ThinkingStateCleanDemo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/tips-panel.jsx",
+      "section": "components",
+      "slug": "tips-panel",
+      "sourceSlug": "tips-panel",
+      "variant": "classic",
+      "title": "Tips Panel",
+      "entry": "src/library/items/tips-panel/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/tips-panel/Component.tsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "Kbd",
+        "TipsPanel",
+        "TipsPanelDemo",
+        "default"
+      ],
+      "typeExports": [
+        "Tip",
+        "TipsPanelProps"
+      ]
+    },
+    {
+      "publicEntry": "src/library/tips-panel-clean.jsx",
+      "section": "components",
+      "slug": "tips-panel",
+      "sourceSlug": "tips-panel-clean",
+      "variant": "clean",
+      "title": "Tips Panel",
+      "entry": "src/library/items/tips-panel-clean/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/tips-panel-clean/Component.tsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "Kbd",
+        "TipsPanel",
+        "TipsPanelClean",
+        "TipsPanelCleanDemo",
+        "default"
+      ],
+      "typeExports": [
+        "Tip",
+        "TipsPanelProps"
+      ]
+    },
+    {
+      "publicEntry": "src/library/toaster.jsx",
+      "section": "components",
+      "slug": "toaster",
+      "sourceSlug": "toaster",
+      "variant": "classic",
+      "title": "Toaster",
+      "entry": "src/library/items/toaster/index.jsx",
+      "primaryEntry": "src/library/modules/index-CA7yMmEL.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "Toaster",
+        "ToasterDemo",
+        "default",
+        "toast"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/toaster-clean.jsx",
+      "section": "components",
+      "slug": "toaster",
+      "sourceSlug": "toaster-clean",
+      "variant": "clean",
+      "title": "Toaster",
+      "entry": "src/library/items/toaster-clean/index.jsx",
+      "primaryEntry": "src/library/modules/demo.clean-CWpzS1qi.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "ToasterClean",
+        "ToasterCleanDemo",
+        "default",
+        "toast"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/tool-call-card.jsx",
+      "section": "components",
+      "slug": "tool-call-card",
+      "sourceSlug": "tool-call-card",
+      "variant": "classic",
+      "title": "Tool Call Card",
+      "entry": "src/library/items/tool-call-card/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/tool-call-card/Component.tsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "ToolCallCard",
+        "ToolCallCardDemo",
+        "ToolCallGroup",
+        "default"
+      ],
+      "typeExports": [
+        "ToolCallCardProps",
+        "ToolCallGroupProps",
+        "ToolCallStatus"
+      ]
+    },
+    {
+      "publicEntry": "src/library/tool-call-card-clean.jsx",
+      "section": "components",
+      "slug": "tool-call-card",
+      "sourceSlug": "tool-call-card-clean",
+      "variant": "clean",
+      "title": "Tool Call Card",
+      "entry": "src/library/items/tool-call-card-clean/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/tool-call-card-clean/Component.tsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "ToolCallCard",
+        "ToolCallCardClean",
+        "ToolCallCardCleanDemo",
+        "ToolCallGroup",
+        "default"
+      ],
+      "typeExports": [
+        "ToolCallCardProps",
+        "ToolCallGroupProps",
+        "ToolCallStatus"
+      ]
+    },
+    {
+      "publicEntry": "src/library/usage-meter.jsx",
+      "section": "components",
+      "slug": "usage-meter",
+      "sourceSlug": "usage-meter",
+      "variant": "classic",
+      "title": "Usage Meter",
+      "entry": "src/library/items/usage-meter/index.jsx",
+      "primaryEntry": "src/library/modules/component-gYCRsgrh.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "UsageMeter",
+        "UsageMeterDemo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/usage-meter-clean.jsx",
+      "section": "components",
+      "slug": "usage-meter",
+      "sourceSlug": "usage-meter-clean",
+      "variant": "clean",
+      "title": "Usage Meter",
+      "entry": "src/library/items/usage-meter-clean/index.jsx",
+      "primaryEntry": "src/library/modules/demo.clean-Cuu_AdnG.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "UsageMeterClean",
+        "UsageMeterCleanDemo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/writing-assistant.jsx",
+      "section": "components",
+      "slug": "writing-assistant",
+      "sourceSlug": "writing-assistant",
+      "variant": "classic",
+      "title": "Writing Assistant",
+      "entry": "src/library/items/writing-assistant/index.jsx",
+      "primaryEntry": "src/library/modules/demo-DmFQrpJF.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "WritingAssistant",
+        "WritingAssistantDemo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/writing-assistant-clean.jsx",
+      "section": "components",
+      "slug": "writing-assistant",
+      "sourceSlug": "writing-assistant-clean",
+      "variant": "clean",
+      "title": "Writing Assistant",
+      "entry": "src/library/items/writing-assistant-clean/index.jsx",
+      "primaryEntry": "src/library/modules/demo.clean-DoHFMx8x.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "WritingAssistantClean",
+        "WritingAssistantCleanDemo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/agent-gallery.jsx",
+      "section": "blocks",
+      "slug": "agent-gallery",
+      "sourceSlug": "agent-gallery",
+      "variant": "default",
+      "title": "Agent Gallery",
+      "entry": "src/library/items/agent-gallery/index.jsx",
+      "primaryEntry": "src/library/modules/demo-qWgXlPG0.jsx",
+      "exports": [
+        "AgentGallery",
+        "AgentGalleryDemo",
+        "Component",
+        "Demo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/ai-workspace.jsx",
+      "section": "blocks",
+      "slug": "ai-workspace",
+      "sourceSlug": "ai-workspace",
+      "variant": "default",
+      "title": "AI Workspace",
+      "entry": "src/library/items/ai-workspace/index.jsx",
+      "primaryEntry": "src/library/modules/demo-158Rlrkj.jsx",
+      "exports": [
+        "AiWorkspace",
+        "AiWorkspaceDemo",
+        "Component",
+        "Demo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/app-directory.jsx",
+      "section": "blocks",
+      "slug": "app-directory",
+      "sourceSlug": "app-directory",
+      "variant": "default",
+      "title": "App Directory",
+      "entry": "src/library/items/app-directory/index.jsx",
+      "primaryEntry": "src/library/modules/demo-CdNvbDAu.jsx",
+      "exports": [
+        "AppDirectory",
+        "AppDirectoryDemo",
+        "Component",
+        "Demo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/client-context.jsx",
+      "section": "blocks",
+      "slug": "client-context",
+      "sourceSlug": "client-context",
+      "variant": "default",
+      "title": "Client Context",
+      "entry": "src/library/items/client-context/index.jsx",
+      "primaryEntry": "src/library/modules/demo-D9Vw9aDF.jsx",
+      "exports": [
+        "ClientContext",
+        "ClientContextDemo",
+        "Component",
+        "Demo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/invoice-credit.jsx",
+      "section": "blocks",
+      "slug": "invoice-credit",
+      "sourceSlug": "invoice-credit",
+      "variant": "default",
+      "title": "Invoice & Credit Note",
+      "entry": "src/library/items/invoice-credit/index.jsx",
+      "primaryEntry": "src/library/modules/demo-BRSx7pv5.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "InvoiceCredit",
+        "InvoiceCreditDemo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/kpi-board.jsx",
+      "section": "blocks",
+      "slug": "kpi-board",
+      "sourceSlug": "kpi-board",
+      "variant": "default",
+      "title": "KPI Board",
+      "entry": "src/library/items/kpi-board/index.jsx",
+      "primaryEntry": "src/library/modules/demo-CawsKXt1.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "KpiBoard",
+        "KpiBoardDemo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/logo-marquee.jsx",
+      "section": "blocks",
+      "slug": "logo-marquee",
+      "sourceSlug": "logo-marquee",
+      "variant": "default",
+      "title": "Logo Marquee",
+      "entry": "src/library/items/logo-marquee/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/logo-marquee/Component.tsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "LogoMarquee",
+        "LogoMarqueeDemo",
+        "default"
+      ],
+      "typeExports": [
+        "LogoMarqueeProps",
+        "MarqueeLogo"
+      ]
+    },
+    {
+      "publicEntry": "src/library/metrics-dashboard.jsx",
+      "section": "blocks",
+      "slug": "metrics-dashboard",
+      "sourceSlug": "metrics-dashboard",
+      "variant": "default",
+      "title": "Metrics Dashboard",
+      "entry": "src/library/items/metrics-dashboard/index.jsx",
+      "primaryEntry": "src/library/modules/demo-2EA4yYHc.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "MetricsDashboard",
+        "MetricsDashboardDemo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/pricing-plans.jsx",
+      "section": "blocks",
+      "slug": "pricing-plans",
+      "sourceSlug": "pricing-plans",
+      "variant": "default",
+      "title": "Pricing Plans",
+      "entry": "src/library/items/pricing-plans/index.jsx",
+      "primaryEntry": "src/library/modules/demo-D7hRHGEh.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "PricingPlans",
+        "PricingPlansDemo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/task-board.jsx",
+      "section": "blocks",
+      "slug": "task-board",
+      "sourceSlug": "task-board",
+      "variant": "default",
+      "title": "Task Board",
+      "entry": "src/library/items/task-board/index.jsx",
+      "primaryEntry": "src/library/modules/demo-BfsFftdy.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "TaskBoard",
+        "TaskBoardDemo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/testimonial-wall.jsx",
+      "section": "blocks",
+      "slug": "testimonial-wall",
+      "sourceSlug": "testimonial-wall",
+      "variant": "default",
+      "title": "Testimonial Wall",
+      "entry": "src/library/items/testimonial-wall/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/testimonial-wall/Component.tsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "TestimonialWall",
+        "TestimonialWallDemo",
+        "default"
+      ],
+      "typeExports": [
+        "Testimonial",
+        "TestimonialWallProps"
+      ]
+    },
+    {
+      "publicEntry": "src/library/agent-team.jsx",
+      "section": "illustrations",
+      "slug": "agent-team",
+      "sourceSlug": "agent-team",
+      "variant": "default",
+      "title": "Agent Team",
+      "entry": "src/library/items/agent-team/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/agent-team/Component.tsx",
+      "exports": [
+        "AgentTeam",
+        "AgentTeamDemo",
+        "Component",
+        "Demo",
+        "default"
+      ],
+      "typeExports": [
+        "AgentTeamMember",
+        "AgentTeamProps",
+        "AgentTool"
+      ]
+    },
+    {
+      "publicEntry": "src/library/cover-flow.jsx",
+      "section": "illustrations",
+      "slug": "cover-flow",
+      "sourceSlug": "cover-flow",
+      "variant": "default",
+      "title": "Cover Flow",
+      "entry": "src/library/items/cover-flow/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/cover-flow/Component.tsx",
+      "exports": [
+        "Component",
+        "CoverFlow",
+        "CoverFlowDemo",
+        "Demo",
+        "default"
+      ],
+      "typeExports": [
+        "CoverFlowItem",
+        "CoverFlowProps"
+      ]
+    },
+    {
+      "publicEntry": "src/library/empty-calendar.jsx",
+      "section": "illustrations",
+      "slug": "empty-calendar",
+      "sourceSlug": "empty-calendar",
+      "variant": "default",
+      "title": "Empty Calendar",
+      "entry": "src/library/items/empty-calendar/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/empty-calendar/Component.tsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "EmptyCalendar",
+        "EmptyCalendarDemo",
+        "default"
+      ],
+      "typeExports": [
+        "EmptyCalendarProps"
+      ]
+    },
+    {
+      "publicEntry": "src/library/enrichment-orbit.jsx",
+      "section": "illustrations",
+      "slug": "enrichment-orbit",
+      "sourceSlug": "enrichment-orbit",
+      "variant": "default",
+      "title": "Enrichment Orbit",
+      "entry": "src/library/items/enrichment-orbit/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/enrichment-orbit/Component.tsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "EnrichmentOrbit",
+        "EnrichmentOrbitDemo",
+        "default"
+      ],
+      "typeExports": [
+        "EnrichmentOrbitProps"
+      ]
+    },
+    {
+      "publicEntry": "src/library/frost-cloud.jsx",
+      "section": "illustrations",
+      "slug": "frost-cloud",
+      "sourceSlug": "frost-cloud",
+      "variant": "default",
+      "title": "Frost Cloud",
+      "entry": "src/library/items/frost-cloud/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/frost-cloud/Component.tsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "FrostCloud",
+        "FrostCloudDemo",
+        "default"
+      ],
+      "typeExports": [
+        "FrostCloudProps"
+      ]
+    },
+    {
+      "publicEntry": "src/library/ghosted-chat.jsx",
+      "section": "illustrations",
+      "slug": "ghosted-chat",
+      "sourceSlug": "ghosted-chat",
+      "variant": "default",
+      "title": "Ghosted Chat",
+      "entry": "src/library/items/ghosted-chat/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/ghosted-chat/Component.tsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "GhostedChat",
+        "GhostedChatDemo",
+        "default"
+      ],
+      "typeExports": [
+        "GhostedChatProps"
+      ]
+    },
+    {
+      "publicEntry": "src/library/glass-folder.jsx",
+      "section": "illustrations",
+      "slug": "glass-folder",
+      "sourceSlug": "glass-folder",
+      "variant": "default",
+      "title": "Glass Folder",
+      "entry": "src/library/items/glass-folder/index.jsx",
+      "primaryEntry": "src/library/modules/index-CA7yMmEL.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "GlassFolder",
+        "GlassFolderDemo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/glow-cloud.jsx",
+      "section": "illustrations",
+      "slug": "glow-cloud",
+      "sourceSlug": "glow-cloud",
+      "variant": "default",
+      "title": "Glow Cloud",
+      "entry": "src/library/items/glow-cloud/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/glow-cloud/Component.tsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "GlowCloud",
+        "GlowCloudDemo",
+        "default"
+      ],
+      "typeExports": [
+        "GlowCloudProps"
+      ]
+    },
+    {
+      "publicEntry": "src/library/glow-keyboard.jsx",
+      "section": "illustrations",
+      "slug": "glow-keyboard",
+      "sourceSlug": "glow-keyboard",
+      "variant": "default",
+      "title": "Glow Keyboard",
+      "entry": "src/library/items/glow-keyboard/index.jsx",
+      "primaryEntry": "src/library/modules/demo-BrYW73Cf.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "GlowKeyboard",
+        "GlowKeyboardDemo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/integration-beam.jsx",
+      "section": "illustrations",
+      "slug": "integration-beam",
+      "sourceSlug": "integration-beam",
+      "variant": "default",
+      "title": "Integration Beam",
+      "entry": "src/library/items/integration-beam/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/integration-beam/Component.tsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "IntegrationBeam",
+        "IntegrationBeamDemo",
+        "default"
+      ],
+      "typeExports": [
+        "BeamCenter",
+        "BeamTool",
+        "IntegrationBeamProps"
+      ]
+    },
+    {
+      "publicEntry": "src/library/integration-flow.jsx",
+      "section": "illustrations",
+      "slug": "integration-flow",
+      "sourceSlug": "integration-flow",
+      "variant": "default",
+      "title": "Integration Flow",
+      "entry": "src/library/items/integration-flow/index.jsx",
+      "primaryEntry": "src/library/modules/demo-CBQvHgq1.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "IntegrationFlow",
+        "IntegrationFlowDemo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/integration-grid.jsx",
+      "section": "illustrations",
+      "slug": "integration-grid",
+      "sourceSlug": "integration-grid",
+      "variant": "default",
+      "title": "Integration Grid",
+      "entry": "src/library/items/integration-grid/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/integration-grid/Component.tsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "IntegrationGrid",
+        "IntegrationGridDemo",
+        "default"
+      ],
+      "typeExports": [
+        "IntegrationGridLogo",
+        "IntegrationGridProps"
+      ]
+    },
+    {
+      "publicEntry": "src/library/layer-stack.jsx",
+      "section": "illustrations",
+      "slug": "layer-stack",
+      "sourceSlug": "layer-stack",
+      "variant": "default",
+      "title": "Layer Stack",
+      "entry": "src/library/items/layer-stack/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/layer-stack/Component.tsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "LayerStack",
+        "LayerStackDemo",
+        "default"
+      ],
+      "typeExports": [
+        "LayerIcon",
+        "LayerStackItem",
+        "LayerStackProps"
+      ]
+    },
+    {
+      "publicEntry": "src/library/lead-sourcing.jsx",
+      "section": "illustrations",
+      "slug": "lead-sourcing",
+      "sourceSlug": "lead-sourcing",
+      "variant": "default",
+      "title": "Lead Sourcing",
+      "entry": "src/library/items/lead-sourcing/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/lead-sourcing/Component.tsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "LeadSourcing",
+        "LeadSourcingDemo",
+        "default"
+      ],
+      "typeExports": [
+        "LeadSourcingProps"
+      ]
+    },
+    {
+      "publicEntry": "src/library/logo-cluster.jsx",
+      "section": "illustrations",
+      "slug": "logo-cluster",
+      "sourceSlug": "logo-cluster",
+      "variant": "default",
+      "title": "Logo Cluster",
+      "entry": "src/library/items/logo-cluster/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/logo-cluster/Component.tsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "LogoCluster",
+        "LogoClusterDemo",
+        "default"
+      ],
+      "typeExports": [
+        "ClusterLogo",
+        "LogoClusterProps"
+      ]
+    },
+    {
+      "publicEntry": "src/library/model-wheel.jsx",
+      "section": "illustrations",
+      "slug": "model-wheel",
+      "sourceSlug": "model-wheel",
+      "variant": "default",
+      "title": "Model Wheel",
+      "entry": "src/library/items/model-wheel/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/model-wheel/Component.tsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "ModelWheel",
+        "ModelWheelDemo",
+        "default",
+        "defaultModels"
+      ],
+      "typeExports": [
+        "ModelWheelProps",
+        "WheelModel"
+      ]
+    },
+    {
+      "publicEntry": "src/library/outreach-branches.jsx",
+      "section": "illustrations",
+      "slug": "outreach-branches",
+      "sourceSlug": "outreach-branches",
+      "variant": "default",
+      "title": "Outreach Branches",
+      "entry": "src/library/items/outreach-branches/index.jsx",
+      "primaryEntry": "src/library/modules/demo-DE0jF2h1.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "OutreachBranches",
+        "OutreachBranchesDemo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/project-flow.jsx",
+      "section": "illustrations",
+      "slug": "project-flow",
+      "sourceSlug": "project-flow",
+      "variant": "default",
+      "title": "Project Flow",
+      "entry": "src/library/items/project-flow/index.jsx",
+      "primaryEntry": "src/library/modules/demo-D34v7Pjy.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "ProjectFlow",
+        "ProjectFlowDemo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/region-dach.jsx",
+      "section": "illustrations",
+      "slug": "region-dach",
+      "sourceSlug": "region-dach",
+      "variant": "default",
+      "title": "DACH Region",
+      "entry": "src/library/items/region-dach/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/region-dach/Component.tsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "RegionDach",
+        "RegionDachDemo",
+        "default"
+      ],
+      "typeExports": [
+        "Region",
+        "RegionDachProps"
+      ]
+    },
+    {
+      "publicEntry": "src/library/side-folder.jsx",
+      "section": "illustrations",
+      "slug": "side-folder",
+      "sourceSlug": "side-folder",
+      "variant": "default",
+      "title": "Side Folder",
+      "entry": "src/library/items/side-folder/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/side-folder/Component.tsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "SideFolder",
+        "SideFolderDemo",
+        "default"
+      ],
+      "typeExports": [
+        "SideFolderProps"
+      ]
+    },
+    {
+      "publicEntry": "src/library/tab-overload.jsx",
+      "section": "illustrations",
+      "slug": "tab-overload",
+      "sourceSlug": "tab-overload",
+      "variant": "default",
+      "title": "Tab Overload",
+      "entry": "src/library/items/tab-overload/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/tab-overload/Component.tsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "TabOverload",
+        "TabOverloadDemo",
+        "default"
+      ],
+      "typeExports": [
+        "TabOverloadProps"
+      ]
+    },
+    {
+      "publicEntry": "src/library/team-invite.jsx",
+      "section": "illustrations",
+      "slug": "team-invite",
+      "sourceSlug": "team-invite",
+      "variant": "default",
+      "title": "Team Invite",
+      "entry": "src/library/items/team-invite/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/team-invite/Component.tsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "TeamInvite",
+        "TeamInviteDemo",
+        "default"
+      ],
+      "typeExports": [
+        "TeamInviteAvatar",
+        "TeamInviteProps"
+      ]
+    },
+    {
+      "publicEntry": "src/library/voice-orb.jsx",
+      "section": "illustrations",
+      "slug": "voice-orb",
+      "sourceSlug": "voice-orb",
+      "variant": "default",
+      "title": "Voice Orb",
+      "entry": "src/library/items/voice-orb/index.jsx",
+      "primaryEntry": "src/library/modules/demo-C5SE4pL3.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "VoiceOrb",
+        "VoiceOrbDemo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/world-map.jsx",
+      "section": "illustrations",
+      "slug": "world-map",
+      "sourceSlug": "world-map",
+      "variant": "default",
+      "title": "World Map Continental",
+      "entry": "src/library/items/world-map/index.jsx",
+      "primaryEntry": "src/library/modules/demo-DOm8gFae.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "WorldMap",
+        "WorldMapDemo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/agent-chat.jsx",
+      "section": "screens",
+      "slug": "agent-chat",
+      "sourceSlug": "agent-chat",
+      "variant": "default",
+      "title": "Agent Chat",
+      "entry": "src/library/items/agent-chat/index.jsx",
+      "primaryEntry": "src/library/modules/demo-CeLmzXST.jsx",
+      "exports": [
+        "AgentChat",
+        "AgentChatDemo",
+        "Component",
+        "Demo",
+        "FullScreen",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/agent-run.jsx",
+      "section": "screens",
+      "slug": "agent-run",
+      "sourceSlug": "agent-run",
+      "variant": "default",
+      "title": "Agent Run",
+      "entry": "src/library/items/agent-run/index.jsx",
+      "primaryEntry": "src/library/modules/demo-DhakOwR1.jsx",
+      "exports": [
+        "AgentRun",
+        "AgentRunDemo",
+        "Component",
+        "Demo",
+        "FullScreen",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/analytics.jsx",
+      "section": "screens",
+      "slug": "analytics",
+      "sourceSlug": "analytics",
+      "variant": "default",
+      "title": "Analytics",
+      "entry": "src/library/items/analytics/index.jsx",
+      "primaryEntry": "src/library/modules/demo-BpIKiAtr.jsx",
+      "exports": [
+        "Analytics",
+        "AnalyticsDemo",
+        "Component",
+        "Demo",
+        "FullScreen",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/app-shell.jsx",
+      "section": "screens",
+      "slug": "app-shell",
+      "sourceSlug": "app-shell",
+      "variant": "default",
+      "title": "App Shell",
+      "entry": "src/library/items/app-shell/index.jsx",
+      "primaryEntry": "src/library/modules/component-B0ZYbJEt.jsx",
+      "exports": [
+        "AppShell",
+        "AppShellDemo",
+        "Component",
+        "Demo",
+        "FullScreen",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/assistant-home.jsx",
+      "section": "screens",
+      "slug": "assistant-home",
+      "sourceSlug": "assistant-home",
+      "variant": "default",
+      "title": "Assistant Home",
+      "entry": "src/library/items/assistant-home/index.jsx",
+      "primaryEntry": "src/library/modules/component-BtHQvHKg.jsx",
+      "exports": [
+        "AssistantHome",
+        "AssistantHomeDemo",
+        "Component",
+        "Demo",
+        "FullScreen",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/crm.jsx",
+      "section": "screens",
+      "slug": "crm",
+      "sourceSlug": "crm",
+      "variant": "default",
+      "title": "CRM",
+      "entry": "src/library/items/crm/index.jsx",
+      "primaryEntry": "src/library/modules/demo-vftwgdm_.jsx",
+      "exports": [
+        "Component",
+        "Crm",
+        "CrmDemo",
+        "Demo",
+        "FullScreen",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/evals.jsx",
+      "section": "screens",
+      "slug": "evals",
+      "sourceSlug": "evals",
+      "variant": "default",
+      "title": "Evals",
+      "entry": "src/library/items/evals/index.jsx",
+      "primaryEntry": "src/library/modules/demo-9TUmGUMi.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "Evals",
+        "EvalsDemo",
+        "FullScreen",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/files.jsx",
+      "section": "screens",
+      "slug": "files",
+      "sourceSlug": "files",
+      "variant": "default",
+      "title": "Folders",
+      "entry": "src/library/items/files/index.jsx",
+      "primaryEntry": "src/library/modules/demo-DXkqoFJb.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "Files",
+        "FilesDemo",
+        "FullScreen",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/folder.jsx",
+      "section": "screens",
+      "slug": "folder",
+      "sourceSlug": "folder",
+      "variant": "default",
+      "title": "Folder",
+      "entry": "src/library/items/folder/index.jsx",
+      "primaryEntry": "src/library/modules/demo-DM_UqYSi.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "Folder",
+        "FolderDemo",
+        "FullScreen",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/integrations.jsx",
+      "section": "screens",
+      "slug": "integrations",
+      "sourceSlug": "integrations",
+      "variant": "default",
+      "title": "Integrations",
+      "entry": "src/library/items/integrations/index.jsx",
+      "primaryEntry": "src/library/modules/demo-HbaZwPph.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "FullScreen",
+        "Integrations",
+        "IntegrationsDemo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/onboarding.jsx",
+      "section": "screens",
+      "slug": "onboarding",
+      "sourceSlug": "onboarding",
+      "variant": "default",
+      "title": "Onboarding",
+      "entry": "src/library/items/onboarding/index.jsx",
+      "primaryEntry": "src/library/modules/demo-BgLxDeeC.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "FullScreen",
+        "Onboarding",
+        "OnboardingDemo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/settings-billing.jsx",
+      "section": "screens",
+      "slug": "settings-billing",
+      "sourceSlug": "settings-billing",
+      "variant": "default",
+      "title": "Settings & Billing",
+      "entry": "src/library/items/settings-billing/index.jsx",
+      "primaryEntry": "src/library/modules/demo-BGahYM4K.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "FullScreen",
+        "SettingsBilling",
+        "SettingsBillingDemo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/blur-crossfade.jsx",
+      "section": "motion",
+      "slug": "blur-crossfade",
+      "sourceSlug": "blur-crossfade",
+      "variant": "default",
+      "title": "Blur Crossfade",
+      "entry": "src/library/items/blur-crossfade/index.jsx",
+      "primaryEntry": "src/library/modules/demo-b0-CVBH2.jsx",
+      "exports": [
+        "BlurCrossfade",
+        "BlurCrossfadeDemo",
+        "Component",
+        "Demo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/gradient-floor.jsx",
+      "section": "motion",
+      "slug": "gradient-floor",
+      "sourceSlug": "gradient-floor",
+      "variant": "default",
+      "title": "Gradient Floor",
+      "entry": "src/library/items/gradient-floor/index.jsx",
+      "primaryEntry": "src/library/modules/demo-CROkL7VF.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "GradientFloor",
+        "GradientFloorDemo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/gradient-text.jsx",
+      "section": "motion",
+      "slug": "gradient-text",
+      "sourceSlug": "gradient-text",
+      "variant": "default",
+      "title": "Gradient Text",
+      "entry": "src/library/items/gradient-text/index.jsx",
+      "primaryEntry": "src/library/modules/demo-BZms21rB.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "GradientText",
+        "GradientTextDemo",
+        "default"
+      ],
+      "typeExports": []
+    },
+    {
+      "publicEntry": "src/library/grid-background.jsx",
+      "section": "motion",
+      "slug": "grid-background",
+      "sourceSlug": "grid-background",
+      "variant": "default",
+      "title": "Grid Background",
+      "entry": "src/library/items/grid-background/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/grid-background/Component.tsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "GridBackground",
+        "GridBackgroundDemo",
+        "default"
+      ],
+      "typeExports": [
+        "GridBackgroundProps",
+        "GridDirection"
+      ]
+    },
+    {
+      "publicEntry": "src/library/number-ticker.jsx",
+      "section": "motion",
+      "slug": "number-ticker",
+      "sourceSlug": "number-ticker",
+      "variant": "default",
+      "title": "Number Ticker",
+      "entry": "src/library/items/number-ticker/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/number-ticker/Component.tsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "NumberTicker",
+        "NumberTickerDemo",
+        "default"
+      ],
+      "typeExports": [
+        "NumberTickerProps"
+      ]
+    },
+    {
+      "publicEntry": "src/library/shimmer-loader.jsx",
+      "section": "motion",
+      "slug": "shimmer-loader",
+      "sourceSlug": "shimmer-loader",
+      "variant": "default",
+      "title": "Shimmer Loader",
+      "entry": "src/library/items/shimmer-loader/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/shimmer-loader/Component.tsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "ShimmerLoader",
+        "ShimmerLoaderDemo",
+        "ShimmerText",
+        "Skeleton",
+        "default"
+      ],
+      "typeExports": [
+        "ShimmerTextProps",
+        "SkeletonProps"
+      ]
+    },
+    {
+      "publicEntry": "src/library/text-reveal.jsx",
+      "section": "motion",
+      "slug": "text-reveal",
+      "sourceSlug": "text-reveal",
+      "variant": "default",
+      "title": "Text Reveal",
+      "entry": "src/library/items/text-reveal/index.jsx",
+      "license": "MIT",
+      "primaryEntry": "src/library/items/text-reveal/Component.tsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "TextReveal",
+        "TextRevealDemo",
+        "default"
+      ],
+      "typeExports": [
+        "TextRevealProps"
+      ]
+    },
+    {
+      "publicEntry": "src/library/tilt-card.jsx",
+      "section": "motion",
+      "slug": "tilt-card",
+      "sourceSlug": "tilt-card",
+      "variant": "default",
+      "title": "Tilt Card",
+      "entry": "src/library/items/tilt-card/index.jsx",
+      "primaryEntry": "src/library/modules/demo-DC242hdM.jsx",
+      "exports": [
+        "Component",
+        "Demo",
+        "TiltCard",
+        "TiltCardDemo",
+        "default"
+      ],
+      "typeExports": []
+    }
+  ]
+}
