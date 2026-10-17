@@ -1,0 +1,22 @@
+# Build output and package-manager artifacts
+node_modules/
+.next/
+out/
+.vercel/
+pnpm-lock.yaml
+**/pnpm-lock.yaml
+*.tsbuildinfo
+next-env.d.ts
+
+# Generated registry payloads embed already formatted component source.
+public/r/
+registry/coverage.json
+registry/library-manifest.json
+registry/registry.json
+
+# Original binary/vendor media. Plico brand assets remain formatable.
+public/assets/
+
+# Local test output
+playwright-report/
+test-results/

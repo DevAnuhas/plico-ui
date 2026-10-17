@@ -36,10 +36,7 @@ interface StepperFieldProps {
   optional?: boolean;
   children?: React.ReactNode;
 }
-interface StepperInputProps extends Omit<
-  React.InputHTMLAttributes<HTMLInputElement>,
-  "prefix"
-> {
+interface StepperInputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "prefix"> {
   prefix?: React.ReactNode;
 }
 interface StepperTagsProps {
@@ -80,8 +77,7 @@ export interface StepperFormCleanProps<T extends object = FormValues> {
   success?: (values: T, reset: () => void) => React.ReactNode;
   className?: string;
 }
-var cleanClassNames = (...e: (string | false | null | undefined)[]) =>
-  e.filter(Boolean).join(` `);
+var cleanClassNames = (...e: (string | false | null | undefined)[]) => e.filter(Boolean).join(` `);
 var cleanHasErrors = (
   errors:
     | {
@@ -91,8 +87,7 @@ var cleanHasErrors = (
     | undefined,
 ) => !!errors && Object.values(errors).some(Boolean);
 var cleanPrefersReducedMotion = () =>
-  typeof window < `u` &&
-  window.matchMedia(`(prefers-reduced-motion: reduce)`).matches;
+  typeof window < `u` && window.matchMedia(`(prefers-reduced-motion: reduce)`).matches;
 function cleanShakeElement(element: HTMLDivElement | null) {
   element &&
     !cleanPrefersReducedMotion() &&
@@ -138,18 +133,9 @@ function cleanPositionSelectionRing(
     (ring.style.width = `${selected.offsetWidth}px`),
     (ring.style.height = `${selected.offsetHeight}px`),
     (ring.style.transform = `translate(${selected.offsetLeft}px, ${selected.offsetTop}px)`),
-    first &&
-      ((ring.dataset.ready = `1`),
-      ring.offsetWidth,
-      (ring.style.transition = ``)));
+    first && ((ring.dataset.ready = `1`), ring.offsetWidth, (ring.style.transition = ``)));
 }
-var CleanStepperIcon = ({
-  d: path,
-  className: className,
-}: {
-  d: string;
-  className?: string;
-}) => (
+var CleanStepperIcon = ({ d: path, className: className }: { d: string; className?: string }) => (
   <svg
     viewBox={`0 0 24 24`}
     className={cleanClassNames(`ui-sfc__glyph`, className)}
@@ -197,9 +183,7 @@ function StepperFormClean<T extends object>({
     valuesRef = React.useRef(values),
     [furthestStep, setFurthestStep] = React.useState(activeStep),
     maxVisited = Math.max(furthestStep, activeStep),
-    [attemptedSteps, setAttemptedSteps] = React.useState<
-      Record<number, boolean>
-    >({}),
+    [attemptedSteps, setAttemptedSteps] = React.useState<Record<number, boolean>>({}),
     [shake, setShake] = React.useState(0),
     [returnTo, setReturnTo] = React.useState<number | null>(null),
     [submitting, setSubmitting] = React.useState(false),
@@ -213,15 +197,12 @@ function StepperFormClean<T extends object>({
     focusNextRef = React.useRef(false),
     hasNavigatedRef = React.useRef(false),
     reportedErrorsRef = React.useRef<FormErrors>({}),
-    reportError = React.useCallback(
-      (e: string, t: string | null | undefined) => {
-        reportedErrorsRef.current = {
-          ...reportedErrorsRef.current,
-          [e]: t ?? void 0,
-        };
-      },
-      [],
-    ),
+    reportError = React.useCallback((e: string, t: string | null | undefined) => {
+      reportedErrorsRef.current = {
+        ...reportedErrorsRef.current,
+        [e]: t ?? void 0,
+      };
+    }, []),
     instanceId = React.useId(),
     pageIndex = completed ? stepCount : activeStep,
     [transition, setTransition] = React.useState<{
@@ -268,9 +249,7 @@ function StepperFormClean<T extends object>({
         onStepChange?.(target),
         setFurthestStep((e) => Math.max(e, target)),
         setSubmitError(``),
-        setAnnouncement(
-          `Step ${target + 1} of ${stepCount}: ${steps[target].title}`,
-        ));
+        setAnnouncement(`Step ${target + 1} of ${stepCount}: ${steps[target].title}`));
     },
     validateCurrent = () => {
       let t = {
@@ -292,9 +271,7 @@ function StepperFormClean<T extends object>({
           true);
     },
     handleSubmit: React.FormEventHandler<HTMLFormElement> = async (e) => {
-      if (
-        (e?.preventDefault(), !(submitting || completed || !validateCurrent()))
-      ) {
+      if ((e?.preventDefault(), !(submitting || completed || !validateCurrent()))) {
         if (activeStep < stepCount - 1) {
           returnTo !== null && returnTo > activeStep
             ? (setReturnTo(null), navigate(returnTo))
@@ -309,10 +286,7 @@ function StepperFormClean<T extends object>({
             setCompleted(true),
             setAnnouncement(`All done`));
         } catch (e) {
-          let t =
-            e instanceof Error && e.message
-              ? e.message
-              : `Something went wrong – try again`;
+          let t = e instanceof Error && e.message ? e.message : `Something went wrong – try again`;
           (setSubmitError(t), setAnnouncement(t));
         } finally {
           setSubmitting(false);
@@ -346,9 +320,7 @@ function StepperFormClean<T extends object>({
   (React.useEffect(() => {
     if (!focusNextRef.current) return;
     focusNextRef.current = false;
-    let e = viewportRef.current?.querySelector<HTMLElement>(
-      `[data-pane="current"]`,
-    );
+    let e = viewportRef.current?.querySelector<HTMLElement>(`[data-pane="current"]`);
     (
       e?.querySelector<HTMLElement>(
         `input:not([type="hidden"]):not(:disabled), textarea, select`,
@@ -360,9 +332,7 @@ function StepperFormClean<T extends object>({
     React.useEffect(() => {
       shake &&
         viewportRef.current
-          ?.querySelector<HTMLElement>(
-            `[data-pane="current"] [aria-invalid="true"]`,
-          )
+          ?.querySelector<HTMLElement>(`[data-pane="current"] [aria-invalid="true"]`)
           ?.focus({
             preventScroll: true,
           });
@@ -375,8 +345,7 @@ function StepperFormClean<T extends object>({
         r = () => (e.style.height = `${t.offsetHeight}px`);
       (n && (e.style.transition = `none`),
         r(),
-        n &&
-          ((e.dataset.ready = `1`), e.offsetWidth, (e.style.transition = ``)));
+        n && ((e.dataset.ready = `1`), e.offsetWidth, (e.style.transition = ``)));
       let i = new ResizeObserver(r);
       return (i.observe(t), () => i.disconnect());
     }, [pageIndex]),
@@ -390,9 +359,7 @@ function StepperFormClean<T extends object>({
       return (r.observe(t), () => r.disconnect());
     }, []));
   let activeDefinition = steps[activeStep],
-    errors = attemptedSteps[activeStep]
-      ? (activeDefinition.validate?.(values) ?? {})
-      : {},
+    errors = attemptedSteps[activeStep] ? (activeDefinition.validate?.(values) ?? {}) : {},
     ready = !cleanHasErrors(activeDefinition.validate?.(values)),
     finalStep = activeStep === stepCount - 1,
     buttonLabel = submitting
@@ -429,16 +396,10 @@ function StepperFormClean<T extends object>({
               };
       return (
         <>
-          <h2
-            className={`ui-sfc__heading`}
-            tabIndex={-1}
-            id={`${instanceId}-h${index}`}
-          >
+          <h2 className={`ui-sfc__heading`} tabIndex={-1} id={`${instanceId}-h${index}`}>
             {definition.heading ?? definition.title}
           </h2>
-          {definition.description && (
-            <p className={`ui-sfc__desc`}>{definition.description}</p>
-          )}
+          {definition.description && <p className={`ui-sfc__desc`}>{definition.description}</p>}
           <div className={`ui-sfc__body`}>{definition.render(context)}</div>
         </>
       );
@@ -469,11 +430,7 @@ function StepperFormClean<T extends object>({
                     : t === activeStep
                       ? `current`
                       : `upcoming`,
-                i =
-                  !completed &&
-                  !submitting &&
-                  t !== activeStep &&
-                  t <= maxVisited,
+                i = !completed && !submitting && t !== activeStep && t <= maxVisited,
                 a = (
                   <>
                     <span className={`ui-sfc__bar`} aria-hidden={`true`} />
@@ -486,11 +443,7 @@ function StepperFormClean<T extends object>({
                     </span>
                     <span className={`ui-sfc__step-label`}>{e.title}</span>
                     <span className={`ui-sfc__sr`}>
-                      {n === `done`
-                        ? ` (done)`
-                        : n === `current`
-                          ? ` (current)`
-                          : ``}
+                      {n === `done` ? ` (done)` : n === `current` ? ` (current)` : ``}
                     </span>
                   </>
                 );
@@ -498,9 +451,7 @@ function StepperFormClean<T extends object>({
                 <li
                   className={`ui-sfc__step`}
                   data-state={n}
-                  aria-current={
-                    !completed && t === activeStep ? `step` : void 0
-                  }
+                  aria-current={!completed && t === activeStep ? `step` : void 0}
                   key={e.id}
                 >
                   {i ? (
@@ -520,10 +471,7 @@ function StepperFormClean<T extends object>({
           </ol>
         </div>
         <div className={`ui-sfc__compact`} aria-hidden={`true`}>
-          <span
-            className={`ui-sfc__compact-text`}
-            key={completed ? `done` : activeStep}
-          >
+          <span className={`ui-sfc__compact-text`} key={completed ? `done` : activeStep}>
             {completed ? (
               <>
                 {`All `}
@@ -537,9 +485,7 @@ function StepperFormClean<T extends object>({
                 {` of `}
                 {stepCount}
                 <span className={`ui-sfc__compact-dot`}>{`·`}</span>
-                <span className={`ui-sfc__compact-title`}>
-                  {activeDefinition.title}
-                </span>
+                <span className={`ui-sfc__compact-title`}>{activeDefinition.title}</span>
               </>
             )}
           </span>
@@ -603,9 +549,7 @@ function StepperFormClean<T extends object>({
               data-busy={submitting || void 0}
             >
               <span ref={submitLabelRef} className={`ui-sfc__btn-inner`}>
-                {submitting && (
-                  <span className={`ui-sfc__spinner`} aria-hidden={`true`} />
-                )}
+                {submitting && <span className={`ui-sfc__spinner`} aria-hidden={`true`} />}
                 <span className={`ui-sfc__btn-label`} key={buttonLabel}>
                   {buttonLabel}
                 </span>
@@ -627,11 +571,7 @@ function StepperField({
   optional: optional,
   children: children,
 }: StepperFieldProps) {
-  let {
-      errors: errors,
-      shake: shake,
-      report: report,
-    } = React.useContext(CleanFormContext),
+  let { errors: errors, shake: shake, report: report } = React.useContext(CleanFormContext),
     [localError, setLocalError] = React.useState<string | null>(null),
     [localShake, setLocalShake] = React.useState(0),
     instanceId = React.useId(),
@@ -641,9 +581,7 @@ function StepperField({
   error && (previousErrorRef.current = error);
   let invalid = !!error;
   (React.useEffect(() => {
-    shake &&
-      (errors[name] || localError) &&
-      cleanShakeElement(controlRef.current);
+    shake && (errors[name] || localError) && cleanShakeElement(controlRef.current);
   }, [shake]),
     React.useEffect(() => {
       localShake && cleanShakeElement(controlRef.current);
@@ -665,11 +603,7 @@ function StepperField({
           value={{
             id: instanceId,
             invalid: invalid,
-            describedBy: invalid
-              ? `${instanceId}-msg`
-              : hint
-                ? `${instanceId}-hint`
-                : void 0,
+            describedBy: invalid ? `${instanceId}-msg` : hint ? `${instanceId}-hint` : void 0,
             flag: flag,
           }}
         >
@@ -678,11 +612,7 @@ function StepperField({
       </div>
       <div className={`ui-sfc__fold`} data-open={invalid || void 0}>
         <div>
-          <p
-            className={`ui-sfc__msg`}
-            id={`${instanceId}-msg`}
-            key={previousErrorRef.current}
-          >
+          <p className={`ui-sfc__msg`} id={`${instanceId}-msg`} key={previousErrorRef.current}>
             {previousErrorRef.current}
           </p>
         </div>
@@ -699,11 +629,7 @@ function StepperField({
     </div>
   );
 }
-function StepperInput({
-  prefix: prefix,
-  className: className,
-  ...inputProps
-}: StepperInputProps) {
+function StepperInput({ prefix: prefix, className: className, ...inputProps }: StepperInputProps) {
   let field = React.useContext(CleanFieldContext);
   return (
     <div
@@ -768,13 +694,11 @@ function StepperTags({
         i = [],
         o: string | null = null;
       for (let e of n) {
-        let t =
-          max !== void 0 && r.length >= max ? `Up to ${max}` : validate(e, r);
+        let t = max !== void 0 && r.length >= max ? `Up to ${max}` : validate(e, r);
         t ? ((o ??= t), i.push(e)) : r.push(e);
       }
       return (
-        r.length !== valueRef.current.length &&
-          ((valueRef.current = r), onChange(r)),
+        r.length !== valueRef.current.length && ((valueRef.current = r), onChange(r)),
         setDraft(i.join(`, `)),
         field?.flag(o),
         !o
@@ -783,9 +707,7 @@ function StepperTags({
     C = (e: string) => {
       if (removing.includes(e)) return;
       setRemoving((t) => [...t, e]);
-      let n = chipsRef.current?.querySelector<HTMLElement>(
-          `[data-entry="${CSS.escape(e)}"]`,
-        ),
+      let n = chipsRef.current?.querySelector<HTMLElement>(`[data-entry="${CSS.escape(e)}"]`),
         r = () => {
           (setRemoving((t) => t.filter((t) => t !== e)),
             onChange(valueRef.current.filter((t: string) => t !== e)));
@@ -887,11 +809,7 @@ function StepperChoices({
     ringRef = React.useRef<HTMLSpanElement | null>(null);
   return (
     React.useLayoutEffect(() => {
-      cleanPositionSelectionRing(
-        choicesRef.current,
-        ringRef.current,
-        `[aria-checked="true"]`,
-      );
+      cleanPositionSelectionRing(choicesRef.current, ringRef.current, `[aria-checked="true"]`);
     }),
     React.useEffect(() => {
       let e = choicesRef.current;
@@ -920,14 +838,11 @@ function StepperChoices({
             let e = options[(r + a + options.length) % options.length];
             (onChange(e.value),
               choicesRef.current
-                ?.querySelector<HTMLElement>(
-                  `[data-value="${CSS.escape(e.value)}"]`,
-                )
+                ?.querySelector<HTMLElement>(`[data-value="${CSS.escape(e.value)}"]`)
                 ?.focus());
           } else
             n.key === `Enter` &&
-              (n.preventDefault(),
-              n.currentTarget.closest(`form`)?.requestSubmit());
+              (n.preventDefault(), n.currentTarget.closest(`form`)?.requestSubmit());
         }}
       >
         <span ref={ringRef} className={`ui-sfc__ring`} aria-hidden={`true`} />
@@ -949,12 +864,8 @@ function StepperChoices({
                 {n.badge && <span className={`ui-sfc__badge`}>{n.badge}</span>}
                 <span className={`ui-sfc__radio`} aria-hidden={`true`} />
               </span>
-              {n.aside && (
-                <span className={`ui-sfc__choice-aside`}>{n.aside}</span>
-              )}
-              {n.description && (
-                <span className={`ui-sfc__choice-desc`}>{n.description}</span>
-              )}
+              {n.aside && <span className={`ui-sfc__choice-aside`}>{n.aside}</span>}
+              {n.description && <span className={`ui-sfc__choice-desc`}>{n.description}</span>}
             </button>
           );
         })}
@@ -1488,10 +1399,7 @@ function CleanWorkspaceFields({
               slug: cleanSlugify(cleanDemoWorkspaceName.slice(0, e)),
             }),
             e < 16
-              ? (timeoutRef.current = window.setTimeout(
-                  n,
-                  55 + Math.random() * 45,
-                ))
+              ? (timeoutRef.current = window.setTimeout(n, 55 + Math.random() * 45))
               : (autoplay.current = false));
         };
       return (
@@ -1552,14 +1460,9 @@ function StepperFormCleanDemo2() {
             title: `Workspace`,
             heading: `Name your workspace`,
             description: `This is where your team's projects live.`,
-            render: (t) => (
-              <CleanWorkspaceFields ctx={t} autoplay={autoplayRef} />
-            ),
+            render: (t) => <CleanWorkspaceFields ctx={t} autoplay={autoplayRef} />,
             validate: (e) => ({
-              name:
-                e.name.trim().length < 2
-                  ? `Give your workspace a name`
-                  : void 0,
+              name: e.name.trim().length < 2 ? `Give your workspace a name` : void 0,
               slug: e.slug.length < 3 ? `Use at least 3 characters` : void 0,
             }),
           },
@@ -1637,9 +1540,7 @@ function StepperFormCleanDemo2() {
                           {i}
                           {` `}
                           {i === 1 ? `invite` : `invites`}
-                          <span className={`sfc-demo__sub`}>
-                            {values.invites.join(`, `)}
-                          </span>
+                          <span className={`sfc-demo__sub`}>{values.invites.join(`, `)}</span>
                         </>
                       ) : (
                         `Just you for now`

@@ -1,12 +1,12 @@
 # Registry consumer smoke
 
-From the project root, using Node 24 after `npm ci` and `npm run registry:build`:
+From the project root, using Node 24 after `pnpm install --frozen-lockfile` and `pnpm registry:build`:
 
 ```sh
-node tests/registry-consumer/run.mjs
+pnpm verify:consumer
 ```
 
-The harness copies this fixture into a fresh temporary directory and installs its own Next/React dependencies. It runs the real pinned `shadcn@4.21.0` CLI through npm exec, outside the deployed app's dependencies. npm registry access is required unless the packages are cached.
+The harness copies this fixture, its own `pnpm-lock.yaml`, and its workspace configuration into a fresh temporary directory. It installs the fixture's pinned Next.js, React, and `shadcn@4.21.0` dependencies with `pnpm install --frozen-lockfile`, then runs the real CLI with `pnpm exec shadcn`. The fixture stays independent of the app's dependencies and is excluded from the root workspace. Package registry access is required unless the packages are cached.
 
 The CLI must reject a wrong token, then install App Shell, Button, Toaster, Stepper Form, Agent Chat and Task Board using an environment-backed custom header. Each item must install one semantic TSX source, plus its separate notice when required. The fixture uses a nondefault `@/parts` components alias and flat imports such as `@/parts/plico/app-shell`.
 

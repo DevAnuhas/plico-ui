@@ -74,12 +74,10 @@ var valueValue3: { key: "speed" | "quality" | "cost"; label: string }[] = [
 ];
 var valueValue4 = (e: number) => 1 - (1 - e) ** 4;
 var valueValue5 = () =>
-  typeof window < `u` &&
-  window.matchMedia(`(prefers-reduced-motion: reduce)`).matches;
+  typeof window < `u` && window.matchMedia(`(prefers-reduced-motion: reduce)`).matches;
 var valueValue6 = (e: number) => Math.max(0, Math.min(5, Math.round(e)));
 var valueValue7 = (e: number) => `${(e / 1e3).toFixed(1)}s`;
-var valueValue8 = (e: number, t: unknown) =>
-  `$${e.toFixed(Number.isInteger(t) ? 0 : 2)}`;
+var valueValue8 = (e: number, t: unknown) => `$${e.toFixed(Number.isInteger(t) ? 0 : 2)}`;
 function valueValue9(e: Record<string, number>, t: number) {
   let [r, i] = React.useState(e),
     a = React.useRef(e),
@@ -108,13 +106,7 @@ function valueValue9(e: Record<string, number>, t: number) {
     r
   );
 }
-function Iconp({
-  id: id,
-  children: children,
-}: {
-  id: string;
-  children: React.ReactNode;
-}) {
+function Iconp({ id: id, children: children }: { id: string; children: React.ReactNode }) {
   let i = React.useRef({
       id: id,
       node: children,
@@ -185,13 +177,7 @@ var Iconte = () => (
   </svg>
 );
 var Iconh = () => (
-  <svg
-    width={`14`}
-    height={`14`}
-    viewBox={`0 0 14 14`}
-    fill={`none`}
-    aria-hidden={`true`}
-  >
+  <svg width={`14`} height={`14`} viewBox={`0 0 14 14`} fill={`none`} aria-hidden={`true`}>
     <path
       d={`M5.3 10.6h3.4M5.8 12.3h2.4M7 1.7a3.9 3.9 0 0 0-2.3 7c.4.3.6.7.6 1.1v.1h3.4v-.1c0-.4.2-.8.6-1.1A3.9 3.9 0 0 0 7 1.7Z`}
       {...valueValue10}
@@ -199,13 +185,7 @@ var Iconh = () => (
   </svg>
 );
 var Iconne = () => (
-  <svg
-    width={`14`}
-    height={`14`}
-    viewBox={`0 0 14 14`}
-    fill={`none`}
-    aria-hidden={`true`}
-  >
+  <svg width={`14`} height={`14`} viewBox={`0 0 14 14`} fill={`none`} aria-hidden={`true`}>
     <circle cx={`7`} cy={`7`} r={`5.3`} {...valueValue10} />
     <path
       d={`M1.9 7h10.2M7 1.7c1.4 1.5 2 3.3 2 5.3s-.6 3.8-2 5.3c-1.4-1.5-2-3.3-2-5.3s.6-3.8 2-5.3Z`}
@@ -312,10 +292,7 @@ function ModelPicker({
   let Ce = () => T.current?.contains(document.activeElement) ?? false,
     G = (t: number) => {
       let n = models[t];
-      n &&
-        (fe(n.id),
-        n.id !== O && onChange?.(n.id),
-        V(false, Ce() ? `trigger` : void 0));
+      n && (fe(n.id), n.id !== O && onChange?.(n.id), V(false, Ce() ? `trigger` : void 0));
     },
     we: React.MouseEventHandler<HTMLButtonElement> = () => {
       (me(!k), onThinkingChange?.(!k));
@@ -327,8 +304,7 @@ function ModelPicker({
       (ve(e), e !== j && onEffortChange?.(e));
     },
     Ee: React.KeyboardEventHandler<HTMLButtonElement> = (e) => {
-      (e.key === `ArrowDown` || e.key === `ArrowUp`) &&
-        (e.preventDefault(), V(true, `list`));
+      (e.key === `ArrowDown` || e.key === `ArrowUp`) && (e.preventDefault(), V(true, `list`));
     },
     q: React.KeyboardEventHandler<HTMLDivElement> = (t) => {
       let n = models.length;
@@ -344,8 +320,7 @@ function ModelPicker({
             ? r(0)
             : t.key === `End`
               ? r(n - 1)
-              : (t.key === `Enter` || t.key === ` `) &&
-                (t.preventDefault(), G(F));
+              : (t.key === `Enter` || t.key === ` `) && (t.preventDefault(), G(F));
     },
     De: React.KeyboardEventHandler<HTMLDivElement> = (e) => {
       let t = valueValue.findIndex((e) => e.id === j),
@@ -358,10 +333,7 @@ function ModelPicker({
       if (!n) return;
       e.preventDefault();
       let r = valueValue[(t + n + valueValue.length) % valueValue.length];
-      (K(r.id),
-        T.current
-          ?.querySelector<HTMLElement>(`[data-effort="${r.id}"]`)
-          ?.focus());
+      (K(r.id), T.current?.querySelector<HTMLElement>(`[data-effort="${r.id}"]`)?.focus());
     },
     Oe: React.KeyboardEventHandler<HTMLDivElement> = (e) => {
       e.key === `Escape` && M && (e.stopPropagation(), V(false, `trigger`));
@@ -381,15 +353,11 @@ function ModelPicker({
     Q,
     $;
   if (xe === `search`)
-    ((Z = A
-      ? `Looks things up on the web when it helps`
-      : `Answers from what it already knows`),
+    ((Z = A ? `Looks things up on the web when it helps` : `Answers from what it already knows`),
       (Q = `search-${A}`),
       ($ = Z));
   else if (!Ae)
-    ((Z = B?.description ?? B?.name ?? ``),
-      (Q = `plain-${B?.id}`),
-      ($ = `${B?.name ?? ``}: ${Z}`));
+    ((Z = B?.description ?? B?.name ?? ``), (Q = `plain-${B?.id}`), ($ = `${B?.name ?? ``}: ${Z}`));
   else {
     let e = [],
       t = [];
@@ -411,9 +379,7 @@ function ModelPicker({
         ),
         t.push(`${valueValue8(Y, Y)} per million tokens`)),
       (Z = e.flatMap((e, t) =>
-        t
-          ? [<span className={`ui-mdp__dot`} key={`d${t}`}>{` · `}</span>, e]
-          : [e],
+        t ? [<span className={`ui-mdp__dot`} key={`d${t}`}>{` · `}</span>, e] : [e],
       )),
       (Q = `stats`),
       ($ = `${B.name}: ${t.join(`, `)}`));
@@ -428,10 +394,7 @@ function ModelPicker({
       data-side={side}
       onKeyDown={Oe}
       onBlur={(e) => {
-        M &&
-          e.relatedTarget &&
-          !T.current?.contains(e.relatedTarget) &&
-          V(false);
+        M && e.relatedTarget && !T.current?.contains(e.relatedTarget) && V(false);
       }}
     >
       <style href={`ui-model-picker`} precedence={`default`}>
@@ -452,11 +415,7 @@ function ModelPicker({
         <span className={`ui-mdp__name`}>
           <Iconp id={P?.id ?? `none`}>{P?.name ?? `Choose a model`}</Iconp>
         </span>
-        <span
-          className={`ui-mdp__flag`}
-          data-on={k ? `` : void 0}
-          aria-hidden={`true`}
-        >
+        <span className={`ui-mdp__flag`} data-on={k ? `` : void 0} aria-hidden={`true`}>
           <span>
             <Iconh />
           </span>
@@ -499,8 +458,7 @@ function ModelPicker({
             onPointerLeave={() => R(false)}
           >
             {models.map((e, t) => {
-              let n =
-                e.speed !== void 0 || e.quality !== void 0 || e.cost !== void 0;
+              let n = e.speed !== void 0 || e.quality !== void 0 || e.cost !== void 0;
               return (
                 <div
                   id={`${w}-opt-${e.id}`}
@@ -522,9 +480,7 @@ function ModelPicker({
                       <span className={`ui-mdp__title-name`}>{e.name}</span>
                       {t === N && <Iconte />}
                     </span>
-                    {e.description && (
-                      <span className={`ui-mdp__desc`}>{e.description}</span>
-                    )}
+                    {e.description && <span className={`ui-mdp__desc`}>{e.description}</span>}
                   </span>
                   {n ? (
                     <span className={`ui-mdp__bars`} aria-hidden={`true`}>
@@ -557,10 +513,7 @@ function ModelPicker({
                       })}
                     </span>
                   ) : (
-                    <span
-                      className={`ui-mdp__varies`}
-                      aria-hidden={`true`}
-                    >{`Varies`}</span>
+                    <span className={`ui-mdp__varies`} aria-hidden={`true`}>{`Varies`}</span>
                   )}
                 </div>
               );
@@ -577,22 +530,13 @@ function ModelPicker({
               <span className={`ui-mdp__toggle-icon`}>
                 <Iconh />
               </span>
-              <span
-                className={`ui-mdp__toggle-label`}
-              >{`Extended thinking`}</span>
+              <span className={`ui-mdp__toggle-label`}>{`Extended thinking`}</span>
               <span className={`ui-mdp__switch`} aria-hidden={`true`} />
             </button>
-            <div
-              className={`ui-mdp__fold`}
-              data-open={k ? `` : void 0}
-              inert={!k}
-            >
+            <div className={`ui-mdp__fold`} data-open={k ? `` : void 0} inert={!k}>
               <div className={`ui-mdp__clip`}>
                 <div className={`ui-mdp__effort`}>
-                  <span
-                    className={`ui-mdp__effort-label`}
-                    id={`${w}-effort`}
-                  >{`Effort`}</span>
+                  <span className={`ui-mdp__effort-label`} id={`${w}-effort`}>{`Effort`}</span>
                   <div
                     className={`ui-mdp__segmented`}
                     role={`radiogroup`}
@@ -833,10 +777,7 @@ var valueValue11 = `
 `;
 const View_InlineView = () => (
   <svg viewBox={`0 0 12 12`} fill={`none`} aria-hidden={`true`}>
-    <path
-      d={`M6 1.5 7.1 4.9 10.5 6 7.1 7.1 6 10.5 4.9 7.1 1.5 6 4.9 4.9Z`}
-      fill={`currentColor`}
-    />
+    <path d={`M6 1.5 7.1 4.9 10.5 6 7.1 7.1 6 10.5 4.9 7.1 1.5 6 4.9 4.9Z`} fill={`currentColor`} />
   </svg>
 );
 var valueValue12 = [
@@ -885,11 +826,7 @@ function ModelPickerDemo2() {
     c = React.useRef(false);
   React.useEffect(() => {
     let t = (t: string) => e.current?.querySelector<HTMLElement>(t) ?? null,
-      n = (
-        e: Element | null,
-        t: string,
-        n: { relatedTarget?: Element | null } = {},
-      ) => {
+      n = (e: Element | null, t: string, n: { relatedTarget?: Element | null } = {}) => {
         e &&
           ((c.current = true),
           e.dispatchEvent(
@@ -945,9 +882,7 @@ function ModelPickerDemo2() {
       onPointerDownCapture={l}
       onKeyDownCapture={l}
       onFocusCapture={l}
-      onClick={(e) =>
-        (e.target as HTMLElement).closest(`.ui-mdp__pop`) && e.stopPropagation()
-      }
+      onClick={(e) => (e.target as HTMLElement).closest(`.ui-mdp__pop`) && e.stopPropagation()}
     >
       <div className={`mdp-demo__composer`}>
         <div className={`mdp-demo__text`}>{`Ask anything…`}</div>

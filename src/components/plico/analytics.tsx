@@ -90,7 +90,14 @@ interface HugeiconsProps extends Omit<React.SVGProps<SVGSVGElement>, "strokeWidt
   secondaryColor?: string;
   disableSecondaryOpacity?: boolean;
 }
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {variant?: string; size?: string; loading?: boolean; icon?: React.ReactNode; iconRight?: React.ReactNode; ref?: React.Ref<HTMLButtonElement>;}
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: string;
+  size?: string;
+  loading?: boolean;
+  icon?: React.ReactNode;
+  iconRight?: React.ReactNode;
+  ref?: React.Ref<HTMLButtonElement>;
+}
 const ScreenFrameModeContext = React.createContext<boolean | null>(null);
 function PreviewFrame({ children }: { children?: React.ReactNode }) {
   const mode = React.useContext(ScreenFrameModeContext);
@@ -575,8 +582,23 @@ function axisCeiling(value: number) {
     2
   );
 }
-interface KPISeries {values: number[]; label?: string; color?: string}
-interface KPIChartProps {title: React.ReactNode; value: React.ReactNode; delta: number; labels: string[]; tooltipLabels?: string[]; series: KPISeries[]; format?: (value: number) => string; footer?: React.ReactNode; defaultIndex?: number; className?: string}
+interface KPISeries {
+  values: number[];
+  label?: string;
+  color?: string;
+}
+interface KPIChartProps {
+  title: React.ReactNode;
+  value: React.ReactNode;
+  delta: number;
+  labels: string[];
+  tooltipLabels?: string[];
+  series: KPISeries[];
+  format?: (value: number) => string;
+  footer?: React.ReactNode;
+  defaultIndex?: number;
+  className?: string;
+}
 function KPIChart({
   title: title,
   value: value,
@@ -589,7 +611,7 @@ function KPIChart({
   defaultIndex: defaultIndex,
   className: className,
 }: KPIChartProps) {
-  let [hoveredIndex, setHoveredIndex] = React.useState<number|null>(null),
+  let [hoveredIndex, setHoveredIndex] = React.useState<number | null>(null),
     activeIndex = hoveredIndex ?? defaultIndex ?? null,
     [lastIndex, setLastIndex] = React.useState(activeIndex ?? 0);
   activeIndex !== null && activeIndex !== lastIndex && setLastIndex(activeIndex);
@@ -2533,7 +2555,14 @@ function SelectMenu({
   icon: icon,
   align = `end`,
   className: className,
-}: {value: string; options: {value: string; label: string}[]; onChange: (value: string) => void; icon?: IconNode; align?: PopoverAlign; className?: string}) {
+}: {
+  value: string;
+  options: { value: string; label: string }[];
+  onChange: (value: string) => void;
+  icon?: IconNode;
+  align?: PopoverAlign;
+  className?: string;
+}) {
   let [s, c] = React.useState(false),
     l = options.find((t) => t.value === value);
   return (
@@ -2563,7 +2592,7 @@ function SelectMenu({
   );
 }
 function useToast(): [React.ReactNode, (message: string) => void] {
-  let [message, setMessage] = React.useState<{id: number; text: string} | null>(null);
+  let [message, setMessage] = React.useState<{ id: number; text: string } | null>(null);
   return (
     React.useEffect(() => {
       if (!message) return;
@@ -2577,7 +2606,8 @@ function useToast(): [React.ReactNode, (message: string) => void] {
           {message.text}
         </div>
       ) : null,
-      (e: string) => setMessage({
+      (e: string) =>
+        setMessage({
           id: Date.now(),
           text: e,
         }),
@@ -4012,7 +4042,7 @@ function ValueValue10(e: string, t: number) {
           ? `${(1.8 + (t - 1) * 0.008).toFixed(1)}%`
           : ``;
 }
-function ValueValue11({ values: values, tone = `up` }: {values: number[]; tone?: string}) {
+function ValueValue11({ values: values, tone = `up` }: { values: number[]; tone?: string }) {
   let n = Math.max(...values),
     r = Math.min(...values),
     i = values
@@ -4041,7 +4071,7 @@ var ValueValue12 = [
     label: `Last 90 days`,
   },
 ];
-var ValueValue13: Record<string, {labels: string[]; factor: number}> = {
+var ValueValue13: Record<string, { labels: string[]; factor: number }> = {
   "7d": {
     labels: valueValue4,
     factor: 1,
@@ -4055,7 +4085,7 @@ var ValueValue13: Record<string, {labels: string[]; factor: number}> = {
     factor: 12.9,
   },
 };
-var ValueValue14 = (e: { values: number[]; }[], t: string) =>
+var ValueValue14 = (e: { values: number[] }[], t: string) =>
   e.map(
     (
       e: {
@@ -4112,9 +4142,11 @@ function Analytics(e: AppShellProps) {
             {valueValue6.map((e, t) => (
               <div
                 className={`ui-as-rev__card ui-as-rev__stat ui-as-rise`}
-                style={{
-                  "--i": t,
-                } as React.CSSProperties}
+                style={
+                  {
+                    "--i": t,
+                  } as React.CSSProperties
+                }
                 key={e.label}
               >
                 <span className={`ui-as-rev__cap`}>{e.label}</span>

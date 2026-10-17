@@ -21,11 +21,7 @@ interface DateRangePickerCleanProps {
     start: Date;
     end: Date;
   };
-  onChange?: (
-    range: DateRange,
-    compare: DateRange | null,
-    mode: string,
-  ) => void;
+  onChange?: (range: DateRange, compare: DateRange | null, mode: string) => void;
   presets?: DatePreset[];
   compare?: boolean;
   defaultCompare?: "off" | "previous" | "year";
@@ -36,22 +32,15 @@ interface DateRangePickerCleanProps {
   today?: Date;
   className?: string;
 }
-var valueValue = (e: Date) =>
-  new Date(e.getFullYear(), e.getMonth(), e.getDate());
-var valueValue2 = (e: Date, t: number) =>
-  new Date(e.getFullYear(), e.getMonth(), e.getDate() + t);
-var valueValue3 = (e: Date, t: number) =>
-  new Date(e.getFullYear(), e.getMonth() + t, 1);
+var valueValue = (e: Date) => new Date(e.getFullYear(), e.getMonth(), e.getDate());
+var valueValue2 = (e: Date, t: number) => new Date(e.getFullYear(), e.getMonth(), e.getDate() + t);
+var valueValue3 = (e: Date, t: number) => new Date(e.getFullYear(), e.getMonth() + t, 1);
 var valueValue4 = (e: Date) => new Date(e.getFullYear(), e.getMonth(), 1);
 var valueValue5 = (e: Date) => new Date(e.getFullYear(), e.getMonth() + 1, 0);
-var valueValue6 = (e: Date, t: Date) =>
-  !!e && !!t && e.getTime() === t.getTime();
-var valueValue7 = (e: Date) =>
-  Date.UTC(e.getFullYear(), e.getMonth(), e.getDate());
-var valueValue8 = (e: Date, t: Date) =>
-  Math.round((valueValue7(t) - valueValue7(e)) / 864e5) + 1;
-var valueValue9 = (e: Date, t: Date | undefined, n: Date) =>
-  t && e < t ? t : n && e > n ? n : e;
+var valueValue6 = (e: Date, t: Date) => !!e && !!t && e.getTime() === t.getTime();
+var valueValue7 = (e: Date) => Date.UTC(e.getFullYear(), e.getMonth(), e.getDate());
+var valueValue8 = (e: Date, t: Date) => Math.round((valueValue7(t) - valueValue7(e)) / 864e5) + 1;
+var valueValue9 = (e: Date, t: Date | undefined, n: Date) => (t && e < t ? t : n && e > n ? n : e);
 var valueValue10 = (e: Date, t: Date) =>
   e <= t
     ? {
@@ -95,8 +84,7 @@ function valueValue16(e: DateRange, t: CompareMode) {
     };
   }
   if (t === `year`) {
-    let t = (e: Date) =>
-      new Date(e.getFullYear() - 1, e.getMonth(), e.getDate());
+    let t = (e: Date) => new Date(e.getFullYear() - 1, e.getMonth(), e.getDate());
     return {
       start: t(e.start),
       end: t(e.end),
@@ -104,8 +92,7 @@ function valueValue16(e: DateRange, t: CompareMode) {
   }
   return null;
 }
-var valueValue17 = (e: Date) =>
-  new Date(e.getFullYear(), Math.floor(e.getMonth() / 3) * 3, 1);
+var valueValue17 = (e: Date) => new Date(e.getFullYear(), Math.floor(e.getMonth() / 3) * 3, 1);
 var defaultPresets: DatePreset[] = [
   {
     id: `today`,
@@ -194,13 +181,7 @@ var valueValue18: { id: CompareMode; label: string }[] = [
     label: `Previous year`,
   },
 ];
-var Iconv = ({
-  d: d,
-  className: className,
-}: {
-  d: string;
-  className?: string;
-}) => (
+var Iconv = ({ d: d, className: className }: { d: string; className?: string }) => (
   <svg
     viewBox={`0 0 24 24`}
     className={[`ui-drpc__glyph`, className].filter(Boolean).join(` `)}
@@ -221,8 +202,7 @@ function valueValue20(e: Date, t: number) {
     r = valueValue5(e).getDate(),
     i = [];
   for (let e = 0; e < n; e++) i.push(null);
-  for (let t = 1; t <= r; t++)
-    i.push(new Date(e.getFullYear(), e.getMonth(), t));
+  for (let t = 1; t <= r; t++) i.push(new Date(e.getFullYear(), e.getMonth(), t));
   for (; i.length % 7;) i.push(null);
   let a = [];
   for (let e = 0; e < i.length; e += 7) a.push(i.slice(e, e + 7));
@@ -242,10 +222,7 @@ function DateRangePickerClean({
   today: today,
   className: className,
 }: DateRangePickerCleanProps) {
-  let S = React.useMemo(
-      () => valueValue(today ?? new Date()),
-      [today?.getTime()],
-    ),
+  let S = React.useMemo(() => valueValue(today ?? new Date()), [today?.getTime()]),
     C = max ? valueValue(max) : S,
     w = min ? valueValue(min) : void 0,
     [de, fe] = React.useState(
@@ -296,15 +273,9 @@ function DateRangePickerClean({
     React.useLayoutEffect(() => {
       D &&
         W.current &&
-        H.current
-          ?.querySelector<HTMLElement>(`[data-day="${R.getTime()}"]`)
-          ?.focus();
+        H.current?.querySelector<HTMLElement>(`[data-day="${R.getTime()}"]`)?.focus();
     }, [R, F, D]));
-  let q = k.end
-      ? valueValue10(k.start, k.end)
-      : j
-        ? valueValue10(k.start, j)
-        : null,
+  let q = k.end ? valueValue10(k.start, k.end) : j ? valueValue10(k.start, j) : null,
     J = q ?? {
       start: k.start,
       end: k.start,
@@ -313,10 +284,7 @@ function DateRangePickerClean({
     X = k.end
       ? presets.find((e) => {
           let t = e.range(S);
-          return (
-            valueValue6(valueValue(t.start), J.start) &&
-            valueValue6(valueValue(t.end), J.end)
-          );
+          return valueValue6(valueValue(t.start), J.start) && valueValue6(valueValue(t.end), J.end);
         })
       : void 0,
     be = (e: Date) => {
@@ -351,10 +319,7 @@ function DateRangePickerClean({
             start: k.start,
             end: k.start,
           };
-      (value || fe(t),
-        pe(N),
-        onChange?.(t, compare ? valueValue16(t, N) : null, N),
-        K());
+      (value || fe(t), pe(N), onChange?.(t, compare ? valueValue16(t, N) : null, N), K());
     },
     Ce = (e: number | Date) => e > C || (!!w && e < w),
     we: React.KeyboardEventHandler<HTMLDivElement> = (e) => {
@@ -369,32 +334,17 @@ function DateRangePickerClean({
         (e.key in t
           ? (n = valueValue2(R, t[e.key]))
           : e.key === `PageUp`
-            ? (n = new Date(
-                R.getFullYear(),
-                R.getMonth() - 1,
-                Math.min(R.getDate(), 28),
-              ))
+            ? (n = new Date(R.getFullYear(), R.getMonth() - 1, Math.min(R.getDate(), 28)))
             : e.key === `PageDown`
-              ? (n = new Date(
-                  R.getFullYear(),
-                  R.getMonth() + 1,
-                  Math.min(R.getDate(), 28),
-                ))
+              ? (n = new Date(R.getFullYear(), R.getMonth() + 1, Math.min(R.getDate(), 28)))
               : e.key === `Home`
                 ? (n = valueValue2(R, -((R.getDay() - weekStartsOn + 7) % 7)))
                 : e.key === `End` &&
-                  (n = valueValue2(
-                    R,
-                    6 - ((R.getDay() - weekStartsOn + 7) % 7),
-                  )),
+                  (n = valueValue2(R, 6 - ((R.getDay() - weekStartsOn + 7) % 7))),
         !n)
       )
         return;
-      (e.preventDefault(),
-        (W.current = true),
-        (n = valueValue9(n, w, C)),
-        z(n),
-        k.end || M(n));
+      (e.preventDefault(), (W.current = true), (n = valueValue9(n, w, C)), z(n), k.end || M(n));
       let r = valueValue5(valueValue3(F, 1));
       n < F ? Z(-1) : n > r && Z(1);
     },
@@ -481,13 +431,8 @@ function DateRangePickerClean({
         >
           <span ref={_e} className={`ui-drpc__trigger-inner`}>
             <Iconv d={valueValue19.calendar} />
-            <span
-              className={`ui-drpc__trigger-text`}
-              key={`${valueValue15(T)}-${E}`}
-            >
-              <span className={`ui-drpc__trigger-range`}>
-                {valueValue15(T)}
-              </span>
+            <span className={`ui-drpc__trigger-text`} key={`${valueValue15(T)}-${E}`}>
+              <span className={`ui-drpc__trigger-range`}>{valueValue15(T)}</span>
               {compare && E !== `off` && (
                 <span className={`ui-drpc__trigger-compare`}>
                   {`vs. `}
@@ -581,11 +526,7 @@ function DateRangePickerClean({
                         >
                           <div role={`row`} className={`ui-drpc__weekdays`}>
                             {Te.map((e) => (
-                              <span
-                                role={`columnheader`}
-                                className={`ui-drpc__weekday`}
-                                key={e}
-                              >
+                              <span role={`columnheader`} className={`ui-drpc__weekday`} key={e}>
                                 {e}
                               </span>
                             ))}
@@ -594,15 +535,9 @@ function DateRangePickerClean({
                             {
                               length: De,
                             },
-                            (t, n) =>
-                              valueValue20(e, weekStartsOn)[n] ??
-                              Array(7).fill(null),
+                            (t, n) => valueValue20(e, weekStartsOn)[n] ?? Array(7).fill(null),
                           ).map((e, t) => (
-                            <div
-                              role={`row`}
-                              className={`ui-drpc__week`}
-                              key={t}
-                            >
+                            <div role={`row`} className={`ui-drpc__week`} key={t}>
                               {e.map((e, t) => {
                                 if (!e)
                                   return (
@@ -627,19 +562,11 @@ function DateRangePickerClean({
                                     data-end={i || void 0}
                                     data-preview={(!k.end && a) || void 0}
                                     data-compare={o || void 0}
-                                    data-compare-start={
-                                      (Y && valueValue6(e, Y.start)) || void 0
-                                    }
-                                    data-compare-end={
-                                      (Y && valueValue6(e, Y.end)) || void 0
-                                    }
-                                    data-row-start={
-                                      t === 0 || e.getDate() === 1 || void 0
-                                    }
+                                    data-compare-start={(Y && valueValue6(e, Y.start)) || void 0}
+                                    data-compare-end={(Y && valueValue6(e, Y.end)) || void 0}
+                                    data-row-start={t === 0 || e.getDate() === 1 || void 0}
                                     data-row-end={
-                                      t === 6 ||
-                                      valueValue6(e, valueValue5(e)) ||
-                                      void 0
+                                      t === 6 || valueValue6(e, valueValue5(e)) || void 0
                                     }
                                     key={t}
                                   >
@@ -649,9 +576,7 @@ function DateRangePickerClean({
                                       tabIndex={valueValue6(e, R) ? 0 : -1}
                                       disabled={s}
                                       aria-label={valueValue14.format(e)}
-                                      aria-current={
-                                        valueValue6(e, S) ? `date` : void 0
-                                      }
+                                      aria-current={valueValue6(e, S) ? `date` : void 0}
                                       onClick={() => be(e)}
                                       onPointerEnter={() => !k.end && M(e)}
                                       onFocus={() => z(e)}
@@ -674,9 +599,7 @@ function DateRangePickerClean({
               <div className={`ui-drpc__summary`}>
                 <div className={`ui-drpc__summary-range`}>
                   <span key={`${J.start.getTime()}-${J.end.getTime()}`}>
-                    {k.end || j
-                      ? valueValue15(J)
-                      : `${valueValue12.format(k.start)} – pick an end`}
+                    {k.end || j ? valueValue15(J) : `${valueValue12.format(k.start)} – pick an end`}
                   </span>
                   <span className={`ui-drpc__count`} key={Q}>
                     {Q}
@@ -686,9 +609,7 @@ function DateRangePickerClean({
                 </div>
                 {compare && (
                   <div className={`ui-drpc__compare`}>
-                    <span
-                      className={`ui-drpc__compare-label`}
-                    >{`Compare`}</span>
+                    <span className={`ui-drpc__compare-label`}>{`Compare`}</span>
                     <div
                       className={`ui-drpc__segments`}
                       role={`radiogroup`}

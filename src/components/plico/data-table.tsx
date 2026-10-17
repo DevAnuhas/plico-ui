@@ -27,16 +27,11 @@ interface DataTableProps {
   className?: string;
 }
 type CellCoordinate = { r: number; c: number };
-type EditDone = (
-  commit: boolean,
-  direction?: string,
-  overrideValue?: string,
-) => void;
+type EditDone = (commit: boolean, direction?: string, overrideValue?: string) => void;
 var cellText = (value: unknown) =>
   typeof value == `string` || typeof value == `number` ? String(value) : ``;
 var columnLetter = (index: number) => String.fromCharCode(65 + (index % 26));
-var isApplePlatform = () =>
-  typeof navigator < `u` && /Mac|iPhone|iPad/.test(navigator.platform);
+var isApplePlatform = () => typeof navigator < `u` && /Mac|iPhone|iPad/.test(navigator.platform);
 function parseCellInput(text: string, column: DataColumn) {
   let trimmed = text.trim();
   if (column.type !== `number`) return trimmed;
@@ -65,12 +60,8 @@ function DataTable({
       key: string;
       dir: "asc" | "desc";
     } | null>(null),
-    [activeCell, setActiveCellState] = React.useState<CellCoordinate | null>(
-      null,
-    ),
-    [anchorCell, setAnchorCellState] = React.useState<CellCoordinate | null>(
-      null,
-    ),
+    [activeCell, setActiveCellState] = React.useState<CellCoordinate | null>(null),
+    [anchorCell, setAnchorCellState] = React.useState<CellCoordinate | null>(null),
     cellStateRef = React.useRef<{
       active: CellCoordinate | null;
       anchor: CellCoordinate | null;
@@ -111,8 +102,7 @@ function DataTable({
                 }) * t;
       });
     }, [localRows, sort, columns]),
-    canEditColumn = (columnIndex: number) =>
-      editable && columns[columnIndex]?.editable !== false,
+    canEditColumn = (columnIndex: number) => editable && columns[columnIndex]?.editable !== false,
     commitRows = (nextRows: DataRow[]) => {
       (historyRef.current.past.push(localRows),
         historyRef.current.past.length > 100 && historyRef.current.past.shift(),
@@ -122,17 +112,11 @@ function DataTable({
     },
     undo = () => {
       let e = historyRef.current.past.pop();
-      e &&
-        (historyRef.current.future.push(localRows),
-        setLocalRows(e),
-        onRowsChange?.(e));
+      e && (historyRef.current.future.push(localRows), setLocalRows(e), onRowsChange?.(e));
     },
     redo = () => {
       let e = historyRef.current.future.pop();
-      e &&
-        (historyRef.current.past.push(localRows),
-        setLocalRows(e),
-        onRowsChange?.(e));
+      e && (historyRef.current.past.push(localRows), setLocalRows(e), onRowsChange?.(e));
     },
     selection = React.useMemo(() => {
       if (!activeCell) return null;
@@ -200,19 +184,13 @@ function DataTable({
         sortedRows[cell.r] &&
         setEditing({
           cell: cell,
-          value:
-            initialValue ?? cellText(sortedRows[cell.r][columns[cell.c].key]),
+          value: initialValue ?? cellText(sortedRows[cell.r][columns[cell.c].key]),
         });
     },
-    finishEditing = (
-      commit: boolean,
-      nextCell?: CellCoordinate,
-      overrideValue?: string,
-    ) => {
+    finishEditing = (commit: boolean, nextCell?: CellCoordinate, overrideValue?: string) => {
       if (editing && commit) {
         let e = overrideValue ?? editing.value;
-        e !==
-          cellText(sortedRows[editing.cell.r]?.[columns[editing.cell.c].key]) &&
+        e !== cellText(sortedRows[editing.cell.r]?.[columns[editing.cell.c].key]) &&
           applyMatrix(editing.cell, [[e]]);
       }
       (setEditing(null),
@@ -245,8 +223,7 @@ function DataTable({
       let modifier = isApplePlatform() ? event.metaKey : event.ctrlKey;
       if (modifier && event.key.toLowerCase() === `z`)
         return (event.preventDefault(), event.shiftKey ? redo() : undo());
-      if (modifier && event.key.toLowerCase() === `y`)
-        return (event.preventDefault(), redo());
+      if (modifier && event.key.toLowerCase() === `y`) return (event.preventDefault(), redo());
       if (modifier && event.key.toLowerCase() === `a`) {
         (event.preventDefault(),
           setAnchorCell({
@@ -298,10 +275,7 @@ function DataTable({
           },
         };
       if (s[event.key])
-        return (
-          event.preventDefault(),
-          moveActiveCell(s[event.key]!, event.shiftKey)
-        );
+        return (event.preventDefault(), moveActiveCell(s[event.key]!, event.shiftKey));
       if (event.key === `Tab`)
         return (
           event.preventDefault(),
@@ -346,9 +320,7 @@ function DataTable({
         ? sortedRows.slice(selection.r1, selection.r2 + 1).map((e) =>
             columns
               .slice(selection.c1, selection.c2 + 1)
-              .map((t: { key: string | number }) =>
-                cellText(e[t.key]).replace(/[\t\n]/g, ` `),
-              )
+              .map((t: { key: string | number }) => cellText(e[t.key]).replace(/[\t\n]/g, ` `))
               .join(`	`),
           ).join(`
 `)
@@ -356,8 +328,7 @@ function DataTable({
     handleCopy = (event: React.ClipboardEvent<HTMLDivElement>) => {
       !editing &&
         selection &&
-        (event.preventDefault(),
-        event.clipboardData.setData(`text/plain`, selectionText()));
+        (event.preventDefault(), event.clipboardData.setData(`text/plain`, selectionText()));
     },
     handleCut = (event: React.ClipboardEvent<HTMLDivElement>) => {
       if (editing || !selection) return;
@@ -390,10 +361,7 @@ function DataTable({
     }) => {
       if (editing || !activeCell) return;
       event.preventDefault();
-      let text = event.clipboardData
-        .getData(`text/plain`)
-        .replace(/\r/g, ``)
-        .replace(/\n$/, ``);
+      let text = event.clipboardData.getData(`text/plain`).replace(/\r/g, ``).replace(/\n$/, ``);
       if (!text) return;
       let matrix = text
         .split(
@@ -448,18 +416,13 @@ function DataTable({
       ),
     updateSelection = (ids: Set<string>) => {
       (setSelectedIds(ids),
-        onSelectionChange?.(
-          localRows.filter((t) => ids.has(t.id)).map((e) => e.id),
-        ));
+        onSelectionChange?.(localRows.filter((t) => ids.has(t.id)).map((e) => e.id)));
     },
-    allSelected =
-      sortedRows.length > 0 && selectedIds.size === sortedRows.length,
+    allSelected = sortedRows.length > 0 && selectedIds.size === sortedRows.length,
     mixedSelected = selectedIds.size > 0 && !allSelected,
     addRow = () => {
       newRowIdRef.current += 1;
-      let e =
-          columns.find((e: DataColumn) => e.type === `title`)?.key ??
-          columns[0].key,
+      let e = columns.find((e: DataColumn) => e.type === `title`)?.key ?? columns[0].key,
         t = {
           id: `new-${newRowIdRef.current}`,
           [e]: ``,
@@ -486,18 +449,10 @@ function DataTable({
         setAnchorCell(null));
     },
     columnOptions = (column: DataColumn) =>
-      column.options ?? [
-        ...new Set(
-          localRows.map((t) => cellText(t[column.key])).filter(Boolean),
-        ),
-      ],
+      column.options ?? [...new Set(localRows.map((t) => cellText(t[column.key])).filter(Boolean))],
     selectionSummary = (() => {
       if (!selection || !activeCell) return null;
-      if (
-        (selection.r2 - selection.r1 + 1) *
-          (selection.c2 - selection.c1 + 1) ===
-        1
-      )
+      if ((selection.r2 - selection.r1 + 1) * (selection.c2 - selection.c1 + 1) === 1)
         return `${columnLetter(activeCell.c)}${activeCell.r + 1}`;
       let e = 0,
         t = 0,
@@ -506,9 +461,7 @@ function DataTable({
         for (let a = selection.c1; a <= selection.c2; a++) {
           let o = sortedRows[r]?.[columns[a].key];
           (cellText(o) !== `` && e++,
-            columns[a].type === `number` &&
-              typeof o == `number` &&
-              ((n = true), (t += o)));
+            columns[a].type === `number` && typeof o == `number` && ((n = true), (t += o)));
         }
       return `${e} ${e === 1 ? `value` : `values`}${n ? ` · Sum ${t.toLocaleString(`en-US`)}` : ``}`;
     })(),
@@ -518,10 +471,7 @@ function DataTable({
       <style href={`ui-data-table`} precedence={`default`}>
         {dataTableStyles}
       </style>
-      <section
-        className={[`ui-dt`, className].filter(Boolean).join(` `)}
-        aria-label={title}
-      >
+      <section className={[`ui-dt`, className].filter(Boolean).join(` `)} aria-label={title}>
         <header className={`ui-dt__head`}>
           {icon && <span className={`ui-dt__title-icon`}>{icon}</span>}
           <h3 className={`ui-dt__title`}>{title}</h3>
@@ -599,9 +549,7 @@ function DataTable({
                         label={`Select all rows`}
                         onChange={() =>
                           updateSelection(
-                            allSelected
-                              ? new Set()
-                              : new Set(sortedRows.map((e) => e.id)),
+                            allSelected ? new Set() : new Set(sortedRows.map((e) => e.id)),
                           )
                         }
                       />
@@ -612,18 +560,11 @@ function DataTable({
                         <th
                           role={`columnheader`}
                           aria-sort={
-                            n === `asc`
-                              ? `ascending`
-                              : n === `desc`
-                                ? `descending`
-                                : `none`
+                            n === `asc` ? `ascending` : n === `desc` ? `descending` : `none`
                           }
                           data-type={e.type}
                           data-col-active={
-                            (selection &&
-                              t >= selection.c1 &&
-                              t <= selection.c2) ||
-                            void 0
+                            (selection && t >= selection.c1 && t <= selection.c2) || void 0
                           }
                           key={e.key}
                         >
@@ -632,11 +573,7 @@ function DataTable({
                             className={`ui-dt__th`}
                             onClick={() => toggleSort(e.key)}
                           >
-                            {e.icon && (
-                              <span className={`ui-dt__col-icon`}>
-                                {e.icon}
-                              </span>
-                            )}
+                            {e.icon && <span className={`ui-dt__col-icon`}>{e.icon}</span>}
                             <span className={`ui-dt__th-label`}>{e.label}</span>
                             <span
                               className={`ui-dt__sort`}
@@ -662,16 +599,14 @@ function DataTable({
                             label={`Select ${
                               cellText(
                                 e[
-                                  columns.find(
-                                    (e: DataColumn) => e.type === `title`,
-                                  )?.key ?? columns[0].key
+                                  columns.find((e: DataColumn) => e.type === `title`)?.key ??
+                                    columns[0].key
                                 ],
                               ) || `row`
                             }`}
                             onChange={() => {
                               let t = new Set(selectedIds);
-                              (t.has(e.id) ? t.delete(e.id) : t.add(e.id),
-                                updateSelection(t));
+                              (t.has(e.id) ? t.delete(e.id) : t.add(e.id), updateSelection(t));
                             }}
                           />
                         </td>
@@ -684,9 +619,7 @@ function DataTable({
                               data-cell={`${t}-${i}`}
                               data-type={n.type}
                               data-active={a || void 0}
-                              data-in-range={
-                                (isInSelection(t, i) && !a) || void 0
-                              }
+                              data-in-range={(isInSelection(t, i) && !a) || void 0}
                               data-editing={o || void 0}
                               aria-selected={isInSelection(t, i)}
                               aria-readonly={!canEditColumn(i) || void 0}
@@ -729,20 +662,14 @@ function DataTable({
                                 <CellEditor
                                   column={n}
                                   value={editing.value}
-                                  options={
-                                    n.type === `tag` ? columnOptions(n) : void 0
-                                  }
+                                  options={n.type === `tag` ? columnOptions(n) : void 0}
                                   onChange={(e) =>
                                     setEditing({
                                       cell: editing.cell,
                                       value: e,
                                     })
                                   }
-                                  onDone={(
-                                    e: boolean,
-                                    n?: string,
-                                    r?: string,
-                                  ) =>
+                                  onDone={(e: boolean, n?: string, r?: string) =>
                                     finishEditing(
                                       e,
                                       n
@@ -766,9 +693,7 @@ function DataTable({
                   })}
                 </tbody>
               </table>
-              {sortedRows.length === 0 && (
-                <p className={`ui-dt__empty`}>{`No rows yet`}</p>
-              )}
+              {sortedRows.length === 0 && <p className={`ui-dt__empty`}>{`No rows yet`}</p>}
             </div>
           </div>
         </div>
@@ -804,8 +729,7 @@ function DataTable({
             <span />
           )}
           <span className={`ui-dt__summary`} aria-live={`polite`}>
-            {selectionSummary ??
-              (editable ? `Double-click a cell to edit` : ``)}
+            {selectionSummary ?? (editable ? `Double-click a cell to edit` : ``)}
           </span>
         </footer>
       </section>
@@ -830,10 +754,7 @@ function CellValue({
         ) : (
           <span className={`ui-dt__logo ui-dt__logo--empty`} />
         )}
-        <span
-          className={`ui-dt__name-text`}
-          data-empty={cellText(value) === `` || void 0}
-        >
+        <span className={`ui-dt__name-text`} data-empty={cellText(value) === `` || void 0}>
           {cellText(value) || `Untitled`}
         </span>
       </span>
@@ -841,25 +762,14 @@ function CellValue({
   if (cellText(value) === ``) return null;
   if (column.type === `tag`)
     return (
-      <span
-        className={`ui-dt__tag`}
-        data-tone={tone[cellText(value)] ?? `blue`}
-      >
+      <span className={`ui-dt__tag`} data-tone={tone[cellText(value)] ?? `blue`}>
         {value}
       </span>
     );
   if (column.type === `link`) {
-    let e = /^https?:\/\//.test(cellText(value))
-      ? cellText(value)
-      : `https://${cellText(value)}`;
+    let e = /^https?:\/\//.test(cellText(value)) ? cellText(value) : `https://${cellText(value)}`;
     return (
-      <a
-        className={`ui-dt__link`}
-        href={e}
-        target={`_blank`}
-        rel={`noreferrer`}
-        tabIndex={-1}
-      >
+      <a className={`ui-dt__link`} href={e} target={`_blank`} rel={`noreferrer`} tabIndex={-1}>
         {cellText(value).replace(/^https?:\/\//, ``)}
       </a>
     );
@@ -948,10 +858,7 @@ function SelectCellEditor({
         if (!e || !t) return;
         let n = e.getBoundingClientRect(),
           r = t.offsetHeight,
-          i =
-            window.innerHeight - n.top - 4 >= r + 8
-              ? n.top + 4
-              : Math.max(8, n.bottom - 4 - r);
+          i = window.innerHeight - n.top - 4 >= r + 8 ? n.top + 4 : Math.max(8, n.bottom - 4 - r);
         setPosition({
           left: n.left + 6,
           top: i,
@@ -963,8 +870,7 @@ function SelectCellEditor({
         window.addEventListener(`scroll`, e, true),
         window.addEventListener(`resize`, e),
         () => {
-          (window.removeEventListener(`scroll`, e, true),
-            window.removeEventListener(`resize`, e));
+          (window.removeEventListener(`scroll`, e, true), window.removeEventListener(`resize`, e));
         }
       );
     }, []),
@@ -1009,14 +915,9 @@ function SelectCellEditor({
               }}
               onKeyDown={(e) => {
                 e.key === `Escape` && onDone(false);
-                let t = [
-                    ...(e.currentTarget.parentElement?.querySelectorAll(
-                      `button`,
-                    ) ?? []),
-                  ],
+                let t = [...(e.currentTarget.parentElement?.querySelectorAll(`button`) ?? [])],
                   n = t.indexOf(e.currentTarget);
-                (e.key === `ArrowDown` &&
-                  t[Math.min(t.length - 1, n + 1)]?.focus(),
+                (e.key === `ArrowDown` && t[Math.min(t.length - 1, n + 1)]?.focus(),
                   e.key === `ArrowUp` && t[Math.max(0, n - 1)]?.focus(),
                   e.key.startsWith(`Arrow`) && e.preventDefault());
               }}
@@ -1052,11 +953,7 @@ function SelectionCheckbox({
       onClick={onChange}
     >
       <svg viewBox={`0 0 16 16`} aria-hidden={`true`}>
-        {mixed ? (
-          <path d={`M4.5 8h7`} />
-        ) : (
-          <path d={`m4.25 8.25 2.5 2.5 5-5.5`} />
-        )}
+        {mixed ? <path d={`M4.5 8h7`} /> : <path d={`m4.25 8.25 2.5 2.5 5-5.5`} />}
       </svg>
     </button>
   );
@@ -1151,14 +1048,12 @@ var TableColumnIcon = (path: string | undefined) => (
   </svg>
 );
 var TextColumnIcon = () => TableColumnIcon(`M3 4h10M3 7h10M3 10h10M3 13h6`);
-var TagColumnIcon = () =>
-  TableColumnIcon(`M3 3h4v4H3zM9 3h4v4H9zM3 9h4v4H3zM9 9h4v4H9z`);
+var TagColumnIcon = () => TableColumnIcon(`M3 3h4v4H3zM9 3h4v4H9zM3 9h4v4H3zM9 9h4v4H9z`);
 var LinkColumnIcon = () =>
   TableColumnIcon(
     `M6.5 9.5l3-3M7.25 4.75l1-1a2.5 2.5 0 0 1 3.5 3.5l-1 1M8.75 11.25l-1 1a2.5 2.5 0 0 1-3.5-3.5l1-1`,
   );
-var DateColumnIcon = () =>
-  TableColumnIcon(`M3 4.5h10v9H3zM3 7.5h10M6 2.5v3M10 2.5v3`);
+var DateColumnIcon = () => TableColumnIcon(`M3 4.5h10v9H3zM3 7.5h10M6 2.5v3M10 2.5v3`);
 function useMorphHeight(contentRef: React.RefObject<HTMLElement | null>) {
   let wrapperRef = React.useRef<HTMLDivElement | null>(null);
   return (
@@ -1601,23 +1496,11 @@ var dataTableStyles = `
 `;
 var Iconl = () => (
   <svg viewBox={`0 0 38 57`} aria-hidden={`true`}>
-    <path
-      d={`M19 28.5a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0Z`}
-      fill={`#1ABCFE`}
-    />
-    <path
-      d={`M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 1 1-19 0Z`}
-      fill={`#0ACF83`}
-    />
+    <path d={`M19 28.5a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0Z`} fill={`#1ABCFE`} />
+    <path d={`M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 1 1-19 0Z`} fill={`#0ACF83`} />
     <path d={`M19 0v19h9.5a9.5 9.5 0 1 0 0-19H19Z`} fill={`#FF7262`} />
-    <path
-      d={`M0 9.5A9.5 9.5 0 0 0 9.5 19H19V0H9.5A9.5 9.5 0 0 0 0 9.5Z`}
-      fill={`#F24E1E`}
-    />
-    <path
-      d={`M0 28.5A9.5 9.5 0 0 0 9.5 38H19V19H9.5A9.5 9.5 0 0 0 0 28.5Z`}
-      fill={`#A259FF`}
-    />
+    <path d={`M0 9.5A9.5 9.5 0 0 0 9.5 19H19V0H9.5A9.5 9.5 0 0 0 0 9.5Z`} fill={`#F24E1E`} />
+    <path d={`M0 28.5A9.5 9.5 0 0 0 9.5 38H19V19H9.5A9.5 9.5 0 0 0 0 28.5Z`} fill={`#A259FF`} />
   </svg>
 );
 var Iconu = () => (
@@ -1656,14 +1539,7 @@ var Iconp = () => (
 );
 var Iconm = () => (
   <svg viewBox={`0 0 20 20`} aria-hidden={`true`}>
-    <rect
-      x={`2`}
-      y={`2`}
-      width={`16`}
-      height={`16`}
-      rx={`4.5`}
-      fill={`#2f6bff`}
-    />
+    <rect x={`2`} y={`2`} width={`16`} height={`16`} rx={`4.5`} fill={`#2f6bff`} />
     <path
       d={`M6 7.5h8M6 10h8M6 12.5h5`}
       stroke={`#fff`}

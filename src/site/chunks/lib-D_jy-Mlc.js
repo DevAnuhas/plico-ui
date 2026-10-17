@@ -1,7 +1,14 @@
-import {brand} from '../../lib/brand.js';
-function localText(value){return value.replaceAll('__PLICO_ORIGIN__',brand.url).replaceAll('__PLICO_REPO__',brand.repoUrl)}
+import { brand } from "../../lib/brand.js";
+function localText(value) {
+  return value
+    .replaceAll("__PLICO_ORIGIN__", brand.url)
+    .replaceAll("__PLICO_REPO__", brand.repoUrl);
+}
 import { n as e } from "./runtime-bridge.js";
-var t = `identifier keyword string class property entity jsxliterals sign comment break space`.split(` `),
+var t =
+    `identifier keyword string class property entity jsxliterals sign comment break space`.split(
+      ` `,
+    ),
   [n, r, i, a, o, s, c, l, u, d, f] = t.map((e, t) => t);
 new Map(t.map((e, t) => [e, t]));
 function p(e, n) {
@@ -15,28 +22,34 @@ function p(e, n) {
       value: e.map(([, e]) => e).join(``),
       tokens: e.map(([e, n]) => ({
         type: t[e],
-        value: n
+        value: n,
       })),
-      annotations: []
+      annotations: [],
     });
   }
   for (let e = 0; e < n.length; e++) {
     let t = n[e],
       [r, i] = t;
     if (r !== d) {
-      if (i.includes(`
-`)) {
+      if (
+        i.includes(`
+`)
+      ) {
         let e = i.split(`
 `);
-        for (let t = 0; t < e.length; t++) a.push([r, e[t]]), t < e.length - 1 && (s(a), a.length = 0);
+        for (let t = 0; t < e.length; t++)
+          (a.push([r, e[t]]), t < e.length - 1 && (s(a), (a.length = 0)));
       } else a.push(t);
       o = !1;
-    } else o ? s([]) : (s(a), a.length = 0), e === n.length - 1 && s([]), o = !0;
+    } else (o ? s([]) : (s(a), (a.length = 0)), e === n.length - 1 && s([]), (o = !0));
   }
-  return a.length && s(a), {
-    value: e,
-    lines: r
-  };
+  return (
+    a.length && s(a),
+    {
+      value: e,
+      lines: r,
+    }
+  );
 }
 function m(e, t) {
   let n = {
@@ -44,56 +57,59 @@ function m(e, t) {
     value: e.value,
     tokens: e.tokens,
     annotations: e.annotations,
-    className: `sh__line${e.annotations.map(e => ` sh__line--${e}`).join(``)}`,
+    className: `sh__line${e.annotations.map((e) => ` sh__line--${e}`).join(``)}`,
     style: {},
-    properties: {}
+    properties: {},
   };
-  return t?.(n), n;
+  return (t?.(n), n);
 }
-function h({
-  type: e,
-  value: t
-}, n, r) {
+function h({ type: e, value: t }, n, r) {
   let i = n?.[e],
     a = {
       type: e,
       value: t,
       className: `sh__token--${e}${i ? ` ${i}` : ``}`,
       style: {
-        color: `var(--sh-${e})`
+        color: `var(--sh-${e})`,
       },
-      properties: {}
+      properties: {},
     };
-  return r?.(a), a;
+  return (r?.(a), a);
 }
 function g(e, t) {
   let n = t?.cx,
     r = t?.mark,
     i = t?.markLine;
-  return !n && !r && !i ? e.lines.map(e => {
-    let t = `sh__line${e.annotations.map(e => ` sh__line--${e}`).join(``)}`,
-      n = e.tokens.map(({
-        type: e,
-        value: t
-      }) => `<span class="sh__token--${e}" style="color:var(--sh-${e})">${v(t)}</span>`).join(``);
-    return `<span class="${v(t)}">${n}</span>`;
-  }).join(`
-`) : e.lines.map(e => {
-    let t = m(e, i),
-      a = e.tokens.map(e => {
-        let t = h(e, n, r);
+  return !n && !r && !i
+    ? e.lines.map((e) => {
+        let t = `sh__line${e.annotations.map((e) => ` sh__line--${e}`).join(``)}`,
+          n = e.tokens
+            .map(
+              ({ type: e, value: t }) =>
+                `<span class="sh__token--${e}" style="color:var(--sh-${e})">${v(t)}</span>`,
+            )
+            .join(``);
+        return `<span class="${v(t)}">${n}</span>`;
+      }).join(`
+`)
+    : e.lines.map((e) => {
+        let t = m(e, i),
+          a = e.tokens
+            .map((e) => {
+              let t = h(e, n, r);
+              return `<span ${y({
+                ...t.properties,
+                className: t.className,
+                style: t.style,
+              })}>${v(t.value)}</span>`;
+            })
+            .join(``);
         return `<span ${y({
           ...t.properties,
           className: t.className,
-          style: t.style
-        })}>${v(t.value)}</span>`;
-      }).join(``);
-    return `<span ${y({
-      ...t.properties,
-      className: t.className,
-      style: t.style
-    })}>${a}</span>`;
-  }).join(`
+          style: t.style,
+        })}>${a}</span>`;
+      }).join(`
 `);
 }
 var _ = {
@@ -101,17 +117,25 @@ var _ = {
     "<": `&lt;`,
     ">": `&gt;`,
     '"': `&quot;`,
-    "'": `&#039;`
+    "'": `&#039;`,
   },
-  v = e => e.replace(/[&<>"']/g, e => _[e]);
+  v = (e) => e.replace(/[&<>"']/g, (e) => _[e]);
 function y(e) {
-  let t = Object.entries(e.style || {}).map(([e, t]) => `${e.replace(/[A-Z]/g, e => `-${e.toLowerCase()}`)}:${t}`).join(`;`),
-    n = Object.entries(e).filter(([e, t]) => /^[\w:-]+$/.test(e) && e !== `className` && e !== `style` && t !== !1 && t != null).map(([e, t]) => t === !0 ? e : `${e}="${v(String(t))}"`).join(` `);
+  let t = Object.entries(e.style || {})
+      .map(([e, t]) => `${e.replace(/[A-Z]/g, (e) => `-${e.toLowerCase()}`)}:${t}`)
+      .join(`;`),
+    n = Object.entries(e)
+      .filter(
+        ([e, t]) =>
+          /^[\w:-]+$/.test(e) && e !== `className` && e !== `style` && t !== !1 && t != null,
+      )
+      .map(([e, t]) => (t === !0 ? e : `${e}="${v(String(t))}"`))
+      .join(` `);
   return `class="${v(e.className || ``)}"${t ? ` style="${v(t)}"` : ``}${n ? ` ${n}` : ``}`;
 }
 var ee = new Set(`+-*/%=!&|^~?:.,;()[]{}<>#@\\`.split(``)),
   b = () => 0,
-  x = e => e === `_` || e === `$` || /[\p{L}\p{N}]/u.test(e);
+  x = (e) => e === `_` || e === `$` || /[\p{L}\p{N}]/u.test(e);
 function S(e, t) {
   for (; t < e.length && /\s/.test(e[t]);) t++;
   return e[t] === `:`;
@@ -122,7 +146,7 @@ function C(e, t) {
     c = t?.typeKeywords || new Set(),
     p = t?.onCommentStart || b,
     m = t?.onCommentEnd || b,
-    h = t?.caseInsensitive ? e => e.toLowerCase() : e => e,
+    h = t?.caseInsensitive ? (e) => e.toLowerCase() : (e) => e,
     g = [],
     _ = ``;
   function v(e, t) {
@@ -146,21 +170,22 @@ function C(e, t) {
     }
     let w = t?.onLiteral?.(y, g, e);
     if (w) {
-      v(i, e.slice(g, g + w)), g += w;
+      (v(i, e.slice(g, g + w)), (g += w));
       continue;
     }
     if (typeof t?.onQuote == `function` && y === `'`) {
       let r = t.onQuote(y, g, e);
       if (typeof r == `number` && r >= 1) {
-        v(n, e.slice(g, g + r)), g += r;
+        (v(n, e.slice(g, g + r)), (g += r));
         continue;
       }
     }
-    if (y === `"` || y === `'` || t?.templateStrings && y === "`") {
+    if (y === `"` || y === `'` || (t?.templateStrings && y === "`")) {
       let n = y,
         r = g++;
       for (; g < e.length;) {
-        if (e[g] === `\\`) g++;else if (e[g] === n) {
+        if (e[g] === `\\`) g++;
+        else if (e[g] === n) {
           g++;
           break;
         }
@@ -170,9 +195,12 @@ function C(e, t) {
       v(t?.quotedKeys && S(e, g) ? o : i, a);
       continue;
     }
-    if (y === `
-`) {
-      v(d, y), g++;
+    if (
+      y ===
+      `
+`
+    ) {
+      (v(d, y), g++);
       continue;
     }
     if (/[^\S\r\n]/.test(y)) {
@@ -184,17 +212,29 @@ function C(e, t) {
     if (x(y)) {
       let t = g++;
       for (; g < e.length && x(e[g]);) g++;
-      if (/^\d/.test(y) && e[g] === `.` && /\d/.test(e[g + 1] || ``)) for (g++; g < e.length && x(e[g]);) g++;
+      if (/^\d/.test(y) && e[g] === `.` && /\d/.test(e[g + 1] || ``))
+        for (g++; g < e.length && x(e[g]);) g++;
       let i = e.slice(t, g),
         l = h(i);
-      v(c.has(l) ? a : s.has(l) ? r : _ === `.` ? o : /^\d/.test(i) || i === `null` || /^\p{Lu}/u.test(i) ? a : n, i);
+      v(
+        c.has(l)
+          ? a
+          : s.has(l)
+            ? r
+            : _ === `.`
+              ? o
+              : /^\d/.test(i) || i === `null` || /^\p{Lu}/u.test(i)
+                ? a
+                : n,
+        i,
+      );
       continue;
     }
     if (ee.has(y)) {
-      v(l, y), g++;
+      (v(l, y), g++);
       continue;
     }
-    v(i, y), g++;
+    (v(i, y), g++);
   }
   return g;
 }
@@ -207,49 +247,132 @@ var T = (e, t) => {
     let n = e + t;
     return n === `//` ? 1 : n === `/*` ? 2 : 0;
   },
-  E = (e, t) => t === `
-` ? 1 : e + t === `*/` ? 2 : 0,
+  E = (e, t) =>
+    t ===
+    `
+`
+      ? 1
+      : e + t === `*/`
+        ? 2
+        : 0,
   te = e({
     keywords: () => O,
     onCommentEnd: () => E,
     onCommentStart: () => T,
-    typeKeywords: () => D
+    typeKeywords: () => D,
   }),
-  D = new Set([`void`, `char`, `short`, `int`, `long`, `float`, `double`, `signed`, `unsigned`, `_Bool`, `_Complex`, `_Imaginary`]),
-  O = new Set(`auto.break.case.const.continue.default.do.else.enum.extern.for.goto.if.inline.register.restrict.return.sizeof.static.struct.switch.typedef.union.volatile.while._Alignas._Alignof._Atomic._Generic._Noreturn._Static_assert._Thread_local`.split(`.`)),
+  D = new Set([
+    `void`,
+    `char`,
+    `short`,
+    `int`,
+    `long`,
+    `float`,
+    `double`,
+    `signed`,
+    `unsigned`,
+    `_Bool`,
+    `_Complex`,
+    `_Imaginary`,
+  ]),
+  O = new Set(
+    `auto.break.case.const.continue.default.do.else.enum.extern.for.goto.if.inline.register.restrict.return.sizeof.static.struct.switch.typedef.union.volatile.while._Alignas._Alignof._Atomic._Generic._Noreturn._Static_assert._Thread_local`.split(
+      `.`,
+    ),
+  ),
   k = e({
     keywords: () => A,
     onCommentEnd: () => E,
     onCommentStart: () => T,
-    typeKeywords: () => j
+    typeKeywords: () => j,
   }),
-  A = new Set(`alignas.alignof.and.and_eq.asm.auto.bitand.bitor.break.case.catch.class.compl.concept.const.consteval.constexpr.constinit.const_cast.continue.co_await.co_return.co_yield.decltype.default.delete.do.dynamic_cast.else.enum.explicit.export.extern.false.for.friend.goto.if.inline.mutable.namespace.new.noexcept.not.not_eq.nullptr.operator.or.or_eq.private.protected.public.register.reinterpret_cast.requires.return.sizeof.static.static_assert.static_cast.struct.switch.template.this.thread_local.throw.true.try.typedef.typeid.typename.union.using.virtual.volatile.while.xor.xor_eq`.split(`.`)),
-  j = new Set([`bool`, `char`, `char8_t`, `char16_t`, `char32_t`, `double`, `float`, `int`, `long`, `short`, `signed`, `unsigned`, `void`, `wchar_t`]),
+  A = new Set(
+    `alignas.alignof.and.and_eq.asm.auto.bitand.bitor.break.case.catch.class.compl.concept.const.consteval.constexpr.constinit.const_cast.continue.co_await.co_return.co_yield.decltype.default.delete.do.dynamic_cast.else.enum.explicit.export.extern.false.for.friend.goto.if.inline.mutable.namespace.new.noexcept.not.not_eq.nullptr.operator.or.or_eq.private.protected.public.register.reinterpret_cast.requires.return.sizeof.static.static_assert.static_cast.struct.switch.template.this.thread_local.throw.true.try.typedef.typeid.typename.union.using.virtual.volatile.while.xor.xor_eq`.split(
+      `.`,
+    ),
+  ),
+  j = new Set([
+    `bool`,
+    `char`,
+    `char8_t`,
+    `char16_t`,
+    `char32_t`,
+    `double`,
+    `float`,
+    `int`,
+    `long`,
+    `short`,
+    `signed`,
+    `unsigned`,
+    `void`,
+    `wchar_t`,
+  ]),
   M = e({
     keywords: () => N,
     onCommentEnd: () => E,
     onCommentStart: () => T,
-    typeKeywords: () => P
+    typeKeywords: () => P,
   }),
-  N = new Set(`abstract.as.async.await.base.break.case.catch.checked.class.const.continue.default.delegate.do.else.enum.event.explicit.extern.false.finally.fixed.for.foreach.from.get.global.goto.if.implicit.in.init.interface.internal.into.is.join.let.lock.namespace.new.null.on.operator.orderby.out.override.params.partial.private.protected.public.readonly.record.ref.remove.required.return.sealed.select.set.sizeof.stackalloc.static.struct.switch.this.throw.true.try.typeof.unchecked.unsafe.using.value.virtual.volatile.when.where.while.with.yield`.split(`.`)),
-  P = new Set([`bool`, `byte`, `char`, `decimal`, `double`, `dynamic`, `float`, `int`, `long`, `nint`, `nuint`, `object`, `sbyte`, `short`, `string`, `uint`, `ulong`, `ushort`, `void`]),
+  N = new Set(
+    `abstract.as.async.await.base.break.case.catch.checked.class.const.continue.default.delegate.do.else.enum.event.explicit.extern.false.finally.fixed.for.foreach.from.get.global.goto.if.implicit.in.init.interface.internal.into.is.join.let.lock.namespace.new.null.on.operator.orderby.out.override.params.partial.private.protected.public.readonly.record.ref.remove.required.return.sealed.select.set.sizeof.stackalloc.static.struct.switch.this.throw.true.try.typeof.unchecked.unsafe.using.value.virtual.volatile.when.where.while.with.yield`.split(
+      `.`,
+    ),
+  ),
+  P = new Set([
+    `bool`,
+    `byte`,
+    `char`,
+    `decimal`,
+    `double`,
+    `dynamic`,
+    `float`,
+    `int`,
+    `long`,
+    `nint`,
+    `nuint`,
+    `object`,
+    `sbyte`,
+    `short`,
+    `string`,
+    `uint`,
+    `ulong`,
+    `ushort`,
+    `void`,
+  ]),
   F = e({
     keywords: () => I,
     onCommentEnd: () => R,
     onCommentStart: () => L,
     onLiteral: () => z,
-    tokenize: () => K
+    tokenize: () => K,
   }),
-  I = new Set([`@media`, `@import`, `@keyframes`, `@font-face`, `@supports`, `@page`, `@counter-style`, `@font-feature-values`, `@viewport`, `@counter-style`, `@font-feature-values`, `@document`]),
+  I = new Set([
+    `@media`,
+    `@import`,
+    `@keyframes`,
+    `@font-face`,
+    `@supports`,
+    `@page`,
+    `@counter-style`,
+    `@font-feature-values`,
+    `@viewport`,
+    `@counter-style`,
+    `@font-feature-values`,
+    `@document`,
+  ]),
   L = (e, t) => +(e + t === `/*`),
   R = (e, t) => +(e + t === `*/`),
-  z = (e, t, n) => e === `#` && n.slice(t).match(/^#(?:[\da-f]{8}|[\da-f]{6}|[\da-f]{4}|[\da-f]{3})(?![\w-])/i)?.[0].length || 0,
-  B = e => e === f || e === d || e === u,
-  V = ([e, t]) => e === n || e === a || e === l && t === `-`,
+  z = (e, t, n) =>
+    (e === `#` &&
+      n.slice(t).match(/^#(?:[\da-f]{8}|[\da-f]{6}|[\da-f]{4}|[\da-f]{3})(?![\w-])/i)?.[0]
+        .length) ||
+    0,
+  B = (e) => e === f || e === d || e === u,
+  V = ([e, t]) => e === n || e === a || (e === l && t === `-`),
   H = ([e]) => e === n || e === a || e === o,
-  U = e => H(e) && !/^\d/.test(e[1]),
+  U = (e) => H(e) && !/^\d/.test(e[1]),
   W = ([e, t]) => e === l && t === `-`,
-  G = e => {
+  G = (e) => {
     for (let t = 0; t < e.length; t++) {
       let n = t,
         r = t;
@@ -257,7 +380,8 @@ var T = (e, t) => {
         for (; e[r] && W(e[r]);) r++;
         if (!e[r] || !U(e[r])) continue;
         n = r++;
-      } else if (U(e[r])) r++;else continue;
+      } else if (U(e[r])) r++;
+      else continue;
       let i = n > t;
       for (; e[r] && W(e[r]);) {
         let t = r;
@@ -266,10 +390,13 @@ var T = (e, t) => {
           r = t;
           break;
         }
-        i = !0, r++;
+        ((i = !0), r++);
       }
       if (!i) continue;
-      let a = e.slice(t, r).map(([, e]) => e).join(``);
+      let a = e
+        .slice(t, r)
+        .map(([, e]) => e)
+        .join(``);
       e.splice(t, r - t, [e[n][0], a]);
     }
   },
@@ -279,7 +406,12 @@ var T = (e, t) => {
     for (let i = t; i < e.length; i++) {
       let [t, a] = e[i];
       if (t === l) {
-        if (a === `(`) n++;else if (a === `)`) n--;else if (a === `[`) r++;else if (a === `]`) r--;else if (!n && !r && a === `{`) return !0;else if (!n && !r && (a === `;` || a === `}`)) return !1;
+        if (a === `(`) n++;
+        else if (a === `)`) n--;
+        else if (a === `[`) r++;
+        else if (a === `]`) r--;
+        else if (!n && !r && a === `{`) return !0;
+        else if (!n && !r && (a === `;` || a === `}`)) return !1;
       }
     }
     return !1;
@@ -287,7 +419,7 @@ var T = (e, t) => {
   K = (e, t) => {
     let n = C(e, {
       ...t,
-      tokenize: void 0
+      tokenize: void 0,
     });
     G(n);
     let r = 0,
@@ -295,11 +427,11 @@ var T = (e, t) => {
     for (let e = 0; e < n.length; e++) {
       let [t, a] = n[e];
       if (t === l && a === `{`) {
-        r++, i = !0;
+        (r++, (i = !0));
         continue;
       }
       if (t === l && a === `}`) {
-        r--, i = !1;
+        (r--, (i = !1));
         continue;
       }
       if (t === l && a === `;`) {
@@ -313,7 +445,10 @@ var T = (e, t) => {
       let u = c;
       for (; u < n.length && B(n[u][0]);) u++;
       if (c > s && n[u]?.[0] === l && n[u][1] === `:` && !ne(n, u + 1)) {
-        let e = n.slice(s, c).map(([, e]) => e).join(``);
+        let e = n
+          .slice(s, c)
+          .map(([, e]) => e)
+          .join(``);
         n.splice(s, c - s, [o, e]);
       }
       i = !1;
@@ -322,73 +457,242 @@ var T = (e, t) => {
   },
   re = e({
     annotateLine: () => ae,
-    keywords: () => ie
+    keywords: () => ie,
   }),
   ie = new Set([]),
-  ae = e => {
+  ae = (e) => {
     let t = ``;
-    if (e.value.startsWith(`+`) && !e.value.startsWith(`+++`)) t = `diff-add`;else if (e.value.startsWith(`-`) && !e.value.startsWith(`---`)) t = `diff-remove`;else if (e.value.startsWith(`@@`)) t = `diff-hunk`;else if (/^(diff --git|index |--- |\+\+\+ )/.test(e.value)) {
+    if (e.value.startsWith(`+`) && !e.value.startsWith(`+++`)) t = `diff-add`;
+    else if (e.value.startsWith(`-`) && !e.value.startsWith(`---`)) t = `diff-remove`;
+    else if (e.value.startsWith(`@@`)) t = `diff-hunk`;
+    else if (/^(diff --git|index |--- |\+\+\+ )/.test(e.value)) {
       t = `diff-meta`;
       for (let t of e.tokens) t.type === `property` && (t.type = `identifier`);
     }
     t && e.annotations.push(t);
   },
-  q = e => +(e === `#`),
-  J = (e, t) => +(t === `
-`),
+  q = (e) => +(e === `#`),
+  J = (e, t) =>
+    +(
+      t ===
+      `
+`
+    ),
   oe = e({
     caseInsensitive: () => !0,
     keywords: () => se,
     onCommentEnd: () => J,
-    onCommentStart: () => q
+    onCommentStart: () => q,
   }),
-  se = new Set([`add`, `arg`, `cmd`, `copy`, `entrypoint`, `env`, `expose`, `from`, `healthcheck`, `label`, `maintainer`, `onbuild`, `run`, `shell`, `stopsignal`, `user`, `volume`, `workdir`]),
+  se = new Set([
+    `add`,
+    `arg`,
+    `cmd`,
+    `copy`,
+    `entrypoint`,
+    `env`,
+    `expose`,
+    `from`,
+    `healthcheck`,
+    `label`,
+    `maintainer`,
+    `onbuild`,
+    `run`,
+    `shell`,
+    `stopsignal`,
+    `user`,
+    `volume`,
+    `workdir`,
+  ]),
   ce = e({
     keywords: () => ue,
     onCommentEnd: () => E,
     onCommentStart: () => T,
-    typeKeywords: () => le
+    typeKeywords: () => le,
   }),
-  le = new Set([`bool`, `byte`, `complex64`, `complex128`, `error`, `float32`, `float64`, `int`, `int8`, `int16`, `int32`, `int64`, `rune`, `string`, `uint`, `uint8`, `uint16`, `uint32`, `uint64`, `uintptr`]),
-  ue = new Set([`break`, `case`, `chan`, `const`, `continue`, `default`, `defer`, `else`, `fallthrough`, `for`, `func`, `go`, `goto`, `if`, `import`, `interface`, `map`, `package`, `range`, `return`, `select`, `struct`, `switch`, `type`, `var`]),
+  le = new Set([
+    `bool`,
+    `byte`,
+    `complex64`,
+    `complex128`,
+    `error`,
+    `float32`,
+    `float64`,
+    `int`,
+    `int8`,
+    `int16`,
+    `int32`,
+    `int64`,
+    `rune`,
+    `string`,
+    `uint`,
+    `uint8`,
+    `uint16`,
+    `uint32`,
+    `uint64`,
+    `uintptr`,
+  ]),
+  ue = new Set([
+    `break`,
+    `case`,
+    `chan`,
+    `const`,
+    `continue`,
+    `default`,
+    `defer`,
+    `else`,
+    `fallthrough`,
+    `for`,
+    `func`,
+    `go`,
+    `goto`,
+    `if`,
+    `import`,
+    `interface`,
+    `map`,
+    `package`,
+    `range`,
+    `return`,
+    `select`,
+    `struct`,
+    `switch`,
+    `type`,
+    `var`,
+  ]),
   de = e({
     keywords: () => fe,
     onCommentEnd: () => J,
     onCommentStart: () => q,
-    typeKeywords: () => pe
+    typeKeywords: () => pe,
   }),
-  fe = new Set([`directive`, `enum`, `extend`, `fragment`, `implements`, `input`, `interface`, `mutation`, `on`, `query`, `repeatable`, `scalar`, `schema`, `subscription`, `type`, `union`]),
+  fe = new Set([
+    `directive`,
+    `enum`,
+    `extend`,
+    `fragment`,
+    `implements`,
+    `input`,
+    `interface`,
+    `mutation`,
+    `on`,
+    `query`,
+    `repeatable`,
+    `scalar`,
+    `schema`,
+    `subscription`,
+    `type`,
+    `union`,
+  ]),
   pe = new Set([`Boolean`, `Float`, `ID`, `Int`, `String`]),
   me = e({
     keywords: () => he,
     onCommentEnd: () => _e,
-    onCommentStart: () => ge
+    onCommentStart: () => ge,
   }),
   he = new Set([`false`, `for`, `if`, `in`, `null`, `true`]),
-  ge = (e, t) => e === `#` || e + t === `//` ? 1 : e + t === `/*` ? 2 : 0,
-  _e = (e, t) => t === `
-` ? 1 : e + t === `*/` ? 2 : 0,
+  ge = (e, t) => (e === `#` || e + t === `//` ? 1 : e + t === `/*` ? 2 : 0),
+  _e = (e, t) =>
+    t ===
+    `
+`
+      ? 1
+      : e + t === `*/`
+        ? 2
+        : 0,
   Y = new Set([`<`, `>`, `{`, `}`, `[`, `]`]),
-  ve = new Set(`for.do.while.if.else.return.function.var.let.const.true.false.undefined.this.new.delete.typeof.in.instanceof.void.break.continue.switch.case.default.throw.try.catch.finally.debugger.with.yield.async.await.class.extends.super.import.export.from.static`.split(`.`)),
-  ye = new Set([...ve, `type`, `interface`, `enum`, `implements`, `readonly`, `abstract`, `declare`, `namespace`, `module`, `private`, `protected`, `public`, `override`, `keyof`, `infer`, `is`, `asserts`, `satisfies`, `as`, `unknown`, `never`, `any`, `number`, `string`, `boolean`, `bigint`, `symbol`, `object`]),
-  be = new Set([`+`, `-`, `*`, `/`, `%`, `=`, `!`, `&`, `|`, `^`, `~`, `!`, `?`, `:`, `.`, `,`, `;`, `'`, `"`, `.`, `(`, `)`, `[`, `]`, `#`, `@`, `\\`, ...Y]),
+  ve = new Set(
+    `for.do.while.if.else.return.function.var.let.const.true.false.undefined.this.new.delete.typeof.in.instanceof.void.break.continue.switch.case.default.throw.try.catch.finally.debugger.with.yield.async.await.class.extends.super.import.export.from.static`.split(
+      `.`,
+    ),
+  ),
+  ye = new Set([
+    ...ve,
+    `type`,
+    `interface`,
+    `enum`,
+    `implements`,
+    `readonly`,
+    `abstract`,
+    `declare`,
+    `namespace`,
+    `module`,
+    `private`,
+    `protected`,
+    `public`,
+    `override`,
+    `keyof`,
+    `infer`,
+    `is`,
+    `asserts`,
+    `satisfies`,
+    `as`,
+    `unknown`,
+    `never`,
+    `any`,
+    `number`,
+    `string`,
+    `boolean`,
+    `bigint`,
+    `symbol`,
+    `object`,
+  ]),
+  be = new Set([
+    `+`,
+    `-`,
+    `*`,
+    `/`,
+    `%`,
+    `=`,
+    `!`,
+    `&`,
+    `|`,
+    `^`,
+    `~`,
+    `!`,
+    `?`,
+    `:`,
+    `.`,
+    `,`,
+    `;`,
+    `'`,
+    `"`,
+    `.`,
+    `(`,
+    `)`,
+    `[`,
+    `]`,
+    `#`,
+    `@`,
+    `\\`,
+    ...Y,
+  ]),
   xe = {
     keywords: ve,
     onCommentStart: Me,
     onCommentEnd: Ne,
     jsx: !0,
     regex: !0,
-    templateStrings: !0
+    templateStrings: !0,
   };
 function Se(e) {
   return {
     ...xe,
-    ...e
+    ...e,
   };
 }
 function Ce(e) {
   let t = 0;
-  return /\binterface\s+[A-Za-z_$][\w$]*/.test(e) && (t += 2), /\btype\s+[A-Za-z_$][\w$]*\s*=/.test(e) && (t += 2), /\benum\s+[A-Za-z_$][\w$]*/.test(e) && (t += 2), /\b(?:implements|readonly|declare|namespace|satisfies|infer|keyof|asserts)\b/.test(e) && (t += 2), /:\s*[A-Za-z_$][\w$]*(?:<[^>\n]+>)?(?:\[\])?(?=\s*[,)=;{])/m.test(e) && (t += 1), /\b(?:const|let|var)\s+[A-Za-z_$][\w$]*\s*:\s*/.test(e) && (t += 1), /\)\s*:\s*[A-Za-z_$][\w$]*(?:<[^>\n]+>)?(?:\[\])?\s*(?:=>|\{)/.test(e) && (t += 1), t >= 2;
+  return (
+    /\binterface\s+[A-Za-z_$][\w$]*/.test(e) && (t += 2),
+    /\btype\s+[A-Za-z_$][\w$]*\s*=/.test(e) && (t += 2),
+    /\benum\s+[A-Za-z_$][\w$]*/.test(e) && (t += 2),
+    /\b(?:implements|readonly|declare|namespace|satisfies|infer|keyof|asserts)\b/.test(e) &&
+      (t += 2),
+    /:\s*[A-Za-z_$][\w$]*(?:<[^>\n]+>)?(?:\[\])?(?=\s*[,)=;{])/m.test(e) && (t += 1),
+    /\b(?:const|let|var)\s+[A-Za-z_$][\w$]*\s*:\s*/.test(e) && (t += 1),
+    /\)\s*:\s*[A-Za-z_$][\w$]*(?:<[^>\n]+>)?(?:\[\])?\s*(?:=>|\{)/.test(e) && (t += 1),
+    t >= 2
+  );
 }
 function we(e, t) {
   if (e[t] !== `<`) return !1;
@@ -401,7 +705,7 @@ function we(e, t) {
       continue;
     }
     if (t === `>`) {
-      if (n--, n === 0) {
+      if ((n--, n === 0)) {
         let t = i + 1;
         for (; t < e.length && /\s/.test(e[t]);) t++;
         if (!(r && e[t] === `(`)) return !1;
@@ -452,8 +756,13 @@ function Me(e, t) {
   return n === `/*` ? 2 : +(n === `//`);
 }
 function Ne(e, t) {
-  return e + t === `*/` ? 2 : +(t === `
-`);
+  return e + t === `*/`
+    ? 2
+    : +(
+        t ===
+        `
+`
+      );
 }
 function Pe(e) {
   return e[0] === `/` && !Me(e[0], e[1]);
@@ -468,16 +777,13 @@ function Ie(e, t) {
     m = p.keywords !== xe.keywords,
     h = typeof p.typescript == `boolean` ? p.typescript : Ce(e),
     g = m ? p.keywords : h ? ye : ve,
-    {
-      onCommentStart: _,
-      onCommentEnd: v
-    } = p,
+    { onCommentStart: _, onCommentEnd: v } = p,
     y = p.typeKeywords instanceof Set ? p.typeKeywords : null,
     ee = p.jsx !== !1,
     b = p.regex !== !1,
     x = p.templateStrings !== !1,
-    S = p.caseInsensitive ? e => e.toLowerCase() : e => e,
-    C = e => x && Ae(e),
+    S = p.caseInsensitive ? (e) => e.toLowerCase() : (e) => e,
+    C = (e) => x && Ae(e),
     w = ``,
     T = -1,
     E = [-1, ``],
@@ -502,7 +808,9 @@ function Ie(e, t) {
     W = () => B > 0 && B === z,
     G = () => V() || U();
   function ne(e) {
-    let t = e === `
+    let t =
+      e ===
+      `
 `;
     if (P()) {
       if (V()) return i;
@@ -528,10 +836,12 @@ function Ie(e, t) {
     return i;
   }
   let K = (e, t) => {
-    if (t && (w = t), w) {
+    if ((t && (w = t), w)) {
       T = typeof e == `number` ? e : ne(w);
       let t = [T, w];
-      T !== f && T !== d && (te = E, E = t), P() && T === l && (w === `{` && j++, w === `}` && j--), D.push(t);
+      (T !== f && T !== d && ((te = E), (E = t)),
+        P() && T === l && (w === `{` && j++, w === `}` && j--),
+        D.push(t));
     }
     w = ``;
   };
@@ -546,54 +856,64 @@ function Ie(e, t) {
       if (typeof i == `number` && i >= 1 && !Number.isNaN(i)) {
         let r = Math.min(i, e.length - t),
           a = t + r;
-        K(), w = e.slice(t, a), K(n), t = a - 1;
+        (K(), (w = e.slice(t, a)), K(n), (t = a - 1));
         continue;
       }
     }
     if (je(r) && !F() && !U()) {
       K();
       let n = !1;
-      if (I && r === I ? (I = null, n = !0) : I || (I = r, L = D.length), K(i, r), p.quotedKeys && n && Fe(e, t)) for (let e = L; e < D.length; e++) D[e][0] = o;
+      if (
+        (I && r === I ? ((I = null), (n = !0)) : I || ((I = r), (L = D.length)),
+        K(i, r),
+        p.quotedKeys && n && Fe(e, t))
+      )
+        for (let e = L; e < D.length; e++) D[e][0] = o;
       continue;
     }
     if (C(r)) {
-      K(), B += U() ? -1 : 1, K(i, r);
+      (K(), (B += U() ? -1 : 1), K(i, r));
       continue;
     }
     if (U() && f === "${") {
-      z++, K(i), K(l, f), t++;
+      (z++, K(i), K(l, f), t++);
       continue;
     }
     if (W() && r === `}`) {
-      K(), z--, K(l, r);
+      (K(), z--, K(l, r));
       continue;
     }
     if (N() && r === `{`) {
-      K(), K(l, r), A = 1;
+      (K(), K(l, r), (A = 1));
       continue;
     }
     if (O) {
       if (!k && r === `<`) {
-        K(), c === `/` ? (k = 2, w = f, t++) : (k = 1, w = r), K(l);
+        (K(), c === `/` ? ((k = 2), (w = f), t++) : ((k = 1), (w = r)), K(l));
         continue;
       }
       if (k) {
         if (r === `>` && !`/=`.includes(s)) {
-          K(), k === 1 ? (k = 0, M++) : (k = 0, O = !1), K(l, r);
+          (K(), k === 1 ? ((k = 0), M++) : ((k = 0), (O = !1)), K(l, r));
           continue;
         }
         if (f === `/>` || f === `</`) {
-          w !== `<` && w !== `/` && K(), f === `/>` ? k = 0 : M--, M || (O = !1), w = f, t++, K(l);
+          (w !== `<` && w !== `/` && K(),
+            f === `/>` ? (k = 0) : M--,
+            M || (O = !1),
+            (w = f),
+            t++,
+            K(l));
           continue;
         }
         if (r === `<`) {
-          K(), w = r, K(l);
+          (K(), (w = r), K(l));
           continue;
         }
         if (r === `-` && w && !G() && !F()) {
           let n = t + 1;
           for (; n < e.length && /[$\w-]/.test(e[n]);) n++;
-          K(o, w + e.slice(t, n)), t = n - 1;
+          (K(o, w + e.slice(t, n)), (t = n - 1));
           continue;
         }
         if (c === `=` && !G() && !X(r)) {
@@ -606,7 +926,7 @@ function Ie(e, t) {
         }
       }
     }
-    if (ee && !k && (r === `<` && ke(c) || f === `</`)) {
+    if (ee && !k && ((r === `<` && ke(c)) || f === `</`)) {
       let i = t - 1;
       for (; i >= 0 && /\s/.test(e[i]);) i--;
       let o = i >= 0 ? e[i] : ``,
@@ -615,61 +935,93 @@ function Ie(e, t) {
         f = !1;
       if (w && !X(w)) {
         let e = w;
-        De(e) || e === `true` || e === `false` ? d = !0 : g.has(e) && Z(e) ? f = !0 : Z(e) && (d = !0);
+        De(e) || e === `true` || e === `false`
+          ? (d = !0)
+          : g.has(e) && Z(e)
+            ? (f = !0)
+            : Z(e) && (d = !0);
       }
-      let p = r === `<` && /[$\w\]\)]/.test(o) && (d || !f && (s === n || s === a || s === l && (u === `)` || u === `]`))),
+      let p =
+          r === `<` &&
+          /[$\w\]\)]/.test(o) &&
+          (d || (!f && (s === n || s === a || (s === l && (u === `)` || u === `]`))))),
         m = r === `<` && we(e, t);
-      !p && !m && (k = c === `/` ? 2 : 1), r === `<` && (c === `/` || Oe(c)) && !p && !m && !G() && !F() && !H() && (O = !0);
+      (!p && !m && (k = c === `/` ? 2 : 1),
+        r === `<` && (c === `/` || Oe(c)) && !p && !m && !G() && !F() && !H() && (O = !0));
     }
     let m = je(r) || C(r),
       h = U(),
       y = b && !O && Pe(f),
       x = F();
-    if (m || h || je(I)) w += r, r === `\\` && (w += e[++t] || ``);else if (y) {
+    if (m || h || je(I)) ((w += r), r === `\\` && (w += e[++t] || ``));
+    else if (y) {
       K();
       let [n, a] = E;
-      if (y && n !== -1 && !(n === l && a !== `)` || n === u)) {
-        w = r, K();
+      if (y && n !== -1 && !((n === l && a !== `)`) || n === u)) {
+        ((w = r), K());
         continue;
       }
       R = !0;
       let o = t++,
         s = !1,
         c = !1;
-      for (; t < e.length && e[t] !== `
-`; t++) {
+      for (
+        ;
+        t < e.length &&
+        e[t] !==
+          `
+`;
+        t++
+      ) {
         let n = e[t];
         if (n === `\\`) {
-          if (e[t + 1] === `
-`) break;
+          if (
+            e[t + 1] ===
+            `
+`
+          )
+            break;
           t++;
           continue;
         }
-        if (n === `[` && (c = !0), n === `]` && (c = !1), n === `/` && !c) {
+        if ((n === `[` && (c = !0), n === `]` && (c = !1), n === `/` && !c)) {
           for (s = !0; /^[a-z]$/.test(e[t + 1]);) t++;
           break;
         }
       }
-      R = !1, o !== t && s ? (w = e.slice(o, t + 1), K(i)) : (w = r, K(), t = o);
+      ((R = !1), o !== t && s ? ((w = e.slice(o, t + 1)), K(i)) : ((w = r), K(), (t = o)));
     } else if (_(r, c, t, e)) {
       K();
       let n = t,
         i = _(r, c, t, e);
       if (i) for (; t < e.length && v(e[t - 1], e[t], t, e) != i; t++);
-      w = e.slice(n, t + 1), K(u);
-    } else if (r === ` ` || r === `
-`) {
+      ((w = e.slice(n, t + 1)), K(u));
+    } else if (
+      r === ` ` ||
+      r ===
+        `
+`
+    ) {
       if (r === ` ` && (X(w) || !w || x)) {
         let n = t + 1;
         for (; e[n] === ` `;) n++;
-        w += e.slice(t, n), t = n - 1, e[n] === `<` && K();
-      } else K(), w = r, K();
-    } else A && r === `}` ? (K(), w = r, K(), A--) : x && !Y.has(r) || U() || (Ee(r) === Ee(w[w.length - 1]) || N()) && !be.has(r) ? w += r : (d === `</` && (w = d), K(), d !== `</` && (w = r), f === `</` || f === `/>` ? (w = f, K(), t++) : Y.has(r) && K()), A && r === `{` && A++;
+        ((w += e.slice(t, n)), (t = n - 1), e[n] === `<` && K());
+      } else (K(), (w = r), K());
+    } else
+      (A && r === `}`
+        ? (K(), (w = r), K(), A--)
+        : (x && !Y.has(r)) || U() || ((Ee(r) === Ee(w[w.length - 1]) || N()) && !be.has(r))
+          ? (w += r)
+          : (d === `</` && (w = d),
+            K(),
+            d !== `</` && (w = r),
+            f === `</` || f === `/>` ? ((w = f), K(), t++) : Y.has(r) && K()),
+        A && r === `{` && A++);
   }
-  return K(), D;
+  return (K(), D);
 }
 var Le = e({
-    tokenize: () => Re
+    tokenize: () => Re,
   }),
   Re = Ie,
   ze = {
@@ -677,17 +1029,19 @@ var Le = e({
     jsx: !0,
     regex: !1,
     templateStrings: !1,
-    onCommentStart: (e, t, n, r) => r.startsWith(`<!--`, n) ? 2 : 0,
-    onCommentEnd: (e, t, n, r) => r.slice(n - 2, n + 1) === `-->` ? 2 : 0
+    onCommentStart: (e, t, n, r) => (r.startsWith(`<!--`, n) ? 2 : 0),
+    onCommentEnd: (e, t, n, r) => (r.slice(n - 2, n + 1) === `-->` ? 2 : 0),
   },
-  Q = e => Re(e, ze),
+  Q = (e) => Re(e, ze),
   Be = /^<\s*(script|style)\b/i,
-  Ve = e => RegExp(`</\\s*${e}\\s*>`, `ig`);
+  Ve = (e) => RegExp(`</\\s*${e}\\s*>`, `ig`);
 function He(e, t) {
   let n = ``;
   for (let r = t; r < e.length; r++) {
     let t = e[r];
-    if (n) t === n && (n = ``);else if (t === `"` || t === `'`) n = t;else if (t === `>`) return r + 1;
+    if (n) t === n && (n = ``);
+    else if (t === `"` || t === `'`) n = t;
+    else if (t === `>`) return r + 1;
   }
   return -1;
 }
@@ -719,13 +1073,14 @@ function Ue(e) {
       n = r;
       continue;
     }
-    t.push({
+    (t.push({
       start: n,
       openEnd: r,
       closeStart: s.index,
       end: o.lastIndex,
-      tag: a
-    }), n = o.lastIndex;
+      tag: a,
+    }),
+      (n = o.lastIndex));
   }
   return t;
 }
@@ -733,18 +1088,20 @@ function We(e) {
   let t = [],
     n = 0;
   for (let r of Ue(e)) {
-    let {
-      start: i,
-      openEnd: a,
-      closeStart: o,
-      end: s,
-      tag: c
-    } = r;
-    t.push(...Q(e.slice(n, i))), t.push(...Q(e.slice(i, a))), t.push(...(c === `style` ? K(e.slice(a, o)) : Re(e.slice(a, o), {
-      jsx: !1
-    }))), t.push(...Q(e.slice(o, s))), n = s;
+    let { start: i, openEnd: a, closeStart: o, end: s, tag: c } = r;
+    (t.push(...Q(e.slice(n, i))),
+      t.push(...Q(e.slice(i, a))),
+      t.push(
+        ...(c === `style`
+          ? K(e.slice(a, o))
+          : Re(e.slice(a, o), {
+              jsx: !1,
+            })),
+      ),
+      t.push(...Q(e.slice(o, s))),
+      (n = s));
   }
-  return t.push(...Q(e.slice(n))), t;
+  return (t.push(...Q(e.slice(n))), t);
 }
 var Ge = e({
     jsx: () => !0,
@@ -753,48 +1110,102 @@ var Ge = e({
     onCommentStart: () => Je,
     regex: () => !1,
     templateStrings: () => !1,
-    tokenize: () => qe
+    tokenize: () => qe,
   }),
   Ke = new Set([]),
   qe = We,
-  Je = (e, t, n, r) => r.startsWith(`<!--`, n) ? 2 : 0,
-  Ye = (e, t, n, r) => r.slice(n - 2, n + 1) === `-->` ? 2 : 0,
+  Je = (e, t, n, r) => (r.startsWith(`<!--`, n) ? 2 : 0),
+  Ye = (e, t, n, r) => (r.slice(n - 2, n + 1) === `-->` ? 2 : 0),
   Xe = e({
     keywords: () => Qe,
     onCommentEnd: () => E,
     onCommentStart: () => T,
-    typeKeywords: () => Ze
+    typeKeywords: () => Ze,
   }),
   Ze = new Set([`boolean`, `byte`, `char`, `double`, `float`, `int`, `long`, `short`, `void`]),
-  Qe = new Set(`abstract.assert.break.case.catch.class.const.continue.default.do.else.enum.extends.final.finally.for.goto.if.implements.import.instanceof.interface.native.new.package.private.protected.public.return.static.strictfp.super.switch.synchronized.this.throw.throws.transient.try.volatile.while`.split(`.`)),
+  Qe = new Set(
+    `abstract.assert.break.case.catch.class.const.continue.default.do.else.enum.extends.final.finally.for.goto.if.implements.import.instanceof.interface.native.new.package.private.protected.public.return.static.strictfp.super.switch.synchronized.this.throw.throws.transient.try.volatile.while`.split(
+      `.`,
+    ),
+  ),
   $e = e({
     keywords: () => et,
     onCommentEnd: () => E,
     onCommentStart: () => T,
-    quotedKeys: () => !0
+    quotedKeys: () => !0,
   }),
   et = new Set([`true`, `false`, `null`]),
   tt = e({
     keywords: () => nt,
     onCommentEnd: () => E,
     onCommentStart: () => T,
-    typeKeywords: () => rt
+    typeKeywords: () => rt,
   }),
-  nt = new Set(`as.break.by.catch.class.companion.const.constructor.continue.data.do.else.enum.false.finally.for.fun.get.if.import.in.infix.init.interface.internal.is.lateinit.noinline.null.object.open.operator.out.override.package.private.protected.public.reified.return.sealed.set.suspend.tailrec.this.throw.true.try.typealias.val.var.vararg.when.where.while`.split(`.`)),
-  rt = new Set([`Any`, `Boolean`, `Byte`, `Char`, `Double`, `Float`, `Int`, `Long`, `Nothing`, `Short`, `String`, `Unit`]),
+  nt = new Set(
+    `as.break.by.catch.class.companion.const.constructor.continue.data.do.else.enum.false.finally.for.fun.get.if.import.in.infix.init.interface.internal.is.lateinit.noinline.null.object.open.operator.out.override.package.private.protected.public.reified.return.sealed.set.suspend.tailrec.this.throw.true.try.typealias.val.var.vararg.when.where.while`.split(
+      `.`,
+    ),
+  ),
+  rt = new Set([
+    `Any`,
+    `Boolean`,
+    `Byte`,
+    `Char`,
+    `Double`,
+    `Float`,
+    `Int`,
+    `Long`,
+    `Nothing`,
+    `Short`,
+    `String`,
+    `Unit`,
+  ]),
   it = e({
     keywords: () => at,
     onCommentEnd: () => st,
     onCommentStart: () => ot,
-    onLiteral: () => ct
+    onLiteral: () => ct,
   }),
-  at = new Set([`and`, `break`, `do`, `else`, `elseif`, `end`, `false`, `for`, `function`, `goto`, `if`, `in`, `local`, `nil`, `not`, `or`, `repeat`, `return`, `then`, `true`, `until`, `while`]);
+  at = new Set([
+    `and`,
+    `break`,
+    `do`,
+    `else`,
+    `elseif`,
+    `end`,
+    `false`,
+    `for`,
+    `function`,
+    `goto`,
+    `if`,
+    `in`,
+    `local`,
+    `nil`,
+    `not`,
+    `or`,
+    `repeat`,
+    `return`,
+    `then`,
+    `true`,
+    `until`,
+    `while`,
+  ]);
 function ot(e, t, n, r) {
-  return e === `#` && n === 0 && t === `!` ? 1 : e + t === `--` ? /^--\[=*\[/.test(r.slice(n)) ? 2 : 1 : 0;
+  return e === `#` && n === 0 && t === `!`
+    ? 1
+    : e + t === `--`
+      ? /^--\[=*\[/.test(r.slice(n))
+        ? 2
+        : 1
+      : 0;
 }
 function st(e, t, n, r, i) {
-  if (t === `
-`) return 1;
+  if (
+    t ===
+    `
+`
+  )
+    return 1;
   if (t !== `]`) return 0;
   let a = r.slice(i).match(/^--\[(=*)\[/);
   if (!a) return 0;
@@ -816,109 +1227,182 @@ var lt = () => 0,
     keywords: () => ft,
     onCommentEnd: () => ut,
     onCommentStart: () => lt,
-    tokenize: () => pt
+    tokenize: () => pt,
   }),
   ft = new Set([]),
-  pt = e => {
+  pt = (e) => {
     let t = [],
       r = ``,
       i = !1,
       a = (e, n) => {
         if (!n) return;
         let r = t[t.length - 1];
-        r?.[0] === e ? r[1] += n : t.push([e, n]);
+        r?.[0] === e ? (r[1] += n) : t.push([e, n]);
       };
     for (let t of e.match(/[^\n]*(?:\n|$)/g) || []) {
       if (!t) continue;
       let e = t.endsWith(`
-`) ? `
-` : ``,
+`)
+          ? `
+`
+          : ``,
         o = e ? t.slice(0, -1) : t,
         s = [],
         c = o.match(/^(?: {0,3}>[ \t]?)*/)?.[0] || ``;
       if (!r || i) for (let e of c.matchAll(/>/g)) s.push([e.index, e.index + 1]);
       let u = c.length,
         d = 0;
-      for (; d < 3 && o[u] === ` `;) u++, d++;
+      for (; d < 3 && o[u] === ` `;) (u++, d++);
       let f = o.slice(u).match(/^(`{3,}|~{3,})/)?.[1];
-      if (r) f?.[0] === r[0] && f.length >= r.length && /^\s*$/.test(o.slice(u + f.length)) && (s.push([u, u + f.length]), r = ``, i = !1);else if (f) s.push([u, u + f.length]), r = f, i = c.includes(`>`);else {
-        let e = o.slice(u).match(/^(#{1,6}(?=\s)|(?:[-+*]|\d+[.)])(?=\s)|(?:(?:\*\s*){3,}|(?:-\s*){3,}|(?:_\s*){3,})$)/)?.[1];
+      if (r)
+        f?.[0] === r[0] &&
+          f.length >= r.length &&
+          /^\s*$/.test(o.slice(u + f.length)) &&
+          (s.push([u, u + f.length]), (r = ``), (i = !1));
+      else if (f) (s.push([u, u + f.length]), (r = f), (i = c.includes(`>`)));
+      else {
+        let e = o
+          .slice(u)
+          .match(
+            /^(#{1,6}(?=\s)|(?:[-+*]|\d+[.)])(?=\s)|(?:(?:\*\s*){3,}|(?:-\s*){3,}|(?:_\s*){3,})$)/,
+          )?.[1];
         e && s.push([u, u + e.length]);
         for (let e of o.matchAll(/(`+)(.*?)\1|(\*{1,3}|_{1,3}|~{2})(?=\S)(.*?\S)\3/g)) {
           let t = e[1] || e[3];
-          o[e.index - 1] === `\\` || t[0] === `_` && /\w/.test(o[e.index - 1] || ``) || s.push([e.index, e.index + t.length], [e.index + e[0].length - t.length, e.index + e[0].length]);
+          o[e.index - 1] === `\\` ||
+            (t[0] === `_` && /\w/.test(o[e.index - 1] || ``)) ||
+            s.push(
+              [e.index, e.index + t.length],
+              [e.index + e[0].length - t.length, e.index + e[0].length],
+            );
         }
       }
       let p = 0;
-      for (let [e, t] of s.sort((e, t) => e[0] - t[0])) e < p || (a(n, o.slice(p, e)), a(l, o.slice(e, t)), p = t);
+      for (let [e, t] of s.sort((e, t) => e[0] - t[0]))
+        e < p || (a(n, o.slice(p, e)), a(l, o.slice(e, t)), (p = t));
       a(n, o.slice(p) + e);
     }
     return t;
   },
-  mt = e => {
+  mt = (e) => {
     let t = ``;
-    /^#{1,6}\s/.test(e.value) ? t = `markdown-heading` : /^\s*>/.test(e.value) ? t = `markdown-quote` : /^\s*(?:[-*+] |\d+[.)] )/.test(e.value) ? t = `markdown-list` : /^\s*```/.test(e.value) && (t = `markdown-fence`), t && e.annotations.push(t);
+    (/^#{1,6}\s/.test(e.value)
+      ? (t = `markdown-heading`)
+      : /^\s*>/.test(e.value)
+        ? (t = `markdown-quote`)
+        : /^\s*(?:[-*+] |\d+[.)] )/.test(e.value)
+          ? (t = `markdown-list`)
+          : /^\s*```/.test(e.value) && (t = `markdown-fence`),
+      t && e.annotations.push(t));
   },
   ht = e({
     keywords: () => gt,
     onCommentEnd: () => yt,
     onCommentStart: () => vt,
-    typeKeywords: () => _t
+    typeKeywords: () => _t,
   }),
-  gt = new Set(`abstract.and.array.as.break.callable.case.catch.class.clone.const.continue.declare.default.do.echo.else.elseif.empty.enddeclare.endfor.endforeach.endif.endswitch.endwhile.enum.eval.exit.extends.false.final.finally.fn.for.foreach.from.function.global.goto.if.implements.include.include_once.instanceof.insteadof.interface.isset.list.match.namespace.new.null.or.print.private.protected.public.readonly.require.require_once.return.static.switch.throw.trait.true.try.unset.use.var.while.xor.yield`.split(`.`)),
+  gt = new Set(
+    `abstract.and.array.as.break.callable.case.catch.class.clone.const.continue.declare.default.do.echo.else.elseif.empty.enddeclare.endfor.endforeach.endif.endswitch.endwhile.enum.eval.exit.extends.false.final.finally.fn.for.foreach.from.function.global.goto.if.implements.include.include_once.instanceof.insteadof.interface.isset.list.match.namespace.new.null.or.print.private.protected.public.readonly.require.require_once.return.static.switch.throw.trait.true.try.unset.use.var.while.xor.yield`.split(
+      `.`,
+    ),
+  ),
   _t = new Set([`bool`, `float`, `int`, `iterable`, `mixed`, `never`, `object`, `string`, `void`]),
-  vt = (e, t) => e === `#` || e + t === `//` ? 1 : e + t === `/*` ? 2 : 0,
-  yt = (e, t) => t === `
-` ? 1 : e + t === `*/` ? 2 : 0,
+  vt = (e, t) => (e === `#` || e + t === `//` ? 1 : e + t === `/*` ? 2 : 0),
+  yt = (e, t) =>
+    t ===
+    `
+`
+      ? 1
+      : e + t === `*/`
+        ? 2
+        : 0,
   bt = e({
-    tokenize: () => xt
+    tokenize: () => xt,
   }),
-  xt = e => [[n, e]],
+  xt = (e) => [[n, e]],
   St = e({
     caseInsensitive: () => !0,
     keywords: () => Ct,
     onCommentEnd: () => Tt,
-    onCommentStart: () => wt
+    onCommentStart: () => wt,
   }),
-  Ct = new Set(`begin.break.catch.class.continue.data.define.do.dynamicparam.else.elseif.end.enum.exit.filter.finally.for.foreach.from.function.if.in.param.process.return.switch.throw.trap.try.until.using.while`.split(`.`)),
-  wt = (e, t) => e === `#` ? 1 : e + t === `<#` ? 2 : 0,
-  Tt = (e, t) => t === `
-` ? 1 : e + t === `#>` ? 2 : 0,
+  Ct = new Set(
+    `begin.break.catch.class.continue.data.define.do.dynamicparam.else.elseif.end.enum.exit.filter.finally.for.foreach.from.function.if.in.param.process.return.switch.throw.trap.try.until.using.while`.split(
+      `.`,
+    ),
+  ),
+  wt = (e, t) => (e === `#` ? 1 : e + t === `<#` ? 2 : 0),
+  Tt = (e, t) =>
+    t ===
+    `
+`
+      ? 1
+      : e + t === `#>`
+        ? 2
+        : 0,
   Et = e({
     keywords: () => Dt,
     onCommentEnd: () => kt,
-    onCommentStart: () => Ot
+    onCommentStart: () => Ot,
   }),
-  Dt = new Set(`and.as.assert.async.await.break.class.continue.def.del.elif.else.except.finally.for.from.global.if.import.in.is.lambda.nonlocal.not.or.pass.raise.return.try.while.with.yield`.split(`.`)),
+  Dt = new Set(
+    `and.as.assert.async.await.break.class.continue.def.del.elif.else.except.finally.for.from.global.if.import.in.is.lambda.nonlocal.not.or.pass.raise.return.try.while.with.yield`.split(
+      `.`,
+    ),
+  ),
   Ot = (e, t) => +(e === `#`),
-  kt = (e, t) => +(t === `
-`),
+  kt = (e, t) =>
+    +(
+      t ===
+      `
+`
+    ),
   At = e({
     keywords: () => jt,
     onCommentEnd: () => Pt,
-    onCommentStart: () => Nt
+    onCommentStart: () => Nt,
   }),
-  jt = new Set(`BEGIN.END.__ENCODING__.__FILE__.__LINE__.alias.and.begin.break.case.class.def.defined.do.else.elsif.end.ensure.false.for.if.in.module.next.nil.not.or.redo.rescue.retry.return.self.super.then.true.undef.unless.until.when.while.yield`.split(`.`));
+  jt = new Set(
+    `BEGIN.END.__ENCODING__.__FILE__.__LINE__.alias.and.begin.break.case.class.def.defined.do.else.elsif.end.ensure.false.for.if.in.module.next.nil.not.or.redo.rescue.retry.return.self.super.then.true.undef.unless.until.when.while.yield`.split(
+      `.`,
+    ),
+  );
 function Mt(e, t) {
-  return e > 0 && t[e - 1] !== `
-` ? !1 : /^=begin(?:\s|$)/.test(t.slice(e));
+  return e > 0 &&
+    t[e - 1] !==
+      `
+`
+    ? !1
+    : /^=begin(?:\s|$)/.test(t.slice(e));
 }
 function Nt(e, t, n, r) {
   return e === `#` ? 1 : e === `=` && Mt(n, r) ? 2 : 0;
 }
 function Pt(e, t, n, r) {
-  if (t !== `
-`) return 0;
-  let i = r.lastIndexOf(`
-`, n - 1) + 1,
+  if (
+    t !==
+    `
+`
+  )
+    return 0;
+  let i =
+      r.lastIndexOf(
+        `
+`,
+        n - 1,
+      ) + 1,
     a = r.slice(i, n);
   return /^=end(?:\s|$)/.test(a) ? 2 : 1;
 }
 var Ft = e({
     keywords: () => It,
-    onQuote: () => Lt
+    onQuote: () => Lt,
   }),
-  It = new Set(`as.break.const.continue.crate.else.enum.extern.false.fn.for.if.impl.in.let.loop.match.mod.move.mut.pub.ref.return.self.Self.static.struct.super.trait.true.type.unsafe.use.where.while.async.await.dyn.abstract.become.box.do.final.macro.override.priv.typeof.unsized.virtual.yield.try`.split(`.`));
+  It = new Set(
+    `as.break.const.continue.crate.else.enum.extern.false.fn.for.if.impl.in.let.loop.match.mod.move.mut.pub.ref.return.self.Self.static.struct.super.trait.true.type.unsafe.use.where.while.async.await.dyn.abstract.become.box.do.final.macro.override.priv.typeof.unsized.virtual.yield.try`.split(
+      `.`,
+    ),
+  );
 function Lt(e, t, n) {
   if (e !== `'` || t + 1 >= n.length) return 1;
   let r = n[t + 1];
@@ -945,46 +1429,118 @@ function Lt(e, t, n) {
 var Rt = e({
     keywords: () => zt,
     onCommentEnd: () => J,
-    onCommentStart: () => q
+    onCommentStart: () => q,
   }),
-  zt = new Set([`case`, `coproc`, `do`, `done`, `elif`, `else`, `esac`, `export`, `fi`, `for`, `function`, `if`, `in`, `local`, `readonly`, `return`, `select`, `then`, `time`, `until`, `while`]),
+  zt = new Set([
+    `case`,
+    `coproc`,
+    `do`,
+    `done`,
+    `elif`,
+    `else`,
+    `esac`,
+    `export`,
+    `fi`,
+    `for`,
+    `function`,
+    `if`,
+    `in`,
+    `local`,
+    `readonly`,
+    `return`,
+    `select`,
+    `then`,
+    `time`,
+    `until`,
+    `while`,
+  ]),
   Bt = e({
     caseInsensitive: () => !0,
     keywords: () => Vt,
     onCommentEnd: () => Wt,
     onCommentStart: () => Ut,
-    typeKeywords: () => Ht
+    typeKeywords: () => Ht,
   }),
-  Vt = new Set(`add.all.alter.and.as.asc.between.by.case.check.column.constraint.create.cross.database.default.delete.desc.distinct.drop.else.end.exists.foreign.from.full.group.having.in.index.inner.insert.into.is.join.key.left.like.limit.not.null.offset.on.or.order.outer.primary.references.right.select.set.table.then.union.unique.update.values.view.when.where.with`.split(`.`)),
-  Ht = new Set([`bigint`, `binary`, `bit`, `blob`, `boolean`, `char`, `date`, `datetime`, `decimal`, `double`, `float`, `int`, `integer`, `interval`, `json`, `numeric`, `real`, `smallint`, `text`, `time`, `timestamp`, `uuid`, `varchar`]),
+  Vt = new Set(
+    `add.all.alter.and.as.asc.between.by.case.check.column.constraint.create.cross.database.default.delete.desc.distinct.drop.else.end.exists.foreign.from.full.group.having.in.index.inner.insert.into.is.join.key.left.like.limit.not.null.offset.on.or.order.outer.primary.references.right.select.set.table.then.union.unique.update.values.view.when.where.with`.split(
+      `.`,
+    ),
+  ),
+  Ht = new Set([
+    `bigint`,
+    `binary`,
+    `bit`,
+    `blob`,
+    `boolean`,
+    `char`,
+    `date`,
+    `datetime`,
+    `decimal`,
+    `double`,
+    `float`,
+    `int`,
+    `integer`,
+    `interval`,
+    `json`,
+    `numeric`,
+    `real`,
+    `smallint`,
+    `text`,
+    `time`,
+    `timestamp`,
+    `uuid`,
+    `varchar`,
+  ]),
   Ut = (e, t) => {
     let n = e + t;
     return n === `--` ? 1 : n === `/*` ? 2 : 0;
   },
-  Wt = (e, t) => t === `
-` ? 1 : e + t === `*/` ? 2 : 0,
+  Wt = (e, t) =>
+    t ===
+    `
+`
+      ? 1
+      : e + t === `*/`
+        ? 2
+        : 0,
   Gt = e({
     keywords: () => Kt,
     onCommentEnd: () => E,
     onCommentStart: () => T,
-    typeKeywords: () => qt
+    typeKeywords: () => qt,
   }),
-  Kt = new Set(`as.associatedtype.break.case.catch.class.continue.convenience.default.defer.deinit.didSet.do.dynamic.else.enum.extension.fallthrough.false.fileprivate.final.for.func.get.guard.if.import.in.indirect.infix.init.inout.internal.is.lazy.let.mutating.nil.nonmutating.open.operator.override.precedencegroup.private.protocol.public.repeat.required.rethrows.return.self.set.some.static.struct.subscript.super.switch.throw.throws.true.try.typealias.unowned.var.weak.where.while.willSet`.split(`.`)),
-  qt = new Set([`Any`, `Bool`, `Character`, `Double`, `Float`, `Int`, `Never`, `String`, `UInt`, `Void`]),
+  Kt = new Set(
+    `as.associatedtype.break.case.catch.class.continue.convenience.default.defer.deinit.didSet.do.dynamic.else.enum.extension.fallthrough.false.fileprivate.final.for.func.get.guard.if.import.in.indirect.infix.init.inout.internal.is.lazy.let.mutating.nil.nonmutating.open.operator.override.precedencegroup.private.protocol.public.repeat.required.rethrows.return.self.set.some.static.struct.subscript.super.switch.throw.throws.true.try.typealias.unowned.var.weak.where.while.willSet`.split(
+      `.`,
+    ),
+  ),
+  qt = new Set([
+    `Any`,
+    `Bool`,
+    `Character`,
+    `Double`,
+    `Float`,
+    `Int`,
+    `Never`,
+    `String`,
+    `UInt`,
+    `Void`,
+  ]),
   Jt = e({
     keywords: () => Yt,
     onCommentEnd: () => J,
     onCommentStart: () => q,
-    quotedKeys: () => !0
+    quotedKeys: () => !0,
   }),
   Yt = new Set([`false`, `true`]),
   Xt = e({
-    tokenize: () => Zt
+    tokenize: () => Zt,
   }),
-  Zt = (e, t) => Ie(e, {
-    ...t,
-    typescript: !0
-  }),
+  Zt = (e, t) =>
+    Ie(e, {
+      ...t,
+      typescript: !0,
+    }),
   Qt = e({
     jsx: () => !0,
     keywords: () => Ke,
@@ -992,7 +1548,7 @@ var Rt = e({
     onCommentStart: () => Je,
     regex: () => !1,
     templateStrings: () => !1,
-    tokenize: () => We
+    tokenize: () => We,
   }),
   $t = e({
     jsx: () => !0,
@@ -1001,34 +1557,75 @@ var Rt = e({
     onCommentStart: () => Je,
     regex: () => !1,
     templateStrings: () => !1,
-    tokenize: () => We
+    tokenize: () => We,
   }),
   en = e({
     keywords: () => tn,
     onCommentEnd: () => J,
     onCommentStart: () => q,
-    quotedKeys: () => !0
+    quotedKeys: () => !0,
   }),
-  tn = new Set([`false`, `False`, `FALSE`, `no`, `No`, `NO`, `null`, `Null`, `NULL`, `off`, `Off`, `OFF`, `on`, `On`, `ON`, `true`, `True`, `TRUE`, `yes`, `Yes`, `YES`]),
+  tn = new Set([
+    `false`,
+    `False`,
+    `FALSE`,
+    `no`,
+    `No`,
+    `NO`,
+    `null`,
+    `Null`,
+    `NULL`,
+    `off`,
+    `Off`,
+    `OFF`,
+    `on`,
+    `On`,
+    `ON`,
+    `true`,
+    `True`,
+    `TRUE`,
+    `yes`,
+    `Yes`,
+    `YES`,
+  ]),
   nn = e({
     keywords: () => rn,
     onCommentEnd: () => sn,
     onCommentStart: () => on,
     onLiteral: () => cn,
-    typeKeywords: () => an
+    typeKeywords: () => an,
   }),
-  rn = new Set(`addrspace.align.allowzero.and.anyframe.anytype.asm.async.await.break.callconv.catch.comptime.const.continue.defer.else.enum.errdefer.error.export.extern.false.fn.for.if.inline.linksection.noalias.noinline.nosuspend.null.opaque.or.orelse.packed.pub.resume.return.struct.suspend.switch.test.threadlocal.true.try.undefined.union.unreachable.usingnamespace.var.volatile.while`.split(`.`)),
-  an = new Set(`anyerror.anyopaque.bool.c_char.c_int.c_long.c_longdouble.c_longlong.c_short.c_uint.c_ulong.c_ulonglong.c_ushort.comptime_float.comptime_int.f16.f32.f64.f80.f128.i8.i16.i32.i64.i128.isize.noreturn.type.u8.u16.u32.u64.u128.usize.void`.split(`.`)),
+  rn = new Set(
+    `addrspace.align.allowzero.and.anyframe.anytype.asm.async.await.break.callconv.catch.comptime.const.continue.defer.else.enum.errdefer.error.export.extern.false.fn.for.if.inline.linksection.noalias.noinline.nosuspend.null.opaque.or.orelse.packed.pub.resume.return.struct.suspend.switch.test.threadlocal.true.try.undefined.union.unreachable.usingnamespace.var.volatile.while`.split(
+      `.`,
+    ),
+  ),
+  an = new Set(
+    `anyerror.anyopaque.bool.c_char.c_int.c_long.c_longdouble.c_longlong.c_short.c_uint.c_ulong.c_ulonglong.c_ushort.comptime_float.comptime_int.f16.f32.f64.f80.f128.i8.i16.i32.i64.i128.isize.noreturn.type.u8.u16.u32.u64.u128.usize.void`.split(
+      `.`,
+    ),
+  ),
   on = (e, t) => +(e + t === `//`),
-  sn = (e, t) => +(t === `
-`);
+  sn = (e, t) =>
+    +(
+      t ===
+      `
+`
+    );
 function cn(e, t, n) {
   if (e !== `\\` || n[t + 1] !== `\\`) return 0;
-  let r = n.lastIndexOf(`
-`, t - 1) + 1;
+  let r =
+    n.lastIndexOf(
+      `
+`,
+      t - 1,
+    ) + 1;
   if (n.slice(r, t).trim()) return 0;
-  let i = n.indexOf(`
-`, t + 2);
+  let i = n.indexOf(
+    `
+`,
+    t + 2,
+  );
   return (i === -1 ? n.length : i) - t;
 }
 function $(e) {
@@ -1036,7 +1633,7 @@ function $(e) {
     ...e,
     jsx: !1,
     regex: !1,
-    templateStrings: !1
+    templateStrings: !1,
   };
 }
 function ln() {
@@ -1071,7 +1668,7 @@ function ln() {
     graphql: $(de),
     hcl: $(me),
     zig: $(nn),
-    lua: $(it)
+    lua: $(it),
   };
 }
 var un = ln();
@@ -1079,16 +1676,11 @@ function dn(e) {
   return un[e || `javascript`];
 }
 function fn(e, t) {
-  let {
-    lang: n,
-    cx: r,
-    mark: i,
-    markLine: a
-  } = t || {};
+  let { lang: n, cx: r, mark: i, markLine: a } = t || {};
   return g(w(e, dn(n)), {
     cx: r,
     mark: i,
-    markLine: a
+    markLine: a,
   });
 }
 export { fn as highlight };

@@ -78,20 +78,12 @@ var fileColorGroups = [
   },
 ];
 var fileColor = (name: string) =>
-  fileColorGroups.find((t) => t.exts.includes(fileExtension(name)))?.color ??
-  `#8f8f8f`;
+  fileColorGroups.find((t) => t.exts.includes(fileExtension(name)))?.color ?? `#8f8f8f`;
 var simulatedDuration = (bytes: number) =>
   Math.min(9e3, Math.max(2600, (bytes / (1.2 * MiB)) * 1e3));
 var fileIdCounter = 0;
-var createFileId = () =>
-  `f${Date.now().toString(36)}${(fileIdCounter++).toString(36)}`;
-var DropzoneIcon = ({
-  d: path,
-  className: className,
-}: {
-  d: string;
-  className?: string;
-}) => (
+var createFileId = () => `f${Date.now().toString(36)}${(fileIdCounter++).toString(36)}`;
+var DropzoneIcon = ({ d: path, className: className }: { d: string; className?: string }) => (
   <svg
     viewBox={`0 0 24 24`}
     className={[`ui-dz__glyph`, className].filter(Boolean).join(` `)}
@@ -108,9 +100,7 @@ var iconPaths = {
   alert: `M12 8v5M12 16.5h.01M10.3 3.9 2.6 17.5A2 2 0 0 0 4.3 20.5h15.4a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z`,
 };
 function FileBadge({ name: name, end: end }: { name: string; end?: boolean }) {
-  let extensionLabel = (fileExtension(name) || `file`)
-      .slice(0, 4)
-      .toUpperCase(),
+  let extensionLabel = (fileExtension(name) || `file`).slice(0, 4).toUpperCase(),
     labelWidth = Math.max(18, extensionLabel.length * 5.4 + 8),
     labelX = end ? 30 - labelWidth : 0;
   return (
@@ -129,12 +119,7 @@ function FileBadge({ name: name, end: end }: { name: string; end?: boolean }) {
         fill={fileColor(name)}
         fillOpacity={`0.14`}
       />
-      <text
-        x={labelX + 4}
-        y={`27.2`}
-        className={`ui-dz__badge-text`}
-        fill={fileColor(name)}
-      >
+      <text x={labelX + 4} y={`27.2`} className={`ui-dz__badge-text`} fill={fileColor(name)}>
         {extensionLabel}
       </text>
     </svg>
@@ -256,8 +241,7 @@ function Dropzone({
         ? (error = fileExtension(entry.name)
             ? `.${fileExtension(entry.name)} files aren't supported`
             : `This file type isn't supported`)
-        : entry.size > maxSize &&
-          (error = `Too large – max ${formatBytes(maxSize)}`);
+        : entry.size > maxSize && (error = `Too large – max ${formatBytes(maxSize)}`);
       let item: UploadRow = {
         id: id,
         name: entry.name,
@@ -306,9 +290,7 @@ function Dropzone({
           file: e,
         }),
       ),
-    hasSimulatedUploads = items.some(
-      (e) => e.status === `uploading` && (!onUpload || !e.file),
-    );
+    hasSimulatedUploads = items.some((e) => e.status === `uploading` && (!onUpload || !e.file));
   (React.useEffect(() => {
     if (!hasSimulatedUploads) return;
     let e = window.setInterval(() => {
@@ -317,10 +299,7 @@ function Dropzone({
         t.map((t) => {
           if (t.status !== `uploading` || (onUpload && t.file)) return t;
           let n = Math.min(1, (e - t.startedAt) / t.duration),
-            r = Math.max(
-              t.progress,
-              n < 1 ? n * (0.92 + Math.random() * 0.08) : 1,
-            );
+            r = Math.max(t.progress, n < 1 ? n * (0.92 + Math.random() * 0.08) : 1);
           return t.failAt !== void 0 && r >= t.failAt
             ? (setAnnouncement(`${t.name}: upload failed`),
               {
@@ -357,9 +336,7 @@ function Dropzone({
         window.setTimeout(() => setDragCount(demoFiles.length), 700),
         window.setTimeout(() => {
           (setDragCount(0),
-            demoFiles.forEach((e, t) =>
-              window.setTimeout(() => addItem(e), t * 140),
-            ));
+            demoFiles.forEach((e, t) => window.setTimeout(() => addItem(e), t * 140)));
         }, 1900),
       ];
       return () => e.forEach(clearTimeout);
@@ -384,15 +361,10 @@ function Dropzone({
       (updateItem(id, {
         removing: true,
       }),
-        window.setTimeout(
-          () => setItems((t) => t.filter((t) => t.id !== id)),
-          480,
-        ));
+        window.setTimeout(() => setItems((t) => t.filter((t) => t.id !== id)), 480));
     },
     clearFinished: React.MouseEventHandler<HTMLButtonElement> = () =>
-      itemsRef.current
-        .filter((e) => e.status !== `uploading`)
-        .forEach((e) => removeItem(e.id)),
+      itemsRef.current.filter((e) => e.status !== `uploading`).forEach((e) => removeItem(e.id)),
     isFileDrag = (event: {
       dataTransfer: {
         types: Iterable<unknown> | ArrayLike<unknown>;
@@ -405,8 +377,7 @@ function Dropzone({
         setDragCount(Math.max(1, event.dataTransfer.items.length)));
     },
     handleDragOver: React.DragEventHandler<HTMLButtonElement> = (event) => {
-      isFileDrag(event) &&
-        (event.preventDefault(), (event.dataTransfer.dropEffect = `copy`));
+      isFileDrag(event) && (event.preventDefault(), (event.dataTransfer.dropEffect = `copy`));
     },
     handleDragLeave: React.DragEventHandler<HTMLButtonElement> = () => {
       ((dragDepthRef.current = Math.max(0, dragDepthRef.current - 1)),
@@ -469,8 +440,7 @@ function Dropzone({
             className={`ui-dz__input`}
             tabIndex={-1}
             onChange={(e) => {
-              (e.target.files && addFiles(e.target.files),
-                (e.target.value = ``));
+              (e.target.files && addFiles(e.target.files), (e.target.value = ``));
             }}
           />
           <button
@@ -509,9 +479,7 @@ function Dropzone({
             {items.map((e) => {
               let t =
                 e.status === `uploading`
-                  ? ((1 - e.progress) * (now - e.startedAt)) /
-                    Math.max(0.05, e.progress) /
-                    1e3
+                  ? ((1 - e.progress) * (now - e.startedAt)) / Math.max(0.05, e.progress) / 1e3
                   : 0;
               return (
                 <li
@@ -528,10 +496,7 @@ function Dropzone({
                           {e.name}
                         </span>
                         {e.status === `done` && (
-                          <span
-                            className={`ui-dz__done`}
-                            aria-label={`Uploaded`}
-                          >
+                          <span className={`ui-dz__done`} aria-label={`Uploaded`}>
                             <DropzoneIcon d={iconPaths.check} />
                           </span>
                         )}
@@ -541,15 +506,11 @@ function Dropzone({
                           <>
                             {formatUploadProgress(e.size * e.progress, e.size)}
                             <span className={`ui-dz__dot`}>{`·`}</span>
-                            {e.progress < 0.04
-                              ? `starting`
-                              : formatRemainingTime(t)}
+                            {e.progress < 0.04 ? `starting` : formatRemainingTime(t)}
                           </>
                         )}
                         {e.status === `done` && formatBytes(e.size)}
-                        {e.status === `error` && (
-                          <span className={`ui-dz__error`}>{e.error}</span>
-                        )}
+                        {e.status === `error` && <span className={`ui-dz__error`}>{e.error}</span>}
                       </div>
                       {(e.status !== `error` || e.retryable) && (
                         <div
@@ -597,17 +558,14 @@ function Dropzone({
         </div>
       </div>
       <div className={`ui-dz__foot`}>
-        {summary ?? (
-          <span className={`ui-dz__foot-idle`}>{`No files yet`}</span>
+        {summary ?? <span className={`ui-dz__foot-idle`}>{`No files yet`}</span>}
+        {(doneItems.length > 0 || errorItems.length > 0) && !uploadingItems.length && (
+          <button
+            type={`button`}
+            className={`ui-dz__clear`}
+            onClick={clearFinished}
+          >{`Clear`}</button>
         )}
-        {(doneItems.length > 0 || errorItems.length > 0) &&
-          !uploadingItems.length && (
-            <button
-              type={`button`}
-              className={`ui-dz__clear`}
-              onClick={clearFinished}
-            >{`Clear`}</button>
-          )}
       </div>
       <span className={`ui-dz__live`} aria-live={`polite`}>
         {announcement}
@@ -830,10 +788,7 @@ var dropzoneStyles = `
 function DropzoneDemo2() {
   return (
     <div className={`dropzone-demo`}>
-      <Dropzone
-        accept={[`.pdf`, `.png`, `.jpg`, `.xlsx`, `.docx`, `.mp4`]}
-        autoplay={true}
-      />
+      <Dropzone accept={[`.pdf`, `.png`, `.jpg`, `.xlsx`, `.docx`, `.mp4`]} autoplay={true} />
     </div>
   );
 }

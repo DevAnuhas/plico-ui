@@ -142,9 +142,7 @@ function AgentGallery({
   }, [l, c]),
     React.useEffect(() => {
       if (!p) return;
-      let e = requestAnimationFrame(
-        () => (e = requestAnimationFrame(() => m(false))),
-      );
+      let e = requestAnimationFrame(() => (e = requestAnimationFrame(() => m(false))));
       return () => cancelAnimationFrame(e);
     }, [p]));
   let _ = (e: number) => u(Math.max(0, Math.min(3 * c - 1, e)));
@@ -223,20 +221,12 @@ function AgentGallery({
           {h.description}
         </p>
         <div className={`ui-ag__arrows`}>
-          <button
-            type={`button`}
-            aria-label={`Previous agent`}
-            onClick={() => _(l - 1)}
-          >
+          <button type={`button`} aria-label={`Previous agent`} onClick={() => _(l - 1)}>
             <svg viewBox={`0 0 24 24`} aria-hidden={`true`}>
               <path d={`M19 12H5m0 0 6-6m-6 6 6 6`} />
             </svg>
           </button>
-          <button
-            type={`button`}
-            aria-label={`Next agent`}
-            onClick={() => _(l + 1)}
-          >
+          <button type={`button`} aria-label={`Next agent`} onClick={() => _(l + 1)}>
             <svg viewBox={`0 0 24 24`} aria-hidden={`true`}>
               <path d={`M5 12h14m0 0-6-6m6 6-6 6`} />
             </svg>
@@ -246,8 +236,7 @@ function AgentGallery({
     </section>
   );
 }
-var valueValue = (e: string) =>
-  [...e].reduce((e, t) => (e * 31 + t.charCodeAt(0)) % 997, 7);
+var valueValue = (e: string) => [...e].reduce((e, t) => (e * 31 + t.charCodeAt(0)) % 997, 7);
 function Icons({ n: e, color: color }: { n: number; color: string }) {
   let n = Array.from(
       {
@@ -258,11 +247,7 @@ function Icons({ n: e, color: color }: { n: number; color: string }) {
     i = n.map(([e, t], n) => `${n ? `L` : `M`}${e} ${t}`).join(` `),
     [a, o] = n[n.length - 1];
   return (
-    <svg
-      className={`ui-ag__spark`}
-      viewBox={`-2 -2 78 20`}
-      aria-hidden={`true`}
-    >
+    <svg className={`ui-ag__spark`} viewBox={`-2 -2 78 20`} aria-hidden={`true`}>
       <path
         d={i}
         style={{
@@ -303,13 +288,7 @@ var ViewU = {
   sync: `M19 12a7 7 0 0 1-12.3 4.6M5 12a7 7 0 0 1 12.3-4.6M17.5 4v3.5H14M6.5 20v-3.5H10`,
   filter: `M5 7h14M8 12h8M11 17h2`,
 };
-function Icond({
-  item: item,
-  hidden: hidden,
-}: {
-  item: GalleryItem;
-  hidden: boolean;
-}) {
+function Icond({ item: item, hidden: hidden }: { item: GalleryItem; hidden: boolean }) {
   let n = valueValue(item.id),
     i = [
       [`Runs`, `${40 + (n % 160)}`, `#22a06b`],
@@ -366,9 +345,7 @@ function Icond({
           <span>{`Settings`}</span>
         </div>
         <h4>{`Agent context`}</h4>
-        <p
-          className={`ui-ag__hint`}
-        >{`Goals, files and rules the agent uses on every run.`}</p>
+        <p className={`ui-ag__hint`}>{`Goals, files and rules the agent uses on every run.`}</p>
         <div className={`ui-ag__toolbar`}>
           <span className={`ui-ag__search`}>
             <Iconl d={ViewU.search} />
@@ -834,11 +811,7 @@ function AgentGalleryDemo2() {
       return (o.observe(r), () => o.disconnect());
     }, []),
     (
-      <div
-        ref={e}
-        className={`gallery-demo`}
-        data-fit={t ? (t.card ? `card` : `stage`) : void 0}
-      >
+      <div ref={e} className={`gallery-demo`} data-fit={t ? (t.card ? `card` : `stage`) : void 0}>
         <div
           className={`gallery-demo__frame`}
           style={

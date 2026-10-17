@@ -72,21 +72,16 @@ function InvoiceCredit({
   className: className,
 }: InvoiceCreditProps) {
   let [C, w] = React.useState(`invoice`),
-    [T, E] = React.useState(() =>
-      Object.fromEntries(lines.map((e) => [e.id, true])),
-    ),
+    [T, E] = React.useState(() => Object.fromEntries(lines.map((e) => [e.id, true]))),
     [D, O] = React.useState(() =>
       Object.fromEntries(lines.map((e) => [e.id, valueValue2(e.qty * e.rate)])),
     ),
     [k, A] = React.useState(false),
     j = (e: number, t = false) =>
-      `${t && e > 0 ? `-` : ``}${currency}${Math.abs(e).toLocaleString(
-        `en-US`,
-        {
-          minimumFractionDigits: 2,
-          maximumFractionDigits: 2,
-        },
-      )}`,
+      `${t && e > 0 ? `-` : ``}${currency}${Math.abs(e).toLocaleString(`en-US`, {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      })}`,
     M = lines.reduce((e, t) => e + valueValue2(t.qty * t.rate), 0),
     N = lines.reduce((e, t) => e + valueValue2(t.qty * t.rate) * t.tax, 0),
     P = M + N,
@@ -96,18 +91,13 @@ function InvoiceCredit({
     R = () => {
       (A(true),
         onIssue?.(
-          Object.fromEntries(
-            lines.filter((e) => T[e.id]).map((e) => [e.id, D[e.id]]),
-          ),
+          Object.fromEntries(lines.filter((e) => T[e.id]).map((e) => [e.id, D[e.id]])),
           valueValue2(L),
         ));
     },
     z = [...new Set(lines.map((e) => e.group ?? ``))];
   return (
-    <section
-      className={[`ui-iv`, className].filter(Boolean).join(` `)}
-      data-view={C}
-    >
+    <section className={[`ui-iv`, className].filter(Boolean).join(` `)} data-view={C}>
       <style href={`ui-invoice-credit`} precedence={`default`}>
         {valueValue3}
       </style>
@@ -133,11 +123,7 @@ function InvoiceCredit({
             {`PDF`}
           </button>
           {C === `invoice` && (
-            <button
-              type={`button`}
-              className={`ui-iv__btn`}
-              onClick={() => w(`credit`)}
-            >
+            <button type={`button`} className={`ui-iv__btn`} onClick={() => w(`credit`)}>
               <Icons d={`M9 14 4.5 9.5 9 5M4.5 9.5h10a5 5 0 0 1 0 10H12`} />
               {`Credit invoice`}
             </button>
@@ -157,10 +143,7 @@ function InvoiceCredit({
               <p className={`ui-iv__due`}>
                 {`Due `}
                 {dueDate}
-                <a
-                  href={`#pay`}
-                  onClick={(e) => e.preventDefault()}
-                >{`Pay online`}</a>
+                <a href={`#pay`} onClick={(e) => e.preventDefault()}>{`Pay online`}</a>
               </p>
             </div>
             <Iconc name={seller.name} />
@@ -201,9 +184,7 @@ function InvoiceCredit({
                           {Math.round(t.tax * 100)}
                           {`%`}
                         </td>
-                        <td className={`ui-iv__num`}>
-                          {j(valueValue2(t.qty * t.rate))}
-                        </td>
+                        <td className={`ui-iv__num`}>{j(valueValue2(t.qty * t.rate))}</td>
                       </tr>
                     ))}
                 </Icond>
@@ -238,17 +219,10 @@ function InvoiceCredit({
           </header>
           <Iconu
             rows={[
-              [
-                `Credit note no`,
-                <span className={`ui-iv__ref`}>{creditNo}</span>,
-              ],
+              [`Credit note no`, <span className={`ui-iv__ref`}>{creditNo}</span>],
               [
                 `Related invoice`,
-                <button
-                  type={`button`}
-                  className={`ui-iv__ref`}
-                  onClick={() => w(`invoice`)}
-                >
+                <button type={`button`} className={`ui-iv__ref`} onClick={() => w(`invoice`)}>
                   {invoiceNo}
                 </button>,
               ],
@@ -269,11 +243,7 @@ function InvoiceCredit({
                 let t = valueValue2(e.qty * e.rate),
                   n = T[e.id];
                 return (
-                  <div
-                    className={`ui-iv__crow`}
-                    data-off={n ? void 0 : ``}
-                    key={e.id}
-                  >
+                  <div className={`ui-iv__crow`} data-off={n ? void 0 : ``} key={e.id}>
                     <button
                       type={`button`}
                       role={`checkbox`}
@@ -460,10 +430,7 @@ function Iconp({
         onFocus={() => u(String(value))}
         onChange={(e) => u(e.target.value.replace(/[^\d.]/g, ``))}
         onBlur={() => {
-          (onChange(
-            Math.max(0, Math.min(max, valueValue2(parseFloat(l ?? ``) || 0))),
-          ),
-            u(null));
+          (onChange(Math.max(0, Math.min(max, valueValue2(parseFloat(l ?? ``) || 0)))), u(null));
         }}
         onKeyDown={(e) => e.key === `Enter` && e.currentTarget.blur()}
       />
@@ -785,11 +752,7 @@ function InvoiceCreditDemo2() {
       return (o.observe(r), () => o.disconnect());
     }, []),
     (
-      <div
-        ref={e}
-        className={`invoice-demo`}
-        data-fit={t ? (t.card ? `card` : `stage`) : void 0}
-      >
+      <div ref={e} className={`invoice-demo`} data-fit={t ? (t.card ? `card` : `stage`) : void 0}>
         <div
           className={`invoice-demo__frame`}
           style={

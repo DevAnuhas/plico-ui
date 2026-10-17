@@ -74,12 +74,10 @@ var valueValue3: { key: "speed" | "quality" | "cost"; label: string }[] = [
 ];
 var valueValue4 = (e: number) => 1 - (1 - e) ** 4;
 var valueValue5 = () =>
-  typeof window < `u` &&
-  window.matchMedia(`(prefers-reduced-motion: reduce)`).matches;
+  typeof window < `u` && window.matchMedia(`(prefers-reduced-motion: reduce)`).matches;
 var valueValue6 = (e: number) => Math.max(0, Math.min(5, Math.round(e)));
 var valueValue7 = (e: number) => `${(e / 1e3).toFixed(1)}s`;
-var valueValue8 = (e: number, t: unknown) =>
-  `$${e.toFixed(Number.isInteger(t) ? 0 : 2)}`;
+var valueValue8 = (e: number, t: unknown) => `$${e.toFixed(Number.isInteger(t) ? 0 : 2)}`;
 function valueValue9(e: Record<string, number>, t: number) {
   let [r, i] = React.useState(e),
     a = React.useRef(e),
@@ -108,13 +106,7 @@ function valueValue9(e: Record<string, number>, t: number) {
     r
   );
 }
-function Iconp({
-  id: id,
-  children: children,
-}: {
-  id: string;
-  children: React.ReactNode;
-}) {
+function Iconp({ id: id, children: children }: { id: string; children: React.ReactNode }) {
   let i = React.useRef({
       id: id,
       node: children,
@@ -185,13 +177,7 @@ var Iconte = () => (
   </svg>
 );
 var Iconh = () => (
-  <svg
-    width={`16`}
-    height={`16`}
-    viewBox={`0 0 14 14`}
-    fill={`none`}
-    aria-hidden={`true`}
-  >
+  <svg width={`16`} height={`16`} viewBox={`0 0 14 14`} fill={`none`} aria-hidden={`true`}>
     <path
       d={`M5.3 10.6h3.4M5.8 12.3h2.4M7 1.7a3.9 3.9 0 0 0-2.3 7c.4.3.6.7.6 1.1v.1h3.4v-.1c0-.4.2-.8.6-1.1A3.9 3.9 0 0 0 7 1.7Z`}
       {...valueValue10}
@@ -199,13 +185,7 @@ var Iconh = () => (
   </svg>
 );
 var Iconne = () => (
-  <svg
-    width={`16`}
-    height={`16`}
-    viewBox={`0 0 14 14`}
-    fill={`none`}
-    aria-hidden={`true`}
-  >
+  <svg width={`16`} height={`16`} viewBox={`0 0 14 14`} fill={`none`} aria-hidden={`true`}>
     <circle cx={`7`} cy={`7`} r={`5.3`} {...valueValue10} />
     <path
       d={`M1.9 7h10.2M7 1.7c1.4 1.5 2 3.3 2 5.3s-.6 3.8-2 5.3c-1.4-1.5-2-3.3-2-5.3s.6-3.8 2-5.3Z`}
@@ -312,10 +292,7 @@ function ModelPickerClean({
   let Te = () => C.current?.contains(document.activeElement) ?? false,
     U = (t: number) => {
       let n = models[t];
-      n &&
-        (me(n.id),
-        n.id !== E && onChange?.(n.id),
-        z(false, Te() ? `trigger` : void 0));
+      n && (me(n.id), n.id !== E && onChange?.(n.id), z(false, Te() ? `trigger` : void 0));
     },
     Ee: React.MouseEventHandler<HTMLButtonElement> = () => {
       (ge(!D), onThinkingChange?.(!D));
@@ -327,8 +304,7 @@ function ModelPickerClean({
       (be(e), e !== k && onEffortChange?.(e));
     },
     Oe: React.KeyboardEventHandler<HTMLButtonElement> = (e) => {
-      (e.key === `ArrowDown` || e.key === `ArrowUp`) &&
-        (e.preventDefault(), z(true, `list`));
+      (e.key === `ArrowDown` || e.key === `ArrowUp`) && (e.preventDefault(), z(true, `list`));
     },
     ke: React.KeyboardEventHandler<HTMLDivElement> = (t) => {
       let n = models.length;
@@ -344,8 +320,7 @@ function ModelPickerClean({
             ? r(0)
             : t.key === `End`
               ? r(n - 1)
-              : (t.key === `Enter` || t.key === ` `) &&
-                (t.preventDefault(), U(N));
+              : (t.key === `Enter` || t.key === ` `) && (t.preventDefault(), U(N));
     },
     G = React.useRef<HTMLDivElement | null>(null),
     [K, Ae] = React.useState<{ x: number; w: number } | null>(null);
@@ -368,10 +343,7 @@ function ModelPickerClean({
       if (!n) return;
       e.preventDefault();
       let r = valueValue[(t + n + valueValue.length) % valueValue.length];
-      (W(r.id),
-        C.current
-          ?.querySelector<HTMLElement>(`[data-effort="${r.id}"]`)
-          ?.focus());
+      (W(r.id), C.current?.querySelector<HTMLElement>(`[data-effort="${r.id}"]`)?.focus());
     },
     Me: React.KeyboardEventHandler<HTMLDivElement> = (e) => {
       e.key === `Escape` && A && (e.stopPropagation(), z(false, `trigger`));
@@ -391,15 +363,11 @@ function ModelPickerClean({
     Q,
     $;
   if (Ce === `search`)
-    ((Z = O
-      ? `Looks things up on the web when it helps`
-      : `Answers from what it already knows`),
+    ((Z = O ? `Looks things up on the web when it helps` : `Answers from what it already knows`),
       (Q = `search-${O}`),
       ($ = Z));
   else if (!X)
-    ((Z = R?.description ?? R?.name ?? ``),
-      (Q = `plain-${R?.id}`),
-      ($ = `${R?.name ?? ``}: ${Z}`));
+    ((Z = R?.description ?? R?.name ?? ``), (Q = `plain-${R?.id}`), ($ = `${R?.name ?? ``}: ${Z}`));
   else {
     let e = [],
       t = [];
@@ -421,9 +389,7 @@ function ModelPickerClean({
         ),
         t.push(`${valueValue8(J, J)} per million tokens`)),
       (Z = e.flatMap((e, t) =>
-        t
-          ? [<span className={`ui-mdpc__dot`} key={`d${t}`}>{` · `}</span>, e]
-          : [e],
+        t ? [<span className={`ui-mdpc__dot`} key={`d${t}`}>{` · `}</span>, e] : [e],
       )),
       (Q = `stats`),
       ($ = `${R.name}: ${t.join(`, `)}`));
@@ -438,10 +404,7 @@ function ModelPickerClean({
       data-side={side}
       onKeyDown={Me}
       onBlur={(e) => {
-        A &&
-          e.relatedTarget &&
-          !C.current?.contains(e.relatedTarget) &&
-          z(false);
+        A && e.relatedTarget && !C.current?.contains(e.relatedTarget) && z(false);
       }}
     >
       <style href={`ui-model-picker-clean`} precedence={`default`}>
@@ -462,11 +425,7 @@ function ModelPickerClean({
         <span className={`ui-mdpc__name`}>
           <Iconp id={M?.id ?? `none`}>{M?.name ?? `Choose a model`}</Iconp>
         </span>
-        <span
-          className={`ui-mdpc__flag`}
-          data-on={D ? `` : void 0}
-          aria-hidden={`true`}
-        >
+        <span className={`ui-mdpc__flag`} data-on={D ? `` : void 0} aria-hidden={`true`}>
           <span>
             <Iconh />
           </span>
@@ -509,8 +468,7 @@ function ModelPickerClean({
             onPointerLeave={() => I(false)}
           >
             {models.map((e, t) => {
-              let n =
-                e.speed !== void 0 || e.quality !== void 0 || e.cost !== void 0;
+              let n = e.speed !== void 0 || e.quality !== void 0 || e.cost !== void 0;
               return (
                 <div
                   id={`${S}-opt-${e.id}`}
@@ -532,9 +490,7 @@ function ModelPickerClean({
                       <span className={`ui-mdpc__title-name`}>{e.name}</span>
                       {t === j && <Iconte />}
                     </span>
-                    {e.description && (
-                      <span className={`ui-mdpc__desc`}>{e.description}</span>
-                    )}
+                    {e.description && <span className={`ui-mdpc__desc`}>{e.description}</span>}
                   </span>
                   {n ? (
                     <span className={`ui-mdpc__bars`} aria-hidden={`true`}>
@@ -567,10 +523,7 @@ function ModelPickerClean({
                       })}
                     </span>
                   ) : (
-                    <span
-                      className={`ui-mdpc__varies`}
-                      aria-hidden={`true`}
-                    >{`Varies`}</span>
+                    <span className={`ui-mdpc__varies`} aria-hidden={`true`}>{`Varies`}</span>
                   )}
                 </div>
               );
@@ -587,22 +540,13 @@ function ModelPickerClean({
               <span className={`ui-mdpc__toggle-icon`}>
                 <Iconh />
               </span>
-              <span
-                className={`ui-mdpc__toggle-label`}
-              >{`Extended thinking`}</span>
+              <span className={`ui-mdpc__toggle-label`}>{`Extended thinking`}</span>
               <span className={`ui-mdpc__switch`} aria-hidden={`true`} />
             </button>
-            <div
-              className={`ui-mdpc__fold`}
-              data-open={D ? `` : void 0}
-              inert={!D}
-            >
+            <div className={`ui-mdpc__fold`} data-open={D ? `` : void 0} inert={!D}>
               <div className={`ui-mdpc__clip`}>
                 <div className={`ui-mdpc__effort`}>
-                  <span
-                    className={`ui-mdpc__effort-label`}
-                    id={`${S}-effort`}
-                  >{`Effort`}</span>
+                  <span className={`ui-mdpc__effort-label`} id={`${S}-effort`}>{`Effort`}</span>
                   <div
                     ref={G}
                     className={`ui-mdpc__segmented`}
@@ -864,10 +808,7 @@ var valueValue11 = `
 `;
 const View_InlineView = () => (
   <svg viewBox={`0 0 12 12`} fill={`none`} aria-hidden={`true`}>
-    <path
-      d={`M6 1.5 7.1 4.9 10.5 6 7.1 7.1 6 10.5 4.9 7.1 1.5 6 4.9 4.9Z`}
-      fill={`currentColor`}
-    />
+    <path d={`M6 1.5 7.1 4.9 10.5 6 7.1 7.1 6 10.5 4.9 7.1 1.5 6 4.9 4.9Z`} fill={`currentColor`} />
   </svg>
 );
 var valueValue12 = [
@@ -916,11 +857,7 @@ function ModelPickerCleanDemo2() {
     c = React.useRef(false);
   React.useEffect(() => {
     let t = (t: string) => e.current?.querySelector<HTMLElement>(t) ?? null,
-      n = (
-        e: Element | null,
-        t: string,
-        n: { relatedTarget?: Element | null } = {},
-      ) => {
+      n = (e: Element | null, t: string, n: { relatedTarget?: Element | null } = {}) => {
         e &&
           ((c.current = true),
           e.dispatchEvent(
@@ -976,10 +913,7 @@ function ModelPickerCleanDemo2() {
       onPointerDownCapture={l}
       onKeyDownCapture={l}
       onFocusCapture={l}
-      onClick={(e) =>
-        (e.target as HTMLElement).closest(`.ui-mdpc__pop`) &&
-        e.stopPropagation()
-      }
+      onClick={(e) => (e.target as HTMLElement).closest(`.ui-mdpc__pop`) && e.stopPropagation()}
     >
       <div className={`mdp-demo__composer`}>
         <div className={`mdp-demo__text`}>{`Ask anything…`}</div>

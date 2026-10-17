@@ -4,16 +4,9 @@ import * as React from "react";
 type CSSVariables = React.CSSProperties & {
   [key: `--${string}`]: string | number;
 };
-type Continent =
-  "north-america" | "south-america" | "europe" | "africa" | "asia" | "oceania";
+type Continent = "north-america" | "south-america" | "europe" | "africa" | "asia" | "oceania";
 interface WorldMapProps {
-  continent?:
-    | "north-america"
-    | "south-america"
-    | "europe"
-    | "africa"
-    | "asia"
-    | "oceania";
+  continent?: "north-america" | "south-america" | "europe" | "africa" | "asia" | "oceania";
   defaultContinent?: Continent;
   onContinentChange?: (continent: Continent) => void;
   showSwitcher?: boolean;
@@ -92,10 +85,7 @@ function WorldMap({
   }, [_]),
     React.useEffect(() => {
       if (!b.some((e) => e.phase === `exit`)) return;
-      let e = setTimeout(
-        () => x((e) => e.filter((e) => e.phase !== `exit`)),
-        480,
-      );
+      let e = setTimeout(() => x((e) => e.filter((e) => e.phase !== `exit`)), 480);
       return () => clearTimeout(e);
     }, [b]));
   let [S, C] = React.useState(1);
@@ -104,12 +94,7 @@ function WorldMap({
       let e = m.current;
       if (!e) return;
       let t = () =>
-        C(
-          Math.min(
-            1,
-            Math.max(0.62, Math.min(e.clientWidth / 540, e.clientHeight / 260)),
-          ),
-        );
+        C(Math.min(1, Math.max(0.62, Math.min(e.clientWidth / 540, e.clientHeight / 260))));
       t();
       let n = new ResizeObserver(t);
       return (n.observe(e), () => n.disconnect());
@@ -136,19 +121,9 @@ function WorldMap({
               : (label ?? `World map with ${v.name} highlighted`)
           }
         >
-          <svg
-            className={`ui-wm-art`}
-            viewBox={`0 0 540 242`}
-            aria-hidden={`true`}
-          >
+          <svg className={`ui-wm-art`} viewBox={`0 0 540 242`} aria-hidden={`true`}>
             <defs>
-              <filter
-                id={`${p}-shadow`}
-                x={`-15%`}
-                y={`-15%`}
-                width={`130%`}
-                height={`130%`}
-              >
+              <filter id={`${p}-shadow`} x={`-15%`} y={`-15%`} width={`130%`} height={`130%`}>
                 <feDropShadow
                   className={`ui-wm-drop`}
                   dx={`0`}
@@ -171,13 +146,7 @@ function WorldMap({
                 <stop offset={`66%`} stopColor={`#C8A8E5`} />
                 <stop offset={`100%`} stopColor={`#A8B5FF`} />
               </linearGradient>
-              <filter
-                id={`${p}-blur`}
-                x={`-20%`}
-                y={`-20%`}
-                width={`140%`}
-                height={`140%`}
-              >
+              <filter id={`${p}-blur`} x={`-20%`} y={`-20%`} width={`140%`} height={`140%`}>
                 <feGaussianBlur stdDeviation={`4`} />
               </filter>
             </defs>
@@ -382,8 +351,7 @@ function Icons({
           aria-label={`Continent: ${valueValue[S].name}`}
           onClick={() => (d ? w(false) : C())}
           onKeyDown={(e) => {
-            (e.key === `ArrowDown` || e.key === `ArrowUp`) &&
-              (e.preventDefault(), C());
+            (e.key === `ArrowDown` || e.key === `ArrowUp`) && (e.preventDefault(), C());
           }}
         >
           <span>{valueValue[S].name}</span>
@@ -464,12 +432,7 @@ function Icons({
   );
 }
 var Iconc = () => (
-  <svg
-    className={`ui-wm-chevron`}
-    viewBox={`0 0 24 24`}
-    fill={`none`}
-    aria-hidden={`true`}
-  >
+  <svg className={`ui-wm-chevron`} viewBox={`0 0 24 24`} fill={`none`} aria-hidden={`true`}>
     <path
       d={`M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9`}
       className={`ui-wm-chevron-ink`}

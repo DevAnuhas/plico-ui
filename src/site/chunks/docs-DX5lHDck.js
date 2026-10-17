@@ -1,52 +1,81 @@
-import {brand} from '../../lib/brand.js';
-function localText(value){return value.replaceAll('__PLICO_ORIGIN__',brand.url).replaceAll('__PLICO_REPO__',brand.repoUrl)}
+import { brand } from "../../lib/brand.js";
+function localText(value) {
+  return value
+    .replaceAll("__PLICO_ORIGIN__", brand.url)
+    .replaceAll("__PLICO_REPO__", brand.repoUrl);
+}
 var e = {
   requirements: [`React 19`],
-  whenToUse: [`Headlines and short intros on landing pages that should arrive as you scroll`, `A key sentence you want read in order, like a mission statement or a quote`],
-  whenNotToUse: [`Long paragraphs or anything people need to read right away – waiting for words gets tiring`, `Text that changes often, like live data – the reveal plays only when it enters the view`],
-  usage: "import TextReveal from \"@/components/plico/text-reveal\";\nexport function Intro() {\n  return <TextReveal as=\"h2\" text=\"Words that arrive one at a time.\" />;\n}",
-  props: [{
-    name: `text`,
-    type: `string`,
-    description: `The text to reveal`
-  }, {
-    name: `by`,
-    type: `"word" | "char"`,
-    default: `"word"`,
-    description: `Reveal word by word or letter by letter`
-  }, {
-    name: `stagger`,
-    type: `number`,
-    default: `40`,
-    description: `Time between two pieces, in ms`
-  }, {
-    name: `delay`,
-    type: `number`,
-    default: `0`,
-    description: `Wait before the first piece, in ms`
-  }, {
-    name: `duration`,
-    type: `number`,
-    default: `700`,
-    description: `Time each piece takes to arrive, in ms`
-  }, {
-    name: `as`,
-    type: `"p" | "h1" | "h2" | "h3" | "span"`,
-    default: `"p"`,
-    description: `Element to render`
-  }, {
-    name: `once`,
-    type: `boolean`,
-    default: `true`,
-    description: `Reveal only the first time; otherwise it plays again each time it enters the view`
-  }, {
-    name: `className`,
-    type: `string`,
-    description: `Extra class on the root`
-  }],
-  accessibility: [`Screen readers get the full sentence from a visually hidden copy; the animated pieces are aria-hidden`, `Words never break in the middle, and spaces stay real, so lines wrap like normal text`],
-  motion: [`Each piece fades in out of a blur while it rises a little, one after another, once 30% of the text is visible`, `Reduced motion shows the text right away`],
-  responsive: [`Font, size and color come from the parent, so it fits any heading or paragraph`, `Dark mode built in: switches when an ancestor (usually <html>) has the class dark or data-theme="dark"`],
-  related: [`gradient-text`]
+  whenToUse: [
+    `Headlines and short intros on landing pages that should arrive as you scroll`,
+    `A key sentence you want read in order, like a mission statement or a quote`,
+  ],
+  whenNotToUse: [
+    `Long paragraphs or anything people need to read right away – waiting for words gets tiring`,
+    `Text that changes often, like live data – the reveal plays only when it enters the view`,
+  ],
+  usage:
+    'import TextReveal from "@/components/plico/text-reveal";\nexport function Intro() {\n  return <TextReveal as="h2" text="Words that arrive one at a time." />;\n}',
+  props: [
+    {
+      name: `text`,
+      type: `string`,
+      description: `The text to reveal`,
+    },
+    {
+      name: `by`,
+      type: `"word" | "char"`,
+      default: `"word"`,
+      description: `Reveal word by word or letter by letter`,
+    },
+    {
+      name: `stagger`,
+      type: `number`,
+      default: `40`,
+      description: `Time between two pieces, in ms`,
+    },
+    {
+      name: `delay`,
+      type: `number`,
+      default: `0`,
+      description: `Wait before the first piece, in ms`,
+    },
+    {
+      name: `duration`,
+      type: `number`,
+      default: `700`,
+      description: `Time each piece takes to arrive, in ms`,
+    },
+    {
+      name: `as`,
+      type: `"p" | "h1" | "h2" | "h3" | "span"`,
+      default: `"p"`,
+      description: `Element to render`,
+    },
+    {
+      name: `once`,
+      type: `boolean`,
+      default: `true`,
+      description: `Reveal only the first time; otherwise it plays again each time it enters the view`,
+    },
+    {
+      name: `className`,
+      type: `string`,
+      description: `Extra class on the root`,
+    },
+  ],
+  accessibility: [
+    `Screen readers get the full sentence from a visually hidden copy; the animated pieces are aria-hidden`,
+    `Words never break in the middle, and spaces stay real, so lines wrap like normal text`,
+  ],
+  motion: [
+    `Each piece fades in out of a blur while it rises a little, one after another, once 30% of the text is visible`,
+    `Reduced motion shows the text right away`,
+  ],
+  responsive: [
+    `Font, size and color come from the parent, so it fits any heading or paragraph`,
+    `Dark mode built in: switches when an ancestor (usually <html>) has the class dark or data-theme="dark"`,
+  ],
+  related: [`gradient-text`],
 };
 export { e as docs };

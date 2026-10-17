@@ -13,29 +13,15 @@ function GlassFolder({
 }: GlassFolderProps) {
   let n = `ui-fd` + React.useId().replace(/[^a-zA-Z0-9_-]/g, ``);
   return (
-    <div
-      className={[`ui-fd`, className].filter(Boolean).join(` `)}
-      role={`img`}
-      aria-label={label}
-    >
+    <div className={[`ui-fd`, className].filter(Boolean).join(` `)} role={`img`} aria-label={label}>
       <style href={`ui-glass-folder`} precedence={`default`}>
         {ValueValue20}
       </style>
       <div className={`ui-fd-icon`} aria-hidden={`true`}>
         <svg className={`ui-fd-layer ui-fd-back`} viewBox={`0 0 600 500`}>
           <defs>
-            <filter
-              id={`${n}-hl`}
-              x={`-10%`}
-              y={`-10%`}
-              width={`120%`}
-              height={`120%`}
-            >
-              <feGaussianBlur
-                in={`SourceAlpha`}
-                stdDeviation={`4`}
-                result={`blur`}
-              />
+            <filter id={`${n}-hl`} x={`-10%`} y={`-10%`} width={`120%`} height={`120%`}>
+              <feGaussianBlur in={`SourceAlpha`} stdDeviation={`4`} result={`blur`} />
               <feOffset in={`blur`} dy={`3`} result={`offset`} />
               <feComposite
                 in={`blur`}
@@ -50,32 +36,14 @@ function GlassFolder({
               <feComposite in={`light`} in2={`SourceAlpha`} operator={`in`} />
             </filter>
           </defs>
-          <path
-            className={`ui-fd-back-fill`}
-            d={ValueValue18}
-            fill={`#5bb7ea`}
-          />
+          <path className={`ui-fd-back-fill`} d={ValueValue18} fill={`#5bb7ea`} />
           <path d={ValueValue18} fill={`#000`} filter={`url(#${n}-hl)`} />
         </svg>
         <svg className={`ui-fd-layer`} viewBox={`0 0 600 500`}>
           <defs>
-            <linearGradient
-              id={`${n}-paper`}
-              x1={`0`}
-              y1={`0`}
-              x2={`0`}
-              y2={`1`}
-            >
-              <stop
-                className={`ui-fd-paper-top`}
-                offset={`0%`}
-                stopColor={`#fff`}
-              />
-              <stop
-                className={`ui-fd-paper-bottom`}
-                offset={`100%`}
-                stopColor={`#eaf2f8`}
-              />
+            <linearGradient id={`${n}-paper`} x1={`0`} y1={`0`} x2={`0`} y2={`1`}>
+              <stop className={`ui-fd-paper-top`} offset={`0%`} stopColor={`#fff`} />
+              <stop className={`ui-fd-paper-bottom`} offset={`100%`} stopColor={`#eaf2f8`} />
             </linearGradient>
             <symbol id={`${n}-doc`} overflow={`visible`}>
               <rect

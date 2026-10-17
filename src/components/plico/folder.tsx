@@ -78,8 +78,15 @@ interface AppShellProps {
   setup?: SetupGroup[];
   className?: string;
 }
-interface FolderFile {name: string; type: "DOC" | "PDF" | "XLS"; edited: string}
-interface FolderData {name: string; files: FolderFile[]}
+interface FolderFile {
+  name: string;
+  type: "DOC" | "PDF" | "XLS";
+  edited: string;
+}
+interface FolderData {
+  name: string;
+  files: FolderFile[];
+}
 interface FolderProps extends AppShellProps {
   folder?: string;
 }
@@ -95,7 +102,14 @@ interface HugeiconsProps extends Omit<React.SVGProps<SVGSVGElement>, "strokeWidt
   secondaryColor?: string;
   disableSecondaryOpacity?: boolean;
 }
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {variant?: string; size?: string; loading?: boolean; icon?: React.ReactNode; iconRight?: React.ReactNode; ref?: React.Ref<HTMLButtonElement>;}
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: string;
+  size?: string;
+  loading?: boolean;
+  icon?: React.ReactNode;
+  iconRight?: React.ReactNode;
+  ref?: React.Ref<HTMLButtonElement>;
+}
 const ScreenFrameModeContext = React.createContext<boolean | null>(null);
 function PreviewFrame({ children }: { children?: React.ReactNode }) {
   const mode = React.useContext(ScreenFrameModeContext);
@@ -190,7 +204,10 @@ var ValueValue20 = [78, 180, 140, 175, 126, 168, 110];
 function GlassFolderComponent({
   className: className,
   label = `Blue folder holding three documents behind a frosted front pocket`,
-}: {className?: string; label?: string}) {
+}: {
+  className?: string;
+  label?: string;
+}) {
   let n = `ui-fd` + React.useId().replace(/[^a-zA-Z0-9_-]/g, ``);
   return (
     <div className={[`ui-fd`, className].filter(Boolean).join(` `)} role={`img`} aria-label={label}>
@@ -2253,7 +2270,7 @@ function DropdownMenu({
   );
 }
 function useToast(): [React.ReactNode, (message: string) => void] {
-  let [message, setMessage] = React.useState<{id: number; text: string} | null>(null);
+  let [message, setMessage] = React.useState<{ id: number; text: string } | null>(null);
   return (
     React.useEffect(() => {
       if (!message) return;
@@ -2267,7 +2284,8 @@ function useToast(): [React.ReactNode, (message: string) => void] {
           {message.text}
         </div>
       ) : null,
-      (e: string) => setMessage({
+      (e: string) =>
+        setMessage({
           id: Date.now(),
           text: e,
         }),
@@ -2306,7 +2324,7 @@ var documentNames = {
   PDF: `PDF`,
   XLS: `Spreadsheet`,
 };
-function FileTemplate({ file: file, meta: meta }: {file: FolderFile; meta?: React.ReactNode}) {
+function FileTemplate({ file: file, meta: meta }: { file: FolderFile; meta?: React.ReactNode }) {
   return (
     <button type={`button`} className={`ui-as-template`}>
       <span className={`ui-as-template__preview`}>
@@ -2317,7 +2335,7 @@ function FileTemplate({ file: file, meta: meta }: {file: FolderFile; meta?: Reac
     </button>
   );
 }
-function DocumentIcon({ type: type, color: color }: {type: FolderFile["type"]; color?: string}) {
+function DocumentIcon({ type: type, color: color }: { type: FolderFile["type"]; color?: string }) {
   return (
     <span className={`ui-as-doc`} data-color={color} aria-hidden={`true`}>
       <span className={`ui-as-doc__art`}>
@@ -3618,7 +3636,7 @@ function Folder({ folder: folder, ...t }: FolderProps) {
             files: [],
           }
         : valueValue4[0]),
-    [r, a] = React.useState<{folder: string; files: FolderFile[]}>({
+    [r, a] = React.useState<{ folder: string; files: FolderFile[] }>({
       folder: n.name,
       files: [],
     }),
@@ -3725,9 +3743,11 @@ function Folder({ folder: folder, ...t }: FolderProps) {
             {D.map((e, t) => (
               <div
                 className={`ui-as-rise`}
-                style={{
-                  "--i": T.includes(e) ? 0 : t,
-                } as React.CSSProperties}
+                style={
+                  {
+                    "--i": T.includes(e) ? 0 : t,
+                  } as React.CSSProperties
+                }
                 key={e.name + t}
               >
                 <FileTemplate

@@ -480,17 +480,13 @@ function IntegrationBeam({
   );
 }
 function ProductMark() {
-  const petal = "M24 24C17.6 19.6 16.4 9.4 24 3.5C31.6 9.4 30.4 19.6 24 24Z";
   return (
-    <svg viewBox="0 0 48 48" aria-hidden="true">
-      <g opacity="0.36">
-        {[45, 135, 225, 315].map((r) => (
-          <path key={r} d={petal} transform={`rotate(${r} 24 24)`} />
-        ))}
-      </g>
-      {[0, 90, 180, 270].map((r) => (
-        <path key={r} d={petal} transform={`rotate(${r} 24 24)`} />
-      ))}
+    <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+      <path
+        d="M4 4h16l8 8v8H12v8H4V4Zm8 8v4h8v-4h-8Zm8-8h-2l-8 8h2l8-8Z"
+        fillRule="evenodd"
+        clipRule="evenodd"
+      />
     </svg>
   );
 }

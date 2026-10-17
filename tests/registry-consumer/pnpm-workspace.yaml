@@ -1,0 +1,6 @@
+packages: []
+engineStrict: true
+saveExact: true
+
+allowBuilds:
+  sharp: true

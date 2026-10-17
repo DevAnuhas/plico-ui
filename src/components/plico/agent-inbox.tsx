@@ -81,10 +81,8 @@ var matchesFilter = (filter: string, status: string) =>
   (filter === `needs-you` && (status === `waiting` || status === `failed`)) ||
   (filter === `running` && status === `running`) ||
   (filter === `done` && status === `done`);
-var isLiveStatus = (status: string) =>
-  status === `running` || status === `waiting`;
-var toTimestamp = (value: number | Date) =>
-  typeof value == `number` ? value : value.getTime();
+var isLiveStatus = (status: string) => status === `running` || status === `waiting`;
+var toTimestamp = (value: number | Date) => (typeof value == `number` ? value : value.getTime());
 var padTwoDigits = (value: number) => String(value).padStart(2, `0`);
 var formatDuration = (milliseconds: number) => {
   let seconds = Math.max(0, Math.floor(milliseconds / 1e3));
@@ -95,8 +93,7 @@ var formatDuration = (milliseconds: number) => {
     : `${Math.floor(minutes / 60)}h ${padTwoDigits(minutes % 60)}m`;
 };
 var prefersReducedMotion = () =>
-  typeof window < `u` &&
-  window.matchMedia(`(prefers-reduced-motion: reduce)`).matches;
+  typeof window < `u` && window.matchMedia(`(prefers-reduced-motion: reduce)`).matches;
 var motionEase = `cubic-bezier(0.32, 0.72, 0.24, 1)`;
 function StatusSwap({
   id: id,
@@ -188,11 +185,7 @@ function RollingCount({ value: value }: { value: number }) {
     (
       <span className={`ui-ai__roll`} data-dir={rollState.up ? `up` : `down`}>
         {rollState.old !== null && (
-          <span
-            data-out={``}
-            aria-hidden={`true`}
-            key={`out-${rollState.old}-${rollState.now}`}
-          >
+          <span data-out={``} aria-hidden={`true`} key={`out-${rollState.old}-${rollState.now}`}>
             {rollState.old}
           </span>
         )}
@@ -211,65 +204,27 @@ var iconStroke: Pick<
   strokeLinejoin: `round`,
 };
 var CheckIcon = () => (
-  <svg
-    width={`10`}
-    height={`10`}
-    viewBox={`0 0 10 10`}
-    fill={`none`}
-    aria-hidden={`true`}
-  >
+  <svg width={`10`} height={`10`} viewBox={`0 0 10 10`} fill={`none`} aria-hidden={`true`}>
     <path d={`m2.4 5.2 1.7 1.7 3.6-3.9`} {...iconStroke} strokeWidth={1.6} />
   </svg>
 );
 var ErrorIcon = () => (
-  <svg
-    width={`10`}
-    height={`10`}
-    viewBox={`0 0 10 10`}
-    fill={`none`}
-    aria-hidden={`true`}
-  >
+  <svg width={`10`} height={`10`} viewBox={`0 0 10 10`} fill={`none`} aria-hidden={`true`}>
     <path d={`M5 2.6v3M5 7.4v.01`} {...iconStroke} strokeWidth={1.7} />
   </svg>
 );
 var OpenIcon = () => (
-  <svg
-    width={`12`}
-    height={`12`}
-    viewBox={`0 0 12 12`}
-    fill={`none`}
-    aria-hidden={`true`}
-  >
-    <path
-      d={`M3.5 8.5 8.5 3.5M4.5 3.5h4v4`}
-      {...iconStroke}
-      strokeWidth={1.4}
-    />
+  <svg width={`12`} height={`12`} viewBox={`0 0 12 12`} fill={`none`} aria-hidden={`true`}>
+    <path d={`M3.5 8.5 8.5 3.5M4.5 3.5h4v4`} {...iconStroke} strokeWidth={1.4} />
   </svg>
 );
 var RetryIcon = () => (
-  <svg
-    width={`12`}
-    height={`12`}
-    viewBox={`0 0 12 12`}
-    fill={`none`}
-    aria-hidden={`true`}
-  >
-    <path
-      d={`M9.6 6A3.6 3.6 0 1 1 8.5 3.4M9.3 1.8v2.1H7.2`}
-      {...iconStroke}
-      strokeWidth={1.4}
-    />
+  <svg width={`12`} height={`12`} viewBox={`0 0 12 12`} fill={`none`} aria-hidden={`true`}>
+    <path d={`M9.6 6A3.6 3.6 0 1 1 8.5 3.4M9.3 1.8v2.1H7.2`} {...iconStroke} strokeWidth={1.4} />
   </svg>
 );
 var PlusIcon = () => (
-  <svg
-    width={`12`}
-    height={`12`}
-    viewBox={`0 0 12 12`}
-    fill={`none`}
-    aria-hidden={`true`}
-  >
+  <svg width={`12`} height={`12`} viewBox={`0 0 12 12`} fill={`none`} aria-hidden={`true`}>
     <path d={`M6 2.5v7M2.5 6h7`} {...iconStroke} strokeWidth={1.4} />
   </svg>
 );
@@ -340,9 +295,7 @@ function AgentInbox({
     let e = window.setInterval(() => setNow(Date.now()), 1e3);
     return () => window.clearInterval(e);
   }, [hasLiveTasks]);
-  let statusSignature = effectiveTasks
-    .map((e) => `${e.id}:${e.status}`)
-    .join(`|`);
+  let statusSignature = effectiveTasks.map((e) => `${e.id}:${e.status}`).join(`|`);
   React.useEffect(() => {
     for (let e of effectiveTasks)
       isLiveStatus(e.status)
@@ -359,25 +312,20 @@ function AgentInbox({
         : task.elapsed === void 0
           ? task.startedAt === void 0
             ? null
-            : formatDuration(
-                (completedAtRef.current[task.id] ?? now) - startTime,
-              )
+            : formatDuration((completedAtRef.current[task.id] ?? now) - startTime)
           : formatDuration(task.elapsed);
     },
     [displayStatuses, setDisplayStatuses] = React.useState(() =>
       Object.fromEntries(tasks.map((e) => [e.id, e.status])),
     ),
-    displayStatus = (task: AgentTask) =>
-      displayStatuses[task.id] ?? task.status,
+    displayStatus = (task: AgentTask) => displayStatuses[task.id] ?? task.status,
     rowNodesRef = React.useRef(new Map<string, HTMLElement>()),
     previousTopsRef = React.useRef<Map<string, number> | null>(null),
     latestTasksRef = React.useRef(effectiveTasks);
   ((latestTasksRef.current = effectiveTasks),
     React.useEffect(() => {
       let e = effectiveTasks.some(
-          (e) =>
-            displayStatuses[e.id] !== void 0 &&
-            displayStatuses[e.id] !== e.status,
+          (e) => displayStatuses[e.id] !== void 0 && displayStatuses[e.id] !== e.status,
         ),
         t = effectiveTasks.filter((e) => displayStatuses[e.id] === void 0);
       if (
@@ -392,14 +340,10 @@ function AgentInbox({
       let n = window.setTimeout(
         () => {
           let e = new Map();
-          (rowNodesRef.current.forEach((t, n) =>
-            e.set(n, t.getBoundingClientRect().top),
-          ),
+          (rowNodesRef.current.forEach((t, n) => e.set(n, t.getBoundingClientRect().top)),
             (previousTopsRef.current = e),
             setDisplayStatuses(
-              Object.fromEntries(
-                latestTasksRef.current.map((e) => [e.id, e.status]),
-              ),
+              Object.fromEntries(latestTasksRef.current.map((e) => [e.id, e.status])),
             ));
         },
         prefersReducedMotion() ? 0 : 950,
@@ -412,16 +356,13 @@ function AgentInbox({
         i: t,
       }))
       .sort(
-        (e, t) =>
-          statusOrder[displayStatus(e.t)] - statusOrder[displayStatus(t.t)] ||
-          e.i - t.i,
+        (e, t) => statusOrder[displayStatus(e.t)] - statusOrder[displayStatus(t.t)] || e.i - t.i,
       )
       .map(({ t: t }) => t),
     orderSignature = sortedTasks.map((e) => e.id).join(`|`);
   React.useLayoutEffect(() => {
     let e = previousTopsRef.current;
-    if (((previousTopsRef.current = null), !e || prefersReducedMotion()))
-      return;
+    if (((previousTopsRef.current = null), !e || prefersReducedMotion())) return;
     let t: HTMLElement | null = null,
       n = 0;
     rowNodesRef.current.forEach((r, i) => {
@@ -446,23 +387,16 @@ function AgentInbox({
         Math.abs(o) > n && ((n = Math.abs(o)), (t = r)));
     });
     let r = t as HTMLElement | null;
-    r &&
-      ((r.style.zIndex = `1`),
-      window.setTimeout(() => (r.style.zIndex = ``), 600));
+    r && ((r.style.zIndex = `1`), window.setTimeout(() => (r.style.zIndex = ``), 600));
   }, [orderSignature]);
   let knownIdsRef = React.useRef<Set<string> | null>(null);
   knownIdsRef.current ||= new Set(tasks.map((e) => e.id));
-  let [enteringTasks, setEnteringTasks] = React.useState<
-      Record<string, boolean>
-    >({}),
-    newTaskIds = effectiveTasks
-      .filter((e) => !knownIdsRef.current!.has(e.id))
-      .map((e) => e.id);
+  let [enteringTasks, setEnteringTasks] = React.useState<Record<string, boolean>>({}),
+    newTaskIds = effectiveTasks.filter((e) => !knownIdsRef.current!.has(e.id)).map((e) => e.id);
   React.useLayoutEffect(() => {
     if (
       !newTaskIds.length ||
-      (newTaskIds.forEach((e) => knownIdsRef.current!.add(e)),
-      prefersReducedMotion())
+      (newTaskIds.forEach((e) => knownIdsRef.current!.add(e)), prefersReducedMotion())
     )
       return;
     setEnteringTasks((e) => ({
@@ -501,30 +435,20 @@ function AgentInbox({
         },
       })),
     approveTask = (task: AgentTask) =>
-      onApprove
-        ? onApprove(task)
-        : updateLocalTask(task, `running`, `Approved – continuing`),
+      onApprove ? onApprove(task) : updateLocalTask(task, `running`, `Approved – continuing`),
     rejectTask = (task: AgentTask) =>
-      onReject
-        ? onReject(task)
-        : updateLocalTask(task, `failed`, `Rejected by you`),
+      onReject ? onReject(task) : updateLocalTask(task, `failed`, `Rejected by you`),
     retryTask = (task: AgentTask) =>
-      onRetry
-        ? onRetry(task)
-        : updateLocalTask(task, `running`, `Retrying`, true),
+      onRetry ? onRetry(task) : updateLocalTask(task, `running`, `Retrying`, true),
     [announcement, setAnnouncement] = React.useState(``),
     previousStatusesRef = React.useRef<Record<string, string>>({});
   React.useEffect(() => {
     let e = effectiveTasks.filter(
-      (e) =>
-        previousStatusesRef.current[e.id] &&
-        previousStatusesRef.current[e.id] !== e.status,
+      (e) => previousStatusesRef.current[e.id] && previousStatusesRef.current[e.id] !== e.status,
     );
     (e.length &&
       setAnnouncement(
-        e
-          .map((e) => `${e.title}: ${statusLabels[e.status].toLowerCase()}`)
-          .join(`. `),
+        e.map((e) => `${e.title}: ${statusLabels[e.status].toLowerCase()}`).join(`. `),
       ),
       (previousStatusesRef.current = Object.fromEntries(
         effectiveTasks.map((e) => [e.id, e.status]),
@@ -556,9 +480,7 @@ function AgentInbox({
       () => n.disconnect()
     );
   }, [activeFilter]);
-  let handleFilterKeyDown: React.KeyboardEventHandler<HTMLDivElement> = (
-      event,
-    ) => {
+  let handleFilterKeyDown: React.KeyboardEventHandler<HTMLDivElement> = (event) => {
       let currentIndex = inboxFilters.findIndex((e) => e.id === activeFilter),
         nextIndex =
           event.key === `ArrowRight` || event.key === `ArrowDown`
@@ -574,9 +496,7 @@ function AgentInbox({
         (event.preventDefault(),
         changeFilter(inboxFilters[nextIndex].id),
         tabsRef.current
-          ?.querySelector<HTMLElement>(
-            `[data-filter="${inboxFilters[nextIndex].id}"]`,
-          )
+          ?.querySelector<HTMLElement>(`[data-filter="${inboxFilters[nextIndex].id}"]`)
           ?.focus());
     },
     handleEscape: React.KeyboardEventHandler<HTMLDivElement> = (event) => {
@@ -584,21 +504,16 @@ function AgentInbox({
       event.stopPropagation();
       let taskId = expandedTaskId;
       (setExpandedTaskId(null),
-        rowNodesRef.current
-          .get(taskId)
-          ?.querySelector<HTMLElement>(`.ui-ai__head`)
-          ?.focus({
-            preventScroll: true,
-          }));
+        rowNodesRef.current.get(taskId)?.querySelector<HTMLElement>(`.ui-ai__head`)?.focus({
+          preventScroll: true,
+        }));
     },
     hoveredTask =
       hoverTarget && `task` in hoverTarget
         ? effectiveTasks.find((e) => e.id === hoverTarget.task)
         : void 0,
-    hoveredFilter =
-      hoverTarget && `filter` in hoverTarget ? hoverTarget.filter : null,
-    latestStepLabel = (task: AgentTask) =>
-      task.steps?.[task.steps.length - 1]?.label,
+    hoveredFilter = hoverTarget && `filter` in hoverTarget ? hoverTarget.filter : null,
+    latestStepLabel = (task: AgentTask) => task.steps?.[task.steps.length - 1]?.label,
     caption,
     captionKey;
   if (hoveredTask) {
@@ -668,10 +583,7 @@ function AgentInbox({
       needsYouCount || runningCount ? (
         <>
           {needsYouCount > 0 &&
-            e(
-              `needs-you`,
-              `${needsYouCount} ${needsYouCount === 1 ? `needs` : `need`} you`,
-            )}
+            e(`needs-you`, `${needsYouCount} ${needsYouCount === 1 ? `needs` : `need`} you`)}
           {needsYouCount > 0 && runningCount > 0 && ` · `}
           {runningCount > 0 && e(`running`, `${runningCount} running`)}
         </>
@@ -682,9 +594,7 @@ function AgentInbox({
       )),
       (captionKey = `rest`));
   }
-  let visibleTasks = sortedTasks.filter((e) =>
-      matchesFilter(activeFilter, displayStatus(e)),
-    ),
+  let visibleTasks = sortedTasks.filter((e) => matchesFilter(activeFilter, displayStatus(e))),
     emptyLabel =
       activeFilter === `needs-you`
         ? `Nothing needs you`
@@ -748,23 +658,15 @@ function AgentInbox({
               <span className={`ui-ai__tab-label`} data-text={e.label}>
                 {e.label}
               </span>
-              <span
-                className={`ui-ai__count`}
-                data-zero={countFilter(e.id) === 0 ? `` : void 0}
-              >
+              <span className={`ui-ai__count`} data-zero={countFilter(e.id) === 0 ? `` : void 0}>
                 <RollingCount value={countFilter(e.id)} />
               </span>
             </button>
           ))}
         </div>
-        <ul
-          className={`ui-ai__list`}
-          onPointerLeave={() => setHoverTarget(null)}
-        >
+        <ul className={`ui-ai__list`} onPointerLeave={() => setHoverTarget(null)}>
           {sortedTasks.map((e) => {
-            let t =
-                matchesFilter(activeFilter, displayStatus(e)) &&
-                !enteringTasks[e.id],
+            let t = matchesFilter(activeFilter, displayStatus(e)) && !enteringTasks[e.id],
               n = expandedTaskId === e.id && t,
               i = elapsedLabel(e),
               o = (e.steps ?? []).slice(-4),
@@ -775,19 +677,13 @@ function AgentInbox({
             return (
               <li
                 ref={(t) => {
-                  t
-                    ? rowNodesRef.current.set(e.id, t)
-                    : rowNodesRef.current.delete(e.id);
+                  t ? rowNodesRef.current.set(e.id, t) : rowNodesRef.current.delete(e.id);
                 }}
                 className={`ui-ai__item`}
                 aria-hidden={!t || void 0}
                 key={e.id}
               >
-                <div
-                  className={`ui-ai__fold`}
-                  data-open={t ? `` : void 0}
-                  inert={!t}
-                >
+                <div className={`ui-ai__fold`} data-open={t ? `` : void 0} inert={!t}>
                   <div className={`ui-ai__clip`}>
                     <div
                       className={`ui-ai__row`}
@@ -815,10 +711,7 @@ function AgentInbox({
                         }
                         onBlur={() => setHoverTarget(null)}
                       >
-                        <StatusSwap
-                          id={e.status}
-                          className={`ui-ai__glyph-box`}
-                        >
+                        <StatusSwap id={e.status} className={`ui-ai__glyph-box`}>
                           <StatusGlyph status={e.status} />
                         </StatusSwap>
                         <span className={`ui-ai__text`}>
@@ -830,9 +723,7 @@ function AgentInbox({
                                 <span aria-hidden={`true`}>{`·`}</span>
                                 <span
                                   className={`ui-ai__time`}
-                                  data-live={
-                                    isLiveStatus(e.status) ? `` : void 0
-                                  }
+                                  data-live={isLiveStatus(e.status) ? `` : void 0}
                                 >
                                   {i}
                                 </span>
@@ -842,17 +733,11 @@ function AgentInbox({
                         </span>
                         <span className={`ui-ai__tag`} data-status={e.status}>
                           {Object.keys(statusLabels).map((e) => (
-                            <span
-                              className={`ui-ai__tag-size`}
-                              aria-hidden={`true`}
-                              key={e}
-                            >
+                            <span className={`ui-ai__tag-size`} aria-hidden={`true`} key={e}>
                               {statusLabels[e]}
                             </span>
                           ))}
-                          <StatusSwap id={e.status}>
-                            {statusLabels[e.status]}
-                          </StatusSwap>
+                          <StatusSwap id={e.status}>{statusLabels[e.status]}</StatusSwap>
                         </span>
                       </button>
                       <div
@@ -864,10 +749,7 @@ function AgentInbox({
                         <div className={`ui-ai__clip`}>
                           <div className={`ui-ai__panel`}>
                             {o.length > 0 && (
-                              <ol
-                                className={`ui-ai__steps`}
-                                aria-label={`Latest steps`}
-                              >
+                              <ol className={`ui-ai__steps`} aria-label={`Latest steps`}>
                                 {o.map((t, n) => {
                                   let i = n === o.length - 1;
                                   return (
@@ -878,13 +760,9 @@ function AgentInbox({
                                       key={l + n}
                                     >
                                       <span className={`ui-ai__dot`} />
-                                      <span className={`ui-ai__step-label`}>
-                                        {t.label}
-                                      </span>
+                                      <span className={`ui-ai__step-label`}>{t.label}</span>
                                       {t.time && (
-                                        <span className={`ui-ai__step-time`}>
-                                          {t.time}
-                                        </span>
+                                        <span className={`ui-ai__step-time`}>{t.time}</span>
                                       )}
                                     </li>
                                   );
@@ -892,10 +770,7 @@ function AgentInbox({
                               </ol>
                             )}
                             <div className={`ui-ai__actions`}>
-                              <StatusSwap
-                                id={`${e.status}`}
-                                className={`ui-ai__actions-swap`}
-                              >
+                              <StatusSwap id={`${e.status}`} className={`ui-ai__actions-swap`}>
                                 <span className={`ui-ai__buttons`}>
                                   {e.status === `waiting` && (
                                     <>
@@ -923,27 +798,21 @@ function AgentInbox({
                                       {`Retry`}
                                     </button>
                                   )}
-                                  {(e.status === `done` ||
-                                    e.status === `running`) &&
-                                    onOpen && (
-                                      <button
-                                        type={`button`}
-                                        className={`ui-ai__btn`}
-                                        onClick={() => onOpen(e)}
-                                      >
-                                        {`Open`}
-                                        <OpenIcon />
-                                      </button>
-                                    )}
+                                  {(e.status === `done` || e.status === `running`) && onOpen && (
+                                    <button
+                                      type={`button`}
+                                      className={`ui-ai__btn`}
+                                      onClick={() => onOpen(e)}
+                                    >
+                                      {`Open`}
+                                      <OpenIcon />
+                                    </button>
+                                  )}
                                   {e.status === `running` && !onOpen && (
-                                    <span
-                                      className={`ui-ai__note`}
-                                    >{`Working on it…`}</span>
+                                    <span className={`ui-ai__note`}>{`Working on it…`}</span>
                                   )}
                                   {e.status === `done` && !onOpen && (
-                                    <span
-                                      className={`ui-ai__note`}
-                                    >{`Finished`}</span>
+                                    <span className={`ui-ai__note`}>{`Finished`}</span>
                                   )}
                                 </span>
                               </StatusSwap>
@@ -975,11 +844,7 @@ function AgentInbox({
           <StatusSwap id={captionKey}>{caption}</StatusSwap>
         </span>
         {action && (
-          <button
-            type={`button`}
-            className={`ui-ai__action`}
-            onClick={action.onClick}
-          >
+          <button type={`button`} className={`ui-ai__action`} onClick={action.onClick}>
             <PlusIcon />
             {action.label}
           </button>
@@ -1473,13 +1338,11 @@ function AgentInboxDemo2() {
         `Rejected by you`,
       );
   (React.useEffect(
-    () => () =>
-      pendingTimeoutsRef.current.forEach((e) => window.clearTimeout(e)),
+    () => () => pendingTimeoutsRef.current.forEach((e) => window.clearTimeout(e)),
     [],
   ),
     React.useEffect(() => {
-      let t = (t: string) => () =>
-          rootRef.current?.querySelector<HTMLElement>(t)?.click(),
+      let t = (t: string) => () => rootRef.current?.querySelector<HTMLElement>(t)?.click(),
         n: [number, () => void][] = [
           [700, t(`.ui-ai__head`)],
           [2700, t(`.ui-ai__row[data-open] .ui-ai__btn[data-kind='primary']`)],
@@ -1491,9 +1354,7 @@ function AgentInboxDemo2() {
           [
             3200,
             () => {
-              (pendingTimeoutsRef.current.forEach((e) =>
-                window.clearTimeout(e),
-              ),
+              (pendingTimeoutsRef.current.forEach((e) => window.clearTimeout(e)),
                 (pendingTimeoutsRef.current = []),
                 setTasks(makeDemoTasks()),
                 setRunId((e) => e + 1));

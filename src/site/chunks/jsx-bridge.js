@@ -1,1 +1,2 @@
-import * as JSX from 'react/jsx-runtime';export const t=()=>JSX;
+import * as JSX from "react/jsx-runtime";
+export const t = () => JSX;

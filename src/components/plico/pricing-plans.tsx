@@ -66,21 +66,13 @@ function PricingPlans({
         </div>
         <div className={`ui-pp__plans`}>
           {plans.map((e) => (
-            <article
-              className={`ui-pp__card`}
-              data-featured={e.badge ? true : void 0}
-              key={e.id}
-            >
+            <article className={`ui-pp__card`} data-featured={e.badge ? true : void 0} key={e.id}>
               <p className={`ui-pp__name`}>
                 {e.name}
                 {e.badge && <span className={`ui-pp__badge`}>{e.badge}</span>}
               </p>
               <p className={`ui-pp__price`}>
-                <PriceAmount
-                  value={e.price[billing]}
-                  currency={currency}
-                  roll={rolling}
-                />
+                <PriceAmount value={e.price[billing]} currency={currency} roll={rolling} />
                 <span className={`ui-pp__per`}>{`/per month`}</span>
               </p>
               <hr className={`ui-pp__rule`} />
@@ -183,11 +175,7 @@ function PriceAmount({
   return rolling ? (
     <span className={`ui-pp__amount`} aria-label={text}>
       {text.split(``).map((e, t) => (
-        <span
-          className={`ui-pp__digit`}
-          aria-hidden={`true`}
-          key={`${text.length - t}-${e}`}
-        >
+        <span className={`ui-pp__digit`} aria-hidden={`true`} key={`${text.length - t}-${e}`}>
           {e}
         </span>
       ))}
@@ -196,13 +184,7 @@ function PriceAmount({
     <span className={`ui-pp__amount`}>{text}</span>
   );
 }
-var Icon = ({
-  children: children,
-  size = 16,
-}: {
-  children: React.ReactNode;
-  size?: number;
-}) => (
+var Icon = ({ children: children, size = 16 }: { children: React.ReactNode; size?: number }) => (
   <svg
     viewBox={`0 0 24 24`}
     width={size}
@@ -286,13 +268,7 @@ var ExcludedIcon = () => (
   </svg>
 );
 var BrandGlyph = (path: string | undefined, color: string | undefined) => (
-  <svg
-    viewBox={`0 0 24 24`}
-    width={`15`}
-    height={`15`}
-    fill={color}
-    aria-hidden={`true`}
-  >
+  <svg viewBox={`0 0 24 24`} width={`15`} height={`15`} fill={color} aria-hidden={`true`}>
     <path d={path} />
   </svg>
 );
@@ -356,13 +332,7 @@ const View_InlineView = () => {
   );
 };
 const View_InlineView2 = () => (
-  <svg
-    width={`15`}
-    height={`15`}
-    viewBox={`0 0 49.883 49.877`}
-    fill={`none`}
-    aria-hidden={`true`}
-  >
+  <svg width={`15`} height={`15`} viewBox={`0 0 49.883 49.877`} fill={`none`} aria-hidden={`true`}>
     <path
       d={`M18.3549 10.4784C15.4713 10.4784 13.1157 8.12279 13.1157 5.2392C13.1157 2.35561 15.4713 0 18.3549 0C21.2385 0 23.5941 2.35561 23.5941 5.2392V10.4784H18.3549Z`}
       fill={`#36C5F0`}
@@ -490,14 +460,7 @@ var defaultPlans = [
     sync: `Hourly`,
     pick: 2,
     features: [
-      ...buildFeatureRows(featureLabels, [
-        true,
-        false,
-        false,
-        true,
-        false,
-        false,
-      ]),
+      ...buildFeatureRows(featureLabels, [true, false, false, true, false, false]),
       {
         label: `Email support`,
         included: true,
@@ -532,14 +495,7 @@ var defaultPlans = [
     sync: `Every 15 min`,
     pick: 4,
     features: [
-      ...buildFeatureRows(featureLabels, [
-        true,
-        true,
-        true,
-        true,
-        false,
-        false,
-      ]),
+      ...buildFeatureRows(featureLabels, [true, true, true, true, false, false]),
       {
         label: `Chat + Email support`,
         included: true,
@@ -949,9 +905,7 @@ var pricingPlansStyles = `
 var demoWidth = 1040;
 function PricingPlansDemo2() {
   let rootRef = React.useRef<HTMLDivElement | null>(null),
-    [fit, setFit] = React.useState<{ scale: number; card: boolean } | null>(
-      null,
-    );
+    [fit, setFit] = React.useState<{ scale: number; card: boolean } | null>(null);
   return (
     React.useLayoutEffect(() => {
       let t = rootRef.current,

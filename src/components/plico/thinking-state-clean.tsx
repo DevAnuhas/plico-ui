@@ -42,20 +42,13 @@ function ThinkingStateClean({
     T = React.useRef(0),
     E = React.useRef(false);
   (React.useEffect(() => {
-    ((T.current = Date.now()),
-      g(Math.min(1, steps.length)),
-      v(false),
-      b(0),
-      S(true),
-      w(new Set()));
+    ((T.current = Date.now()), g(Math.min(1, steps.length)), v(false), b(0), S(true), w(new Set()));
     let t = [],
       n = 0;
     return (
       steps.forEach((e, r) => {
         (r > 0 && t.push(window.setTimeout(() => g(r + 1), n)),
-          (n +=
-            stepMs +
-            (e.kind === `search` ? (e.sources.length + 1) * ViewI : 0)));
+          (n += stepMs + (e.kind === `search` ? (e.sources.length + 1) * ViewI : 0)));
       }),
       t.push(
         window.setTimeout(() => {
@@ -63,17 +56,13 @@ function ThinkingStateClean({
           (b(e), v(true), onDone?.(e));
         }, n),
       ),
-      loop &&
-        t.push(window.setTimeout(() => !E.current && m((e) => e + 1), n + 4e3)),
+      loop && t.push(window.setTimeout(() => !E.current && m((e) => e + 1), n + 4e3)),
       () => t.forEach(clearTimeout)
     );
   }, [p, steps, stepMs, loop]),
     React.useEffect(() => {
       if (_) return;
-      let e = window.setInterval(
-        () => b(Math.floor((Date.now() - T.current) / 1e3)),
-        250,
-      );
+      let e = window.setInterval(() => b(Math.floor((Date.now() - T.current) / 1e3)), 250);
       return () => clearInterval(e);
     }, [_, p]));
   let D = _ ? -1 : h - 1;
@@ -112,10 +101,7 @@ function ThinkingStateClean({
             `Worked for ${valueValue2(y)}`
           ) : (
             <>
-              <span
-                className={`ui-thinkc__shimmer`}
-                data-text={`Thinking`}
-              >{`Thinking`}</span>
+              <span className={`ui-thinkc__shimmer`} data-text={`Thinking`}>{`Thinking`}</span>
               <span className={`ui-thinkc__time`}>{valueValue2(y)}</span>
             </>
           )}
@@ -131,10 +117,7 @@ function ThinkingStateClean({
           <ol className={`ui-thinkc__list`} aria-live={`polite`}>
             {steps.slice(0, h).map((e, t) => {
               let n = t === D,
-                a =
-                  e.kind === `search` && n
-                    ? (e.activeLabel ?? `Searching`)
-                    : e.label;
+                a = e.kind === `search` && n ? (e.activeLabel ?? `Searching`) : e.label;
               return (
                 <li
                   className={`ui-thinkc__item`}
@@ -162,27 +145,18 @@ function ThinkingStateClean({
                   </span>
                   <div className={`ui-thinkc__content`}>
                     <span
-                      className={
-                        n
-                          ? `ui-thinkc__label ui-thinkc__shimmer`
-                          : `ui-thinkc__label`
-                      }
+                      className={n ? `ui-thinkc__label ui-thinkc__shimmer` : `ui-thinkc__label`}
                       data-text={a}
                     >
                       {a}
                     </span>
                     {e.kind === `search` && (
                       <div className={`ui-thinkc__sources`}>
-                        {[
-                          ...e.sources,
-                          ...(C.has(t) ? (e.moreSources ?? []) : []),
-                        ].map((t, n) => (
+                        {[...e.sources, ...(C.has(t) ? (e.moreSources ?? []) : [])].map((t, n) => (
                           <Icono
                             source={t}
                             delay={
-                              n < e.sources.length
-                                ? 120 + n * ViewI
-                                : (n - e.sources.length) * 70
+                              n < e.sources.length ? 120 + n * ViewI : (n - e.sources.length) * 70
                             }
                             key={t.label + n}
                           />
@@ -203,9 +177,7 @@ function ThinkingStateClean({
                                 }));
                             }}
                           >
-                            {C.has(t)
-                              ? `Show less`
-                              : `+${e.moreSources.length} more`}
+                            {C.has(t) ? `Show less` : `+${e.moreSources.length} more`}
                           </button>
                         ) : null}
                       </div>
@@ -233,19 +205,11 @@ function ThinkingStateClean({
     </div>
   );
 }
-function Icono({
-  source: source,
-  delay: delay,
-}: {
-  source: ThinkingSource;
-  delay: number;
-}) {
+function Icono({ source: source, delay: delay }: { source: ThinkingSource; delay: number }) {
   let n = source.tooltip ?? source.href?.replace(/^https?:\/\//, ``),
     i = (
       <>
-        {source.icon && (
-          <span className={`ui-thinkc__favicon`}>{source.icon}</span>
-        )}
+        {source.icon && <span className={`ui-thinkc__favicon`}>{source.icon}</span>}
         <span className={`ui-thinkc__source-label`}>{source.label}</span>
         {n && (
           <span className={`ui-thinkc__tip`} aria-hidden={`true`}>
@@ -271,9 +235,7 @@ function Icono({
 }
 var valueValue = [0, 120, 240, 120, 240, 360, 240, 360, 480];
 var valueValue2 = (e: number) =>
-  e < 60
-    ? `${e}s`
-    : `${Math.floor(e / 60)}m ${String(e % 60).padStart(2, `0`)}s`;
+  e < 60 ? `${e}s` : `${Math.floor(e / 60)}m ${String(e % 60).padStart(2, `0`)}s`;
 var valueValue3 = `
 /* Colors and motion as variables – override them on .ui-thinkc (see Theming in the docs) */
 .ui-thinkc {
@@ -745,13 +707,7 @@ var Iconu = ({
 }) => (
   <svg viewBox={`0 0 24 24`}>
     <rect width={`24`} height={`24`} fill={bg} />
-    <svg
-      x={pad}
-      y={pad}
-      width={24 - 2 * pad}
-      height={24 - 2 * pad}
-      viewBox={viewBox}
-    >
+    <svg x={pad} y={pad} width={24 - 2 * pad} height={24 - 2 * pad} viewBox={viewBox}>
       {children}
     </svg>
   </svg>
@@ -815,10 +771,7 @@ const View_InlineView5 = () => (
       fill={`#34A853`}
       d={`M12 24c3.24 0 5.96-1.07 7.94-2.9l-3.87-3c-1.08.72-2.45 1.15-4.07 1.15-3.13 0-5.78-2.11-6.73-4.95H1.27v3.1A12 12 0 0 0 12 24Z`}
     />
-    <path
-      fill={`#FBBC05`}
-      d={`M5.27 14.3a7.2 7.2 0 0 1 0-4.6V6.6h-4a12 12 0 0 0 0 10.8l4-3.1Z`}
-    />
+    <path fill={`#FBBC05`} d={`M5.27 14.3a7.2 7.2 0 0 1 0-4.6V6.6h-4a12 12 0 0 0 0 10.8l4-3.1Z`} />
     <path
       fill={`#EA4335`}
       d={`M12 4.75c1.76 0 3.34.6 4.59 1.8l3.43-3.43A11.5 11.5 0 0 0 12 0 12 12 0 0 0 1.27 6.6l4 3.1C6.22 6.86 8.87 4.75 12 4.75Z`}

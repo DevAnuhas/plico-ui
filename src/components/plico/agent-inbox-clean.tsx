@@ -60,21 +60,15 @@ var inboxLanes = [
   },
 ];
 var statusLane = (status: string) =>
-  status === `waiting` || status === `failed`
-    ? `needs`
-    : status === `running`
-      ? `running`
-      : `done`;
+  status === `waiting` || status === `failed` ? `needs` : status === `running` ? `running` : `done`;
 var statusLabels: Record<string, string> = {
   waiting: `Waiting for you`,
   running: `Running`,
   done: `Done`,
   failed: `Failed`,
 };
-var isLiveStatus = (status: string) =>
-  status === `running` || status === `waiting`;
-var toTimestamp = (value: number | Date) =>
-  typeof value == `number` ? value : value.getTime();
+var isLiveStatus = (status: string) => status === `running` || status === `waiting`;
+var toTimestamp = (value: number | Date) => (typeof value == `number` ? value : value.getTime());
 var padTwoDigits = (value: number) => String(value).padStart(2, `0`);
 var formatDuration = (milliseconds: number) => {
   let seconds = Math.max(0, Math.floor(milliseconds / 1e3));
@@ -85,8 +79,7 @@ var formatDuration = (milliseconds: number) => {
     : `${Math.floor(minutes / 60)}h ${padTwoDigits(minutes % 60)}m`;
 };
 var prefersReducedMotion = () =>
-  typeof window < `u` &&
-  window.matchMedia(`(prefers-reduced-motion: reduce)`).matches;
+  typeof window < `u` && window.matchMedia(`(prefers-reduced-motion: reduce)`).matches;
 var motionEase = `cubic-bezier(0.32, 0.72, 0.24, 1)`;
 var iconStroke: Pick<
   React.SVGProps<SVGElement>,
@@ -104,21 +97,11 @@ var SparkIcon = () => (
       d={`M7 1.2c.4 2.9 1.9 4.4 4.8 4.8-2.9.4-4.4 1.9-4.8 4.8C6.6 7.9 5.1 6.4 2.2 6 5.1 5.6 6.6 4.1 7 1.2Z`}
       fill={`currentColor`}
     />
-    <circle
-      cx={`11.6`}
-      cy={`11.4`}
-      r={`1.1`}
-      fill={`currentColor`}
-      opacity={`0.55`}
-    />
+    <circle cx={`11.6`} cy={`11.4`} r={`1.1`} fill={`currentColor`} opacity={`0.55`} />
   </svg>
 );
 var StatusIcon = ({ status: status }: { status: string }) => (
-  <span
-    className={`ui-aic__state-icon`}
-    data-status={status}
-    aria-hidden={`true`}
-  >
+  <span className={`ui-aic__state-icon`} data-status={status} aria-hidden={`true`}>
     {status === `running` && (
       <svg width={`12`} height={`12`} viewBox={`0 0 12 12`}>
         <circle
@@ -201,11 +184,7 @@ var BoardIcon = () => (
 );
 var ListIcon = () => (
   <svg width={`13`} height={`13`} viewBox={`0 0 14 14`} aria-hidden={`true`}>
-    <path
-      d={`M2.2 3.6h9.6M2.2 7h9.6M2.2 10.4h9.6`}
-      {...iconStroke}
-      strokeWidth={1.2}
-    />
+    <path d={`M2.2 3.6h9.6M2.2 7h9.6M2.2 10.4h9.6`} {...iconStroke} strokeWidth={1.2} />
   </svg>
 );
 function AgentInboxClean({
@@ -226,9 +205,7 @@ function AgentInboxClean({
     activeView = view ?? internalView,
     [expandedTaskId, setExpandedTaskId] = React.useState<string | null>(null),
     [now, setNow] = React.useState(() => Date.now()),
-    [localOverrides, setLocalOverrides] = React.useState<
-      Record<string, Partial<AgentTask>>
-    >({}),
+    [localOverrides, setLocalOverrides] = React.useState<Record<string, Partial<AgentTask>>>({}),
     effectiveTasks = tasks.map((e) =>
       localOverrides[e.id]
         ? {
@@ -254,24 +231,15 @@ function AgentInboxClean({
       return now - startTime;
     },
     [displayLanes, setDisplayLanes] = React.useState(() =>
-      Object.fromEntries(
-        effectiveTasks.map((e) => [e.id, statusLane(e.status)]),
-      ),
+      Object.fromEntries(effectiveTasks.map((e) => [e.id, statusLane(e.status)])),
     ),
-    laneSignature = effectiveTasks
-      .map((e) => `${e.id}:${statusLane(e.status)}`)
-      .join(`|`);
+    laneSignature = effectiveTasks.map((e) => `${e.id}:${statusLane(e.status)}`).join(`|`);
   React.useEffect(() => {
-    if (
-      !effectiveTasks.some((e) => displayLanes[e.id] !== statusLane(e.status))
-    )
-      return;
+    if (!effectiveTasks.some((e) => displayLanes[e.id] !== statusLane(e.status))) return;
     let e = window.setTimeout(
       () =>
         setDisplayLanes(
-          Object.fromEntries(
-            effectiveTasks.map((e) => [e.id, statusLane(e.status)]),
-          ),
+          Object.fromEntries(effectiveTasks.map((e) => [e.id, statusLane(e.status)])),
         ),
       prefersReducedMotion() ? 0 : 900,
     );
@@ -290,8 +258,7 @@ function AgentInboxClean({
   React.useLayoutEffect(() => {
     if (
       previousLayoutSignatureRef.current !== layoutSignature &&
-      ((previousLayoutSignatureRef.current = layoutSignature),
-      !prefersReducedMotion())
+      ((previousLayoutSignatureRef.current = layoutSignature), !prefersReducedMotion())
     )
       for (let [e, t] of cardNodesRef.current) {
         let n = previousRectsRef.current.get(e);
@@ -365,9 +332,7 @@ function AgentInboxClean({
         expandedTaskId &&
         (event.stopPropagation(),
         rootRef.current
-          ?.querySelector<HTMLElement>(
-            `[data-id="${expandedTaskId}"] .ui-aic__card-main`,
-          )
+          ?.querySelector<HTMLElement>(`[data-id="${expandedTaskId}"] .ui-aic__card-main`)
           ?.focus({
             preventScroll: true,
           }),
@@ -385,8 +350,7 @@ function AgentInboxClean({
             : task.status === `failed`
               ? statusLabels.failed
               : `${statusLabels[task.status]} · `,
-        elapsedText =
-          task.status === `failed` ? `` : formatDuration(elapsedMs(task));
+        elapsedText = task.status === `failed` ? `` : formatDuration(elapsedMs(task));
       return (
         <li
           data-id={task.id}
@@ -394,9 +358,7 @@ function AgentInboxClean({
           data-status={task.status}
           data-open={isExpanded ? `` : void 0}
           ref={(t) => {
-            t
-              ? cardNodesRef.current.set(task.id, t)
-              : cardNodesRef.current.delete(task.id);
+            t ? cardNodesRef.current.set(task.id, t) : cardNodesRef.current.delete(task.id);
           }}
           key={task.id}
         >
@@ -413,9 +375,7 @@ function AgentInboxClean({
               </span>
               <span className={`ui-aic__title`}>{task.title}</span>
             </span>
-            {task.description && (
-              <span className={`ui-aic__desc`}>{task.description}</span>
-            )}
+            {task.description && <span className={`ui-aic__desc`}>{task.description}</span>}
             <span className={`ui-aic__foot`}>
               <span className={`ui-aic__state`} data-status={task.status}>
                 <StatusIcon status={task.status} />
@@ -452,10 +412,7 @@ function AgentInboxClean({
                 {latestSteps.length > 0 && (
                   <ol className={`ui-aic__steps`}>
                     {latestSteps.map((e, t) => (
-                      <li
-                        data-last={t === latestSteps.length - 1 ? `` : void 0}
-                        key={t}
-                      >
+                      <li data-last={t === latestSteps.length - 1 ? `` : void 0} key={t}>
                         <span>{e.label}</span>
                         {e.time && <time>{e.time}</time>}
                       </li>
@@ -469,24 +426,14 @@ function AgentInboxClean({
                         type={`button`}
                         className={`ui-aic__btn`}
                         onClick={() =>
-                          applyAction(
-                            task,
-                            `failed`,
-                            `You rejected the request`,
-                            onReject,
-                          )
+                          applyAction(task, `failed`, `You rejected the request`, onReject)
                         }
                       >{`Reject`}</button>
                       <button
                         type={`button`}
                         className={`ui-aic__btn ui-aic__btn--primary`}
                         onClick={() =>
-                          applyAction(
-                            task,
-                            `running`,
-                            `You approved – continuing`,
-                            onApprove,
-                          )
+                          applyAction(task, `running`, `You approved – continuing`, onApprove)
                         }
                       >{`Approve`}</button>
                     </>
@@ -495,19 +442,16 @@ function AgentInboxClean({
                     <button
                       type={`button`}
                       className={`ui-aic__btn ui-aic__btn--primary`}
-                      onClick={() =>
-                        applyAction(task, `running`, `Retrying`, onRetry)
-                      }
+                      onClick={() => applyAction(task, `running`, `Retrying`, onRetry)}
                     >{`Retry`}</button>
                   )}
-                  {(task.status === `running` || task.status === `done`) &&
-                    onOpen && (
-                      <button
-                        type={`button`}
-                        className={`ui-aic__btn`}
-                        onClick={() => onOpen(task)}
-                      >{`Open`}</button>
-                    )}
+                  {(task.status === `running` || task.status === `done`) && onOpen && (
+                    <button
+                      type={`button`}
+                      className={`ui-aic__btn`}
+                      onClick={() => onOpen(task)}
+                    >{`Open`}</button>
+                  )}
                 </div>
               </div>
             </div>
@@ -516,10 +460,7 @@ function AgentInboxClean({
       );
     },
     laneCounts = Object.fromEntries(
-      inboxLanes.map((e) => [
-        e.id,
-        effectiveTasks.filter((t) => displayLane(t) === e.id).length,
-      ]),
+      inboxLanes.map((e) => [e.id, effectiveTasks.filter((t) => displayLane(t) === e.id).length]),
     ),
     announcement = `${effectiveTasks.filter((e) => e.status === `waiting` || e.status === `failed`).length} need you, ${effectiveTasks.filter((e) => e.status === `running`).length} running`;
   return (
@@ -538,11 +479,7 @@ function AgentInboxClean({
           <span className={`ui-aic__slash`} aria-hidden={`true`}>{`/`}</span>
           <span>{title}</span>
         </span>
-        <div
-          className={`ui-aic__views`}
-          role={`radiogroup`}
-          aria-label={`Layout`}
-        >
+        <div className={`ui-aic__views`} role={`radiogroup`} aria-label={`Layout`}>
           {([`board`, `list`] as const).map((e) => (
             <button
               type={`button`}
@@ -569,12 +506,8 @@ function AgentInboxClean({
               <span className={`ui-aic__count`}>{laneCounts[e.id]}</span>
             </header>
             <ul className={`ui-aic__cards`}>
-              {effectiveTasks
-                .filter((t) => displayLane(t) === e.id)
-                .map(renderTask)}
-              {laneCounts[e.id] === 0 && (
-                <li className={`ui-aic__empty`}>{`Nothing here`}</li>
-              )}
+              {effectiveTasks.filter((t) => displayLane(t) === e.id).map(renderTask)}
+              {laneCounts[e.id] === 0 && <li className={`ui-aic__empty`}>{`Nothing here`}</li>}
             </ul>
           </section>
         ))}
@@ -957,13 +890,11 @@ function AgentInboxCleanDemo2() {
         `Rejected by you`,
       );
   (React.useEffect(
-    () => () =>
-      pendingTimeoutsRef.current.forEach((e) => window.clearTimeout(e)),
+    () => () => pendingTimeoutsRef.current.forEach((e) => window.clearTimeout(e)),
     [],
   ),
     React.useEffect(() => {
-      let t = (t: string) => () =>
-          rootRef.current?.querySelector<HTMLElement>(t)?.click(),
+      let t = (t: string) => () => rootRef.current?.querySelector<HTMLElement>(t)?.click(),
         n: [number, () => void][] = [
           [700, t(`.ui-aic__card[data-status='waiting'] .ui-aic__card-main`)],
           [2600, t(`.ui-aic__card[data-open] .ui-aic__btn--primary`)],
@@ -971,9 +902,7 @@ function AgentInboxCleanDemo2() {
           [
             7e3,
             () => {
-              (pendingTimeoutsRef.current.forEach((e) =>
-                window.clearTimeout(e),
-              ),
+              (pendingTimeoutsRef.current.forEach((e) => window.clearTimeout(e)),
                 (pendingTimeoutsRef.current = []),
                 setTasks(makeCleanDemoTasks()),
                 setRunId((e) => e + 1));

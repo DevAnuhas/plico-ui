@@ -51,15 +51,13 @@ function AppDirectory({
   React.useEffect(() => {
     if (!menuOpen) return;
     let e = (e: PointerEvent) =>
-        !filterRef.current?.contains(e.target as Node | null) &&
-        setMenuOpen(false),
+        !filterRef.current?.contains(e.target as Node | null) && setMenuOpen(false),
       t = (e: { key: string }) => e.key === `Escape` && setMenuOpen(false);
     return (
       window.addEventListener(`pointerdown`, e),
       window.addEventListener(`keydown`, t),
       () => {
-        (window.removeEventListener(`pointerdown`, e),
-          window.removeEventListener(`keydown`, t));
+        (window.removeEventListener(`pointerdown`, e), window.removeEventListener(`keydown`, t));
       }
     );
   }, [menuOpen]);
@@ -123,10 +121,7 @@ function AppDirectory({
       <style href={`ui-app-directory`} precedence={`default`}>
         {appDirectoryStyles}
       </style>
-      <section
-        className={[`ui-ad`, className].filter(Boolean).join(` `)}
-        aria-label={title}
-      >
+      <section className={[`ui-ad`, className].filter(Boolean).join(` `)} aria-label={title}>
         <header className={`ui-ad__bar`}>
           <span className={`ui-ad__bar-title`}>{`Apps`}</span>
           <span className={`ui-ad__bar-meta`}>
@@ -140,11 +135,7 @@ function AppDirectory({
             <p className={`ui-ad__subtitle`}>
               {subtitle}
               {` `}
-              <a
-                href={`#`}
-                className={`ui-ad__link`}
-                onClick={(e) => e.preventDefault()}
-              >
+              <a href={`#`} className={`ui-ad__link`} onClick={(e) => e.preventDefault()}>
                 {`Learn more `}
                 <ArrowUpRightIcon />
               </a>
@@ -292,9 +283,7 @@ function AppDirectory({
                       <li className={`ui-ad__app ui-ad__discover`}>
                         <div className={`ui-ad__discover-head`}>
                           <span>
-                            <span
-                              className={`ui-ad__name`}
-                            >{`Discover more`}</span>
+                            <span className={`ui-ad__name`}>{`Discover more`}</span>
                             <span className={`ui-ad__vendor`}>
                               {`+`}
                               {nonessentialApps.length}
@@ -412,8 +401,7 @@ var strokeIcon = (path: string | undefined, size = 16) => (
     <path d={path} />
   </svg>
 );
-var SearchIcon = () =>
-  strokeIcon(`M7 12.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11ZM11 11l3.5 3.5`);
+var SearchIcon = () => strokeIcon(`M7 12.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11ZM11 11l3.5 3.5`);
 var FilterIcon = () => strokeIcon(`M2.5 4.5h11M4.5 8h7M6.5 11.5h3`);
 var ArrowUpRightIcon = () => strokeIcon(`M5 11 11 5M6 5h5v5`, 12);
 var CheckIcon = () => strokeIcon(`m3.5 8.5 3 3 6-7`, 14);
@@ -450,15 +438,9 @@ var VerifiedIcon = () => (
 );
 var Spinner = () => <span className={`ui-ad__spinner`} aria-hidden={`true`} />;
 var categoryIcons = {
-  essentials: strokeIcon(
-    `m8 1.8 1.9 3.9 4.3.6-3.1 3 .7 4.3L8 11.6l-3.8 2 .7-4.3-3.1-3 4.3-.6Z`,
-  ),
-  all: strokeIcon(
-    `M2.5 2.5h4v4h-4zM9.5 2.5h4v4h-4zM2.5 9.5h4v4h-4zM9.5 9.5h4v4h-4z`,
-  ),
-  analytics: strokeIcon(
-    `M2.5 2.5h11v11h-11zM5.5 10.5v-2M8 10.5v-5M10.5 10.5V7`,
-  ),
+  essentials: strokeIcon(`m8 1.8 1.9 3.9 4.3.6-3.1 3 .7 4.3L8 11.6l-3.8 2 .7-4.3-3.1-3 4.3-.6Z`),
+  all: strokeIcon(`M2.5 2.5h4v4h-4zM9.5 2.5h4v4h-4zM2.5 9.5h4v4h-4zM9.5 9.5h4v4h-4z`),
+  analytics: strokeIcon(`M2.5 2.5h11v11h-11zM5.5 10.5v-2M8 10.5v-5M10.5 10.5V7`),
   automation: strokeIcon(`M9 1.5 3.5 9H8l-1 5.5L12.5 7H8Z`),
   billing: strokeIcon(
     `M8 14.5a6.5 6.5 0 1 0 0-13 6.5 6.5 0 0 0 0 13ZM10 5.8C9.6 5.2 8.9 5 8 5c-1.1 0-2 .6-2 1.5S6.9 7.8 8 8s2 .6 2 1.5S9.1 11 8 11c-.9 0-1.7-.3-2.1-1M8 3.8V5M8 11v1.2`,
@@ -570,23 +552,11 @@ const View_InlineView = () => (
 );
 const View_InlineView2 = () => (
   <svg viewBox={`0 0 38 57`} aria-hidden={`true`}>
-    <path
-      d={`M19 28.5a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0Z`}
-      fill={`#1ABCFE`}
-    />
-    <path
-      d={`M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 1 1-19 0Z`}
-      fill={`#0ACF83`}
-    />
+    <path d={`M19 28.5a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0Z`} fill={`#1ABCFE`} />
+    <path d={`M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 1 1-19 0Z`} fill={`#0ACF83`} />
     <path d={`M19 0v19h9.5a9.5 9.5 0 1 0 0-19H19Z`} fill={`#FF7262`} />
-    <path
-      d={`M0 9.5A9.5 9.5 0 0 0 9.5 19H19V0H9.5A9.5 9.5 0 0 0 0 9.5Z`}
-      fill={`#F24E1E`}
-    />
-    <path
-      d={`M0 28.5A9.5 9.5 0 0 0 9.5 38H19V19H9.5A9.5 9.5 0 0 0 0 28.5Z`}
-      fill={`#A259FF`}
-    />
+    <path d={`M0 9.5A9.5 9.5 0 0 0 9.5 19H19V0H9.5A9.5 9.5 0 0 0 0 9.5Z`} fill={`#F24E1E`} />
+    <path d={`M0 28.5A9.5 9.5 0 0 0 9.5 38H19V19H9.5A9.5 9.5 0 0 0 0 28.5Z`} fill={`#A259FF`} />
   </svg>
 );
 var defaultApps = [
@@ -1289,9 +1259,7 @@ var appDirectoryStyles = `
 var demoWidth = 1040;
 function AppDirectoryDemo2() {
   let rootRef = React.useRef<HTMLDivElement | null>(null),
-    [fit, setFit] = React.useState<{ scale: number; card: boolean } | null>(
-      null,
-    );
+    [fit, setFit] = React.useState<{ scale: number; card: boolean } | null>(null);
   return (
     React.useLayoutEffect(() => {
       let t = rootRef.current,

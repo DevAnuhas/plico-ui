@@ -35,8 +35,7 @@ function TiltCard({
       t(),
       e.addEventListener(`change`, t),
       () => {
-        (e.removeEventListener(`change`, t),
-          cancelAnimationFrame(frameRef.current));
+        (e.removeEventListener(`change`, t), cancelAnimationFrame(frameRef.current));
       }
     );
   }, []);
@@ -49,23 +48,15 @@ function TiltCard({
       let rect = root.getBoundingClientRect(),
         x = Math.min(Math.max((point.x - rect.left) / rect.width, 0), 1),
         y = Math.min(Math.max((point.y - rect.top) / rect.height, 0), 1);
-      (card.style.setProperty(
-        `--rx`,
-        `${((0.5 - y) * 2 * maxTilt).toFixed(2)}deg`,
-      ),
-        card.style.setProperty(
-          `--ry`,
-          `${((x - 0.5) * 2 * maxTilt).toFixed(2)}deg`,
-        ),
+      (card.style.setProperty(`--rx`, `${((0.5 - y) * 2 * maxTilt).toFixed(2)}deg`),
+        card.style.setProperty(`--ry`, `${((x - 0.5) * 2 * maxTilt).toFixed(2)}deg`),
         card.style.setProperty(`--gx`, `${(x * 100).toFixed(1)}%`),
         card.style.setProperty(`--gy`, `${(y * 100).toFixed(1)}%`));
     },
     move = (event: React.PointerEvent<HTMLDivElement>) => {
       if (event.pointerType === `touch`) return;
       let card = cardRef.current;
-      (card &&
-        !card.hasAttribute(`data-active`) &&
-        card.setAttribute(`data-active`, ``),
+      (card && !card.hasAttribute(`data-active`) && card.setAttribute(`data-active`, ``),
         !reducedMotionRef.current &&
           ((pointRef.current = {
             x: event.clientX,
@@ -74,9 +65,7 @@ function TiltCard({
           (frameRef.current ||= requestAnimationFrame(flushFrame))));
     },
     reset = () => {
-      (cancelAnimationFrame(frameRef.current),
-        (frameRef.current = 0),
-        (pointRef.current = null));
+      (cancelAnimationFrame(frameRef.current), (frameRef.current = 0), (pointRef.current = null));
       let card = cardRef.current;
       card &&
         (card.removeAttribute(`data-active`),
@@ -192,20 +181,14 @@ function TiltCardDemo2() {
               {`Plico UI `}
               <b>{`Pro`}</b>
             </span>
-            <svg
-              className={`tilt-card-demo__wave`}
-              viewBox={`0 0 24 24`}
-              aria-hidden={`true`}
-            >
+            <svg className={`tilt-card-demo__wave`} viewBox={`0 0 24 24`} aria-hidden={`true`}>
               <path
                 d={`M8.5 7.5a7 7 0 0 1 0 9M12 5a10.5 10.5 0 0 1 0 14M15.5 2.5a14 14 0 0 1 0 19`}
               />
             </svg>
           </div>
           <span className={`tilt-card-demo__chip`} aria-hidden={`true`} />
-          <div
-            className={`tilt-card-demo__number`}
-          >{`•••• •••• •••• 4821`}</div>
+          <div className={`tilt-card-demo__number`}>{`•••• •••• •••• 4821`}</div>
           <div className={`tilt-card-demo__bottom`}>
             <div>
               <span className={`tilt-card-demo__label`}>{`Member`}</span>
@@ -218,9 +201,7 @@ function TiltCardDemo2() {
           </div>
         </div>
       </TiltCard>
-      <p
-        className={`tilt-card-demo__caption`}
-      >{`Move your pointer over the card`}</p>
+      <p className={`tilt-card-demo__caption`}>{`Move your pointer over the card`}</p>
     </div>
   );
 }

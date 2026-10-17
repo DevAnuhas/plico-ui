@@ -46,8 +46,7 @@ const tools = [
   },
   {
     name: "get_install_command",
-    description:
-      "Get the shadcn CLI command and registry URL for a library item.",
+    description: "Get the shadcn CLI command and registry URL for a library item.",
     inputSchema: {
       type: "object",
       properties: { name: { type: "string" } },
@@ -86,10 +85,7 @@ async function readMessage(request) {
 }
 export async function POST(request) {
   const origin = requestOrigin(request);
-  if (
-    !origin ||
-    (request.headers.get("origin") && request.headers.get("origin") !== origin)
-  )
+  if (!origin || (request.headers.get("origin") && request.headers.get("origin") !== origin))
     return json({ error: "Origin is not allowed" }, 403);
   const protocol = request.headers.get("mcp-protocol-version");
   if (protocol && !versions.includes(protocol))
@@ -130,8 +126,7 @@ export async function POST(request) {
     });
   if (message.method === "ping") return ok({});
   if (message.method === "tools/list") return ok({ tools });
-  if (message.method !== "tools/call")
-    return error(message.id, -32601, "Method not found");
+  if (message.method !== "tools/call") return error(message.id, -32601, "Method not found");
   const name = message.params?.name;
   const args = message.params?.arguments || {};
   const result = (data) =>
@@ -139,42 +134,29 @@ export async function POST(request) {
       content: [{ type: "text", text: JSON.stringify(data, null, 2) }],
       structuredContent: data,
     });
-  const fail = (text) =>
-    ok({ content: [{ type: "text", text }], isError: true });
+  const fail = (text) => ok({ content: [{ type: "text", text }], isError: true });
   if (name === "list_components") {
     const query =
-      typeof args.query === "string"
-        ? args.query.trim().toLowerCase().slice(0, 200)
-        : "";
+      typeof args.query === "string" ? args.query.trim().toLowerCase().slice(0, 200) : "";
     const items = libraryItems.filter(
       (item) =>
         (!query ||
-          `${item.name} ${item.title} ${item.description}`
-            .toLowerCase()
-            .includes(query)) &&
+          `${item.name} ${item.title} ${item.description}`.toLowerCase().includes(query)) &&
         (!args.section || item.section === args.section) &&
         (!args.style || item.style === args.style),
     );
     const offset = Number.isInteger(args.offset) ? Math.max(0, args.offset) : 0;
-    const limit = Number.isInteger(args.limit)
-      ? Math.max(1, Math.min(100, args.limit))
-      : 40;
+    const limit = Number.isInteger(args.limit) ? Math.max(1, Math.min(100, args.limit)) : 40;
     return result({
       total: items.length,
       offset,
-      items: items
-        .slice(offset, offset + limit)
-        .map((item) => itemSummary(item, origin)),
+      items: items.slice(offset, offset + limit).map((item) => itemSummary(item, origin)),
     });
   }
   if (name === "get_component" || name === "get_install_command") {
-    if (typeof args.name !== "string")
-      return fail("A component name is required.");
+    if (typeof args.name !== "string") return fail("A component name is required.");
     const item = findItem(args.name);
-    if (!item)
-      return fail(
-        "Component not found. Use list_components to discover valid names.",
-      );
+    if (!item) return fail("Component not found. Use list_components to discover valid names.");
     const data = itemSummary(item, origin);
     if (name === "get_component" && args.includeSource !== false) {
       const registry = await readRegistryItem(item.registryItem);

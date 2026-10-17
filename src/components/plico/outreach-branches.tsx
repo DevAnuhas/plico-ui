@@ -58,28 +58,14 @@ function OutreachBranches({
 }: OutreachBranchesProps) {
   let n = valueValue7();
   return (
-    <div
-      className={[`ui-ob`, className].filter(Boolean).join(` `)}
-      role={`img`}
-      aria-label={label}
-    >
+    <div className={[`ui-ob`, className].filter(Boolean).join(` `)} role={`img`} aria-label={label}>
       <style href={`ui-outreach-branches`} precedence={`default`}>
         {valueValue8}
       </style>
       <svg className={`ui-ob-art`} viewBox={`0 0 320 240`} aria-hidden={`true`}>
         <defs>
-          <filter
-            id={`${n}-tile`}
-            x={`-30%`}
-            y={`-30%`}
-            width={`160%`}
-            height={`160%`}
-          >
-            <feGaussianBlur
-              in={`SourceAlpha`}
-              stdDeviation={`4`}
-              result={`dropBlur`}
-            />
+          <filter id={`${n}-tile`} x={`-30%`} y={`-30%`} width={`160%`} height={`160%`}>
+            <feGaussianBlur in={`SourceAlpha`} stdDeviation={`4`} result={`dropBlur`} />
             <feOffset in={`dropBlur`} dx={`0`} dy={`3`} result={`dropOffset`} />
             <feFlood
               className={`ui-ob-drop`}
@@ -93,78 +79,37 @@ function OutreachBranches({
               operator={`in`}
               result={`dropShadow`}
             />
-            <feOffset
-              in={`SourceAlpha`}
-              dx={`0`}
-              dy={`-4`}
-              result={`alphaUp`}
-            />
-            <feComposite
-              in={`SourceAlpha`}
-              in2={`alphaUp`}
-              operator={`out`}
-              result={`sliver`}
-            />
+            <feOffset in={`SourceAlpha`} dx={`0`} dy={`-4`} result={`alphaUp`} />
+            <feComposite in={`SourceAlpha`} in2={`alphaUp`} operator={`out`} result={`sliver`} />
             <feFlood
               className={`ui-ob-sliver`}
               floodColor={`#EAECEF`}
               floodOpacity={`1`}
               result={`innerColor`}
             />
-            <feComposite
-              in={`innerColor`}
-              in2={`sliver`}
-              operator={`in`}
-              result={`innerShadow`}
-            />
+            <feComposite in={`innerColor`} in2={`sliver`} operator={`in`} result={`innerShadow`} />
             <feMerge>
               <feMergeNode in={`dropShadow`} />
               <feMergeNode in={`SourceGraphic`} />
               <feMergeNode in={`innerShadow`} />
             </feMerge>
           </filter>
-          <filter
-            id={`${n}-blur`}
-            x={`-60%`}
-            y={`-200%`}
-            width={`220%`}
-            height={`500%`}
-          >
+          <filter id={`${n}-blur`} x={`-60%`} y={`-200%`} width={`220%`} height={`500%`}>
             <feGaussianBlur stdDeviation={`11`} />
           </filter>
-          <linearGradient
-            id={`${n}-blob`}
-            x1={`0%`}
-            y1={`0%`}
-            x2={`100%`}
-            y2={`0%`}
-          >
+          <linearGradient id={`${n}-blob`} x1={`0%`} y1={`0%`} x2={`100%`} y2={`0%`}>
             <stop offset={`0%`} stopColor={`#FFA0AB`} stopOpacity={`0.55`} />
             <stop offset={`33%`} stopColor={`#FFB89E`} stopOpacity={`0.55`} />
             <stop offset={`66%`} stopColor={`#C8A8E5`} stopOpacity={`0.55`} />
             <stop offset={`100%`} stopColor={`#A8B5FF`} stopOpacity={`0.55`} />
           </linearGradient>
-          <linearGradient
-            id={`${n}-edge`}
-            x1={`0%`}
-            y1={`0%`}
-            x2={`100%`}
-            y2={`0%`}
-          >
-            <stop
-              className={`ui-ob-gray`}
-              offset={`0%`}
-              stopColor={`#E4E7EC`}
-            />
+          <linearGradient id={`${n}-edge`} x1={`0%`} y1={`0%`} x2={`100%`} y2={`0%`}>
+            <stop className={`ui-ob-gray`} offset={`0%`} stopColor={`#E4E7EC`} />
             <stop offset={`18%`} stopColor={`#FFB5BC`} />
             <stop offset={`40%`} stopColor={`#FFC5AB`} />
             <stop offset={`60%`} stopColor={`#D5BBEF`} />
             <stop offset={`82%`} stopColor={`#B5C0FF`} />
-            <stop
-              className={`ui-ob-gray`}
-              offset={`100%`}
-              stopColor={`#E4E7EC`}
-            />
+            <stop className={`ui-ob-gray`} offset={`100%`} stopColor={`#E4E7EC`} />
           </linearGradient>
           <linearGradient
             id={`${n}-pulse`}
@@ -270,15 +215,7 @@ function OutreachBranches({
   );
 }
 var valueValue7 = () => `ui-ob` + React.useId().replace(/[^a-zA-Z0-9_-]/g, ``);
-var Iconf = ({
-  x: x,
-  y: y,
-  width: width,
-}: {
-  x: number;
-  y: number;
-  width: number;
-}) => {
+var Iconf = ({ x: x, y: y, width: width }: { x: number; y: number; width: number }) => {
   let i = valueValue7();
   return (
     <svg
@@ -338,23 +275,8 @@ var Iconf = ({
     </svg>
   );
 };
-var Iconp = ({
-  x: x,
-  y: y,
-  size: size,
-}: {
-  x: number;
-  y: number;
-  size: number;
-}) => (
-  <svg
-    x={x}
-    y={y}
-    width={size}
-    height={size}
-    viewBox={`0 0 49.883 49.877`}
-    fill={`none`}
-  >
+var Iconp = ({ x: x, y: y, size: size }: { x: number; y: number; size: number }) => (
+  <svg x={x} y={y} width={size} height={size} viewBox={`0 0 49.883 49.877`} fill={`none`}>
     <path
       d={`M18.3549 10.4784C15.4713 10.4784 13.1157 8.12279 13.1157 5.2392C13.1157 2.35561 15.4713 0 18.3549 0C21.2385 0 23.5941 2.35561 23.5941 5.2392V10.4784H18.3549Z`}
       fill={`#36C5F0`}
@@ -481,23 +403,8 @@ var valueValue8 = `
 :where(.dark, [data-theme="dark"]) .ui-ob-notion-page { fill: #191919; }
 :where(.dark, [data-theme="dark"]) .ui-ob-mark { fill: #ededed; }
 `;
-var Iconh = ({
-  x: x,
-  y: y,
-  size: size,
-}: {
-  x: number;
-  y: number;
-  size: number;
-}) => (
-  <svg
-    x={x}
-    y={y}
-    width={size}
-    height={size}
-    viewBox={`0 0 70.808 74.12`}
-    overflow={`visible`}
-  >
+var Iconh = ({ x: x, y: y, size: size }: { x: number; y: number; size: number }) => (
+  <svg x={x} y={y} width={size} height={size} viewBox={`0 0 70.808 74.12`} overflow={`visible`}>
     <path
       className={`ui-ob-notion-page`}
       fill={`#ffffff`}

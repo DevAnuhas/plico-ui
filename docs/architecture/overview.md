@@ -5,6 +5,7 @@ Plico UI combines a Next.js App Router host with a client-rendered catalog and d
 ## Boundaries
 
 - `src/app/[[...path]]/page.jsx` loads the client site. Its internal router handles the catalog, documentation, item pages, and full-screen previews.
+- `public/brand/` contains the Plico UI mark, wordmark, and repository hero used by the website and README. Follow the [brand identity guide](../product/brand.md) when changing these assets.
 - `src/site/site-app.js` owns the website presentation. `src/site/site.css` and local font/image assets provide its visual system.
 - `src/library/catalog.json` defines the installable inventory. Each style variant has its own stable registry name.
 - `src/components/plico/` contains one standalone TypeScript module per variant. Each module owns its implementation, styles, embedded assets, examples, and applicable helper exports.

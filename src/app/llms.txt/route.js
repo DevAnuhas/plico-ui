@@ -17,21 +17,11 @@ export function GET(request) {
     "Protected deployments require the hosting bypass header in the registry configuration.",
     "",
   ];
-  for (const section of [
-    "components",
-    "blocks",
-    "screens",
-    "illustrations",
-    "motion",
-  ]) {
+  for (const section of ["components", "blocks", "screens", "illustrations", "motion"]) {
     lines.push(`## ${section}`, "");
-    for (const item of libraryItems.filter(
-      (item) => item.section === section,
-    )) {
+    for (const item of libraryItems.filter((item) => item.section === section)) {
       const summary = itemSummary(item, origin);
-      lines.push(
-        `- [${item.title} (${item.style})](${summary.registry}): ${item.description}`,
-      );
+      lines.push(`- [${item.title} (${item.style})](${summary.registry}): ${item.description}`);
     }
     lines.push("");
   }

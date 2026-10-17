@@ -6,9 +6,7 @@ export interface PromptTemplate {
   title: string;
   category?: string;
   body: string;
-  variables?: Partial<
-    Record<string, { description?: string; default?: string }>
-  >;
+  variables?: Partial<Record<string, { description?: string; default?: string }>>;
   tone?: string;
   description?: string;
 }
@@ -17,11 +15,7 @@ interface PromptLibraryProps {
   value?: string;
   defaultValue?: string;
   onSelect?: (id: string) => void;
-  onUse?: (
-    prompt: string,
-    template: PromptTemplate,
-    values: Record<string, string>,
-  ) => void;
+  onUse?: (prompt: string, template: PromptTemplate, values: Record<string, string>) => void;
   onCopy?: (prompt: string) => void;
   title?: string;
   useLabel?: string;
@@ -53,9 +47,7 @@ var valueValue3 = (e: string) => {
     t
   );
 };
-var valueValue4 = (e: string) => [
-  ...new Set([...e.matchAll(valueValue2)].map((e) => e[1])),
-];
+var valueValue4 = (e: string) => [...new Set([...e.matchAll(valueValue2)].map((e) => e[1]))];
 var valueValue5 = (e: string, t: Record<string, string>) =>
   e.replace(valueValue2, (e, n) => (t[n]?.trim() ? t[n] : e));
 var valueValue6 = (e: string) => Math.max(1, Math.round(e.length / 4));
@@ -66,8 +58,7 @@ var valueValue7 = (e: PromptTemplate) => {
 };
 var valueValue8 = (e: number) => 1 - (1 - e) ** 4;
 var valueValue9 = () =>
-  typeof window < `u` &&
-  window.matchMedia(`(prefers-reduced-motion: reduce)`).matches;
+  typeof window < `u` && window.matchMedia(`(prefers-reduced-motion: reduce)`).matches;
 function ViewP(e: number, t: number) {
   let [r, i] = React.useState(e),
     a = React.useRef(e);
@@ -150,33 +141,14 @@ var valueValue10: React.SVGAttributes<SVGElement> = {
   strokeLinejoin: `round`,
 };
 var Icong = () => (
-  <svg
-    width={`13`}
-    height={`13`}
-    viewBox={`0 0 13 13`}
-    fill={`none`}
-    aria-hidden={`true`}
-  >
+  <svg width={`13`} height={`13`} viewBox={`0 0 13 13`} fill={`none`} aria-hidden={`true`}>
     <circle cx={`5.8`} cy={`5.8`} r={`3.8`} {...valueValue10} />
     <path d={`m8.6 8.6 2.4 2.4`} {...valueValue10} />
   </svg>
 );
 var Iconee = () => (
-  <svg
-    width={`12`}
-    height={`12`}
-    viewBox={`0 0 12 12`}
-    fill={`none`}
-    aria-hidden={`true`}
-  >
-    <rect
-      x={`3.8`}
-      y={`3.8`}
-      width={`6.4`}
-      height={`6.4`}
-      rx={`1.6`}
-      {...valueValue10}
-    />
+  <svg width={`12`} height={`12`} viewBox={`0 0 12 12`} fill={`none`} aria-hidden={`true`}>
+    <rect x={`3.8`} y={`3.8`} width={`6.4`} height={`6.4`} rx={`1.6`} {...valueValue10} />
     <path
       d={`M8.2 3.6V3.2A1.4 1.4 0 0 0 6.8 1.8H3.2a1.4 1.4 0 0 0-1.4 1.4v3.6a1.4 1.4 0 0 0 1.4 1.4h.4`}
       {...valueValue10}
@@ -184,24 +156,12 @@ var Iconee = () => (
   </svg>
 );
 var Iconte = () => (
-  <svg
-    width={`12`}
-    height={`12`}
-    viewBox={`0 0 12 12`}
-    fill={`none`}
-    aria-hidden={`true`}
-  >
+  <svg width={`12`} height={`12`} viewBox={`0 0 12 12`} fill={`none`} aria-hidden={`true`}>
     <path d={`m2.6 6.3 2.2 2.2 4.6-5`} {...valueValue10} strokeWidth={1.6} />
   </svg>
 );
 var Iconne = () => (
-  <svg
-    width={`12`}
-    height={`12`}
-    viewBox={`0 0 12 12`}
-    fill={`none`}
-    aria-hidden={`true`}
-  >
+  <svg width={`12`} height={`12`} viewBox={`0 0 12 12`} fill={`none`} aria-hidden={`true`}>
     <path d={`M2.5 6h7M6.5 3l3 3-3 3`} {...valueValue10} />
   </svg>
 );
@@ -229,8 +189,7 @@ function View_({
   let p = valueValue3(template.body),
     m = valueValue4(template.body),
     h = m.filter((e) => values[e]?.trim()).length,
-    g = (e: string) =>
-      flash && flash.name === e ? (flash.n % 2 ? `a` : `b`) : void 0;
+    g = (e: string) => (flash && flash.name === e ? (flash.n % 2 ? `a` : `b`) : void 0);
   return (
     <div
       className={`ui-pli__panel`}
@@ -249,11 +208,7 @@ function View_({
           <span className={`ui-pli__count`}>
             <span className={`ui-pli__bars`} aria-hidden={`true`}>
               {m.map((e) => (
-                <span
-                  className={`ui-pli__bar`}
-                  data-on={values[e]?.trim() ? `` : void 0}
-                  key={e}
-                />
+                <span className={`ui-pli__bar`} data-on={values[e]?.trim() ? `` : void 0} key={e} />
               ))}
             </span>
             {h}
@@ -273,12 +228,8 @@ function View_({
                 className={`ui-pli__token`}
                 data-filled={values[t.name]?.trim() ? `` : void 0}
                 data-flash={g(t.name)}
-                onPointerEnter={(e) =>
-                  e.pointerType === `mouse` && onHint?.(t.name)
-                }
-                onPointerLeave={(e) =>
-                  e.pointerType === `mouse` && onHint?.(null)
-                }
+                onPointerEnter={(e) => e.pointerType === `mouse` && onHint?.(t.name)}
+                onPointerLeave={(e) => e.pointerType === `mouse` && onHint?.(null)}
               >
                 <span className={`ui-pli__sizer`} aria-hidden={`true`}>
                   {values[t.name] || t.name}
@@ -300,8 +251,7 @@ function View_({
                   onFocus={() => onHint?.(t.name)}
                   onBlur={() => onHint?.(null)}
                   onKeyDown={(e) => {
-                    e.key === `Enter` &&
-                      (e.preventDefault(), onEnter?.(t.name));
+                    e.key === `Enter` && (e.preventDefault(), onEnter?.(t.name));
                   }}
                 />
               </span>
@@ -310,15 +260,8 @@ function View_({
           ),
         )}
       </p>
-      <div
-        className={`ui-pli__label`}
-        id={`${idBase}-preview`}
-      >{`Preview`}</div>
-      <div
-        className={`ui-pli__preview`}
-        aria-labelledby={`${idBase}-preview`}
-        role={`region`}
-      >
+      <div className={`ui-pli__label`} id={`${idBase}-preview`}>{`Preview`}</div>
+      <div className={`ui-pli__preview`} aria-labelledby={`${idBase}-preview`} role={`region`}>
         {p.map((e, t) =>
           `text` in e ? (
             <React.Fragment key={t}>{e.text}</React.Fragment>
@@ -379,9 +322,7 @@ function PromptLibrary({
     I = w.trim().toLowerCase(),
     L = I
       ? templates.filter((e) =>
-          [e.title, e.category ?? ``, e.body].some((e) =>
-            e.toLowerCase().includes(I),
-          ),
+          [e.title, e.category ?? ``, e.body].some((e) => e.toLowerCase().includes(I)),
         )
       : templates,
     R = (e: string) => {
@@ -447,8 +388,7 @@ function PromptLibrary({
       let t = L.findIndex((e) => e.id === C?.id),
         n = -1;
       if (e.key === `ArrowDown`) n = t < 0 ? 0 : Math.min(L.length - 1, t + 1);
-      else if (e.key === `ArrowUp`)
-        n = t < 0 ? L.length - 1 : Math.max(0, t - 1);
+      else if (e.key === `ArrowUp`) n = t < 0 ? L.length - 1 : Math.max(0, t - 1);
       else if (e.key === `Home`) n = 0;
       else if (e.key === `End`) n = L.length - 1;
       else return;
@@ -480,10 +420,7 @@ function PromptLibrary({
     ve = React.useRef(Y),
     ye = React.useRef(C?.id);
   React.useEffect(() => {
-    (Y &&
-      !ve.current &&
-      ye.current === C?.id &&
-      (_e((e) => e + 1), P(`All variables filled`)),
+    (Y && !ve.current && ye.current === C?.id && (_e((e) => e + 1), P(`All variables filled`)),
       (ve.current = Y),
       (ye.current = C?.id));
   }, [Y, C?.id]);
@@ -622,8 +559,7 @@ function PromptLibrary({
                   tabIndex={n ? 0 : -1}
                   onClick={() => R(e.id)}
                   onKeyDown={(t) => {
-                    (t.key === `Enter` || t.key === ` `) &&
-                      (t.preventDefault(), R(e.id));
+                    (t.key === `Enter` || t.key === ` `) && (t.preventDefault(), R(e.id));
                   }}
                   key={e.id}
                 >
@@ -636,9 +572,7 @@ function PromptLibrary({
                 </div>
               );
             })}
-            {L.length === 0 && (
-              <div className={`ui-pli__empty`}>{`No templates match`}</div>
-            )}
+            {L.length === 0 && <div className={`ui-pli__empty`}>{`No templates match`}</div>}
           </div>
         </div>
         <div className={`ui-pli__main`}>
@@ -681,10 +615,7 @@ function PromptLibrary({
           aria-label={`Copy prompt`}
           disabled={!C}
         >
-          <span
-            className={`ui-pli__copy-icon`}
-            key={j?.kind === `copied` ? `done` : `copy`}
-          >
+          <span className={`ui-pli__copy-icon`} key={j?.kind === `copied` ? `done` : `copy`}>
             {j?.kind === `copied` ? <Iconte /> : <Iconee />}
           </span>
           <span className={`ui-pli__copy-text`}>{`Copy`}</span>
@@ -1019,10 +950,7 @@ var ViewB = [
   },
 ];
 function valueValue13(e: Element, t: string) {
-  (Object.getOwnPropertyDescriptor(
-    HTMLInputElement.prototype,
-    `value`,
-  )?.set?.call(e, t),
+  (Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, `value`)?.set?.call(e, t),
     e.dispatchEvent(
       new Event(`input`, {
         bubbles: true,
@@ -1039,8 +967,7 @@ function PromptLibraryDemo2() {
       r: [number, () => void][] = [[t === 0 ? 700 : 900, () => o(n.id)]];
     (n.type.forEach(([n, i], a) => {
       for (let o = 1; o <= i.length; o++) {
-        let s =
-          o === 1 ? (a === 0 && t === 0 ? 2500 : 520) : 55 + ((o * 37) % 40);
+        let s = o === 1 ? (a === 0 && t === 0 ? 2500 : 520) : 55 + ((o * 37) % 40);
         r.push([
           s,
           () => {
@@ -1074,13 +1001,7 @@ function PromptLibraryDemo2() {
       onKeyDownCapture={c}
       onFocusCapture={c}
     >
-      <PromptLibrary
-        templates={valueValue12}
-        value={a}
-        onSelect={o}
-        onUse={() => {}}
-        key={t}
-      />
+      <PromptLibrary templates={valueValue12} value={a} onSelect={o} onUse={() => {}} key={t} />
     </div>
   );
 }

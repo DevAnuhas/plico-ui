@@ -22,8 +22,7 @@ function exportedAPI(source) {
     typeNames = new Set();
   for (const node of ast.program.body) {
     const d = node.type === "ExportNamedDeclaration" ? node.declaration : node;
-    if (d && /^TS(?:TypeAlias|Interface)/.test(d.type))
-      typeNames.add(d.id.name);
+    if (d && /^TS(?:TypeAlias|Interface)/.test(d.type)) typeNames.add(d.id.name);
   }
   for (const node of ast.program.body) {
     if (node.type === "ExportDefaultDeclaration") runtime.add("default");
@@ -31,19 +30,14 @@ function exportedAPI(source) {
     if (node.declaration) {
       const d = node.declaration,
         target =
-          node.exportKind === "type" ||
-          /^TS(?:TypeAlias|Interface)/.test(d.type)
-            ? types
-            : runtime;
+          node.exportKind === "type" || /^TS(?:TypeAlias|Interface)/.test(d.type) ? types : runtime;
       if (d.id) target.add(d.id.name);
       for (const variable of d.declarations || [])
         if (variable.id.type === "Identifier") target.add(variable.id.name);
     }
     for (const spec of node.specifiers || []) {
       const name = spec.exported.name || spec.exported.value;
-      (node.exportKind === "type" ||
-      spec.exportKind === "type" ||
-      typeNames.has(spec.local.name)
+      (node.exportKind === "type" || spec.exportKind === "type" || typeNames.has(spec.local.name)
         ? types
         : runtime
       ).add(name);
@@ -54,9 +48,7 @@ function exportedAPI(source) {
     types: [...types].sort(),
     external: [
       ...new Set(
-        ast.program.body
-          .filter((n) => n.type === "ImportDeclaration")
-          .map((n) => n.source.value),
+        ast.program.body.filter((n) => n.type === "ImportDeclaration").map((n) => n.source.value),
       ),
     ],
   };
@@ -73,10 +65,7 @@ for (const entry of manifest.entries) {
   entry.typeExports = api.types;
   if (
     api.external.some(
-      (source) =>
-        source.startsWith(".") ||
-        source.startsWith("/") ||
-        source.startsWith("@/"),
+      (source) => source.startsWith(".") || source.startsWith("/") || source.startsWith("@/"),
     )
   )
     throw new Error(`Component ${name} is not self-contained`);
@@ -96,9 +85,7 @@ for (const entry of manifest.entries) {
         content: notice,
       },
     ],
-    type = ["blocks", "screens"].includes(entry.section)
-      ? "registry:block"
-      : "registry:component",
+    type = ["blocks", "screens"].includes(entry.section) ? "registry:block" : "registry:component",
     dependencies = [
       ...new Set(
         api.external
@@ -134,10 +121,7 @@ for (const entry of manifest.entries) {
       license: "MIT",
     },
   };
-  fs.writeFileSync(
-    path.join(out, name + ".json"),
-    JSON.stringify(item, null, 2) + "\n",
-  );
+  fs.writeFileSync(path.join(out, name + ".json"), JSON.stringify(item, null, 2) + "\n");
   items.push({ ...item, files: files.map(({ content, ...file }) => file) });
 }
 function siteHomepage() {
@@ -149,9 +133,7 @@ function siteHomepage() {
     if (!value?.trim()) continue;
     try {
       const raw = value.trim(),
-        url = new URL(
-          production && !/^https?:\/\//i.test(raw) ? "https://" + raw : raw,
-        );
+        url = new URL(production && !/^https?:\/\//i.test(raw) ? "https://" + raw : raw);
       if (
         !["http:", "https:"].includes(url.protocol) ||
         !url.hostname ||
@@ -181,14 +163,9 @@ fs.writeFileSync(
   path.join(root, "registry/registry.json"),
   JSON.stringify(registry, null, 2) + "\n",
 );
-fs.writeFileSync(
-  path.join(out, "registry.json"),
-  JSON.stringify(registry, null, 2) + "\n",
-);
+fs.writeFileSync(path.join(out, "registry.json"), JSON.stringify(registry, null, 2) + "\n");
 const coverage = {
-  entries: new Set(
-    manifest.entries.map((item) => item.section + "/" + item.slug),
-  ).size,
+  entries: new Set(manifest.entries.map((item) => item.section + "/" + item.slug)).size,
   variants: manifest.entries.length,
   fullScreenMappings: manifest.entries
     .filter((item) => item.section === "screens")

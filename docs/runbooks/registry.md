@@ -1,6 +1,6 @@
 # Registry and agent access
 
-Initialize the receiving project with `npx shadcn@latest init`. Add an `@plico` registry to its `components.json`, preserving the project's other settings.
+Initialize the receiving project with `pnpm dlx shadcn@latest init` (or the equivalent command for its package manager). Add an `@plico` registry to its `components.json`, preserving the project's other settings.
 
 ## Local registry
 

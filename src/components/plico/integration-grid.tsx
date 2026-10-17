@@ -138,18 +138,13 @@ function IntegrationGrid({
   );
 }
 function ProductMark() {
-  const petal = "M24 24C17.6 19.6 16.4 9.4 24 3.5C31.6 9.4 30.4 19.6 24 24Z";
   return (
-    <svg className="ui-ig-mark" viewBox="0 0 48 48" aria-hidden="true">
-      <g className="ui-ig-mark-soft">
-        {[45, 135, 225, 315].map((r) => (
-          <path key={r} d={petal} transform={`rotate(${r} 24 24)`} />
-        ))}
-      </g>
-      {[0, 90, 180, 270].map((r) => (
-        <path key={r} d={petal} transform={`rotate(${r} 24 24)`} />
-      ))}
-      <circle className="ui-ig-mark-core" cx="24" cy="24" r="3.4" />
+    <svg className="ui-ig-mark" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+      <path
+        d="M4 4h16l8 8v8H12v8H4V4Zm8 8v4h8v-4h-8Zm8-8h-2l-8 8h2l8-8Z"
+        fillRule="evenodd"
+        clipRule="evenodd"
+      />
     </svg>
   );
 }
@@ -328,8 +323,6 @@ const css = `
   height: calc(68 * var(--u));
   fill: var(--ui-ig-ink);
 }
-.ui-ig-mark-soft { opacity: 0.32; }
-.ui-ig-mark-core { fill: var(--ui-ig-center); }
 
 @media (prefers-reduced-motion: reduce) {
   .ui-ig-tile { transition: none; }

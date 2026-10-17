@@ -143,8 +143,7 @@ const SLOTS: Slot[] = [
   ["GitHub", -88, 64, 20],
   ["Figma", -93, -1, 72],
 ];
-const MARK =
-  "M249.658 595.345C249.658 611.89 263.072 625.303 279.617 625.303H499.315V844.996C499.315 861.541 485.901 874.954 469.356 874.954H29.9588C13.413 874.954 0 861.541 0 844.996V405.609C0 389.064 13.413 375.651 29.9588 375.651H249.658V595.345ZM998.63 844.996C998.63 861.541 985.216 874.954 968.671 874.954H778.93C762.385 874.954 748.971 861.541 748.971 844.996V625.303H968.671C985.216 625.303 998.63 638.717 998.63 655.261V844.996ZM748.971 625.303H499.315V405.609C499.315 389.064 485.901 375.651 469.356 375.651H249.658V155.958C249.658 139.413 263.072 126 279.617 126H719.012C735.557 126 748.971 139.413 748.971 155.958V625.303Z";
+const MARK = "M4 4h16l8 8v8H12v8H4V4Zm8 8v4h8v-4h-8Zm8-8h-2l-8 8h2l8-8Z";
 const valueValue = (n: number) => `calc(${n} * var(--ui-lc-u))`;
 function LogoCluster({
   className,
@@ -207,8 +206,8 @@ function LogoCluster({
           })}
         </div>
         <span className="ui-lc-mid">
-          <svg viewBox="0 126 1000 749">
-            <path d={MARK} fill="currentColor" />
+          <svg viewBox="0 0 32 32" aria-hidden="true">
+            <path d={MARK} fill="currentColor" fillRule="evenodd" clipRule="evenodd" />
           </svg>
         </span>
       </div>

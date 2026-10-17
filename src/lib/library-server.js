@@ -21,29 +21,18 @@ for (const value of [
   if (!value) continue;
   try {
     const url = new URL(value);
-    if (["http:", "https:"].includes(url.protocol))
-      allowedOrigins.add(url.origin);
+    if (["http:", "https:"].includes(url.protocol)) allowedOrigins.add(url.origin);
   } catch {
     // Invalid deployment configuration must not grant an origin access.
   }
 }
 export function requestOrigin(request) {
   const url = new URL(request.url);
-  const host = (
-    request.headers.get("x-forwarded-host") ||
-    request.headers.get("host") ||
-    url.host
-  )
+  const host = (request.headers.get("x-forwarded-host") || request.headers.get("host") || url.host)
     .split(",")[0]
     .trim();
-  const forwarded = request.headers
-    .get("x-forwarded-proto")
-    ?.split(",")[0]
-    .trim();
-  const protocol =
-    forwarded === "https" || forwarded === "http"
-      ? `${forwarded}:`
-      : url.protocol;
+  const forwarded = request.headers.get("x-forwarded-proto")?.split(",")[0].trim();
+  const protocol = forwarded === "https" || forwarded === "http" ? `${forwarded}:` : url.protocol;
   if (!/^[a-zA-Z0-9.:[\]-]+$/.test(host)) return null;
   try {
     const origin = new URL(`${protocol}//${host}`).origin;
@@ -53,14 +42,11 @@ export function requestOrigin(request) {
   }
 }
 export function findItem(name) {
-  return libraryItems.find(
-    (item) => item.name === name || item.registryItem === name,
-  );
+  return libraryItems.find((item) => item.name === name || item.registryItem === name);
 }
 export async function readRegistryItem(name) {
   const item = findItem(name);
-  if (!item || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(item.registryItem))
-    return null;
+  if (!item || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(item.registryItem)) return null;
   const content = await readFile(
     path.join(process.cwd(), "public", "r", `${item.registryItem}.json`),
     "utf8",

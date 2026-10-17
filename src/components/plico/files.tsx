@@ -90,14 +90,50 @@ interface HugeiconsProps extends Omit<React.SVGProps<SVGSVGElement>, "strokeWidt
   secondaryColor?: string;
   disableSecondaryOpacity?: boolean;
 }
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {variant?: string; size?: string; loading?: boolean; icon?: React.ReactNode; iconRight?: React.ReactNode; ref?: React.Ref<HTMLButtonElement>;}
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: string;
+  size?: string;
+  loading?: boolean;
+  icon?: React.ReactNode;
+  iconRight?: React.ReactNode;
+  ref?: React.Ref<HTMLButtonElement>;
+}
 type FilterValue = Record<string, string[]>;
-interface FilterOption {id: string; label: string}
-interface FilterGroup {id: string; label: string; chipPrefix?: string; options: FilterOption[]}
-type FilterEntry = {kind: "group"; group: FilterGroup} | {kind: "option"; group: FilterGroup; option: FilterOption};
-interface FilterMenuProps {groups: FilterGroup[]; value?: FilterValue; defaultValue?: FilterValue; onChange?: (value: FilterValue) => void; defaultOpen?: string[]; title?: string; hints?: boolean; className?: string}
-interface FileRecord {name: string; type: "DOC" | "PDF" | "XLS"; edited?: string; owner?: string; shared?: boolean}
-interface FileFolder {name: string; access: string; files: FileRecord[]}
+interface FilterOption {
+  id: string;
+  label: string;
+}
+interface FilterGroup {
+  id: string;
+  label: string;
+  chipPrefix?: string;
+  options: FilterOption[];
+}
+type FilterEntry =
+  | { kind: "group"; group: FilterGroup }
+  | { kind: "option"; group: FilterGroup; option: FilterOption };
+interface FilterMenuProps {
+  groups: FilterGroup[];
+  value?: FilterValue;
+  defaultValue?: FilterValue;
+  onChange?: (value: FilterValue) => void;
+  defaultOpen?: string[];
+  title?: string;
+  hints?: boolean;
+  className?: string;
+}
+interface FileRecord {
+  name: string;
+  type: "DOC" | "PDF" | "XLS";
+  edited?: string;
+  owner?: string;
+  shared?: boolean;
+}
+interface FileFolder {
+  name: string;
+  access: string;
+  files: FileRecord[];
+}
 const ScreenFrameModeContext = React.createContext<boolean | null>(null);
 function PreviewFrame({ children }: { children?: React.ReactNode }) {
   const mode = React.useContext(ScreenFrameModeContext);
@@ -175,7 +211,10 @@ var ValueValue24 = [78, 180, 140, 175, 126, 168, 110];
 function GlassFolderComponent({
   className: className,
   label = `Blue folder holding three documents behind a frosted front pocket`,
-}: {className?: string; label?: string}) {
+}: {
+  className?: string;
+  label?: string;
+}) {
   let n = `ui-fd` + React.useId().replace(/[^a-zA-Z0-9_-]/g, ``);
   return (
     <div className={[`ui-fd`, className].filter(Boolean).join(` `)} role={`img`} aria-label={label}>
@@ -826,7 +865,7 @@ function FilterMenu({
   let [f, p] = React.useState(defaultValue),
     m = value ?? f,
     [h, g] = React.useState(() => new Set(defaultOpen ?? groups.slice(0, 1).map((e) => e.id))),
-    [_, v] = React.useState<string|null>(null),
+    [_, v] = React.useState<string | null>(null),
     y = React.useRef<HTMLDivElement | null>(null),
     b = React.useRef<HTMLDivElement | null>(null),
     x = useAnimatedHeight(b),
@@ -868,7 +907,8 @@ function FilterMenu({
           }))
         : []),
     ]),
-    O = (e: FilterEntry) => (e.kind === `group` ? `g:${e.group.id}` : `o:${e.group.id}:${e.option.id}`),
+    O = (e: FilterEntry) =>
+      e.kind === `group` ? `g:${e.group.id}` : `o:${e.group.id}:${e.option.id}`,
     k = (e: string) => {
       (v(e), y.current?.querySelector<HTMLElement>(`[data-key="${CSS.escape(e)}"]`)?.focus());
     };
@@ -2704,14 +2744,28 @@ function AppShell({
     </div>
   );
 }
-function useControllableState<T>(controlledValue: T | undefined, defaultValue: T, onChange?: (value: T) => void): [T, (value: T) => void] {
+function useControllableState<T>(
+  controlledValue: T | undefined,
+  defaultValue: T,
+  onChange?: (value: T) => void,
+): [T, (value: T) => void] {
   let [internalValue, setInternalValue] = React.useState(defaultValue);
   return [controlledValue ?? internalValue, (e) => (setInternalValue(e), onChange?.(e))];
 }
-function ShellTabs({ items: items, value: value, defaultValue: defaultValue, onChange: onChange }: {items: string[]; value?: string; defaultValue?: string; onChange?: (value: string) => void}) {
+function ShellTabs({
+  items: items,
+  value: value,
+  defaultValue: defaultValue,
+  onChange: onChange,
+}: {
+  items: string[];
+  value?: string;
+  defaultValue?: string;
+  onChange?: (value: string) => void;
+}) {
   let [currentValue, setValue] = useControllableState(value, defaultValue ?? items[0], onChange),
     tabsRef = React.useRef<HTMLDivElement | null>(null),
-    [pillGeometry, setPillGeometry] = React.useState<{x: number; w: number} | null>(null);
+    [pillGeometry, setPillGeometry] = React.useState<{ x: number; w: number } | null>(null);
   return (
     React.useLayoutEffect(() => {
       let e = tabsRef.current?.querySelector<HTMLElement>(`[aria-selected="true"]`);
@@ -2749,7 +2803,13 @@ function ShellTabs({ items: items, value: value, defaultValue: defaultValue, onC
     )
   );
 }
-function SortButton({ value: value, onChange: onChange }: {value?: string; onChange?: (value: string) => void}) {
+function SortButton({
+  value: value,
+  onChange: onChange,
+}: {
+  value?: string;
+  onChange?: (value: string) => void;
+}) {
   let [n, r] = useControllableState(value, `asc`, onChange);
   return (
     <button
@@ -2764,15 +2824,23 @@ function SortButton({ value: value, onChange: onChange }: {value?: string; onCha
     </button>
   );
 }
-function ViewToggle({ value: value, onChange: onChange }: {value?: string; onChange?: (value: string) => void}) {
+function ViewToggle({
+  value: value,
+  onChange: onChange,
+}: {
+  value?: string;
+  onChange?: (value: string) => void;
+}) {
   let [n, r] = useControllableState(value, `grid`, onChange);
   return (
     <div className={`ui-as-view`} role={`radiogroup`} aria-label={`View`} data-view={n}>
       <span className={`ui-as-view__pill`} aria-hidden={`true`} />
-      {([
-        [`grid`, MoreIcon, `Grid`],
-        [`list`, HelpIcon, `List`],
-      ] as Array<[string, IconNode, string]>).map(([e, t, i]) => (
+      {(
+        [
+          [`grid`, MoreIcon, `Grid`],
+          [`list`, HelpIcon, `List`],
+        ] as Array<[string, IconNode, string]>
+      ).map(([e, t, i]) => (
         <button
           type={`button`}
           role={`radio`}
@@ -2788,7 +2856,17 @@ function ViewToggle({ value: value, onChange: onChange }: {value?: string; onCha
     </div>
   );
 }
-function SearchField({ placeholder: placeholder, width = 175, value: value, onChange: onChange }: {placeholder?: string; width?: number; value?: string; onChange?: (value: string) => void}) {
+function SearchField({
+  placeholder: placeholder,
+  width = 175,
+  value: value,
+  onChange: onChange,
+}: {
+  placeholder?: string;
+  width?: number;
+  value?: string;
+  onChange?: (value: string) => void;
+}) {
   let [i, a] = useControllableState(value, ``, onChange);
   return (
     <label
@@ -2982,7 +3060,13 @@ function FilterButton({
   value: value,
   onChange: onChange,
   align = `end`,
-}: {label: string; groups: FilterGroup[]; value: FilterValue; onChange: (value: FilterValue) => void; align?: PopoverAlign}) {
+}: {
+  label: string;
+  groups: FilterGroup[];
+  value: FilterValue;
+  onChange: (value: FilterValue) => void;
+  align?: PopoverAlign;
+}) {
   let [s, c] = React.useState(false),
     l = Object.values(value).reduce((e, t) => e + t.length, 0);
   return (
@@ -3015,7 +3099,15 @@ function FilterButton({
     </span>
   );
 }
-function SectionHeading({ title: title, left: left, right: right }: {title: React.ReactNode; left?: React.ReactNode; right?: React.ReactNode}) {
+function SectionHeading({
+  title: title,
+  left: left,
+  right: right,
+}: {
+  title: React.ReactNode;
+  left?: React.ReactNode;
+  right?: React.ReactNode;
+}) {
   return (
     <div className={`ui-as-section-head`} data-inline={!left || void 0}>
       <h2 className={`ui-as-section-head__title`}>{title}</h2>
@@ -3060,7 +3152,7 @@ var documentNames = {
   PDF: `PDF`,
   XLS: `Spreadsheet`,
 };
-function FileTemplate({ file: file, meta: meta }: {file: FileRecord; meta?: React.ReactNode}) {
+function FileTemplate({ file: file, meta: meta }: { file: FileRecord; meta?: React.ReactNode }) {
   return (
     <button type={`button`} className={`ui-as-template`}>
       <span className={`ui-as-template__preview`}>
@@ -3071,7 +3163,7 @@ function FileTemplate({ file: file, meta: meta }: {file: FileRecord; meta?: Reac
     </button>
   );
 }
-function DocumentIcon({ type: type, color: color }: {type: FileRecord["type"]; color?: string}) {
+function DocumentIcon({ type: type, color: color }: { type: FileRecord["type"]; color?: string }) {
   return (
     <span className={`ui-as-doc`} data-color={color} aria-hidden={`true`}>
       <span className={`ui-as-doc__art`}>
@@ -4286,7 +4378,8 @@ var valueValue2 = [
     ],
   },
 ];
-var ValueValue3 = (e: string) => (t: {name: string}, n: {name: string}) => (e === `asc` ? 1 : -1) * t.name.localeCompare(n.name);
+var ValueValue3 = (e: string) => (t: { name: string }, n: { name: string }) =>
+  (e === `asc` ? 1 : -1) * t.name.localeCompare(n.name);
 var ValueValue4 = (e: string, t: string) => e.toLowerCase().includes(t.trim().toLowerCase());
 function Files(e: AppShellProps) {
   let t = e.user?.name ?? `Alex Morgan`,
@@ -4302,12 +4395,7 @@ function Files(e: AppShellProps) {
     L = () => {
       let e = new Set(n.map((e) => e.name)),
         t = `Untitled folder`;
-      for (
-        let n = 2;
-        e.has(t);
-        n++
-      )
-        t = `Untitled folder ${n}`;
+      for (let n = 2; e.has(t); n++) t = `Untitled folder ${n}`;
       (i((e) => [
         ...e,
         {
@@ -4378,9 +4466,11 @@ function Files(e: AppShellProps) {
               <button
                 type={`button`}
                 className={`ui-as-folder-card ui-as-rise`}
-                style={{
-                  "--i": n,
-                } as React.CSSProperties}
+                style={
+                  {
+                    "--i": n,
+                  } as React.CSSProperties
+                }
                 onClick={() => e.onNavigate?.(t.name)}
                 key={t.name}
               >
@@ -4431,9 +4521,11 @@ function Files(e: AppShellProps) {
             {Y.map((e, t) => (
               <div
                 className={`ui-as-rise`}
-                style={{
-                  "--i": t,
-                } as React.CSSProperties}
+                style={
+                  {
+                    "--i": t,
+                  } as React.CSSProperties
+                }
                 key={e.name}
               >
                 <FileTemplate

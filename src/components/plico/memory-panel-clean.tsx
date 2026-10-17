@@ -53,10 +53,8 @@ interface MemoryPanelCleanProps {
 }
 var cleanEaseOutQuart = (progress: number) => 1 - (1 - progress) ** 4;
 var prefersReducedMotion = () =>
-  typeof window < `u` &&
-  window.matchMedia(`(prefers-reduced-motion: reduce)`).matches;
-var delay = (e: number | undefined) =>
-  new Promise((t) => window.setTimeout(t, e));
+  typeof window < `u` && window.matchMedia(`(prefers-reduced-motion: reduce)`).matches;
+var delay = (e: number | undefined) => new Promise((t) => window.setTimeout(t, e));
 var cleanTodayLabel = () =>
   new Date().toLocaleDateString(`en-US`, {
     month: `short`,
@@ -66,13 +64,9 @@ var createCleanMemoryId = () =>
   `m-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 6)}`;
 var autosizeCleanTextarea = (textarea: HTMLTextAreaElement | null) => {
   textarea &&
-    ((textarea.style.height = `auto`),
-    (textarea.style.height = `${textarea.scrollHeight}px`));
+    ((textarea.style.height = `auto`), (textarea.style.height = `${textarea.scrollHeight}px`));
 };
-function useAnimatedCountsClean(
-  targets: Record<string, number>,
-  duration: number,
-) {
+function useAnimatedCountsClean(targets: Record<string, number>, duration: number) {
   let [values, setValues] = React.useState(targets),
     currentRef = React.useRef(targets),
     signature = JSON.stringify(targets);
@@ -82,10 +76,7 @@ function useAnimatedCountsClean(
         n = {
           ...currentRef.current,
         };
-      if (
-        prefersReducedMotion() ||
-        Object.keys(e).every((t) => n[t] === e[t])
-      ) {
+      if (prefersReducedMotion() || Object.keys(e).every((t) => n[t] === e[t])) {
         ((currentRef.current = e), setValues(e));
         return;
       }
@@ -96,9 +87,7 @@ function useAnimatedCountsClean(
             d = cleanEaseOutQuart(c),
             f: Record<string, number> = {};
           for (let t in e) f[t] = (n[t] ?? e[t]) + (e[t] - (n[t] ?? e[t])) * d;
-          ((currentRef.current = f),
-            setValues(f),
-            c < 1 && (l = requestAnimationFrame(u)));
+          ((currentRef.current = f), setValues(f), c < 1 && (l = requestAnimationFrame(u)));
         };
       return ((l = requestAnimationFrame(u)), () => cancelAnimationFrame(l));
     }, [signature, duration]),
@@ -111,8 +100,7 @@ function useRightOverflow(scrollRef: React.RefObject<HTMLElement | null>) {
     React.useEffect(() => {
       let t = scrollRef.current;
       if (!t) return;
-      let n = () =>
-        setOverflowing(t.scrollLeft + t.clientWidth < t.scrollWidth - 1);
+      let n = () => setOverflowing(t.scrollLeft + t.clientWidth < t.scrollWidth - 1);
       n();
       let i = new ResizeObserver(n);
       i.observe(t);
@@ -215,14 +203,10 @@ var CleanForgetIcon = () => (
     d={`M2.5 4.5h11M6.5 4.5V3.2a.7.7 0 0 1 .7-.7h1.6a.7.7 0 0 1 .7.7v1.3M4 4.5l.6 8a1.1 1.1 0 0 0 1.1 1h4.6a1.1 1.1 0 0 0 1.1-1l.6-8M6.8 7.2v3.6M9.2 7.2v3.6`}
   />
 );
-var CleanUndoIcon = () => (
-  <CleanIcon d={`M5.5 3.5 3 6l2.5 2.5M3.2 6h6.3a3.5 3.5 0 0 1 0 7H7`} />
-);
+var CleanUndoIcon = () => <CleanIcon d={`M5.5 3.5 3 6l2.5 2.5M3.2 6h6.3a3.5 3.5 0 0 1 0 7H7`} />;
 var CleanAddIcon = () => <CleanIcon d={`M8 3.5v9M3.5 8h9`} />;
 var CleanSearchIcon = () => (
-  <CleanIcon
-    d={`M7.2 11.9a4.7 4.7 0 1 0 0-9.4 4.7 4.7 0 0 0 0 9.4ZM10.6 10.6l2.9 2.9`}
-  />
+  <CleanIcon d={`M7.2 11.9a4.7 4.7 0 1 0 0-9.4 4.7 4.7 0 0 0 0 9.4ZM10.6 10.6l2.9 2.9`} />
 );
 var CleanCloseIcon = () => <CleanIcon d={`m4.5 4.5 7 7m0-7-7 7`} />;
 var CleanInfoIcon = () => (
@@ -263,9 +247,7 @@ function MemoryPanelClean({
     itemsRef = React.useRef(items);
   itemsRef.current = items;
   let commitMemories = (next: Memory[]) => {
-      ((itemsRef.current = next),
-        onChange || setLocalMemories(next),
-        onChange?.(next));
+      ((itemsRef.current = next), onChange || setLocalMemories(next), onChange?.(next));
     },
     [localEnabled, setLocalEnabled] = React.useState(defaultEnabled),
     isEnabled = enabled ?? localEnabled,
@@ -318,8 +300,7 @@ function MemoryPanelClean({
           n = t?.querySelector<HTMLElement>(`[data-memory="${CSS.escape(e)}"]`);
         if (!t || !n) return;
         let r = n.offsetTop - t.offsetTop;
-        (r < t.scrollTop ||
-          r + n.offsetHeight > t.scrollTop + t.clientHeight) &&
+        (r < t.scrollTop || r + n.offsetHeight > t.scrollTop + t.clientHeight) &&
           t.scrollTo({
             top: r - 8,
             behavior: prefersReducedMotion() ? `auto` : `smooth`,
@@ -333,8 +314,7 @@ function MemoryPanelClean({
       return () => window.clearTimeout(e);
     }, [undo, undoFor]));
   let allCategories = [...(categories ?? [])];
-  for (let e of items)
-    allCategories.includes(e.category) || allCategories.push(e.category);
+  for (let e of items) allCategories.includes(e.category) || allCategories.push(e.category);
   let visibleItems = items.filter((e) => !leavingMap[e.id]),
     pausedCount = visibleItems.filter((e) => e.paused).length,
     normalizedQuery = query.trim().toLowerCase(),
@@ -430,9 +410,7 @@ function MemoryPanelClean({
         onEdit?.(id, text),
         window.requestAnimationFrame(() =>
           rootRef.current
-            ?.querySelector<HTMLElement>(
-              `[data-memory="${CSS.escape(id)}"] [data-act="edit"]`,
-            )
+            ?.querySelector<HTMLElement>(`[data-memory="${CSS.escape(id)}"] [data-act="edit"]`)
             ?.focus({
               preventScroll: true,
             }),
@@ -444,9 +422,7 @@ function MemoryPanelClean({
         id &&
           window.requestAnimationFrame(() =>
             rootRef.current
-              ?.querySelector<HTMLElement>(
-                `[data-memory="${CSS.escape(id)}"] [data-act="edit"]`,
-              )
+              ?.querySelector<HTMLElement>(`[data-memory="${CSS.escape(id)}"] [data-act="edit"]`)
               ?.focus({
                 preventScroll: true,
               }),
@@ -492,30 +468,14 @@ function MemoryPanelClean({
       (setSearchOpen(false),
         setQuery(``),
         window.requestAnimationFrame(() =>
-          rootRef.current
-            ?.querySelector<HTMLElement>(`.ui-mpc__search-open`)
-            ?.focus({
-              preventScroll: true,
-            }),
+          rootRef.current?.querySelector<HTMLElement>(`.ui-mpc__search-open`)?.focus({
+            preventScroll: true,
+          }),
         ));
     },
-    filterTabs = [
-      null,
-      ...allCategories.filter((e) => items.some((t) => t.category === e)),
-    ],
-    handleCategoryKeyDown: React.KeyboardEventHandler<HTMLDivElement> = (
-      event,
-    ) => {
-      if (
-        ![
-          `ArrowRight`,
-          `ArrowLeft`,
-          `ArrowDown`,
-          `ArrowUp`,
-          `Home`,
-          `End`,
-        ].includes(event.key)
-      )
+    filterTabs = [null, ...allCategories.filter((e) => items.some((t) => t.category === e))],
+    handleCategoryKeyDown: React.KeyboardEventHandler<HTMLDivElement> = (event) => {
+      if (![`ArrowRight`, `ArrowLeft`, `ArrowDown`, `ArrowUp`, `Home`, `End`].includes(event.key))
         return;
       event.preventDefault();
       let index = filterTabs.indexOf(category),
@@ -525,14 +485,11 @@ function MemoryPanelClean({
             : event.key === `End`
               ? filterTabs.length - 1
               : (index +
-                  (event.key === `ArrowRight` || event.key === `ArrowDown`
-                    ? 1
-                    : -1) +
+                  (event.key === `ArrowRight` || event.key === `ArrowDown` ? 1 : -1) +
                   filterTabs.length) %
                 filterTabs.length;
       setCategory(filterTabs[nextIndex]);
-      let buttons =
-        event.currentTarget.querySelectorAll<HTMLElement>(`[role='radio']`);
+      let buttons = event.currentTarget.querySelectorAll<HTMLElement>(`[role='radio']`);
       (buttons[nextIndex]?.focus(),
         buttons[nextIndex]?.scrollIntoView({
           block: `nearest`,
@@ -567,11 +524,9 @@ function MemoryPanelClean({
         )),
         (footerId = `forgot-${undo.key}`))
       : editingId
-        ? ((footerContent = `Enter to save · Esc to cancel`),
-          (footerId = `editing`))
+        ? ((footerContent = `Enter to save · Esc to cancel`), (footerId = `editing`))
         : adding
-          ? ((footerContent = `Pick a category · Enter to save`),
-            (footerId = `adding`))
+          ? ((footerContent = `Pick a category · Enter to save`), (footerId = `adding`))
           : hotMemory
             ? ((footerContent = (
                 <>
@@ -586,8 +541,7 @@ function MemoryPanelClean({
                 </>
               )),
               (footerId = `hot-${hotMemory.id}-${+!!hotMemory.paused}-${+!!isEnabled}`))
-            : isEnabled ||
-              ((footerContent = `Memory is off`), (footerId = `off`)),
+            : isEnabled || ((footerContent = `Memory is off`), (footerId = `off`)),
     (
       <div
         ref={rootRef}
@@ -639,10 +593,7 @@ function MemoryPanelClean({
               </p>
             </div>
           </div>
-          <div
-            className={`ui-mpc__filters`}
-            data-searching={searchOpen ? `` : void 0}
-          >
+          <div className={`ui-mpc__filters`} data-searching={searchOpen ? `` : void 0}>
             <div
               ref={filterScrollRef}
               className={`ui-mpc__chips`}
@@ -653,9 +604,7 @@ function MemoryPanelClean({
               onKeyDown={handleCategoryKeyDown}
             >
               {filterTabs.map((e) => {
-                let t = visibleItems.filter(
-                    (t) => !e || t.category === e,
-                  ).length,
+                let t = visibleItems.filter((t) => !e || t.category === e).length,
                   n = category === e;
                 return (
                   <button
@@ -720,11 +669,7 @@ function MemoryPanelClean({
               <CleanSearchIcon />
             </button>
           </div>
-          <div
-            ref={listRef}
-            className={`ui-mpc__list`}
-            onPointerLeave={() => setHotId(null)}
-          >
+          <div ref={listRef} className={`ui-mpc__list`} onPointerLeave={() => setHotId(null)}>
             {allCategories.map((e) => {
               let t = items.filter((t) => t.category === e);
               if (!t.length) return null;
@@ -758,13 +703,10 @@ function MemoryPanelClean({
                                 data-paused={e.paused ? `` : void 0}
                                 data-hot={hotId === e.id ? `` : void 0}
                                 data-editing={t ? `` : void 0}
-                                onPointerEnter={(t) =>
-                                  t.pointerType === `mouse` && setHotId(e.id)
-                                }
+                                onPointerEnter={(t) => t.pointerType === `mouse` && setHotId(e.id)}
                                 onFocus={() => setHotId(e.id)}
                                 onBlur={(e) => {
-                                  e.currentTarget.contains(e.relatedTarget) ||
-                                    setHotId(null);
+                                  e.currentTarget.contains(e.relatedTarget) || setHotId(null);
                                 }}
                               >
                                 {t ? (
@@ -781,10 +723,7 @@ function MemoryPanelClean({
                                           e.focus({
                                             preventScroll: true,
                                           }),
-                                          e.setSelectionRange(
-                                            e.value.length,
-                                            e.value.length,
-                                          )));
+                                          e.setSelectionRange(e.value.length, e.value.length)));
                                     }}
                                     onChange={(e) => {
                                       (setEditText(e.target.value),
@@ -793,8 +732,7 @@ function MemoryPanelClean({
                                     onKeyDown={(e) => {
                                       e.key === `Enter` && !e.shiftKey
                                         ? (e.preventDefault(), saveEdit())
-                                        : e.key === `Escape` &&
-                                          (e.stopPropagation(), cancelEdit());
+                                        : e.key === `Escape` && (e.stopPropagation(), cancelEdit());
                                     }}
                                   />
                                 ) : (
@@ -804,9 +742,7 @@ function MemoryPanelClean({
                                   <span className={`ui-mpc__source`}>
                                     {e.source}
                                     {e.source && e.date && (
-                                      <span
-                                        className={`ui-mpc__dot`}
-                                      >{` · `}</span>
+                                      <span className={`ui-mpc__dot`}>{` · `}</span>
                                     )}
                                     {e.date}
                                   </span>
@@ -816,9 +752,7 @@ function MemoryPanelClean({
                                     aria-hidden={!e.paused}
                                   >{`Paused`}</span>
                                   {t ? (
-                                    <span
-                                      className={`ui-mpc__acts ui-mpc__acts--edit`}
-                                    >
+                                    <span className={`ui-mpc__acts ui-mpc__acts--edit`}>
                                       <button
                                         type={`button`}
                                         className={`ui-mpc__text-btn`}
@@ -854,11 +788,7 @@ function MemoryPanelClean({
                                           className={`ui-mpc__icon-swap`}
                                           key={e.paused ? `play` : `pause`}
                                         >
-                                          {e.paused ? (
-                                            <CleanPlayIcon />
-                                          ) : (
-                                            <CleanPauseIcon />
-                                          )}
+                                          {e.paused ? <CleanPlayIcon /> : <CleanPauseIcon />}
                                         </span>
                                       </button>
                                       <button
@@ -884,11 +814,7 @@ function MemoryPanelClean({
                 </section>
               );
             })}
-            <div
-              className={`ui-mpc__fold`}
-              data-open={hasMatches ? void 0 : ``}
-              inert={hasMatches}
-            >
+            <div className={`ui-mpc__fold`} data-open={hasMatches ? void 0 : ``} inert={hasMatches}>
               <div className={`ui-mpc__clip`}>
                 <p className={`ui-mpc__empty`}>
                   {items.length === 0
@@ -901,11 +827,7 @@ function MemoryPanelClean({
             </div>
           </div>
           <div className={`ui-mpc__bottom`}>
-            <div
-              className={`ui-mpc__fold`}
-              data-open={adding ? void 0 : ``}
-              inert={adding}
-            >
+            <div className={`ui-mpc__fold`} data-open={adding ? void 0 : ``} inert={adding}>
               <div className={`ui-mpc__clip`}>
                 <button
                   type={`button`}
@@ -945,14 +867,12 @@ function MemoryPanelClean({
                         e && !adding && delete e.dataset.focused);
                     }}
                     onChange={(e) => {
-                      (setAddText(e.target.value),
-                        autosizeCleanTextarea(e.target));
+                      (setAddText(e.target.value), autosizeCleanTextarea(e.target));
                     }}
                     onKeyDown={(e) => {
                       e.key === `Enter` && !e.shiftKey
                         ? (e.preventDefault(), saveAdd())
-                        : e.key === `Escape` &&
-                          (e.stopPropagation(), cancelAdd());
+                        : e.key === `Escape` && (e.stopPropagation(), cancelAdd());
                     }}
                   />
                   <div className={`ui-mpc__new-row`}>
@@ -963,24 +883,13 @@ function MemoryPanelClean({
                       role={`radiogroup`}
                       aria-label={`Category of the new memory`}
                       onKeyDown={(e) => {
-                        let t = allCategories.length
-                          ? allCategories
-                          : [`General`];
-                        if (
-                          ![
-                            `ArrowRight`,
-                            `ArrowLeft`,
-                            `ArrowDown`,
-                            `ArrowUp`,
-                          ].includes(e.key)
-                        )
+                        let t = allCategories.length ? allCategories : [`General`];
+                        if (![`ArrowRight`, `ArrowLeft`, `ArrowDown`, `ArrowUp`].includes(e.key))
                           return;
                         e.preventDefault();
                         let n =
                           (t.indexOf(newCategory) +
-                            (e.key === `ArrowRight` || e.key === `ArrowDown`
-                              ? 1
-                              : -1) +
+                            (e.key === `ArrowRight` || e.key === `ArrowDown` ? 1 : -1) +
                             t.length) %
                           t.length;
                         (setAddCategory(t[n]),
@@ -989,21 +898,19 @@ function MemoryPanelClean({
                             [n]?.focus());
                       }}
                     >
-                      {(allCategories.length ? allCategories : [`General`]).map(
-                        (e) => (
-                          <button
-                            type={`button`}
-                            role={`radio`}
-                            aria-checked={newCategory === e}
-                            tabIndex={newCategory === e ? 0 : -1}
-                            className={`ui-mpc__cat`}
-                            onClick={() => setAddCategory(e)}
-                            key={e}
-                          >
-                            {e}
-                          </button>
-                        ),
-                      )}
+                      {(allCategories.length ? allCategories : [`General`]).map((e) => (
+                        <button
+                          type={`button`}
+                          role={`radio`}
+                          aria-checked={newCategory === e}
+                          tabIndex={newCategory === e ? 0 : -1}
+                          className={`ui-mpc__cat`}
+                          onClick={() => setAddCategory(e)}
+                          key={e}
+                        >
+                          {e}
+                        </button>
+                      ))}
                     </div>
                     <span className={`ui-mpc__acts ui-mpc__acts--edit`}>
                       <button
@@ -1346,8 +1253,7 @@ function MemoryPanelCleanDemo2() {
   let rootRef = React.useRef<HTMLDivElement | null>(null),
     pausedRef = React.useRef(false);
   React.useEffect(() => {
-    let n = (t: string) => () =>
-        rootRef.current?.querySelector<HTMLElement>(t)?.click(),
+    let n = (t: string) => () => rootRef.current?.querySelector<HTMLElement>(t)?.click(),
       r = (e: string, t: string) => n(`[data-memory="${e}"] [data-act="${t}"]`),
       i = (e: number) => n(`.ui-mpc__chip:nth-child(${e})`),
       a: [number, () => void][] = [

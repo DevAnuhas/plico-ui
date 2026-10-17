@@ -45,12 +45,7 @@ interface Swipe {
 
 export interface ToasterCleanProps {
   position?:
-    | "top-left"
-    | "top-center"
-    | "top-right"
-    | "bottom-left"
-    | "bottom-center"
-    | "bottom-right";
+    "top-left" | "top-center" | "top-right" | "bottom-left" | "bottom-center" | "bottom-right";
   inline?: boolean;
   id?: string;
   duration?: number;
@@ -86,8 +81,7 @@ function upsertCleanToast(
   skipCreate: boolean = false,
 ) {
   let { id: a, ...o } = options,
-    l =
-      a === void 0 ? void 0 : toastItems.find((e) => e.id === a && !e.removing);
+    l = a === void 0 ? void 0 : toastItems.find((e) => e.id === a && !e.removing);
   if (l)
     return (
       publishCleanToasts(
@@ -123,9 +117,7 @@ function upsertCleanToast(
 }
 var removalDuration = 420;
 function dismissCleanToast(id?: ToastId) {
-  let matches = toastItems.filter(
-    (t) => !t.removing && (id === void 0 || t.id === id),
-  );
+  let matches = toastItems.filter((t) => !t.removing && (id === void 0 || t.id === id));
   matches.length &&
     (publishCleanToasts(
       toastItems.map((e) =>
@@ -141,9 +133,7 @@ function dismissCleanToast(id?: ToastId) {
     window.setTimeout(
       () =>
         publishCleanToasts(
-          toastItems.filter(
-            (e) => !(e.removing && matches.some((t) => t.id === e.id)),
-          ),
+          toastItems.filter((e) => !(e.removing && matches.some((t) => t.id === e.id))),
         ),
       removalDuration,
     ));
@@ -194,17 +184,10 @@ function promiseCleanToast<T>(
       (e) =>
         settle(
           `success`,
-          typeof messages.success == `function`
-            ? messages.success(e)
-            : messages.success,
+          typeof messages.success == `function` ? messages.success(e) : messages.success,
         ),
       (e) =>
-        settle(
-          `error`,
-          typeof messages.error == `function`
-            ? messages.error(e)
-            : messages.error,
-        ),
+        settle(`error`, typeof messages.error == `function` ? messages.error(e) : messages.error),
     ),
     promise
   );
@@ -212,49 +195,27 @@ function promiseCleanToast<T>(
 var toast = Object.assign(
   (e: React.ReactNode, t?: ToastOptions) => upsertCleanToast(`default`, e, t),
   {
-    success: (e: React.ReactNode, t?: ToastOptions) =>
-      upsertCleanToast(`success`, e, t),
-    error: (e: React.ReactNode, t?: ToastOptions) =>
-      upsertCleanToast(`error`, e, t),
-    info: (e: React.ReactNode, t?: ToastOptions) =>
-      upsertCleanToast(`info`, e, t),
-    loading: (e: React.ReactNode, t?: ToastOptions) =>
-      upsertCleanToast(`loading`, e, t),
+    success: (e: React.ReactNode, t?: ToastOptions) => upsertCleanToast(`success`, e, t),
+    error: (e: React.ReactNode, t?: ToastOptions) => upsertCleanToast(`error`, e, t),
+    info: (e: React.ReactNode, t?: ToastOptions) => upsertCleanToast(`info`, e, t),
+    loading: (e: React.ReactNode, t?: ToastOptions) => upsertCleanToast(`loading`, e, t),
     promise: promiseCleanToast,
     dismiss: dismissCleanToast,
   },
 );
 function CleanToastStatusIcon() {
   return (
-    <svg
-      viewBox={`0 0 24 24`}
-      className={`ui-tsc__status`}
-      aria-hidden={`true`}
-    >
+    <svg viewBox={`0 0 24 24`} className={`ui-tsc__status`} aria-hidden={`true`}>
       <g className={`ui-tsc__spin`}>
-        <circle
-          className={`ui-tsc__ring`}
-          cx={`12`}
-          cy={`12`}
-          r={`9.25`}
-          pathLength={1}
-        />
+        <circle className={`ui-tsc__ring`} cx={`12`} cy={`12`} r={`9.25`} pathLength={1} />
       </g>
       <path
         className={`ui-tsc__mark ui-tsc__check`}
         d={`M8.3 12.4l2.5 2.5 4.9-5.3`}
         pathLength={1}
       />
-      <path
-        className={`ui-tsc__mark ui-tsc__x1`}
-        d={`M9.5 9.5l5 5`}
-        pathLength={1}
-      />
-      <path
-        className={`ui-tsc__mark ui-tsc__x2`}
-        d={`M14.5 9.5l-5 5`}
-        pathLength={1}
-      />
+      <path className={`ui-tsc__mark ui-tsc__x1`} d={`M9.5 9.5l5 5`} pathLength={1} />
+      <path className={`ui-tsc__mark ui-tsc__x2`} d={`M14.5 9.5l-5 5`} pathLength={1} />
       <path className={`ui-tsc__info`} d={`M12 11.2v4.6M12 8.2h.01`} />
     </svg>
   );
@@ -286,9 +247,9 @@ function CleanToastItem({
 }) {
   let [entered, setEntered] = React.useState(false),
     [swiping, setSwiping] = React.useState(false),
-    [previousCopy, setPreviousCopy] = React.useState<
-      (ToastContent & { version: number }) | null
-    >(null),
+    [previousCopy, setPreviousCopy] = React.useState<(ToastContent & { version: number }) | null>(
+      null,
+    ),
     contentRef = React.useRef<HTMLDivElement | null>(null),
     swipeRef = React.useRef<HTMLDivElement | null>(null),
     lastCopyRef = React.useRef({
@@ -305,9 +266,7 @@ function CleanToastItem({
     suppressClickRef = React.useRef(false),
     removing = !!toastItem.removing;
   (React.useEffect(() => {
-    let e = requestAnimationFrame(() =>
-      requestAnimationFrame(() => setEntered(true)),
-    );
+    let e = requestAnimationFrame(() => requestAnimationFrame(() => setEntered(true)));
     return () => cancelAnimationFrame(e);
   }, []),
     React.useLayoutEffect(() => {
@@ -327,14 +286,10 @@ function CleanToastItem({
           description: toastItem.description,
           version: toastItem.version,
         }),
-        (t.title !== toastItem.title ||
-          t.description !== toastItem.description) &&
+        (t.title !== toastItem.title || t.description !== toastItem.description) &&
           (setPreviousCopy(t),
           window.clearTimeout(copyTimerRef.current),
-          (copyTimerRef.current = window.setTimeout(
-            () => setPreviousCopy(null),
-            320,
-          ))));
+          (copyTimerRef.current = window.setTimeout(() => setPreviousCopy(null), 320))));
     }, [toastItem.version]),
     React.useEffect(() => () => window.clearTimeout(copyTimerRef.current), []));
   let duration = toastItem.duration ?? defaultDuration,
@@ -358,8 +313,7 @@ function CleanToastItem({
       );
     return () => {
       (window.clearTimeout(r),
-        countdownRef.current.version === t &&
-          (countdownRef.current.left -= Date.now() - n));
+        countdownRef.current.version === t && (countdownRef.current.left -= Date.now() - n));
     };
   }, [countdownActive, toastItem.version, duration, toastItem.id]);
   let handlePointerDown: React.PointerEventHandler<HTMLLIElement> = (e) => {
@@ -393,11 +347,8 @@ function CleanToastItem({
         s = t.axis === `x` || o * edge > 0;
       s || (o = Math.sign(o) * Math.abs(o) ** 0.7 * 0.6);
       let c = t.axis === `x` ? n.offsetWidth : n.offsetHeight * 2;
-      ((n.style.transform =
-        t.axis === `x` ? `translateX(${o}px)` : `translateY(${o}px)`),
-        (n.style.opacity = s
-          ? String(Math.max(0.25, 1 - Math.abs(o) / (c * 1.1)))
-          : ``),
+      ((n.style.transform = t.axis === `x` ? `translateX(${o}px)` : `translateY(${o}px)`),
+        (n.style.opacity = s ? String(Math.max(0.25, 1 - Math.abs(o) / (c * 1.1))) : ``),
         t.samples.push({
           v: o,
           at: e.timeStamp,
@@ -407,12 +358,7 @@ function CleanToastItem({
     handlePointerEnd: React.PointerEventHandler<HTMLLIElement> = (t) => {
       let n = gestureRef.current,
         r = swipeRef.current!;
-      if (
-        !n ||
-        n.pointer !== t.pointerId ||
-        ((gestureRef.current = null), !n.axis || !r)
-      )
-        return;
+      if (!n || n.pointer !== t.pointerId || ((gestureRef.current = null), !n.axis || !r)) return;
       setSwiping(false);
       let a = n.samples[n.samples.length - 1] ?? {
           v: 0,
@@ -428,10 +374,7 @@ function CleanToastItem({
           (r.style.transform = `${n.axis === `x` ? `translateX` : `translateY`}(${Math.sign(a.v) * t}px)`),
           (r.style.opacity = `0`),
           dismissCleanToast(toastItem.id));
-      } else
-        ((r.style.transition = ``),
-          (r.style.transform = ``),
-          (r.style.opacity = ``));
+      } else ((r.style.transition = ``), (r.style.transform = ``), (r.style.opacity = ``));
     },
     stackDirection = -edge,
     transform = `translateY(${stackDirection * layout.y}px) scale(${layout.scale})`;
@@ -442,8 +385,7 @@ function CleanToastItem({
     toastItem.type === `loading` ? (
       <CleanToastStatusIcon />
     ) : (
-      (toastItem.icon ??
-      (toastItem.type === "default" ? null : <CleanToastStatusIcon />))
+      (toastItem.icon ?? (toastItem.type === "default" ? null : <CleanToastStatusIcon />))
     );
   return (
     <li
@@ -467,9 +409,7 @@ function CleanToastItem({
       onPointerCancel={handlePointerEnd}
       onClickCapture={(e) => {
         suppressClickRef.current &&
-          ((suppressClickRef.current = false),
-          e.stopPropagation(),
-          e.preventDefault());
+          ((suppressClickRef.current = false), e.stopPropagation(), e.preventDefault());
       }}
     >
       <div ref={swipeRef} className={`ui-tsc__swipe`}>
@@ -483,9 +423,7 @@ function CleanToastItem({
               <span
                 className={`ui-tsc__icon`}
                 data-type={
-                  toastItem.icon && toastItem.type !== `loading`
-                    ? `custom`
-                    : toastItem.type
+                  toastItem.icon && toastItem.type !== `loading` ? `custom` : toastItem.type
                 }
               >
                 {statusIcon}
@@ -498,12 +436,9 @@ function CleanToastItem({
                 key={toastItem.version}
               >
                 <div className={`ui-tsc__title`}>{toastItem.title}</div>
-                {toastItem.description != null &&
-                  toastItem.description !== `` && (
-                    <div className={`ui-tsc__desc`}>
-                      {toastItem.description}
-                    </div>
-                  )}
+                {toastItem.description != null && toastItem.description !== `` && (
+                  <div className={`ui-tsc__desc`}>{toastItem.description}</div>
+                )}
               </div>
               {previousCopy && (
                 <div
@@ -512,12 +447,9 @@ function CleanToastItem({
                   key={`ghost-${previousCopy.version}`}
                 >
                   <div className={`ui-tsc__title`}>{previousCopy.title}</div>
-                  {previousCopy.description != null &&
-                    previousCopy.description !== `` && (
-                      <div className={`ui-tsc__desc`}>
-                        {previousCopy.description}
-                      </div>
-                    )}
+                  {previousCopy.description != null && previousCopy.description !== `` && (
+                    <div className={`ui-tsc__desc`}>{previousCopy.description}</div>
+                  )}
                 </div>
               )}
             </div>
@@ -605,9 +537,7 @@ function ToasterClean({
     announcedVersionsRef = React.useRef(new Map<string, number>()),
     [vertical, horizontal] = position.split(`-`),
     edge = vertical === `bottom` ? 1 : -1,
-    scopedToasts = snapshot
-      .filter((e) => (e.toaster ?? null) === (id ?? null))
-      .reverse(),
+    scopedToasts = snapshot.filter((e) => (e.toaster ?? null) === (id ?? null)).reverse(),
     liveToasts = scopedToasts.filter((e) => !e.removing),
     expanded = expand || hovered || focused || touchExpanded,
     paused = hovered || focused || touchExpanded || documentHidden,
@@ -623,8 +553,7 @@ function ToasterClean({
       );
     }, []),
     frontHeight =
-      (liveToasts[0] && heights[cleanToastKey(liveToasts[0])]) ||
-      frontHeightRef.current;
+      (liveToasts[0] && heights[cleanToastKey(liveToasts[0])]) || frontHeightRef.current;
   frontHeight && (frontHeightRef.current = frontHeight);
   let layouts = new Map<string, ToastLayout>(),
     accumulatedHeight = 0;
@@ -668,9 +597,7 @@ function ToasterClean({
       };
       return (n.forEach((e) => delete r[e]), r);
     }),
-      layoutCacheRef.current.forEach(
-        (t, n) => !e.has(n) && layoutCacheRef.current.delete(n),
-      ),
+      layoutCacheRef.current.forEach((t, n) => !e.has(n) && layoutCacheRef.current.delete(n)),
       liveToasts.length || setTouchExpanded(false));
   }, [snapshot]),
     React.useEffect(() => {
@@ -706,8 +633,7 @@ function ToasterClean({
     React.useEffect(() => {
       if (!touchExpanded) return;
       let e = (e: PointerEvent) => {
-        regionRef.current?.contains(e.target as Node | null) ||
-          setTouchExpanded(false);
+        regionRef.current?.contains(e.target as Node | null) || setTouchExpanded(false);
       };
       return (
         document.addEventListener(`pointerdown`, e),
@@ -716,9 +642,8 @@ function ToasterClean({
     }, [touchExpanded]));
   let getToastElements = () =>
     Array.from(
-      regionRef.current?.querySelectorAll<HTMLElement>(
-        `[data-toast-id]:not([data-removing])`,
-      ) ?? [],
+      regionRef.current?.querySelectorAll<HTMLElement>(`[data-toast-id]:not([data-removing])`) ??
+        [],
     );
   React.useEffect(() => {
     if (!hotkey) return;
@@ -728,32 +653,20 @@ function ToasterClean({
       t &&
         (e.preventDefault(),
         regionRef.current?.contains(document.activeElement) ||
-          (returnFocusRef.current =
-            document.activeElement as HTMLElement | null),
+          (returnFocusRef.current = document.activeElement as HTMLElement | null),
         t.focus());
     };
-    return (
-      window.addEventListener(`keydown`, e),
-      () => window.removeEventListener(`keydown`, e)
-    );
+    return (window.addEventListener(`keydown`, e), () => window.removeEventListener(`keydown`, e));
   }, [hotkey]);
   let handleKeyDown: React.KeyboardEventHandler<HTMLElement> = (e) => {
       if (e.key !== `Escape` || !liveToasts.length) return;
       (e.preventDefault(), e.stopPropagation());
       let t = (e.target as HTMLElement).closest<HTMLElement>(`[data-toast-id]`),
-        n =
-          liveToasts.find((e) => cleanToastKey(e) === t?.dataset.toastId) ??
-          liveToasts[0],
+        n = liveToasts.find((e) => cleanToastKey(e) === t?.dataset.toastId) ?? liveToasts[0],
         r = liveToasts.indexOf(n);
       dismissCleanToast(n.id);
-      let i = liveToasts.filter((e) => e !== n)[
-          Math.min(r, liveToasts.length - 2)
-        ],
-        a =
-          i &&
-          getToastElements().find(
-            (e) => e.dataset.toastId === cleanToastKey(i),
-          );
+      let i = liveToasts.filter((e) => e !== n)[Math.min(r, liveToasts.length - 2)],
+        a = i && getToastElements().find((e) => e.dataset.toastId === cleanToastKey(i));
       a
         ? a.focus()
         : returnFocusRef.current?.isConnected
@@ -790,9 +703,7 @@ function ToasterClean({
       onPointerEnter={(e) => e.pointerType === `mouse` && setHovered(true)}
       onPointerLeave={(e) => e.pointerType === `mouse` && setHovered(false)}
       onClick={() =>
-        pointerTypeRef.current !== `mouse` &&
-        liveToasts.length > 1 &&
-        setTouchExpanded(true)
+        pointerTypeRef.current !== `mouse` && liveToasts.length > 1 && setTouchExpanded(true)
       }
     >
       <style href={`ui-toaster-clean`} precedence={`default`}>
@@ -1053,9 +964,7 @@ var toasterCleanStyles = `
 :where(.dark, [data-theme="dark"]) .ui-tsc .ui-tsc__close { background: #2a2a2d; }
 `;
 var demoDelay = (e: number | undefined, t: boolean = false) =>
-  new Promise<void>((n, r) =>
-    window.setTimeout(() => (t ? r(Error(`Timeout`)) : n()), e),
-  );
+  new Promise<void>((n, r) => window.setTimeout(() => (t ? r(Error(`Timeout`)) : n()), e));
 var CleanDemoIcon = ({ d: path }: { d: string }) => (
   <svg viewBox={`0 0 24 24`} aria-hidden={`true`}>
     <path d={path} />
@@ -1155,9 +1064,7 @@ function ToasterCleanDemo2() {
         ],
         n = trackedIdsRef.current;
       return () => {
-        (e.forEach(clearTimeout),
-          n.forEach((e) => toast.dismiss(e)),
-          n.clear());
+        (e.forEach(clearTimeout), n.forEach((e) => toast.dismiss(e)), n.clear());
       };
     }, []),
     (
@@ -1170,20 +1077,12 @@ function ToasterCleanDemo2() {
                   <CleanDemoIcon d={cleanDemoIconPaths.doc} />
                 </span>
                 <div className={`toaster-demo__meta`}>
-                  <span
-                    className={`toaster-demo__name`}
-                  >{`Q3 Board Report`}</span>
-                  <span
-                    className={`toaster-demo__sub`}
-                  >{`Finance · edited 2 min ago`}</span>
+                  <span className={`toaster-demo__name`}>{`Q3 Board Report`}</span>
+                  <span className={`toaster-demo__sub`}>{`Finance · edited 2 min ago`}</span>
                 </div>
               </div>
               <div className={`toaster-demo__grid`}>
-                <button
-                  type={`button`}
-                  className={`toaster-demo__btn`}
-                  onClick={() => showSaved()}
-                >
+                <button type={`button`} className={`toaster-demo__btn`} onClick={() => showSaved()}>
                   <CleanDemoIcon d={cleanDemoIconPaths.save} />
                   {`Save draft`}
                 </button>
@@ -1237,11 +1136,7 @@ function ToasterCleanDemo2() {
             </p>
           </div>
           <div className={`toaster-demo__slot`}>
-            <ToasterClean
-              id={toasterId}
-              inline={true}
-              position={`top-center`}
-            />
+            <ToasterClean id={toasterId} inline={true} position={`top-center`} />
           </div>
         </div>
       </div>

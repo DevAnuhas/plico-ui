@@ -3,10 +3,10 @@
   "version": "0.2.0",
   "private": true,
   "license": "MIT",
-  "packageManager": "npm@11.11.0",
+  "packageManager": "pnpm@12.14.0",
   "scripts": {
     "dev": "next dev --hostname 127.0.0.1 --port 4210",
-    "build": "npm run registry:build && next build",
+    "build": "pnpm registry:build && next build",
     "start": "next start --hostname 127.0.0.1 --port 4210",
     "registry:build": "node scripts/build-registry.mjs",
     "registry:verify": "node scripts/verify-registry.mjs",
@@ -14,7 +14,10 @@
     "typecheck": "tsc --noEmit",
     "verify:api": "node scripts/verify-api.mjs",
     "registry:typecheck": "node scripts/verify-registry-types.mjs",
-    "verify:library": "node scripts/verify-library-api.mjs"
+    "verify:library": "node scripts/verify-library-api.mjs",
+    "verify:consumer": "node tests/registry-consumer/run.mjs",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "engines": {
     "node": "24.x"

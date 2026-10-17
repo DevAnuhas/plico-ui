@@ -78,13 +78,11 @@ var cleanFileColorGroups = [
   },
 ];
 var cleanFileColor = (name: string) =>
-  cleanFileColorGroups.find((t) => t.exts.includes(cleanFileExtension(name)))
-    ?.color ?? `#8f8f8f`;
+  cleanFileColorGroups.find((t) => t.exts.includes(cleanFileExtension(name)))?.color ?? `#8f8f8f`;
 var cleanSimulatedDuration = (bytes: number) =>
   Math.min(9e3, Math.max(2600, (bytes / (1.2 * MiB)) * 1e3));
 var fileIdCounter = 0;
-var createFileId = () =>
-  `f${Date.now().toString(36)}${(fileIdCounter++).toString(36)}`;
+var createFileId = () => `f${Date.now().toString(36)}${(fileIdCounter++).toString(36)}`;
 var CleanDropzoneIcon = ({
   d: path,
   solid: solid,
@@ -117,31 +115,13 @@ function CleanFileTile({ name: name }: { name: string }) {
         className={`ui-dzc__file-sheet`}
         d={`M4 1.75h5l3.25 3.25v8A1.25 1.25 0 0 1 11 14.25H4A1.25 1.25 0 0 1 2.75 13V3A1.25 1.25 0 0 1 4 1.75Z`}
       />
-      <path
-        className={`ui-dzc__file-fold`}
-        d={`M9 1.75V4a1 1 0 0 0 1 1h2.25`}
-      />
-      <rect
-        x={`1`}
-        y={`8.5`}
-        width={`9`}
-        height={`4.5`}
-        rx={`1.25`}
-        fill={cleanFileColor(name)}
-      />
+      <path className={`ui-dzc__file-fold`} d={`M9 1.75V4a1 1 0 0 0 1 1h2.25`} />
+      <rect x={`1`} y={`8.5`} width={`9`} height={`4.5`} rx={`1.25`} fill={cleanFileColor(name)} />
     </svg>
   );
 }
-function CleanFileBadge({
-  name: name,
-  end: end,
-}: {
-  name: string;
-  end?: boolean;
-}) {
-  let extensionLabel = (cleanFileExtension(name) || `file`)
-      .slice(0, 4)
-      .toUpperCase(),
+function CleanFileBadge({ name: name, end: end }: { name: string; end?: boolean }) {
+  let extensionLabel = (cleanFileExtension(name) || `file`).slice(0, 4).toUpperCase(),
     labelWidth = Math.max(18, extensionLabel.length * 5.2 + 8),
     labelX = end ? 30 - labelWidth : 0;
   return (
@@ -160,12 +140,7 @@ function CleanFileBadge({
         fill={cleanFileColor(name)}
         fillOpacity={`0.12`}
       />
-      <text
-        x={labelX + 4}
-        y={`27.2`}
-        className={`ui-dzc__badge-text`}
-        fill={cleanFileColor(name)}
-      >
+      <text x={labelX + 4} y={`27.2`} className={`ui-dzc__badge-text`} fill={cleanFileColor(name)}>
         {extensionLabel}
       </text>
     </svg>
@@ -287,8 +262,7 @@ function DropzoneClean({
         ? (error = cleanFileExtension(entry.name)
             ? `.${cleanFileExtension(entry.name)} files aren't supported`
             : `This file type isn't supported`)
-        : entry.size > maxSize &&
-          (error = `Too large – max ${cleanFormatBytes(maxSize)}`);
+        : entry.size > maxSize && (error = `Too large – max ${cleanFormatBytes(maxSize)}`);
       let item: UploadRow = {
         id: id,
         name: entry.name,
@@ -337,9 +311,7 @@ function DropzoneClean({
           file: e,
         }),
       ),
-    hasSimulatedUploads = items.some(
-      (e) => e.status === `uploading` && (!onUpload || !e.file),
-    );
+    hasSimulatedUploads = items.some((e) => e.status === `uploading` && (!onUpload || !e.file));
   (React.useEffect(() => {
     if (!hasSimulatedUploads) return;
     let e = window.setInterval(() => {
@@ -348,10 +320,7 @@ function DropzoneClean({
         t.map((t) => {
           if (t.status !== `uploading` || (onUpload && t.file)) return t;
           let n = Math.min(1, (e - t.startedAt) / t.duration),
-            r = Math.max(
-              t.progress,
-              n < 1 ? n * (0.92 + Math.random() * 0.08) : 1,
-            );
+            r = Math.max(t.progress, n < 1 ? n * (0.92 + Math.random() * 0.08) : 1);
           return t.failAt !== void 0 && r >= t.failAt
             ? (setAnnouncement(`${t.name}: upload failed`),
               {
@@ -388,9 +357,7 @@ function DropzoneClean({
         window.setTimeout(() => setDragCount(cleanDemoFiles.length), 700),
         window.setTimeout(() => {
           (setDragCount(0),
-            cleanDemoFiles.forEach((e, t) =>
-              window.setTimeout(() => addItem(e), t * 140),
-            ));
+            cleanDemoFiles.forEach((e, t) => window.setTimeout(() => addItem(e), t * 140)));
         }, 1900),
       ];
       return () => e.forEach(clearTimeout);
@@ -415,15 +382,10 @@ function DropzoneClean({
       (updateItem(id, {
         removing: true,
       }),
-        window.setTimeout(
-          () => setItems((t) => t.filter((t) => t.id !== id)),
-          480,
-        ));
+        window.setTimeout(() => setItems((t) => t.filter((t) => t.id !== id)), 480));
     },
     clearFinished: React.MouseEventHandler<HTMLButtonElement> = () =>
-      itemsRef.current
-        .filter((e) => e.status !== `uploading`)
-        .forEach((e) => removeItem(e.id)),
+      itemsRef.current.filter((e) => e.status !== `uploading`).forEach((e) => removeItem(e.id)),
     isFileDrag = (event: {
       dataTransfer: {
         types: Iterable<unknown> | ArrayLike<unknown>;
@@ -436,8 +398,7 @@ function DropzoneClean({
         setDragCount(Math.max(1, event.dataTransfer.items.length)));
     },
     handleDragOver: React.DragEventHandler<HTMLButtonElement> = (event) => {
-      isFileDrag(event) &&
-        (event.preventDefault(), (event.dataTransfer.dropEffect = `copy`));
+      isFileDrag(event) && (event.preventDefault(), (event.dataTransfer.dropEffect = `copy`));
     },
     handleDragLeave: React.DragEventHandler<HTMLButtonElement> = () => {
       ((dragDepthRef.current = Math.max(0, dragDepthRef.current - 1)),
@@ -474,17 +435,9 @@ function DropzoneClean({
       summary = (
         <span className={`ui-dzc__summary ui-dzc__summary-done`}>
           {errorItems.length ? (
-            <CleanDropzoneIcon
-              d={iconPaths.alertCircle}
-              solid={true}
-              className={`ui-dzc__warn`}
-            />
+            <CleanDropzoneIcon d={iconPaths.alertCircle} solid={true} className={`ui-dzc__warn`} />
           ) : (
-            <CleanDropzoneIcon
-              d={iconPaths.checkCircle}
-              solid={true}
-              className={`ui-dzc__ok`}
-            />
+            <CleanDropzoneIcon d={iconPaths.checkCircle} solid={true} className={`ui-dzc__ok`} />
           )}
           {errorItems.length
             ? `${doneItems.length} of ${visibleItems.length} uploaded`
@@ -509,8 +462,7 @@ function DropzoneClean({
               className={`ui-dzc__input`}
               tabIndex={-1}
               onChange={(e) => {
-                (e.target.files && addFiles(e.target.files),
-                  (e.target.value = ``));
+                (e.target.files && addFiles(e.target.files), (e.target.value = ``));
               }}
             />
             <button
@@ -525,10 +477,7 @@ function DropzoneClean({
               onDrop={handleDrop}
             >
               <CleanDropStack />
-              <span
-                className={`ui-dzc__title`}
-                key={dragCount ? `drop` : `idle`}
-              >
+              <span className={`ui-dzc__title`} key={dragCount ? `drop` : `idle`}>
                 {dragCount ? (
                   `Release to upload ${dragCount === 1 ? `1 file` : `${dragCount} files`}`
                 ) : (
@@ -552,9 +501,7 @@ function DropzoneClean({
               {items.map((e) => {
                 let t =
                   e.status === `uploading`
-                    ? ((1 - e.progress) * (now - e.startedAt)) /
-                      Math.max(0.05, e.progress) /
-                      1e3
+                    ? ((1 - e.progress) * (now - e.startedAt)) / Math.max(0.05, e.progress) / 1e3
                     : 0;
                 return (
                   <li
@@ -571,28 +518,17 @@ function DropzoneClean({
                             {e.name}
                           </span>
                           {e.status === `done` && (
-                            <span
-                              className={`ui-dzc__done`}
-                              aria-label={`Uploaded`}
-                            >
-                              <CleanDropzoneIcon
-                                d={iconPaths.checkCircle}
-                                solid={true}
-                              />
+                            <span className={`ui-dzc__done`} aria-label={`Uploaded`}>
+                              <CleanDropzoneIcon d={iconPaths.checkCircle} solid={true} />
                             </span>
                           )}
                         </div>
                         <div className={`ui-dzc__meta`} key={e.status}>
                           {e.status === `uploading` && (
                             <>
-                              {cleanFormatUploadProgress(
-                                e.size * e.progress,
-                                e.size,
-                              )}
+                              {cleanFormatUploadProgress(e.size * e.progress, e.size)}
                               <span className={`ui-dzc__dot`}>{`·`}</span>
-                              {e.progress < 0.04
-                                ? `starting`
-                                : cleanFormatRemainingTime(t)}
+                              {e.progress < 0.04 ? `starting` : cleanFormatRemainingTime(t)}
                             </>
                           )}
                           {e.status === `done` && cleanFormatBytes(e.size)}
@@ -646,17 +582,14 @@ function DropzoneClean({
           </div>
         </div>
         <div className={`ui-dzc__foot`}>
-          {summary ?? (
-            <span className={`ui-dzc__foot-idle`}>{`No files yet`}</span>
+          {summary ?? <span className={`ui-dzc__foot-idle`}>{`No files yet`}</span>}
+          {(doneItems.length > 0 || errorItems.length > 0) && !uploadingItems.length && (
+            <button
+              type={`button`}
+              className={`ui-dzc__clear`}
+              onClick={clearFinished}
+            >{`Clear`}</button>
           )}
-          {(doneItems.length > 0 || errorItems.length > 0) &&
-            !uploadingItems.length && (
-              <button
-                type={`button`}
-                className={`ui-dzc__clear`}
-                onClick={clearFinished}
-              >{`Clear`}</button>
-            )}
         </div>
       </div>
       <span className={`ui-dzc__live`} aria-live={`polite`}>
@@ -941,10 +874,7 @@ var dropzoneCleanStyles = `
 function DropzoneCleanDemo2() {
   return (
     <div className={`dropzone-demo`}>
-      <DropzoneClean
-        accept={[`.pdf`, `.png`, `.jpg`, `.xlsx`, `.docx`, `.mp4`]}
-        autoplay={true}
-      />
+      <DropzoneClean accept={[`.pdf`, `.png`, `.jpg`, `.xlsx`, `.docx`, `.mp4`]} autoplay={true} />
     </div>
   );
 }

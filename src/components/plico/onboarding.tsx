@@ -55,9 +55,39 @@ type ShellNavItem = {
   active?: boolean;
   items?: ShellNavItem[];
 };
-type OnboardingValues = {workspace: string; slug: string; teamSize: string; tools: string[]; invites: string[]; role: string; template: string};
-interface SegmentOption {value: string; label?: React.ReactNode; icon?: React.ReactNode; count?: React.ReactNode; badge?: React.ReactNode; disabled?: boolean; controls?: string; ariaLabel?: string}
-interface SegmentedControlProps {options: SegmentOption[]; value?: string; defaultValue?: string; onChange?: (value: string) => void; size?: string; variant?: string; fullWidth?: boolean; kind?: string; disabled?: boolean; "aria-label"?: string; "aria-labelledby"?: string; className?: string}
+type OnboardingValues = {
+  workspace: string;
+  slug: string;
+  teamSize: string;
+  tools: string[];
+  invites: string[];
+  role: string;
+  template: string;
+};
+interface SegmentOption {
+  value: string;
+  label?: React.ReactNode;
+  icon?: React.ReactNode;
+  count?: React.ReactNode;
+  badge?: React.ReactNode;
+  disabled?: boolean;
+  controls?: string;
+  ariaLabel?: string;
+}
+interface SegmentedControlProps {
+  options: SegmentOption[];
+  value?: string;
+  defaultValue?: string;
+  onChange?: (value: string) => void;
+  size?: string;
+  variant?: string;
+  fullWidth?: boolean;
+  kind?: string;
+  disabled?: boolean;
+  "aria-label"?: string;
+  "aria-labelledby"?: string;
+  className?: string;
+}
 interface SetupGuideProps {
   title?: string;
   groups: SetupGroup[];
@@ -97,7 +127,14 @@ interface HugeiconsProps extends Omit<React.SVGProps<SVGSVGElement>, "strokeWidt
   secondaryColor?: string;
   disableSecondaryOpacity?: boolean;
 }
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {variant?: string; size?: string; loading?: boolean; icon?: React.ReactNode; iconRight?: React.ReactNode; ref?: React.Ref<HTMLButtonElement>;}
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: string;
+  size?: string;
+  loading?: boolean;
+  icon?: React.ReactNode;
+  iconRight?: React.ReactNode;
+  ref?: React.Ref<HTMLButtonElement>;
+}
 const ScreenFrameModeContext = React.createContext<boolean | null>(null);
 function PreviewFrame({ children }: { children?: React.ReactNode }) {
   const mode = React.useContext(ScreenFrameModeContext);
@@ -596,7 +633,13 @@ function SegmentedControl({
   let movingRef = React.useRef(false),
     movementTimerRef = React.useRef(0),
     previousValueRef = React.useRef<string | undefined>(void 0),
-    pointerRef = React.useRef<{id: number; touch: boolean; drag: boolean; x: number; moved: boolean} | null>(null),
+    pointerRef = React.useRef<{
+      id: number;
+      touch: boolean;
+      drag: boolean;
+      x: number;
+      moved: boolean;
+    } | null>(null),
     optionNodes = () =>
       Array.from(trackRef.current?.querySelectorAll<HTMLElement>(`:scope > .ui-seg__opt`) ?? []),
     selectedIndex = options.findIndex((e) => e.value === activeValue),
@@ -2570,7 +2613,14 @@ function SelectMenu({
   icon: icon,
   align = `end`,
   className: className,
-}: {value: string; options: {value: string; label: string}[]; onChange: (value: string) => void; icon?: IconNode; align?: PopoverAlign; className?: string}) {
+}: {
+  value: string;
+  options: { value: string; label: string }[];
+  onChange: (value: string) => void;
+  icon?: IconNode;
+  align?: PopoverAlign;
+  className?: string;
+}) {
   let [s, c] = React.useState(false),
     l = options.find((t) => t.value === value);
   return (
@@ -2600,7 +2650,7 @@ function SelectMenu({
   );
 }
 function useToast(): [React.ReactNode, (message: string) => void] {
-  let [message, setMessage] = React.useState<{id: number; text: string} | null>(null);
+  let [message, setMessage] = React.useState<{ id: number; text: string } | null>(null);
   return (
     React.useEffect(() => {
       if (!message) return;
@@ -2614,7 +2664,8 @@ function useToast(): [React.ReactNode, (message: string) => void] {
           {message.text}
         </div>
       ) : null,
-      (e: string) => setMessage({
+      (e: string) =>
+        setMessage({
           id: Date.now(),
           text: e,
         }),
@@ -4066,7 +4117,7 @@ function Onboarding({ defaultStep = 2, onComplete: onComplete, ...n }: Onboardin
     Y = () => {
       (_({}), h(`back`), c(0));
     },
-    me = (e: {id: string}) => {
+    me = (e: { id: string }) => {
       if (!L.has(e.id)) {
         if (F.has(e.id)) {
           I((t) => new Set([...t].filter((t) => t !== e.id)));
@@ -4235,9 +4286,11 @@ function Onboarding({ defaultStep = 2, onComplete: onComplete, ...n }: Onboardin
                       return (
                         <li
                           className={`ui-ob-tool`}
-                          style={{
-                            "--i": t,
-                          } as React.CSSProperties}
+                          style={
+                            {
+                              "--i": t,
+                            } as React.CSSProperties
+                          }
                           key={e.id}
                         >
                           <span
@@ -4298,9 +4351,11 @@ function Onboarding({ defaultStep = 2, onComplete: onComplete, ...n }: Onboardin
                         role={`radio`}
                         aria-checked={V === e.id}
                         className={`ui-ob-template`}
-                        style={{
-                          "--i": t,
-                        } as React.CSSProperties}
+                        style={
+                          {
+                            "--i": t,
+                          } as React.CSSProperties
+                        }
                         onClick={() => ce(e.id)}
                         key={e.id}
                       >
@@ -4425,7 +4480,14 @@ function Iconre({
   onRole: onRole,
   link: link,
   onCopy: onCopy,
-}: {invites: string[]; onChange: (value: string[]) => void; role: string; onRole: (role: string) => void; link: string; onCopy: () => void}) {
+}: {
+  invites: string[];
+  onChange: (value: string[]) => void;
+  role: string;
+  onRole: (role: string) => void;
+  link: string;
+  onCopy: () => void;
+}) {
   let [s, l] = React.useState(``),
     [d, p] = React.useState(``),
     m = React.useRef<HTMLInputElement | null>(null),
@@ -4539,7 +4601,14 @@ function Iconie({
   invites: invites,
   onNavigate: onNavigate,
   onRestart: onRestart,
-}: {workspace: string; agent: string; tools: number; invites: number; onNavigate?: (label: string) => void; onRestart: () => void}) {
+}: {
+  workspace: string;
+  agent: string;
+  tools: number;
+  invites: number;
+  onNavigate?: (label: string) => void;
+  onRestart: () => void;
+}) {
   let l = [
     {
       label: `Say hello to your ${agent} agent`,
@@ -4584,9 +4653,11 @@ function Iconie({
         <ul className={`ui-ob-next`}>
           {l.map((e, t) => (
             <li
-              style={{
-                "--i": t,
-              } as React.CSSProperties}
+              style={
+                {
+                  "--i": t,
+                } as React.CSSProperties
+              }
               key={e.label}
             >
               <button

@@ -45,11 +45,7 @@ interface ClientContextProps {
     name: string;
     avatar?: string;
   };
-  onAddContext?: (
-    clientId: string,
-    text: string,
-    files: ContextAttachment[],
-  ) => void;
+  onAddContext?: (clientId: string, text: string, files: ContextAttachment[]) => void;
   onCreateClient?: (name: string) => void;
   className?: string;
 }
@@ -379,9 +375,7 @@ function ClientContext({
   let f = `ui-cx` + React.useId().replace(/[^a-zA-Z0-9_-]/g, ``),
     [p, g] = React.useState(clients),
     [de, pe] = React.useState(clients[0]?.id),
-    [ge, b] = React.useState(() =>
-      Object.fromEntries(clients.map((e) => [e.id, e.context])),
-    ),
+    [ge, b] = React.useState(() => Object.fromEntries(clients.map((e) => [e.id, e.context]))),
     [ve, ye] = React.useState<Record<string, string>>({}),
     [x, S] = React.useState(`context`),
     [C, w] = React.useState<string | null>(null),
@@ -414,9 +408,7 @@ function ClientContext({
     Y = H === null ? null : M.slice(H + 1, P),
     X =
       Y !== null && !/\n/.test(Y)
-        ? ke
-            .filter((e) => e.toLowerCase().includes(Y.toLowerCase()))
-            .slice(0, 4)
+        ? ke.filter((e) => e.toLowerCase().includes(Y.toLowerCase())).slice(0, 4)
         : [];
   React.useEffect(() => {
     if (!R) return;
@@ -537,13 +529,7 @@ function ClientContext({
       (N(e), F(t));
       let n = e.slice(0, t),
         r = n.lastIndexOf(`@`);
-      U(
-        r >= 0 &&
-          (r === 0 || /\s/.test(n[r - 1])) &&
-          !/\n|\s\s/.test(n.slice(r))
-          ? r
-          : null,
-      );
+      U(r >= 0 && (r === 0 || /\s/.test(n[r - 1])) && !/\n|\s\s/.test(n.slice(r)) ? r : null);
     },
     $ = (e: string) => {
       if (H === null) return;
@@ -614,16 +600,9 @@ function ClientContext({
             onClick={Ne}
             aria-label={`Sync now`}
           >
-            <span
-              className={`ui-cx__sync-dot`}
-              data-state={q}
-              aria-hidden={`true`}
-            />
+            <span className={`ui-cx__sync-dot`} data-state={q} aria-hidden={`true`} />
             <span>{q === `syncing` ? `Syncing…` : `Synced ${q}`}</span>
-            <span
-              className={`ui-cx__spin`}
-              data-spinning={q === `syncing` || void 0}
-            >
+            <span className={`ui-cx__spin`} data-spinning={q === `syncing` || void 0}>
               <Icony />
             </span>
           </button>
@@ -654,9 +633,7 @@ function ClientContext({
                       >
                         <Iconne client={e} size={20} />
                         <span className={`ui-cx__menu-label`}>{e.name}</span>
-                        <span className={`ui-cx__menu-check`}>
-                          {e.id === G.id && <View_ />}
-                        </span>
+                        <span className={`ui-cx__menu-check`}>{e.id === G.id && <View_ />}</span>
                       </button>
                     </li>
                   ))}
@@ -684,11 +661,7 @@ function ClientContext({
                     >{`Add`}</button>
                   </form>
                 ) : (
-                  <button
-                    type={`button`}
-                    className={`ui-cx__menu-item`}
-                    onClick={() => B(true)}
-                  >
+                  <button type={`button`} className={`ui-cx__menu-item`} onClick={() => B(true)}>
                     <span className={`ui-cx__menu-plus`}>
                       <Iconae />
                     </span>
@@ -791,17 +764,11 @@ function ClientContext({
                               (j(e), z(null));
                             }}
                           >
-                            <span className={`ui-cx__menu-label`}>
-                              {valueValue3[e]}
-                            </span>
+                            <span className={`ui-cx__menu-label`}>{valueValue3[e]}</span>
                             <span className={`ui-cx__menu-count`}>
-                              {e === `all`
-                                ? K.length
-                                : K.filter((t) => t.kind === e).length}
+                              {e === `all` ? K.length : K.filter((t) => t.kind === e).length}
                             </span>
-                            <span className={`ui-cx__menu-check`}>
-                              {A === e && <View_ />}
-                            </span>
+                            <span className={`ui-cx__menu-check`}>{A === e && <View_ />}</span>
                           </button>
                         </li>
                       ))}
@@ -827,9 +794,7 @@ function ClientContext({
                   <textarea
                     ref={W}
                     value={M}
-                    onChange={(e) =>
-                      Le(e.target.value, e.target.selectionStart)
-                    }
+                    onChange={(e) => Le(e.target.value, e.target.selectionStart)}
                     onSelect={(e) => F(e.currentTarget.selectionStart)}
                     onKeyDown={(e) => {
                       if (X.length && (e.key === `Enter` || e.key === `Tab`)) {
@@ -881,9 +846,7 @@ function ClientContext({
                           <button
                             type={`button`}
                             aria-label={`Remove ${e.name}`}
-                            onClick={() =>
-                              L((t) => t.filter((t) => t.name !== e.name))
-                            }
+                            onClick={() => L((t) => t.filter((t) => t.name !== e.name))}
                           >
                             <Iconv />
                           </button>
@@ -959,11 +922,7 @@ function ClientContext({
                   let t = be === e.name,
                     n = E === e.name;
                   return (
-                    <li
-                      className={`ui-cx__report`}
-                      data-open={t || void 0}
-                      key={e.name}
-                    >
+                    <li className={`ui-cx__report`} data-open={t || void 0} key={e.name}>
                       <button
                         type={`button`}
                         className={`ui-cx__report-head`}
@@ -976,9 +935,7 @@ function ClientContext({
                         <span className={`ui-cx__row-main`}>
                           <strong>{e.name}</strong>
                           <span>
-                            {n
-                              ? `Regenerating…`
-                              : `Generated ${ve[`${G.id}:${e.name}`] ?? e.when}`}
+                            {n ? `Regenerating…` : `Generated ${ve[`${G.id}:${e.name}`] ?? e.when}`}
                           </span>
                         </span>
                         <span className={`ui-cx__chevron`}>
@@ -1003,10 +960,7 @@ function ClientContext({
                               onClick={() => Be(e.name)}
                               disabled={n}
                             >
-                              <span
-                                className={`ui-cx__spin`}
-                                data-spinning={n || void 0}
-                              >
+                              <span className={`ui-cx__spin`} data-spinning={n || void 0}>
                                 <Icony />
                               </span>
                               {n ? `Regenerating…` : `Regenerate`}
@@ -1026,11 +980,7 @@ function ClientContext({
           {x === `financials` && (
             <ul className={`ui-cx__list`}>
               {G.kpis.map((e) => (
-                <li
-                  className={`ui-cx__fin`}
-                  data-active={C === e.label || void 0}
-                  key={e.label}
-                >
+                <li className={`ui-cx__fin`} data-active={C === e.label || void 0} key={e.label}>
                   <button
                     type={`button`}
                     onClick={() => w(C === e.label ? null : e.label)}
@@ -1049,12 +999,7 @@ function ClientContext({
                         {e.previous}
                       </span>
                     </span>
-                    <Iconie
-                      points={e.points}
-                      color={e.color}
-                      delay={0}
-                      wide={true}
-                    />
+                    <Iconie points={e.points} color={e.color} delay={0} wide={true} />
                     <span className={`ui-cx__fin-value`}>
                       <strong>{e.value}</strong>
                       {e.value !== `–` && (
@@ -1078,17 +1023,9 @@ function ClientContext({
                 </span>
                 <span className={`ui-cx__row-main`}>
                   <strong>{`Stripe`}</strong>
-                  <span>
-                    {J
-                      ? `Revenue and payouts sync every hour`
-                      : `Not connected`}
-                  </span>
+                  <span>{J ? `Revenue and payouts sync every hour` : `Not connected`}</span>
                 </span>
-                <button
-                  type={`button`}
-                  className={`ui-cx__chip-btn`}
-                  onClick={Ve}
-                >
+                <button type={`button`} className={`ui-cx__chip-btn`} onClick={Ve}>
                   {J ? `Disconnect` : `Connect`}
                 </button>
               </li>
@@ -1215,8 +1152,7 @@ function Icond({
                     {` added `}
                     {entry.files.map((t: ContextAttachment, n: number) => (
                       <span className={`ui-cx__file`} key={t.name}>
-                        {n > 0 &&
-                          (n === entry.files.length - 1 ? ` and ` : `, `)}
+                        {n > 0 && (n === entry.files.length - 1 ? ` and ` : `, `)}
                         <Iconm type={t.type} />
                         <span className={`ui-cx__ref`}>{c(t.name)}</span>
                       </span>
@@ -1247,12 +1183,7 @@ function Icond({
     </li>
   );
 }
-function valueValue7(
-  e: string,
-  t: string | string[],
-  n: string,
-  i: (arg0: string) => void,
-) {
+function valueValue7(e: string, t: string | string[], n: string, i: (arg0: string) => void) {
   if (!t.length) return ViewP(e, n);
   let a = [...t].sort((e, t) => t.length - e.length).map(valueValue8);
   return e
@@ -1260,12 +1191,7 @@ function valueValue7(
     .map((e: string, a: React.Key | null | undefined) => {
       let o = e.startsWith(`@`) ? e.slice(1) : ``;
       return t.includes(o) ? (
-        <button
-          type={`button`}
-          className={`ui-cx__mention`}
-          onClick={() => i(o)}
-          key={a}
-        >
+        <button type={`button`} className={`ui-cx__mention`} onClick={() => i(o)} key={a}>
           <Iconme />
           {o}
         </button>
@@ -1280,9 +1206,7 @@ function ViewP(e: string, t: string) {
   return n
     ? e
         .split(RegExp(`(${valueValue8(n)})`, `ig`))
-        .map((e, t) =>
-          e.toLowerCase() === n.toLowerCase() ? <mark key={t}>{e}</mark> : e,
-        )
+        .map((e, t) => (e.toLowerCase() === n.toLowerCase() ? <mark key={t}>{e}</mark> : e))
     : e;
 }
 var valueValue9 = (e: ContextEntry, t: string) => {
@@ -1292,9 +1216,7 @@ var valueValue9 = (e: ContextEntry, t: string) => {
     [
       `author` in e ? e.author?.name : ``,
       e.kind === `note` ? e.text : ``,
-      e.kind === `files`
-        ? `${e.text ?? ``} ${e.files.map((e) => e.name).join(` `)}`
-        : ``,
+      e.kind === `files` ? `${e.text ?? ``} ${e.files.map((e) => e.name).join(` `)}` : ``,
       e.kind === `report` ? e.report : ``,
       e.kind === `integration` ? e.app : ``,
     ]
@@ -1303,13 +1225,7 @@ var valueValue9 = (e: ContextEntry, t: string) => {
       .includes(n)
   );
 };
-function Iconne({
-  client: client,
-  size: size,
-}: {
-  client: ContextClient;
-  size: number;
-}) {
+function Iconne({ client: client, size: size }: { client: ContextClient; size: number }) {
   return (
     <span
       className={`ui-cx__mark`}
@@ -1326,13 +1242,7 @@ function Iconne({
     </span>
   );
 }
-function Iconre({
-  person: person,
-  size: size,
-}: {
-  person: ContextPerson;
-  size: number;
-}) {
+function Iconre({ person: person, size: size }: { person: ContextPerson; size: number }) {
   return person.avatar ? (
     <img
       className={`ui-cx__avatar`}
@@ -1377,9 +1287,7 @@ function Iconie({
       (n / (points.length - 1)) * (a - 4) + 2,
       21 - ((t - o) / (s - o || 1)) * 18,
     ]),
-    l = c
-      .map(([e, t], n) => `${n ? `L` : `M`}${e.toFixed(1)} ${t.toFixed(1)}`)
-      .join(` `),
+    l = c.map(([e, t], n) => `${n ? `L` : `M`}${e.toFixed(1)} ${t.toFixed(1)}`).join(` `),
     [u, d] = c[c.length - 1];
   return (
     <svg
@@ -1418,21 +1326,13 @@ function Iconm({ type: type }: { type: string }) {
     } as Record<string, string>
   )[type];
   return (
-    <svg
-      className={`ui-cx__file-icon`}
-      viewBox={`0 0 16 18`}
-      aria-label={type.toUpperCase()}
-    >
+    <svg className={`ui-cx__file-icon`} viewBox={`0 0 16 18`} aria-label={type.toUpperCase()}>
       <path
         d={`M3 1.5h6.5l4 4v10a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-13a1 1 0 0 1 1-1Z`}
         fill={`var(--ui-cx-card)`}
         stroke={`var(--ui-cx-line-strong)`}
       />
-      <path
-        d={`M9.5 1.5v3a1 1 0 0 0 1 1h3`}
-        fill={`none`}
-        stroke={`var(--ui-cx-line-strong)`}
-      />
+      <path d={`M9.5 1.5v3a1 1 0 0 0 1 1h3`} fill={`none`} stroke={`var(--ui-cx-line-strong)`} />
       <rect x={`0.5`} y={`9.5`} width={`10`} height={`5`} rx={`1.5`} fill={t} />
     </svg>
   );
@@ -2311,11 +2211,7 @@ function ClientContextDemo2() {
       return (o.observe(r), () => o.disconnect());
     }, []),
     (
-      <div
-        ref={e}
-        className={`context-demo`}
-        data-fit={t ? (t.card ? `card` : `stage`) : void 0}
-      >
+      <div ref={e} className={`context-demo`} data-fit={t ? (t.card ? `card` : `stage`) : void 0}>
         <div
           className={`context-demo__frame`}
           style={

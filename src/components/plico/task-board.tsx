@@ -43,13 +43,7 @@ interface TaskBoardProps {
   onChange?: (tasks: Task[]) => void;
   className?: string;
 }
-var StatusIcon = ({
-  kind: kind,
-  color = `currentColor`,
-}: {
-  kind: string;
-  color?: string;
-}) => (
+var StatusIcon = ({ kind: kind, color = `currentColor` }: { kind: string; color?: string }) => (
   <svg
     viewBox={`0 0 16 16`}
     width={`15`}
@@ -62,13 +56,9 @@ var StatusIcon = ({
     aria-hidden={`true`}
   >
     {kind === `backlog` && (
-      <path
-        d={`M2.5 9.5 4 3.5h8l1.5 6M2.5 9.5v3h11v-3M2.5 9.5H6l.8 1.5h2.4l.8-1.5h3.5`}
-      />
+      <path d={`M2.5 9.5 4 3.5h8l1.5 6M2.5 9.5v3h11v-3M2.5 9.5H6l.8 1.5h2.4l.8-1.5h3.5`} />
     )}
-    {kind === `todo` && (
-      <rect x={`3`} y={`3`} width={`10`} height={`10`} rx={`2.5`} />
-    )}
+    {kind === `todo` && <rect x={`3`} y={`3`} width={`10`} height={`10`} rx={`2.5`} />}
     {kind === `progress` && (
       <>
         <circle cx={`8`} cy={`8`} r={`5.5`} />
@@ -77,9 +67,7 @@ var StatusIcon = ({
     )}
     {kind === `review` && (
       <>
-        <path
-          d={`M1.8 8S4 3.8 8 3.8 14.2 8 14.2 8 12 12.2 8 12.2 1.8 8 1.8 8Z`}
-        />
+        <path d={`M1.8 8S4 3.8 8 3.8 14.2 8 14.2 8 12 12.2 8 12.2 1.8 8 1.8 8Z`} />
         <circle cx={`8`} cy={`8`} r={`1.8`} />
       </>
     )}
@@ -94,11 +82,7 @@ var StatusIcon = ({
           fill={color}
           stroke={`none`}
         />
-        <path
-          d={`m5.5 8.2 1.8 1.8 3.3-3.6`}
-          stroke={`#fff`}
-          strokeWidth={`1.5`}
-        />
+        <path d={`m5.5 8.2 1.8 1.8 3.3-3.6`} stroke={`#fff`} strokeWidth={`1.5`} />
       </>
     )}
     {kind === `canceled` && (
@@ -160,8 +144,7 @@ function TaskBoard({
   }, [openMenu]),
     React.useEffect(() => {
       if (!selectedTaskId) return;
-      let e = (e: { key: string }) =>
-        e.key === `Escape` && setSelectedTaskId(null);
+      let e = (e: { key: string }) => e.key === `Escape` && setSelectedTaskId(null);
       return (
         window.addEventListener(`keydown`, e),
         () => window.removeEventListener(`keydown`, e)
@@ -172,26 +155,20 @@ function TaskBoard({
       () =>
         localTasks.filter(
           (e) =>
-            (!normalizedSearch ||
-              `${e.key} ${e.title}`.toLowerCase().includes(normalizedSearch)) &&
-            (selectedLabels.size === 0 ||
-              e.labels.some((e) => selectedLabels.has(e))),
+            (!normalizedSearch || `${e.key} ${e.title}`.toLowerCase().includes(normalizedSearch)) &&
+            (selectedLabels.size === 0 || e.labels.some((e) => selectedLabels.has(e))),
         ),
       [localTasks, normalizedSearch, selectedLabels],
     ),
     findPerson = (id: string | undefined) => people.find((t) => t.id === id),
-    findLabel = (id: React.Key | null | undefined) =>
-      labels.find((t) => t.id === id),
+    findLabel = (id: React.Key | null | undefined) => labels.find((t) => t.id === id),
     selectedTask = localTasks.find((e) => e.id === selectedTaskId) ?? null,
-    handleDragOver = (
-      event: React.DragEvent<HTMLDivElement>,
-      statusId: string,
-    ) => {
+    handleDragOver = (event: React.DragEvent<HTMLDivElement>, statusId: string) => {
       if (!dragState) return;
       (event.preventDefault(), (event.dataTransfer.dropEffect = `move`));
-      let cards = [
-          ...event.currentTarget.querySelectorAll<HTMLElement>(`[data-card]`),
-        ].filter((e) => e.dataset.card !== dragState.id),
+      let cards = [...event.currentTarget.querySelectorAll<HTMLElement>(`[data-card]`)].filter(
+          (e) => e.dataset.card !== dragState.id,
+        ),
         insertionIndex = cards.length;
       for (let t = 0; t < cards.length; t++) {
         let i = cards[t].getBoundingClientRect();
@@ -213,17 +190,14 @@ function TaskBoard({
       if (!task) return setDragState(null);
       let remainingTasks = localTasks.filter((e) => e.id !== dragState.id),
         visibleInColumn = remainingTasks.filter(
-          (t) =>
-            t.status === statusId && visibleTasks.some((e) => e.id === t.id),
+          (t) => t.status === statusId && visibleTasks.some((e) => e.id === t.id),
         ),
         beforeTask = visibleInColumn[dragState.index ?? visibleInColumn.length],
         movedTask = {
           ...task,
           status: statusId,
         },
-        insertionIndex = beforeTask
-          ? remainingTasks.indexOf(beforeTask)
-          : remainingTasks.length;
+        insertionIndex = beforeTask ? remainingTasks.indexOf(beforeTask) : remainingTasks.length;
       (commitTasks([
         ...remainingTasks.slice(0, insertionIndex),
         movedTask,
@@ -280,9 +254,7 @@ function TaskBoard({
               type={`button`}
               className={`ui-tb__icon`}
               aria-pressed={favorite}
-              aria-label={
-                favorite ? `Remove from favorites` : `Add to favorites`
-              }
+              aria-label={favorite ? `Remove from favorites` : `Add to favorites`}
               onClick={() => setFavorite((e) => !e)}
             >
               <FavoriteIcon filled={favorite} />
@@ -340,10 +312,7 @@ function TaskBoard({
                       onClick={() =>
                         setSelectedLabels((t) => {
                           let n = new Set(t);
-                          return (
-                            n.has(e.id) ? n.delete(e.id) : n.add(e.id),
-                            n
-                          );
+                          return (n.has(e.id) ? n.delete(e.id) : n.add(e.id), n);
                         })
                       }
                       key={e.id}
@@ -355,9 +324,7 @@ function TaskBoard({
                         }}
                       />
                       {e.label}
-                      {selectedLabels.has(e.id) && (
-                        <BoardIcon d={`m3.5 8.5 3 3 6-7`} size={14} />
-                      )}
+                      {selectedLabels.has(e.id) && <BoardIcon d={`m3.5 8.5 3 3 6-7`} size={14} />}
                     </button>
                   ))}
                   {selectedLabels.size > 0 && (
@@ -432,8 +399,7 @@ function TaskBoard({
                         onChange={(e) => setNewTitle(e.target.value)}
                         onBlur={() => addTask(e.id)}
                         onKeyDown={(e) =>
-                          e.key === `Escape` &&
-                          (setAddingStatus(null), setNewTitle(``))
+                          e.key === `Escape` && (setAddingStatus(null), setNewTitle(``))
                         }
                         placeholder={`Task title, then Enter`}
                         aria-label={`New task in ${e.label}`}
@@ -444,9 +410,7 @@ function TaskBoard({
                     let o = findPerson(t.assignee);
                     return (
                       <div className={`ui-tb__slot`} key={t.id}>
-                        {n && dragState?.index === r && (
-                          <span className={`ui-tb__drop`} />
-                        )}
+                        {n && dragState?.index === r && <span className={`ui-tb__drop`} />}
                         <article
                           className={`ui-tb__card`}
                           data-card={t.id}
@@ -477,34 +441,19 @@ function TaskBoard({
                             <span>{t.title}</span>
                           </p>
                           <div className={`ui-tb__props`}>
-                            <span
-                              className={`ui-tb__prop`}
-                              title={priorityLabels[t.priority]}
-                            >
+                            <span className={`ui-tb__prop`} title={priorityLabels[t.priority]}>
                               <PriorityIcon level={t.priority} />
                             </span>
                             {t.estimate && (
-                              <span
-                                className={`ui-tb__prop`}
-                                title={`Estimate`}
-                              >
-                                <BoardIcon
-                                  d={`M8 2.5 13.5 12h-11Z`}
-                                  size={12}
-                                />
+                              <span className={`ui-tb__prop`} title={`Estimate`}>
+                                <BoardIcon d={`M8 2.5 13.5 12h-11Z`} size={12} />
                                 {t.estimate}
                               </span>
                             )}
                             {t.dueIn !== void 0 && (
                               <span
                                 className={`ui-tb__prop`}
-                                data-tone={
-                                  t.dueIn < 0
-                                    ? `late`
-                                    : t.dueIn <= 2
-                                      ? `soon`
-                                      : void 0
-                                }
+                                data-tone={t.dueIn < 0 ? `late` : t.dueIn <= 2 ? `soon` : void 0}
                               >
                                 <BoardIcon
                                   d={`M8 14.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11ZM8 6v3l2 1.2M6.5 1.5h3`}
@@ -519,10 +468,7 @@ function TaskBoard({
                             )}
                             {t.subtasks && (
                               <span className={`ui-tb__prop`}>
-                                <SubtaskProgress
-                                  done={t.subtasks[0]}
-                                  total={t.subtasks[1]}
-                                />
+                                <SubtaskProgress done={t.subtasks[0]} total={t.subtasks[1]} />
                                 {t.subtasks[0]}
                                 {`/`}
                                 {t.subtasks[1]}
@@ -561,9 +507,7 @@ function TaskBoard({
                       </div>
                     );
                   })}
-                  {n && dragState?.index === t.length && (
-                    <span className={`ui-tb__drop`} />
-                  )}
+                  {n && dragState?.index === t.length && <span className={`ui-tb__drop`} />}
                   {t.length === 0 && addingStatus !== e.id && (
                     <p className={`ui-tb__empty`}>{`Drop tasks here`}</p>
                   )}
@@ -685,8 +629,7 @@ function TaskBoard({
                       aria-pressed={selectedTask.assignee === e.id}
                       onClick={() =>
                         updateTask(selectedTask.id, {
-                          assignee:
-                            selectedTask.assignee === e.id ? void 0 : e.id,
+                          assignee: selectedTask.assignee === e.id ? void 0 : e.id,
                         })
                       }
                       key={e.id}
@@ -706,9 +649,7 @@ function TaskBoard({
                   type={`button`}
                   className={`ui-tb__delete`}
                   onClick={() => {
-                    (commitTasks(
-                      localTasks.filter((e) => e.id !== selectedTask.id),
-                    ),
+                    (commitTasks(localTasks.filter((e) => e.id !== selectedTask.id)),
                       setSelectedTaskId(null));
                   }}
                 >{`Delete task`}</button>
@@ -720,13 +661,7 @@ function TaskBoard({
     </>
   );
 }
-function Avatar({
-  person: person,
-  size: size,
-}: {
-  person: TaskPerson;
-  size: number;
-}) {
+function Avatar({ person: person, size: size }: { person: TaskPerson; size: number }) {
   return person.avatar ? (
     <img
       className={`ui-tb__avatar`}
@@ -759,20 +694,8 @@ function PriorityIcon({ level: level }: { level: number }) {
       height={`14`}
       aria-hidden={`true`}
     >
-      <rect
-        x={`1`}
-        y={`1`}
-        width={`12`}
-        height={`12`}
-        rx={`3`}
-        fill={`#ec4899`}
-      />
-      <path
-        d={`M7 3.8v4M7 9.9v.3`}
-        stroke={`#fff`}
-        strokeWidth={`1.6`}
-        strokeLinecap={`round`}
-      />
+      <rect x={`1`} y={`1`} width={`12`} height={`12`} rx={`3`} fill={`#ec4899`} />
+      <path d={`M7 3.8v4M7 9.9v.3`} stroke={`#fff`} strokeWidth={`1.6`} strokeLinecap={`round`} />
     </svg>
   ) : (
     <svg
@@ -796,13 +719,7 @@ function PriorityIcon({ level: level }: { level: number }) {
     </svg>
   );
 }
-function SubtaskProgress({
-  done: done,
-  total: total,
-}: {
-  done: number;
-  total: number;
-}) {
+function SubtaskProgress({ done: done, total: total }: { done: number; total: number }) {
   let circumference = 2 * Math.PI * 5;
   return (
     <svg viewBox={`0 0 14 14`} width={`12`} height={`12`} aria-hidden={`true`}>
@@ -1446,9 +1363,7 @@ var demoTasks = [
 var demoBoardWidth = 1240;
 function TaskBoardDemo2() {
   let rootRef = React.useRef<HTMLDivElement | null>(null),
-    [fit, setFit] = React.useState<{ scale: number; card: boolean } | null>(
-      null,
-    );
+    [fit, setFit] = React.useState<{ scale: number; card: boolean } | null>(null);
   return (
     React.useLayoutEffect(() => {
       let t = rootRef.current,

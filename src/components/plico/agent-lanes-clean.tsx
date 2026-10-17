@@ -66,13 +66,7 @@ var Iconu = () => (
       d={`M7 1.2c.4 2.9 1.9 4.4 4.8 4.8-2.9.4-4.4 1.9-4.8 4.8C6.6 7.9 5.1 6.4 2.2 6 5.1 5.6 6.6 4.1 7 1.2Z`}
       fill={`currentColor`}
     />
-    <circle
-      cx={`11.6`}
-      cy={`11.4`}
-      r={`1.1`}
-      fill={`currentColor`}
-      opacity={`0.55`}
-    />
+    <circle cx={`11.6`} cy={`11.4`} r={`1.1`} fill={`currentColor`} opacity={`0.55`} />
   </svg>
 );
 var Icond = () => (
@@ -167,8 +161,7 @@ function AgentLanesClean({
   React.useEffect(() => {
     if (!C) return;
     let e = (e: PointerEvent) => {
-      (e.target as Element).closest?.(`[data-task="${C}"], .ui-alc__pop`) ||
-        w(null);
+      (e.target as Element).closest?.(`[data-task="${C}"], .ui-alc__pop`) || w(null);
     };
     return (
       document.addEventListener(`pointerdown`, e),
@@ -178,14 +171,8 @@ function AgentLanesClean({
   let B = I.find((e) => e.id === C),
     V = React.useRef<Record<string, "Needs you" | "Idle">>({});
   for (let t of agents) {
-    let e = A.find(
-      (e) =>
-        e.agentId === t.id &&
-        (e.status === `running` || e.status === `waiting`),
-    );
-    e?.status === `waiting`
-      ? (V.current[t.id] = `Needs you`)
-      : e || (V.current[t.id] = `Idle`);
+    let e = A.find((e) => e.agentId === t.id && (e.status === `running` || e.status === `waiting`));
+    e?.status === `waiting` ? (V.current[t.id] = `Needs you`) : e || (V.current[t.id] = `Idle`);
   }
   let H = A.filter((e) => e.status === `waiting`).length,
     U = A.filter((e) => e.status === `running`).length;
@@ -238,22 +225,14 @@ function AgentLanesClean({
           <ul className={`ui-alc__agents`}>
             {agents.map((e) => {
               let t = A.find(
-                (t) =>
-                  t.agentId === e.id &&
-                  (t.status === `running` || t.status === `waiting`),
+                (t) => t.agentId === e.id && (t.status === `running` || t.status === `waiting`),
               );
               return (
                 <li className={`ui-alc__agent`} key={e.id}>
-                  <span
-                    className={`ui-alc__avatar`}
-                    data-logo={e.avatar ? `` : void 0}
-                  >
+                  <span className={`ui-alc__avatar`} data-logo={e.avatar ? `` : void 0}>
                     {e.avatar ?? valueValue4(e.name)}
                   </span>
-                  <span
-                    className={`ui-alc__who`}
-                    data-state={t?.status ?? `idle`}
-                  >
+                  <span className={`ui-alc__who`} data-state={t?.status ?? `idle`}>
                     <span className={`ui-alc__name-line`}>
                       <span className={`ui-alc__name`}>{e.name}</span>
                       <span
@@ -271,9 +250,7 @@ function AgentLanesClean({
                       </span>
                     </span>
                     <span className={`ui-alc__model`}>
-                      {e.model && (
-                        <span className={`ui-alc__model-name`}>{e.model}</span>
-                      )}
+                      {e.model && <span className={`ui-alc__model-name`}>{e.model}</span>}
                     </span>
                   </span>
                 </li>
@@ -355,10 +332,7 @@ function AgentLanesClean({
                             onClick={() => w(l ? null : t.id)}
                           >
                             {t.tools && t.tools.length > 0 && (
-                              <span
-                                className={`ui-alc__tools`}
-                                aria-hidden={`true`}
-                              >
+                              <span className={`ui-alc__tools`} aria-hidden={`true`}>
                                 {t.tools.slice(0, 3).map((e, t) => (
                                   <span className={`ui-alc__tool`} key={t}>
                                     {e}
@@ -369,10 +343,7 @@ function AgentLanesClean({
                             <span className={`ui-alc__label`}>{t.title}</span>
                           </button>
                           {t.status === `waiting` && (
-                            <span
-                              className={`ui-alc__flag`}
-                              aria-hidden={`true`}
-                            >
+                            <span className={`ui-alc__flag`} aria-hidden={`true`}>
                               <Icond />
                               {`Needs you`}
                             </span>
@@ -399,16 +370,12 @@ function AgentLanesClean({
                       aria-label={`Decide: ${B.title}`}
                       data-up={n ? `` : void 0}
                       style={{
-                        top: n
-                          ? t * valueValue6 + 6
-                          : (t + 1) * valueValue6 - 6,
+                        top: n ? t * valueValue6 + 6 : (t + 1) * valueValue6 - 6,
                         right: `${100 - M(a)}%`,
                       }}
                     >
                       <span className={`ui-alc__ask-title`}>{B.title}</span>
-                      {B.ask && (
-                        <span className={`ui-alc__ask-text`}>{B.ask}</span>
-                      )}
+                      {B.ask && <span className={`ui-alc__ask-text`}>{B.ask}</span>}
                       <span className={`ui-alc__ask-actions`}>
                         <button
                           type={`button`}
@@ -752,10 +719,7 @@ var Iconv = () => (
       fill={`#34A853`}
       d={`M12 24c3.24 0 5.96-1.07 7.94-2.9l-3.87-3c-1.08.72-2.45 1.15-4.07 1.15-3.13 0-5.78-2.11-6.73-4.95H1.27v3.1A12 12 0 0 0 12 24Z`}
     />
-    <path
-      fill={`#FBBC05`}
-      d={`M5.27 14.3a7.2 7.2 0 0 1 0-4.6V6.6h-4a12 12 0 0 0 0 10.8l4-3.1Z`}
-    />
+    <path fill={`#FBBC05`} d={`M5.27 14.3a7.2 7.2 0 0 1 0-4.6V6.6h-4a12 12 0 0 0 0 10.8l4-3.1Z`} />
     <path
       fill={`#EA4335`}
       d={`M12 4.75c1.76 0 3.34.6 4.59 1.8l3.43-3.43A11.5 11.5 0 0 0 12 0 12 12 0 0 0 1.27 6.6l4 3.1C6.22 6.86 8.87 4.75 12 4.75Z`}
@@ -822,23 +786,11 @@ var Iconb = () => (
 );
 var Iconx = () => (
   <svg viewBox={`0 0 38 57`} aria-hidden={`true`}>
-    <path
-      d={`M19 28.5a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0Z`}
-      fill={`#1ABCFE`}
-    />
-    <path
-      d={`M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 1 1-19 0Z`}
-      fill={`#0ACF83`}
-    />
+    <path d={`M19 28.5a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0Z`} fill={`#1ABCFE`} />
+    <path d={`M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 1 1-19 0Z`} fill={`#0ACF83`} />
     <path d={`M19 0v19h9.5a9.5 9.5 0 1 0 0-19H19Z`} fill={`#FF7262`} />
-    <path
-      d={`M0 9.5A9.5 9.5 0 0 0 9.5 19H19V0H9.5A9.5 9.5 0 0 0 0 9.5Z`}
-      fill={`#F24E1E`}
-    />
-    <path
-      d={`M0 28.5A9.5 9.5 0 0 0 9.5 38H19V19H9.5A9.5 9.5 0 0 0 0 28.5Z`}
-      fill={`#A259FF`}
-    />
+    <path d={`M0 9.5A9.5 9.5 0 0 0 9.5 19H19V0H9.5A9.5 9.5 0 0 0 0 9.5Z`} fill={`#F24E1E`} />
+    <path d={`M0 28.5A9.5 9.5 0 0 0 9.5 38H19V19H9.5A9.5 9.5 0 0 0 0 28.5Z`} fill={`#A259FF`} />
   </svg>
 );
 var ValueValue = () => (

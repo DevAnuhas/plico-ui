@@ -1,5 +1,9 @@
-import {brand} from '../../lib/brand.js';
-function localText(value){return value.replaceAll('__PLICO_ORIGIN__',brand.url).replaceAll('__PLICO_REPO__',brand.repoUrl)}
+import { brand } from "../../lib/brand.js";
+function localText(value) {
+  return value
+    .replaceAll("__PLICO_ORIGIN__", brand.url)
+    .replaceAll("__PLICO_REPO__", brand.repoUrl);
+}
 import { t as e } from "./react-bridge.js";
 import { t } from "./jsx-bridge.js";
 var n = e(),
@@ -29,85 +33,124 @@ function i({
     T = c(s),
     E = `${C}|${w}|${T}`,
     D = (0, n.useRef)(E);
-  return (0, n.useLayoutEffect)(() => {
-    let e = y.current;
-    if (!e) return;
-    let t = e.getBoundingClientRect().width,
-      n = b.current,
-      r = D.current !== E;
-    b.current = t, D.current = E, !(!r || !n || Math.abs(n - t) < .5) && (window.matchMedia(`(prefers-reduced-motion: reduce)`).matches || e.animate([{
-      width: `${n}px`
-    }, {
-      width: `${t}px`
-    }], {
-      duration: 480,
-      easing: `cubic-bezier(0.25, 1, 0.5, 1)`
-    }));
-  }), (0, r.jsxs)(r.Fragment, {
-    children: [(0, r.jsx)(`style`, {
-      href: `ui-button`,
-      precedence: `default`,
-      children: l
-    }), (0, r.jsxs)(`button`, {
-      type: m,
-      className: [`ui-button`, d].filter(Boolean).join(` `),
-      "data-variant": e,
-      "data-size": t,
-      "data-loading": i || void 0,
-      "data-icon-only": v || void 0,
-      "data-ready": x || void 0,
-      ref: e => {
-        y.current = e, typeof h == `function` ? h(e) : h && (h.current = e);
-      },
-      disabled: f,
-      "aria-busy": i || void 0,
-      "aria-disabled": i || void 0,
-      onClick: e => {
-        if (i) {
-          e.preventDefault();
-          return;
-        }
-        p?.(e);
-      },
-      ...g,
-      children: [o && (0, r.jsx)(`span`, {
-        className: `ui-button__icon`,
-        "aria-hidden": `true`,
-        children: i ? (0, r.jsx)(a, {}) : o
-      }, `icon-${w}`), u != null && (0, r.jsx)(`span`, {
-        className: `ui-button__label`,
-        "data-text": _,
-        children: u
-      }, `label-${C}`), s && (0, r.jsx)(`span`, {
-        className: `ui-button__icon`,
-        "aria-hidden": `true`,
-        children: s
-      }, `icon-right-${T}`)]
-    })]
-  });
+  return (
+    (0, n.useLayoutEffect)(() => {
+      let e = y.current;
+      if (!e) return;
+      let t = e.getBoundingClientRect().width,
+        n = b.current,
+        r = D.current !== E;
+      ((b.current = t),
+        (D.current = E),
+        !(!r || !n || Math.abs(n - t) < 0.5) &&
+          (window.matchMedia(`(prefers-reduced-motion: reduce)`).matches ||
+            e.animate(
+              [
+                {
+                  width: `${n}px`,
+                },
+                {
+                  width: `${t}px`,
+                },
+              ],
+              {
+                duration: 480,
+                easing: `cubic-bezier(0.25, 1, 0.5, 1)`,
+              },
+            )));
+    }),
+    (0, r.jsxs)(r.Fragment, {
+      children: [
+        (0, r.jsx)(`style`, {
+          href: `ui-button`,
+          precedence: `default`,
+          children: l,
+        }),
+        (0, r.jsxs)(`button`, {
+          type: m,
+          className: [`ui-button`, d].filter(Boolean).join(` `),
+          "data-variant": e,
+          "data-size": t,
+          "data-loading": i || void 0,
+          "data-icon-only": v || void 0,
+          "data-ready": x || void 0,
+          ref: (e) => {
+            ((y.current = e), typeof h == `function` ? h(e) : h && (h.current = e));
+          },
+          disabled: f,
+          "aria-busy": i || void 0,
+          "aria-disabled": i || void 0,
+          onClick: (e) => {
+            if (i) {
+              e.preventDefault();
+              return;
+            }
+            p?.(e);
+          },
+          ...g,
+          children: [
+            o &&
+              (0, r.jsx)(
+                `span`,
+                {
+                  className: `ui-button__icon`,
+                  "aria-hidden": `true`,
+                  children: i ? (0, r.jsx)(a, {}) : o,
+                },
+                `icon-${w}`,
+              ),
+            u != null &&
+              (0, r.jsx)(
+                `span`,
+                {
+                  className: `ui-button__label`,
+                  "data-text": _,
+                  children: u,
+                },
+                `label-${C}`,
+              ),
+            s &&
+              (0, r.jsx)(
+                `span`,
+                {
+                  className: `ui-button__icon`,
+                  "aria-hidden": `true`,
+                  children: s,
+                },
+                `icon-right-${T}`,
+              ),
+          ],
+        }),
+      ],
+    })
+  );
 }
-var a = () => (0, r.jsxs)(`svg`, {
-    className: `ui-button__spinner`,
-    viewBox: `0 0 24 24`,
-    fill: `none`,
-    stroke: `currentColor`,
-    strokeWidth: 2,
-    strokeLinecap: `round`,
-    children: [(0, r.jsx)(`circle`, {
-      cx: `12`,
-      cy: `12`,
-      r: `8.5`,
-      opacity: .2
-    }), (0, r.jsx)(`path`, {
-      d: `M12 3.5a8.5 8.5 0 0 1 8.5 8.5`
-    })]
-  }),
+var a = () =>
+    (0, r.jsxs)(`svg`, {
+      className: `ui-button__spinner`,
+      viewBox: `0 0 24 24`,
+      fill: `none`,
+      stroke: `currentColor`,
+      strokeWidth: 2,
+      strokeLinecap: `round`,
+      children: [
+        (0, r.jsx)(`circle`, {
+          cx: `12`,
+          cy: `12`,
+          r: `8.5`,
+          opacity: 0.2,
+        }),
+        (0, r.jsx)(`path`, {
+          d: `M12 3.5a8.5 8.5 0 0 1 8.5 8.5`,
+        }),
+      ],
+    }),
   o = new WeakMap(),
   s = 1;
 function c(e) {
   if (!(0, n.isValidElement)(e) || typeof e.type == `string`) return 0;
   let t = e.type;
-  return o.has(t) || o.set(t, s++), o.get(t);
+  return (o.has(t) || o.set(t, s++), o.get(t));
 }
 var l = `
 /* Colors and motion as variables – override them on .ui-button (see Theming in the docs) */

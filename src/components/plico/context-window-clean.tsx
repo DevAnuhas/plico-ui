@@ -60,10 +60,8 @@ var valueValue2 = (e: number) => {
 var valueValue3 = (e: number) => valueValue2(e).replace(/\.0(?=[KM]$)/, ``);
 var valueValue4 = (e: number) => 1 - (1 - e) ** 4;
 var valueValue5 = () =>
-  typeof window < `u` &&
-  window.matchMedia(`(prefers-reduced-motion: reduce)`).matches;
-var valueValue6 = (e: number | undefined) =>
-  new Promise((t) => window.setTimeout(t, e));
+  typeof window < `u` && window.matchMedia(`(prefers-reduced-motion: reduce)`).matches;
+var valueValue6 = (e: number | undefined) => new Promise((t) => window.setTimeout(t, e));
 function valueValue7(e: Record<string, number>, t: number) {
   let [r, i] = React.useState(e),
     a = React.useRef(e),
@@ -163,35 +161,17 @@ var Iconp = () => (
   </svg>
 );
 var Iconee = () => (
-  <svg
-    width={`16`}
-    height={`16`}
-    viewBox={`0 0 16 16`}
-    fill={`none`}
-    aria-hidden={`true`}
-  >
+  <svg width={`16`} height={`16`} viewBox={`0 0 16 16`} fill={`none`} aria-hidden={`true`}>
     <path d={`m5 5 6 6m0-6-6 6`} {...valueValue8} />
   </svg>
 );
 var Iconte = () => (
-  <svg
-    width={`12`}
-    height={`12`}
-    viewBox={`0 0 12 12`}
-    fill={`none`}
-    aria-hidden={`true`}
-  >
+  <svg width={`12`} height={`12`} viewBox={`0 0 12 12`} fill={`none`} aria-hidden={`true`}>
     <path d={`m2.6 6.3 2.2 2.2 4.6-5`} {...valueValue8} strokeWidth={1.3} />
   </svg>
 );
 var Iconne = () => (
-  <svg
-    width={`12`}
-    height={`12`}
-    viewBox={`0 0 12 12`}
-    fill={`none`}
-    aria-hidden={`true`}
-  >
+  <svg width={`12`} height={`12`} viewBox={`0 0 12 12`} fill={`none`} aria-hidden={`true`}>
     <path
       d={`M6 1.5v3m0 0L4.6 3.1M6 4.5l1.4-1.4M6 10.5v-3m0 0L4.6 8.9M6 7.5l1.4 1.4M2 6h8`}
       {...valueValue8}
@@ -199,13 +179,7 @@ var Iconne = () => (
   </svg>
 );
 var Iconre = () => (
-  <svg
-    width={`16`}
-    height={`16`}
-    viewBox={`0 0 16 16`}
-    fill={`none`}
-    aria-hidden={`true`}
-  >
+  <svg width={`16`} height={`16`} viewBox={`0 0 16 16`} fill={`none`} aria-hidden={`true`}>
     <path d={`M3.5 8h9M9 4.5 12.5 8 9 11.5`} {...valueValue8} />
   </svg>
 );
@@ -270,10 +244,7 @@ function ContextWindowClean({
     H = 0;
   N.forEach((e, t) => {
     V += e.tokens;
-    let n = Math.min(
-      cells,
-      Math.max(e.tokens > 0 ? H + 1 : H, Math.round(V / ue)),
-    );
+    let n = Math.min(cells, Math.max(e.tokens > 0 ? H + 1 : H, Math.round(V / ue)));
     for (let e = H; e < n; e++) B[e] = t;
     H = n;
   });
@@ -369,12 +340,7 @@ function ContextWindowClean({
     q = `rest`,
     J;
   E
-    ? ((K = (
-        <span
-          className={`ui-cwc__shimmer`}
-          data-text={`Compacting…`}
-        >{`Compacting…`}</span>
-      )),
+    ? ((K = <span className={`ui-cwc__shimmer`} data-text={`Compacting…`}>{`Compacting…`}</span>),
       (q = `busy`))
     : L
       ? ((K = (
@@ -382,9 +348,7 @@ function ContextWindowClean({
             <b>{L.label}</b>
             {` ·`}
             {` `}
-            {limit > 0
-              ? ((L.tokens / limit) * 100).toFixed(+(L.tokens / limit < 0.1))
-              : 0}
+            {limit > 0 ? ((L.tokens / limit) * 100).toFixed(+(L.tokens / limit < 0.1)) : 0}
             {`% of the window`}
           </>
         )),
@@ -400,12 +364,9 @@ function ContextWindowClean({
           (q = `saved-${A.id}`),
           (J = `ok`))
         : I !== `ok` &&
-          ((K = I === `full` ? `Window is full` : `${valueValue3(G)} left`),
-          (q = I),
-          (J = I));
+          ((K = I === `full` ? `Window is full` : `${valueValue3(G)} left`), (q = I), (J = I));
   let [Y, X] = React.useState<Record<string, number>>({}),
-    Z = (e: { id: string | number; tokens: number }) =>
-      Y[e.id] !== void 0 && e.tokens <= Y[e.id],
+    Z = (e: { id: string | number; tokens: number }) => Y[e.id] !== void 0 && e.tokens <= Y[e.id],
     [Q, $] = React.useState<{ id: string; leaving: boolean } | null>(null);
   React.useEffect(() => {
     if (!Q) return;
@@ -450,18 +411,9 @@ function ContextWindowClean({
         className={`ui-cwc__compact-icon`}
         key={E === e.id ? `icon-busy` : Z(e) ? `icon-done` : `icon-idle`}
       >
-        {E === e.id ? (
-          <span className={`ui-cwc__spinner`} />
-        ) : Z(e) ? (
-          <Iconte />
-        ) : (
-          <Iconne />
-        )}
+        {E === e.id ? <span className={`ui-cwc__spinner`} /> : Z(e) ? <Iconte /> : <Iconne />}
       </span>
-      <span
-        className={`ui-cwc__compact-text`}
-        key={Z(e) ? `text-done` : `text-idle`}
-      >
+      <span className={`ui-cwc__compact-text`} key={Z(e) ? `text-done` : `text-idle`}>
         {Z(e) ? `Compacted` : `Compact`}
       </span>
     </button>
@@ -484,9 +436,7 @@ function ContextWindowClean({
           </span>
           {model && (
             <span className={`ui-cwc__model`}>
-              {modelIcon && (
-                <span className={`ui-cwc__model-icon`}>{modelIcon}</span>
-              )}
+              {modelIcon && <span className={`ui-cwc__model-icon`}>{modelIcon}</span>}
               <span>{model}</span>
             </span>
           )}
@@ -496,9 +446,7 @@ function ContextWindowClean({
             {valueValue2(z[`#figure`] ?? P)}
           </span>
           <span className={`ui-cwc__of`} aria-hidden={`true`}>
-            <Icond id={L ? L.id : `total`}>
-              {L ? L.label : `of ${valueValue3(limit)} tokens`}
-            </Icond>
+            <Icond id={L ? L.id : `total`}>{L ? L.label : `of ${valueValue3(limit)} tokens`}</Icond>
           </span>
           <span className={`ui-cwc__pill`} aria-hidden={`true`}>
             {Math.round(((z[`#used`] ?? P) / Math.max(limit, 1)) * 100)}
@@ -521,10 +469,7 @@ function ContextWindowClean({
           style={
             {
               "--ui-cwc-cols": columns,
-              "--ui-cwc-cols-narrow": Math.max(
-                8,
-                Math.round((columns * 2) / 3),
-              ),
+              "--ui-cwc-cols-narrow": Math.max(8, Math.round((columns * 2) / 3)),
             } as React.CSSProperties
           }
         >
@@ -546,9 +491,7 @@ function ContextWindowClean({
                       : {}),
                   } as React.CSSProperties
                 }
-                onPointerEnter={(e) =>
-                  e.pointerType === `mouse` && k(n ? n.id : null)
-                }
+                onPointerEnter={(e) => e.pointerType === `mouse` && k(n ? n.id : null)}
                 key={t}
               />
             );
@@ -569,18 +512,13 @@ function ContextWindowClean({
                   <span className={`ui-cwc__label`}>
                     {e.label}
                     {t && (
-                      <span
-                        className={`ui-cwc__open`}
-                        data-open={n ? `` : void 0}
-                      >
+                      <span className={`ui-cwc__open`} data-open={n ? `` : void 0}>
                         <Iconp />
                       </span>
                     )}
                   </span>
                   {e.compact && !e.locked && (!Z(e) || Q?.id === e.id) && pe(e)}
-                  <span className={`ui-cwc__value`}>
-                    {valueValue2(z[e.id] ?? e.tokens)}
-                  </span>
+                  <span className={`ui-cwc__value`}>{valueValue2(z[e.id] ?? e.tokens)}</span>
                 </>
               );
             return (
@@ -618,9 +556,7 @@ function ContextWindowClean({
                     <div className={`ui-cwc__clip`}>
                       <ul className={`ui-cwc__items`}>
                         {e.items.length === 0 && (
-                          <li
-                            className={`ui-cwc__empty`}
-                          >{`Nothing attached`}</li>
+                          <li className={`ui-cwc__empty`}>{`Nothing attached`}</li>
                         )}
                         {e.items.map((t) => (
                           <li
@@ -630,9 +566,7 @@ function ContextWindowClean({
                           >
                             <div className={`ui-cwc__clip`}>
                               <div className={`ui-cwc__item`}>
-                                <span className={`ui-cwc__item-label`}>
-                                  {t.label}
-                                </span>
+                                <span className={`ui-cwc__item-label`}>{t.label}</span>
                                 <span className={`ui-cwc__item-value`}>
                                   {valueValue2(t.tokens)}
                                 </span>
@@ -664,11 +598,7 @@ function ContextWindowClean({
           </Icond>
         </span>
         {action && (
-          <button
-            type={`button`}
-            className={`ui-cwc__action`}
-            onClick={action.onClick}
-          >
+          <button type={`button`} className={`ui-cwc__action`} onClick={action.onClick}>
             {action.label}
             <Iconre />
           </button>
@@ -953,8 +883,7 @@ function ContextWindowCleanDemo2() {
     [t, i] = React.useState<number>(0),
     a = React.useRef(false);
   React.useEffect(() => {
-    let t = (t: string) => () =>
-        e.current?.querySelector<HTMLElement>(t)?.click(),
+    let t = (t: string) => () => e.current?.querySelector<HTMLElement>(t)?.click(),
       n: [number, () => void][] = [
         [3200, t(`.ui-cwc__main[aria-expanded='false']`)],
         [1300, t(`.ui-cwc__remove`)],

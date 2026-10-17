@@ -53,21 +53,17 @@ interface MemoryPanelProps {
 }
 var easeOutQuart = (progress: number) => 1 - (1 - progress) ** 4;
 var prefersReducedMotion = () =>
-  typeof window < `u` &&
-  window.matchMedia(`(prefers-reduced-motion: reduce)`).matches;
-var delay = (e: number | undefined) =>
-  new Promise((t) => window.setTimeout(t, e));
+  typeof window < `u` && window.matchMedia(`(prefers-reduced-motion: reduce)`).matches;
+var delay = (e: number | undefined) => new Promise((t) => window.setTimeout(t, e));
 var todayLabel = () =>
   new Date().toLocaleDateString(`en-US`, {
     month: `short`,
     day: `numeric`,
   });
-var createMemoryId = () =>
-  `m-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 6)}`;
+var createMemoryId = () => `m-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 6)}`;
 var autosizeTextarea = (textarea: HTMLTextAreaElement | null) => {
   textarea &&
-    ((textarea.style.height = `auto`),
-    (textarea.style.height = `${textarea.scrollHeight}px`));
+    ((textarea.style.height = `auto`), (textarea.style.height = `${textarea.scrollHeight}px`));
 };
 function useAnimatedCounts(targets: Record<string, number>, duration: number) {
   let [values, setValues] = React.useState(targets),
@@ -79,10 +75,7 @@ function useAnimatedCounts(targets: Record<string, number>, duration: number) {
         n = {
           ...currentRef.current,
         };
-      if (
-        prefersReducedMotion() ||
-        Object.keys(e).every((t) => n[t] === e[t])
-      ) {
+      if (prefersReducedMotion() || Object.keys(e).every((t) => n[t] === e[t])) {
         ((currentRef.current = e), setValues(e));
         return;
       }
@@ -93,9 +86,7 @@ function useAnimatedCounts(targets: Record<string, number>, duration: number) {
             d = easeOutQuart(c),
             f: Record<string, number> = {};
           for (let t in e) f[t] = (n[t] ?? e[t]) + (e[t] - (n[t] ?? e[t])) * d;
-          ((currentRef.current = f),
-            setValues(f),
-            c < 1 && (l = requestAnimationFrame(u)));
+          ((currentRef.current = f), setValues(f), c < 1 && (l = requestAnimationFrame(u)));
         };
       return ((l = requestAnimationFrame(u)), () => cancelAnimationFrame(l));
     }, [signature, duration]),
@@ -160,20 +151,8 @@ var strokeProps: Pick<
   strokeLinecap: `round`,
   strokeLinejoin: `round`,
 };
-var Icon = ({
-  children: children,
-  size = 14,
-}: {
-  children?: React.ReactNode;
-  size?: number;
-}) => (
-  <svg
-    width={size}
-    height={size}
-    viewBox={`0 0 14 14`}
-    fill={`none`}
-    aria-hidden={`true`}
-  >
+var Icon = ({ children: children, size = 14 }: { children?: React.ReactNode; size?: number }) => (
+  <svg width={size} height={size} viewBox={`0 0 14 14`} fill={`none`} aria-hidden={`true`}>
     {children}
   </svg>
 );
@@ -208,10 +187,7 @@ var ForgetIcon = () => (
 );
 var UndoIcon = () => (
   <Icon size={12}>
-    <path
-      d={`M4.6 2.8 2.4 5l2.2 2.2M2.6 5h5.6a3.2 3.2 0 0 1 0 6.4H6`}
-      {...strokeProps}
-    />
+    <path d={`M4.6 2.8 2.4 5l2.2 2.2M2.6 5h5.6a3.2 3.2 0 0 1 0 6.4H6`} {...strokeProps} />
   </Icon>
 );
 var AddIcon = () => (
@@ -268,9 +244,7 @@ function MemoryPanel({
     itemsRef = React.useRef(items);
   itemsRef.current = items;
   let commitMemories = (next: Memory[]) => {
-      ((itemsRef.current = next),
-        onChange || setLocalMemories(next),
-        onChange?.(next));
+      ((itemsRef.current = next), onChange || setLocalMemories(next), onChange?.(next));
     },
     [localEnabled, setLocalEnabled] = React.useState(defaultEnabled),
     isEnabled = enabled ?? localEnabled,
@@ -323,8 +297,7 @@ function MemoryPanel({
           n = t?.querySelector<HTMLElement>(`[data-memory="${CSS.escape(e)}"]`);
         if (!t || !n) return;
         let r = n.offsetTop - t.offsetTop;
-        (r < t.scrollTop ||
-          r + n.offsetHeight > t.scrollTop + t.clientHeight) &&
+        (r < t.scrollTop || r + n.offsetHeight > t.scrollTop + t.clientHeight) &&
           t.scrollTo({
             top: r - 8,
             behavior: prefersReducedMotion() ? `auto` : `smooth`,
@@ -338,8 +311,7 @@ function MemoryPanel({
       return () => window.clearTimeout(e);
     }, [undo, undoFor]));
   let allCategories = [...(categories ?? [])];
-  for (let e of items)
-    allCategories.includes(e.category) || allCategories.push(e.category);
+  for (let e of items) allCategories.includes(e.category) || allCategories.push(e.category);
   let visibleItems = items.filter((e) => !leavingMap[e.id]),
     pausedCount = visibleItems.filter((e) => e.paused).length,
     normalizedQuery = query.trim().toLowerCase(),
@@ -435,9 +407,7 @@ function MemoryPanel({
         onEdit?.(id, text),
         window.requestAnimationFrame(() =>
           rootRef.current
-            ?.querySelector<HTMLElement>(
-              `[data-memory="${CSS.escape(id)}"] [data-act="edit"]`,
-            )
+            ?.querySelector<HTMLElement>(`[data-memory="${CSS.escape(id)}"] [data-act="edit"]`)
             ?.focus({
               preventScroll: true,
             }),
@@ -449,9 +419,7 @@ function MemoryPanel({
         id &&
           window.requestAnimationFrame(() =>
             rootRef.current
-              ?.querySelector<HTMLElement>(
-                `[data-memory="${CSS.escape(id)}"] [data-act="edit"]`,
-              )
+              ?.querySelector<HTMLElement>(`[data-memory="${CSS.escape(id)}"] [data-act="edit"]`)
               ?.focus({
                 preventScroll: true,
               }),
@@ -497,30 +465,14 @@ function MemoryPanel({
       (setSearchOpen(false),
         setQuery(``),
         window.requestAnimationFrame(() =>
-          rootRef.current
-            ?.querySelector<HTMLElement>(`.ui-mp__search-open`)
-            ?.focus({
-              preventScroll: true,
-            }),
+          rootRef.current?.querySelector<HTMLElement>(`.ui-mp__search-open`)?.focus({
+            preventScroll: true,
+          }),
         ));
     },
-    filterTabs = [
-      null,
-      ...allCategories.filter((e) => items.some((t) => t.category === e)),
-    ],
-    handleCategoryKeyDown: React.KeyboardEventHandler<HTMLDivElement> = (
-      event,
-    ) => {
-      if (
-        ![
-          `ArrowRight`,
-          `ArrowLeft`,
-          `ArrowDown`,
-          `ArrowUp`,
-          `Home`,
-          `End`,
-        ].includes(event.key)
-      )
+    filterTabs = [null, ...allCategories.filter((e) => items.some((t) => t.category === e))],
+    handleCategoryKeyDown: React.KeyboardEventHandler<HTMLDivElement> = (event) => {
+      if (![`ArrowRight`, `ArrowLeft`, `ArrowDown`, `ArrowUp`, `Home`, `End`].includes(event.key))
         return;
       event.preventDefault();
       let index = filterTabs.indexOf(category),
@@ -530,14 +482,11 @@ function MemoryPanel({
             : event.key === `End`
               ? filterTabs.length - 1
               : (index +
-                  (event.key === `ArrowRight` || event.key === `ArrowDown`
-                    ? 1
-                    : -1) +
+                  (event.key === `ArrowRight` || event.key === `ArrowDown` ? 1 : -1) +
                   filterTabs.length) %
                 filterTabs.length;
       setCategory(filterTabs[nextIndex]);
-      let buttons =
-        event.currentTarget.querySelectorAll<HTMLElement>(`[role='radio']`);
+      let buttons = event.currentTarget.querySelectorAll<HTMLElement>(`[role='radio']`);
       (buttons[nextIndex]?.focus(),
         buttons[nextIndex]?.scrollIntoView({
           block: `nearest`,
@@ -572,11 +521,9 @@ function MemoryPanel({
         )),
         (footerId = `forgot-${undo.key}`))
       : editingId
-        ? ((footerContent = `Enter to save · Esc to cancel`),
-          (footerId = `editing`))
+        ? ((footerContent = `Enter to save · Esc to cancel`), (footerId = `editing`))
         : adding
-          ? ((footerContent = `Pick a category · Enter to save`),
-            (footerId = `adding`))
+          ? ((footerContent = `Pick a category · Enter to save`), (footerId = `adding`))
           : hotMemory
             ? ((footerContent = (
                 <>
@@ -591,8 +538,7 @@ function MemoryPanel({
                 </>
               )),
               (footerId = `hot-${hotMemory.id}-${+!!hotMemory.paused}-${+!!isEnabled}`))
-            : isEnabled ||
-              ((footerContent = `Memory is off`), (footerId = `off`)),
+            : isEnabled || ((footerContent = `Memory is off`), (footerId = `off`)),
     (
       <div
         ref={rootRef}
@@ -644,10 +590,7 @@ function MemoryPanel({
               </p>
             </div>
           </div>
-          <div
-            className={`ui-mp__filters`}
-            data-searching={searchOpen ? `` : void 0}
-          >
+          <div className={`ui-mp__filters`} data-searching={searchOpen ? `` : void 0}>
             <div
               className={`ui-mp__chips`}
               role={`radiogroup`}
@@ -656,9 +599,7 @@ function MemoryPanel({
               onKeyDown={handleCategoryKeyDown}
             >
               {filterTabs.map((e) => {
-                let t = visibleItems.filter(
-                    (t) => !e || t.category === e,
-                  ).length,
+                let t = visibleItems.filter((t) => !e || t.category === e).length,
                   n = category === e;
                 return (
                   <button
@@ -723,11 +664,7 @@ function MemoryPanel({
               <SearchIcon />
             </button>
           </div>
-          <div
-            ref={listRef}
-            className={`ui-mp__list`}
-            onPointerLeave={() => setHotId(null)}
-          >
+          <div ref={listRef} className={`ui-mp__list`} onPointerLeave={() => setHotId(null)}>
             {allCategories.map((e) => {
               let t = items.filter((t) => t.category === e);
               if (!t.length) return null;
@@ -761,13 +698,10 @@ function MemoryPanel({
                                 data-paused={e.paused ? `` : void 0}
                                 data-hot={hotId === e.id ? `` : void 0}
                                 data-editing={t ? `` : void 0}
-                                onPointerEnter={(t) =>
-                                  t.pointerType === `mouse` && setHotId(e.id)
-                                }
+                                onPointerEnter={(t) => t.pointerType === `mouse` && setHotId(e.id)}
                                 onFocus={() => setHotId(e.id)}
                                 onBlur={(e) => {
-                                  e.currentTarget.contains(e.relatedTarget) ||
-                                    setHotId(null);
+                                  e.currentTarget.contains(e.relatedTarget) || setHotId(null);
                                 }}
                               >
                                 {t ? (
@@ -784,20 +718,15 @@ function MemoryPanel({
                                           e.focus({
                                             preventScroll: true,
                                           }),
-                                          e.setSelectionRange(
-                                            e.value.length,
-                                            e.value.length,
-                                          )));
+                                          e.setSelectionRange(e.value.length, e.value.length)));
                                     }}
                                     onChange={(e) => {
-                                      (setEditText(e.target.value),
-                                        autosizeTextarea(e.target));
+                                      (setEditText(e.target.value), autosizeTextarea(e.target));
                                     }}
                                     onKeyDown={(e) => {
                                       e.key === `Enter` && !e.shiftKey
                                         ? (e.preventDefault(), saveEdit())
-                                        : e.key === `Escape` &&
-                                          (e.stopPropagation(), cancelEdit());
+                                        : e.key === `Escape` && (e.stopPropagation(), cancelEdit());
                                     }}
                                   />
                                 ) : (
@@ -805,9 +734,7 @@ function MemoryPanel({
                                 )}
                                 <div className={`ui-mp__meta`}>
                                   <span className={`ui-mp__source`}>
-                                    {[e.source, e.date]
-                                      .filter(Boolean)
-                                      .join(` · `)}
+                                    {[e.source, e.date].filter(Boolean).join(` · `)}
                                   </span>
                                   <span
                                     className={`ui-mp__tag`}
@@ -815,9 +742,7 @@ function MemoryPanel({
                                     aria-hidden={!e.paused}
                                   >{`Paused`}</span>
                                   {t ? (
-                                    <span
-                                      className={`ui-mp__acts ui-mp__acts--edit`}
-                                    >
+                                    <span className={`ui-mp__acts ui-mp__acts--edit`}>
                                       <button
                                         type={`button`}
                                         className={`ui-mp__text-btn`}
@@ -853,11 +778,7 @@ function MemoryPanel({
                                           className={`ui-mp__icon-swap`}
                                           key={e.paused ? `play` : `pause`}
                                         >
-                                          {e.paused ? (
-                                            <PlayIcon />
-                                          ) : (
-                                            <PauseIcon />
-                                          )}
+                                          {e.paused ? <PlayIcon /> : <PauseIcon />}
                                         </span>
                                       </button>
                                       <button
@@ -883,11 +804,7 @@ function MemoryPanel({
                 </section>
               );
             })}
-            <div
-              className={`ui-mp__fold`}
-              data-open={hasMatches ? void 0 : ``}
-              inert={hasMatches}
-            >
+            <div className={`ui-mp__fold`} data-open={hasMatches ? void 0 : ``} inert={hasMatches}>
               <div className={`ui-mp__clip`}>
                 <p className={`ui-mp__empty`}>
                   {items.length === 0
@@ -900,11 +817,7 @@ function MemoryPanel({
             </div>
           </div>
           <div className={`ui-mp__bottom`}>
-            <div
-              className={`ui-mp__fold`}
-              data-open={adding ? void 0 : ``}
-              inert={adding}
-            >
+            <div className={`ui-mp__fold`} data-open={adding ? void 0 : ``} inert={adding}>
               <div className={`ui-mp__clip`}>
                 <button
                   type={`button`}
@@ -949,8 +862,7 @@ function MemoryPanel({
                     onKeyDown={(e) => {
                       e.key === `Enter` && !e.shiftKey
                         ? (e.preventDefault(), saveAdd())
-                        : e.key === `Escape` &&
-                          (e.stopPropagation(), cancelAdd());
+                        : e.key === `Escape` && (e.stopPropagation(), cancelAdd());
                     }}
                   />
                   <div className={`ui-mp__new-row`}>
@@ -959,24 +871,13 @@ function MemoryPanel({
                       role={`radiogroup`}
                       aria-label={`Category of the new memory`}
                       onKeyDown={(e) => {
-                        let t = allCategories.length
-                          ? allCategories
-                          : [`General`];
-                        if (
-                          ![
-                            `ArrowRight`,
-                            `ArrowLeft`,
-                            `ArrowDown`,
-                            `ArrowUp`,
-                          ].includes(e.key)
-                        )
+                        let t = allCategories.length ? allCategories : [`General`];
+                        if (![`ArrowRight`, `ArrowLeft`, `ArrowDown`, `ArrowUp`].includes(e.key))
                           return;
                         e.preventDefault();
                         let n =
                           (t.indexOf(newCategory) +
-                            (e.key === `ArrowRight` || e.key === `ArrowDown`
-                              ? 1
-                              : -1) +
+                            (e.key === `ArrowRight` || e.key === `ArrowDown` ? 1 : -1) +
                             t.length) %
                           t.length;
                         (setAddCategory(t[n]),
@@ -985,21 +886,19 @@ function MemoryPanel({
                             [n]?.focus());
                       }}
                     >
-                      {(allCategories.length ? allCategories : [`General`]).map(
-                        (e) => (
-                          <button
-                            type={`button`}
-                            role={`radio`}
-                            aria-checked={newCategory === e}
-                            tabIndex={newCategory === e ? 0 : -1}
-                            className={`ui-mp__cat`}
-                            onClick={() => setAddCategory(e)}
-                            key={e}
-                          >
-                            {e}
-                          </button>
-                        ),
-                      )}
+                      {(allCategories.length ? allCategories : [`General`]).map((e) => (
+                        <button
+                          type={`button`}
+                          role={`radio`}
+                          aria-checked={newCategory === e}
+                          tabIndex={newCategory === e ? 0 : -1}
+                          className={`ui-mp__cat`}
+                          onClick={() => setAddCategory(e)}
+                          key={e}
+                        >
+                          {e}
+                        </button>
+                      ))}
                     </div>
                     <span className={`ui-mp__acts ui-mp__acts--edit`}>
                       <button
@@ -1301,8 +1200,7 @@ function MemoryPanelDemo2() {
   let rootRef = React.useRef<HTMLDivElement | null>(null),
     pausedRef = React.useRef(false);
   React.useEffect(() => {
-    let n = (t: string) => () =>
-        rootRef.current?.querySelector<HTMLElement>(t)?.click(),
+    let n = (t: string) => () => rootRef.current?.querySelector<HTMLElement>(t)?.click(),
       r = (e: string, t: string) => n(`[data-memory="${e}"] [data-act="${t}"]`),
       i = (e: number) => n(`.ui-mp__chip:nth-child(${e})`),
       a: [number, () => void][] = [

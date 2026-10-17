@@ -2,10 +2,7 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 const origin = process.env.PLICO_TEST_URL || "http://127.0.0.1:4210";
 const catalog = JSON.parse(
-  await readFile(
-    new URL("../src/library/catalog.json", import.meta.url),
-    "utf8",
-  ),
+  await readFile(new URL("../src/library/catalog.json", import.meta.url), "utf8"),
 );
 let nextId = 1;
 async function rpc(method, params = {}, headers = {}) {
@@ -24,8 +21,7 @@ const llms = await fetch(`${origin}/llms.txt`);
 assert.equal(llms.status, 200);
 const text = await llms.text();
 assert(text.startsWith("# Plico UI"));
-for (const item of catalog.items)
-  assert(text.includes(`/r/${item.registryItem}.json`));
+for (const item of catalog.items) assert(text.includes(`/r/${item.registryItem}.json`));
 const initialize = await rpc("initialize", {
   protocolVersion: "2025-11-25",
   capabilities: {},
@@ -47,9 +43,7 @@ const items = await rpc("tools/call", {
 });
 assert.equal(items.body.result.structuredContent.total, catalog.items.length);
 assert.equal(items.body.result.structuredContent.items.length, 1);
-const first =
-  catalog.items.find((item) => item.registryItem === "button") ||
-  catalog.items[0];
+const first = catalog.items.find((item) => item.registryItem === "button") || catalog.items[0];
 const command = await rpc("tools/call", {
   name: "get_install_command",
   arguments: { name: first.name },
@@ -64,9 +58,7 @@ const source = await rpc("tools/call", {
 });
 assert(source.body.result.structuredContent.files.length > 0);
 assert(
-  source.body.result.structuredContent.files.every(
-    (file) => typeof file.content === "string",
-  ),
+  source.body.result.structuredContent.files.every((file) => typeof file.content === "string"),
 );
 const missing = await rpc("tools/call", {
   name: "get_component",
@@ -75,11 +67,7 @@ const missing = await rpc("tools/call", {
 assert.equal(missing.body.result.isError, true);
 const method = await rpc("unknown-method");
 assert.equal(method.body.error.code, -32601);
-const protocol = await rpc(
-  "ping",
-  {},
-  { "MCP-Protocol-Version": "unsupported" },
-);
+const protocol = await rpc("ping", {}, { "MCP-Protocol-Version": "unsupported" });
 assert.equal(protocol.response.status, 400);
 const denied = await rpc("ping", {}, { Origin: "https://untrusted.invalid" });
 assert.equal(denied.response.status, 403);

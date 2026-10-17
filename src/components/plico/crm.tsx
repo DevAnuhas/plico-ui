@@ -187,17 +187,19 @@ function navigateScreen(label: string) {
   window.dispatchEvent(new PopStateEvent("popstate"));
   window.dispatchEvent(new Event("screen-query"));
 }
-type CellCoordinate = {r: number; c: number};
+type CellCoordinate = { r: number; c: number };
 type EditDone = (commit: boolean, direction?: string, overrideValue?: string) => void;
-interface FileRecord {name: string; type: "DOC" | "PDF" | "XLS"; edited?: string; owner?: string}
+interface FileRecord {
+  name: string;
+  type: "DOC" | "PDF" | "XLS";
+  edited?: string;
+  owner?: string;
+}
 var cellText = (value: unknown) =>
   typeof value == `string` || typeof value == `number` ? String(value) : ``;
 var columnLetter = (index: number) => String.fromCharCode(65 + (index % 26));
 var isApplePlatform = () => typeof navigator < `u` && /Mac|iPhone|iPad/.test(navigator.platform);
-function parseCellInput(
-  text: string,
-  column: DataColumn,
-) {
+function parseCellInput(text: string, column: DataColumn) {
   let trimmed = text.trim();
   if (column.type !== `number`) return trimmed;
   if (trimmed === ``) return ``;
@@ -216,15 +218,15 @@ function DataTable({
   className: className,
 }: DataTableProps) {
   let [localRows, setLocalRows] = React.useState(rows),
-    historyRef = React.useRef<{past: DataRow[][]; future: DataRow[][]}>({
+    historyRef = React.useRef<{ past: DataRow[][]; future: DataRow[][] }>({
       past: [],
       future: [],
     }),
     [selectedIds, setSelectedIds] = React.useState(new Set<string>()),
-    [sort, setSort] = React.useState<{key: string; dir: "asc" | "desc"} | null>(null),
+    [sort, setSort] = React.useState<{ key: string; dir: "asc" | "desc" } | null>(null),
     [activeCell, setActiveCellState] = React.useState<CellCoordinate | null>(null),
     [anchorCell, setAnchorCellState] = React.useState<CellCoordinate | null>(null),
-    cellStateRef = React.useRef<{active: CellCoordinate | null; anchor: CellCoordinate | null}>({
+    cellStateRef = React.useRef<{ active: CellCoordinate | null; anchor: CellCoordinate | null }>({
       active: null,
       anchor: null,
     }),
@@ -234,7 +236,7 @@ function DataTable({
     setAnchorCell = (cell: CellCoordinate | null) => {
       ((cellStateRef.current.anchor = cell), setAnchorCellState(cell));
     },
-    [editing, setEditing] = React.useState<{cell: CellCoordinate; value: string} | null>(null),
+    [editing, setEditing] = React.useState<{ cell: CellCoordinate; value: string } | null>(null),
     [dragging, setDragging] = React.useState(false),
     [, forceRender] = React.useState(0),
     scrollRef = React.useRef<HTMLDivElement | null>(null),
@@ -258,8 +260,7 @@ function DataTable({
                 }) * t;
       });
     }, [localRows, sort, columns]),
-    canEditColumn = (columnIndex: number) =>
-      editable && columns[columnIndex]?.editable !== false,
+    canEditColumn = (columnIndex: number) => editable && columns[columnIndex]?.editable !== false,
     commitRows = (nextRows: DataRow[]) => {
       (historyRef.current.past.push(localRows),
         historyRef.current.past.length > 100 && historyRef.current.past.shift(),
@@ -893,7 +894,15 @@ function DataTable({
     </>
   );
 }
-function CellValue({ column: column, row: row, tone: tone }: {column: DataColumn; row: DataRow; tone: Record<string, string>}) {
+function CellValue({
+  column: column,
+  row: row,
+  tone: tone,
+}: {
+  column: DataColumn;
+  row: DataRow;
+  tone: Record<string, string>;
+}) {
   let value = row[column.key];
   if (column.type === `title`)
     return (
@@ -935,7 +944,13 @@ function CellEditor({
   options: options,
   onChange: onChange,
   onDone: onDone,
-}: {column: DataColumn; value: string; options?: string[]; onChange: (value: string) => void; onDone: EditDone}) {
+}: {
+  column: DataColumn;
+  value: string;
+  options?: string[];
+  onChange: (value: string) => void;
+  onDone: EditDone;
+}) {
   let inputRef = React.useRef<HTMLInputElement | null>(null);
   return (
     React.useEffect(() => {
@@ -979,10 +994,18 @@ function SelectCellEditor({
   options: options,
   onChange: onChange,
   onDone: onDone,
-}: {label: string; value: string; options: string[]; onChange: (value: string) => void; onDone: EditDone}) {
+}: {
+  label: string;
+  value: string;
+  options: string[];
+  onChange: (value: string) => void;
+  onDone: EditDone;
+}) {
   let anchorRef = React.useRef<HTMLSpanElement | null>(null),
     pickerRef = React.useRef<HTMLDivElement | null>(null),
-    [position, setPosition] = React.useState<{left: number; top: number; width: number} | null>(null);
+    [position, setPosition] = React.useState<{ left: number; top: number; width: number } | null>(
+      null,
+    );
   return (
     React.useLayoutEffect(() => {
       let e = () => {
@@ -1064,7 +1087,17 @@ function SelectCellEditor({
     )
   );
 }
-function SelectionCheckbox({ checked: checked, mixed: mixed, label: label, onChange: onChange }: {checked: boolean; mixed?: boolean; label: string; onChange: () => void}) {
+function SelectionCheckbox({
+  checked: checked,
+  mixed: mixed,
+  label: label,
+  onChange: onChange,
+}: {
+  checked: boolean;
+  mixed?: boolean;
+  label: string;
+  onChange: () => void;
+}) {
   return (
     <button
       type={`button`}
@@ -3147,7 +3180,7 @@ function DropdownMenu({
   );
 }
 function useToast(): [React.ReactNode, (message: string) => void] {
-  let [message, setMessage] = React.useState<{id: number; text: string} | null>(null);
+  let [message, setMessage] = React.useState<{ id: number; text: string } | null>(null);
   return (
     React.useEffect(() => {
       if (!message) return;
@@ -3161,7 +3194,8 @@ function useToast(): [React.ReactNode, (message: string) => void] {
           {message.text}
         </div>
       ) : null,
-      (e: string) => setMessage({
+      (e: string) =>
+        setMessage({
           id: Date.now(),
           text: e,
         }),
@@ -3178,7 +3212,7 @@ var documentNames = {
   PDF: `PDF`,
   XLS: `Spreadsheet`,
 };
-function FileTemplate({ file: file, meta: meta }: {file: FileRecord; meta?: React.ReactNode}) {
+function FileTemplate({ file: file, meta: meta }: { file: FileRecord; meta?: React.ReactNode }) {
   return (
     <button type={`button`} className={`ui-as-template`}>
       <span className={`ui-as-template__preview`}>
@@ -3189,7 +3223,7 @@ function FileTemplate({ file: file, meta: meta }: {file: FileRecord; meta?: Reac
     </button>
   );
 }
-function DocumentIcon({ type: type, color: color }: {type: FileRecord["type"]; color?: string}) {
+function DocumentIcon({ type: type, color: color }: { type: FileRecord["type"]; color?: string }) {
   return (
     <span className={`ui-as-doc`} data-color={color} aria-hidden={`true`}>
       <span className={`ui-as-doc__art`}>
@@ -4705,7 +4739,7 @@ var ValueValue8: Record<string, [string, string]> = {
     `M2 18.439l3.69-2.828c1.961 2.56 4.044 3.739 6.363 3.739 2.307 0 4.33-1.166 6.203-3.704L22 18.405C19.298 22.065 15.941 24 12.053 24 8.178 24 4.788 22.078 2 18.439zM12.04 6.15l-6.568 5.66-3.036-3.52L12.055 0l9.543 8.296-3.05 3.509z`,
   ],
 };
-var ValueValue9 = ({ id: id }: {id: keyof typeof ValueValue8}) => (
+var ValueValue9 = ({ id: id }: { id: keyof typeof ValueValue8 }) => (
   <span className={`ui-as-crm__logo`}>
     <svg viewBox={`0 0 24 24`} fill={ValueValue8[id][0]} aria-hidden={`true`}>
       <path d={ValueValue8[id][1]} />
@@ -4721,7 +4755,7 @@ var ValueValue10 = () => (
     <path d={`M0 28.5A9.5 9.5 0 0 0 9.5 38H19V19H9.5A9.5 9.5 0 0 0 0 28.5Z`} fill={`#A259FF`} />
   </svg>
 );
-var Iconz = ({ id: id }: {id: keyof typeof ValueValue8}) =>
+var Iconz = ({ id: id }: { id: keyof typeof ValueValue8 }) =>
   id === `figma` ? (
     <span
       className={`ui-as-crm__tab-logo`}
@@ -5082,9 +5116,11 @@ function Crm(e: AppShellProps) {
                 return (
                   <section
                     className={`ui-as-board__col ui-as-rise`}
-                    style={{
-                      "--i": t,
-                    } as React.CSSProperties}
+                    style={
+                      {
+                        "--i": t,
+                      } as React.CSSProperties
+                    }
                     key={e}
                   >
                     <header>
@@ -5121,15 +5157,19 @@ function Crm(e: AppShellProps) {
               <h2 className={`ui-as-rise`}>{`Install the tracking pixel`}</h2>
               <p
                 className={`ui-as-rise`}
-                style={{
-                  "--i": 1,
-                } as React.CSSProperties}
+                style={
+                  {
+                    "--i": 1,
+                  } as React.CSSProperties
+                }
               >{`Add this snippet to every page, right before the closing </head> tag. Visits and sign-ups then show up on each company.`}</p>
               <div
                 className={`ui-as-pixel__code ui-as-rise`}
-                style={{
-                  "--i": 2,
-                } as React.CSSProperties}
+                style={
+                  {
+                    "--i": 2,
+                  } as React.CSSProperties
+                }
               >
                 <button type={`button`} className={`ui-as-tool ui-as-tool--label`} onClick={D}>
                   <Icon icon={y ? CheckIcon : valueValue6} size={14} />
@@ -5139,9 +5179,11 @@ function Crm(e: AppShellProps) {
               </div>
               <div
                 className={`ui-as-pixel__status ui-as-rise`}
-                style={{
-                  "--i": 3,
-                } as React.CSSProperties}
+                style={
+                  {
+                    "--i": 3,
+                  } as React.CSSProperties
+                }
                 data-state={x}
               >
                 <span className={`ui-as-pixel__light`} />
@@ -5173,9 +5215,11 @@ function Crm(e: AppShellProps) {
               {valueValue3.map((e, t) => (
                 <div
                   className={`ui-as-rise`}
-                  style={{
-                    "--i": t,
-                  } as React.CSSProperties}
+                  style={
+                    {
+                      "--i": t,
+                    } as React.CSSProperties
+                  }
                   key={e.name}
                 >
                   <FileTemplate

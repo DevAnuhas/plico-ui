@@ -1,11 +1,15 @@
-import {brand} from '../../lib/brand.js';
-function localText(value){return value.replaceAll('__PLICO_ORIGIN__',brand.url).replaceAll('__PLICO_REPO__',brand.repoUrl)}
+import { brand } from "../../lib/brand.js";
+function localText(value) {
+  return value
+    .replaceAll("__PLICO_ORIGIN__", brand.url)
+    .replaceAll("__PLICO_REPO__", brand.repoUrl);
+}
 import { t as e } from "./react-bridge.js";
 import { t } from "./jsx-bridge.js";
 var n = e(),
   r = t(),
-  i = e => typeof e == `string` || typeof e == `number` ? String(e) : ``,
-  a = e => String.fromCharCode(65 + e % 26),
+  i = (e) => (typeof e == `string` || typeof e == `number` ? String(e) : ``),
+  a = (e) => String.fromCharCode(65 + (e % 26)),
   o = () => typeof navigator < `u` && /Mac|iPhone|iPad/.test(navigator.platform);
 function s(e, t) {
   let n = e.trim();
@@ -23,12 +27,12 @@ function c({
   editable: g = !0,
   onRowsChange: _,
   onSelectionChange: v,
-  className: y
+  className: y,
 }) {
   let [x, S] = (0, n.useState)(d),
     C = (0, n.useRef)({
       past: [],
-      future: []
+      future: [],
     }),
     [w, ie] = (0, n.useState)(new Set()),
     [T, E] = (0, n.useState)(null),
@@ -36,13 +40,13 @@ function c({
     [O, oe] = (0, n.useState)(null),
     k = (0, n.useRef)({
       active: null,
-      anchor: null
+      anchor: null,
     }),
-    A = e => {
-      k.current.active = e, ae(e);
+    A = (e) => {
+      ((k.current.active = e), ae(e));
     },
-    j = e => {
-      k.current.anchor = e, oe(e);
+    j = (e) => {
+      ((k.current.anchor = e), oe(e));
     },
     [M, N] = (0, n.useState)(null),
     [P, F] = (0, n.useState)(!1),
@@ -52,19 +56,29 @@ function c({
     R = (0, n.useRef)(0),
     z = (0, n.useMemo)(() => {
       if (!T) return x;
-      let e = c.find(e => e.key === T.key),
+      let e = c.find((e) => e.key === T.key),
         t = T.dir === `asc` ? 1 : -1;
       return [...x].sort((n, r) => {
         let a = n[T.key],
           o = r[T.key];
-        return i(a) === `` ? 1 : i(o) === `` ? -1 : e?.type === `number` ? (Number(a) - Number(o)) * t : i(a).localeCompare(i(o), void 0, {
-          numeric: !0
-        }) * t;
+        return i(a) === ``
+          ? 1
+          : i(o) === ``
+            ? -1
+            : e?.type === `number`
+              ? (Number(a) - Number(o)) * t
+              : i(a).localeCompare(i(o), void 0, {
+                  numeric: !0,
+                }) * t;
       });
     }, [x, T, c]),
-    B = e => g && c[e]?.editable !== !1,
-    V = e => {
-      C.current.past.push(x), C.current.past.length > 100 && C.current.past.shift(), C.current.future = [], S(e), _?.(e);
+    B = (e) => g && c[e]?.editable !== !1,
+    V = (e) => {
+      (C.current.past.push(x),
+        C.current.past.length > 100 && C.current.past.shift(),
+        (C.current.future = []),
+        S(e),
+        _?.(e));
     },
     H = () => {
       let e = C.current.past.pop();
@@ -81,465 +95,667 @@ function c({
         r1: Math.min(e.r, D.r),
         r2: Math.max(e.r, D.r),
         c1: Math.min(e.c, D.c),
-        c2: Math.max(e.c, D.c)
+        c2: Math.max(e.c, D.c),
       };
     }, [D, O]),
     G = (e, t) => !!W && e >= W.r1 && e <= W.r2 && t >= W.c1 && t <= W.c2,
     K = (e, t) => {
       let n = new Map();
-      t.forEach((t, r) => t.forEach((t, i) => {
-        let a = z[e.r + r],
-          o = e.c + i,
-          l = c[o];
-        a && l && B(o) && n.set(a.id, {
-          ...n.get(a.id),
-          [l.key]: s(t, l)
-        });
-      })), n.size && V(x.map(e => n.has(e.id) ? {
-        ...e,
-        ...n.get(e.id)
-      } : e));
+      (t.forEach((t, r) =>
+        t.forEach((t, i) => {
+          let a = z[e.r + r],
+            o = e.c + i,
+            l = c[o];
+          a &&
+            l &&
+            B(o) &&
+            n.set(a.id, {
+              ...n.get(a.id),
+              [l.key]: s(t, l),
+            });
+        }),
+      ),
+        n.size &&
+          V(
+            x.map((e) =>
+              n.has(e.id)
+                ? {
+                    ...e,
+                    ...n.get(e.id),
+                  }
+                : e,
+            ),
+          ));
     },
     q = (e, t = !1) => {
       let n = Math.max(0, Math.min(z.length - 1, e.r)),
         r = Math.max(0, Math.min(c.length - 1, e.c));
-      t ? k.current.anchor || j(k.current.active ?? {
-        r: n,
-        c: r
-      }) : j(null), A({
-        r: n,
-        c: r
-      });
+      (t
+        ? k.current.anchor ||
+          j(
+            k.current.active ?? {
+              r: n,
+              c: r,
+            },
+          )
+        : j(null),
+        A({
+          r: n,
+          c: r,
+        }));
     },
     J = (e, t) => {
-      B(e.c) && z[e.r] && N({
-        cell: e,
-        value: t ?? i(z[e.r][c[e.c].key])
-      });
+      B(e.c) &&
+        z[e.r] &&
+        N({
+          cell: e,
+          value: t ?? i(z[e.r][c[e.c].key]),
+        });
     },
     Y = (e, t, n) => {
       if (M && e) {
         let e = n ?? M.value;
         e !== i(z[M.cell.r]?.[c[M.cell.c].key]) && K(M.cell, [[e]]);
       }
-      N(null), t && q(t), requestAnimationFrame(() => L.current?.focus({
-        preventScroll: !0
-      }));
+      (N(null),
+        t && q(t),
+        requestAnimationFrame(() =>
+          L.current?.focus({
+            preventScroll: !0,
+          }),
+        ));
     };
-  (0, n.useEffect)(() => {
-    D && L.current?.querySelector(`[data-cell="${D.r}-${D.c}"]`)?.scrollIntoView({
-      block: `nearest`,
-      inline: `nearest`
-    });
-  }, [D]), (0, n.useEffect)(() => {
-    if (!P) return;
-    let e = () => F(!1);
-    return window.addEventListener(`pointerup`, e), () => window.removeEventListener(`pointerup`, e);
-  }, [P]);
-  let ce = e => {
+  ((0, n.useEffect)(() => {
+    D &&
+      L.current?.querySelector(`[data-cell="${D.r}-${D.c}"]`)?.scrollIntoView({
+        block: `nearest`,
+        inline: `nearest`,
+      });
+  }, [D]),
+    (0, n.useEffect)(() => {
+      if (!P) return;
+      let e = () => F(!1);
+      return (
+        window.addEventListener(`pointerup`, e),
+        () => window.removeEventListener(`pointerup`, e)
+      );
+    }, [P]));
+  let ce = (e) => {
       if (M) return;
       let t = o() ? e.metaKey : e.ctrlKey;
-      if (t && e.key.toLowerCase() === `z`) return e.preventDefault(), e.shiftKey ? U() : H();
-      if (t && e.key.toLowerCase() === `y`) return e.preventDefault(), U();
+      if (t && e.key.toLowerCase() === `z`) return (e.preventDefault(), e.shiftKey ? U() : H());
+      if (t && e.key.toLowerCase() === `y`) return (e.preventDefault(), U());
       if (t && e.key.toLowerCase() === `a`) {
-        e.preventDefault(), j({
-          r: 0,
-          c: 0
-        }), A({
-          r: z.length - 1,
-          c: c.length - 1
-        });
+        (e.preventDefault(),
+          j({
+            r: 0,
+            c: 0,
+          }),
+          A({
+            r: z.length - 1,
+            c: c.length - 1,
+          }));
         return;
       }
       let n = k.current.active;
       if (!n) {
-        (e.key.startsWith(`Arrow`) || e.key === `Enter`) && (e.preventDefault(), q({
-          r: 0,
-          c: 0
-        }));
+        (e.key.startsWith(`Arrow`) || e.key === `Enter`) &&
+          (e.preventDefault(),
+          q({
+            r: 0,
+            c: 0,
+          }));
         return;
       }
-      let {
-          r,
-          c: i
-        } = n,
+      let { r, c: i } = n,
         a = t,
         s = {
           ArrowUp: {
             r: a ? 0 : r - 1,
-            c: i
+            c: i,
           },
           ArrowDown: {
             r: a ? z.length - 1 : r + 1,
-            c: i
+            c: i,
           },
           ArrowLeft: {
             r,
-            c: a ? 0 : i - 1
+            c: a ? 0 : i - 1,
           },
           ArrowRight: {
             r,
-            c: a ? c.length - 1 : i + 1
+            c: a ? c.length - 1 : i + 1,
           },
           Home: {
             r: t ? 0 : r,
-            c: 0
+            c: 0,
           },
           End: {
             r: t ? z.length - 1 : r,
-            c: c.length - 1
-          }
+            c: c.length - 1,
+          },
         };
-      if (s[e.key]) return e.preventDefault(), q(s[e.key], e.shiftKey);
-      if (e.key === `Tab`) return e.preventDefault(), q({
-        r,
-        c: i + (e.shiftKey ? -1 : 1)
-      });
-      if (e.key === `Enter` || e.key === `F2`) return e.preventDefault(), J(n);
+      if (s[e.key]) return (e.preventDefault(), q(s[e.key], e.shiftKey));
+      if (e.key === `Tab`)
+        return (
+          e.preventDefault(),
+          q({
+            r,
+            c: i + (e.shiftKey ? -1 : 1),
+          })
+        );
+      if (e.key === `Enter` || e.key === `F2`) return (e.preventDefault(), J(n));
       if (e.key === `Escape`) return j(null);
       if ((e.key === `Delete` || e.key === `Backspace`) && W) {
         e.preventDefault();
-        let t = Array.from({
-          length: W.r2 - W.r1 + 1
-        }, () => Array.from({
-          length: W.c2 - W.c1 + 1
-        }, () => ``));
-        return K({
-          r: W.r1,
-          c: W.c1
-        }, t);
+        let t = Array.from(
+          {
+            length: W.r2 - W.r1 + 1,
+          },
+          () =>
+            Array.from(
+              {
+                length: W.c2 - W.c1 + 1,
+              },
+              () => ``,
+            ),
+        );
+        return K(
+          {
+            r: W.r1,
+            c: W.c1,
+          },
+          t,
+        );
       }
-      e.key.length === 1 && !t && !e.altKey && c[i].type !== `tag` && (e.preventDefault(), J(n, e.key));
+      e.key.length === 1 &&
+        !t &&
+        !e.altKey &&
+        c[i].type !== `tag` &&
+        (e.preventDefault(), J(n, e.key));
     },
-    le = () => W ? z.slice(W.r1, W.r2 + 1).map(e => c.slice(W.c1, W.c2 + 1).map(t => i(e[t.key]).replace(/[\t\n]/g, ` `)).join(`	`)).join(`
-`) : ``,
-    X = e => {
+    le = () =>
+      W
+        ? z.slice(W.r1, W.r2 + 1).map((e) =>
+            c
+              .slice(W.c1, W.c2 + 1)
+              .map((t) => i(e[t.key]).replace(/[\t\n]/g, ` `))
+              .join(`	`),
+          ).join(`
+`)
+        : ``,
+    X = (e) => {
       !M && W && (e.preventDefault(), e.clipboardData.setData(`text/plain`, le()));
     },
-    ue = e => {
+    ue = (e) => {
       if (M || !W) return;
       X(e);
-      let t = Array.from({
-        length: W.r2 - W.r1 + 1
-      }, () => Array.from({
-        length: W.c2 - W.c1 + 1
-      }, () => ``));
-      K({
-        r: W.r1,
-        c: W.c1
-      }, t);
+      let t = Array.from(
+        {
+          length: W.r2 - W.r1 + 1,
+        },
+        () =>
+          Array.from(
+            {
+              length: W.c2 - W.c1 + 1,
+            },
+            () => ``,
+          ),
+      );
+      K(
+        {
+          r: W.r1,
+          c: W.c1,
+        },
+        t,
+      );
     },
-    de = e => {
+    de = (e) => {
       if (M || !D) return;
       e.preventDefault();
       let t = e.clipboardData.getData(`text/plain`).replace(/\r/g, ``).replace(/\n$/, ``);
       if (!t) return;
-      let n = t.split(`
-`).map(e => e.split(`	`));
+      let n = t
+        .split(
+          `
+`,
+        )
+        .map((e) => e.split(`	`));
       if (n.length === 1 && n[0].length === 1 && W) {
-        let e = Array.from({
-          length: W.r2 - W.r1 + 1
-        }, () => Array.from({
-          length: W.c2 - W.c1 + 1
-        }, () => n[0][0]));
-        return K({
-          r: W.r1,
-          c: W.c1
-        }, e);
+        let e = Array.from(
+          {
+            length: W.r2 - W.r1 + 1,
+          },
+          () =>
+            Array.from(
+              {
+                length: W.c2 - W.c1 + 1,
+              },
+              () => n[0][0],
+            ),
+        );
+        return K(
+          {
+            r: W.r1,
+            c: W.c1,
+          },
+          e,
+        );
       }
-      K(W ? {
-        r: W.r1,
-        c: W.c1
-      } : D, n);
+      K(
+        W
+          ? {
+              r: W.r1,
+              c: W.c1,
+            }
+          : D,
+        n,
+      );
     },
-    fe = e => E(t => t?.key === e ? t.dir === `asc` ? {
-      key: e,
-      dir: `desc`
-    } : null : {
-      key: e,
-      dir: `asc`
-    }),
-    Z = e => {
-      ie(e), v?.(x.filter(t => e.has(t.id)).map(e => e.id));
+    fe = (e) =>
+      E((t) =>
+        t?.key === e
+          ? t.dir === `asc`
+            ? {
+                key: e,
+                dir: `desc`,
+              }
+            : null
+          : {
+              key: e,
+              dir: `asc`,
+            },
+      ),
+    Z = (e) => {
+      (ie(e), v?.(x.filter((t) => e.has(t.id)).map((e) => e.id)));
     },
     Q = z.length > 0 && w.size === z.length,
     pe = w.size > 0 && !Q,
     me = () => {
       R.current += 1;
-      let e = c.find(e => e.type === `title`)?.key ?? c[0].key,
+      let e = c.find((e) => e.type === `title`)?.key ?? c[0].key,
         t = {
           id: `new-${R.current}`,
-          [e]: ``
+          [e]: ``,
         };
-      V([...x, t]), E(null);
+      (V([...x, t]), E(null));
       let n = {
         r: x.length,
-        c: Math.max(0, c.findIndex(t => t.key === e))
+        c: Math.max(
+          0,
+          c.findIndex((t) => t.key === e),
+        ),
       };
-      A(n), j(null), N({
-        cell: n,
-        value: ``
-      });
+      (A(n),
+        j(null),
+        N({
+          cell: n,
+          value: ``,
+        }));
     },
     he = () => {
-      V(x.filter(e => !w.has(e.id))), Z(new Set()), A(null), j(null);
+      (V(x.filter((e) => !w.has(e.id))), Z(new Set()), A(null), j(null));
     },
-    ge = e => e.options ?? [...new Set(x.map(t => i(t[e.key])).filter(Boolean))],
+    ge = (e) => e.options ?? [...new Set(x.map((t) => i(t[e.key])).filter(Boolean))],
     _e = (() => {
       if (!W || !D) return null;
       if ((W.r2 - W.r1 + 1) * (W.c2 - W.c1 + 1) === 1) return `${a(D.c)}${D.r + 1}`;
       let e = 0,
         t = 0,
         n = !1;
-      for (let r = W.r1; r <= W.r2; r++) for (let a = W.c1; a <= W.c2; a++) {
-        let o = z[r]?.[c[a].key];
-        i(o) !== `` && e++, c[a].type === `number` && typeof o == `number` && (n = !0, t += o);
-      }
+      for (let r = W.r1; r <= W.r2; r++)
+        for (let a = W.c1; a <= W.c2; a++) {
+          let o = z[r]?.[c[a].key];
+          (i(o) !== `` && e++,
+            c[a].type === `number` && typeof o == `number` && ((n = !0), (t += o)));
+        }
       return `${e} ${e === 1 ? `value` : `values`}${n ? ` · Sum ${t.toLocaleString(`en-US`)}` : ``}`;
     })(),
     $ = o() ? `⌘` : `Ctrl`;
   return (0, r.jsxs)(r.Fragment, {
-    children: [(0, r.jsx)(`style`, {
-      href: `ui-data-table`,
-      precedence: `default`,
-      children: re
-    }), (0, r.jsxs)(`section`, {
-      className: [`ui-dt`, y].filter(Boolean).join(` `),
-      "aria-label": e,
-      children: [(0, r.jsxs)(`header`, {
-        className: `ui-dt__head`,
-        children: [t && (0, r.jsx)(`span`, {
-          className: `ui-dt__title-icon`,
-          children: t
-        }), (0, r.jsx)(`h3`, {
-          className: `ui-dt__title`,
-          children: e
-        }), g && (0, r.jsxs)(`div`, {
-          className: `ui-dt__tools`,
-          children: [(0, r.jsx)(`button`, {
-            type: `button`,
-            className: `ui-dt__tool`,
-            "aria-label": `Undo (${$} Z)`,
-            title: `Undo · ${$} Z`,
-            disabled: !C.current.past.length,
-            onClick: () => {
-              H(), I(e => e + 1);
-            },
-            children: (0, r.jsx)(te, {})
-          }), (0, r.jsx)(`button`, {
-            type: `button`,
-            className: `ui-dt__tool`,
-            "aria-label": `Redo (${$} Shift Z)`,
-            title: `Redo · ${$} ⇧ Z`,
-            disabled: !C.current.future.length,
-            onClick: () => {
-              U(), I(e => e + 1);
-            },
-            children: (0, r.jsx)(m, {})
-          })]
-        })]
-      }), (0, r.jsx)(`div`, {
-        className: `ui-dt__card`,
-        children: (0, r.jsx)(`div`, {
-          className: `ui-dt__morph`,
-          ref: se,
-          children: (0, r.jsxs)(`div`, {
-            ref: L,
-            className: `ui-dt__scroll`,
-            role: `grid`,
-            "aria-label": e,
-            "aria-rowcount": z.length + 1,
-            "aria-multiselectable": `true`,
-            tabIndex: 0,
-            onKeyDown: ce,
-            onCopy: X,
-            onCut: ue,
-            onPaste: de,
-            "data-dragging": P || void 0,
-            children: [(0, r.jsxs)(`table`, {
-              className: `ui-dt__table`,
-              role: `presentation`,
-              children: [(0, r.jsxs)(`colgroup`, {
-                children: [(0, r.jsx)(`col`, {
-                  style: {
-                    width: 44
-                  }
-                }), c.map(e => (0, r.jsx)(`col`, {
-                  style: e.width ? {
-                    width: e.width
-                  } : void 0
-                }, e.key))]
-              }), (0, r.jsx)(`thead`, {
-                children: (0, r.jsxs)(`tr`, {
-                  role: `row`,
-                  children: [(0, r.jsx)(`th`, {
-                    className: `ui-dt__select`,
-                    role: `columnheader`,
-                    children: (0, r.jsx)(f, {
-                      checked: Q,
-                      mixed: pe,
-                      label: `Select all rows`,
-                      onChange: () => Z(Q ? new Set() : new Set(z.map(e => e.id)))
-                    })
-                  }), c.map((e, t) => {
-                    let n = T?.key === e.key ? T.dir : null;
-                    return (0, r.jsx)(`th`, {
-                      role: `columnheader`,
-                      "aria-sort": n === `asc` ? `ascending` : n === `desc` ? `descending` : `none`,
-                      "data-type": e.type,
-                      "data-col-active": W && t >= W.c1 && t <= W.c2 || void 0,
-                      children: (0, r.jsxs)(`button`, {
-                        type: `button`,
-                        className: `ui-dt__th`,
-                        onClick: () => fe(e.key),
-                        children: [e.icon && (0, r.jsx)(`span`, {
-                          className: `ui-dt__col-icon`,
-                          children: e.icon
-                        }), (0, r.jsx)(`span`, {
-                          className: `ui-dt__th-label`,
-                          children: e.label
-                        }), (0, r.jsx)(`span`, {
-                          className: `ui-dt__sort`,
-                          "data-dir": n ?? void 0,
-                          "aria-hidden": `true`,
-                          children: (0, r.jsx)(ne, {})
-                        })]
-                      })
-                    }, e.key);
-                  })]
-                })
-              }), (0, r.jsx)(`tbody`, {
-                children: z.map((e, t) => {
-                  let n = w.has(e.id);
-                  return (0, r.jsxs)(`tr`, {
-                    role: `row`,
-                    "data-selected": n || void 0,
-                    children: [(0, r.jsx)(`td`, {
-                      className: `ui-dt__select`,
-                      role: `gridcell`,
-                      children: (0, r.jsx)(f, {
-                        checked: n,
-                        label: `Select ${i(e[c.find(e => e.type === `title`)?.key ?? c[0].key]) || `row`}`,
-                        onChange: () => {
-                          let t = new Set(w);
-                          t.has(e.id) ? t.delete(e.id) : t.add(e.id), Z(t);
-                        }
-                      })
-                    }), c.map((n, i) => {
-                      let a = D?.r === t && D?.c === i,
-                        o = M?.cell.r === t && M?.cell.c === i;
-                      return (0, r.jsx)(`td`, {
-                        role: `gridcell`,
-                        "data-cell": `${t}-${i}`,
-                        "data-type": n.type,
-                        "data-active": a || void 0,
-                        "data-in-range": G(t, i) && !a || void 0,
-                        "data-editing": o || void 0,
-                        "aria-selected": G(t, i),
-                        "aria-readonly": !B(i) || void 0,
-                        onPointerDown: e => {
-                          o || e.button !== 0 || e.target.closest(`a`) || (e.preventDefault(), L.current?.focus({
-                            preventScroll: !0
-                          }), M && Y(!0), q({
-                            r: t,
-                            c: i
-                          }, e.shiftKey), F(!0));
-                        },
-                        onPointerEnter: () => {
-                          P && (k.current.anchor || j(k.current.active), A({
-                            r: t,
-                            c: i
-                          }));
-                        },
-                        onDoubleClick: () => J({
-                          r: t,
-                          c: i
-                        }),
-                        children: o && M ? (0, r.jsx)(u, {
-                          column: n,
-                          value: M.value,
-                          options: n.type === `tag` ? ge(n) : void 0,
-                          onChange: e => N({
-                            cell: M.cell,
-                            value: e
+    children: [
+      (0, r.jsx)(`style`, {
+        href: `ui-data-table`,
+        precedence: `default`,
+        children: re,
+      }),
+      (0, r.jsxs)(`section`, {
+        className: [`ui-dt`, y].filter(Boolean).join(` `),
+        "aria-label": e,
+        children: [
+          (0, r.jsxs)(`header`, {
+            className: `ui-dt__head`,
+            children: [
+              t &&
+                (0, r.jsx)(`span`, {
+                  className: `ui-dt__title-icon`,
+                  children: t,
+                }),
+              (0, r.jsx)(`h3`, {
+                className: `ui-dt__title`,
+                children: e,
+              }),
+              g &&
+                (0, r.jsxs)(`div`, {
+                  className: `ui-dt__tools`,
+                  children: [
+                    (0, r.jsx)(`button`, {
+                      type: `button`,
+                      className: `ui-dt__tool`,
+                      "aria-label": `Undo (${$} Z)`,
+                      title: `Undo · ${$} Z`,
+                      disabled: !C.current.past.length,
+                      onClick: () => {
+                        (H(), I((e) => e + 1));
+                      },
+                      children: (0, r.jsx)(te, {}),
+                    }),
+                    (0, r.jsx)(`button`, {
+                      type: `button`,
+                      className: `ui-dt__tool`,
+                      "aria-label": `Redo (${$} Shift Z)`,
+                      title: `Redo · ${$} ⇧ Z`,
+                      disabled: !C.current.future.length,
+                      onClick: () => {
+                        (U(), I((e) => e + 1));
+                      },
+                      children: (0, r.jsx)(m, {}),
+                    }),
+                  ],
+                }),
+            ],
+          }),
+          (0, r.jsx)(`div`, {
+            className: `ui-dt__card`,
+            children: (0, r.jsx)(`div`, {
+              className: `ui-dt__morph`,
+              ref: se,
+              children: (0, r.jsxs)(`div`, {
+                ref: L,
+                className: `ui-dt__scroll`,
+                role: `grid`,
+                "aria-label": e,
+                "aria-rowcount": z.length + 1,
+                "aria-multiselectable": `true`,
+                tabIndex: 0,
+                onKeyDown: ce,
+                onCopy: X,
+                onCut: ue,
+                onPaste: de,
+                "data-dragging": P || void 0,
+                children: [
+                  (0, r.jsxs)(`table`, {
+                    className: `ui-dt__table`,
+                    role: `presentation`,
+                    children: [
+                      (0, r.jsxs)(`colgroup`, {
+                        children: [
+                          (0, r.jsx)(`col`, {
+                            style: {
+                              width: 44,
+                            },
                           }),
-                          onDone: (e, n, r) => Y(e, n ? {
-                            r: t + +(n === `down`),
-                            c: i + +(n === `right`)
-                          } : void 0, r)
-                        }) : (0, r.jsx)(l, {
-                          column: n,
-                          row: e,
-                          tone: h
-                        })
-                      }, n.key);
-                    })]
-                  }, e.id);
-                })
-              })]
-            }), z.length === 0 && (0, r.jsx)(`p`, {
-              className: `ui-dt__empty`,
-              children: `No rows yet`
-            })]
-          })
-        })
-      }), (0, r.jsxs)(`footer`, {
-        className: `ui-dt__foot`,
-        children: [w.size > 0 ? (0, r.jsxs)(`div`, {
-          className: `ui-dt__bulk`,
-          role: `status`,
-          children: [(0, r.jsxs)(`span`, {
-            children: [w.size, ` selected`]
-          }), g && (0, r.jsxs)(`button`, {
-            type: `button`,
-            className: `ui-dt__add ui-dt__add--danger`,
-            onClick: he,
-            children: [(0, r.jsx)(p, {}), `Delete`]
-          }), (0, r.jsx)(`button`, {
-            type: `button`,
-            className: `ui-dt__add`,
-            onClick: () => Z(new Set()),
-            children: `Clear`
-          })]
-        }) : g ? (0, r.jsxs)(`button`, {
-          type: `button`,
-          className: `ui-dt__add`,
-          onClick: me,
-          children: [(0, r.jsx)(ee, {}), `Add row`]
-        }) : (0, r.jsx)(`span`, {}), (0, r.jsx)(`span`, {
-          className: `ui-dt__summary`,
-          "aria-live": `polite`,
-          children: _e ?? (g ? `Double-click a cell to edit` : ``)
-        })]
-      })]
-    })]
+                          c.map((e) =>
+                            (0, r.jsx)(
+                              `col`,
+                              {
+                                style: e.width
+                                  ? {
+                                      width: e.width,
+                                    }
+                                  : void 0,
+                              },
+                              e.key,
+                            ),
+                          ),
+                        ],
+                      }),
+                      (0, r.jsx)(`thead`, {
+                        children: (0, r.jsxs)(`tr`, {
+                          role: `row`,
+                          children: [
+                            (0, r.jsx)(`th`, {
+                              className: `ui-dt__select`,
+                              role: `columnheader`,
+                              children: (0, r.jsx)(f, {
+                                checked: Q,
+                                mixed: pe,
+                                label: `Select all rows`,
+                                onChange: () => Z(Q ? new Set() : new Set(z.map((e) => e.id))),
+                              }),
+                            }),
+                            c.map((e, t) => {
+                              let n = T?.key === e.key ? T.dir : null;
+                              return (0, r.jsx)(
+                                `th`,
+                                {
+                                  role: `columnheader`,
+                                  "aria-sort":
+                                    n === `asc`
+                                      ? `ascending`
+                                      : n === `desc`
+                                        ? `descending`
+                                        : `none`,
+                                  "data-type": e.type,
+                                  "data-col-active": (W && t >= W.c1 && t <= W.c2) || void 0,
+                                  children: (0, r.jsxs)(`button`, {
+                                    type: `button`,
+                                    className: `ui-dt__th`,
+                                    onClick: () => fe(e.key),
+                                    children: [
+                                      e.icon &&
+                                        (0, r.jsx)(`span`, {
+                                          className: `ui-dt__col-icon`,
+                                          children: e.icon,
+                                        }),
+                                      (0, r.jsx)(`span`, {
+                                        className: `ui-dt__th-label`,
+                                        children: e.label,
+                                      }),
+                                      (0, r.jsx)(`span`, {
+                                        className: `ui-dt__sort`,
+                                        "data-dir": n ?? void 0,
+                                        "aria-hidden": `true`,
+                                        children: (0, r.jsx)(ne, {}),
+                                      }),
+                                    ],
+                                  }),
+                                },
+                                e.key,
+                              );
+                            }),
+                          ],
+                        }),
+                      }),
+                      (0, r.jsx)(`tbody`, {
+                        children: z.map((e, t) => {
+                          let n = w.has(e.id);
+                          return (0, r.jsxs)(
+                            `tr`,
+                            {
+                              role: `row`,
+                              "data-selected": n || void 0,
+                              children: [
+                                (0, r.jsx)(`td`, {
+                                  className: `ui-dt__select`,
+                                  role: `gridcell`,
+                                  children: (0, r.jsx)(f, {
+                                    checked: n,
+                                    label: `Select ${i(e[c.find((e) => e.type === `title`)?.key ?? c[0].key]) || `row`}`,
+                                    onChange: () => {
+                                      let t = new Set(w);
+                                      (t.has(e.id) ? t.delete(e.id) : t.add(e.id), Z(t));
+                                    },
+                                  }),
+                                }),
+                                c.map((n, i) => {
+                                  let a = D?.r === t && D?.c === i,
+                                    o = M?.cell.r === t && M?.cell.c === i;
+                                  return (0, r.jsx)(
+                                    `td`,
+                                    {
+                                      role: `gridcell`,
+                                      "data-cell": `${t}-${i}`,
+                                      "data-type": n.type,
+                                      "data-active": a || void 0,
+                                      "data-in-range": (G(t, i) && !a) || void 0,
+                                      "data-editing": o || void 0,
+                                      "aria-selected": G(t, i),
+                                      "aria-readonly": !B(i) || void 0,
+                                      onPointerDown: (e) => {
+                                        o ||
+                                          e.button !== 0 ||
+                                          e.target.closest(`a`) ||
+                                          (e.preventDefault(),
+                                          L.current?.focus({
+                                            preventScroll: !0,
+                                          }),
+                                          M && Y(!0),
+                                          q(
+                                            {
+                                              r: t,
+                                              c: i,
+                                            },
+                                            e.shiftKey,
+                                          ),
+                                          F(!0));
+                                      },
+                                      onPointerEnter: () => {
+                                        P &&
+                                          (k.current.anchor || j(k.current.active),
+                                          A({
+                                            r: t,
+                                            c: i,
+                                          }));
+                                      },
+                                      onDoubleClick: () =>
+                                        J({
+                                          r: t,
+                                          c: i,
+                                        }),
+                                      children:
+                                        o && M
+                                          ? (0, r.jsx)(u, {
+                                              column: n,
+                                              value: M.value,
+                                              options: n.type === `tag` ? ge(n) : void 0,
+                                              onChange: (e) =>
+                                                N({
+                                                  cell: M.cell,
+                                                  value: e,
+                                                }),
+                                              onDone: (e, n, r) =>
+                                                Y(
+                                                  e,
+                                                  n
+                                                    ? {
+                                                        r: t + +(n === `down`),
+                                                        c: i + +(n === `right`),
+                                                      }
+                                                    : void 0,
+                                                  r,
+                                                ),
+                                            })
+                                          : (0, r.jsx)(l, {
+                                              column: n,
+                                              row: e,
+                                              tone: h,
+                                            }),
+                                    },
+                                    n.key,
+                                  );
+                                }),
+                              ],
+                            },
+                            e.id,
+                          );
+                        }),
+                      }),
+                    ],
+                  }),
+                  z.length === 0 &&
+                    (0, r.jsx)(`p`, {
+                      className: `ui-dt__empty`,
+                      children: `No rows yet`,
+                    }),
+                ],
+              }),
+            }),
+          }),
+          (0, r.jsxs)(`footer`, {
+            className: `ui-dt__foot`,
+            children: [
+              w.size > 0
+                ? (0, r.jsxs)(`div`, {
+                    className: `ui-dt__bulk`,
+                    role: `status`,
+                    children: [
+                      (0, r.jsxs)(`span`, {
+                        children: [w.size, ` selected`],
+                      }),
+                      g &&
+                        (0, r.jsxs)(`button`, {
+                          type: `button`,
+                          className: `ui-dt__add ui-dt__add--danger`,
+                          onClick: he,
+                          children: [(0, r.jsx)(p, {}), `Delete`],
+                        }),
+                      (0, r.jsx)(`button`, {
+                        type: `button`,
+                        className: `ui-dt__add`,
+                        onClick: () => Z(new Set()),
+                        children: `Clear`,
+                      }),
+                    ],
+                  })
+                : g
+                  ? (0, r.jsxs)(`button`, {
+                      type: `button`,
+                      className: `ui-dt__add`,
+                      onClick: me,
+                      children: [(0, r.jsx)(ee, {}), `Add row`],
+                    })
+                  : (0, r.jsx)(`span`, {}),
+              (0, r.jsx)(`span`, {
+                className: `ui-dt__summary`,
+                "aria-live": `polite`,
+                children: _e ?? (g ? `Double-click a cell to edit` : ``),
+              }),
+            ],
+          }),
+        ],
+      }),
+    ],
   });
 }
-function l({
-  column: e,
-  row: t,
-  tone: n
-}) {
+function l({ column: e, row: t, tone: n }) {
   let a = t[e.key];
-  if (e.type === `title`) return (0, r.jsxs)(`span`, {
-    className: `ui-dt__name`,
-    children: [t.logo ? (0, r.jsx)(`span`, {
-      className: `ui-dt__logo`,
-      children: t.logo
-    }) : (0, r.jsx)(`span`, {
-      className: `ui-dt__logo ui-dt__logo--empty`
-    }), (0, r.jsx)(`span`, {
-      className: `ui-dt__name-text`,
-      "data-empty": i(a) === `` || void 0,
-      children: i(a) || `Untitled`
-    })]
-  });
+  if (e.type === `title`)
+    return (0, r.jsxs)(`span`, {
+      className: `ui-dt__name`,
+      children: [
+        t.logo
+          ? (0, r.jsx)(`span`, {
+              className: `ui-dt__logo`,
+              children: t.logo,
+            })
+          : (0, r.jsx)(`span`, {
+              className: `ui-dt__logo ui-dt__logo--empty`,
+            }),
+        (0, r.jsx)(`span`, {
+          className: `ui-dt__name-text`,
+          "data-empty": i(a) === `` || void 0,
+          children: i(a) || `Untitled`,
+        }),
+      ],
+    });
   if (i(a) === ``) return null;
-  if (e.type === `tag`) return (0, r.jsx)(`span`, {
-    className: `ui-dt__tag`,
-    "data-tone": n[i(a)] ?? `blue`,
-    children: a
-  });
+  if (e.type === `tag`)
+    return (0, r.jsx)(`span`, {
+      className: `ui-dt__tag`,
+      "data-tone": n[i(a)] ?? `blue`,
+      children: a,
+    });
   if (e.type === `link`) {
     let e = /^https?:\/\//.test(i(a)) ? i(a) : `https://${i(a)}`;
     return (0, r.jsx)(`a`, {
@@ -548,247 +764,277 @@ function l({
       target: `_blank`,
       rel: `noreferrer`,
       tabIndex: -1,
-      children: i(a).replace(/^https?:\/\//, ``)
+      children: i(a).replace(/^https?:\/\//, ``),
     });
   }
-  return e.type === `number` && typeof a == `number` ? (0, r.jsx)(`span`, {
-    className: `ui-dt__text`,
-    children: a.toLocaleString(`en-US`)
-  }) : (0, r.jsx)(`span`, {
-    className: `ui-dt__text`,
-    children: a
-  });
+  return e.type === `number` && typeof a == `number`
+    ? (0, r.jsx)(`span`, {
+        className: `ui-dt__text`,
+        children: a.toLocaleString(`en-US`),
+      })
+    : (0, r.jsx)(`span`, {
+        className: `ui-dt__text`,
+        children: a,
+      });
 }
-function u({
-  column: e,
-  value: t,
-  options: i,
-  onChange: a,
-  onDone: o
-}) {
+function u({ column: e, value: t, options: i, onChange: a, onDone: o }) {
   let s = (0, n.useRef)(null);
-  return (0, n.useEffect)(() => {
-    let e = s.current;
-    if (!e) return;
-    e.focus();
-    let t = e.value.length;
-    e.setSelectionRange(t, t);
-  }, []), i ? (0, r.jsx)(d, {
-    label: e.label,
-    value: t,
-    options: i,
-    onChange: a,
-    onDone: o
-  }) : (0, r.jsx)(`input`, {
-    ref: s,
-    className: `ui-dt__input`,
-    value: t,
-    inputMode: e.type === `number` ? `decimal` : void 0,
-    "aria-label": e.label,
-    onChange: e => a(e.target.value),
-    onBlur: () => o(!0),
-    onKeyDown: e => {
-      e.key === `Enter` ? (e.preventDefault(), o(!0, `down`)) : e.key === `Tab` ? (e.preventDefault(), o(!0, `right`)) : e.key === `Escape` && (e.preventDefault(), o(!1));
-    }
-  });
+  return (
+    (0, n.useEffect)(() => {
+      let e = s.current;
+      if (!e) return;
+      e.focus();
+      let t = e.value.length;
+      e.setSelectionRange(t, t);
+    }, []),
+    i
+      ? (0, r.jsx)(d, {
+          label: e.label,
+          value: t,
+          options: i,
+          onChange: a,
+          onDone: o,
+        })
+      : (0, r.jsx)(`input`, {
+          ref: s,
+          className: `ui-dt__input`,
+          value: t,
+          inputMode: e.type === `number` ? `decimal` : void 0,
+          "aria-label": e.label,
+          onChange: (e) => a(e.target.value),
+          onBlur: () => o(!0),
+          onKeyDown: (e) => {
+            e.key === `Enter`
+              ? (e.preventDefault(), o(!0, `down`))
+              : e.key === `Tab`
+                ? (e.preventDefault(), o(!0, `right`))
+                : e.key === `Escape` && (e.preventDefault(), o(!1));
+          },
+        })
+  );
 }
-function d({
-  label: e,
-  value: t,
-  options: i,
-  onChange: a,
-  onDone: o
-}) {
+function d({ label: e, value: t, options: i, onChange: a, onDone: o }) {
   let s = (0, n.useRef)(null),
     c = (0, n.useRef)(null),
     [l, u] = (0, n.useState)(null);
-  return (0, n.useLayoutEffect)(() => {
-    let e = () => {
-      let e = s.current?.closest(`td`),
-        t = c.current;
-      if (!e || !t) return;
-      let n = e.getBoundingClientRect(),
-        r = t.offsetHeight,
-        i = window.innerHeight - n.top - 4 >= r + 8 ? n.top + 4 : Math.max(8, n.bottom - 4 - r);
-      u({
-        left: n.left + 6,
-        top: i,
-        width: Math.max(n.width - 12, 160)
-      });
-    };
-    return e(), window.addEventListener(`scroll`, e, !0), window.addEventListener(`resize`, e), () => {
-      window.removeEventListener(`scroll`, e, !0), window.removeEventListener(`resize`, e);
-    };
-  }, []), (0, n.useEffect)(() => {
-    let e = e => {
-      c.current?.contains(e.target) || o(!1);
-    };
-    return window.addEventListener(`pointerdown`, e, !0), () => window.removeEventListener(`pointerdown`, e, !0);
-  }, [o]), (0, r.jsx)(`span`, {
-    ref: s,
-    className: `ui-dt__picker-anchor`,
-    children: (0, r.jsx)(`div`, {
-      ref: c,
-      className: `ui-dt__picker`,
-      role: `listbox`,
-      "aria-label": e,
-      style: l ? {
-        left: l.left,
-        top: l.top,
-        minWidth: l.width
-      } : {
-        visibility: `hidden`
-      },
-      children: i.map(e => (0, r.jsx)(`button`, {
-        type: `button`,
-        role: `option`,
-        "aria-selected": e === t,
-        className: `ui-dt__option`,
-        autoFocus: e === t || !t && e === i[0],
-        onPointerDown: e => e.stopPropagation(),
-        onClick: () => {
-          a(e), o(!0, void 0, e);
-        },
-        onKeyDown: e => {
-          e.key === `Escape` && o(!1);
-          let t = [...(e.currentTarget.parentElement?.querySelectorAll(`button`) ?? [])],
-            n = t.indexOf(e.currentTarget);
-          e.key === `ArrowDown` && t[Math.min(t.length - 1, n + 1)]?.focus(), e.key === `ArrowUp` && t[Math.max(0, n - 1)]?.focus(), e.key.startsWith(`Arrow`) && e.preventDefault();
-        },
-        children: e
-      }, e))
+  return (
+    (0, n.useLayoutEffect)(() => {
+      let e = () => {
+        let e = s.current?.closest(`td`),
+          t = c.current;
+        if (!e || !t) return;
+        let n = e.getBoundingClientRect(),
+          r = t.offsetHeight,
+          i = window.innerHeight - n.top - 4 >= r + 8 ? n.top + 4 : Math.max(8, n.bottom - 4 - r);
+        u({
+          left: n.left + 6,
+          top: i,
+          width: Math.max(n.width - 12, 160),
+        });
+      };
+      return (
+        e(),
+        window.addEventListener(`scroll`, e, !0),
+        window.addEventListener(`resize`, e),
+        () => {
+          (window.removeEventListener(`scroll`, e, !0), window.removeEventListener(`resize`, e));
+        }
+      );
+    }, []),
+    (0, n.useEffect)(() => {
+      let e = (e) => {
+        c.current?.contains(e.target) || o(!1);
+      };
+      return (
+        window.addEventListener(`pointerdown`, e, !0),
+        () => window.removeEventListener(`pointerdown`, e, !0)
+      );
+    }, [o]),
+    (0, r.jsx)(`span`, {
+      ref: s,
+      className: `ui-dt__picker-anchor`,
+      children: (0, r.jsx)(`div`, {
+        ref: c,
+        className: `ui-dt__picker`,
+        role: `listbox`,
+        "aria-label": e,
+        style: l
+          ? {
+              left: l.left,
+              top: l.top,
+              minWidth: l.width,
+            }
+          : {
+              visibility: `hidden`,
+            },
+        children: i.map((e) =>
+          (0, r.jsx)(
+            `button`,
+            {
+              type: `button`,
+              role: `option`,
+              "aria-selected": e === t,
+              className: `ui-dt__option`,
+              autoFocus: e === t || (!t && e === i[0]),
+              onPointerDown: (e) => e.stopPropagation(),
+              onClick: () => {
+                (a(e), o(!0, void 0, e));
+              },
+              onKeyDown: (e) => {
+                e.key === `Escape` && o(!1);
+                let t = [...(e.currentTarget.parentElement?.querySelectorAll(`button`) ?? [])],
+                  n = t.indexOf(e.currentTarget);
+                (e.key === `ArrowDown` && t[Math.min(t.length - 1, n + 1)]?.focus(),
+                  e.key === `ArrowUp` && t[Math.max(0, n - 1)]?.focus(),
+                  e.key.startsWith(`Arrow`) && e.preventDefault());
+              },
+              children: e,
+            },
+            e,
+          ),
+        ),
+      }),
     })
-  });
+  );
 }
-function f({
-  checked: e,
-  mixed: t,
-  label: n,
-  onChange: i
-}) {
+function f({ checked: e, mixed: t, label: n, onChange: i }) {
   return (0, r.jsx)(`button`, {
     type: `button`,
     role: `checkbox`,
     "aria-checked": t ? `mixed` : e,
     "aria-label": n,
     className: `ui-dt__check`,
-    onPointerDown: e => e.stopPropagation(),
+    onPointerDown: (e) => e.stopPropagation(),
     onClick: i,
     children: (0, r.jsx)(`svg`, {
       viewBox: `0 0 16 16`,
       "aria-hidden": `true`,
-      children: t ? (0, r.jsx)(`path`, {
-        d: `M4.5 8h7`
-      }) : (0, r.jsx)(`path`, {
-        d: `m4.25 8.25 2.5 2.5 5-5.5`
-      })
-    })
+      children: t
+        ? (0, r.jsx)(`path`, {
+            d: `M4.5 8h7`,
+          })
+        : (0, r.jsx)(`path`, {
+            d: `m4.25 8.25 2.5 2.5 5-5.5`,
+          }),
+    }),
   });
 }
-var ee = () => (0, r.jsx)(`svg`, {
-    viewBox: `0 0 16 16`,
-    width: `14`,
-    height: `14`,
-    fill: `none`,
-    stroke: `currentColor`,
-    strokeWidth: `1.5`,
-    strokeLinecap: `round`,
-    "aria-hidden": `true`,
-    children: (0, r.jsx)(`path`, {
-      d: `M8 3v10M3 8h10`
-    })
-  }),
-  p = () => (0, r.jsx)(`svg`, {
-    viewBox: `0 0 16 16`,
-    width: `14`,
-    height: `14`,
-    fill: `none`,
-    stroke: `currentColor`,
-    strokeWidth: `1.4`,
-    strokeLinecap: `round`,
-    strokeLinejoin: `round`,
-    "aria-hidden": `true`,
-    children: (0, r.jsx)(`path`, {
-      d: `M3 4.5h10M6.5 4.5V3h3v1.5M4.5 4.5l.6 8.5h5.8l.6-8.5`
-    })
-  }),
-  te = () => (0, r.jsx)(`svg`, {
-    viewBox: `0 0 16 16`,
-    width: `15`,
-    height: `15`,
-    fill: `none`,
-    stroke: `currentColor`,
-    strokeWidth: `1.4`,
-    strokeLinecap: `round`,
-    strokeLinejoin: `round`,
-    "aria-hidden": `true`,
-    children: (0, r.jsx)(`path`, {
-      d: `M5.5 3.5 2.5 6.5l3 3M2.5 6.5h7a4 4 0 0 1 0 8H7`
-    })
-  }),
-  m = () => (0, r.jsx)(`svg`, {
-    viewBox: `0 0 16 16`,
-    width: `15`,
-    height: `15`,
-    fill: `none`,
-    stroke: `currentColor`,
-    strokeWidth: `1.4`,
-    strokeLinecap: `round`,
-    strokeLinejoin: `round`,
-    "aria-hidden": `true`,
-    children: (0, r.jsx)(`path`, {
-      d: `m10.5 3.5 3 3-3 3M13.5 6.5h-7a4 4 0 0 0 0 8H9`
-    })
-  }),
-  ne = () => (0, r.jsx)(`svg`, {
-    viewBox: `0 0 12 12`,
-    width: `11`,
-    height: `11`,
-    fill: `none`,
-    stroke: `currentColor`,
-    strokeWidth: `1.4`,
-    strokeLinecap: `round`,
-    strokeLinejoin: `round`,
-    "aria-hidden": `true`,
-    children: (0, r.jsx)(`path`, {
-      d: `M6 2.5v7M3.5 7l2.5 2.5L8.5 7`
-    })
-  }),
-  h = e => (0, r.jsx)(`svg`, {
-    viewBox: `0 0 16 16`,
-    width: `15`,
-    height: `15`,
-    fill: `none`,
-    stroke: `currentColor`,
-    strokeWidth: `1.3`,
-    strokeLinecap: `round`,
-    strokeLinejoin: `round`,
-    "aria-hidden": `true`,
-    children: (0, r.jsx)(`path`, {
-      d: e
-    })
-  }),
+var ee = () =>
+    (0, r.jsx)(`svg`, {
+      viewBox: `0 0 16 16`,
+      width: `14`,
+      height: `14`,
+      fill: `none`,
+      stroke: `currentColor`,
+      strokeWidth: `1.5`,
+      strokeLinecap: `round`,
+      "aria-hidden": `true`,
+      children: (0, r.jsx)(`path`, {
+        d: `M8 3v10M3 8h10`,
+      }),
+    }),
+  p = () =>
+    (0, r.jsx)(`svg`, {
+      viewBox: `0 0 16 16`,
+      width: `14`,
+      height: `14`,
+      fill: `none`,
+      stroke: `currentColor`,
+      strokeWidth: `1.4`,
+      strokeLinecap: `round`,
+      strokeLinejoin: `round`,
+      "aria-hidden": `true`,
+      children: (0, r.jsx)(`path`, {
+        d: `M3 4.5h10M6.5 4.5V3h3v1.5M4.5 4.5l.6 8.5h5.8l.6-8.5`,
+      }),
+    }),
+  te = () =>
+    (0, r.jsx)(`svg`, {
+      viewBox: `0 0 16 16`,
+      width: `15`,
+      height: `15`,
+      fill: `none`,
+      stroke: `currentColor`,
+      strokeWidth: `1.4`,
+      strokeLinecap: `round`,
+      strokeLinejoin: `round`,
+      "aria-hidden": `true`,
+      children: (0, r.jsx)(`path`, {
+        d: `M5.5 3.5 2.5 6.5l3 3M2.5 6.5h7a4 4 0 0 1 0 8H7`,
+      }),
+    }),
+  m = () =>
+    (0, r.jsx)(`svg`, {
+      viewBox: `0 0 16 16`,
+      width: `15`,
+      height: `15`,
+      fill: `none`,
+      stroke: `currentColor`,
+      strokeWidth: `1.4`,
+      strokeLinecap: `round`,
+      strokeLinejoin: `round`,
+      "aria-hidden": `true`,
+      children: (0, r.jsx)(`path`, {
+        d: `m10.5 3.5 3 3-3 3M13.5 6.5h-7a4 4 0 0 0 0 8H9`,
+      }),
+    }),
+  ne = () =>
+    (0, r.jsx)(`svg`, {
+      viewBox: `0 0 12 12`,
+      width: `11`,
+      height: `11`,
+      fill: `none`,
+      stroke: `currentColor`,
+      strokeWidth: `1.4`,
+      strokeLinecap: `round`,
+      strokeLinejoin: `round`,
+      "aria-hidden": `true`,
+      children: (0, r.jsx)(`path`, {
+        d: `M6 2.5v7M3.5 7l2.5 2.5L8.5 7`,
+      }),
+    }),
+  h = (e) =>
+    (0, r.jsx)(`svg`, {
+      viewBox: `0 0 16 16`,
+      width: `15`,
+      height: `15`,
+      fill: `none`,
+      stroke: `currentColor`,
+      strokeWidth: `1.3`,
+      strokeLinecap: `round`,
+      strokeLinejoin: `round`,
+      "aria-hidden": `true`,
+      children: (0, r.jsx)(`path`, {
+        d: e,
+      }),
+    }),
   g = () => h(`M3 4h10M3 7h10M3 10h10M3 13h6`),
   _ = () => h(`M3 3h4v4H3zM9 3h4v4H9zM3 9h4v4H3zM9 9h4v4H9z`),
-  v = () => h(`M6.5 9.5l3-3M7.25 4.75l1-1a2.5 2.5 0 0 1 3.5 3.5l-1 1M8.75 11.25l-1 1a2.5 2.5 0 0 1-3.5-3.5l1-1`),
+  v = () =>
+    h(
+      `M6.5 9.5l3-3M7.25 4.75l1-1a2.5 2.5 0 0 1 3.5 3.5l-1 1M8.75 11.25l-1 1a2.5 2.5 0 0 1-3.5-3.5l1-1`,
+    ),
   y = () => h(`M3 4.5h10v9H3zM3 7.5h10M6 2.5v3M10 2.5v3`);
 function b(e) {
   let t = (0, n.useRef)(null);
-  return (0, n.useLayoutEffect)(() => {
-    let n = t.current,
-      r = e.current;
-    if (!n || !r) return;
-    let i = () => {
-      n.style.height = `${r.offsetHeight}px`;
-    };
-    i();
-    let a = new ResizeObserver(i);
-    a.observe(r);
-    let o = requestAnimationFrame(() => n.setAttribute(`data-smooth`, ``));
-    return () => {
-      a.disconnect(), cancelAnimationFrame(o);
-    };
-  }, [e]), t;
+  return (
+    (0, n.useLayoutEffect)(() => {
+      let n = t.current,
+        r = e.current;
+      if (!n || !r) return;
+      let i = () => {
+        n.style.height = `${r.offsetHeight}px`;
+      };
+      i();
+      let a = new ResizeObserver(i);
+      a.observe(r);
+      let o = requestAnimationFrame(() => n.setAttribute(`data-smooth`, ``));
+      return () => {
+        (a.disconnect(), cancelAnimationFrame(o));
+      };
+    }, [e]),
+    t
+  );
 }
 var re = `
 .ui-dt {

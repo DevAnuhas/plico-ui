@@ -2,10 +2,7 @@
 
 import * as React from "react";
 type IconNode = Array<[string, Record<string, string | number | undefined>]>;
-interface HugeiconsProps extends Omit<
-  React.SVGProps<SVGSVGElement>,
-  "strokeWidth"
-> {
+interface HugeiconsProps extends Omit<React.SVGProps<SVGSVGElement>, "strokeWidth"> {
   icon: IconNode;
   altIcon?: IconNode;
   size?: string | number;
@@ -88,9 +85,7 @@ const ScreenFrameModeContext = React.createContext<boolean | null>(null);
 function PreviewFrame({ children }: { children?: React.ReactNode }) {
   const mode = React.useContext(ScreenFrameModeContext);
   const full =
-    mode ??
-    (typeof window !== "undefined" &&
-      /\/full\/?$/.test(window.location.pathname));
+    mode ?? (typeof window !== "undefined" && /\/full\/?$/.test(window.location.pathname));
   const ref = React.useRef<HTMLDivElement | null>(null);
   const [scale, setScale] = React.useState(0);
   React.useLayoutEffect(() => {
@@ -245,17 +240,10 @@ function SetupGuide({
   className: className,
 }: SetupGuideProps) {
   let [completedTaskIds, setCompletedTaskIds] = React.useState(
-      () =>
-        new Set(
-          groups.flatMap((e) => e.tasks.filter((e) => e.done).map((e) => e.id)),
-        ),
+      () => new Set(groups.flatMap((e) => e.tasks.filter((e) => e.done).map((e) => e.id))),
     ),
-    firstIncompleteGroup = groups.find((e) =>
-      e.tasks.some((e) => !completedTaskIds.has(e.id)),
-    ),
-    [expandedGroup, setExpandedGroup] = React.useState(
-      firstIncompleteGroup?.id ?? null,
-    ),
+    firstIncompleteGroup = groups.find((e) => e.tasks.some((e) => !completedTaskIds.has(e.id))),
+    [expandedGroup, setExpandedGroup] = React.useState(firstIncompleteGroup?.id ?? null),
     [minimized, setMinimized] = React.useState(false),
     totalTasks = groups.reduce((e, t) => e + t.tasks.length, 0),
     progress = totalTasks ? completedTaskIds.size / totalTasks : 0,
@@ -276,26 +264,17 @@ function SetupGuide({
       <style href={`ui-setup-guide`} precedence={`default`}>
         {setupGuideStyles}
       </style>
-      <section
-        className={[`ui-sg`, className].filter(Boolean).join(` `)}
-        aria-label={title}
-      >
+      <section className={[`ui-sg`, className].filter(Boolean).join(` `)} aria-label={title}>
         <header className={`ui-sg__head`}>
           <h3 className={`ui-sg__title`}>{title}</h3>
           <div className={`ui-sg__actions`}>
             {onEdit && (
-              <button
-                type={`button`}
-                className={`ui-sg__edit`}
-                onClick={onEdit}
-              >{`Edit`}</button>
+              <button type={`button`} className={`ui-sg__edit`} onClick={onEdit}>{`Edit`}</button>
             )}
             <button
               type={`button`}
               className={`ui-sg__icon-btn`}
-              aria-label={
-                minimized ? `Expand setup guide` : `Minimize setup guide`
-              }
+              aria-label={minimized ? `Expand setup guide` : `Minimize setup guide`}
               aria-expanded={!minimized}
               onClick={() => setMinimized((e) => !e)}
             >
@@ -337,11 +316,7 @@ function SetupGuide({
                 o = e.tasks.findIndex((e) => e.id === i),
                 s = `ui-sg-${e.id}`;
               return (
-                <div
-                  className={`ui-sg__group`}
-                  data-open={t || void 0}
-                  key={e.id}
-                >
+                <div className={`ui-sg__group`} data-open={t || void 0} key={e.id}>
                   <button
                     type={`button`}
                     className={`ui-sg__group-head`}
@@ -349,10 +324,7 @@ function SetupGuide({
                     aria-controls={s}
                     onClick={() => setExpandedGroup(t ? null : e.id)}
                   >
-                    <span
-                      className={`ui-sg__group-title`}
-                      data-done={n || void 0}
-                    >
+                    <span className={`ui-sg__group-title`} data-done={n || void 0}>
                       {e.title}
                     </span>
                     <TaskMark />
@@ -373,19 +345,14 @@ function SetupGuide({
                               aria-pressed={i}
                               onClick={() => toggleTask(e, t.id)}
                             >
-                              <span
-                                className={`ui-sg__mark`}
-                                aria-hidden={`true`}
-                              >
+                              <span className={`ui-sg__mark`} aria-hidden={`true`}>
                                 {s === `done` ? (
                                   <SetupProgressIcon />
                                 ) : s === `locked` ? (
                                   <CheckIcon2 />
                                 ) : null}
                               </span>
-                              <span className={`ui-sg__task-label`}>
-                                {t.label}
-                              </span>
+                              <span className={`ui-sg__task-label`}>{t.label}</span>
                             </button>
                           </li>
                         );
@@ -1103,13 +1070,7 @@ var Icon = ({
   stroke?: number;
   color?: string;
 }) => (
-  <HugeiconsIcon
-    icon={icon}
-    size={size}
-    strokeWidth={stroke}
-    color={color}
-    aria-hidden={true}
-  />
+  <HugeiconsIcon icon={icon} size={size} strokeWidth={stroke} color={color} aria-hidden={true} />
 );
 var defaultNavigation = [
   {
@@ -1181,13 +1142,7 @@ var defaultSetup = [
 ];
 var sidebarBreakpoint = 900;
 var setupProgressLabel = (e: number) =>
-  e >= 100
-    ? `All done!`
-    : e >= 60
-      ? `Almost there!`
-      : e > 0
-        ? `Great start!`
-        : `Let's go!`;
+  e >= 100 ? `All done!` : e >= 60 ? `Almost there!` : e > 0 ? `Great start!` : `Let's go!`;
 function AppShell({
   children: children,
   active: active,
@@ -1260,8 +1215,7 @@ function AppShell({
     }, [setupOpen]),
     React.useEffect(() => {
       if (!drawerOpen || setupPanelState !== `closed`) return;
-      let e = (e: { key: string }) =>
-        e.key === `Escape` && setDrawerOpen(false);
+      let e = (e: { key: string }) => e.key === `Escape` && setDrawerOpen(false);
       return (
         document.addEventListener(`keydown`, e),
         () => document.removeEventListener(`keydown`, e)
@@ -1271,9 +1225,7 @@ function AppShell({
       setup.flatMap((e) => e.tasks.filter((e) => e.done).map((e) => e.id)),
     ),
     totalTasks = setup.reduce((e, t) => e + t.tasks.length, 0),
-    progress = totalTasks
-      ? Math.round((completedTaskIds.length / totalTasks) * 100)
-      : 0,
+    progress = totalTasks ? Math.round((completedTaskIds.length / totalTasks) * 100) : 0,
     initials = user.name
       .split(` `)
       .map((e) => e[0])
@@ -1298,11 +1250,7 @@ function AppShell({
       >
         <Icon icon={SidebarIcon} size={16} />
       </button>
-      <div
-        className={`ui-as-scrim`}
-        aria-hidden={`true`}
-        onClick={() => setDrawerOpen(false)}
-      />
+      <div className={`ui-as-scrim`} aria-hidden={`true`} onClick={() => setDrawerOpen(false)} />
       <aside className={`ui-as-side`} inert={sidebarInert}>
         <header className={`ui-as-side__head`}>
           <DropdownMenu
@@ -1337,20 +1285,14 @@ function AppShell({
             )}
           />
           <span className={`ui-as-side__tools`}>
-            <button
-              className={`ui-as-icon-btn`}
-              type={`button`}
-              aria-label={`Search`}
-            >
+            <button className={`ui-as-icon-btn`} type={`button`} aria-label={`Search`}>
               <Icon icon={SearchIcon} size={16} />
             </button>
             <button
               className={`ui-as-icon-btn`}
               type={`button`}
               aria-label={isCompact ? `Close sidebar` : `Collapse sidebar`}
-              onClick={() =>
-                isCompact ? setDrawerOpen(false) : setCollapsed(true)
-              }
+              onClick={() => (isCompact ? setDrawerOpen(false) : setCollapsed(true))}
             >
               <Icon icon={SidebarIcon} size={16} />
             </button>
@@ -1368,9 +1310,7 @@ function AppShell({
               >
                 <Icon icon={e.icon} size={16} />
                 {e.label}
-                {e.count !== void 0 && (
-                  <span className={`ui-as-side__count`}>{e.count}</span>
-                )}
+                {e.count !== void 0 && <span className={`ui-as-side__count`}>{e.count}</span>}
               </button>
             ))}
           </div>
@@ -1391,9 +1331,7 @@ function AppShell({
                   >
                     <Icon icon={e.icon} size={16} />
                     {e.label}
-                    {e.count !== void 0 && (
-                      <span className={`ui-as-side__count`}>{e.count}</span>
-                    )}
+                    {e.count !== void 0 && <span className={`ui-as-side__count`}>{e.count}</span>}
                   </button>
                 ))}
               </div>
@@ -1419,10 +1357,7 @@ function AppShell({
         <div className={`ui-as-side__foot`}>
           {newsCount > 0 && (
             <div className={`ui-as-news`} data-count={newsCount}>
-              <div
-                className={`ui-as-news__card ui-as-news__card--back`}
-                aria-hidden={`true`}
-              >
+              <div className={`ui-as-news__card ui-as-news__card--back`} aria-hidden={`true`}>
                 <span className={`ui-as-news__kicker`}>
                   {`New in `}
                   {workspace}
@@ -1470,9 +1405,7 @@ function AppShell({
               data-state={setupPanelState}
               style={{
                 height:
-                  (setupPanelState === `open`
-                    ? setupHeaderHeight
-                    : closedSetupHeight) || void 0,
+                  (setupPanelState === `open` ? setupHeaderHeight : closedSetupHeight) || void 0,
               }}
             >
               <div ref={setupHeaderRef} className={`ui-as-guide__inner`}>
@@ -1491,9 +1424,7 @@ function AppShell({
                     <span className={`ui-as-steps__sub`}>
                       {progress}
                       {`% done · `}
-                      <span className={`ui-as-steps__cheer`}>
-                        {setupProgressLabel(progress)}
-                      </span>
+                      <span className={`ui-as-steps__cheer`}>{setupProgressLabel(progress)}</span>
                     </span>
                     <span className={`ui-as-steps__bar`}>
                       <i
@@ -1571,9 +1502,7 @@ function getClippingBoundary(element: HTMLDivElement) {
   for (let t = element.parentElement; t; t = t.parentElement) {
     let e = getComputedStyle(t);
     if (
-      /(auto|scroll|hidden|clip)/.test(
-        e.overflow + e.overflowY + e.overflowX,
-      ) ||
+      /(auto|scroll|hidden|clip)/.test(e.overflow + e.overflowY + e.overflowX) ||
       t.classList.contains(`ui-as`)
     )
       return t.getBoundingClientRect();
@@ -1668,13 +1597,7 @@ function Popover({
     ) : null
   );
 }
-function MenuItems({
-  items: items,
-  onPick: onPick,
-}: {
-  items: MenuItem[];
-  onPick: () => void;
-}) {
+function MenuItems({ items: items, onPick: onPick }: { items: MenuItem[]; onPick: () => void }) {
   return (
     <div role={`menu`} className={`ui-as-menu__list`}>
       {items.map((e) => (
@@ -2710,9 +2633,7 @@ function AppShellDemo2() {
       <AppShell active={`New chat`} onNavigate={navigateScreen}>
         <div className={`ui-as-page`}>
           <h1 className={`ui-as-page-title`}>{`Overview`}</h1>
-          <p
-            className={`ui-as-page-sub`}
-          >{`Everything in your workspace at a glance.`}</p>
+          <p className={`ui-as-page-sub`}>{`Everything in your workspace at a glance.`}</p>
           <div
             style={{
               marginTop: 28,

@@ -76,11 +76,9 @@ var formatBoardMoney = (value: number) =>
     maximumFractionDigits: Math.abs(value) < 1e4 ? 2 : 0,
   }).format(value)}`;
 var easeOutQuart = (progress: number) => 1 - (1 - progress) ** 4;
-var lerp = (from: number, to: number, progress: number) =>
-  from + (to - from) * progress;
+var lerp = (from: number, to: number, progress: number) => from + (to - from) * progress;
 var prefersReducedMotion = () =>
-  typeof window < `u` &&
-  window.matchMedia(`(prefers-reduced-motion: reduce)`).matches;
+  typeof window < `u` && window.matchMedia(`(prefers-reduced-motion: reduce)`).matches;
 function resampleValues(values: number[], length: number) {
   return !values || values.length === 0
     ? Array<number>(length).fill(0)
@@ -98,21 +96,13 @@ function resampleValues(values: number[], length: number) {
           },
         );
 }
-function buildChartPath(
-  values: number[],
-  minimum: number,
-  maximum: number,
-  top = 6,
-  bottom = 94,
-) {
+function buildChartPath(values: number[], minimum: number, maximum: number, top = 6, bottom = 94) {
   let span = maximum - minimum || 1,
     pts = values.map((n: number, o: number) => [
       (o / Math.max(1, values.length - 1)) * 100,
       bottom - ((n - minimum) / span) * (bottom - top),
     ]),
-    line = pts
-      .map((e, t) => `${t ? `L` : `M`}${e[0].toFixed(2)},${e[1].toFixed(2)}`)
-      .join(``);
+    line = pts.map((e, t) => `${t ? `L` : `M`}${e[0].toFixed(2)},${e[1].toFixed(2)}`).join(``);
   return {
     pts: pts,
     line: line,
@@ -121,11 +111,7 @@ function buildChartPath(
 }
 var nearestPoint = (points: number[][], index: number, count: number) =>
   points[Math.round((index / Math.max(1, count - 1)) * (points.length - 1))];
-function useBoardTransition<T>(
-  target: T,
-  key: string | undefined,
-  duration = 760,
-) {
+function useBoardTransition<T>(target: T, key: string | undefined, duration = 760) {
   let fromRef = React.useRef<T | null>(null),
     targetRef = React.useRef(target),
     keyRef = React.useRef<string | null | undefined>(null),
@@ -138,8 +124,7 @@ function useBoardTransition<T>(
     });
   return (
     keyRef.current !== key &&
-      (keyRef.current !== null && (fromRef.current = targetRef.current),
-      (keyRef.current = key)),
+      (keyRef.current !== null && (fromRef.current = targetRef.current), (keyRef.current = key)),
     (targetRef.current = target),
     React.useEffect(() => {
       if (prefersReducedMotion())
@@ -166,13 +151,7 @@ function useBoardTransition<T>(
   );
 }
 var ChevronDownIcon = () => (
-  <svg
-    width={`10`}
-    height={`10`}
-    viewBox={`0 0 10 10`}
-    fill={`none`}
-    aria-hidden={`true`}
-  >
+  <svg width={`10`} height={`10`} viewBox={`0 0 10 10`} fill={`none`} aria-hidden={`true`}>
     <path
       d={`m2.5 3.8 2.5 2.5 2.5-2.5`}
       stroke={`currentColor`}
@@ -183,13 +162,7 @@ var ChevronDownIcon = () => (
   </svg>
 );
 var CheckIcon = () => (
-  <svg
-    width={`12`}
-    height={`12`}
-    viewBox={`0 0 12 12`}
-    fill={`none`}
-    aria-hidden={`true`}
-  >
+  <svg width={`12`} height={`12`} viewBox={`0 0 12 12`} fill={`none`} aria-hidden={`true`}>
     <path
       d={`m2.6 6.3 2.2 2.2 4.6-5`}
       stroke={`currentColor`}
@@ -200,43 +173,19 @@ var CheckIcon = () => (
   </svg>
 );
 var SettingsIcon = () => (
-  <svg
-    width={`13`}
-    height={`13`}
-    viewBox={`0 0 14 14`}
-    fill={`none`}
-    aria-hidden={`true`}
-  >
+  <svg width={`13`} height={`13`} viewBox={`0 0 14 14`} fill={`none`} aria-hidden={`true`}>
     <path
       d={`M2 4.2h5.2M10.2 4.2H12M2 9.8h1.8M6.8 9.8H12`}
       stroke={`currentColor`}
       strokeWidth={`1.3`}
       strokeLinecap={`round`}
     />
-    <circle
-      cx={`8.7`}
-      cy={`4.2`}
-      r={`1.5`}
-      stroke={`currentColor`}
-      strokeWidth={`1.3`}
-    />
-    <circle
-      cx={`5.3`}
-      cy={`9.8`}
-      r={`1.5`}
-      stroke={`currentColor`}
-      strokeWidth={`1.3`}
-    />
+    <circle cx={`8.7`} cy={`4.2`} r={`1.5`} stroke={`currentColor`} strokeWidth={`1.3`} />
+    <circle cx={`5.3`} cy={`9.8`} r={`1.5`} stroke={`currentColor`} strokeWidth={`1.3`} />
   </svg>
 );
 var ProductIcon = () => (
-  <svg
-    width={`16`}
-    height={`16`}
-    viewBox={`0 0 16 16`}
-    fill={`none`}
-    aria-hidden={`true`}
-  >
+  <svg width={`16`} height={`16`} viewBox={`0 0 16 16`} fill={`none`} aria-hidden={`true`}>
     <path
       d={`M8 1.9 13.3 4.8v6.4L8 14.1 2.7 11.2V4.8L8 1.9Z`}
       stroke={`currentColor`}
@@ -315,9 +264,7 @@ function BoardSelect({
     },
     choose = (index: number) => {
       (setOpen(false),
-        options[index] &&
-          options[index].id !== value &&
-          onChange(options[index].id),
+        options[index] && options[index].id !== value && onChange(options[index].id),
         rootRef.current?.querySelector(`button`)?.focus({
           preventScroll: true,
         }));
@@ -329,8 +276,7 @@ function BoardSelect({
       data-open={open ? `` : void 0}
       onKeyDown={(e) => {
         if (!open) {
-          (e.key === `ArrowDown` || e.key === `ArrowUp`) &&
-            (e.preventDefault(), openMenu());
+          (e.key === `ArrowDown` || e.key === `ArrowUp`) && (e.preventDefault(), openMenu());
           return;
         }
         e.key === `Escape`
@@ -338,13 +284,10 @@ function BoardSelect({
           : e.key === `ArrowDown` || e.key === `ArrowUp`
             ? (e.preventDefault(),
               setActiveIndex(
-                (t) =>
-                  (t + (e.key === `ArrowDown` ? 1 : -1) + options.length) %
-                  options.length,
+                (t) => (t + (e.key === `ArrowDown` ? 1 : -1) + options.length) % options.length,
               ))
             : e.key === `Home` || e.key === `End`
-              ? (e.preventDefault(),
-                setActiveIndex(e.key === `Home` ? 0 : options.length - 1))
+              ? (e.preventDefault(), setActiveIndex(e.key === `Home` ? 0 : options.length - 1))
               : e.key === `Enter` || e.key === ` `
                 ? (e.preventDefault(), choose(activeIndex))
                 : e.key === `Tab` && setOpen(false);
@@ -365,12 +308,7 @@ function BoardSelect({
         <ChevronDownIcon />
       </button>
       {open && (
-        <ul
-          id={`${instanceId}-list`}
-          className={`ui-kb__menu`}
-          role={`listbox`}
-          aria-label={label}
-        >
+        <ul id={`${instanceId}-list`} className={`ui-kb__menu`} role={`listbox`} aria-label={label}>
           {options.map((e, t) => (
             <li
               id={`${instanceId}-${t}`}
@@ -414,30 +352,18 @@ function KpiBoard({
   let instanceId = React.useId().replace(/:/g, ``),
     [localRange, setLocalRange] = React.useState(defaultRange ?? ranges[0]?.id),
     activeRange = range ?? localRange ?? ranges[0]?.id,
-    [localSegment, setLocalSegment] = React.useState(
-      defaultSegment ?? segments?.[0]?.id,
-    ),
+    [localSegment, setLocalSegment] = React.useState(defaultSegment ?? segments?.[0]?.id),
     activeSegment = segment ?? localSegment,
     dataset = data[activeRange!] ?? Object.values(data)[0],
     { from: fromData, t: progress } = useBoardTransition(dataset, activeRange),
-    overview =
-      (activeSegment && dataset.overview.segments?.[activeSegment]) ||
-      dataset.overview,
+    overview = (activeSegment && dataset.overview.segments?.[activeSegment]) || dataset.overview,
     overviewKey = `${activeRange}/${activeSegment ?? ``}`,
-    overviewTransition = useBoardTransition(
-      sumValues(overview.current),
-      overviewKey,
-    ),
+    overviewTransition = useBoardTransition(sumValues(overview.current), overviewKey),
     interpolateMetric = (readValue: (dataset: KpiBoardData) => number) =>
       lerp(fromData ? readValue(fromData) : 0, readValue(dataset), progress),
-    chartValues = (
-      readValues: (dataset: KpiBoardData) => number[] | undefined,
-      limit: number,
-    ) => {
+    chartValues = (readValues: (dataset: KpiBoardData) => number[] | undefined, limit: number) => {
       let values = readValues(dataset) ?? [];
-      return values.length >= 2 && values.length <= limit
-        ? values
-        : resampleValues(values, limit);
+      return values.length >= 2 && values.length <= limit ? values : resampleValues(values, limit);
     },
     chartKey = activeRange,
     formatMetric = (kind: string, value: number) =>
@@ -479,11 +405,7 @@ function KpiBoard({
     overviewMax = Math.max(...overviewCurrent, ...overviewPrevious, 1) * 1.06,
     overviewMin = Math.min(...overviewCurrent, ...overviewPrevious) * 0.82,
     overviewPath = buildChartPath(overviewCurrent, overviewMin, overviewMax),
-    previousOverviewPath = buildChartPath(
-      overviewPrevious,
-      overviewMin,
-      overviewMax,
-    ),
+    previousOverviewPath = buildChartPath(overviewPrevious, overviewMin, overviewMax),
     overviewTotal = lerp(
       overviewTransition.from ?? 0,
       sumValues(overview.current),
@@ -495,44 +417,24 @@ function KpiBoard({
         100
       : 0,
     overviewIndex =
-      overviewHover === null
-        ? null
-        : Math.round(overviewHover * (overview.current.length - 1)),
+      overviewHover === null ? null : Math.round(overviewHover * (overview.current.length - 1)),
     overviewPoint =
       overviewIndex === null
         ? null
-        : nearestPoint(
-            overviewPath.pts,
-            overviewIndex,
-            overview.current.length,
-          ),
+        : nearestPoint(overviewPath.pts, overviewIndex, overview.current.length),
     previousOverviewPoint =
       overviewIndex === null
         ? null
-        : nearestPoint(
-            previousOverviewPath.pts,
-            overviewIndex,
-            overview.current.length,
-          ),
+        : nearestPoint(previousOverviewPath.pts, overviewIndex, overview.current.length),
     focusValues = chartValues((e) => e.focus.values, 48),
     focusMax = Math.max(...focusValues, 1) * 1.05,
-    focusPath = buildChartPath(
-      focusValues,
-      Math.min(...focusValues) * 0.8,
-      focusMax,
-      8,
-      92,
-    ),
+    focusPath = buildChartPath(focusValues, Math.min(...focusValues) * 0.8, focusMax, 8, 92),
     focusTotal = interpolateMetric((e) => sumValues(e.focus.values)),
     focusChange = dataset.focus.previous
-      ? ((sumValues(dataset.focus.values) - dataset.focus.previous) /
-          dataset.focus.previous) *
-        100
+      ? ((sumValues(dataset.focus.values) - dataset.focus.previous) / dataset.focus.previous) * 100
       : 0,
     focusIndex =
-      focusHover === null
-        ? null
-        : Math.round(focusHover * (dataset.focus.values.length - 1)),
+      focusHover === null ? null : Math.round(focusHover * (dataset.focus.values.length - 1)),
     focusPoint =
       focusIndex === null
         ? null
@@ -557,10 +459,7 @@ function KpiBoard({
           o = buildChartPath(n, Math.min(...n) * 0.75, a, 10, 92),
           s = interpolateMetric((e) => sumValues(e.stats[t]?.values ?? [])),
           c = e.previous === void 0 ? null : sumValues(e.values) - e.previous,
-          l =
-            statHover?.id === e.id
-              ? Math.round(statHover.at * (e.values.length - 1))
-              : null,
+          l = statHover?.id === e.id ? Math.round(statHover.at * (e.values.length - 1)) : null,
           u = l === null ? null : nearestPoint(o.pts, l, e.values.length);
         return (
           <section
@@ -583,10 +482,7 @@ function KpiBoard({
                   {c === 0 ? (
                     <b>{`0`}</b>
                   ) : (
-                    <ChangeBadge
-                      up={c > 0}
-                      good={e.lowerIsBetter ? c < 0 : c > 0}
-                    >
+                    <ChangeBadge up={c > 0} good={e.lowerIsBetter ? c < 0 : c > 0}>
                       {formatMetric(e.kind, Math.abs(c))}
                     </ChangeBadge>
                   )}
@@ -697,10 +593,7 @@ function KpiBoard({
             />
           )}
         </header>
-        <div
-          className={`ui-kb__plot ui-kb__plot--large`}
-          {...pointerHandlers(setOverviewHover)}
-        >
+        <div className={`ui-kb__plot ui-kb__plot--large`} {...pointerHandlers(setOverviewHover)}>
           <svg
             viewBox={`0 0 100 100`}
             preserveAspectRatio={`none`}
@@ -708,23 +601,9 @@ function KpiBoard({
             key={overviewKey}
           >
             <defs>
-              <linearGradient
-                id={`${instanceId}-fade`}
-                x1={`0`}
-                y1={`0`}
-                x2={`0`}
-                y2={`1`}
-              >
-                <stop
-                  offset={`0`}
-                  stopColor={`var(--ui-kb-accent)`}
-                  stopOpacity={`0.14`}
-                />
-                <stop
-                  offset={`1`}
-                  stopColor={`var(--ui-kb-accent)`}
-                  stopOpacity={`0`}
-                />
+              <linearGradient id={`${instanceId}-fade`} x1={`0`} y1={`0`} x2={`0`} y2={`1`}>
+                <stop offset={`0`} stopColor={`var(--ui-kb-accent)`} stopOpacity={`0.14`} />
+                <stop offset={`1`} stopColor={`var(--ui-kb-accent)`} stopOpacity={`0`} />
               </linearGradient>
             </defs>
             {Array.from(
@@ -740,10 +619,7 @@ function KpiBoard({
               ),
             )}
             <path d={overviewPath.area} fill={`url(#${instanceId}-fade)`} />
-            <path
-              className={`ui-kb__line ui-kb__line--soft`}
-              d={previousOverviewPath.line}
-            />
+            <path className={`ui-kb__line ui-kb__line--soft`} d={previousOverviewPath.line} />
             <path className={`ui-kb__line`} d={overviewPath.line} />
           </svg>
           {overviewPoint && previousOverviewPoint && overviewIndex !== null && (
@@ -781,8 +657,7 @@ function KpiBoard({
                   <span>{dataset.overview.labels[overviewIndex]}</span>
                   <b>
                     {formatMoney(
-                      overview.current[overviewIndex] +
-                        (overview.previous[overviewIndex] ?? 0),
+                      overview.current[overviewIndex] + (overview.previous[overviewIndex] ?? 0),
                     )}
                   </b>
                 </div>
@@ -802,9 +677,7 @@ function KpiBoard({
         </div>
         <div className={`ui-kb__axis`} aria-hidden={`true`}>
           <span>{dataset.overview.labels[0]}</span>
-          <span>
-            {dataset.overview.labels[dataset.overview.labels.length - 1]}
-          </span>
+          <span>{dataset.overview.labels[dataset.overview.labels.length - 1]}</span>
         </div>
       </section>
       <section
@@ -825,11 +698,7 @@ function KpiBoard({
             </span>
           </div>
           {setup && (
-            <button
-              type={`button`}
-              className={`ui-kb__setup`}
-              onClick={setup.onClick}
-            >
+            <button type={`button`} className={`ui-kb__setup`} onClick={setup.onClick}>
               <SettingsIcon />
               {setup.label}
             </button>
@@ -838,11 +707,7 @@ function KpiBoard({
         <div className={`ui-kb__label`}>{dataset.focus.metric}</div>
         <div className={`ui-kb__figure ui-kb__figure--small`}>
           <b>
-            {formatCount(
-              focusIndex === null
-                ? focusTotal
-                : dataset.focus.values[focusIndex],
-            )}
+            {formatCount(focusIndex === null ? focusTotal : dataset.focus.values[focusIndex])}
             {dataset.focus.unit ? ` ${dataset.focus.unit}` : ``}
           </b>
           <span className={`ui-kb__vs`}>
@@ -860,10 +725,7 @@ function KpiBoard({
             )}
           </span>
         </div>
-        <div
-          className={`ui-kb__plot ui-kb__plot--small`}
-          {...pointerHandlers(setFocusHover)}
-        >
+        <div className={`ui-kb__plot ui-kb__plot--small`} {...pointerHandlers(setFocusHover)}>
           <svg
             viewBox={`0 0 100 100`}
             preserveAspectRatio={`none`}
@@ -894,18 +756,12 @@ function KpiBoard({
         </div>
         <div className={`ui-kb__legend`}>
           <span>{previousLabel}</span>
-          <b data-soft={``}>
-            {formatCount(interpolateMetric((e) => e.focus.previous))}
-          </b>
+          <b data-soft={``}>{formatCount(interpolateMetric((e) => e.focus.previous))}</b>
           <span>{currentLabel}</span>
           <b>{formatCount(focusTotal)}</b>
         </div>
         {action && (
-          <button
-            type={`button`}
-            className={`ui-kb__action`}
-            onClick={action.onClick}
-          >
+          <button type={`button`} className={`ui-kb__action`} onClick={action.onClick}>
             {action.label}
           </button>
         )}
@@ -1145,9 +1001,7 @@ var makeDateLabels = (count: number, stepDays: number) =>
     },
     (n, r) => {
       if (r === count - 1) return `Today`;
-      let i = new Date(
-        demoAnchor.getTime() - (count - 1 - r) * stepDays * 864e5,
-      );
+      let i = new Date(demoAnchor.getTime() - (count - 1 - r) * stepDays * 864e5);
       return `${i.getDate()} ${monthNames[i.getMonth()]}`;
     },
   );
@@ -1166,31 +1020,16 @@ var makeSeriesValues = (
     },
     (i, s) => {
       let c = random();
-      c > 0.22 &&
-        (momentum = momentum * 0.45 + (random() - 0.5) * variance * 0.5);
+      c > 0.22 && (momentum = momentum * 0.45 + (random() - 0.5) * variance * 0.5);
       let l = c > 0.92 ? variance * 0.22 : c < 0.06 ? -variance * 0.18 : 0;
-      return Math.max(
-        0,
-        Math.round(base * (1 + (trend * s) / count + momentum + l)),
-      );
+      return Math.max(0, Math.round(base * (1 + (trend * s) / count + momentum + l)));
     },
   );
 };
-function makeBoardData(
-  count: number,
-  stepDays: number,
-  scale: number,
-  seed: number,
-) {
+function makeBoardData(count: number, stepDays: number, scale: number, seed: number) {
   let labels = makeDateLabels(count, stepDays),
     revenue = makeSeriesValues(count, 156 * stepDays * scale, 0.5, 0.5, seed),
-    licenses = makeSeriesValues(
-      count,
-      24 * stepDays * scale,
-      0.45,
-      0.5,
-      seed + 4,
-    );
+    licenses = makeSeriesValues(count, 24 * stepDays * scale, 0.45, 0.5, seed + 4);
   return {
     stats: [
       {
@@ -1206,13 +1045,7 @@ function makeBoardData(
         label: `Emails sent`,
         kind: `count`,
         labels: labels,
-        values: makeSeriesValues(
-          count,
-          1620 * stepDays * scale,
-          0.1,
-          0.7,
-          seed + 2,
-        ),
+        values: makeSeriesValues(count, 1620 * stepDays * scale, 0.1, 0.7, seed + 2),
         previous: Math.round(1540 * stepDays * count * scale),
       },
       {
@@ -1220,13 +1053,7 @@ function makeBoardData(
         label: `Refunds`,
         kind: `count`,
         labels: labels,
-        values: makeSeriesValues(
-          count,
-          Math.max(3, 4 * stepDays) * scale,
-          -0.3,
-          1.5,
-          seed + 3,
-        ),
+        values: makeSeriesValues(count, Math.max(3, 4 * stepDays) * scale, -0.3, 1.5, seed + 3),
         previous: Math.round(Math.max(3, 4 * stepDays) * 1.2 * count * scale),
         lowerIsBetter: true,
       },
@@ -1234,20 +1061,8 @@ function makeBoardData(
     overview: {
       title: `Sales overview`,
       labels: labels,
-      current: makeSeriesValues(
-        count,
-        122 * stepDays * scale,
-        0.9,
-        0.42,
-        seed + 1,
-      ),
-      previous: makeSeriesValues(
-        count,
-        98 * stepDays * scale,
-        0.45,
-        0.3,
-        seed + 7,
-      ),
+      current: makeSeriesValues(count, 122 * stepDays * scale, 0.9, 0.42, seed + 1),
+      previous: makeSeriesValues(count, 98 * stepDays * scale, 0.45, 0.3, seed + 7),
     },
     focus: {
       title: `Pro license`,
@@ -1288,9 +1103,7 @@ var demoData = {
 };
 function KPIBoardDemo() {
   let rootRef = React.useRef<HTMLDivElement | null>(null),
-    [fit, setFit] = React.useState<{ scale: number; card: boolean } | null>(
-      null,
-    ),
+    [fit, setFit] = React.useState<{ scale: number; card: boolean } | null>(null),
     [range, setRange] = React.useState(`30d`),
     pausedRef = React.useRef(false);
   (React.useLayoutEffect(() => {
@@ -1320,10 +1133,8 @@ function KPIBoardDemo() {
         pausedRef.current ||
           setRange(
             (e) =>
-              rangeOptions[
-                (rangeOptions.findIndex((t) => t.id === e) + 1) %
-                  rangeOptions.length
-              ].id,
+              rangeOptions[(rangeOptions.findIndex((t) => t.id === e) + 1) % rangeOptions.length]
+                .id,
           );
       }, 3600);
       return () => window.clearInterval(e);

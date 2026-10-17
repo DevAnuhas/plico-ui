@@ -19,11 +19,8 @@ var chargeDuration = 620;
 var sweepDuration = 1100;
 var stageWidth = 2400;
 var slotIndices = [0, 1, 2, 3, 4, 5];
-var blobIds = [
-  283, 292, 291, 287, 288, 284, 289, 293, 290, 285, 286, 294, 296, 295,
-];
-var useIsomorphicLayoutEffect =
-  typeof window > `u` ? React.useEffect : React.useLayoutEffect;
+var blobIds = [283, 292, 291, 287, 288, 284, 289, 293, 290, 285, 286, 294, 296, 295];
+var useIsomorphicLayoutEffect = typeof window > `u` ? React.useEffect : React.useLayoutEffect;
 function IntegrationFlow({
   className: className,
   label = `Integrations like Slack, Okta and Snowflake sending data into a central data analysis hub`,
@@ -114,49 +111,25 @@ function IntegrationFlow({
               <path d={`M6 2077A2020 2071 0 0 0 2026 4148`} />
             </g>
           </svg>
-          <div
-            className={
-              `ui-if-glow ui-if-glow--out` +
-              (outgoingCharged ? ` ui-if-on` : ``)
-            }
-          />
-          <div
-            className={
-              `ui-if-glow ui-if-glow--in` + (hubCharged ? ` ui-if-on` : ``)
-            }
-          />
-          <div
-            className={`ui-if-link` + (sweepKey > 0 ? ` ui-if-sweeping` : ``)}
-          >
-            <span
-              className={`ui-if-beam ui-if-beam--glow`}
-              key={`g${sweepKey}`}
-            />
-            <span
-              className={`ui-if-beam ui-if-beam--core`}
-              key={`c${sweepKey}`}
-            />
+          <div className={`ui-if-glow ui-if-glow--out` + (outgoingCharged ? ` ui-if-on` : ``)} />
+          <div className={`ui-if-glow ui-if-glow--in` + (hubCharged ? ` ui-if-on` : ``)} />
+          <div className={`ui-if-link` + (sweepKey > 0 ? ` ui-if-sweeping` : ``)}>
+            <span className={`ui-if-beam ui-if-beam--glow`} key={`g${sweepKey}`} />
+            <span className={`ui-if-beam ui-if-beam--core`} key={`c${sweepKey}`} />
           </div>
           <div
             className={
-              `ui-if-card ui-if-card--light ui-if-hub` +
-              (hubCharged ? ` ui-if-charged` : ``)
+              `ui-if-card ui-if-card--light ui-if-hub` + (hubCharged ? ` ui-if-charged` : ``)
             }
           >
             <span className={`ui-if-bg ui-if-bg--charge ui-if-bg--charge-in`} />
             <span className={`ui-if-label ui-if-label--right`}>
               <span className={`ui-if-title`}>{`Data Analysis`}</span>
-              <span
-                className={`ui-if-sub`}
-              >{`Centralized Data Processing`}</span>
+              <span className={`ui-if-sub`}>{`Centralized Data Processing`}</span>
             </span>
             <span className={`ui-if-badge`}>
               <BadgeRing id={instanceId} kind={`light`} />
-              <svg
-                className={`ui-if-ring`}
-                viewBox={`0 0 118.639 118.639`}
-                overflow={`visible`}
-              >
+              <svg className={`ui-if-ring`} viewBox={`0 0 118.639 118.639`} overflow={`visible`}>
                 <path
                   className={`ui-if-hub-icon`}
                   d={`M71.6334 38.9418C71.7204 38.6914 71.7305 38.4207 71.6625 38.1645C71.5944 37.9082 71.4513 37.6782 71.2515 37.5039C68.4543 35.0908 64.9512 33.6478 61.2659 33.3908C55.4731 32.9703 51.8844 34.5218 50.0719 35.6745C49.8912 35.7907 49.7412 35.9486 49.6342 36.1348C49.5273 36.3211 49.4667 36.5303 49.4575 36.7448C49.4482 36.9594 49.4907 37.173 49.5812 37.3678C49.6717 37.5626 49.8076 37.7327 49.9776 37.864L64.741 49.3383C65.0427 49.5723 65.396 49.7309 65.7713 49.8008C66.1467 49.8707 66.5333 49.85 66.899 49.7403C67.2648 49.6306 67.599 49.4351 67.8739 49.1702C68.1488 48.9052 68.3565 48.5784 68.4796 48.217L71.6334 38.9418ZM35.2432 72.9999C34.9502 73.1984 34.7269 73.4838 34.6047 73.8159C34.4824 74.148 34.4674 74.51 34.5617 74.8511C35.1248 76.869 36.7971 81.0668 41.5459 84.8851C46.2922 88.7034 51.9085 89.1167 54.3083 89.0587C54.6589 89.052 54.9986 88.9349 55.2789 88.724C55.5591 88.5131 55.7658 88.2193 55.8694 87.8842L65.3307 57.9344C66.0146 55.7715 63.5907 53.959 61.7105 55.2229L35.2432 72.9999ZM42.1597 41.3948C41.9304 41.3047 41.6842 41.2659 41.4384 41.2809C41.1925 41.296 40.9529 41.3645 40.7363 41.4818C38.9866 42.4339 34.5013 45.3726 32.1861 51.4046C30.4026 56.0543 31.0309 61.1969 31.5215 63.7127C31.6834 64.5343 32.551 65.008 33.3292 64.7035L61.7226 53.6183C63.7502 52.828 63.7574 49.9618 61.7347 49.1595L42.1597 41.3948ZM84.2774 62.8572C85.099 63.413 86.2204 62.9224 86.3629 61.9388C86.7399 59.3409 87.0638 54.8169 85.5606 51.4046C83.5548 46.8564 80.1521 44.0531 78.5354 42.9124C78.2869 42.7393 77.9876 42.6546 77.6853 42.6716C77.383 42.6887 77.0952 42.8067 76.8679 43.0067L69.7024 49.3625C69.4297 49.6048 69.2158 49.9061 69.0771 50.2435C68.9385 50.5809 68.8786 50.9455 68.9022 51.3096C68.9257 51.6736 69.032 52.0275 69.213 52.3442C69.394 52.661 69.6448 52.9322 69.9465 53.1373L84.2774 62.8572ZM64.2553 87.1133C64.1828 87.9591 64.9005 88.6599 65.7439 88.5681C68.4579 88.2781 74.0379 87.2003 78.2139 83.2079C81.1159 80.4078 83.1261 76.8128 83.9922 72.8743C84.0433 72.6294 84.0395 72.3762 83.9809 72.133C83.9224 71.8898 83.8107 71.6626 83.6539 71.4678L71.1259 56.0108C69.7677 54.336 67.0634 55.1625 66.8749 57.3085L64.2553 87.1133Z`}
@@ -165,18 +138,11 @@ function IntegrationFlow({
               </svg>
             </span>
           </div>
-          <div
-            className={
-              `ui-if-pills` + (outgoingCharged ? ` ui-if-charged` : ``)
-            }
-          >
+          <div className={`ui-if-pills` + (outgoingCharged ? ` ui-if-charged` : ``)}>
             {slotIndices.map((e) => {
               let t = (e + turn) % 6,
                 n = t === 0 && exiting && turn > 0 ? 6 : t,
-                i =
-                  activeItems[
-                    (((n - 1 - turn) % itemCount) + itemCount) % itemCount
-                  ];
+                i = activeItems[(((n - 1 - turn) % itemCount) + itemCount) % itemCount];
               return (
                 <div
                   className={`ui-if-card ui-if-card--icon-left ui-if-pill`}
@@ -186,18 +152,14 @@ function IntegrationFlow({
                 >
                   <span className={`ui-if-bg ui-if-bg--ghost`} />
                   <span className={`ui-if-bg ui-if-bg--light`} />
-                  <span
-                    className={`ui-if-bg ui-if-bg--charge ui-if-bg--charge-out`}
-                  />
+                  <span className={`ui-if-bg ui-if-bg--charge ui-if-bg--charge-out`} />
                   <span className={`ui-if-badge`}>
                     <BadgeRing id={instanceId} kind={`ghost`} />
                     <BadgeRing id={instanceId} kind={`light`} />
                     <span className={`ui-if-icon`}>{i.icon}</span>
                   </span>
                   <span className={`ui-if-label`}>
-                    <span className={`ui-if-title`}>
-                      {i.title ?? `API Integration`}
-                    </span>
+                    <span className={`ui-if-title`}>{i.title ?? `API Integration`}</span>
                     <span className={`ui-if-sub`}>{i.name}</span>
                   </span>
                 </div>
@@ -210,13 +172,7 @@ function IntegrationFlow({
     </div>
   );
 }
-function BadgeRing({
-  id: id,
-  kind: kind,
-}: {
-  id: string;
-  kind: "light" | "ghost";
-}) {
+function BadgeRing({ id: id, kind: kind }: { id: string; kind: "light" | "ghost" }) {
   return (
     <svg
       className={`ui-if-ring ui-if-ring--${kind}`}
@@ -262,12 +218,7 @@ function InnerShadow({
       colorInterpolationFilters={`sRGB`}
     >
       <feFlood floodOpacity={`0`} result={`bg`} />
-      <feBlend
-        mode={`normal`}
-        in={`SourceGraphic`}
-        in2={`bg`}
-        result={`shape`}
-      />
+      <feBlend mode={`normal`} in={`SourceGraphic`} in2={`bg`} result={`shape`} />
       <feColorMatrix
         in={`SourceAlpha`}
         type={`matrix`}
@@ -276,16 +227,8 @@ function InnerShadow({
       />
       <feOffset dy={`4`} />
       <feGaussianBlur stdDeviation={`1`} />
-      <feComposite
-        in2={`hardAlpha`}
-        operator={`arithmetic`}
-        k2={`-1`}
-        k3={`1`}
-      />
-      <feColorMatrix
-        type={`matrix`}
-        values={`0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ${dark} 0`}
-      />
+      <feComposite in2={`hardAlpha`} operator={`arithmetic`} k2={`-1`} k3={`1`} />
+      <feColorMatrix type={`matrix`} values={`0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ${dark} 0`} />
       <feBlend mode={`normal`} in2={`shape`} result={`inner1`} />
       <feColorMatrix
         in={`SourceAlpha`}
@@ -295,12 +238,7 @@ function InnerShadow({
       />
       <feOffset dy={`-2`} />
       <feGaussianBlur stdDeviation={`2`} />
-      <feComposite
-        in2={`hardAlpha`}
-        operator={`arithmetic`}
-        k2={`-1`}
-        k3={`1`}
-      />
+      <feComposite in2={`hardAlpha`} operator={`arithmetic`} k2={`-1`} k3={`1`} />
       <feColorMatrix
         className={`ui-if-rim`}
         type={`matrix`}
@@ -310,13 +248,7 @@ function InnerShadow({
     </filter>
   );
 }
-function RingGradient({
-  id: id,
-  kind: kind,
-}: {
-  id: string;
-  kind: "light" | "ghost";
-}) {
+function RingGradient({ id: id, kind: kind }: { id: string; kind: "light" | "ghost" }) {
   return (
     <radialGradient
       id={id}
@@ -326,11 +258,7 @@ function RingGradient({
       gradientUnits={`userSpaceOnUse`}
       gradientTransform={`translate(59.3193 4.82032) rotate(90) scale(113.818)`}
     >
-      <stop
-        className={`ui-if-stop-${kind}-a`}
-        stopColor={`white`}
-        stopOpacity={`0.4`}
-      />
+      <stop className={`ui-if-stop-${kind}-a`} stopColor={`white`} stopOpacity={`0.4`} />
       <stop
         className={`ui-if-stop-${kind}-b`}
         offset={`1`}
@@ -356,11 +284,7 @@ function FlowDefinitions({ id: id }: { id: string }) {
           r={`1733`}
           gradientUnits={`userSpaceOnUse`}
         >
-          <stop
-            className={`ui-if-orbit-stop`}
-            stopColor={`white`}
-            stopOpacity={`0.6`}
-          />
+          <stop className={`ui-if-orbit-stop`} stopColor={`white`} stopOpacity={`0.6`} />
           <stop
             className={`ui-if-orbit-stop`}
             offset={`0.2`}
@@ -391,12 +315,7 @@ function FlowDefinitions({ id: id }: { id: string }) {
             stopColor={`white`}
             stopOpacity={`0.114`}
           />
-          <stop
-            className={`ui-if-orbit-stop`}
-            offset={`1`}
-            stopColor={`white`}
-            stopOpacity={`0`}
-          />
+          <stop className={`ui-if-orbit-stop`} offset={`1`} stopColor={`white`} stopOpacity={`0`} />
         </radialGradient>
       </defs>
     </svg>
@@ -431,11 +350,7 @@ function ClickUpLogo() {
           <stop offset={`1`} stopColor={`#FFC800`} />
         </linearGradient>
       </defs>
-      <g
-        transform={`translate(32.5 27.32)`}
-        fillRule={`evenodd`}
-        clipRule={`evenodd`}
-      >
+      <g transform={`translate(32.5 27.32)`} fillRule={`evenodd`} clipRule={`evenodd`}>
         <path
           d={`M9.53667e-07 49.2194L9.95256 41.6328C15.2737 48.4413 20.8905 51.651 27.0985 51.651C33.3066 51.651 38.8248 48.5386 43.8504 41.7301L54 49.1222C46.708 58.8486 37.6423 64.0036 27.0985 64.0036C16.6533 64.0036 7.48905 58.8486 9.53667e-07 49.2194Z`}
           fill={`url(#${instanceId}a)`}

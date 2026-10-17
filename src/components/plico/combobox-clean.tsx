@@ -30,21 +30,14 @@ interface ComboboxCleanProps {
 var createSentinel = `\0create`;
 var motionEase = `cubic-bezier(0.22, 1, 0.36, 1)`;
 var prefersReducedMotion = () =>
-  typeof window < `u` &&
-  window.matchMedia?.(`(prefers-reduced-motion: reduce)`).matches;
+  typeof window < `u` && window.matchMedia?.(`(prefers-reduced-motion: reduce)`).matches;
 var cleanInitials = (name: string) => {
   let parts = name.trim().split(/\s+/);
   return (
     (parts[0]?.[0] ?? ``) + (parts.length > 1 ? parts[parts.length - 1][0] : ``)
   ).toUpperCase();
 };
-function CleanHighlightMatch({
-  text: text,
-  query: query,
-}: {
-  text: string;
-  query: string;
-}) {
+function CleanHighlightMatch({ text: text, query: query }: { text: string; query: string }) {
   let matchIndex = query ? text.toLowerCase().indexOf(query.toLowerCase()) : -1;
   return matchIndex < 0 ? (
     <>{text}</>
@@ -76,13 +69,7 @@ function CleanOptionLeading({ option: option }: { option: ComboboxOption }) {
     />
   ) : null;
 }
-var CleanComboboxIcon = ({
-  d: path,
-  className: className,
-}: {
-  d: string;
-  className?: string;
-}) => (
+var CleanComboboxIcon = ({ d: path, className: className }: { d: string; className?: string }) => (
   <svg
     viewBox={`0 0 24 24`}
     className={[`ui-cbxc__glyph`, className].filter(Boolean).join(` `)}
@@ -205,16 +192,11 @@ function ComboboxClean({
     allOptions = React.useMemo(
       () => [
         ...options,
-        ...createdOptions.filter(
-          (t) => !options.some((e) => e.value === t.value),
-        ),
+        ...createdOptions.filter((t) => !options.some((e) => e.value === t.value)),
       ],
       [options, createdOptions],
     ),
-    optionMap = React.useMemo(
-      () => new Map(allOptions.map((e) => [e.value, e])),
-      [allOptions],
-    ),
+    optionMap = React.useMemo(() => new Map(allOptions.map((e) => [e.value, e])), [allOptions]),
     resolveOption = (value: string): ComboboxOption =>
       optionMap.get(value) ?? {
         value: value,
@@ -230,9 +212,7 @@ function ComboboxClean({
       for (let t of allOptions) {
         if (
           normalizedQuery &&
-          !`${t.label} ${t.hint ?? ``} ${t.keywords ?? ``}`
-            .toLowerCase()
-            .includes(normalizedQuery)
+          !`${t.label} ${t.hint ?? ``} ${t.keywords ?? ``}`.toLowerCase().includes(normalizedQuery)
         )
           continue;
         let n = t.group ?? ``,
@@ -260,11 +240,8 @@ function ComboboxClean({
       activeValue !== null && navigationValues.includes(activeValue)
         ? activeValue
         : navigationValues[0],
-    optionId = (value: string) =>
-      `${instanceId}-o${navigationValues.indexOf(value)}`,
-    [chipEntries, setChipEntries] = React.useState<
-      { value: string; leaving?: boolean }[]
-    >(() =>
+    optionId = (value: string) => `${instanceId}-o${navigationValues.indexOf(value)}`,
+    [chipEntries, setChipEntries] = React.useState<{ value: string; leaving?: boolean }[]>(() =>
       selectedValue.map((e) => ({
         value: e,
       })),
@@ -292,9 +269,7 @@ function ComboboxClean({
                 e.value,
                 window.setTimeout(() => {
                   (removalTimersRef.current.delete(e.value),
-                    setChipEntries((t) =>
-                      t.filter((t) => !(t.value === e.value && t.leaving)),
-                    ));
+                    setChipEntries((t) => t.filter((t) => !(t.value === e.value && t.leaving))));
                 }, 420),
               ),
               {
@@ -330,11 +305,7 @@ function ComboboxClean({
       let n = [...t.children].map((e) => (e as HTMLElement).offsetWidth + 4),
         r = n.pop() ?? 0,
         i = getComputedStyle(e),
-        a =
-          e.clientWidth -
-          parseFloat(i.paddingLeft) -
-          parseFloat(i.paddingRight) -
-          inputReserve,
+        a = e.clientWidth - parseFloat(i.paddingLeft) - parseFloat(i.paddingRight) - inputReserve,
         o = 0,
         s = 0;
       for (; s < n.length; s++) {
@@ -353,22 +324,16 @@ function ComboboxClean({
     visibleChips = chipEntries.filter((e) =>
       e.leaving ? tagCount < maxTags : tagCount++ < maxTags,
     ),
-    overflowCount = Math.max(
-      0,
-      chipEntries.filter((e) => !e.leaving).length - maxTags,
-    ),
+    overflowCount = Math.max(0, chipEntries.filter((e) => !e.leaving).length - maxTags),
     previousOverflowRef = React.useRef(overflowCount),
     overflowDirectionRef = React.useRef(`up`);
   (overflowCount !== previousOverflowRef.current &&
     overflowCount > 0 &&
-    (overflowDirectionRef.current =
-      overflowCount > previousOverflowRef.current ? `up` : `down`),
+    (overflowDirectionRef.current = overflowCount > previousOverflowRef.current ? `up` : `down`),
     overflowCount > 0 && (previousOverflowRef.current = overflowCount));
   let renderedOverflow = overflowCount || previousOverflowRef.current,
     armedOverflow =
-      !!armedValue &&
-      overflowCount > 0 &&
-      !visibleChips.some((e) => e.value === armedValue),
+      !!armedValue && overflowCount > 0 && !visibleChips.some((e) => e.value === armedValue),
     previousCountRef = React.useRef(selectedValue.length),
     selectionDirectionRef = React.useRef(`up`);
   selectedValue.length !== previousCountRef.current &&
@@ -379,9 +344,7 @@ function ComboboxClean({
       (value === void 0 && setLocalValue(values),
         onChange?.(
           values,
-          values.map((e: string) =>
-            option?.value === e ? option : resolveOption(e),
-          ),
+          values.map((e: string) => (option?.value === e ? option : resolveOption(e))),
         ));
     },
     announce = (message: string, count: number) =>
@@ -407,10 +370,7 @@ function ComboboxClean({
         value: trimmedQuery,
         label: trimmedQuery,
       };
-      (setCreatedOptions((t) => [
-        ...t.filter((t) => t.value !== option.value),
-        option,
-      ]),
+      (setCreatedOptions((t) => [...t.filter((t) => t.value !== option.value), option]),
         setActiveValue(option.value),
         toggleOption(option));
     },
@@ -421,9 +381,7 @@ function ComboboxClean({
         setArmedValue(null));
     },
     selectValue = (value: string) => {
-      value === createSentinel
-        ? createOption()
-        : toggleOption(resolveOption(value));
+      value === createSentinel ? createOption() : toggleOption(resolveOption(value));
     };
   (React.useLayoutEffect(() => {
     let e = fieldRef.current,
@@ -463,22 +421,18 @@ function ComboboxClean({
         (t.style.opacity = highlightVisible ? `1` : `0`),
         (t.style.height = `${n.offsetHeight}px`),
         (t.style.transform = `translateY(${n.offsetTop}px)`),
-        r &&
-          ((t.dataset.ready = `1`), t.offsetWidth, (t.style.transition = ``)),
+        r && ((t.dataset.ready = `1`), t.offsetWidth, (t.style.transition = ``)),
         !scrollActiveRef.current)
       )
         return;
       scrollActiveRef.current = false;
       let i = n.previousElementSibling,
-        a = i?.classList.contains(`ui-cbxc__group-label`)
-          ? (i as HTMLElement).offsetHeight
-          : 0,
+        a = i?.classList.contains(`ui-cbxc__group-label`) ? (i as HTMLElement).offsetHeight : 0,
         o = n.offsetTop - 6 - a,
         s = n.offsetTop + n.offsetHeight + 6;
       o < e.scrollTop
         ? (e.scrollTop = o)
-        : s > e.scrollTop + e.clientHeight &&
-          (e.scrollTop = s - e.clientHeight);
+        : s > e.scrollTop + e.clientHeight && (e.scrollTop = s - e.clientHeight);
     }),
     React.useEffect(() => {
       if (!open) return;
@@ -497,10 +451,7 @@ function ComboboxClean({
       ((scrollActiveRef.current = true), setHighlightVisible(true));
       let index = Math.max(0, navigationValues.indexOf(activeOption));
       setActiveValue(
-        navigationValues[
-          (index + direction + navigationValues.length) %
-            navigationValues.length
-        ],
+        navigationValues[(index + direction + navigationValues.length) % navigationValues.length],
       );
     },
     handleKeyDown: React.KeyboardEventHandler<HTMLInputElement> = (event) => {
@@ -527,9 +478,7 @@ function ComboboxClean({
         armedValue === t
           ? removeValue(t)
           : (setArmedValue(t),
-            setAnnouncement(
-              `${resolveOption(t).label} – press Backspace again to remove`,
-            ));
+            setAnnouncement(`${resolveOption(t).label} – press Backspace again to remove`));
       }
     },
     handleFieldMouseDown: React.MouseEventHandler<HTMLElement> = (event) => {
@@ -540,11 +489,9 @@ function ComboboxClean({
         setOpen(true));
     },
     handleBlur: React.FocusEventHandler<HTMLDivElement> = (event) => {
-      rootRef.current?.contains(event.relatedTarget) ||
-        (setOpen(false), setArmedValue(null));
+      rootRef.current?.contains(event.relatedTarget) || (setOpen(false), setArmedValue(null));
     },
-    preventMouseDown: React.MouseEventHandler<HTMLElement> = (event) =>
-      event.preventDefault();
+    preventMouseDown: React.MouseEventHandler<HTMLElement> = (event) => event.preventDefault();
   return (
     <div
       ref={rootRef}
@@ -564,28 +511,16 @@ function ComboboxClean({
           {label}
         </label>
       )}
-      <div
-        ref={fieldRef}
-        className={`ui-cbxc__field`}
-        onMouseDown={handleFieldMouseDown}
-      >
+      <div ref={fieldRef} className={`ui-cbxc__field`} onMouseDown={handleFieldMouseDown}>
         <div ref={fieldInnerRef} className={`ui-cbxc__field-inner`}>
-          <ul
-            ref={measureRef}
-            className={`ui-cbxc__measure`}
-            aria-hidden={`true`}
-          >
+          <ul ref={measureRef} className={`ui-cbxc__measure`} aria-hidden={`true`}>
             {chipEntries
               .filter((e) => !e.leaving)
               .map((e) => {
                 let t = resolveOption(e.value),
                   n = !t.icon && !t.avatar && !t.color;
                 return (
-                  <li
-                    className={`ui-cbxc__chip`}
-                    data-plain={n || void 0}
-                    key={e.value}
-                  >
+                  <li className={`ui-cbxc__chip`} data-plain={n || void 0} key={e.value}>
                     <span className={`ui-cbxc__chip-body`}>
                       <CleanOptionLeading option={t} />
                       <span className={`ui-cbxc__chip-label`}>{t.label}</span>
@@ -599,11 +534,7 @@ function ComboboxClean({
             </li>
           </ul>
           {chipEntries.length > 0 && (
-            <ul
-              className={`ui-cbxc__chips`}
-              role={`list`}
-              aria-label={`Selected`}
-            >
+            <ul className={`ui-cbxc__chips`} role={`list`} aria-label={`Selected`}>
               {visibleChips.map((e) => {
                 let t = resolveOption(e.value),
                   n = !t.icon && !t.avatar && !t.color;
@@ -641,10 +572,7 @@ function ComboboxClean({
                 <span className={`ui-cbxc__chip-body`}>
                   {`+`}
                   <span className={`ui-cbxc__roll`}>
-                    <span
-                      data-dir={overflowDirectionRef.current}
-                      key={renderedOverflow}
-                    >
+                    <span data-dir={overflowDirectionRef.current} key={renderedOverflow}>
                       {renderedOverflow}
                     </span>
                   </span>
@@ -664,15 +592,10 @@ function ComboboxClean({
             aria-expanded={open}
             aria-controls={`${instanceId}-list`}
             aria-autocomplete={`list`}
-            aria-activedescendant={
-              open && activeOption ? optionId(activeOption) : void 0
-            }
+            aria-activedescendant={open && activeOption ? optionId(activeOption) : void 0}
             aria-label={label ? void 0 : placeholder}
             onChange={(e) => {
-              (setQuery(e.target.value),
-                setActiveValue(null),
-                setArmedValue(null),
-                setOpen(true));
+              (setQuery(e.target.value), setActiveValue(null), setArmedValue(null), setOpen(true));
             }}
             onKeyDown={handleKeyDown}
           />
@@ -702,11 +625,7 @@ function ComboboxClean({
             aria-label={label ? void 0 : `Options`}
             onMouseLeave={() => setHighlightVisible(false)}
           >
-            <span
-              ref={activePillRef}
-              className={`ui-cbxc__pill`}
-              aria-hidden={`true`}
-            />
+            <span ref={activePillRef} className={`ui-cbxc__pill`} aria-hidden={`true`} />
             <div ref={listInnerRef} className={`ui-cbxc__list-inner`}>
               {groups.map((e, t) => (
                 <div
@@ -716,10 +635,7 @@ function ComboboxClean({
                   key={e.name || `_`}
                 >
                   {e.name && (
-                    <div
-                      className={`ui-cbxc__group-label`}
-                      id={`${instanceId}-g${t}`}
-                    >
+                    <div className={`ui-cbxc__group-label`} id={`${instanceId}-g${t}`}>
                       {e.name}
                     </div>
                   )}
@@ -735,8 +651,7 @@ function ComboboxClean({
                         onMouseDown={preventMouseDown}
                         onMouseMove={() => {
                           (setHighlightVisible(true),
-                            activeOption !== e.value &&
-                              setActiveValue(e.value));
+                            activeOption !== e.value && setActiveValue(e.value));
                         }}
                         onClick={() => {
                           (setActiveValue(e.value), toggleOption(e));
@@ -746,24 +661,15 @@ function ComboboxClean({
                         <CleanOptionLeading option={e} />
                         <span className={`ui-cbxc__text`}>
                           <span className={`ui-cbxc__name`}>
-                            <CleanHighlightMatch
-                              text={e.label}
-                              query={trimmedQuery}
-                            />
+                            <CleanHighlightMatch text={e.label} query={trimmedQuery} />
                           </span>
                           {e.hint && (
                             <span className={`ui-cbxc__hint`}>
-                              <CleanHighlightMatch
-                                text={e.hint}
-                                query={trimmedQuery}
-                              />
+                              <CleanHighlightMatch text={e.hint} query={trimmedQuery} />
                             </span>
                           )}
                         </span>
-                        <CleanComboboxIcon
-                          d={iconPaths.check}
-                          className={`ui-cbxc__check`}
-                        />
+                        <CleanComboboxIcon d={iconPaths.check} className={`ui-cbxc__check`} />
                       </div>
                     );
                   })}
@@ -791,17 +697,14 @@ function ComboboxClean({
                   onMouseDown={preventMouseDown}
                   onMouseMove={() => {
                     (setHighlightVisible(true),
-                      activeOption !== createSentinel &&
-                        setActiveValue(createSentinel));
+                      activeOption !== createSentinel && setActiveValue(createSentinel));
                   }}
                   onClick={createOption}
                 >
                   <span className={`ui-cbxc__plus`} aria-hidden={`true`}>
                     <CleanComboboxIcon d={iconPaths.plus} />
                   </span>
-                  <span className={`ui-cbxc__name`}>
-                    {createLabel(trimmedQuery)}
-                  </span>
+                  <span className={`ui-cbxc__name`}>{createLabel(trimmedQuery)}</span>
                 </div>
               )}
             </div>
@@ -809,10 +712,7 @@ function ComboboxClean({
           <div className={`ui-cbxc__foot`} aria-hidden={`true`}>
             <span className={`ui-cbxc__count`}>
               <span className={`ui-cbxc__roll`}>
-                <span
-                  data-dir={selectionDirectionRef.current}
-                  key={selectedValue.length}
-                >
+                <span data-dir={selectionDirectionRef.current} key={selectedValue.length}>
                   {selectedValue.length}
                 </span>
               </span>

@@ -43,8 +43,7 @@ function buildFloorPath(geometry: typeof colorGeometry, phase: number) {
       vL: verticalAmplitude * Math.sin(phase + Math.PI / 2 + 0.25),
       vR: verticalAmplitude * Math.sin(phase - Math.PI / 2 + 0.75),
     },
-    ordinate = (point: number[], offset: number) =>
-      (point[1] + offset * geometry.k).toFixed(1);
+    ordinate = (point: number[], offset: number) => (point[1] + offset * geometry.k).toFixed(1);
   return `M${geometry.v1[0]} ${ordinate(geometry.v1, offsets.vL)}C${geometry.v1[0]} ${ordinate(geometry.v1, offsets.vL)} ${geometry.c[0]} ${ordinate(geometry.c, offsets.l)} ${geometry.l[0]} ${ordinate(geometry.l, offsets.l)}V${geometry.bottom}H${geometry.r[0]}V${ordinate(geometry.r, offsets.r)}L${geometry.v4[0]} ${ordinate(geometry.v4, offsets.vR)}H${geometry.v3[0]}V${ordinate(geometry.v3, offsets.vR)}L${geometry.m2[0]} ${ordinate(geometry.m2, offsets.m)}H${geometry.m1[0]}V${ordinate(geometry.m1, offsets.m)}L${geometry.v2[0]} ${ordinate(geometry.v2, offsets.vL)}H${geometry.v1[0]}V${ordinate(geometry.v1, offsets.vL)}Z`;
 }
 function GradientFloor({
@@ -61,29 +60,18 @@ function GradientFloor({
     React.useEffect(() => {
       let e = rootRef.current;
       if (!e) return;
-      let t =
-          speed > 0 &&
-          !window.matchMedia(`(prefers-reduced-motion: reduce)`).matches,
+      let t = speed > 0 && !window.matchMedia(`(prefers-reduced-motion: reduce)`).matches,
         n = 0,
         r = 0,
         s = (e: number) => {
           if (((n = requestAnimationFrame(s)), e - r < 32)) return;
           r = e;
           let t = (e / (speed * 1e3)) * Math.PI * 2;
-          (colorPathRef.current?.setAttribute(
-            `d`,
-            buildFloorPath(colorGeometry, t),
-          ),
-            lightPathRef.current?.setAttribute(
-              `d`,
-              buildFloorPath(lightGeometry, t),
-            ));
+          (colorPathRef.current?.setAttribute(`d`, buildFloorPath(colorGeometry, t)),
+            lightPathRef.current?.setAttribute(`d`, buildFloorPath(lightGeometry, t)));
         };
       if (typeof IntersectionObserver > `u`)
-        return (
-          t && (n = requestAnimationFrame(s)),
-          () => cancelAnimationFrame(n)
-        );
+        return (t && (n = requestAnimationFrame(s)), () => cancelAnimationFrame(n));
       let l = new IntersectionObserver(([r]) => {
         (cancelAnimationFrame(n),
           e.toggleAttribute(`data-paused`, !r.isIntersecting),
@@ -97,10 +85,7 @@ function GradientFloor({
       );
     }, [speed]),
     (
-      <div
-        ref={rootRef}
-        className={[`ui-gf`, className].filter(Boolean).join(` `)}
-      >
+      <div ref={rootRef} className={[`ui-gf`, className].filter(Boolean).join(` `)}>
         <style href={`ui-gradient-floor`} precedence={`default`}>
           {gradientFloorStyles}
         </style>

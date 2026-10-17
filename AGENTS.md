@@ -14,6 +14,12 @@ Read `README.md`, `CONTEXT.md`, and `docs/README.md` before changing behavior. U
 
 Keep the project private. Do not publish packages, create public repositories, disable deployment protection, or deploy publicly as part of routine development. Keep credentials out of generated registry bundles and browser-visible configuration.
 
+## Tooling and branding
+
+Use Node.js 24 and the pnpm version in `package.json`. Keep `pnpm-lock.yaml` as the only repository lockfile and install with `pnpm install --frozen-lockfile`. Run `pnpm format` after editing supported source or documentation, and `pnpm format:check` before committing. Generated registry payloads must be rebuilt after component formatting so their source stays aligned.
+
+Use the Plico UI name, `@plico` registry namespace, and identity assets in `public/brand/`. Keep README and website links on the configured Plico UI origin. Preserve the separate license notices when rebranding sample content or documentation.
+
 ## Library changes
 
 Treat `src/library/catalog.json` as the installable inventory and `src/components/plico/*.tsx` as the component sources. Preserve stable registry names, named helpers, and the default reusable-component export. Each item must install one standalone TypeScript component with a semantic filename. Keep notice files outside the components directory. Run registry build, structural/type checks, and the real consumer smoke test for installation, alias, asset, or notice changes.

@@ -11,9 +11,7 @@ interface VoiceOrbProps {
   size?: number;
   dots?: number;
   accent?: string;
-  label?:
-    | boolean
-    | Partial<Record<"idle" | "listening" | "thinking" | "speaking", string>>;
+  label?: boolean | Partial<Record<"idle" | "listening" | "thinking" | "speaking", string>>;
   interactive?: boolean;
   onPress?: () => void;
   className?: string;
@@ -34,8 +32,7 @@ var valueValue2 = {
 };
 var valueValue3 = (e: number, t = 0, n = 1) => Math.min(n, Math.max(t, e));
 var valueValue4 = () =>
-  typeof window < `u` &&
-  window.matchMedia(`(prefers-reduced-motion: reduce)`).matches;
+  typeof window < `u` && window.matchMedia(`(prefers-reduced-motion: reduce)`).matches;
 function valueValue5(e: string, t: HTMLElement) {
   t.style.color = e;
   let n = getComputedStyle(t).color.match(/[\d.]+/g);
@@ -75,9 +72,7 @@ function VoiceOrb({
     for (let e = 0; e < n; e++) {
       let t = 1 - (e / (n - 1)) * 2,
         a = Math.sqrt(1 - t * t);
-      ((r[e * 3] = Math.cos(i * e) * a),
-        (r[e * 3 + 1] = t),
-        (r[e * 3 + 2] = Math.sin(i * e) * a));
+      ((r[e * 3] = Math.cos(i * e) * a), (r[e * 3 + 1] = t), (r[e * 3 + 2] = Math.sin(i * e) * a));
     }
     let d = Math.min(window.devicePixelRatio || 1, 2.5);
     ((e.width = Math.round(size * d)), (e.height = Math.round(size * d)));
@@ -88,10 +83,7 @@ function VoiceOrb({
       g = () => {
         let t = getComputedStyle(e);
         ((m = valueValue5(t.color, p)),
-          (h = valueValue5(
-            t.getPropertyValue(`--ui-vo-accent`).trim() || `#2f6bff`,
-            p,
-          )));
+          (h = valueValue5(t.getPropertyValue(`--ui-vo-accent`).trim() || `#2f6bff`, p)));
       };
     g();
     let _ = {
@@ -122,8 +114,7 @@ function VoiceOrb({
         ++E % 30 == 0 && g();
         let f = 0;
         for (let e of valueValue)
-          ((_[e] += (+(e === l.state) - _[e]) * Math.min(1, i * 5)),
-            (f += _[e] * valueValue2[e]));
+          ((_[e] += (+(e === l.state) - _[e]) * Math.min(1, i * 5)), (f += _[e] * valueValue2[e]));
         v += f * i;
         let p =
             l.state === `listening`
@@ -133,16 +124,11 @@ function VoiceOrb({
                     0.3 * Math.sin(c * 9.7 + 1) * Math.sin(c * 0.9),
                 )
               : valueValue3(
-                  0.3 +
-                    0.7 *
-                      Math.abs(Math.sin(c * 4.1)) *
-                      (0.5 + 0.5 * Math.sin(c * 1.3 + 2)),
+                  0.3 + 0.7 * Math.abs(Math.sin(c * 4.1)) * (0.5 + 0.5 * Math.sin(c * 1.3 + 2)),
                 ),
           y = l.level === void 0 ? p : valueValue3(l.level);
         ((S += (y - S) * Math.min(1, i * 12)),
-          (C.strength +=
-            ((C.on && l.interactive ? 1 : 0) - C.strength) *
-            Math.min(1, i * 8)));
+          (C.strength += ((C.on && l.interactive ? 1 : 0) - C.strength) * Math.min(1, i * 8)));
         let x = size,
           A = x / 2,
           j = x * 0.32,
@@ -229,9 +215,7 @@ function VoiceOrb({
       }
     };
     let A = () => {
-        (cancelAnimationFrame(T),
-          (w = performance.now()),
-          (T = requestAnimationFrame(k)));
+        (cancelAnimationFrame(T), (w = performance.now()), (T = requestAnimationFrame(k)));
       },
       j =
         `IntersectionObserver` in window
@@ -404,10 +388,7 @@ function VoiceOrbDemo2() {
     i = React.useRef(false);
   React.useEffect(() => {
     if (i.current) return;
-    let n = window.setTimeout(
-      () => t((e) => (e + 1) % valueValue7.length),
-      valueValue7[e].ms,
-    );
+    let n = window.setTimeout(() => t((e) => (e + 1) % valueValue7.length), valueValue7[e].ms);
     return () => window.clearTimeout(n);
   }, [e]);
   let a = (e: React.SetStateAction<number>) => {
@@ -415,15 +396,8 @@ function VoiceOrbDemo2() {
   };
   return (
     <div className={`vo-demo`}>
-      <VoiceOrb
-        state={valueValue7[e].state}
-        onPress={() => a((e + 1) % valueValue7.length)}
-      />
-      <div
-        className={`segmented vo-demo__states`}
-        role={`radiogroup`}
-        aria-label={`State`}
-      >
+      <VoiceOrb state={valueValue7[e].state} onPress={() => a((e + 1) % valueValue7.length)} />
+      <div className={`segmented vo-demo__states`} role={`radiogroup`} aria-label={`State`}>
         {valueValue7.map((t, n) => (
           <button
             type={`button`}

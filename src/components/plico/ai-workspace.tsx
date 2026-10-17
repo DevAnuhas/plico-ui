@@ -174,8 +174,7 @@ function ChatComposerComponent({
           ((t = Math.min(e.length, t + 1)), B(e.slice(0, t).join(` `)));
         }, 320),
         r = window.setInterval(() => {
-          let n =
-            t < e.length && Math.random() > 0.3 ? 0.3 + Math.random() * 0.7 : 0;
+          let n = t < e.length && Math.random() > 0.3 ? 0.3 + Math.random() * 0.7 : 0;
           H((e) => [...e.slice(1), n]);
         }, 120);
       return () => {
@@ -183,11 +182,7 @@ function ChatComposerComponent({
       };
     }, [L, dictation]));
   let ce = () => {
-      (I(false),
-        B(``),
-        H(valueValue10()),
-        R(true),
-        U(`Recording. Press Escape to discard.`));
+      (I(false), B(``), H(valueValue10()), R(true), U(`Recording. Press Escape to discard.`));
     },
     Z = (e: boolean) => {
       (R(false),
@@ -237,14 +232,10 @@ function ChatComposerComponent({
             inert={O !== `done`}
             aria-hidden={O !== `done`}
           >
-            <span
-              className={`ui-chat-composer__icon ui-chat-composer__icon--folder`}
-            >
+            <span className={`ui-chat-composer__icon ui-chat-composer__icon--folder`}>
               <Icong />
             </span>
-            <span
-              className={`ui-chat-composer__label`}
-            >{`Select a project`}</span>
+            <span className={`ui-chat-composer__label`}>{`Select a project`}</span>
           </button>
           <button
             type={`button`}
@@ -254,19 +245,13 @@ function ChatComposerComponent({
             aria-busy={O === `loading`}
           >
             <span className={`ui-chat-composer__logos`} aria-hidden={`true`}>
-              <span
-                className={`ui-chat-composer__logo ui-chat-composer__logo--gmail`}
-              >
+              <span className={`ui-chat-composer__logo ui-chat-composer__logo--gmail`}>
                 <Iconv />
               </span>
-              <span
-                className={`ui-chat-composer__logo ui-chat-composer__logo--slack`}
-              >
+              <span className={`ui-chat-composer__logo ui-chat-composer__logo--slack`}>
                 <Icony />
               </span>
-              <span
-                className={`ui-chat-composer__logo ui-chat-composer__logo--clickup`}
-              >
+              <span className={`ui-chat-composer__logo ui-chat-composer__logo--clickup`}>
                 <Iconb />
               </span>
             </span>
@@ -340,10 +325,7 @@ function ChatComposerComponent({
               </span>
             </button>
           </div>
-          <div
-            className={`ui-chat-composer__toolbar ui-chat-composer__toolbar--end`}
-            inert={L}
-          >
+          <div className={`ui-chat-composer__toolbar ui-chat-composer__toolbar--end`} inert={L}>
             <button
               ref={K}
               type={`button`}
@@ -352,20 +334,12 @@ function ChatComposerComponent({
               aria-expanded={F}
               onClick={() => I((e) => !e)}
               onKeyDown={(e) => {
-                (e.key === `ArrowDown` || e.key === `ArrowUp`) &&
-                  (e.preventDefault(), I(true));
+                (e.key === `ArrowDown` || e.key === `ArrowUp`) && (e.preventDefault(), I(true));
               }}
             >
-              <span
-                className={`ui-chat-composer__model-face`}
-                data-morph={J || void 0}
-                key={P.id}
-              >
+              <span className={`ui-chat-composer__model-face`} data-morph={J || void 0} key={P.id}>
                 {P.Logo && P.id !== `auto` && (
-                  <span
-                    className={`ui-chat-composer__model-logo`}
-                    aria-hidden={`true`}
-                  >
+                  <span className={`ui-chat-composer__model-logo`} aria-hidden={`true`}>
                     <P.Logo />
                   </span>
                 )}
@@ -536,10 +510,7 @@ function Iconl({
         E(true));
     }, [open]),
     React.useLayoutEffect(() => {
-      open &&
-        !S &&
-        d.current &&
-        (getComputedStyle(d.current).clipPath, E(false), w(true));
+      open && !S && d.current && (getComputedStyle(d.current).clipPath, E(false), w(true));
     }, [h]),
     React.useEffect(() => {
       S &&
@@ -580,9 +551,7 @@ function Iconl({
             left: h.left,
             "--from-top": `${h.fromTop}px`,
             "--from-left": `${h.fromLeft}px`,
-            "--from-bottom": h.up
-              ? `0px`
-              : `calc(100% - ${h.fromRadius * 2}px)`,
+            "--from-bottom": h.up ? `0px` : `calc(100% - ${h.fromRadius * 2}px)`,
             "--from-radius": `${h.fromRadius}px`,
           } as CSSVariables
         }
@@ -638,24 +607,14 @@ function Iconl({
               onClick={() => onPick(e)}
               key={e.id}
             >
-              <span
-                className={`ui-chat-composer__option-logo`}
-                aria-hidden={`true`}
-              >
+              <span className={`ui-chat-composer__option-logo`} aria-hidden={`true`}>
                 {e.Logo && <e.Logo />}
               </span>
               <span className={`ui-chat-composer__option-text`}>
-                <span className={`ui-chat-composer__option-name`}>
-                  {e.name}
-                </span>
-                <span className={`ui-chat-composer__option-desc`}>
-                  {e.description}
-                </span>
+                <span className={`ui-chat-composer__option-name`}>{e.name}</span>
+                <span className={`ui-chat-composer__option-desc`}>{e.description}</span>
               </span>
-              <span
-                className={`ui-chat-composer__option-check`}
-                aria-hidden={`true`}
-              >
+              <span className={`ui-chat-composer__option-check`} aria-hidden={`true`}>
                 <ValueValue2 />
               </span>
             </div>
@@ -974,22 +933,12 @@ var ValueValue = () => (
   </svg>
 );
 var ValueValue2 = () => (
-  <svg
-    viewBox={`0 0 24 24`}
-    {...valueValue13}
-    strokeWidth={1.75}
-    aria-hidden={`true`}
-  >
+  <svg viewBox={`0 0 24 24`} {...valueValue13} strokeWidth={1.75} aria-hidden={`true`}>
     <path d={`M5 14L8.5 17.5L19 6.5`} />
   </svg>
 );
 var Iconw = () => (
-  <svg
-    viewBox={`0 0 24 24`}
-    {...valueValue13}
-    color={`#737373`}
-    aria-hidden={`true`}
-  >
+  <svg viewBox={`0 0 24 24`} {...valueValue13} color={`#737373`} aria-hidden={`true`}>
     <path d={`M18 6L6.00081 17.9992M17.9992 18L6 6.00085`} />
   </svg>
 );
@@ -1894,8 +1843,7 @@ var ValueValue5 = `
 }
 `;
 var valueValue = 0;
-var valueValue2 = (e: string) =>
-  `${e}-${Date.now().toString(36)}-${(valueValue++).toString(36)}`;
+var valueValue2 = (e: string) => `${e}-${Date.now().toString(36)}-${(valueValue++).toString(36)}`;
 async function valueValue3(e: string) {
   let t = e.toLowerCase();
   return (
@@ -1929,9 +1877,7 @@ function AiWorkspace({
 }: AiWorkspaceProps) {
   let [g, _] = React.useState(conversations),
     [v, y] = React.useState(projects),
-    [b, x] = React.useState<
-      { kind: "welcome" | "projects" } | { kind: "chat"; id: string }
-    >({
+    [b, x] = React.useState<{ kind: "welcome" | "projects" } | { kind: "chat"; id: string }>({
       kind: `welcome`,
     }),
     [S, C] = React.useState(false),
@@ -1968,8 +1914,7 @@ function AiWorkspace({
         window.addEventListener(`pointerdown`, e),
         window.addEventListener(`keydown`, t),
         () => {
-          (window.removeEventListener(`pointerdown`, e),
-            window.removeEventListener(`keydown`, t));
+          (window.removeEventListener(`pointerdown`, e), window.removeEventListener(`keydown`, t));
         }
       );
     }, [A, M]));
@@ -2066,13 +2011,9 @@ function AiWorkspace({
     Q = React.useMemo(() => {
       let e = R.trim().toLowerCase();
       return v
-        .filter(
-          (t) => !e || `${t.name} ${t.description}`.toLowerCase().includes(e),
-        )
+        .filter((t) => !e || `${t.name} ${t.description}`.toLowerCase().includes(e))
         .sort((e, t) =>
-          B === `name`
-            ? e.name.localeCompare(t.name)
-            : e.updatedDaysAgo - t.updatedDaysAgo,
+          B === `name` ? e.name.localeCompare(t.name) : e.updatedDaysAgo - t.updatedDaysAgo,
         );
     }, [v, R, B]),
     ie = v.find((e) => e.id === H),
@@ -2089,9 +2030,7 @@ function AiWorkspace({
       (y((e) => [t, ...e]), F(``), N(false), V(`recent`));
     },
     oe = (e: WorkspaceMessage) =>
-      O?.msg === e.id
-        ? e.text.split(/(\s+)/).slice(0, O.shown).join(``)
-        : e.text;
+      O?.msg === e.id ? e.text.split(/(\s+)/).slice(0, O.shown).join(``) : e.text;
   return (
     <>
       <style href={`ui-ai-workspace`} precedence={`default`}>
@@ -2176,9 +2115,7 @@ function AiWorkspace({
           )}
           <p className={`ui-aw__group`}>{`Recents`}</p>
           <div className={`ui-aw__nav ui-aw__recents`}>
-            {X.length === 0 && (
-              <p className={`ui-aw__none`}>{`No chats match.`}</p>
-            )}
+            {X.length === 0 && <p className={`ui-aw__none`}>{`No chats match.`}</p>}
             {X.map((e) => (
               <button
                 type={`button`}
@@ -2203,11 +2140,7 @@ function AiWorkspace({
               <span className={`ui-aw__user-dot`}>{userName[0]}</span>
             )}
             <span>{userName}</span>
-            <button
-              type={`button`}
-              className={`ui-aw__icon`}
-              aria-label={`Settings`}
-            >
+            <button type={`button`} className={`ui-aw__icon`} aria-label={`Settings`}>
               <Iconu name={`settings`} />
             </button>
           </div>
@@ -2232,9 +2165,7 @@ function AiWorkspace({
                 aria-expanded={A === `project`}
                 onClick={() => j(A === `project` ? null : `project`)}
               >
-                <span className={`ui-aw__muted`}>
-                  {ie?.name ?? `Workspace`}
-                </span>
+                <span className={`ui-aw__muted`}>{ie?.name ?? `Workspace`}</span>
                 <span className={`ui-aw__slash`}>{`/`}</span>
                 <span className={`ui-aw__ellipsis`}>{ae}</span>
                 <Iconu name={`chevronDown`} size={14} />
@@ -2302,9 +2233,7 @@ function AiWorkspace({
                 {`Hello `}
                 {userName}
               </h2>
-              <p
-                className={`ui-aw__sub`}
-              >{`What can I help you with today?`}</p>
+              <p className={`ui-aw__sub`}>{`What can I help you with today?`}</p>
               <div className={`ui-aw__composer`}>
                 <ChatComposerComponent
                   placeholder={`How can I help you today?`}
@@ -2317,12 +2246,7 @@ function AiWorkspace({
                   `Draft the pricing announcement email`,
                   `Compare our pricing tiers`,
                 ].map((e) => (
-                  <button
-                    type={`button`}
-                    className={`ui-aw__starter`}
-                    onClick={() => J(e)}
-                    key={e}
-                  >
+                  <button type={`button`} className={`ui-aw__starter`} onClick={() => J(e)} key={e}>
                     {e}
                   </button>
                 ))}
@@ -2349,11 +2273,7 @@ function AiWorkspace({
                           <Iconc
                             text={e.text}
                             onRetry={() =>
-                              J(
-                                q.messages
-                                  .filter((e) => e.role === `user`)
-                                  .at(-1)?.text ?? ``,
-                              )
+                              J(q.messages.filter((e) => e.role === `user`).at(-1)?.text ?? ``)
                             }
                           />
                         )}
@@ -2363,19 +2283,13 @@ function AiWorkspace({
                 )}
                 {E === q.id && (
                   <div className={`ui-aw__msg ui-aw__msg--ai`}>
-                    <span
-                      className={`ui-aw__mark ui-aw__mark--busy`}
-                      aria-hidden={`true`}
-                    />
+                    <span className={`ui-aw__mark ui-aw__mark--busy`} aria-hidden={`true`} />
                     <p className={`ui-aw__thinking`}>{`Thinking…`}</p>
                   </div>
                 )}
               </div>
               <div className={`ui-aw__composer ui-aw__composer--dock`}>
-                <ChatComposerComponent
-                  placeholder={`Reply…`}
-                  onSend={(e: string) => J(e)}
-                />
+                <ChatComposerComponent placeholder={`Reply…`} onSend={(e: string) => J(e)} />
                 <p
                   className={`ui-aw__disclaimer`}
                 >{`AI can make mistakes – please double-check important answers.`}</p>
@@ -2394,11 +2308,7 @@ function AiWorkspace({
                     className={`ui-aw__sub ui-aw__sub--left`}
                   >{`Keep chats, files and notes for each piece of work together.`}</p>
                 </div>
-                <button
-                  type={`button`}
-                  className={`ui-aw__primary`}
-                  onClick={() => N(true)}
-                >
+                <button type={`button`} className={`ui-aw__primary`} onClick={() => N(true)}>
                   <Iconu name={`plus`} size={14} />
                   {`Create project`}
                 </button>
@@ -2428,16 +2338,11 @@ function AiWorkspace({
                     onClick={() => j(A === `sort` ? null : `sort`)}
                   >
                     {`Sort by `}
-                    <strong>
-                      {B === `recent` ? `Recent activity` : `Name`}
-                    </strong>
+                    <strong>{B === `recent` ? `Recent activity` : `Name`}</strong>
                     <Iconu name={`chevronDown`} size={14} />
                   </button>
                   {A === `sort` && (
-                    <div
-                      className={`ui-aw__menu ui-aw__menu--right`}
-                      role={`menu`}
-                    >
+                    <div className={`ui-aw__menu ui-aw__menu--right`} role={`menu`}>
                       {[`recent`, `name`].map((e) => (
                         <button
                           type={`button`}
@@ -2490,9 +2395,7 @@ function AiWorkspace({
                             }}
                           />
                         ) : (
-                          <span className={`ui-aw__project-name`}>
-                            {e.name}
-                          </span>
+                          <span className={`ui-aw__project-name`}>{e.name}</span>
                         )}
                         {e.pinned && (
                           <span className={`ui-aw__pinned`}>
@@ -2511,10 +2414,7 @@ function AiWorkspace({
                             <Iconu name={`moreV`} />
                           </button>
                           {A === e.id && (
-                            <div
-                              className={`ui-aw__menu ui-aw__menu--right`}
-                              role={`menu`}
-                            >
+                            <div className={`ui-aw__menu ui-aw__menu--right`} role={`menu`}>
                               <button
                                 type={`button`}
                                 role={`menuitem`}
@@ -2583,10 +2483,7 @@ function AiWorkspace({
             inert={!M}
           >
             <div className={`ui-aw__dialog-card`}>
-              <h3
-                id={`ui-aw-create`}
-                className={`ui-aw__dialog-title`}
-              >{`Create project`}</h3>
+              <h3 id={`ui-aw-create`} className={`ui-aw__dialog-title`}>{`Create project`}</h3>
               <input
                 className={`ui-aw__field`}
                 value={P}
@@ -2616,13 +2513,7 @@ function AiWorkspace({
     </>
   );
 }
-function Iconc({
-  text: text,
-  onRetry: onRetry,
-}: {
-  text: string;
-  onRetry: () => void;
-}) {
+function Iconc({ text: text, onRetry: onRetry }: { text: string; onRetry: () => void }) {
   let [n, a] = React.useState(false);
   return (
     <div className={`ui-aw__actions`}>
@@ -2632,20 +2523,13 @@ function Iconc({
         aria-label={`Copy answer`}
         onClick={async () => {
           try {
-            (await navigator.clipboard.writeText(text),
-              a(true),
-              setTimeout(() => a(false), 1400));
+            (await navigator.clipboard.writeText(text), a(true), setTimeout(() => a(false), 1400));
           } catch {}
         }}
       >
         <Iconu name={n ? `check` : `copy`} size={15} />
       </button>
-      <button
-        type={`button`}
-        className={`ui-aw__icon`}
-        aria-label={`Ask again`}
-        onClick={onRetry}
-      >
+      <button type={`button`} className={`ui-aw__icon`} aria-label={`Ask again`} onClick={onRetry}>
         <Iconu name={`retry`} size={15} />
       </button>
     </div>
@@ -2767,10 +2651,7 @@ var valueValue6: Record<string, string[]> = {
   chevronLeft: [`m15 18-6-6 6-6`],
   chevronDown: [`m6 9 6 6 6-6`],
   check: [`M20 6 9 17l-5-5`],
-  panel: [
-    `M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z`,
-    `M9 3v18`,
-  ],
+  panel: [`M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z`, `M9 3v18`],
   folder: [
     `M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z`,
   ],
@@ -3293,11 +3174,7 @@ function AiWorkspaceDemo2() {
       return (o.observe(i), () => o.disconnect());
     }, []),
     (
-      <div
-        ref={e}
-        className={`workspace-demo`}
-        data-fit={t ? (t.card ? `card` : `stage`) : void 0}
-      >
+      <div ref={e} className={`workspace-demo`} data-fit={t ? (t.card ? `card` : `stage`) : void 0}>
         <div
           className={`workspace-demo__frame`}
           style={

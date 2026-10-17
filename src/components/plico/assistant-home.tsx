@@ -37,13 +37,40 @@ interface NavigationItem {
   icon: IconNode;
   count?: number;
 }
-type ThinkingSource = {label: string; href?: string; tooltip?: string; icon?: React.ReactNode};
-type ThinkingStep = {kind: "step"; label: string} | {kind: "search"; label: string; activeLabel?: string; sources: ThinkingSource[]; moreSources?: ThinkingSource[]};
-interface ChatReply {steps: ThinkingStep[]; paragraphs: string[]}
-type ChatMessage = {id: number; role: "user"; text: string} | {id: number; role: "assistant"; reply: ChatReply};
-interface MessageListProps {messages: ChatMessage[]; name: string; scroller: React.RefObject<HTMLElement | null>; onDone: () => void}
-interface ReplyProps {name: string; reply: ChatReply; onGrow: () => void; onDone: () => void}
-interface ComposerProps {placeholder?: string; onSend?: (message: string) => void; busy?: boolean; className?: string}
+type ThinkingSource = { label: string; href?: string; tooltip?: string; icon?: React.ReactNode };
+type ThinkingStep =
+  | { kind: "step"; label: string }
+  | {
+      kind: "search";
+      label: string;
+      activeLabel?: string;
+      sources: ThinkingSource[];
+      moreSources?: ThinkingSource[];
+    };
+interface ChatReply {
+  steps: ThinkingStep[];
+  paragraphs: string[];
+}
+type ChatMessage =
+  { id: number; role: "user"; text: string } | { id: number; role: "assistant"; reply: ChatReply };
+interface MessageListProps {
+  messages: ChatMessage[];
+  name: string;
+  scroller: React.RefObject<HTMLElement | null>;
+  onDone: () => void;
+}
+interface ReplyProps {
+  name: string;
+  reply: ChatReply;
+  onGrow: () => void;
+  onDone: () => void;
+}
+interface ComposerProps {
+  placeholder?: string;
+  onSend?: (message: string) => void;
+  busy?: boolean;
+  className?: string;
+}
 
 interface SetupTask {
   id: string;
@@ -183,7 +210,10 @@ var ValueValue38 = [78, 180, 140, 175, 126, 168, 110];
 function GlassFolderComponent({
   className: className,
   label = `Blue folder holding three documents behind a frosted front pocket`,
-}: {className?: string; label?: string}) {
+}: {
+  className?: string;
+  label?: string;
+}) {
   let n = `ui-fd` + React.useId().replace(/[^a-zA-Z0-9_-]/g, ``);
   return (
     <div className={[`ui-fd`, className].filter(Boolean).join(` `)} role={`img`} aria-label={label}>
@@ -517,7 +547,7 @@ function ThinkingState({
     </div>
   );
 }
-function ThinkingStep({ source: source, delay: delay }: {source: ThinkingSource; delay: number}) {
+function ThinkingStep({ source: source, delay: delay }: { source: ThinkingSource; delay: number }) {
   let n = source.tooltip ?? source.href?.replace(/^https?:\/\//, ``),
     i = (
       <>
@@ -4115,7 +4145,12 @@ function ValueValue8(e: (message: string) => ChatReply) {
     finish: () => i(false),
   };
 }
-function ValueValue9({ messages: messages, name: name, scroller: scroller, onDone: onDone }: MessageListProps) {
+function ValueValue9({
+  messages: messages,
+  name: name,
+  scroller: scroller,
+  onDone: onDone,
+}: MessageListProps) {
   let i = () => {
     let e = scroller.current;
     e &&

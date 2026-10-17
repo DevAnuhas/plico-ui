@@ -242,9 +242,7 @@ function GlowKeyboard({
         m = e.querySelector<HTMLElement>(`.ui-gk-composer`)!,
         v = e.querySelector<HTMLElement>(`.ui-gk-glow--hard`)!,
         b = new Map<string, HTMLElement>();
-      e.querySelectorAll<HTMLElement>(`[data-k]`).forEach((e) =>
-        b.set(e.dataset.k!, e),
-      );
+      e.querySelectorAll<HTMLElement>(`[data-k]`).forEach((e) => b.set(e.dataset.k!, e));
       let x = () => e.clientWidth / 2200,
         E = `http://www.w3.org/2000/svg` as const,
         D: { c: SVGEllipseElement; l: SVGEllipseElement; t0: number }[] = [],
@@ -293,14 +291,8 @@ function GlowKeyboard({
               (n.c.remove(), n.l.remove(), D.splice(t, 1));
               continue;
             }
-            (n.c.setAttribute(
-              `cy`,
-              (1361.7 - r * 470 - valueValue7.y).toFixed(1),
-            ),
-              n.l.setAttribute(
-                `cy`,
-                (1401.7 - r * 330 - valueValue8.y).toFixed(1),
-              ));
+            (n.c.setAttribute(`cy`, (1361.7 - r * 470 - valueValue7.y).toFixed(1)),
+              n.l.setAttribute(`cy`, (1401.7 - r * 330 - valueValue8.y).toFixed(1)));
           }
         },
         N = () => {
@@ -308,9 +300,7 @@ function GlowKeyboard({
               .getAnimations({
                 subtree: true,
               })
-              .find(
-                (e) => "animationName" in e && e.animationName === `ui-gk-swap`,
-              ),
+              .find((e) => "animationName" in e && e.animationName === `ui-gk-swap`),
             t = Number(e?.currentTime ?? 0);
           return (1 - Math.cos((2 * Math.PI * (t % 6e3)) / 6e3)) / 2;
         },
@@ -371,10 +361,7 @@ function GlowKeyboard({
           if (!t || !A) return;
           let n = Math.min(
             1,
-            Math.max(
-              0,
-              (t.offsetLeft + t.offsetWidth / 2) / (valueValue9.width * x()),
-            ),
+            Math.max(0, (t.offsetLeft + t.offsetWidth / 2) / (valueValue9.width * x())),
           );
           (O(120 + n * 1960), te(n));
         },
@@ -392,9 +379,7 @@ function GlowKeyboard({
         V = (e: KeyboardEvent) => {
           e.isTrusted && (B = true);
           let t = valueValue15(e);
-          (t && F(t),
-            t && !e.repeat && R(t),
-            e.key === `Enter` && (e.preventDefault(), z()));
+          (t && F(t), t && !e.repeat && R(t), e.key === `Enter` && (e.preventDefault(), z()));
         },
         H = (e: { code: string; key: string }) => {
           let t = valueValue15(e);
@@ -408,8 +393,7 @@ function GlowKeyboard({
         t.addEventListener(`blur`, L),
         t.addEventListener(`focus`, U));
       let W = true,
-        G = (e: number | undefined) =>
-          new Promise((t) => window.setTimeout(t, e)),
+        G = (e: number | undefined) => new Promise((t) => window.setTimeout(t, e)),
         K = (e: number, t: number) => e + Math.random() * (t - e),
         q = () => !W || B,
         J = (e: string) => {
@@ -453,8 +437,7 @@ function GlowKeyboard({
             let n = T.current.prompts;
             if (!n.length) return;
             let r = n[e % n.length],
-              i =
-                e === 0 ? Math.min(r.length - 1, r.indexOf(` `) + 4 || 4) : -1;
+              i = e === 0 ? Math.min(r.length - 1, r.indexOf(` `) + 4 || 4) : -1;
             for (let e = 0; e < r.length; e++) {
               if (q()) return;
               (e === i &&
@@ -481,14 +464,10 @@ function GlowKeyboard({
                 ((A = t.isIntersecting),
                   cancelAnimationFrame(k),
                   e.toggleAttribute(`data-paused`, !A),
-                  A &&
-                    (Q || ((Q = true), Z()),
-                    i || (k = requestAnimationFrame(M))));
+                  A && (Q || ((Q = true), Z()), i || (k = requestAnimationFrame(M))));
               });
       return (
-        $
-          ? $.observe(e)
-          : ((A = true), (Q = true), Z(), i || (k = requestAnimationFrame(M))),
+        $ ? $.observe(e) : ((A = true), (Q = true), Z(), i || (k = requestAnimationFrame(M))),
         () => {
           ((W = false),
             $?.disconnect(),
@@ -517,10 +496,7 @@ function GlowKeyboard({
           {valueValue18}
         </style>
         <div className={`ui-gk-frame`}>
-          <div
-            className={`ui-gk-floor ui-gk-floor--color`}
-            aria-hidden={`true`}
-          >
+          <div className={`ui-gk-floor ui-gk-floor--color`} aria-hidden={`true`}>
             <div className={`ui-gk-bleed`}>
               <svg viewBox={`0 0 3447.1 1514.1`} preserveAspectRatio={`none`}>
                 <defs>
@@ -537,47 +513,25 @@ function GlowKeyboard({
                     <stop offset={`0.673077`} stopColor={`#0073FF`} />
                   </linearGradient>
                 </defs>
-                <path
-                  ref={C}
-                  d={valueValue10(valueValue2, 0)}
-                  fill={`url(#${h}-floor)`}
-                />
+                <path ref={C} d={valueValue10(valueValue2, 0)} fill={`url(#${h}-floor)`} />
               </svg>
             </div>
           </div>
-          <div
-            className={`ui-gk-floor ui-gk-floor--light`}
-            aria-hidden={`true`}
-          >
+          <div className={`ui-gk-floor ui-gk-floor--light`} aria-hidden={`true`}>
             <div className={`ui-gk-bleed`}>
               <svg viewBox={`0 0 2904.96 1275.97`} preserveAspectRatio={`none`}>
-                <path
-                  ref={w}
-                  d={valueValue10(valueValue3, 0)}
-                  fill={`#fff`}
-                  fillOpacity={`0.8`}
-                />
+                <path ref={w} d={valueValue10(valueValue3, 0)} fill={`#fff`} fillOpacity={`0.8`} />
               </svg>
             </div>
           </div>
           <div className={`ui-gk-composer`}>
-            <div
-              className={`ui-gk-glow ui-gk-glow--soft`}
-              aria-hidden={`true`}
-            />
+            <div className={`ui-gk-glow ui-gk-glow--soft`} aria-hidden={`true`} />
             <div className={`ui-gk-glow-mid`} aria-hidden={`true`} />
-            <div
-              className={`ui-gk-glow ui-gk-glow--hard`}
-              aria-hidden={`true`}
-            />
+            <div className={`ui-gk-glow ui-gk-glow--hard`} aria-hidden={`true`} />
             <div className={`ui-gk-ring`} aria-hidden={`true`} />
             <div className={`ui-gk-input`}>
               <div className={`ui-gk-glass`} aria-hidden={`true`} />
-              <svg
-                className={`ui-gk-orb`}
-                viewBox={`0 0 95.5862 95.5862`}
-                aria-hidden={`true`}
-              >
+              <svg className={`ui-gk-orb`} viewBox={`0 0 95.5862 95.5862`} aria-hidden={`true`}>
                 <defs>
                   <radialGradient
                     id={`${h}-orb`}
@@ -606,12 +560,7 @@ function GlowKeyboard({
                       result={`alpha`}
                     />
                     <feGaussianBlur stdDeviation={`21.3703`} />
-                    <feComposite
-                      in2={`alpha`}
-                      operator={`arithmetic`}
-                      k2={`-1`}
-                      k3={`1`}
-                    />
+                    <feComposite in2={`alpha`} operator={`arithmetic`} k2={`-1`} k3={`1`} />
                     <feColorMatrix
                       type={`matrix`}
                       values={`0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0`}
@@ -639,10 +588,7 @@ function GlowKeyboard({
                   spellCheck={false}
                 />
               </span>
-              <div
-                className={`ui-gk-glass ui-gk-glass--inner`}
-                aria-hidden={`true`}
-              />
+              <div className={`ui-gk-glass ui-gk-glass--inner`} aria-hidden={`true`} />
             </div>
           </div>
           <div className={`ui-gk-keyboard`} aria-hidden={`true`}>

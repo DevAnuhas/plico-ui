@@ -1,14 +1,19 @@
-import {brand} from '../../lib/brand.js';
-function localText(value){return value.replaceAll('__PLICO_ORIGIN__',brand.url).replaceAll('__PLICO_REPO__',brand.repoUrl)}
+import { brand } from "../../lib/brand.js";
+function localText(value) {
+  return value
+    .replaceAll("__PLICO_ORIGIN__", brand.url)
+    .replaceAll("__PLICO_REPO__", brand.repoUrl);
+}
 import { t as e } from "./react-bridge.js";
 import { t } from "./jsx-bridge.js";
 var n = e(),
   r = t(),
-  i = e => Math.abs(e) >= 1e3 ? `${+(e / 1e3).toFixed(Math.abs(e) >= 1e4 ? 0 : 1)}k` : `${Math.round(e)}`;
+  i = (e) =>
+    Math.abs(e) >= 1e3 ? `${+(e / 1e3).toFixed(Math.abs(e) >= 1e4 ? 0 : 1)}k` : `${Math.round(e)}`;
 function a(e) {
   let t = e / 2 || 1,
     n = 10 ** Math.floor(Math.log10(t));
-  return ([1, 1.5, 2, 2.5, 3, 4, 5, 6, 8, 10].find(e => e * n >= t) ?? 10) * n * 2;
+  return ([1, 1.5, 2, 2.5, 3, 4, 5, 6, 8, 10].find((e) => e * n >= t) ?? 10) * n * 2;
 }
 function o({
   title: e,
@@ -20,158 +25,226 @@ function o({
   format: d = i,
   footer: f,
   defaultIndex: p,
-  className: m
+  className: m,
 }) {
   let [h, g] = (0, n.useState)(null),
     _ = h ?? p ?? null,
     [v, y] = (0, n.useState)(_ ?? 0);
   _ !== null && _ !== v && y(_);
   let b = c.length,
-    x = a(Math.max(...u.flatMap(e => e.values))),
-    S = e => b > 1 ? e / (b - 1) * 100 : 50,
-    C = e => (1 - e / x) * 100,
-    w = e => {
+    x = a(Math.max(...u.flatMap((e) => e.values))),
+    S = (e) => (b > 1 ? (e / (b - 1)) * 100 : 50),
+    C = (e) => (1 - e / x) * 100,
+    w = (e) => {
       let t = e.currentTarget.getBoundingClientRect(),
         n = Math.min(1, Math.max(0, (e.clientX - t.left) / t.width));
       return Math.round(n * (b - 1));
     },
-    T = e => {
+    T = (e) => {
       let t = _ ?? (e.key === `ArrowLeft` ? b : -1);
-      if (e.key === `ArrowRight`) g(Math.min(b - 1, t + 1));else if (e.key === `ArrowLeft`) g(Math.max(0, t - 1));else if (e.key === `Escape`) g(null);else return;
+      if (e.key === `ArrowRight`) g(Math.min(b - 1, t + 1));
+      else if (e.key === `ArrowLeft`) g(Math.max(0, t - 1));
+      else if (e.key === `Escape`) g(null);
+      else return;
       e.preventDefault();
     },
-    E = u.map(e => ({
-      ...e,
-      value: e.values[v] ?? 0
-    })).sort((e, t) => t.value - e.value),
+    E = u
+      .map((e) => ({
+        ...e,
+        value: e.values[v] ?? 0,
+      }))
+      .sort((e, t) => t.value - e.value),
     D = S(v) > 50,
-    O = [0, Math.round(b / 2 - .5), b - 1].filter((e, t, n) => n.indexOf(e) === t);
+    O = [0, Math.round(b / 2 - 0.5), b - 1].filter((e, t, n) => n.indexOf(e) === t);
   return (0, r.jsxs)(r.Fragment, {
-    children: [(0, r.jsx)(`style`, {
-      href: `ui-kpi-chart`,
-      precedence: `default`,
-      children: s
-    }), (0, r.jsxs)(`section`, {
-      className: [`ui-kpi`, m].filter(Boolean).join(` `),
-      children: [(0, r.jsx)(`h3`, {
-        className: `ui-kpi__title`,
-        children: e
-      }), (0, r.jsxs)(`p`, {
-        className: `ui-kpi__value`,
-        children: [t, o !== void 0 && o !== 0 && (0, r.jsxs)(`span`, {
-          className: `ui-kpi__delta`,
-          "data-trend": o > 0 ? `up` : `down`,
-          children: [o > 0 ? `+` : `−`, d(Math.abs(o))]
-        })]
-      }), (0, r.jsxs)(`div`, {
-        className: `ui-kpi__chart`,
-        children: [(0, r.jsxs)(`div`, {
-          className: `ui-kpi__yaxis`,
-          "aria-hidden": `true`,
-          children: [(0, r.jsx)(`span`, {
-            children: d(x)
-          }), (0, r.jsx)(`span`, {
-            children: d(x / 2)
-          }), (0, r.jsx)(`span`, {
-            children: d(0)
-          })]
-        }), (0, r.jsxs)(`div`, {
-          className: `ui-kpi__plot`,
-          tabIndex: 0,
-          role: `group`,
-          "aria-label": `${e} chart – use the arrow keys to read the values per day`,
-          onPointerMove: e => g(w(e)),
-          onPointerDown: e => g(w(e)),
-          onPointerLeave: () => g(null),
-          onBlur: () => g(null),
-          onKeyDown: T,
-          children: [(0, r.jsx)(`span`, {
-            className: `ui-kpi__grid`,
-            style: {
-              top: `0%`
-            }
-          }), (0, r.jsx)(`span`, {
-            className: `ui-kpi__grid`,
-            style: {
-              top: `50%`
-            }
-          }), (0, r.jsx)(`span`, {
-            className: `ui-kpi__grid`,
-            style: {
-              top: `100%`
-            }
-          }), (0, r.jsx)(`svg`, {
-            className: `ui-kpi__lines`,
-            viewBox: `0 0 100 100`,
-            preserveAspectRatio: `none`,
-            "aria-hidden": `true`,
-            children: u.map(e => (0, r.jsx)(`polyline`, {
-              points: e.values.map((e, t) => `${S(t)},${C(e)}`).join(` `),
-              stroke: e.color,
-              vectorEffect: `non-scaling-stroke`
-            }, e.label))
-          }), (0, r.jsxs)(`div`, {
-            className: `ui-kpi__marker`,
-            "data-open": _ !== null || void 0,
-            "aria-hidden": `true`,
-            children: [(0, r.jsx)(`span`, {
-              className: `ui-kpi__guide`,
-              style: {
-                left: `${S(v)}%`
-              }
-            }), u.map(e => (0, r.jsx)(`span`, {
-              className: `ui-kpi__dot`,
-              style: {
-                left: `${S(v)}%`,
-                top: `${C(e.values[v] ?? 0)}%`,
-                background: e.color
-              }
-            }, e.label))]
-          }), (0, r.jsxs)(`div`, {
-            className: `ui-kpi__tooltip`,
-            "data-open": _ !== null || void 0,
-            "data-side": D ? `left` : `right`,
-            style: {
-              left: `${S(v)}%`
-            },
-            role: `status`,
-            "aria-live": `polite`,
-            children: [(0, r.jsx)(`p`, {
-              className: `ui-kpi__date`,
-              children: (l ?? c)[v]
-            }), (0, r.jsx)(`ul`, {
-              children: E.map(e => (0, r.jsxs)(`li`, {
-                children: [(0, r.jsx)(`span`, {
-                  className: `ui-kpi__swatch`,
-                  style: {
-                    background: e.color
-                  }
-                }), (0, r.jsx)(`span`, {
-                  className: `ui-kpi__label`,
-                  children: e.label
-                }), (0, r.jsx)(`span`, {
-                  className: `ui-kpi__num`,
-                  children: d(e.value)
-                })]
-              }, e.label))
-            })]
-          })]
-        }), (0, r.jsx)(`div`, {
-          className: `ui-kpi__xaxis`,
-          "aria-hidden": `true`,
-          children: O.map(e => (0, r.jsx)(`span`, {
-            style: {
-              left: `${S(e)}%`
-            },
-            "data-edge": e === 0 ? `start` : e === b - 1 ? `end` : void 0,
-            children: c[e]
-          }, e))
-        })]
-      }), f && (0, r.jsx)(`p`, {
-        className: `ui-kpi__footer`,
-        children: f
-      })]
-    })]
+    children: [
+      (0, r.jsx)(`style`, {
+        href: `ui-kpi-chart`,
+        precedence: `default`,
+        children: s,
+      }),
+      (0, r.jsxs)(`section`, {
+        className: [`ui-kpi`, m].filter(Boolean).join(` `),
+        children: [
+          (0, r.jsx)(`h3`, {
+            className: `ui-kpi__title`,
+            children: e,
+          }),
+          (0, r.jsxs)(`p`, {
+            className: `ui-kpi__value`,
+            children: [
+              t,
+              o !== void 0 &&
+                o !== 0 &&
+                (0, r.jsxs)(`span`, {
+                  className: `ui-kpi__delta`,
+                  "data-trend": o > 0 ? `up` : `down`,
+                  children: [o > 0 ? `+` : `−`, d(Math.abs(o))],
+                }),
+            ],
+          }),
+          (0, r.jsxs)(`div`, {
+            className: `ui-kpi__chart`,
+            children: [
+              (0, r.jsxs)(`div`, {
+                className: `ui-kpi__yaxis`,
+                "aria-hidden": `true`,
+                children: [
+                  (0, r.jsx)(`span`, {
+                    children: d(x),
+                  }),
+                  (0, r.jsx)(`span`, {
+                    children: d(x / 2),
+                  }),
+                  (0, r.jsx)(`span`, {
+                    children: d(0),
+                  }),
+                ],
+              }),
+              (0, r.jsxs)(`div`, {
+                className: `ui-kpi__plot`,
+                tabIndex: 0,
+                role: `group`,
+                "aria-label": `${e} chart – use the arrow keys to read the values per day`,
+                onPointerMove: (e) => g(w(e)),
+                onPointerDown: (e) => g(w(e)),
+                onPointerLeave: () => g(null),
+                onBlur: () => g(null),
+                onKeyDown: T,
+                children: [
+                  (0, r.jsx)(`span`, {
+                    className: `ui-kpi__grid`,
+                    style: {
+                      top: `0%`,
+                    },
+                  }),
+                  (0, r.jsx)(`span`, {
+                    className: `ui-kpi__grid`,
+                    style: {
+                      top: `50%`,
+                    },
+                  }),
+                  (0, r.jsx)(`span`, {
+                    className: `ui-kpi__grid`,
+                    style: {
+                      top: `100%`,
+                    },
+                  }),
+                  (0, r.jsx)(`svg`, {
+                    className: `ui-kpi__lines`,
+                    viewBox: `0 0 100 100`,
+                    preserveAspectRatio: `none`,
+                    "aria-hidden": `true`,
+                    children: u.map((e) =>
+                      (0, r.jsx)(
+                        `polyline`,
+                        {
+                          points: e.values.map((e, t) => `${S(t)},${C(e)}`).join(` `),
+                          stroke: e.color,
+                          vectorEffect: `non-scaling-stroke`,
+                        },
+                        e.label,
+                      ),
+                    ),
+                  }),
+                  (0, r.jsxs)(`div`, {
+                    className: `ui-kpi__marker`,
+                    "data-open": _ !== null || void 0,
+                    "aria-hidden": `true`,
+                    children: [
+                      (0, r.jsx)(`span`, {
+                        className: `ui-kpi__guide`,
+                        style: {
+                          left: `${S(v)}%`,
+                        },
+                      }),
+                      u.map((e) =>
+                        (0, r.jsx)(
+                          `span`,
+                          {
+                            className: `ui-kpi__dot`,
+                            style: {
+                              left: `${S(v)}%`,
+                              top: `${C(e.values[v] ?? 0)}%`,
+                              background: e.color,
+                            },
+                          },
+                          e.label,
+                        ),
+                      ),
+                    ],
+                  }),
+                  (0, r.jsxs)(`div`, {
+                    className: `ui-kpi__tooltip`,
+                    "data-open": _ !== null || void 0,
+                    "data-side": D ? `left` : `right`,
+                    style: {
+                      left: `${S(v)}%`,
+                    },
+                    role: `status`,
+                    "aria-live": `polite`,
+                    children: [
+                      (0, r.jsx)(`p`, {
+                        className: `ui-kpi__date`,
+                        children: (l ?? c)[v],
+                      }),
+                      (0, r.jsx)(`ul`, {
+                        children: E.map((e) =>
+                          (0, r.jsxs)(
+                            `li`,
+                            {
+                              children: [
+                                (0, r.jsx)(`span`, {
+                                  className: `ui-kpi__swatch`,
+                                  style: {
+                                    background: e.color,
+                                  },
+                                }),
+                                (0, r.jsx)(`span`, {
+                                  className: `ui-kpi__label`,
+                                  children: e.label,
+                                }),
+                                (0, r.jsx)(`span`, {
+                                  className: `ui-kpi__num`,
+                                  children: d(e.value),
+                                }),
+                              ],
+                            },
+                            e.label,
+                          ),
+                        ),
+                      }),
+                    ],
+                  }),
+                ],
+              }),
+              (0, r.jsx)(`div`, {
+                className: `ui-kpi__xaxis`,
+                "aria-hidden": `true`,
+                children: O.map((e) =>
+                  (0, r.jsx)(
+                    `span`,
+                    {
+                      style: {
+                        left: `${S(e)}%`,
+                      },
+                      "data-edge": e === 0 ? `start` : e === b - 1 ? `end` : void 0,
+                      children: c[e],
+                    },
+                    e,
+                  ),
+                ),
+              }),
+            ],
+          }),
+          f &&
+            (0, r.jsx)(`p`, {
+              className: `ui-kpi__footer`,
+              children: f,
+            }),
+        ],
+      }),
+    ],
   });
 }
 var s = `

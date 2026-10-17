@@ -54,36 +54,23 @@ function ThinkingState({
     return (
       steps.forEach((e, r) => {
         (t.push(window.setTimeout(() => setVisibleSteps(r + 1), n)),
-          (n +=
-            stepMs +
-            (e.kind === `search`
-              ? (e.sources.length + 1) * sourceDelayMs
-              : 0)));
+          (n += stepMs + (e.kind === `search` ? (e.sources.length + 1) * sourceDelayMs : 0)));
       }),
       t.push(
         window.setTimeout(() => {
-          let e = Math.max(
-            1,
-            Math.round((Date.now() - startedAt.current) / 1e3),
-          );
+          let e = Math.max(1, Math.round((Date.now() - startedAt.current) / 1e3));
           (setElapsedSeconds(e), setDone(true), onDone?.(e));
         }, n),
       ),
       loop &&
-        t.push(
-          window.setTimeout(
-            () => !cancelled.current && setCycle((e) => e + 1),
-            n + 4e3,
-          ),
-        ),
+        t.push(window.setTimeout(() => !cancelled.current && setCycle((e) => e + 1), n + 4e3)),
       () => t.forEach(clearTimeout)
     );
   }, [cycle, steps, stepMs, loop]),
     React.useEffect(() => {
       if (done) return;
       let e = window.setInterval(
-        () =>
-          setElapsedSeconds(Math.floor((Date.now() - startedAt.current) / 1e3)),
+        () => setElapsedSeconds(Math.floor((Date.now() - startedAt.current) / 1e3)),
         250,
       );
       return () => clearInterval(e);
@@ -114,13 +101,8 @@ function ThinkingState({
             `Worked for ${formatDuration(elapsedSeconds)}`
           ) : (
             <>
-              <span
-                className={`ui-think__shimmer`}
-                data-text={`Thinking`}
-              >{`Thinking`}</span>
-              <span className={`ui-think__time`}>
-                {formatDuration(elapsedSeconds)}
-              </span>
+              <span className={`ui-think__shimmer`} data-text={`Thinking`}>{`Thinking`}</span>
+              <span className={`ui-think__time`}>{formatDuration(elapsedSeconds)}</span>
             </>
           )}
         </span>
@@ -129,17 +111,9 @@ function ThinkingState({
         <ol className={`ui-think__list`} aria-live={`polite`}>
           {steps.slice(0, visibleSteps).map((e, t) => {
             let n = t === activeStep,
-              i =
-                e.kind === `search` && n
-                  ? (e.activeLabel ?? `Searching`)
-                  : e.label;
+              i = e.kind === `search` && n ? (e.activeLabel ?? `Searching`) : e.label;
             return (
-              <li
-                className={`ui-think__item`}
-                data-kind={e.kind}
-                data-active={n || void 0}
-                key={t}
-              >
+              <li className={`ui-think__item`} data-kind={e.kind} data-active={n || void 0} key={t}>
                 <span className={`ui-think__node`} aria-hidden={`true`}>
                   {e.kind === `search` ? (
                     <svg viewBox={`0 0 24 24`} className={`ui-think__globe`}>
@@ -160,33 +134,26 @@ function ThinkingState({
                 </span>
                 <div className={`ui-think__content`}>
                   <span
-                    className={
-                      n
-                        ? `ui-think__label ui-think__shimmer`
-                        : `ui-think__label`
-                    }
+                    className={n ? `ui-think__label ui-think__shimmer` : `ui-think__label`}
                     data-text={i}
                   >
                     {i}
                   </span>
                   {e.kind === `search` && (
                     <div className={`ui-think__sources`}>
-                      {[
-                        ...e.sources,
-                        ...(expandedSources.has(t)
-                          ? (e.moreSources ?? [])
-                          : []),
-                      ].map((t, n) => (
-                        <ThinkingStep
-                          source={t}
-                          delay={
-                            n < e.sources.length
-                              ? 120 + n * sourceDelayMs
-                              : (n - e.sources.length) * 70
-                          }
-                          key={t.label + n}
-                        />
-                      ))}
+                      {[...e.sources, ...(expandedSources.has(t) ? (e.moreSources ?? []) : [])].map(
+                        (t, n) => (
+                          <ThinkingStep
+                            source={t}
+                            delay={
+                              n < e.sources.length
+                                ? 120 + n * sourceDelayMs
+                                : (n - e.sources.length) * 70
+                            }
+                            key={t.label + n}
+                          />
+                        ),
+                      )}
                       {e.moreSources?.length ? (
                         <button
                           type={`button`}
@@ -203,9 +170,7 @@ function ThinkingState({
                               }));
                           }}
                         >
-                          {expandedSources.has(t)
-                            ? `Show less`
-                            : `+${e.moreSources.length} more`}
+                          {expandedSources.has(t) ? `Show less` : `+${e.moreSources.length} more`}
                         </button>
                       ) : null}
                     </div>
@@ -232,19 +197,11 @@ function ThinkingState({
     </div>
   );
 }
-function ThinkingStep({
-  source: source,
-  delay: delay,
-}: {
-  source: ThinkingSource;
-  delay: number;
-}) {
+function ThinkingStep({ source: source, delay: delay }: { source: ThinkingSource; delay: number }) {
   let n = source.tooltip ?? source.href?.replace(/^https?:\/\//, ``),
     i = (
       <>
-        {source.icon && (
-          <span className={`ui-think__favicon`}>{source.icon}</span>
-        )}
+        {source.icon && <span className={`ui-think__favicon`}>{source.icon}</span>}
         <span className={`ui-think__source-label`}>{source.label}</span>
         {n && (
           <span className={`ui-think__tip`} aria-hidden={`true`}>
@@ -269,9 +226,7 @@ function ThinkingStep({
   );
 }
 var formatDuration = (e: number) =>
-  e < 60
-    ? `${e}s`
-    : `${Math.floor(e / 60)}m ${String(e % 60).padStart(2, `0`)}s`;
+  e < 60 ? `${e}s` : `${Math.floor(e / 60)}m ${String(e % 60).padStart(2, `0`)}s`;
 var thinkingStyles = `
 /* Colors and motion as variables – override them on .ui-think (see Theming in the docs) */
 .ui-think {
@@ -639,13 +594,7 @@ var Iconr = ({
 }) => (
   <svg viewBox={`0 0 24 24`}>
     <rect width={`24`} height={`24`} fill={bg} />
-    <svg
-      x={pad}
-      y={pad}
-      width={24 - 2 * pad}
-      height={24 - 2 * pad}
-      viewBox={viewBox}
-    >
+    <svg x={pad} y={pad} width={24 - 2 * pad} height={24 - 2 * pad} viewBox={viewBox}>
       {children}
     </svg>
   </svg>
@@ -709,10 +658,7 @@ const View_InlineView5 = () => (
       fill={`#34A853`}
       d={`M12 24c3.24 0 5.96-1.07 7.94-2.9l-3.87-3c-1.08.72-2.45 1.15-4.07 1.15-3.13 0-5.78-2.11-6.73-4.95H1.27v3.1A12 12 0 0 0 12 24Z`}
     />
-    <path
-      fill={`#FBBC05`}
-      d={`M5.27 14.3a7.2 7.2 0 0 1 0-4.6V6.6h-4a12 12 0 0 0 0 10.8l4-3.1Z`}
-    />
+    <path fill={`#FBBC05`} d={`M5.27 14.3a7.2 7.2 0 0 1 0-4.6V6.6h-4a12 12 0 0 0 0 10.8l4-3.1Z`} />
     <path
       fill={`#EA4335`}
       d={`M12 4.75c1.76 0 3.34.6 4.59 1.8l3.43-3.43A11.5 11.5 0 0 0 12 0 12 12 0 0 0 1.27 6.6l4 3.1C6.22 6.86 8.87 4.75 12 4.75Z`}

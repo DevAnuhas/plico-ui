@@ -30,21 +30,14 @@ interface ComboboxProps {
 var createSentinel = `\0create`;
 var motionEase = `cubic-bezier(0.22, 1, 0.36, 1)`;
 var prefersReducedMotion = () =>
-  typeof window < `u` &&
-  window.matchMedia?.(`(prefers-reduced-motion: reduce)`).matches;
+  typeof window < `u` && window.matchMedia?.(`(prefers-reduced-motion: reduce)`).matches;
 var initials = (name: string) => {
   let parts = name.trim().split(/\s+/);
   return (
     (parts[0]?.[0] ?? ``) + (parts.length > 1 ? parts[parts.length - 1][0] : ``)
   ).toUpperCase();
 };
-function HighlightMatch({
-  text: text,
-  query: query,
-}: {
-  text: string;
-  query: string;
-}) {
+function HighlightMatch({ text: text, query: query }: { text: string; query: string }) {
   let matchIndex = query ? text.toLowerCase().indexOf(query.toLowerCase()) : -1;
   return matchIndex < 0 ? (
     <>{text}</>
@@ -75,13 +68,7 @@ function OptionLeading({ option: option }: { option: ComboboxOption }) {
     />
   ) : null;
 }
-var ComboboxIcon = ({
-  d: path,
-  className: className,
-}: {
-  d: string;
-  className?: string;
-}) => (
+var ComboboxIcon = ({ d: path, className: className }: { d: string; className?: string }) => (
   <svg
     viewBox={`0 0 24 24`}
     className={[`ui-cbx__glyph`, className].filter(Boolean).join(` `)}
@@ -203,16 +190,11 @@ function Combobox({
     allOptions = React.useMemo(
       () => [
         ...options,
-        ...createdOptions.filter(
-          (t) => !options.some((e) => e.value === t.value),
-        ),
+        ...createdOptions.filter((t) => !options.some((e) => e.value === t.value)),
       ],
       [options, createdOptions],
     ),
-    optionMap = React.useMemo(
-      () => new Map(allOptions.map((e) => [e.value, e])),
-      [allOptions],
-    ),
+    optionMap = React.useMemo(() => new Map(allOptions.map((e) => [e.value, e])), [allOptions]),
     resolveOption = (value: string): ComboboxOption =>
       optionMap.get(value) ?? {
         value: value,
@@ -228,9 +210,7 @@ function Combobox({
       for (let t of allOptions) {
         if (
           normalizedQuery &&
-          !`${t.label} ${t.hint ?? ``} ${t.keywords ?? ``}`
-            .toLowerCase()
-            .includes(normalizedQuery)
+          !`${t.label} ${t.hint ?? ``} ${t.keywords ?? ``}`.toLowerCase().includes(normalizedQuery)
         )
           continue;
         let n = t.group ?? ``,
@@ -258,11 +238,8 @@ function Combobox({
       activeValue !== null && navigationValues.includes(activeValue)
         ? activeValue
         : navigationValues[0],
-    optionId = (value: string) =>
-      `${instanceId}-o${navigationValues.indexOf(value)}`,
-    [chipEntries, setChipEntries] = React.useState<
-      { value: string; leaving?: boolean }[]
-    >(() =>
+    optionId = (value: string) => `${instanceId}-o${navigationValues.indexOf(value)}`,
+    [chipEntries, setChipEntries] = React.useState<{ value: string; leaving?: boolean }[]>(() =>
       selectedValue.map((e) => ({
         value: e,
       })),
@@ -290,9 +267,7 @@ function Combobox({
                 e.value,
                 window.setTimeout(() => {
                   (removalTimersRef.current.delete(e.value),
-                    setChipEntries((t) =>
-                      t.filter((t) => !(t.value === e.value && t.leaving)),
-                    ));
+                    setChipEntries((t) => t.filter((t) => !(t.value === e.value && t.leaving))));
                 }, 420),
               ),
               {
@@ -319,22 +294,16 @@ function Combobox({
     visibleChips = chipEntries.filter((e) =>
       e.leaving ? tagCount < maxTags : tagCount++ < maxTags,
     ),
-    overflowCount = Math.max(
-      0,
-      chipEntries.filter((e) => !e.leaving).length - maxTags,
-    ),
+    overflowCount = Math.max(0, chipEntries.filter((e) => !e.leaving).length - maxTags),
     previousOverflowRef = React.useRef(overflowCount),
     overflowDirectionRef = React.useRef(`up`);
   (overflowCount !== previousOverflowRef.current &&
     overflowCount > 0 &&
-    (overflowDirectionRef.current =
-      overflowCount > previousOverflowRef.current ? `up` : `down`),
+    (overflowDirectionRef.current = overflowCount > previousOverflowRef.current ? `up` : `down`),
     overflowCount > 0 && (previousOverflowRef.current = overflowCount));
   let renderedOverflow = overflowCount || previousOverflowRef.current,
     armedOverflow =
-      !!armedValue &&
-      overflowCount > 0 &&
-      !visibleChips.some((e) => e.value === armedValue),
+      !!armedValue && overflowCount > 0 && !visibleChips.some((e) => e.value === armedValue),
     previousCountRef = React.useRef(selectedValue.length),
     selectionDirectionRef = React.useRef(`up`);
   selectedValue.length !== previousCountRef.current &&
@@ -345,9 +314,7 @@ function Combobox({
       (value === void 0 && setLocalValue(values),
         onChange?.(
           values,
-          values.map((e: string) =>
-            option?.value === e ? option : resolveOption(e),
-          ),
+          values.map((e: string) => (option?.value === e ? option : resolveOption(e))),
         ));
     },
     announce = (message: string, count: number) =>
@@ -373,10 +340,7 @@ function Combobox({
         value: trimmedQuery,
         label: trimmedQuery,
       };
-      (setCreatedOptions((t) => [
-        ...t.filter((t) => t.value !== option.value),
-        option,
-      ]),
+      (setCreatedOptions((t) => [...t.filter((t) => t.value !== option.value), option]),
         setActiveValue(option.value),
         toggleOption(option));
     },
@@ -387,9 +351,7 @@ function Combobox({
         setArmedValue(null));
     },
     selectValue = (value: string) => {
-      value === createSentinel
-        ? createOption()
-        : toggleOption(resolveOption(value));
+      value === createSentinel ? createOption() : toggleOption(resolveOption(value));
     };
   (React.useLayoutEffect(() => {
     let e = fieldRef.current,
@@ -429,22 +391,18 @@ function Combobox({
         (t.style.opacity = `1`),
         (t.style.height = `${n.offsetHeight}px`),
         (t.style.transform = `translateY(${n.offsetTop}px)`),
-        r &&
-          ((t.dataset.ready = `1`), t.offsetWidth, (t.style.transition = ``)),
+        r && ((t.dataset.ready = `1`), t.offsetWidth, (t.style.transition = ``)),
         !scrollActiveRef.current)
       )
         return;
       scrollActiveRef.current = false;
       let i = n.previousElementSibling,
-        a = i?.classList.contains(`ui-cbx__group-label`)
-          ? (i as HTMLElement).offsetHeight
-          : 0,
+        a = i?.classList.contains(`ui-cbx__group-label`) ? (i as HTMLElement).offsetHeight : 0,
         o = n.offsetTop - 6 - a,
         s = n.offsetTop + n.offsetHeight + 6;
       o < e.scrollTop
         ? (e.scrollTop = o)
-        : s > e.scrollTop + e.clientHeight &&
-          (e.scrollTop = s - e.clientHeight);
+        : s > e.scrollTop + e.clientHeight && (e.scrollTop = s - e.clientHeight);
     }),
     React.useEffect(() => {
       if (!open) return;
@@ -463,10 +421,7 @@ function Combobox({
       scrollActiveRef.current = true;
       let index = Math.max(0, navigationValues.indexOf(activeOption));
       setActiveValue(
-        navigationValues[
-          (index + direction + navigationValues.length) %
-            navigationValues.length
-        ],
+        navigationValues[(index + direction + navigationValues.length) % navigationValues.length],
       );
     },
     handleKeyDown: React.KeyboardEventHandler<HTMLInputElement> = (event) => {
@@ -493,9 +448,7 @@ function Combobox({
         armedValue === t
           ? removeValue(t)
           : (setArmedValue(t),
-            setAnnouncement(
-              `${resolveOption(t).label} – press Backspace again to remove`,
-            ));
+            setAnnouncement(`${resolveOption(t).label} – press Backspace again to remove`));
       }
     },
     handleFieldMouseDown: React.MouseEventHandler<HTMLElement> = (event) => {
@@ -506,11 +459,9 @@ function Combobox({
         setOpen(true));
     },
     handleBlur: React.FocusEventHandler<HTMLDivElement> = (event) => {
-      rootRef.current?.contains(event.relatedTarget) ||
-        (setOpen(false), setArmedValue(null));
+      rootRef.current?.contains(event.relatedTarget) || (setOpen(false), setArmedValue(null));
     },
-    preventMouseDown: React.MouseEventHandler<HTMLElement> = (event) =>
-      event.preventDefault();
+    preventMouseDown: React.MouseEventHandler<HTMLElement> = (event) => event.preventDefault();
   return (
     <div
       ref={rootRef}
@@ -530,18 +481,10 @@ function Combobox({
           {label}
         </label>
       )}
-      <div
-        ref={fieldRef}
-        className={`ui-cbx__field`}
-        onMouseDown={handleFieldMouseDown}
-      >
+      <div ref={fieldRef} className={`ui-cbx__field`} onMouseDown={handleFieldMouseDown}>
         <div ref={fieldInnerRef} className={`ui-cbx__field-inner`}>
           {(visibleChips.length > 0 || maxVisibleTags !== void 0) && (
-            <ul
-              className={`ui-cbx__chips`}
-              role={`list`}
-              aria-label={`Selected`}
-            >
+            <ul className={`ui-cbx__chips`} role={`list`} aria-label={`Selected`}>
               {visibleChips.map((e) => {
                 let t = resolveOption(e.value),
                   n = !t.icon && !t.avatar && !t.color;
@@ -580,10 +523,7 @@ function Combobox({
                   <span className={`ui-cbx__chip-body`}>
                     {`+`}
                     <span className={`ui-cbx__roll`}>
-                      <span
-                        data-dir={overflowDirectionRef.current}
-                        key={renderedOverflow}
-                      >
+                      <span data-dir={overflowDirectionRef.current} key={renderedOverflow}>
                         {renderedOverflow}
                       </span>
                     </span>
@@ -604,15 +544,10 @@ function Combobox({
             aria-expanded={open}
             aria-controls={`${instanceId}-list`}
             aria-autocomplete={`list`}
-            aria-activedescendant={
-              open && activeOption ? optionId(activeOption) : void 0
-            }
+            aria-activedescendant={open && activeOption ? optionId(activeOption) : void 0}
             aria-label={label ? void 0 : placeholder}
             onChange={(e) => {
-              (setQuery(e.target.value),
-                setActiveValue(null),
-                setArmedValue(null),
-                setOpen(true));
+              (setQuery(e.target.value), setActiveValue(null), setArmedValue(null), setOpen(true));
             }}
             onKeyDown={handleKeyDown}
           />
@@ -642,11 +577,7 @@ function Combobox({
               aria-labelledby={label ? `${instanceId}-label` : void 0}
               aria-label={label ? void 0 : `Options`}
             >
-              <span
-                ref={activePillRef}
-                className={`ui-cbx__pill`}
-                aria-hidden={`true`}
-              />
+              <span ref={activePillRef} className={`ui-cbx__pill`} aria-hidden={`true`} />
               <div ref={listInnerRef} className={`ui-cbx__list-inner`}>
                 {groups.map((e, t) => (
                   <div
@@ -656,10 +587,7 @@ function Combobox({
                     key={e.name || `_`}
                   >
                     {e.name && (
-                      <div
-                        className={`ui-cbx__group-label`}
-                        id={`${instanceId}-g${t}`}
-                      >
+                      <div className={`ui-cbx__group-label`} id={`${instanceId}-g${t}`}>
                         {e.name}
                       </div>
                     )}
@@ -673,9 +601,7 @@ function Combobox({
                           data-active={activeOption === e.value || void 0}
                           className={`ui-cbx__option`}
                           onMouseDown={preventMouseDown}
-                          onMouseMove={() =>
-                            activeOption !== e.value && setActiveValue(e.value)
-                          }
+                          onMouseMove={() => activeOption !== e.value && setActiveValue(e.value)}
                           onClick={() => {
                             (setActiveValue(e.value), toggleOption(e));
                           }}
@@ -684,24 +610,15 @@ function Combobox({
                           <OptionLeading option={e} />
                           <span className={`ui-cbx__text`}>
                             <span className={`ui-cbx__name`}>
-                              <HighlightMatch
-                                text={e.label}
-                                query={trimmedQuery}
-                              />
+                              <HighlightMatch text={e.label} query={trimmedQuery} />
                             </span>
                             {e.hint && (
                               <span className={`ui-cbx__hint`}>
-                                <HighlightMatch
-                                  text={e.hint}
-                                  query={trimmedQuery}
-                                />
+                                <HighlightMatch text={e.hint} query={trimmedQuery} />
                               </span>
                             )}
                           </span>
-                          <ComboboxIcon
-                            d={iconPaths.check}
-                            className={`ui-cbx__check`}
-                          />
+                          <ComboboxIcon d={iconPaths.check} className={`ui-cbx__check`} />
                         </div>
                       );
                     })}
@@ -728,17 +645,14 @@ function Combobox({
                     className={`ui-cbx__option ui-cbx__create`}
                     onMouseDown={preventMouseDown}
                     onMouseMove={() =>
-                      activeOption !== createSentinel &&
-                      setActiveValue(createSentinel)
+                      activeOption !== createSentinel && setActiveValue(createSentinel)
                     }
                     onClick={createOption}
                   >
                     <span className={`ui-cbx__plus`} aria-hidden={`true`}>
                       <ComboboxIcon d={iconPaths.plus} />
                     </span>
-                    <span className={`ui-cbx__name`}>
-                      {createLabel(trimmedQuery)}
-                    </span>
+                    <span className={`ui-cbx__name`}>{createLabel(trimmedQuery)}</span>
                   </div>
                 )}
               </div>
@@ -747,10 +661,7 @@ function Combobox({
           <div className={`ui-cbx__foot`} aria-hidden={`true`}>
             <span className={`ui-cbx__count`}>
               <span className={`ui-cbx__roll`}>
-                <span
-                  data-dir={selectionDirectionRef.current}
-                  key={selectedValue.length}
-                >
+                <span data-dir={selectionDirectionRef.current} key={selectedValue.length}>
                   {selectedValue.length}
                 </span>
               </span>

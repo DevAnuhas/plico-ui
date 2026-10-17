@@ -15,8 +15,7 @@ interface BlurCrossfadeProps {
   style?: React.CSSProperties;
 }
 var prefersReducedMotion = () =>
-  typeof window < `u` &&
-  window.matchMedia?.(`(prefers-reduced-motion: reduce)`).matches;
+  typeof window < `u` && window.matchMedia?.(`(prefers-reduced-motion: reduce)`).matches;
 function BlurCrossfade({
   id: id,
   children: children,
@@ -54,8 +53,7 @@ function BlurCrossfade({
     }
     previousIdRef.current = id;
     let o = previousChildrenRef.current;
-    ((previousChildrenRef.current = children),
-      window.clearTimeout(cleanupTimerRef.current));
+    ((previousChildrenRef.current = children), window.clearTimeout(cleanupTimerRef.current));
     let s = {
       w: r.offsetWidth,
       h: r.offsetHeight,
@@ -93,8 +91,7 @@ function BlurCrossfade({
         morph === `both` && (n.style.width = `${u.w}px`),
         n.offsetHeight);
       let e = `${duration}ms cubic-bezier(0.22, 1, 0.36, 1)`;
-      ((n.style.transition =
-        morph === `both` ? `height ${e}, width ${e}` : `height ${e}`),
+      ((n.style.transition = morph === `both` ? `height ${e}, width ${e}` : `height ${e}`),
         (n.style.height = `${s.h}px`),
         morph === `both` && (n.style.width = `${s.w}px`));
     }
@@ -124,10 +121,7 @@ function BlurCrossfade({
         () => t.disconnect()
       );
     }, [id]),
-    React.useEffect(
-      () => () => window.clearTimeout(cleanupTimerRef.current),
-      [],
-    ));
+    React.useEffect(() => () => window.clearTimeout(cleanupTimerRef.current), []));
   let mergedStyle = {
       "--ui-bx-duration": `${duration}ms`,
       "--ui-bx-blur": `${blur}px`,
@@ -141,9 +135,7 @@ function BlurCrossfade({
       </style>
       <Tag
         ref={outerRef}
-        className={[`ui-bx`, `ui-bx--${morph}`, className]
-          .filter(Boolean)
-          .join(` `)}
+        className={[`ui-bx`, `ui-bx--${morph}`, className].filter(Boolean).join(` `)}
         style={mergedStyle}
       >
         <LayerTag
@@ -251,10 +243,7 @@ function BlurCrossfadeDemo2() {
         ));
     },
     nextNote = () => setNoteIndex((e) => (e + 1) % demoNotes.length);
-  (React.useEffect(
-    () => () => timersRef.current.forEach((e) => window.clearTimeout(e)),
-    [],
-  ),
+  (React.useEffect(() => () => timersRef.current.forEach((e) => window.clearTimeout(e)), []),
     React.useEffect(() => {
       if (!rootRef.current?.closest(`.card__preview`)) return;
       let t = 0,
@@ -262,9 +251,7 @@ function BlurCrossfadeDemo2() {
           (t++,
             t % 2
               ? setNoteIndex((e) => (e + 1) % demoNotes.length)
-              : setPublishState((e) =>
-                  e === `idle` ? `busy` : e === `busy` ? `done` : `idle`,
-                ));
+              : setPublishState((e) => (e === `idle` ? `busy` : e === `busy` ? `done` : `idle`)));
         }, 1300);
       return () => window.clearInterval(n);
     }, []));
@@ -284,16 +271,8 @@ function BlurCrossfadeDemo2() {
             onClick={publish}
             aria-live={`polite`}
           >
-            <BlurCrossfade
-              id={publishState}
-              morph={`both`}
-              as={`span`}
-              blur={6}
-              duration={380}
-            >
-              {publishState === `idle` && (
-                <span className={`bxd-btn`}>{`Publish`}</span>
-              )}
+            <BlurCrossfade id={publishState} morph={`both`} as={`span`} blur={6} duration={380}>
+              {publishState === `idle` && <span className={`bxd-btn`}>{`Publish`}</span>}
               {publishState === `busy` && (
                 <span className={`bxd-btn`}>
                   <span className={`bxd-spin`} aria-hidden={`true`} />
@@ -337,11 +316,7 @@ function BlurCrossfadeDemo2() {
               <i data-on={t === noteIndex || void 0} key={t} />
             ))}
           </span>
-          <button
-            type={`button`}
-            className={`bxd-chip`}
-            onClick={nextNote}
-          >{`Next`}</button>
+          <button type={`button`} className={`bxd-chip`} onClick={nextNote}>{`Next`}</button>
         </div>
       </div>
     </div>

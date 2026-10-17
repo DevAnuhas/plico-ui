@@ -162,29 +162,20 @@ var valueValue8 = (e: string, t: number) =>
         : Math.round(t).toLocaleString(`en-US`);
 var valueValue9 = (e: string, t: number) => {
   let n = t >= 1e3 ? `${+(t / 1e3).toFixed(1)}K` : `${+t.toFixed(+(t < 10))}`;
-  return e === `refunds`
-    ? `${n}%`
-    : e === `revenue` || e === `aov`
-      ? `$${n}`
-      : n;
+  return e === `refunds` ? `${n}%` : e === `revenue` || e === `aov` ? `$${n}` : n;
 };
 function valueValue10(e: number) {
   let t = 10 ** Math.floor(Math.log10(e / 4));
-  return (
-    ([1, 2, 2.5, 5, 10].map((e) => e * t).find((t) => t * 4 >= e * 1.08) ??
-      t * 10) * 4
-  );
+  return ([1, 2, 2.5, 5, 10].map((e) => e * t).find((t) => t * 4 >= e * 1.08) ?? t * 10) * 4;
 }
 function valueValue11(e: number[][]) {
   if (e.length < 2) return ``;
   let t = e.length,
     n = [],
     r = [];
-  for (let r = 0; r < t - 1; r++)
-    n.push((e[r + 1][1] - e[r][1]) / (e[r + 1][0] - e[r][0]));
+  for (let r = 0; r < t - 1; r++) n.push((e[r + 1][1] - e[r][1]) / (e[r + 1][0] - e[r][0]));
   r.push(n[0]);
-  for (let e = 1; e < t - 1; e++)
-    r.push(n[e - 1] * n[e] <= 0 ? 0 : (n[e - 1] + n[e]) / 2);
+  for (let e = 1; e < t - 1; e++) r.push(n[e - 1] * n[e] <= 0 ? 0 : (n[e - 1] + n[e]) / 2);
   r.push(n[t - 2]);
   for (let e = 0; e < t - 1; e++) {
     if (n[e] === 0) {
@@ -267,10 +258,7 @@ function MetricsDashboard({
       return [a, a + i * 4];
     })(),
     H = (e: number) => (e - B) / (V - B),
-    U = (e: number, t: number) => [
-      (e / (L.length - 1)) * valueValue13,
-      ViewG - H(t) * ViewG,
-    ],
+    U = (e: number, t: number) => [(e / (L.length - 1)) * valueValue13, ViewG - H(t) * ViewG],
     W = valueValue11(L.map((e, t) => U(t, e.value))),
     G = valueValue11(L.map((e, t) => U(t, e.previous))),
     K = `${W}L${valueValue13},${ViewG}L0,${ViewG}Z`,
@@ -287,10 +275,7 @@ function MetricsDashboard({
       if (!t) return;
       let n = t.getBoundingClientRect(),
         r = (e - n.left) / n.width,
-        i =
-          D === `bars`
-            ? Math.floor(r * L.length)
-            : Math.round(r * (L.length - 1));
+        i = D === `bars` ? Math.floor(r * L.length) : Math.round(r * (L.length - 1));
       A(Math.max(0, Math.min(L.length - 1, i)));
     },
     oe = (e: React.KeyboardEvent<HTMLDivElement>) => {
@@ -348,9 +333,7 @@ function MetricsDashboard({
             type={`button`}
             className={`ui-md__export`}
             onClick={() => {
-              (onExport?.(S, w),
-                M(true),
-                window.setTimeout(() => M(false), 1600));
+              (onExport?.(S, w), M(true), window.setTimeout(() => M(false), 1600));
             }}
           >
             <svg viewBox={`0 0 24 24`} aria-hidden={`true`}>
@@ -384,11 +367,7 @@ function MetricsDashboard({
               {R.label}
             </span>
             <div className={`ui-md__chart-tools`}>
-              <div
-                className={`ui-md__kind`}
-                role={`group`}
-                aria-label={`Chart type`}
-              >
+              <div className={`ui-md__kind`} role={`group`} aria-label={`Chart type`}>
                 <span
                   className={`ui-md__kind-thumb`}
                   aria-hidden={`true`}
@@ -420,11 +399,7 @@ function MetricsDashboard({
                 </button>
               </div>
               <label className={`ui-md__compare`}>
-                <input
-                  type={`checkbox`}
-                  checked={T}
-                  onChange={(e) => E(e.target.checked)}
-                />
+                <input type={`checkbox`} checked={T} onChange={(e) => E(e.target.checked)} />
                 <span className={`ui-md__switch`} aria-hidden={`true`} />
                 {`Compare to previous period`}
               </label>
@@ -454,13 +429,7 @@ function MetricsDashboard({
                 aria-hidden={`true`}
               >
                 <defs>
-                  <linearGradient
-                    id={`${b}-area`}
-                    x1={`0`}
-                    y1={`0`}
-                    x2={`0`}
-                    y2={`1`}
-                  >
+                  <linearGradient id={`${b}-area`} x1={`0`} y1={`0`} x2={`0`} y2={`1`}>
                     <stop offset={`0%`} className={`ui-md__area-a`} />
                     <stop offset={`100%`} className={`ui-md__area-b`} />
                   </linearGradient>
@@ -477,11 +446,7 @@ function MetricsDashboard({
                 ))}
                 {D === `line` && (
                   <g className={`ui-md__series`} key={`${S}-${w}`}>
-                    <path
-                      className={`ui-md__area`}
-                      d={K}
-                      fill={`url(#${b}-area)`}
-                    />
+                    <path className={`ui-md__area`} d={K} fill={`url(#${b}-area)`} />
                     {T && <path className={`ui-md__prev`} d={G} />}
                     <path className={`ui-md__line`} d={W} />
                   </g>
@@ -497,11 +462,7 @@ function MetricsDashboard({
                 )}
               </svg>
               {D === `line` && (
-                <div
-                  className={`ui-md__dots`}
-                  aria-hidden={`true`}
-                  key={`dots-${S}-${w}`}
-                >
+                <div className={`ui-md__dots`} aria-hidden={`true`} key={`dots-${S}-${w}`}>
                   {L.map((e, t) => (
                     <span
                       style={{
@@ -1192,11 +1153,7 @@ function MetricsDashboardDemo2() {
       return (o.observe(r), () => o.disconnect());
     }, []),
     (
-      <div
-        ref={e}
-        className={`metrics-demo`}
-        data-fit={t ? (t.card ? `card` : `stage`) : void 0}
-      >
+      <div ref={e} className={`metrics-demo`} data-fit={t ? (t.card ? `card` : `stage`) : void 0}>
         <div
           className={`metrics-demo__frame`}
           style={

@@ -46,12 +46,7 @@ interface Swipe {
 
 export interface ToasterProps {
   position?:
-    | "top-left"
-    | "top-center"
-    | "top-right"
-    | "bottom-left"
-    | "bottom-center"
-    | "bottom-right";
+    "top-left" | "top-center" | "top-right" | "bottom-left" | "bottom-center" | "bottom-right";
   inline?: boolean;
   id?: string;
   duration?: number;
@@ -80,17 +75,9 @@ var valueValue6 = (e: () => void) => (
 );
 var ValueValue3 = () => valueValue3;
 var ValueValue4 = () => valueValue5;
-function ValueValue5(
-  e: ToastKind,
-  t: React.ReactNode,
-  n: ToastOptions = {},
-  r: boolean = false,
-) {
+function ValueValue5(e: ToastKind, t: React.ReactNode, n: ToastOptions = {}, r: boolean = false) {
   let { id: i, ...a } = n,
-    o =
-      i === void 0
-        ? void 0
-        : valueValue3.find((e) => e.id === i && !e.removing);
+    o = i === void 0 ? void 0 : valueValue3.find((e) => e.id === i && !e.removing);
   if (o)
     return (
       ValueValue2(
@@ -126,9 +113,7 @@ function ValueValue5(
 }
 var ValueValue6 = 420;
 function valueValue7(e?: ToastId) {
-  let t = valueValue3.filter(
-    (t) => !t.removing && (e === void 0 || t.id === e),
-  );
+  let t = valueValue3.filter((t) => !t.removing && (e === void 0 || t.id === e));
   t.length &&
     (ValueValue2(
       valueValue3.map((e) =>
@@ -142,21 +127,12 @@ function valueValue7(e?: ToastId) {
     ),
     t.forEach((e) => e.onDismiss?.(e.id)),
     window.setTimeout(
-      () =>
-        ValueValue2(
-          valueValue3.filter(
-            (e) => !(e.removing && t.some((t) => t.id === e.id)),
-          ),
-        ),
+      () => ValueValue2(valueValue3.filter((e) => !(e.removing && t.some((t) => t.id === e.id)))),
       ValueValue6,
     ));
 }
 var ValueValue7 = (e: ToastMessage): e is ToastContent =>
-  typeof e == `object` &&
-  !!e &&
-  !React.isValidElement(e) &&
-  !Array.isArray(e) &&
-  `title` in e;
+  typeof e == `object` && !!e && !React.isValidElement(e) && !Array.isArray(e) && `title` in e;
 var valueValue8 = (e: ToastMessage): ToastContent =>
   ValueValue7(e)
     ? e
@@ -194,53 +170,29 @@ function ValueValue8<T>(
     };
   return (
     r.then(
-      (e) =>
-        o(`success`, typeof t.success == `function` ? t.success(e) : t.success),
+      (e) => o(`success`, typeof t.success == `function` ? t.success(e) : t.success),
       (e) => o(`error`, typeof t.error == `function` ? t.error(e) : t.error),
     ),
     r
   );
 }
-var toast = Object.assign(
-  (e: React.ReactNode, t?: ToastOptions) => ValueValue5(`default`, e, t),
-  {
-    success: (e: React.ReactNode, t?: ToastOptions) =>
-      ValueValue5(`success`, e, t),
-    error: (e: React.ReactNode, t?: ToastOptions) => ValueValue5(`error`, e, t),
-    info: (e: React.ReactNode, t?: ToastOptions) => ValueValue5(`info`, e, t),
-    loading: (e: React.ReactNode, t?: ToastOptions) =>
-      ValueValue5(`loading`, e, t),
-    promise: ValueValue8,
-    dismiss: valueValue7,
-  },
-);
+var toast = Object.assign((e: React.ReactNode, t?: ToastOptions) => ValueValue5(`default`, e, t), {
+  success: (e: React.ReactNode, t?: ToastOptions) => ValueValue5(`success`, e, t),
+  error: (e: React.ReactNode, t?: ToastOptions) => ValueValue5(`error`, e, t),
+  info: (e: React.ReactNode, t?: ToastOptions) => ValueValue5(`info`, e, t),
+  loading: (e: React.ReactNode, t?: ToastOptions) => ValueValue5(`loading`, e, t),
+  promise: ValueValue8,
+  dismiss: valueValue7,
+});
 function ValueValue9() {
   return (
     <svg viewBox={`0 0 24 24`} className={`ui-ts__status`} aria-hidden={`true`}>
       <g className={`ui-ts__spin`}>
-        <circle
-          className={`ui-ts__ring`}
-          cx={`12`}
-          cy={`12`}
-          r={`9.25`}
-          pathLength={1}
-        />
+        <circle className={`ui-ts__ring`} cx={`12`} cy={`12`} r={`9.25`} pathLength={1} />
       </g>
-      <path
-        className={`ui-ts__mark ui-ts__check`}
-        d={`M8.3 12.4l2.5 2.5 4.9-5.3`}
-        pathLength={1}
-      />
-      <path
-        className={`ui-ts__mark ui-ts__x1`}
-        d={`M9.5 9.5l5 5`}
-        pathLength={1}
-      />
-      <path
-        className={`ui-ts__mark ui-ts__x2`}
-        d={`M14.5 9.5l-5 5`}
-        pathLength={1}
-      />
+      <path className={`ui-ts__mark ui-ts__check`} d={`M8.3 12.4l2.5 2.5 4.9-5.3`} pathLength={1} />
+      <path className={`ui-ts__mark ui-ts__x1`} d={`M9.5 9.5l5 5`} pathLength={1} />
+      <path className={`ui-ts__mark ui-ts__x2`} d={`M14.5 9.5l-5 5`} pathLength={1} />
       <path className={`ui-ts__info`} d={`M12 11.2v4.6M12 8.2h.01`} />
     </svg>
   );
@@ -330,13 +282,9 @@ function ValueValue12({
       return;
     let t = e.version,
       n = Date.now(),
-      r = window.setTimeout(
-        () => valueValue7(e.id),
-        Math.max(0, y.current.left),
-      );
+      r = window.setTimeout(() => valueValue7(e.id), Math.max(0, y.current.left));
     return () => {
-      (window.clearTimeout(r),
-        y.current.version === t && (y.current.left -= Date.now() - n));
+      (window.clearTimeout(r), y.current.version === t && (y.current.left -= Date.now() - n));
     };
   }, [ne, e.version, ee, e.id]);
   let re: React.PointerEventHandler<HTMLLIElement> = (e) => {
@@ -370,11 +318,8 @@ function ValueValue12({
         s = t.axis === `x` || o * edge > 0;
       s || (o = Math.sign(o) * Math.abs(o) ** 0.7 * 0.6);
       let c = t.axis === `x` ? r.offsetWidth : r.offsetHeight * 2;
-      ((r.style.transform =
-        t.axis === `x` ? `translateX(${o}px)` : `translateY(${o}px)`),
-        (r.style.opacity = s
-          ? String(Math.max(0.25, 1 - Math.abs(o) / (c * 1.1)))
-          : ``),
+      ((r.style.transform = t.axis === `x` ? `translateX(${o}px)` : `translateY(${o}px)`),
+        (r.style.opacity = s ? String(Math.max(0.25, 1 - Math.abs(o) / (c * 1.1))) : ``),
         t.samples.push({
           v: o,
           at: e.timeStamp,
@@ -384,12 +329,7 @@ function ValueValue12({
     ie: React.PointerEventHandler<HTMLLIElement> = (t) => {
       let r = b.current,
         i = g.current!;
-      if (
-        !r ||
-        r.pointer !== t.pointerId ||
-        ((b.current = null), !r.axis || !i)
-      )
-        return;
+      if (!r || r.pointer !== t.pointerId || ((b.current = null), !r.axis || !i)) return;
       d(false);
       let a = r.samples[r.samples.length - 1] ?? {
           v: 0,
@@ -405,16 +345,12 @@ function ValueValue12({
           (i.style.transform = `${r.axis === `x` ? `translateX` : `translateY`}(${Math.sign(a.v) * t}px)`),
           (i.style.opacity = `0`),
           valueValue7(e.id));
-      } else
-        ((i.style.transition = ``),
-          (i.style.transform = ``),
-          (i.style.opacity = ``));
+      } else ((i.style.transition = ``), (i.style.transform = ``), (i.style.opacity = ``));
     },
     ae = -edge,
     oe = `translateY(${ae * layout.y}px) scale(${layout.scale})`;
   (c || (oe = `translateY(${edge * 100}%) scale(${layout.scale})`),
-    S &&
-      (oe = `translateY(${ae * layout.y + edge * 10}px) scale(${layout.scale * 0.96})`));
+    S && (oe = `translateY(${ae * layout.y + edge * 10}px) scale(${layout.scale * 0.96})`));
   let se =
     e.type === `loading` ? (
       <ValueValue9 />
@@ -442,17 +378,12 @@ function ValueValue12({
       onPointerUp={ie}
       onPointerCancel={ie}
       onClickCapture={(e) => {
-        x.current &&
-          ((x.current = false), e.stopPropagation(), e.preventDefault());
+        x.current && ((x.current = false), e.stopPropagation(), e.preventDefault());
       }}
     >
       <div ref={g} className={`ui-ts__swipe`}>
         <div className={`ui-ts__card`}>
-          <div
-            ref={h}
-            className={`ui-ts__content`}
-            data-action={e.action ? `` : void 0}
-          >
+          <div ref={h} className={`ui-ts__content`} data-action={e.action ? `` : void 0}>
             {se && (
               <span
                 className={`ui-ts__icon`}
@@ -462,11 +393,7 @@ function ValueValue12({
               </span>
             )}
             <div className={`ui-ts__text`}>
-              <div
-                className={`ui-ts__copy`}
-                data-changed={e.version > 0 || void 0}
-                key={e.version}
-              >
+              <div className={`ui-ts__copy`} data-changed={e.version > 0 || void 0} key={e.version}>
                 <div className={`ui-ts__title`}>{e.title}</div>
                 {e.description != null && e.description !== `` && (
                   <div className={`ui-ts__desc`}>{e.description}</div>
@@ -490,8 +417,7 @@ function ValueValue12({
                 type={`button`}
                 className={`ui-ts__action`}
                 onClick={(t) => {
-                  (e.action!.onClick(t),
-                    t.defaultPrevented || valueValue7(e.id));
+                  (e.action!.onClick(t), t.defaultPrevented || valueValue7(e.id));
                 }}
               >
                 {e.action.label}
@@ -604,16 +530,10 @@ function Toaster({
             behind: t > 0,
             hidden: t >= _e,
           };
-    (t < _e && (xe += n + gap),
-      be.set(ValueValue11(e), i),
-      oe.current.set(ValueValue11(e), i));
+    (t < _e && (xe += n + gap), be.set(ValueValue11(e), i), oe.current.set(ValueValue11(e), i));
   });
   let Se = Math.min(w.length, _e),
-    Ce = w.length
-      ? he
-        ? Math.max(0, xe - gap)
-        : ye + ValueValue13 * (Se - 1)
-      : 0;
+    Ce = w.length ? (he ? Math.max(0, xe - gap) : ye + ValueValue13 * (Se - 1)) : 0;
   (React.useEffect(() => {
     let e = new Set(me.map(ValueValue11));
     (g((t) => {
@@ -641,8 +561,7 @@ function Toaster({
           r && (t.type === `error` ? ie : re)((e) => (e === r ? `${r} ` : r));
         }),
         ue.current.forEach(
-          (e, t) =>
-            !me.some((e) => ValueValue11(e) === t) && ue.current.delete(t),
+          (e, t) => !me.some((e) => ValueValue11(e) === t) && ue.current.delete(t),
         ));
     }, [p]),
     React.useEffect(() => {
@@ -665,9 +584,7 @@ function Toaster({
     }, [x]));
   let we = () =>
     Array.from(
-      ae.current?.querySelectorAll<HTMLElement>(
-        `[data-toast-id]:not([data-removing])`,
-      ) ?? [],
+      ae.current?.querySelectorAll<HTMLElement>(`[data-toast-id]:not([data-removing])`) ?? [],
     );
   React.useEffect(() => {
     if (!hotkey) return;
@@ -680,10 +597,7 @@ function Toaster({
           (ce.current = document.activeElement as HTMLElement | null),
         t.focus());
     };
-    return (
-      window.addEventListener(`keydown`, e),
-      () => window.removeEventListener(`keydown`, e)
-    );
+    return (window.addEventListener(`keydown`, e), () => window.removeEventListener(`keydown`, e));
   }, [hotkey]);
   let Te: React.KeyboardEventHandler<HTMLElement> = (e) => {
       if (e.key !== `Escape` || !w.length) return;
@@ -743,11 +657,7 @@ function Toaster({
         {me.map((e) => (
           <ValueValue12
             t={e}
-            layout={
-              be.get(ValueValue11(e)) ??
-              oe.current.get(ValueValue11(e)) ??
-              ValueValue14
-            }
+            layout={be.get(ValueValue11(e)) ?? oe.current.get(ValueValue11(e)) ?? ValueValue14}
             edge={pe}
             paused={ge || (be.get(ValueValue11(e))?.hidden ?? false)}
             defaultDuration={duration}
@@ -975,9 +885,7 @@ var ValueValue15 = `
 }
 `;
 var valueValue = (e: number | undefined, t: boolean = false) =>
-  new Promise<void>((n, r) =>
-    window.setTimeout(() => (t ? r(Error(`Timeout`)) : n()), e),
-  );
+  new Promise<void>((n, r) => window.setTimeout(() => (t ? r(Error(`Timeout`)) : n()), e));
 var ToasterComponent = ({ d: d }: { d: string }) => (
   <svg viewBox={`0 0 24 24`} aria-hidden={`true`}>
     <path d={d} />
@@ -1077,9 +985,7 @@ function ToasterDemo2() {
         ],
         r = t.current;
       return () => {
-        (e.forEach(clearTimeout),
-          r.forEach((e) => toast.dismiss(e)),
-          r.clear());
+        (e.forEach(clearTimeout), r.forEach((e) => toast.dismiss(e)), r.clear());
       };
     }, []),
     (
@@ -1092,36 +998,20 @@ function ToasterDemo2() {
                   <ToasterComponent d={valueValue2.doc} />
                 </span>
                 <div className={`toaster-demo__meta`}>
-                  <span
-                    className={`toaster-demo__name`}
-                  >{`Q3 Board Report`}</span>
-                  <span
-                    className={`toaster-demo__sub`}
-                  >{`Finance · edited 2 min ago`}</span>
+                  <span className={`toaster-demo__name`}>{`Q3 Board Report`}</span>
+                  <span className={`toaster-demo__sub`}>{`Finance · edited 2 min ago`}</span>
                 </div>
               </div>
               <div className={`toaster-demo__grid`}>
-                <button
-                  type={`button`}
-                  className={`toaster-demo__btn`}
-                  onClick={() => d()}
-                >
+                <button type={`button`} className={`toaster-demo__btn`} onClick={() => d()}>
                   <ToasterComponent d={valueValue2.save} />
                   {`Save draft`}
                 </button>
-                <button
-                  type={`button`}
-                  className={`toaster-demo__btn`}
-                  onClick={() => f()}
-                >
+                <button type={`button`} className={`toaster-demo__btn`} onClick={() => f()}>
                   <ToasterComponent d={valueValue2.trash} />
                   {`Delete file`}
                 </button>
-                <button
-                  type={`button`}
-                  className={`toaster-demo__btn`}
-                  onClick={() => p()}
-                >
+                <button type={`button`} className={`toaster-demo__btn`} onClick={() => p()}>
                   <ToasterComponent d={valueValue2.upload} />
                   {`Upload report`}
                 </button>

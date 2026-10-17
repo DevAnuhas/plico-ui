@@ -48,11 +48,9 @@ var valueValue3 = (e: number) => {
 };
 var valueValue4 = (e: number) => `${(Math.max(0, e) / 1e3).toFixed(1)}s`;
 var valueValue5 = () =>
-  typeof window < `u` &&
-  window.matchMedia(`(prefers-reduced-motion: reduce)`).matches;
+  typeof window < `u` && window.matchMedia(`(prefers-reduced-motion: reduce)`).matches;
 var valueValue6 = () =>
-  typeof navigator < `u` &&
-  /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent);
+  typeof navigator < `u` && /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent);
 var valueValue7 = `cubic-bezier(0.32, 0.72, 0.24, 1)`;
 var valueValue8: Pick<
   React.SVGProps<SVGElement>,
@@ -70,21 +68,11 @@ var Iconf = () => (
       d={`M7 1.2c.4 2.9 1.9 4.4 4.8 4.8-2.9.4-4.4 1.9-4.8 4.8C6.6 7.9 5.1 6.4 2.2 6 5.1 5.6 6.6 4.1 7 1.2Z`}
       fill={`currentColor`}
     />
-    <circle
-      cx={`11.6`}
-      cy={`11.4`}
-      r={`1.1`}
-      fill={`currentColor`}
-      opacity={`0.55`}
-    />
+    <circle cx={`11.6`} cy={`11.4`} r={`1.1`} fill={`currentColor`} opacity={`0.55`} />
   </svg>
 );
 var Iconp = ({ status: status }: { status: string }) => (
-  <span
-    className={`ui-st__step-icon`}
-    data-status={status}
-    aria-hidden={`true`}
-  >
+  <span className={`ui-st__step-icon`} data-status={status} aria-hidden={`true`}>
     {status === `done` && (
       <svg width={`16`} height={`16`} viewBox={`0 0 16 16`}>
         <circle cx={`8`} cy={`8`} r={`6.5`} fill={`currentColor`} />
@@ -135,22 +123,8 @@ var Iconp = ({ status: status }: { status: string }) => (
 );
 var Iconm = () => (
   <svg width={`16`} height={`16`} viewBox={`0 0 16 16`} aria-hidden={`true`}>
-    <rect
-      x={`4.2`}
-      y={`3.4`}
-      width={`2.6`}
-      height={`9.2`}
-      rx={`0.9`}
-      fill={`currentColor`}
-    />
-    <rect
-      x={`9.2`}
-      y={`3.4`}
-      width={`2.6`}
-      height={`9.2`}
-      rx={`0.9`}
-      fill={`currentColor`}
-    />
+    <rect x={`4.2`} y={`3.4`} width={`2.6`} height={`9.2`} rx={`0.9`} fill={`currentColor`} />
+    <rect x={`9.2`} y={`3.4`} width={`2.6`} height={`9.2`} rx={`0.9`} fill={`currentColor`} />
   </svg>
 );
 var Iconh = () => (
@@ -163,10 +137,7 @@ var Iconh = () => (
 );
 var Icong = () => (
   <svg width={`12`} height={`12`} viewBox={`0 0 12 12`} aria-hidden={`true`}>
-    <path
-      d={`M6.9 1 2.6 6.6h3l-.5 4.4 4.3-5.6h-3L6.9 1Z`}
-      fill={`currentColor`}
-    />
+    <path d={`M6.9 1 2.6 6.6h3l-.5 4.4 4.3-5.6h-3L6.9 1Z`} fill={`currentColor`} />
   </svg>
 );
 var View_ = () => (
@@ -176,11 +147,7 @@ var View_ = () => (
 );
 var Iconv = () => (
   <svg width={`16`} height={`16`} viewBox={`0 0 16 16`} aria-hidden={`true`}>
-    <path
-      d={`M8 12.6V3.6M4.2 7.2 8 3.4l3.8 3.8`}
-      {...valueValue8}
-      strokeWidth={1.6}
-    />
+    <path d={`M8 12.6V3.6M4.2 7.2 8 3.4l3.8 3.8`} {...valueValue8} strokeWidth={1.6} />
   </svg>
 );
 var Icony = () => (
@@ -248,20 +215,13 @@ function AgentSteering({
     J = React.useRef(new Map<string, DOMRect>()),
     Y = React.useRef(0),
     X = JSON.stringify([
-      steps.map((e) => [
-        e.id,
-        e.status,
-        e.title,
-        (e.notes ?? []).map((e) => e.id),
-      ]),
+      steps.map((e) => [e.id, e.status, e.title, (e.notes ?? []).map((e) => e.id)]),
       queue.map((e) => e.id),
     ]),
     Z = React.useRef(X);
   (P.current &&
     X !== Z.current &&
-    ((J.current = new Map(
-      [...K.current].map(([e, t]) => [e, t.getBoundingClientRect()]),
-    )),
+    ((J.current = new Map([...K.current].map(([e, t]) => [e, t.getBoundingClientRect()]))),
     (Y.current = P.current?.offsetHeight ?? 0)),
     React.useLayoutEffect(() => {
       if (Z.current === X || ((Z.current = X), valueValue5())) return;
@@ -285,9 +245,7 @@ function AgentSteering({
         );
       for (let [e, t] of K.current) {
         let n = e.slice(e.indexOf(`:`) + 1),
-          r =
-            J.current.get(e) ??
-            (e.startsWith(`note:`) ? J.current.get(`queued:${n}`) : void 0),
+          r = J.current.get(e) ?? (e.startsWith(`note:`) ? J.current.get(`queued:${n}`) : void 0),
           i = t.getBoundingClientRect();
         if (!r) {
           t.animate(
@@ -331,17 +289,14 @@ function AgentSteering({
           s && t.setAttribute(`data-landed`, ``));
       }
     }, [X]));
-  let Q = steps
-      .flatMap((e) => (e.notes ?? []).filter((e) => e.picked).map((e) => e.id))
-      .join(`|`),
+  let Q = steps.flatMap((e) => (e.notes ?? []).filter((e) => e.picked).map((e) => e.id)).join(`|`),
     $ = React.useRef(new Set(Q.split(`|`).filter(Boolean)));
   React.useEffect(() => {
     for (let e of steps)
       for (let n of e.notes ?? [])
         n.picked &&
           !$.current.has(n.id) &&
-          ($.current.add(n.id),
-          B(`${agent ?? `The agent`} picked up: ${n.text}`));
+          ($.current.add(n.id), B(`${agent ?? `The agent`} picked up: ${n.text}`));
   }, [Q]);
   let oe = (e: boolean) => {
       let t = R.trim();
@@ -358,9 +313,7 @@ function AgentSteering({
     };
   React.useLayoutEffect(() => {
     let e = I.current;
-    e &&
-      ((e.style.height = `0px`),
-      (e.style.height = `${Math.min(e.scrollHeight, 60)}px`));
+    e && ((e.style.height = `0px`), (e.style.height = `${Math.min(e.scrollHeight, 60)}px`));
   }, [R]);
   let ce =
     status === `done`
@@ -369,11 +322,7 @@ function AgentSteering({
         ? `Paused`
         : `Running · ${valueValue3(U)}`;
   return (
-    <div
-      ref={P}
-      className={[`ui-st`, className].filter(Boolean).join(` `)}
-      data-status={status}
-    >
+    <div ref={P} className={[`ui-st`, className].filter(Boolean).join(` `)} data-status={status}>
       <style href={`ui-agent-steering`} precedence={`default`}>
         {ValueValue}
       </style>
@@ -388,10 +337,7 @@ function AgentSteering({
               {agent && (
                 <>
                   {agent}
-                  <span
-                    className={`ui-st__dot`}
-                    aria-hidden={`true`}
-                  >{`·`}</span>
+                  <span className={`ui-st__dot`} aria-hidden={`true`}>{`·`}</span>
                 </>
               )}
               {status === `done`
@@ -478,11 +424,7 @@ function AgentSteering({
           </div>
           <ul className={`ui-st__queued`}>
             {queue.map((e) => (
-              <li
-                ref={q(`queued:${e.id}`)}
-                className={`ui-st__chip`}
-                key={e.id}
-              >
+              <li ref={q(`queued:${e.id}`)} className={`ui-st__chip`} key={e.id}>
                 <span className={`ui-st__chip-text`}>{e.text}</span>
                 {onInterrupt && G && (
                   <button
@@ -510,11 +452,7 @@ function AgentSteering({
           </ul>
         </div>
       )}
-      <div
-        className={`ui-st__compose`}
-        ref={q(`compose:box`)}
-        data-disabled={G ? void 0 : ``}
-      >
+      <div className={`ui-st__compose`} ref={q(`compose:box`)} data-disabled={G ? void 0 : ``}>
         <div className={`ui-st__field`} onClick={() => I.current?.focus()}>
           <textarea
             ref={I}
@@ -778,11 +716,7 @@ function AgentSteeringDemo2() {
   let _ = React.useRef(e);
   _.current = e;
   let v = React.useRef(0),
-    y = (
-      e: React.RefObject<number[]>,
-      t: TimerHandler,
-      n: number | undefined,
-    ) => {
+    y = (e: React.RefObject<number[]>, t: TimerHandler, n: number | undefined) => {
       e.current.push(window.setTimeout(t, n));
     },
     b = (e: React.RefObject<number[]>) => {

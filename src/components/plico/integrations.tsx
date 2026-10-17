@@ -90,7 +90,14 @@ interface HugeiconsProps extends Omit<React.SVGProps<SVGSVGElement>, "strokeWidt
   secondaryColor?: string;
   disableSecondaryOpacity?: boolean;
 }
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {variant?: string; size?: string; loading?: boolean; icon?: React.ReactNode; iconRight?: React.ReactNode; ref?: React.Ref<HTMLButtonElement>;}
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: string;
+  size?: string;
+  loading?: boolean;
+  icon?: React.ReactNode;
+  iconRight?: React.ReactNode;
+  ref?: React.Ref<HTMLButtonElement>;
+}
 const ScreenFrameModeContext = React.createContext<boolean | null>(null);
 function PreviewFrame({ children }: { children?: React.ReactNode }) {
   const mode = React.useContext(ScreenFrameModeContext);
@@ -1907,14 +1914,28 @@ function AppShell({
     </div>
   );
 }
-function useControllableState<T>(controlledValue: T | undefined, defaultValue: T, onChange?: (value: T) => void): [T, (value: T) => void] {
+function useControllableState<T>(
+  controlledValue: T | undefined,
+  defaultValue: T,
+  onChange?: (value: T) => void,
+): [T, (value: T) => void] {
   let [internalValue, setInternalValue] = React.useState(defaultValue);
   return [controlledValue ?? internalValue, (e) => (setInternalValue(e), onChange?.(e))];
 }
-function ShellTabs({ items: items, value: value, defaultValue: defaultValue, onChange: onChange }: {items: string[]; value?: string; defaultValue?: string; onChange?: (value: string) => void}) {
+function ShellTabs({
+  items: items,
+  value: value,
+  defaultValue: defaultValue,
+  onChange: onChange,
+}: {
+  items: string[];
+  value?: string;
+  defaultValue?: string;
+  onChange?: (value: string) => void;
+}) {
   let [currentValue, setValue] = useControllableState(value, defaultValue ?? items[0], onChange),
     tabsRef = React.useRef<HTMLDivElement | null>(null),
-    [pillGeometry, setPillGeometry] = React.useState<{x: number; w: number} | null>(null);
+    [pillGeometry, setPillGeometry] = React.useState<{ x: number; w: number } | null>(null);
   return (
     React.useLayoutEffect(() => {
       let e = tabsRef.current?.querySelector<HTMLElement>(`[aria-selected="true"]`);
@@ -1952,7 +1973,17 @@ function ShellTabs({ items: items, value: value, defaultValue: defaultValue, onC
     )
   );
 }
-function SearchField({ placeholder: placeholder, width = 175, value: value, onChange: onChange }: {placeholder?: string; width?: number; value?: string; onChange?: (value: string) => void}) {
+function SearchField({
+  placeholder: placeholder,
+  width = 175,
+  value: value,
+  onChange: onChange,
+}: {
+  placeholder?: string;
+  width?: number;
+  value?: string;
+  onChange?: (value: string) => void;
+}) {
   let [i, a] = useControllableState(value, ``, onChange);
   return (
     <label
@@ -2141,7 +2172,7 @@ function DropdownMenu({
   );
 }
 function useToast(): [React.ReactNode, (message: string) => void] {
-  let [message, setMessage] = React.useState<{id: number; text: string} | null>(null);
+  let [message, setMessage] = React.useState<{ id: number; text: string } | null>(null);
   return (
     React.useEffect(() => {
       if (!message) return;
@@ -2155,7 +2186,8 @@ function useToast(): [React.ReactNode, (message: string) => void] {
           {message.text}
         </div>
       ) : null,
-      (e: string) => setMessage({
+      (e: string) =>
+        setMessage({
           id: Date.now(),
           text: e,
         }),
@@ -3193,7 +3225,17 @@ const View_InlineView2 = () => (
     <path d={`M0 28.5A9.5 9.5 0 0 0 9.5 38H19V19H9.5A9.5 9.5 0 0 0 0 28.5Z`} fill={`#A259FF`} />
   </svg>
 );
-type IntegrationApp = {id: string; name: string; vendor?: string; description: string; categories: string[]; logo: React.ReactNode; tile?: string; essential?: boolean; connected?: boolean};
+type IntegrationApp = {
+  id: string;
+  name: string;
+  vendor?: string;
+  description: string;
+  categories: string[];
+  logo: React.ReactNode;
+  tile?: string;
+  essential?: boolean;
+  connected?: boolean;
+};
 var valueValue3: IntegrationApp[] = [
   {
     id: `slack`,
@@ -3569,9 +3611,11 @@ function Integrations(e: AppShellProps) {
           {R.map((e, t) => (
             <section
               className={`ui-as-int-section ui-as-rise`}
-              style={{
-                "--i": t,
-              } as React.CSSProperties}
+              style={
+                {
+                  "--i": t,
+                } as React.CSSProperties
+              }
               key={e.title}
             >
               <h2 className={`ui-as-int-section__title`}>{e.title}</h2>
@@ -3614,7 +3658,7 @@ function Integrations(e: AppShellProps) {
     </AppShell>
   );
 }
-function ValueValue({ app: app }: {app: IntegrationApp}) {
+function ValueValue({ app: app }: { app: IntegrationApp }) {
   return (
     <span
       className={`ui-as-int-logo`}
@@ -3631,7 +3675,17 @@ function ValueValue({ app: app }: {app: IntegrationApp}) {
     </span>
   );
 }
-function Iconw({ app: app, state: state, onToggle: onToggle, fresh: fresh }: {app: IntegrationApp; state: "busy" | "on" | "off"; onToggle: () => void; fresh?: boolean}) {
+function Iconw({
+  app: app,
+  state: state,
+  onToggle: onToggle,
+  fresh: fresh,
+}: {
+  app: IntegrationApp;
+  state: "busy" | "on" | "off";
+  onToggle: () => void;
+  fresh?: boolean;
+}) {
   return (
     <div className={fresh ? `ui-as-int-row ui-as-rise` : `ui-as-int-row`}>
       <ValueValue app={app} />

@@ -205,16 +205,12 @@ function BillingSchedule({
     W = O.find((e) => e.kind === `discount`),
     G = O.find((e) => e.kind === `minimum`),
     K = 1 - (W?.percent ?? 0) / 100,
-    q =
-      U.filter((e) => e.timing === `advance`).reduce((e, t) => e + t.price, 0) *
-      K,
+    q = U.filter((e) => e.timing === `advance`).reduce((e, t) => e + t.price, 0) * K,
     J = I.months || 1,
     Y =
       U.reduce((e, t) => {
         let n = valueValue2.find((e) => e.id === t.repeat)!.perYear;
-        return (
-          e + (n ? t.price * Math.max(1, Math.round((n * J) / 12)) : t.price)
-        );
+        return e + (n ? t.price * Math.max(1, Math.round((n * J) / 12)) : t.price);
       }, 0) * K,
     X = Math.max(Y, G?.amount ?? 0);
   return (
@@ -244,11 +240,7 @@ function BillingSchedule({
           <label className={`ui-bs__field`}>
             <span>{`Start date`}</span>
             <span className={`ui-bs__input`}>
-              <input
-                type={`date`}
-                value={w}
-                onChange={(e) => T(e.target.value)}
-              />
+              <input type={`date`} value={w} onChange={(e) => T(e.target.value)} />
               <Iconp
                 d={`M7 4v3M17 4v3M4.5 9.5h15M6 6h12a1.5 1.5 0 0 1 1.5 1.5v11A1.5 1.5 0 0 1 18 20H6a1.5 1.5 0 0 1-1.5-1.5v-11A1.5 1.5 0 0 1 6 6Z`}
               />
@@ -277,39 +269,23 @@ function BillingSchedule({
             </Iconh>
           </div>
         </div>
-        <div
-          className={`ui-bs__table`}
-          role={`table`}
-          aria-label={`Billing lines`}
-        >
+        <div className={`ui-bs__table`} role={`table`} aria-label={`Billing lines`}>
           <div className={`ui-bs__row ui-bs__row--head`} role={`row`}>
             <span role={`columnheader`}>{`Name`}</span>
             <span role={`columnheader`}>{`Repeats`}</span>
-            <span
-              role={`columnheader`}
-              className={`ui-bs__right`}
-            >{`Price`}</span>
+            <span role={`columnheader`} className={`ui-bs__right`}>{`Price`}</span>
           </div>
           <div className={`ui-bs__rows-outer`} ref={N}>
             <div ref={M}>
               {O.length === 0 && (
-                <p
-                  className={`ui-bs__empty`}
-                >{`No products yet – add one below.`}</p>
+                <p className={`ui-bs__empty`}>{`No products yet – add one below.`}</p>
               )}
               {O.map((e) => (
-                <div
-                  className={`ui-bs__row`}
-                  role={`row`}
-                  data-kind={e.kind}
-                  key={e.id}
-                >
+                <div className={`ui-bs__row`} role={`row`} data-kind={e.kind} key={e.id}>
                   <span role={`cell`} className={`ui-bs__name`}>
                     {e.kind !== `product` && (
                       <span className={`ui-bs__tag`} aria-hidden={`true`}>
-                        <Iconp
-                          d={e.kind === `discount` ? valueValue7 : valueValue8}
-                        />
+                        <Iconp d={e.kind === `discount` ? valueValue7 : valueValue8} />
                       </span>
                     )}
                     <span className={`ui-bs__name-text`}>{e.name}</span>
@@ -452,9 +428,7 @@ function BillingSchedule({
                   <small>
                     {P(e.price)}
                     {` · `}
-                    {valueValue2
-                      .find((t) => t.id === e.repeat)!
-                      .label.toLowerCase()}
+                    {valueValue2.find((t) => t.id === e.repeat)!.label.toLowerCase()}
                   </small>
                 </span>
               </button>
@@ -557,10 +531,7 @@ function Iconm({
         onFocus={() => l(String(value))}
         onChange={(e) => l(e.target.value.replace(/[^\d.]/g, ``))}
         onBlur={() => {
-          (onChange(
-            Math.max(0, Math.min(max ?? 1 / 0, parseFloat(c ?? ``) || 0)),
-          ),
-            l(null));
+          (onChange(Math.max(0, Math.min(max ?? 1 / 0, parseFloat(c ?? ``) || 0))), l(null));
         }}
         onKeyDown={(e) => e.key === `Enter` && e.currentTarget.blur()}
       />
@@ -608,11 +579,7 @@ function Iconh({
         <button
           type={`button`}
           className={
-            button
-              ? `ui-bs__btn`
-              : accent
-                ? `ui-bs__select ui-bs__select--accent`
-                : `ui-bs__select`
+            button ? `ui-bs__btn` : accent ? `ui-bs__select ui-bs__select--accent` : `ui-bs__select`
           }
           aria-haspopup={`listbox`}
           aria-expanded={open}
@@ -623,11 +590,7 @@ function Iconh({
           {!button && <Iconp d={`m7 10 5 5 5-5`} />}
         </button>
         {open && (
-          <div
-            className={`ui-bs__menu`}
-            role={`listbox`}
-            data-up={up ? `` : void 0}
-          >
+          <div className={`ui-bs__menu`} role={`listbox`} data-up={up ? `` : void 0}>
             {children}
           </div>
         )}

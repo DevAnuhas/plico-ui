@@ -3,11 +3,7 @@
 import * as React from "react";
 
 type CellCoordinate = { r: number; c: number };
-type EditDone = (
-  commit: boolean,
-  direction?: string,
-  overrideValue?: string,
-) => void;
+type EditDone = (commit: boolean, direction?: string, overrideValue?: string) => void;
 type DataColumn = {
   key: string;
   label: string;
@@ -30,11 +26,9 @@ interface DataTableCleanProps {
   onSelectionChange?: (ids: string[]) => void;
   className?: string;
 }
-var valueValue = (e: unknown) =>
-  typeof e == `string` || typeof e == `number` ? String(e) : ``;
+var valueValue = (e: unknown) => (typeof e == `string` || typeof e == `number` ? String(e) : ``);
 var ViewA = (e: number) => String.fromCharCode(65 + (e % 26));
-var valueValue2 = () =>
-  typeof navigator < `u` && /Mac|iPhone|iPad/.test(navigator.platform);
+var valueValue2 = () => typeof navigator < `u` && /Mac|iPhone|iPad/.test(navigator.platform);
 function valueValue3(e: string, t: DataColumn) {
   let n = e.trim();
   if (t.type !== `number`) return n;
@@ -75,9 +69,7 @@ function DataTableClean({
     j = (e: CellCoordinate | null) => {
       ((k.current.anchor = e), O(e));
     },
-    [M, N] = React.useState<{ cell: CellCoordinate; value: string } | null>(
-      null,
-    ),
+    [M, N] = React.useState<{ cell: CellCoordinate; value: string } | null>(null),
     [P, F] = React.useState(false),
     [, I] = React.useState(0),
     L = React.useRef<HTMLDivElement | null>(null),
@@ -127,8 +119,7 @@ function DataTableClean({
         c2: Math.max(e.c, T.c),
       };
     }, [T, D]),
-    G = (e: number, t: number) =>
-      !!W && e >= W.r1 && e <= W.r2 && t >= W.c1 && t <= W.c2,
+    G = (e: number, t: number) => !!W && e >= W.r1 && e <= W.r2 && t >= W.c1 && t <= W.c2,
     K = (e: CellCoordinate, t: string[][]) => {
       let n = new Map<string, Partial<DataRow>>();
       (t.forEach((t, r) =>
@@ -185,8 +176,7 @@ function DataTableClean({
     Y = (e: boolean, t?: CellCoordinate, n?: string) => {
       if (M && e) {
         let e = n ?? M.value;
-        e !== valueValue(z[M.cell.r]?.[columns[M.cell.c].key]) &&
-          K(M.cell, [[e]]);
+        e !== valueValue(z[M.cell.r]?.[columns[M.cell.c].key]) && K(M.cell, [[e]]);
       }
       (N(null),
         t && q(t),
@@ -214,8 +204,7 @@ function DataTableClean({
   let ce = (e: React.KeyboardEvent<HTMLDivElement>) => {
       if (M) return;
       let t = valueValue2() ? e.metaKey : e.ctrlKey;
-      if (t && e.key.toLowerCase() === `z`)
-        return (e.preventDefault(), e.shiftKey ? U() : H());
+      if (t && e.key.toLowerCase() === `z`) return (e.preventDefault(), e.shiftKey ? U() : H());
       if (t && e.key.toLowerCase() === `y`) return (e.preventDefault(), U());
       if (t && e.key.toLowerCase() === `a`) {
         (e.preventDefault(),
@@ -277,8 +266,7 @@ function DataTableClean({
           })
         );
 
-      if (e.key === `Enter` || e.key === `F2`)
-        return (e.preventDefault(), J(n));
+      if (e.key === `Enter` || e.key === `F2`) return (e.preventDefault(), J(n));
       if (e.key === `Escape`) return j(null);
       if ((e.key === `Delete` || e.key === `Backspace`) && W) {
         e.preventDefault();
@@ -313,17 +301,13 @@ function DataTableClean({
         ? z.slice(W.r1, W.r2 + 1).map((e) =>
             columns
               .slice(W.c1, W.c2 + 1)
-              .map((t: { key: string | number }) =>
-                valueValue(e[t.key]).replace(/[\t\n]/g, ` `),
-              )
+              .map((t: { key: string | number }) => valueValue(e[t.key]).replace(/[\t\n]/g, ` `))
               .join(`	`),
           ).join(`
 `)
         : ``,
     X = (e: React.ClipboardEvent<HTMLDivElement>) => {
-      !M &&
-        W &&
-        (e.preventDefault(), e.clipboardData.setData(`text/plain`, le()));
+      !M && W && (e.preventDefault(), e.clipboardData.setData(`text/plain`, le()));
     },
     ue = (e: React.ClipboardEvent<HTMLDivElement>) => {
       if (M || !W) return;
@@ -354,10 +338,7 @@ function DataTableClean({
     }) => {
       if (M || !T) return;
       e.preventDefault();
-      let t = e.clipboardData
-        .getData(`text/plain`)
-        .replace(/\r/g, ``)
-        .replace(/\n$/, ``);
+      let t = e.clipboardData.getData(`text/plain`).replace(/\r/g, ``).replace(/\n$/, ``);
       if (!t) return;
       let n = t
         .split(
@@ -411,16 +392,13 @@ function DataTableClean({
             },
       ),
     Z = (e: Set<string>) => {
-      (S(e),
-        onSelectionChange?.(v.filter((t) => e.has(t.id)).map((e) => e.id)));
+      (S(e), onSelectionChange?.(v.filter((t) => e.has(t.id)).map((e) => e.id)));
     },
     Q = z.length > 0 && x.size === z.length,
     pe = x.size > 0 && !Q,
     me = () => {
       R.current += 1;
-      let e =
-          columns.find((e: DataColumn) => e.type === `title`)?.key ??
-          columns[0].key,
+      let e = columns.find((e: DataColumn) => e.type === `title`)?.key ?? columns[0].key,
         t = {
           id: `new-${R.current}`,
           [e]: ``,
@@ -441,19 +419,13 @@ function DataTableClean({
         }));
     },
     he = () => {
-      (V(v.filter((e: DataRow) => !x.has(e.id))),
-        Z(new Set()),
-        A(null),
-        j(null));
+      (V(v.filter((e: DataRow) => !x.has(e.id))), Z(new Set()), A(null), j(null));
     },
     ge = (e: DataColumn) =>
-      e.options ?? [
-        ...new Set(v.map((t) => valueValue(t[e.key])).filter(Boolean)),
-      ],
+      e.options ?? [...new Set(v.map((t) => valueValue(t[e.key])).filter(Boolean))],
     _e = (() => {
       if (!W || !T) return null;
-      if ((W.r2 - W.r1 + 1) * (W.c2 - W.c1 + 1) === 1)
-        return `${ViewA(T.c)}${T.r + 1}`;
+      if ((W.r2 - W.r1 + 1) * (W.c2 - W.c1 + 1) === 1) return `${ViewA(T.c)}${T.r + 1}`;
       let e = 0,
         t = 0,
         n = false;
@@ -461,9 +433,7 @@ function DataTableClean({
         for (let a = W.c1; a <= W.c2; a++) {
           let o = z[r]?.[columns[a].key];
           (valueValue(o) !== `` && e++,
-            columns[a].type === `number` &&
-              typeof o == `number` &&
-              ((n = true), (t += o)));
+            columns[a].type === `number` && typeof o == `number` && ((n = true), (t += o)));
         }
       return `${e} ${e === 1 ? `value` : `values`}${n ? ` · Sum ${t.toLocaleString(`en-US`)}` : ``}`;
     })(),
@@ -473,10 +443,7 @@ function DataTableClean({
       <style href={`ui-data-table-clean`} precedence={`default`}>
         {valueValue6}
       </style>
-      <section
-        className={[`ui-dtc`, className].filter(Boolean).join(` `)}
-        aria-label={title}
-      >
+      <section className={[`ui-dtc`, className].filter(Boolean).join(` `)} aria-label={title}>
         <header className={`ui-dtc__head`}>
           {icon && <span className={`ui-dtc__title-icon`}>{icon}</span>}
           <h3 className={`ui-dtc__title`}>{title}</h3>
@@ -553,9 +520,7 @@ function DataTableClean({
                         checked={Q}
                         mixed={pe}
                         label={`Select all rows`}
-                        onChange={() =>
-                          Z(Q ? new Set() : new Set(z.map((e) => e.id)))
-                        }
+                        onChange={() => Z(Q ? new Set() : new Set(z.map((e) => e.id)))}
                       />
                     </th>
                     {columns.map((e, t) => {
@@ -564,16 +529,10 @@ function DataTableClean({
                         <th
                           role={`columnheader`}
                           aria-sort={
-                            n === `asc`
-                              ? `ascending`
-                              : n === `desc`
-                                ? `descending`
-                                : `none`
+                            n === `asc` ? `ascending` : n === `desc` ? `descending` : `none`
                           }
                           data-type={e.type}
-                          data-col-active={
-                            (W && t >= W.c1 && t <= W.c2) || void 0
-                          }
+                          data-col-active={(W && t >= W.c1 && t <= W.c2) || void 0}
                           key={e.key}
                         >
                           <button
@@ -581,14 +540,8 @@ function DataTableClean({
                             className={`ui-dtc__th`}
                             onClick={() => fe(e.key)}
                           >
-                            {e.icon && (
-                              <span className={`ui-dtc__col-icon`}>
-                                {e.icon}
-                              </span>
-                            )}
-                            <span className={`ui-dtc__th-label`}>
-                              {e.label}
-                            </span>
+                            {e.icon && <span className={`ui-dtc__col-icon`}>{e.icon}</span>}
+                            <span className={`ui-dtc__th-label`}>{e.label}</span>
                             <span
                               className={`ui-dtc__sort`}
                               data-dir={n ?? void 0}
@@ -613,16 +566,14 @@ function DataTableClean({
                             label={`Select ${
                               valueValue(
                                 e[
-                                  columns.find(
-                                    (e: DataColumn) => e.type === `title`,
-                                  )?.key ?? columns[0].key
+                                  columns.find((e: DataColumn) => e.type === `title`)?.key ??
+                                    columns[0].key
                                 ],
                               ) || `row`
                             }`}
                             onChange={() => {
                               let t = new Set(x);
-                              (t.has(e.id) ? t.delete(e.id) : t.add(e.id),
-                                Z(t));
+                              (t.has(e.id) ? t.delete(e.id) : t.add(e.id), Z(t));
                             }}
                           />
                         </td>
@@ -677,11 +628,7 @@ function DataTableClean({
                                       value: e,
                                     })
                                   }
-                                  onDone={(
-                                    e: boolean,
-                                    n?: string,
-                                    r?: string,
-                                  ) =>
+                                  onDone={(e: boolean, n?: string, r?: string) =>
                                     Y(
                                       e,
                                       n
@@ -705,9 +652,7 @@ function DataTableClean({
                   })}
                 </tbody>
               </table>
-              {z.length === 0 && (
-                <p className={`ui-dtc__empty`}>{`No rows yet`}</p>
-              )}
+              {z.length === 0 && <p className={`ui-dtc__empty`}>{`No rows yet`}</p>}
             </div>
           </div>
         </div>
@@ -719,20 +664,12 @@ function DataTableClean({
                 {` selected`}
               </span>
               {editable && (
-                <button
-                  type={`button`}
-                  className={`ui-dtc__add ui-dtc__add--danger`}
-                  onClick={he}
-                >
+                <button type={`button`} className={`ui-dtc__add ui-dtc__add--danger`} onClick={he}>
                   <Iconte />
                   {`Delete`}
                 </button>
               )}
-              <button
-                type={`button`}
-                className={`ui-dtc__add`}
-                onClick={() => Z(new Set())}
-              >
+              <button type={`button`} className={`ui-dtc__add`} onClick={() => Z(new Set())}>
                 {`Clear`}
               </button>
             </div>
@@ -770,10 +707,7 @@ function Iconl({
         ) : (
           <span className={`ui-dtc__logo ui-dtc__logo--empty`} />
         )}
-        <span
-          className={`ui-dtc__name-text`}
-          data-empty={valueValue(a) === `` || void 0}
-        >
+        <span className={`ui-dtc__name-text`} data-empty={valueValue(a) === `` || void 0}>
           {valueValue(a) || `Untitled`}
         </span>
       </span>
@@ -786,17 +720,9 @@ function Iconl({
       </span>
     );
   if (column.type === `link`) {
-    let e = /^https?:\/\//.test(valueValue(a))
-      ? valueValue(a)
-      : `https://${valueValue(a)}`;
+    let e = /^https?:\/\//.test(valueValue(a)) ? valueValue(a) : `https://${valueValue(a)}`;
     return (
-      <a
-        className={`ui-dtc__link`}
-        href={e}
-        target={`_blank`}
-        rel={`noreferrer`}
-        tabIndex={-1}
-      >
+      <a className={`ui-dtc__link`} href={e} target={`_blank`} rel={`noreferrer`} tabIndex={-1}>
         {valueValue(a).replace(/^https?:\/\//, ``)}
       </a>
     );
@@ -891,10 +817,7 @@ function Icond({
         if (!e || !t) return;
         let n = e.getBoundingClientRect(),
           r = t.offsetHeight,
-          i =
-            window.innerHeight - n.top - 4 >= r + 8
-              ? n.top + 4
-              : Math.max(8, n.bottom - 4 - r),
+          i = window.innerHeight - n.top - 4 >= r + 8 ? n.top + 4 : Math.max(8, n.bottom - 4 - r),
           a = u.current?.getBoundingClientRect() ?? { left: 0, top: 0 };
         f({
           left: n.left + 6 - a.left,
@@ -907,8 +830,7 @@ function Icond({
         window.addEventListener(`scroll`, e, true),
         window.addEventListener(`resize`, e),
         () => {
-          (window.removeEventListener(`scroll`, e, true),
-            window.removeEventListener(`resize`, e));
+          (window.removeEventListener(`scroll`, e, true), window.removeEventListener(`resize`, e));
         }
       );
     }, []),
@@ -923,11 +845,7 @@ function Icond({
     }, [onDone]),
     (
       <span ref={c} className={`ui-dtc__picker-anchor`}>
-        <span
-          ref={u}
-          className={`ui-dtc__picker-origin`}
-          aria-hidden={`true`}
-        />
+        <span ref={u} className={`ui-dtc__picker-origin`} aria-hidden={`true`} />
         <div
           ref={l}
           className={`ui-dtc__picker`}
@@ -958,14 +876,9 @@ function Icond({
               }}
               onKeyDown={(e) => {
                 e.key === `Escape` && onDone(false);
-                let t = [
-                    ...(e.currentTarget.parentElement?.querySelectorAll(
-                      `button`,
-                    ) ?? []),
-                  ],
+                let t = [...(e.currentTarget.parentElement?.querySelectorAll(`button`) ?? [])],
                   n = t.indexOf(e.currentTarget);
-                (e.key === `ArrowDown` &&
-                  t[Math.min(t.length - 1, n + 1)]?.focus(),
+                (e.key === `ArrowDown` && t[Math.min(t.length - 1, n + 1)]?.focus(),
                   e.key === `ArrowUp` && t[Math.max(0, n - 1)]?.focus(),
                   e.key.startsWith(`Arrow`) && e.preventDefault());
               }}
@@ -974,11 +887,7 @@ function Icond({
               <span className={`ui-dtc__tag`} data-tone={tones[e] ?? `blue`}>
                 {e}
               </span>
-              <svg
-                viewBox={`0 0 16 16`}
-                className={`ui-dtc__option-check`}
-                aria-hidden={`true`}
-              >
+              <svg viewBox={`0 0 16 16`} className={`ui-dtc__option-check`} aria-hidden={`true`}>
                 <path d={`m4 8.25 2.6 2.6L12 5.25`} />
               </svg>
             </button>
@@ -1010,11 +919,7 @@ function Iconf({
       onClick={onChange}
     >
       <svg viewBox={`0 0 16 16`} aria-hidden={`true`}>
-        {mixed ? (
-          <path d={`M5 8h6`} />
-        ) : (
-          <path d={`m4.5 8.25 2.25 2.25L11.5 5.75`} />
-        )}
+        {mixed ? <path d={`M5 8h6`} /> : <path d={`m4.5 8.25 2.25 2.25L11.5 5.75`} />}
       </svg>
     </button>
   );
@@ -1042,8 +947,7 @@ var Iconre = () => ViewP(`m10.5 3.5 3 3-3 3M13.5 6.5h-7a3.5 3.5 0 0 0 0 7H9`);
 var Iconie = () => ViewP(`M8 3.5v9M5 9.5l3 3 3-3`, 12);
 var valueValue4 = (e: string) => ViewP(e, 14);
 var TextColumnIcon = () => valueValue4(`M3 4h10M3 7h10M3 10h10M3 13h6`);
-var TagColumnIcon = () =>
-  valueValue4(`M3 3h4v4H3zM9 3h4v4H9zM3 9h4v4H3zM9 9h4v4H9z`);
+var TagColumnIcon = () => valueValue4(`M3 3h4v4H3zM9 3h4v4H9zM3 9h4v4H3zM9 9h4v4H9z`);
 var View_ = () =>
   valueValue4(
     `M6.5 9.5l3-3M7.25 4.75l1-1a2.5 2.5 0 0 1 3.5 3.5l-1 1M8.75 11.25l-1 1a2.5 2.5 0 0 1-3.5-3.5l1-1`,
@@ -1472,23 +1376,11 @@ var valueValue6 = `
 `;
 var Icony = () => (
   <svg viewBox={`0 0 38 57`} aria-hidden={`true`}>
-    <path
-      d={`M19 28.5a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0Z`}
-      fill={`#1ABCFE`}
-    />
-    <path
-      d={`M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 1 1-19 0Z`}
-      fill={`#0ACF83`}
-    />
+    <path d={`M19 28.5a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0Z`} fill={`#1ABCFE`} />
+    <path d={`M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 1 1-19 0Z`} fill={`#0ACF83`} />
     <path d={`M19 0v19h9.5a9.5 9.5 0 1 0 0-19H19Z`} fill={`#FF7262`} />
-    <path
-      d={`M0 9.5A9.5 9.5 0 0 0 9.5 19H19V0H9.5A9.5 9.5 0 0 0 0 9.5Z`}
-      fill={`#F24E1E`}
-    />
-    <path
-      d={`M0 28.5A9.5 9.5 0 0 0 9.5 38H19V19H9.5A9.5 9.5 0 0 0 0 28.5Z`}
-      fill={`#A259FF`}
-    />
+    <path d={`M0 9.5A9.5 9.5 0 0 0 9.5 19H19V0H9.5A9.5 9.5 0 0 0 0 9.5Z`} fill={`#F24E1E`} />
+    <path d={`M0 28.5A9.5 9.5 0 0 0 9.5 38H19V19H9.5A9.5 9.5 0 0 0 0 28.5Z`} fill={`#A259FF`} />
   </svg>
 );
 var Iconb = () => (
@@ -1527,14 +1419,7 @@ var ValueValue2 = () => (
 );
 var Iconw = () => (
   <svg viewBox={`0 0 20 20`} aria-hidden={`true`}>
-    <rect
-      x={`2`}
-      y={`2`}
-      width={`16`}
-      height={`16`}
-      rx={`4.5`}
-      fill={`#0060e2`}
-    />
+    <rect x={`2`} y={`2`} width={`16`} height={`16`} rx={`4.5`} fill={`#0060e2`} />
     <path
       d={`M6 7.5h8M6 10h8M6 12.5h5`}
       stroke={`#fff`}
